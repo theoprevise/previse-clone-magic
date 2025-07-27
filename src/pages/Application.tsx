@@ -24,7 +24,7 @@ const Application = () => {
   });
 
   const totalSteps = 10;
-  const progress = (currentStep / totalSteps) * 100;
+  const progress = ((currentStep - 1) / totalSteps) * 100;
 
   const steps = [
     { key: "firstName", label: "First Name", type: "text", placeholder: "Enter your first name" },
@@ -115,7 +115,7 @@ const Application = () => {
               <div className="relative">
                 <Progress 
                   value={progress} 
-                  className="h-3 bg-white/10 rounded-full overflow-hidden"
+                  className="h-4 bg-white/20 border border-white/30 rounded-full overflow-hidden backdrop-blur-sm"
                 />
                 <div 
                   className="absolute top-6 text-sm text-accent font-medium transition-all duration-300"
@@ -123,10 +123,6 @@ const Application = () => {
                 >
                   {Math.round(progress)}%
                 </div>
-              </div>
-              <div className="flex justify-between mt-8 text-sm text-white/60">
-                <span>Start</span>
-                <span>Complete</span>
               </div>
             </div>
 

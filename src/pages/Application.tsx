@@ -5,11 +5,15 @@ import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import { ArrowLeft, ArrowRight, Shield } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const Application = () => {
   const navigate = useNavigate();
   const { loanType } = useParams();
+  const { toast } = useToast();
   const [currentStep, setCurrentStep] = useState(1);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     // Step 1: Homebuying journey
     homebuyingJourney: "",
@@ -264,13 +268,66 @@ const Application = () => {
     }));
   };
 
-  const handleNext = () => {
+  const handleNext = async () => {
     if (currentStep < totalSteps) {
       setCurrentStep(prev => prev + 1);
     } else {
-      // Submit form
-      console.log("Form submitted:", formData);
-      navigate('/thank-you');
+      // Submit form to Supabase
+      setIsSubmitting(true);
+      try {
+        const { error } = await supabase
+          .from('mortgage_applications')
+          .insert({
+            loan_type: loanType,
+            homebuying_journey: formData.homebuyingJourney,
+            home_budget: formData.homeBudget,
+            home_type: formData.homeType,
+            home_use: formData.homeUse,
+            first_time_buyer: formData.firstTimeBuyer,
+            purchase_timing: formData.purchaseTiming,
+            buying_obstacles: formData.buyingObstacles,
+            military_service: formData.militaryService,
+            down_payment: formData.downPayment,
+            savings_amount: formData.savingsAmount,
+            financial_institutions: formData.financialInstitutions,
+            employment_status: formData.employmentStatus,
+            annual_income: formData.annualIncome,
+            bankruptcy: formData.bankruptcy,
+            credit_score: formData.creditScore,
+            credit_services: formData.creditServices,
+            real_estate_agent: formData.realEstateAgent,
+            location: formData.location,
+            zip_code: formData.zipCode,
+            email: formData.email,
+            first_name: formData.firstName,
+            last_name: formData.lastName,
+            phone: formData.phone
+          });
+
+        if (error) {
+          console.error('Error submitting application:', error);
+          toast({
+            title: "Error",
+            description: "Failed to submit application. Please try again.",
+            variant: "destructive",
+          });
+        } else {
+          toast({
+            title: "Success!",
+            description: "Your application has been submitted successfully.",
+          });
+          navigate('/thank-you');
+        }
+      } catch (error) {
+        console.error('Error submitting application:', error);
+        toast({
+          title: "Error",
+          description: "Failed to submit application. Please try again.",
+          variant: "destructive",
+        });
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -520,10 +577,11 @@ const Application = () => {
 
                   <Button
                     onClick={handleNext}
-                    disabled={!isStepValid()}
+                    disabled={!isStepValid() || isSubmitting}
                     className="w-full bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-primary py-6 px-6 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105 shadow-accent disabled:opacity-50 disabled:hover:scale-100 animate-shimmer bg-[length:200%_100%]"
                   >
-                    Submit Application <ArrowRight className="ml-2 w-5 h-5 animate-bounce-soft" />
+                    {isSubmitting ? "Submitting..." : "Submit Application"} 
+                    {!isSubmitting && <ArrowRight className="ml-2 w-5 h-5 animate-bounce-soft" />}
                   </Button>
 
                   <div className="text-xs text-white/60 text-center leading-relaxed bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 shadow-soft">

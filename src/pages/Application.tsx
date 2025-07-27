@@ -391,12 +391,11 @@ const Application = () => {
                       key={option}
                       variant="outline"
                       onClick={() => handleOptionSelect(option)}
-                      className={`w-full py-6 px-6 text-left text-lg rounded-xl border-2 transition-all duration-300 transform hover:scale-105 animate-slide-up shadow-medium backdrop-blur-sm ${
+                      className={`w-full py-6 px-6 text-left text-lg rounded-xl border-2 transition-all duration-300 transform hover:scale-105 shadow-medium backdrop-blur-sm ${
                         formData[currentQuestion.key as keyof typeof formData] === option
                           ? 'bg-accent text-primary border-accent font-bold shadow-accent scale-105'
                           : 'bg-white/5 text-white border-white/20 hover:bg-white/10 hover:border-accent/30 hover:shadow-glow'
                       }`}
-                      style={{animationDelay: `${0.8 + index * 0.1}s`}}
                     >
                       {option}
                     </Button>
@@ -410,7 +409,7 @@ const Application = () => {
                     {currentQuestion.options?.map((option, index) => {
                       const currentKey = currentQuestion.key as "militaryService" | "financialInstitutions";
                       return (
-                        <div key={option} className="flex items-center space-x-4 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-300 animate-slide-up" style={{animationDelay: `${1.0 + index * 0.1}s`}}>
+                        <div key={option} className="flex items-center space-x-4 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-300">
                           <input
                             type="checkbox"
                             id={option}

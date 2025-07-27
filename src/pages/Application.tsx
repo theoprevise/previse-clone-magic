@@ -112,14 +112,21 @@ const Application = () => {
 
             {/* Progress Bar */}
             <div className="mb-12">
-              <Progress 
-                value={progress} 
-                className="h-3 bg-white/10 rounded-full overflow-hidden"
-              />
-              <div className="flex justify-between mt-2 text-sm text-white/60">
-                <span>0%</span>
-                <span className="text-accent font-medium">{Math.round(progress)}%</span>
-                <span>100%</span>
+              <div className="relative">
+                <Progress 
+                  value={progress} 
+                  className="h-3 bg-white/10 rounded-full overflow-hidden"
+                />
+                <div 
+                  className="absolute top-6 text-sm text-accent font-medium transition-all duration-300"
+                  style={{ left: `${Math.max(0, Math.min(95, progress - 2.5))}%` }}
+                >
+                  {Math.round(progress)}%
+                </div>
+              </div>
+              <div className="flex justify-between mt-8 text-sm text-white/60">
+                <span>Start</span>
+                <span>Complete</span>
               </div>
             </div>
 
@@ -152,7 +159,7 @@ const Application = () => {
                 variant="outline"
                 onClick={handlePrevious}
                 disabled={currentStep === 1}
-                className="border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                className="border-white/30 text-white bg-white/5 hover:bg-white/10 hover:text-white px-8 py-4 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed backdrop-blur-sm"
               >
                 <ArrowLeft className="mr-2" size={20} />
                 Previous

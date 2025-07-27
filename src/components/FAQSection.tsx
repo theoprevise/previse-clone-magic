@@ -54,10 +54,12 @@ const FAQSection = () => {
 
   return (
     <section className="py-24 bg-gradient-to-b from-primary to-primary-dark relative overflow-hidden">
-      {/* Background elements */}
+      {/* Animated background elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-accent/10 rounded-full blur-2xl"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-accent/10 rounded-full blur-2xl animate-pulse-slow"></div>
+        <div className="absolute top-1/2 right-1/4 w-40 h-40 bg-accent/6 rounded-full blur-2xl animate-float" style={{animationDelay: '3s'}}></div>
+        <div className="absolute bottom-1/4 left-1/2 w-24 h-24 bg-accent/8 rounded-full blur-lg animate-pulse-slow" style={{animationDelay: '2s'}}></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">

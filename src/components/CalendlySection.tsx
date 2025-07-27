@@ -16,10 +16,12 @@ const CalendlySection = () => {
 
   return (
     <section id="contact" className="py-24 bg-gradient-to-b from-primary-dark to-primary relative overflow-hidden">
-      {/* Background decorative elements */}
+      {/* Animated background elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-accent/10 rounded-full blur-2xl"></div>
+        <div className="absolute top-1/4 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-accent/10 rounded-full blur-2xl animate-pulse-slow" style={{animationDelay: '1.5s'}}></div>
+        <div className="absolute top-1/2 left-1/3 w-36 h-36 bg-accent/7 rounded-full blur-xl animate-float" style={{animationDelay: '2.5s'}}></div>
+        <div className="absolute bottom-1/3 right-1/2 w-28 h-28 bg-accent/6 rounded-full blur-lg animate-pulse-slow" style={{animationDelay: '0.5s'}}></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">

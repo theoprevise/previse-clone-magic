@@ -1,10 +1,11 @@
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-t from-primary-dark to-primary py-16 border-t border-accent/20 relative overflow-hidden">
-      {/* Background decorative elements */}
+      {/* Animated background elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-accent/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/3 w-48 h-48 bg-accent/10 rounded-full blur-2xl"></div>
+        <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-accent/5 rounded-full blur-3xl animate-float" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-1/4 right-1/3 w-48 h-48 bg-accent/10 rounded-full blur-2xl animate-pulse-slow"></div>
+        <div className="absolute top-1/3 right-1/4 w-32 h-32 bg-accent/8 rounded-full blur-xl animate-float" style={{animationDelay: '3s'}}></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">

@@ -11,200 +11,200 @@ const Application = () => {
   const { loanType } = useParams();
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
-    // Step 1: Property purpose
-    propertyPurpose: "",
-    // Step 2: Property type
-    propertyType: "",
-    // Step 3: Property use
-    propertyUse: "",
-    // Step 4: Credit score
-    creditScore: "",
-    // Step 5: Down payment
-    downPayment: "",
-    // Step 6: First time buyer
+    // Step 1: Homebuying journey
+    homebuyingJourney: "",
+    // Step 2: Home budget
+    homeBudget: "",
+    // Step 3: Home type
+    homeType: "",
+    // Step 4: Home use
+    homeUse: "",
+    // Step 5: First time buyer
     firstTimeBuyer: "",
-    // Step 7: Military service
+    // Step 6: Purchase timing
+    purchaseTiming: "",
+    // Step 7: Buying obstacles
+    buyingObstacles: "",
+    // Step 8: Military service
     militaryService: [] as string[],
-    // Step 8: Bankruptcy/foreclosure
-    bankruptcyForeclosure: "",
-    // Step 9: Annual income
-    annualIncome: "",
-    // Step 10: Employment status
+    // Step 9: Down payment
+    downPayment: "",
+    // Step 10: Savings amount
+    savingsAmount: "",
+    // Step 11: Financial institutions
+    financialInstitutions: [] as string[],
+    // Step 12: Employment status
     employmentStatus: "",
-    // Step 11: Co-borrower
-    coBorrower: "",
-    // Step 12: Location timing
-    locationTiming: "",
-    // Step 13: Agent
-    hasAgent: "",
-    // Step 14: Improve credit
-    improveCredit: "",
-    // Step 15: ZIP code
+    // Step 13: Annual income
+    annualIncome: "",
+    // Step 14: Bankruptcy
+    bankruptcy: "",
+    // Step 15: Credit score
+    creditScore: "",
+    // Step 16: Credit services
+    creditServices: "",
+    // Step 17: Real estate agent
+    realEstateAgent: "",
+    // Step 18: Location
+    location: "",
+    // Step 19: ZIP code
     zipCode: "",
-    // Step 16: Home value
-    homeValue: "",
-    // Step 17: Mortgage balance
-    mortgageBalance: "",
-    // Step 18: Property condition
-    propertyCondition: "",
-    // Step 19: Stay in home
-    stayInHome: "",
-    // Step 20: Cash out amount
-    cashOutAmount: "",
+    // Step 20: Email
+    email: "",
     // Step 21: Name
     firstName: "",
     lastName: "",
-    // Step 22: Phone and verification
-    phone: "",
-    verificationMethod: ""
+    // Step 22: Phone
+    phone: ""
   });
 
   const totalSteps = 22;
   const progress = ((currentStep - 1) / totalSteps) * 100;
 
   const questions = [
-    // Step 1: Property purpose
+    // Step 1: Homebuying journey
     {
-      title: "What will you use this property for?",
+      title: "Where are you at in the homebuying journey?",
       type: "single-choice",
-      key: "propertyPurpose",
-      options: ["Primary residence", "Investment property", "Second home"]
+      key: "homebuyingJourney",
+      options: ["Just starting to research", "Looking at homes online", "Actively shopping", "Ready to make an offer", "Under contract"]
     },
-    // Step 2: Property type
+    // Step 2: Home budget
     {
-      title: "What type of property are you looking for?",
+      title: "How much do you plan to spend on your new home?",
       type: "single-choice",
-      key: "propertyType",
+      key: "homeBudget",
+      options: ["Less than $200,000", "$200,000 - $300,000", "$300,000 - $400,000", "$400,000 - $500,000", "$500,000 - $700,000", "More than $700,000"]
+    },
+    // Step 3: Home type
+    {
+      title: "What kind of home are you looking for?",
+      type: "single-choice",
+      key: "homeType",
       options: ["Single family home", "Townhouse", "Condo", "Multi-family home", "Manufactured home"]
     },
-    // Step 3: Property use
+    // Step 4: Home use
     {
-      title: "How will you use this property?",
+      title: "How will you use your new home?",
       type: "single-choice",
-      key: "propertyUse",
-      options: ["Purchase", "Refinance", "Cash out refinance"]
+      key: "homeUse",
+      options: ["Primary residence", "Investment property", "Second home", "Vacation home"]
     },
-    // Step 4: Credit score
+    // Step 5: First time buyer
     {
-      title: "What's your credit score?",
-      type: "single-choice",
-      key: "creditScore",
-      options: ["Excellent (740+)", "Good (680-739)", "Fair (640-679)", "Poor (580-639)", "Very Poor (Below 580)", "I don't know"]
-    },
-    // Step 5: Down payment
-    {
-      title: "How much money do you plan to put down?",
-      subtitle: "Don't include closing costs",
-      type: "single-choice",
-      key: "downPayment",
-      options: ["0%", "3%", "5%", "10%", "15%", "20%", "25%+", "I'm not sure"]
-    },
-    // Step 6: First time buyer
-    {
-      title: "Are you a first-time home buyer?",
+      title: "Is this your first time purchasing a home?",
       type: "single-choice",
       key: "firstTimeBuyer",
       options: ["Yes", "No"]
     },
-    // Step 7: Military service (multi-select)
+    // Step 6: Purchase timing
     {
-      title: "Have you or your spouse served in the military?",
+      title: "When are you planning to make your home purchase?",
+      type: "single-choice",
+      key: "purchaseTiming",
+      options: ["Immediately", "Within 30 days", "2-3 months", "3-6 months", "6+ months", "Just exploring options"]
+    },
+    // Step 7: Buying obstacles
+    {
+      title: "What's preventing you from buying a home now?",
+      type: "single-choice",
+      key: "buyingObstacles",
+      options: ["Down payment", "Credit score", "Income/employment", "Finding the right home", "Market conditions", "Nothing - I'm ready"]
+    },
+    // Step 8: Military service (multi-select)
+    {
+      title: "Have you or your spouse ever served in the military?",
       subtitle: "We may be able to get you access to VA loan benefits",
       type: "multi-choice",
       key: "militaryService",
       options: ["Currently serving", "Veteran", "Spouse of veteran", "None of the above"]
     },
-    // Step 8: Bankruptcy/foreclosure
+    // Step 9: Down payment
     {
-      title: "Have you had a bankruptcy or foreclosure in the past 7 years?",
+      title: "How much of a down payment would you like to make?",
+      subtitle: "Don't include closing costs",
       type: "single-choice",
-      key: "bankruptcyForeclosure",
-      options: ["Yes", "No"]
+      key: "downPayment",
+      options: ["0%", "3%", "5%", "10%", "15%", "20%", "25%+", "I'm not sure"]
     },
-    // Step 9: Annual income
+    // Step 10: Savings amount
     {
-      title: "What's your gross annual household income?",
+      title: "How much do you currently have saved for a home purchase?",
+      type: "single-choice",
+      key: "savingsAmount",
+      options: ["Less than $5,000", "$5,000 - $15,000", "$15,000 - $25,000", "$25,000 - $50,000", "$50,000 - $100,000", "More than $100,000"]
+    },
+    // Step 11: Financial institutions (multi-select)
+    {
+      title: "Do you have an active account with any of these institutions?",
+      type: "multi-choice",
+      key: "financialInstitutions",
+      options: ["Bank of America", "Wells Fargo", "Chase", "Citibank", "US Bank", "PNC Bank", "Capital One", "Other", "None of the above"]
+    },
+    // Step 12: Employment status
+    {
+      title: "What is your current employment status?",
+      type: "single-choice",
+      key: "employmentStatus",
+      options: ["Employed (W-2)", "Self-employed", "Retired", "Military", "Contract/1099", "Unemployed", "Other"]
+    },
+    // Step 13: Annual income
+    {
+      title: "What is your household gross (before taxes) annual income?",
       subtitle: "Include income from all household members",
       type: "single-choice",
       key: "annualIncome",
       options: ["Less than $50,000", "$50,000 - $75,000", "$75,000 - $100,000", "$100,000 - $150,000", "$150,000 - $200,000", "More than $200,000"]
     },
-    // Step 10: Employment status
+    // Step 14: Bankruptcy
     {
-      title: "What's your employment status?",
+      title: "Have you declared bankruptcy in the last 3 years?",
       type: "single-choice",
-      key: "employmentStatus",
-      options: ["Employed (W-2)", "Self-employed", "Retired", "Military", "Other"]
+      key: "bankruptcy",
+      options: ["Yes", "No"]
     },
-    // Step 11: Co-borrower
+    // Step 15: Credit score
     {
-      title: "Will you have a co-borrower on this loan?",
+      title: "What is your current credit score?",
       type: "single-choice",
-      key: "coBorrower",
-      options: ["Yes", "No", "Maybe"]
+      key: "creditScore",
+      options: ["Excellent (740+)", "Good (680-739)", "Fair (640-679)", "Poor (580-639)", "Very Poor (Below 580)", "I don't know"]
     },
-    // Step 12: Location timing
+    // Step 16: Credit services
     {
-      title: "Have you found the area where you'd like to purchase?",
+      title: "Are you interested in other credit services?",
       type: "single-choice",
-      key: "locationTiming",
-      options: ["Yes, I know the area", "I have a few areas in mind", "No, I need help choosing"]
+      key: "creditServices",
+      options: ["Credit monitoring", "Credit repair", "Debt consolidation", "Personal loans", "Credit cards", "None of the above"]
     },
-    // Step 13: Agent
+    // Step 17: Real estate agent
     {
-      title: "Do you currently have a real estate agent?",
+      title: "Are you working with a real estate agent?",
       type: "single-choice",
-      key: "hasAgent",
+      key: "realEstateAgent",
       options: ["Yes", "No", "I need a referral"]
     },
-    // Step 14: Improve credit
+    // Step 18: Location
     {
-      title: "Are you interested in improving your credit score before applying?",
-      type: "single-choice",
-      key: "improveCredit",
-      options: ["Yes", "No", "I'm not sure"]
+      title: "Where are you looking to buy?",
+      type: "input",
+      key: "location",
+      placeholder: "Enter city, state"
     },
-    // Step 15: ZIP code
+    // Step 19: ZIP code
     {
-      title: "What's the ZIP code where you'd like to buy?",
+      title: "What's your current ZIP code?",
       type: "input",
       key: "zipCode",
       placeholder: "Enter ZIP code"
     },
-    // Step 16: Home value
+    // Step 20: Email
     {
-      title: "What's the estimated value of your home?",
+      title: "What is your email address?",
+      subtitle: "Your information is secure. Continuing here means you agree to our privacy policy and to receive information from Previse Mortgage about your loan options.",
       type: "input",
-      key: "homeValue",
-      placeholder: "Enter estimated home value"
-    },
-    // Step 17: Mortgage balance
-    {
-      title: "What's your current mortgage balance?",
-      type: "input",
-      key: "mortgageBalance",
-      placeholder: "Enter current mortgage balance"
-    },
-    // Step 18: Property condition
-    {
-      title: "What condition is your property in?",
-      type: "single-choice",
-      key: "propertyCondition",
-      options: ["Excellent", "Good", "Fair", "Needs work"]
-    },
-    // Step 19: Stay in home
-    {
-      title: "Do you plan to stay in your home for the next 3+ years?",
-      type: "single-choice",
-      key: "stayInHome",
-      options: ["Yes", "No", "I'm not sure"]
-    },
-    // Step 20: Cash out amount
-    {
-      title: "How much cash would you like to take out?",
-      type: "single-choice",
-      key: "cashOutAmount",
-      options: ["$25,000 or less", "$25,001 - $50,000", "$50,001 - $100,000", "$100,001 - $200,000", "More than $200,000", "I'm not sure"]
+      key: "email",
+      placeholder: "Enter email address"
     },
     // Step 21: Name
     {
@@ -212,12 +212,11 @@ const Application = () => {
       type: "name-input",
       key: "name"
     },
-    // Step 22: Phone and verification
+    // Step 22: Phone
     {
       title: "What's the best number to reach you?",
-      subtitle: "Your selected lender will call you to discuss your options.",
       type: "phone-input",
-      key: "contact"
+      key: "phone"
     }
   ];
 
@@ -225,20 +224,22 @@ const Application = () => {
 
   const handleOptionSelect = (value: string) => {
     if (currentQuestion.type === "multi-choice") {
-      const currentValues = formData.militaryService;
+      const currentKey = currentQuestion.key as "militaryService" | "financialInstitutions";
+      const currentValues = formData[currentKey];
+      
       if (value === "None of the above") {
-        setFormData(prev => ({ ...prev, militaryService: ["None of the above"] }));
+        setFormData(prev => ({ ...prev, [currentKey]: ["None of the above"] }));
       } else {
         const filteredValues = currentValues.filter(v => v !== "None of the above");
         if (currentValues.includes(value)) {
           setFormData(prev => ({ 
             ...prev, 
-            militaryService: filteredValues.filter(v => v !== value)
+            [currentKey]: filteredValues.filter(v => v !== value)
           }));
         } else {
           setFormData(prev => ({ 
             ...prev, 
-            militaryService: [...filteredValues, value]
+            [currentKey]: [...filteredValues, value]
           }));
         }
       }
@@ -302,13 +303,14 @@ const Application = () => {
     if (question.type === "single-choice") {
       return !!formData[question.key as keyof typeof formData];
     } else if (question.type === "multi-choice") {
-      return formData.militaryService.length > 0;
+      const currentKey = question.key as "militaryService" | "financialInstitutions";
+      return formData[currentKey].length > 0;
     } else if (question.type === "input") {
       return !!formData[question.key as keyof typeof formData];
     } else if (question.type === "name-input") {
       return formData.firstName && formData.lastName;
     } else if (question.type === "phone-input") {
-      return formData.phone && formData.verificationMethod;
+      return !!formData.phone;
     }
     
     return false;
@@ -405,20 +407,23 @@ const Application = () => {
               {currentQuestion.type === "multi-choice" && (
                 <div className="space-y-6">
                   <div className="space-y-4">
-                    {currentQuestion.options?.map((option) => (
-                      <div key={option} className="flex items-center space-x-3">
-                        <input
-                          type="checkbox"
-                          id={option}
-                          checked={formData.militaryService.includes(option)}
-                          onChange={() => handleOptionSelect(option)}
-                          className="w-5 h-5 text-accent bg-white/10 border-white/30 rounded focus:ring-accent focus:ring-2"
-                        />
-                        <label htmlFor={option} className="text-white text-lg">
-                          {option}
-                        </label>
-                      </div>
-                    ))}
+                    {currentQuestion.options?.map((option) => {
+                      const currentKey = currentQuestion.key as "militaryService" | "financialInstitutions";
+                      return (
+                        <div key={option} className="flex items-center space-x-3">
+                          <input
+                            type="checkbox"
+                            id={option}
+                            checked={formData[currentKey].includes(option)}
+                            onChange={() => handleOptionSelect(option)}
+                            className="w-5 h-5 text-accent bg-white/10 border-white/30 rounded focus:ring-accent focus:ring-2"
+                          />
+                          <label htmlFor={option} className="text-white text-lg">
+                            {option}
+                          </label>
+                        </div>
+                      );
+                    })}
                   </div>
                   <Button
                     onClick={handleNext}
@@ -502,7 +507,7 @@ const Application = () => {
                   <div className="relative">
                     <Input
                       type="tel"
-                      placeholder="( ) - "
+                      placeholder="(555) 123-4567"
                       value={formData.phone}
                       onChange={(e) => handleInputChange("phone", e.target.value)}
                       className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/50 text-lg py-6 px-4 rounded-xl focus:bg-white/15 focus:border-accent transition-all duration-300"
@@ -511,37 +516,6 @@ const Application = () => {
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center text-accent text-sm font-medium">
                       <Shield className="w-4 h-4 mr-1" />
                       SECURE
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-3">
-                      <input
-                        type="radio"
-                        id="text"
-                        name="verification"
-                        value="text"
-                        checked={formData.verificationMethod === "text"}
-                        onChange={(e) => handleInputChange("verificationMethod", e.target.value)}
-                        className="w-4 h-4 text-accent bg-white/10 border-white/30 focus:ring-accent focus:ring-2"
-                      />
-                      <label htmlFor="text" className="text-white text-lg">
-                        Send a text message verification code
-                      </label>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <input
-                        type="radio"
-                        id="call"
-                        name="verification"
-                        value="call"
-                        checked={formData.verificationMethod === "call"}
-                        onChange={(e) => handleInputChange("verificationMethod", e.target.value)}
-                        className="w-4 h-4 text-accent bg-white/10 border-white/30 focus:ring-accent focus:ring-2"
-                      />
-                      <label htmlFor="call" className="text-white text-lg">
-                        Call me with a verification code
-                      </label>
                     </div>
                   </div>
 

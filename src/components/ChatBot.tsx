@@ -76,20 +76,20 @@ const ChatBot = () => {
       {!isOpen ? (
         <Button
           onClick={() => setIsOpen(true)}
-          className="rounded-full w-14 h-14 bg-primary hover:bg-primary/90 shadow-lg"
+          className="rounded-full w-14 h-14 bg-accent hover:bg-accent/90 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 ring-2 ring-accent/20 animate-pulse"
           size="lg"
         >
           <MessageCircle className="h-6 w-6" />
         </Button>
       ) : (
-        <Card className="w-80 h-96 shadow-lg border-border">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 bg-primary text-primary-foreground">
+        <Card className="w-80 h-96 shadow-2xl border-accent/20 ring-1 ring-accent/30 animate-scale-in">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 bg-accent text-accent-foreground">
             <CardTitle className="text-sm font-medium">Mortgage Assistant</CardTitle>
             <Button
               onClick={() => setIsOpen(false)}
               variant="ghost"
               size="sm"
-              className="h-6 w-6 p-0 text-primary-foreground hover:bg-primary-foreground/20"
+              className="h-6 w-6 p-0 text-accent-foreground hover:bg-accent-foreground/20"
             >
               <X className="h-4 w-4" />
             </Button>
@@ -105,7 +105,7 @@ const ChatBot = () => {
                     <div
                       className={`max-w-[80%] rounded-lg px-3 py-2 text-sm ${
                         message.role === 'user'
-                          ? 'bg-primary text-primary-foreground'
+                          ? 'bg-accent text-accent-foreground shadow-md'
                           : 'bg-muted text-foreground'
                       }`}
                     >

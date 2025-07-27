@@ -8,7 +8,8 @@ const Header = () => {
             <img 
               src="https://img1.wsimg.com/isteam/ip/bc7cebe9-b604-4d0e-9c6e-660ac5ced5e1/tmplacbura9.webp/:/rs=w:205,h:70,cg:true,m/cr=w:205,h:70/qt=q:95" 
               alt="Previse Mortgage" 
-              className="h-12 hover:scale-105 transition-transform duration-300"
+              className="h-12 hover:scale-105 transition-transform duration-300 cursor-pointer"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             />
           </div>
         </div>

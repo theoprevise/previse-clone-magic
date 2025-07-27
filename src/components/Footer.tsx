@@ -37,15 +37,6 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Powered by section */}
-          <div className="mt-12 pt-8 border-t border-white/10">
-            <div className="text-white/50 text-sm">
-              Powered by{" "}
-              <span className="text-accent font-semibold hover:text-accent-light transition-colors duration-300">
-                GoDaddy Airo
-              </span>
-            </div>
-          </div>
         </div>
       </div>
     </footer>

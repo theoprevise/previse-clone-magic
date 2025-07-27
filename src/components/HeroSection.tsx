@@ -59,10 +59,11 @@ const HeroSection = () => {
             </a>
             <Button 
               size="lg" 
-              className="group bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border-2 border-white/30 hover:border-white/50 px-10 py-4 rounded-full text-lg font-semibold min-w-[200px] shadow-xl transition-all duration-300"
+              className="group bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-primary border-0 px-10 py-4 rounded-full text-lg font-bold min-w-[200px] shadow-2xl hover:shadow-accent/25 transition-all duration-300 transform hover:-translate-y-1"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <Play className="mr-2 group-hover:scale-110 transition-transform duration-300" size={18} />
-              Watch Demo
+              Schedule Appointment
+              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={20} />
             </Button>
           </div>
         </div>

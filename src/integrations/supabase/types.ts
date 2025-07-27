@@ -14,7 +14,96 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      mortgage_applications: {
+        Row: {
+          annual_income: string | null
+          bankruptcy: string | null
+          buying_obstacles: string | null
+          created_at: string
+          credit_score: string | null
+          credit_services: string | null
+          down_payment: string | null
+          email: string | null
+          employment_status: string | null
+          financial_institutions: string[] | null
+          first_name: string | null
+          first_time_buyer: string | null
+          home_budget: string | null
+          home_type: string | null
+          home_use: string | null
+          homebuying_journey: string | null
+          id: string
+          last_name: string | null
+          loan_type: string | null
+          location: string | null
+          military_service: string[] | null
+          phone: string | null
+          purchase_timing: string | null
+          real_estate_agent: string | null
+          savings_amount: string | null
+          updated_at: string
+          zip_code: string | null
+        }
+        Insert: {
+          annual_income?: string | null
+          bankruptcy?: string | null
+          buying_obstacles?: string | null
+          created_at?: string
+          credit_score?: string | null
+          credit_services?: string | null
+          down_payment?: string | null
+          email?: string | null
+          employment_status?: string | null
+          financial_institutions?: string[] | null
+          first_name?: string | null
+          first_time_buyer?: string | null
+          home_budget?: string | null
+          home_type?: string | null
+          home_use?: string | null
+          homebuying_journey?: string | null
+          id?: string
+          last_name?: string | null
+          loan_type?: string | null
+          location?: string | null
+          military_service?: string[] | null
+          phone?: string | null
+          purchase_timing?: string | null
+          real_estate_agent?: string | null
+          savings_amount?: string | null
+          updated_at?: string
+          zip_code?: string | null
+        }
+        Update: {
+          annual_income?: string | null
+          bankruptcy?: string | null
+          buying_obstacles?: string | null
+          created_at?: string
+          credit_score?: string | null
+          credit_services?: string | null
+          down_payment?: string | null
+          email?: string | null
+          employment_status?: string | null
+          financial_institutions?: string[] | null
+          first_name?: string | null
+          first_time_buyer?: string | null
+          home_budget?: string | null
+          home_type?: string | null
+          home_use?: string | null
+          homebuying_journey?: string | null
+          id?: string
+          last_name?: string | null
+          loan_type?: string | null
+          location?: string | null
+          military_service?: string[] | null
+          phone?: string | null
+          purchase_timing?: string | null
+          real_estate_agent?: string | null
+          savings_amount?: string | null
+          updated_at?: string
+          zip_code?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

@@ -45,12 +45,21 @@ const AboutSection = () => {
               </span>
             </h3>
             
-            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 max-w-2xl mx-auto">
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 max-w-2xl mx-auto mb-12">
               <p className="text-xl text-white/90 leading-relaxed">
                 <span className="text-accent font-semibold">Teddy Carbone</span> has 10+ years in finance 
                 and is dedicated to hassle-free honest mortgage advice. Experience modern lending 
                 with personalized guidance every step of the way.
               </p>
+            </div>
+            
+            <div className="flex justify-center">
+              <button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                className="bg-gradient-to-r from-accent via-accent-light to-accent text-primary font-bold py-4 px-8 rounded-full hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-accent/50 text-lg min-w-[200px]"
+              >
+                Schedule Appointment
+              </button>
             </div>
           </div>
         </div>

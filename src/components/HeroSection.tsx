@@ -4,10 +4,12 @@ import { ArrowRight, Play } from "lucide-react";
 const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen bg-gradient-to-br from-primary via-primary-dark to-primary flex items-center justify-center overflow-hidden">
-      {/* Animated background elements */}
+      {/* Animated background elements - symmetrical */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse delay-1500"></div>
       </div>
       
       {/* Background Image with overlay */}
@@ -42,8 +44,8 @@ const HeroSection = () => {
             Get the guidance you need with cutting-edge technology and personalized service
           </p>
           
-          {/* Modern CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in delay-700">
+          {/* Modern CTA button */}
+          <div className="flex justify-center animate-fade-in delay-700">
             <a 
               href="https://2730429.my1003app.com/"
               target="_blank"
@@ -57,14 +59,6 @@ const HeroSection = () => {
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={20} />
               </Button>
             </a>
-            <Button 
-              size="lg" 
-              className="group bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-primary border-0 px-10 py-4 rounded-full text-lg font-bold min-w-[200px] shadow-2xl hover:shadow-accent/25 transition-all duration-300 transform hover:-translate-y-1"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Schedule Appointment
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={20} />
-            </Button>
           </div>
         </div>
       </div>

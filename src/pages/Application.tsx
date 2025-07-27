@@ -321,12 +321,14 @@ const Application = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary via-primary-dark to-primary">
-      {/* Animated background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-accent/5 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-accent/10 rounded-full blur-2xl animate-pulse-slow"></div>
-        <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-accent/8 rounded-full blur-xl animate-float" style={{animationDelay: '2s'}}></div>
+    <div className="min-h-screen animate-gradient-shift bg-gradient-to-br from-primary via-primary-dark via-secondary to-primary-dark bg-[length:400%_400%]">
+      {/* Enhanced animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-accent/8 rounded-full blur-3xl animate-float shadow-accent"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-56 h-56 bg-accent/12 rounded-full blur-2xl animate-pulse-slow shadow-glow"></div>
+        <div className="absolute top-1/2 left-1/2 w-40 h-40 bg-accent/10 rounded-full blur-xl animate-float shadow-accent" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-3/4 left-1/3 w-24 h-24 bg-success/8 rounded-full blur-lg animate-bounce-soft" style={{animationDelay: '4s'}}></div>
+        <div className="absolute top-1/3 right-1/3 w-32 h-32 bg-accent-light/6 rounded-full blur-2xl animate-float" style={{animationDelay: '6s'}}></div>
       </div>
 
       <div className="relative z-10">
@@ -346,25 +348,25 @@ const Application = () => {
         <div className="container mx-auto px-4 py-8">
           <div className="max-w-2xl mx-auto">
             {/* Header */}
-            <div className="text-center mb-12">
-              <h1 className="font-serif text-4xl lg:text-5xl font-bold text-white mb-4">
+            <div className="text-center mb-12 animate-slide-up">
+              <h1 className="font-serif text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">
                 {formatLoanType(loanType || '')} Application
               </h1>
-              <p className="text-white/80 text-lg">
+              <p className="text-white/80 text-lg bg-white/5 backdrop-blur-sm rounded-full px-6 py-2 inline-block border border-white/10">
                 Step {currentStep} of {totalSteps}
               </p>
             </div>
 
             {/* Progress Bar */}
-            <div className="mb-12">
-              <div className="relative">
+            <div className="mb-12 animate-slide-up" style={{animationDelay: '0.2s'}}>
+              <div className="relative bg-white/10 backdrop-blur-sm rounded-full p-3 shadow-medium border border-white/20">
                 <Progress 
                   value={progress} 
-                  className="h-4 bg-white/20 border border-white/30 rounded-full overflow-hidden backdrop-blur-sm"
+                  className="h-6 bg-gradient-to-r from-primary-dark to-primary rounded-full overflow-hidden shadow-inner"
                 />
                 <div 
-                  className="absolute top-6 text-sm text-accent font-medium transition-all duration-300"
-                  style={{ left: `${Math.max(0, Math.min(95, progress - 2.5))}%` }}
+                  className="absolute top-10 text-sm text-accent font-bold transition-all duration-500 bg-accent/10 backdrop-blur-sm px-3 py-1 rounded-full border border-accent/20"
+                  style={{ left: `${Math.max(0, Math.min(92, progress - 2.5))}%` }}
                 >
                   {Math.round(progress)}%
                 </div>
@@ -372,31 +374,32 @@ const Application = () => {
             </div>
 
             {/* Question Content */}
-            <div className="text-center mb-8">
-              <h2 className="font-serif text-3xl lg:text-4xl font-bold text-white mb-4">
+            <div className="text-center mb-8 animate-slide-up" style={{animationDelay: '0.4s'}}>
+              <h2 className="font-serif text-3xl lg:text-4xl font-bold text-white mb-4 drop-shadow-lg">
                 {currentQuestion.title}
               </h2>
               {currentQuestion.subtitle && (
-                <p className="text-white/70 text-lg mb-6">
+                <p className="text-white/70 text-lg mb-6 bg-white/5 backdrop-blur-sm rounded-lg px-6 py-3 border border-white/10 shadow-soft">
                   {currentQuestion.subtitle}
                 </p>
               )}
             </div>
 
             {/* Question Input/Options */}
-            <div className="mb-8">
+            <div className="mb-8 animate-slide-up" style={{animationDelay: '0.6s'}}>
               {currentQuestion.type === "single-choice" && (
                 <div className="space-y-4">
-                  {currentQuestion.options?.map((option) => (
+                  {currentQuestion.options?.map((option, index) => (
                     <Button
                       key={option}
                       variant="outline"
                       onClick={() => handleOptionSelect(option)}
-                      className={`w-full py-6 px-6 text-left text-lg rounded-xl border-2 transition-all duration-300 ${
+                      className={`w-full py-6 px-6 text-left text-lg rounded-xl border-2 transition-all duration-300 transform hover:scale-105 animate-slide-up shadow-medium backdrop-blur-sm ${
                         formData[currentQuestion.key as keyof typeof formData] === option
-                          ? 'bg-accent text-primary border-accent font-bold'
-                          : 'bg-white/5 text-white border-white/20 hover:bg-white/10 hover:border-white/30'
+                          ? 'bg-accent text-primary border-accent font-bold shadow-accent scale-105'
+                          : 'bg-white/5 text-white border-white/20 hover:bg-white/10 hover:border-accent/30 hover:shadow-glow'
                       }`}
+                      style={{animationDelay: `${0.8 + index * 0.1}s`}}
                     >
                       {option}
                     </Button>
@@ -406,19 +409,19 @@ const Application = () => {
 
               {currentQuestion.type === "multi-choice" && (
                 <div className="space-y-6">
-                  <div className="space-y-4">
-                    {currentQuestion.options?.map((option) => {
+                  <div className="space-y-4 bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 shadow-medium">
+                    {currentQuestion.options?.map((option, index) => {
                       const currentKey = currentQuestion.key as "militaryService" | "financialInstitutions";
                       return (
-                        <div key={option} className="flex items-center space-x-3">
+                        <div key={option} className="flex items-center space-x-4 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-300 animate-slide-up" style={{animationDelay: `${1.0 + index * 0.1}s`}}>
                           <input
                             type="checkbox"
                             id={option}
                             checked={formData[currentKey].includes(option)}
                             onChange={() => handleOptionSelect(option)}
-                            className="w-5 h-5 text-accent bg-white/10 border-white/30 rounded focus:ring-accent focus:ring-2"
+                            className="w-6 h-6 text-accent bg-white/10 border-white/30 rounded-md focus:ring-accent focus:ring-2 accent-accent"
                           />
-                          <label htmlFor={option} className="text-white text-lg">
+                          <label htmlFor={option} className="text-white text-lg cursor-pointer flex-1">
                             {option}
                           </label>
                         </div>
@@ -428,7 +431,7 @@ const Application = () => {
                   <Button
                     onClick={handleNext}
                     disabled={!isStepValid()}
-                    className="w-full bg-accent hover:bg-accent-light text-primary py-6 px-6 text-lg font-bold rounded-xl"
+                    className="w-full bg-accent hover:bg-accent-light text-primary py-6 px-6 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105 shadow-accent disabled:opacity-50 disabled:hover:scale-100"
                   >
                     NEXT
                   </Button>
@@ -443,18 +446,18 @@ const Application = () => {
                       placeholder={currentQuestion.placeholder}
                       value={formData[currentQuestion.key as keyof typeof formData] as string}
                       onChange={(e) => handleInputChange(currentQuestion.key, e.target.value)}
-                      className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/50 text-lg py-6 px-4 rounded-xl focus:bg-white/15 focus:border-accent transition-all duration-300"
+                      className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/50 text-lg py-6 px-4 rounded-xl focus:bg-white/15 focus:border-accent transition-all duration-300 shadow-medium backdrop-blur-sm hover:shadow-glow focus:shadow-accent"
                       autoFocus
                     />
-                    <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center text-accent text-sm font-medium">
-                      <Shield className="w-4 h-4 mr-1" />
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center text-accent text-sm font-medium bg-accent/10 backdrop-blur-sm px-2 py-1 rounded-md">
+                      <Shield className="w-4 h-4 mr-1 animate-pulse" />
                       SECURE
                     </div>
                   </div>
                   <Button
                     onClick={handleNext}
                     disabled={!isStepValid()}
-                    className="w-full bg-accent hover:bg-accent-light text-primary py-6 px-6 text-lg font-bold rounded-xl"
+                    className="w-full bg-accent hover:bg-accent-light text-primary py-6 px-6 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105 shadow-accent disabled:opacity-50 disabled:hover:scale-100"
                   >
                     NEXT
                   </Button>
@@ -464,30 +467,30 @@ const Application = () => {
               {currentQuestion.type === "name-input" && (
                 <div className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="relative">
+                    <div className="relative animate-slide-up" style={{animationDelay: '0.8s'}}>
                       <Input
                         type="text"
                         placeholder="First"
                         value={formData.firstName}
                         onChange={(e) => handleInputChange("firstName", e.target.value)}
-                        className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/50 text-lg py-6 px-4 rounded-xl focus:bg-white/15 focus:border-accent transition-all duration-300"
+                        className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/50 text-lg py-6 px-4 rounded-xl focus:bg-white/15 focus:border-accent transition-all duration-300 shadow-medium backdrop-blur-sm hover:shadow-glow focus:shadow-accent"
                         autoFocus
                       />
-                      <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center text-accent text-sm font-medium">
-                        <Shield className="w-4 h-4 mr-1" />
+                      <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center text-accent text-sm font-medium bg-accent/10 backdrop-blur-sm px-2 py-1 rounded-md">
+                        <Shield className="w-4 h-4 mr-1 animate-pulse" />
                         SECURE
                       </div>
                     </div>
-                    <div className="relative">
+                    <div className="relative animate-slide-up" style={{animationDelay: '1.0s'}}>
                       <Input
                         type="text"
                         placeholder="Last"
                         value={formData.lastName}
                         onChange={(e) => handleInputChange("lastName", e.target.value)}
-                        className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/50 text-lg py-6 px-4 rounded-xl focus:bg-white/15 focus:border-accent transition-all duration-300"
+                        className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/50 text-lg py-6 px-4 rounded-xl focus:bg-white/15 focus:border-accent transition-all duration-300 shadow-medium backdrop-blur-sm hover:shadow-glow focus:shadow-accent"
                       />
-                      <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center text-accent text-sm font-medium">
-                        <Shield className="w-4 h-4 mr-1" />
+                      <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center text-accent text-sm font-medium bg-accent/10 backdrop-blur-sm px-2 py-1 rounded-md">
+                        <Shield className="w-4 h-4 mr-1 animate-pulse" />
                         SECURE
                       </div>
                     </div>
@@ -495,7 +498,7 @@ const Application = () => {
                   <Button
                     onClick={handleNext}
                     disabled={!isStepValid()}
-                    className="w-full bg-accent hover:bg-accent-light text-primary py-6 px-6 text-lg font-bold rounded-xl"
+                    className="w-full bg-accent hover:bg-accent-light text-primary py-6 px-6 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105 shadow-accent disabled:opacity-50 disabled:hover:scale-100"
                   >
                     NEXT
                   </Button>
@@ -504,17 +507,17 @@ const Application = () => {
 
               {currentQuestion.type === "phone-input" && (
                 <div className="space-y-6">
-                  <div className="relative">
+                  <div className="relative animate-slide-up" style={{animationDelay: '0.8s'}}>
                     <Input
                       type="tel"
                       placeholder="(555) 123-4567"
                       value={formData.phone}
                       onChange={(e) => handleInputChange("phone", e.target.value)}
-                      className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/50 text-lg py-6 px-4 rounded-xl focus:bg-white/15 focus:border-accent transition-all duration-300"
+                      className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/50 text-lg py-6 px-4 rounded-xl focus:bg-white/15 focus:border-accent transition-all duration-300 shadow-medium backdrop-blur-sm hover:shadow-glow focus:shadow-accent"
                       autoFocus
                     />
-                    <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center text-accent text-sm font-medium">
-                      <Shield className="w-4 h-4 mr-1" />
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center text-accent text-sm font-medium bg-accent/10 backdrop-blur-sm px-2 py-1 rounded-md">
+                      <Shield className="w-4 h-4 mr-1 animate-pulse" />
                       SECURE
                     </div>
                   </div>
@@ -522,12 +525,12 @@ const Application = () => {
                   <Button
                     onClick={handleNext}
                     disabled={!isStepValid()}
-                    className="w-full bg-accent hover:bg-accent-light text-primary py-6 px-6 text-lg font-bold rounded-xl"
+                    className="w-full bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-primary py-6 px-6 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105 shadow-accent disabled:opacity-50 disabled:hover:scale-100 animate-shimmer bg-[length:200%_100%]"
                   >
-                    Get My Lender! <ArrowRight className="ml-2 w-5 h-5" />
+                    Get My Lender! <ArrowRight className="ml-2 w-5 h-5 animate-bounce-soft" />
                   </Button>
 
-                  <div className="text-xs text-white/60 text-center leading-relaxed">
+                  <div className="text-xs text-white/60 text-center leading-relaxed bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 shadow-soft">
                     By submitting, I am providing my electronic signature and I agree my information 
                     may be shared and that I may be contacted at this number (including through emails, 
                     and/or autodialed or pre-recorded calls or texts or generative AI, carrier rates may 
@@ -544,12 +547,12 @@ const Application = () => {
 
             {/* Back Button (for most questions) */}
             {currentQuestion.type !== "phone-input" && (
-              <div className="text-center">
+              <div className="text-center animate-slide-up" style={{animationDelay: '1.2s'}}>
                 <Button
                   variant="ghost"
                   onClick={handlePrevious}
                   disabled={currentStep === 1}
-                  className="text-white/80 hover:text-white py-3 px-6 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="text-white/80 hover:text-white py-3 px-6 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:bg-white/10 backdrop-blur-sm border border-transparent hover:border-white/20"
                 >
                   Back
                 </Button>

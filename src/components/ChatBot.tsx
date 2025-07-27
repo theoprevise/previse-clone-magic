@@ -82,7 +82,7 @@ const ChatBot = () => {
           <MessageCircle className="h-6 w-6" />
         </Button>
       ) : (
-        <Card className="w-80 h-96 shadow-2xl border-accent/20 ring-1 ring-accent/30 animate-scale-in">
+        <Card className="w-96 h-[32rem] shadow-2xl border-accent/20 ring-1 ring-accent/30 animate-scale-in">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 bg-accent text-accent-foreground">
             <CardTitle className="text-sm font-medium">Mortgage Assistant</CardTitle>
             <Button
@@ -94,7 +94,7 @@ const ChatBot = () => {
               <X className="h-4 w-4" />
             </Button>
           </CardHeader>
-          <CardContent className="p-0 flex flex-col h-80">
+          <CardContent className="p-0 flex flex-col h-[28rem]">
             <ScrollArea className="flex-1 p-4" ref={scrollRef}>
               <div className="space-y-3">
                 {messages.map((message, index) => (

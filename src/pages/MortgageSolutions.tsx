@@ -118,10 +118,11 @@ const MortgageSolutions = () => {
             {mortgageTypes.map((mortgage, index) => (
               <div 
                 key={index} 
-                className="group relative"
+                className="group relative cursor-pointer"
+                onClick={() => navigate(`/application/${mortgage.title.toLowerCase().replace(' ', '-')}`)}
               >
                 {/* Glass morphism card */}
-                <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 h-full hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/10">
+                <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 h-full hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/10 transform-gpu">
                   {/* Icon with glow effect */}
                   <div className="relative mb-8">
                     <div className="w-20 h-20 bg-gradient-to-br from-accent/20 to-accent/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -152,44 +153,6 @@ const MortgageSolutions = () => {
             ))}
           </div>
 
-          {/* CTA Section */}
-          <div className="text-center mt-16">
-            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-12 max-w-2xl mx-auto">
-              <h3 className="text-3xl font-bold text-white mb-6">
-                Ready to Get Started?
-              </h3>
-              <p className="text-white/80 mb-8 text-lg">
-                Contact us today to discuss which mortgage solution is right for you
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a 
-                  href="https://2730429.my1003app.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button 
-                    size="lg" 
-                    className="bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-primary border-0 px-8 py-4 rounded-full text-lg font-bold min-w-[180px] shadow-2xl hover:shadow-accent/25 transition-all duration-300 transform hover:-translate-y-1"
-                  >
-                    Apply Now
-                  </Button>
-                </a>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="border-accent text-accent hover:bg-accent hover:text-primary px-8 py-4 rounded-full text-lg font-bold min-w-[180px] transition-all duration-300"
-                  onClick={() => {
-                    navigate('/');
-                    setTimeout(() => {
-                      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }, 100);
-                  }}
-                >
-                  Schedule Consultation
-                </Button>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

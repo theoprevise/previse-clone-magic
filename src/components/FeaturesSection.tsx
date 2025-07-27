@@ -74,7 +74,10 @@ const FeaturesSection = () => {
             <div 
               key={index} 
               className="group relative cursor-pointer"
-              onClick={() => navigate('/mortgage-solutions')}
+              onClick={() => {
+                navigate('/mortgage-solutions');
+                setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+              }}
             >
               {/* Glass morphism card */}
               <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 h-full hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/10">

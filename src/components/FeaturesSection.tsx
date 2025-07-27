@@ -1,6 +1,9 @@
 import { Handshake, Clock, TrendingUp, CheckCircle } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const FeaturesSection = () => {
+  const navigate = useNavigate();
+  
   const features = [
     {
       icon: Handshake,
@@ -70,7 +73,8 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className="group relative"
+              className="group relative cursor-pointer"
+              onClick={() => navigate('/mortgage-solutions')}
             >
               {/* Glass morphism card */}
               <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 h-full hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/10">

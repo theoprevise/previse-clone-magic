@@ -7,49 +7,49 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 13% 18%;
+    --foreground: 0 0% 100%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 13% 18%;
+    --card: 220 45% 20%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 13% 18%;
+    --popover: 220 45% 20%;
+    --popover-foreground: 0 0% 100%;
 
-    /* Navy blue primary - professional and trustworthy */
-    --primary: 220 60% 15%;
-    --primary-foreground: 0 0% 98%;
-    --primary-light: 220 45% 25%;
-    --primary-dark: 220 70% 8%;
+    /* Dark blue primary matching the website */
+    --primary: 220 45% 20%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 220 40% 25%;
+    --primary-dark: 220 50% 15%;
 
-    /* Light gray secondary */
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 220 60% 15%;
+    /* Secondary blue */
+    --secondary: 220 40% 25%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 13% 45%;
+    --muted: 220 40% 25%;
+    --muted-foreground: 0 0% 70%;
 
-    /* Gold accent - professional financial color */
-    --accent: 45 90% 45%;
-    --accent-foreground: 220 60% 15%;
-    --accent-light: 45 85% 55%;
+    /* Gold accent matching the lighthouse logo */
+    --accent: 45 100% 65%;
+    --accent-foreground: 220 45% 20%;
+    --accent-light: 45 95% 70%;
 
-    --success: 140 70% 30%;
-    --success-foreground: 0 0% 98%;
+    --success: 140 70% 50%;
+    --success-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 95%;
-    --ring: 220 60% 15%;
+    --border: 220 35% 30%;
+    --input: 220 35% 25%;
+    --ring: 45 100% 65%;
 
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
     --gradient-hero: linear-gradient(135deg, hsl(var(--primary-dark)), hsl(var(--primary)));
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-light)));
 
-    --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.12);
-    --shadow-medium: 0 8px 30px -8px hsl(var(--primary) / 0.18);
-    --shadow-strong: 0 16px 40px -12px hsl(var(--primary) / 0.25);
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.25);
+    --shadow-medium: 0 8px 30px -8px hsl(0 0% 0% / 0.35);
+    --shadow-strong: 0 16px 40px -12px hsl(0 0% 0% / 0.45);
 
     --radius: 0.5rem;
 

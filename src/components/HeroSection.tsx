@@ -35,9 +35,9 @@ const HeroSection = () => {
           
           {/* Modern divider */}
           <div className="flex items-center justify-center mb-8 animate-fade-in delay-300">
-            <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent"></div>
+            <div className="w-20 h-0.5 bg-gradient-to-r from-transparent to-accent"></div>
             <div className="mx-4 w-2 h-2 bg-accent rounded-full"></div>
-            <div className="w-20 h-0.5 bg-gradient-to-r from-accent via-transparent to-transparent"></div>
+            <div className="w-20 h-0.5 bg-gradient-to-r from-accent to-transparent"></div>
           </div>
           
           <p className="text-xl lg:text-2xl text-white/90 mb-16 max-w-2xl mx-auto leading-relaxed animate-fade-in delay-500">

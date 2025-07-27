@@ -129,7 +129,7 @@ const ChatBot = () => {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Ask about mortgages..."
-                  className="flex-1 text-foreground"
+                  className="flex-1 text-gray-900 dark:text-white"
                   disabled={isLoading}
                 />
                 <Button 

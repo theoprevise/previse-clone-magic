@@ -1,4 +1,19 @@
+import { useEffect } from "react";
+
 const CalendlySection = () => {
+  useEffect(() => {
+    // Load Calendly script
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.head.appendChild(script);
+
+    // Clean up script when component unmounts
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
     <section id="contact" className="py-20 bg-primary">
       <div className="container mx-auto px-4">
@@ -9,10 +24,11 @@ const CalendlySection = () => {
           <div className="w-24 h-0.5 bg-accent mx-auto mb-16"></div>
 
           {/* Calendly inline widget */}
-          <div className="calendly-inline-widget" data-url="https://calendly.com/team-previsemortgage/30min?background_color=1e3557&text_color=ffffff" style={{minWidth:"320px", height:"700px"}}></div>
-          
-          {/* Load Calendly script */}
-          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+          <div 
+            className="calendly-inline-widget" 
+            data-url="https://calendly.com/team-previsemortgage/30min?background_color=1e3557&text_color=ffffff" 
+            style={{minWidth:"320px", height:"700px"}}
+          ></div>
         </div>
       </div>
     </section>

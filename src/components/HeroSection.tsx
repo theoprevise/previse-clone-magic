@@ -27,15 +27,14 @@ const HeroSection = () => {
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button 
-              variant="default" 
               size="lg" 
-              className="bg-accent hover:bg-accent-light text-primary px-8 py-3 rounded-full text-lg font-semibold min-w-[160px] shadow-lg"
+              className="bg-accent hover:bg-accent-light text-primary border-2 border-accent px-8 py-3 rounded-full text-lg font-semibold min-w-[160px] shadow-lg"
             >
               Apply Now
             </Button>
             <Button 
               size="lg" 
-              className="border-2 border-accent bg-transparent text-accent hover:bg-accent hover:text-primary px-8 py-3 rounded-full text-lg font-semibold min-w-[160px] shadow-lg"
+              className="bg-accent hover:bg-accent-light text-primary border-2 border-accent px-8 py-3 rounded-full text-lg font-semibold min-w-[160px] shadow-lg"
             >
               Schedule a Meeting
             </Button>

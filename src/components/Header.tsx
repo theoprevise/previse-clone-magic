@@ -16,9 +16,9 @@ const Header = () => {
           {/* Centered company logo */}
           <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center">
             <img 
-              src="/lovable-uploads/81c3d0e2-fc9d-4271-9810-968ae126ecde.png" 
+              src="https://img1.wsimg.com/isteam/ip/bc7cebe9-b604-4d0e-9c6e-660ac5ced5e1/tmplacbura9.webp/:/rs=w:205,h:70,cg:true,m/cr=w:205,h:70/qt=q:95" 
               alt="Previse Mortgage" 
-              className="h-8"
+              className="h-10"
             />
           </div>
           

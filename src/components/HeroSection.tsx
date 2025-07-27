@@ -52,8 +52,7 @@ const HeroSection = () => {
               size="lg" 
               className="group bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-primary border-0 px-10 py-4 rounded-full text-lg font-bold min-w-[200px] shadow-2xl hover:shadow-accent/25 transition-all duration-300 transform hover:-translate-y-1"
                   onClick={() => {
-                    navigate('/mortgage-solutions');
-                    setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+                    navigate('/application/Mortgage');
                   }}
             >
               Apply Now

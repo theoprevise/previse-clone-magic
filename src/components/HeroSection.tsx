@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button";
 const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen bg-primary flex items-center justify-center">
-      {/* Background Image */}
+      {/* Background Image - Professional handshake */}
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-60"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80')"
+          backgroundImage: "url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80')"
         }}
       />
       
@@ -29,14 +29,13 @@ const HeroSection = () => {
             <Button 
               variant="default" 
               size="lg" 
-              className="bg-primary-light hover:bg-primary text-white px-8 py-3 rounded-full text-lg font-semibold min-w-[160px]"
+              className="bg-accent hover:bg-accent-light text-primary px-8 py-3 rounded-full text-lg font-semibold min-w-[160px] shadow-lg"
             >
               Apply Now
             </Button>
             <Button 
-              variant="outline" 
               size="lg" 
-              className="border-2 border-primary-light text-white hover:bg-primary-light hover:text-white px-8 py-3 rounded-full text-lg font-semibold min-w-[160px]"
+              className="border-2 border-accent bg-transparent text-accent hover:bg-accent hover:text-primary px-8 py-3 rounded-full text-lg font-semibold min-w-[160px] shadow-lg"
             >
               Schedule a Meeting
             </Button>

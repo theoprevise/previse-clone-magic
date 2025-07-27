@@ -1,21 +1,30 @@
 import { Button } from "@/components/ui/button";
-import { Menu, Phone, Mail } from "lucide-react";
+import { Menu } from "lucide-react";
 
 const Header = () => {
   return (
     <header className="bg-primary border-b border-border sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
+          {/* Home button on the left */}
           <div className="flex items-center">
-            <div className="flex items-center space-x-3">
-              <div className="text-accent text-2xl">🏛️</div>
-              <h1 className="text-xl font-bold text-foreground tracking-wide">PREVISE</h1>
-            </div>
+            <a href="#home" className="text-foreground hover:text-accent transition-colors border-b-2 border-accent pb-1 font-medium">
+              Home
+            </a>
           </div>
           
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-foreground hover:text-accent transition-colors border-b-2 border-accent pb-1">Home</a>
-            <a href="#about" className="text-foreground hover:text-accent transition-colors">About</a>
+          {/* Centered company logo */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center">
+            <img 
+              src="/lovable-uploads/81c3d0e2-fc9d-4271-9810-968ae126ecde.png" 
+              alt="Previse Mortgage" 
+              className="h-8"
+            />
+          </div>
+          
+          {/* About button on the right */}
+          <nav className="hidden md:flex items-center">
+            <a href="#about" className="text-foreground hover:text-accent transition-colors font-medium">About</a>
           </nav>
 
           <Button variant="ghost" size="icon" className="md:hidden text-foreground">

@@ -250,11 +250,9 @@ const Application = () => {
       }));
       // Auto-advance for single choice questions
       if (currentQuestion.type === "single-choice") {
-        setTimeout(() => {
-          if (currentStep < totalSteps) {
-            setCurrentStep(prev => prev + 1);
-          }
-        }, 300);
+        if (currentStep < totalSteps) {
+          setCurrentStep(prev => prev + 1);
+        }
       }
     }
   };
@@ -272,8 +270,7 @@ const Application = () => {
     } else {
       // Submit form
       console.log("Form submitted:", formData);
-      alert("Application submitted successfully!");
-      navigate('/');
+      navigate('/thank-you');
     }
   };
 
@@ -527,7 +524,7 @@ const Application = () => {
                     disabled={!isStepValid()}
                     className="w-full bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-primary py-6 px-6 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105 shadow-accent disabled:opacity-50 disabled:hover:scale-100 animate-shimmer bg-[length:200%_100%]"
                   >
-                    Get My Lender! <ArrowRight className="ml-2 w-5 h-5 animate-bounce-soft" />
+                    Submit Application <ArrowRight className="ml-2 w-5 h-5 animate-bounce-soft" />
                   </Button>
 
                   <div className="text-xs text-white/60 text-center leading-relaxed bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 shadow-soft">

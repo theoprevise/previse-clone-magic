@@ -7,48 +7,51 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 210 10% 15%;
+    --foreground: 220 13% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 10% 15%;
+    --card-foreground: 220 13% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 10% 15%;
+    --popover-foreground: 220 13% 18%;
 
-    --primary: 210 80% 25%;
+    /* Navy blue primary - professional and trustworthy */
+    --primary: 220 60% 15%;
     --primary-foreground: 0 0% 98%;
-    --primary-light: 210 70% 35%;
-    --primary-dark: 210 85% 15%;
+    --primary-light: 220 45% 25%;
+    --primary-dark: 220 70% 8%;
 
-    --secondary: 210 15% 95%;
-    --secondary-foreground: 210 80% 25%;
+    /* Light gray secondary */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 60% 15%;
 
-    --muted: 210 15% 96%;
-    --muted-foreground: 210 10% 45%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 13% 45%;
 
-    --accent: 200 95% 45%;
-    --accent-foreground: 0 0% 98%;
-    --accent-light: 200 85% 55%;
+    /* Gold accent - professional financial color */
+    --accent: 45 90% 45%;
+    --accent-foreground: 220 60% 15%;
+    --accent-light: 45 85% 55%;
 
-    --success: 140 70% 35%;
+    --success: 140 70% 30%;
     --success-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 210 20% 90%;
-    --input: 210 20% 95%;
-    --ring: 210 80% 25%;
+    --border: 220 13% 91%;
+    --input: 220 13% 95%;
+    --ring: 220 60% 15%;
 
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
     --gradient-hero: linear-gradient(135deg, hsl(var(--primary-dark)), hsl(var(--primary)));
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-light)));
 
-    --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.15);
-    --shadow-medium: 0 8px 30px -8px hsl(var(--primary) / 0.25);
-    --shadow-strong: 0 16px 40px -12px hsl(var(--primary) / 0.35);
+    --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.12);
+    --shadow-medium: 0 8px 30px -8px hsl(var(--primary) / 0.18);
+    --shadow-strong: 0 16px 40px -12px hsl(var(--primary) / 0.25);
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
 

@@ -3,50 +3,49 @@ import { ArrowRight, Calculator, Shield, Clock } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative py-20 lg:py-32 bg-gradient-to-br from-primary-dark via-primary to-primary-light overflow-hidden">
-      <div className="absolute inset-0 bg-grid-white/10"></div>
-      <div className="container mx-auto px-4 relative z-10">
+    <section id="home" className="relative py-16 lg:py-24 bg-white">
+      <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="text-white">
-            <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
-              Your Dream Home
-              <span className="block text-accent-light">Starts Here</span>
+          <div>
+            <h1 className="font-serif text-4xl lg:text-5xl font-bold leading-tight mb-6 text-foreground">
+              Expert Mortgage Solutions
+              <span className="block text-primary">For Your Dream Home</span>
             </h1>
-            <p className="text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed">
-              Expert mortgage guidance and competitive rates to help you secure the perfect home loan. 
-              From first-time buyers to refinancing, we make homeownership possible.
+            <p className="text-lg lg:text-xl text-muted-foreground mb-8 leading-relaxed">
+              Professional mortgage guidance with competitive rates and personalized service. 
+              From purchase to refinance, we make homeownership achievable for every family.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Button variant="hero" size="xl" className="group">
                 Get Pre-Approved
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" size="xl" className="border-white text-white hover:bg-white hover:text-primary">
+              <Button variant="outline" size="xl">
                 Calculate Payment
               </Button>
             </div>
             
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
+            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border">
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-white/10 rounded-full mb-3">
-                  <Calculator className="text-accent-light" size={24} />
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-3">
+                  <Calculator className="text-primary" size={24} />
                 </div>
-                <h3 className="font-semibold mb-1">Quick Approval</h3>
-                <p className="text-white/80 text-sm">Get approved in 24 hours</p>
+                <h3 className="font-semibold mb-1 text-foreground">Quick Approval</h3>
+                <p className="text-muted-foreground text-sm">Get approved in 24 hours</p>
               </div>
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-white/10 rounded-full mb-3">
-                  <Shield className="text-accent-light" size={24} />
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-3">
+                  <Shield className="text-primary" size={24} />
                 </div>
-                <h3 className="font-semibold mb-1">Secure Process</h3>
-                <p className="text-white/80 text-sm">Bank-level security</p>
+                <h3 className="font-semibold mb-1 text-foreground">Secure Process</h3>
+                <p className="text-muted-foreground text-sm">Bank-level security</p>
               </div>
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-white/10 rounded-full mb-3">
-                  <Clock className="text-accent-light" size={24} />
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-3">
+                  <Clock className="text-primary" size={24} />
                 </div>
-                <h3 className="font-semibold mb-1">Fast Closing</h3>
-                <p className="text-white/80 text-sm">Close in 15-30 days</p>
+                <h3 className="font-semibold mb-1 text-foreground">Fast Closing</h3>
+                <p className="text-muted-foreground text-sm">Close in 15-30 days</p>
               </div>
             </div>
           </div>

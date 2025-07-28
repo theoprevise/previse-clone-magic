@@ -26,8 +26,8 @@ serve(async (req) => {
 
     // Create admin user
     const { data: authData, error: authError } = await supabaseAdmin.auth.admin.createUser({
-      email: 'admin0@previsemortgage.com',
-      password: 'admin0',
+      email: 'teddy@previsemortgage.com',
+      password: 'Previse*2025',
       email_confirm: true
     })
 
@@ -59,7 +59,7 @@ serve(async (req) => {
       JSON.stringify({ 
         success: true, 
         message: 'Admin user created successfully',
-        email: 'admin0@previsemortgage.com',
+        email: 'teddy@previsemortgage.com',
         userId: authData.user.id
       }),
       { 

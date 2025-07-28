@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { Eye } from "lucide-react";
+import { Eye, LogOut, Shield } from "lucide-react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { useAuth } from "@/hooks/useAuth";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 interface MortgageApplication {
   id: string;
@@ -41,10 +44,21 @@ interface MortgageApplication {
 const AdminDashboard = () => {
   const [applications, setApplications] = useState<MortgageApplication[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const { user, isAdmin, signOut, loading: authLoading } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    fetchApplications();
-  }, []);
+    // Redirect if not authenticated or not admin
+    if (!authLoading && (!user || !isAdmin)) {
+      navigate("/admin-login");
+      return;
+    }
+    
+    if (user && isAdmin) {
+      fetchApplications();
+    }
+  }, [user, isAdmin, authLoading, navigate]);
 
   const fetchApplications = async () => {
     try {
@@ -55,8 +69,10 @@ const AdminDashboard = () => {
 
       if (error) throw error;
       setApplications(data || []);
+      setError("");
     } catch (error) {
       console.error('Error fetching applications:', error);
+      setError('Failed to load applications. Please check your permissions.');
     } finally {
       setLoading(false);
     }
@@ -71,6 +87,28 @@ const AdminDashboard = () => {
       minute: '2-digit'
     });
   };
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate("/admin-login");
+  };
+
+  // Show loading while checking authentication
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center">
+        <div className="text-center">
+          <Shield className="h-8 w-8 animate-spin mx-auto mb-4" />
+          <p>Checking authentication...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Don't render if not authenticated (will redirect)
+  if (!user || !isAdmin) {
+    return null;
+  }
 
   const ApplicationDetailDialog = ({ application }: { application: MortgageApplication }) => (
     <Dialog>
@@ -145,7 +183,10 @@ const AdminDashboard = () => {
     return (
       <div className="min-h-screen bg-gradient-to-br from-primary/5 to-secondary/5 p-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center">Loading applications...</div>
+          <div className="text-center">
+            <Shield className="h-8 w-8 animate-spin mx-auto mb-4" />
+            <p>Loading applications...</p>
+          </div>
         </div>
       </div>
     );
@@ -154,10 +195,23 @@ const AdminDashboard = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary/5 to-secondary/5 p-8">
       <div className="max-w-7xl mx-auto space-y-8">
-        <div className="text-center space-y-4">
-          <h1 className="text-4xl font-bold text-primary">Admin Dashboard</h1>
-          <p className="text-xl text-muted-foreground">Mortgage Application Management</p>
+        <div className="flex justify-between items-center">
+          <div className="space-y-2">
+            <h1 className="text-4xl font-bold text-primary">Admin Dashboard</h1>
+            <p className="text-xl text-muted-foreground">Mortgage Application Management</p>
+            <p className="text-sm text-muted-foreground">Welcome, {user.email}</p>
+          </div>
+          <Button variant="outline" onClick={handleSignOut}>
+            <LogOut className="h-4 w-4 mr-2" />
+            Sign Out
+          </Button>
         </div>
+
+        {error && (
+          <Alert variant="destructive">
+            <AlertDescription>{error}</AlertDescription>
+          </Alert>
+        )}
 
         <Card>
           <CardHeader>

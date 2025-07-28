@@ -27,7 +27,7 @@ const HeroSection = () => {
         <div className="max-w-5xl mx-auto">
           {/* Main heading with modern typography */}
           <div className="mb-8 animate-fade-in">
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-8xl font-bold leading-tight mb-6 text-white">
+            <h1 className="font-serif text-5xl md:text-6xl lg:text-8xl font-bold leading-normal mb-6 text-white">
               <span className="block mb-4">Professionalized</span>
               <span className="block bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">
                 Loan Financing

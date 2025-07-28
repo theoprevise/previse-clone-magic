@@ -67,6 +67,7 @@ const AdminLogin = () => {
                 placeholder="admin@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                className="text-black"
                 required
               />
             </div>
@@ -79,6 +80,7 @@ const AdminLogin = () => {
                 placeholder="Enter your password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                className="text-black"
                 required
               />
             </div>

@@ -53,7 +53,7 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-b from-primary to-primary-dark relative overflow-hidden">
+    <section id="faq" className="py-24 bg-gradient-to-b from-primary to-primary-dark relative overflow-hidden" itemScope itemType="https://schema.org/FAQPage">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float" style={{animationDelay: '1s'}}></div>
@@ -91,7 +91,7 @@ const FAQSection = () => {
 
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300">
+              <article key={index} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300" itemScope itemType="https://schema.org/Question">
                 <button
                   onClick={() => toggleFAQ(index)}
                   className="w-full p-6 text-left focus:outline-none group"
@@ -101,7 +101,7 @@ const FAQSection = () => {
                       <div className="text-3xl group-hover:scale-110 transition-transform duration-300">
                         {faq.icon}
                       </div>
-                      <h3 className="text-lg font-semibold text-white group-hover:text-accent transition-colors duration-300">
+                      <h3 className="text-lg font-semibold text-white group-hover:text-accent transition-colors duration-300" itemProp="name">
                         {faq.question}
                       </h3>
                     </div>
@@ -115,13 +115,13 @@ const FAQSection = () => {
                   </div>
                 </button>
                 {openIndex === index && (
-                  <div className="px-6 pb-6 animate-fade-in">
+                  <div className="px-6 pb-6 animate-fade-in" itemScope itemType="https://schema.org/Answer">
                     <div className="pl-16 border-l-2 border-accent/30 ml-4">
-                      <p className="text-white/90 leading-relaxed text-lg">{faq.answer}</p>
+                      <p className="text-white/90 leading-relaxed text-lg" itemProp="text">{faq.answer}</p>
                     </div>
                   </div>
                 )}
-              </div>
+              </article>
             ))}
           </div>
         </div>

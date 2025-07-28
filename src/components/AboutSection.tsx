@@ -27,8 +27,11 @@ const AboutSection = () => {
               <div className="relative max-w-sm mx-auto">
                 <img 
                   src="/lovable-uploads/db4b2cd8-b7e7-45fa-a676-5be234dd4750.png" 
-                  alt="Teddy Carbone - Mortgage Professional"
+                  alt="Teddy Carbone - Professional Mortgage Loan Officer with 10+ years experience in home financing and refinancing solutions"
                   className="rounded-2xl shadow-2xl w-full group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  width="400"
+                  height="400"
                 />
                 {/* Glow effect */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-accent/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

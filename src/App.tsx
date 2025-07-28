@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import MortgageSolutions from "./pages/MortgageSolutions";
 import Application from "./pages/Application";
 import ThankYou from "./pages/ThankYou";
+import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/mortgage-solutions" element={<MortgageSolutions />} />
           <Route path="/application/:loanType" element={<Application />} />
           <Route path="/thank-you" element={<ThankYou />} />
+          <Route path="/admin" element={<AdminDashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

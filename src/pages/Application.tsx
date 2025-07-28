@@ -406,9 +406,6 @@ const Application = () => {
               <h1 className="font-serif text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">
                 {formatLoanType(loanType || '')} Application
               </h1>
-              <p className="text-white/80 text-lg bg-white/5 backdrop-blur-sm rounded-full px-6 py-2 inline-block border border-white/10">
-                Step {currentStep} of {totalSteps}
-              </p>
             </div>
 
             {/* Progress Bar */}

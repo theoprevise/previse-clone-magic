@@ -118,59 +118,59 @@ const AdminDashboard = () => {
           View Details
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-4xl max-h-[80vh]">
+      <DialogContent className="max-w-4xl max-h-[80vh] bg-card text-card-foreground border border-border">
         <DialogHeader>
-          <DialogTitle>Application Details</DialogTitle>
-          <DialogDescription>
+          <DialogTitle className="text-primary">Application Details</DialogTitle>
+          <DialogDescription className="text-muted-foreground">
             Application from {application.first_name} {application.last_name} - {formatDate(application.created_at)}
           </DialogDescription>
         </DialogHeader>
         <ScrollArea className="h-[60vh] pr-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-card-foreground">
             <div className="space-y-3">
-              <h3 className="font-semibold text-lg">Personal Information</h3>
-              <div className="space-y-2">
-                <p><strong>Name:</strong> {application.first_name} {application.last_name}</p>
-                <p><strong>Email:</strong> {application.email}</p>
-                <p><strong>Phone:</strong> {application.phone}</p>
-                <p><strong>Location:</strong> {application.location}</p>
-                <p><strong>ZIP Code:</strong> {application.zip_code}</p>
+              <h3 className="font-semibold text-lg text-primary">Personal Information</h3>
+              <div className="space-y-2 text-card-foreground">
+                <p><strong className="text-primary">Name:</strong> {application.first_name} {application.last_name}</p>
+                <p><strong className="text-primary">Email:</strong> {application.email}</p>
+                <p><strong className="text-primary">Phone:</strong> {application.phone}</p>
+                <p><strong className="text-primary">Location:</strong> {application.location}</p>
+                <p><strong className="text-primary">ZIP Code:</strong> {application.zip_code}</p>
               </div>
             </div>
 
             <div className="space-y-3">
-              <h3 className="font-semibold text-lg">Loan Information</h3>
-              <div className="space-y-2">
-                <p><strong>Loan Type:</strong> {application.loan_type}</p>
-                <p><strong>Home Budget:</strong> {application.home_budget}</p>
-                <p><strong>Home Type:</strong> {application.home_type}</p>
-                <p><strong>Home Use:</strong> {application.home_use}</p>
-                <p><strong>First Time Buyer:</strong> {application.first_time_buyer}</p>
-                <p><strong>Purchase Timing:</strong> {application.purchase_timing}</p>
+              <h3 className="font-semibold text-lg text-primary">Loan Information</h3>
+              <div className="space-y-2 text-card-foreground">
+                <p><strong className="text-primary">Loan Type:</strong> {application.loan_type}</p>
+                <p><strong className="text-primary">Home Budget:</strong> {application.home_budget}</p>
+                <p><strong className="text-primary">Home Type:</strong> {application.home_type}</p>
+                <p><strong className="text-primary">Home Use:</strong> {application.home_use}</p>
+                <p><strong className="text-primary">First Time Buyer:</strong> {application.first_time_buyer}</p>
+                <p><strong className="text-primary">Purchase Timing:</strong> {application.purchase_timing}</p>
               </div>
             </div>
 
             <div className="space-y-3">
-              <h3 className="font-semibold text-lg">Financial Information</h3>
-              <div className="space-y-2">
-                <p><strong>Down Payment:</strong> {application.down_payment}</p>
-                <p><strong>Savings Amount:</strong> {application.savings_amount}</p>
-                <p><strong>Employment Status:</strong> {application.employment_status}</p>
-                <p><strong>Annual Income:</strong> {application.annual_income}</p>
-                <p><strong>Credit Score:</strong> {application.credit_score}</p>
-                <p><strong>Bankruptcy:</strong> {application.bankruptcy}</p>
-                <p><strong>Credit Services:</strong> {application.credit_services}</p>
+              <h3 className="font-semibold text-lg text-primary">Financial Information</h3>
+              <div className="space-y-2 text-card-foreground">
+                <p><strong className="text-primary">Down Payment:</strong> {application.down_payment}</p>
+                <p><strong className="text-primary">Savings Amount:</strong> {application.savings_amount}</p>
+                <p><strong className="text-primary">Employment Status:</strong> {application.employment_status}</p>
+                <p><strong className="text-primary">Annual Income:</strong> {application.annual_income}</p>
+                <p><strong className="text-primary">Credit Score:</strong> {application.credit_score}</p>
+                <p><strong className="text-primary">Bankruptcy:</strong> {application.bankruptcy}</p>
+                <p><strong className="text-primary">Credit Services:</strong> {application.credit_services}</p>
               </div>
             </div>
 
             <div className="space-y-3">
-              <h3 className="font-semibold text-lg">Additional Information</h3>
-              <div className="space-y-2">
-                <p><strong>Military Service:</strong> {application.military_service?.join(', ') || 'None'}</p>
-                <p><strong>Financial Institutions:</strong> {application.financial_institutions?.join(', ') || 'None'}</p>
-                <p><strong>Buying Obstacles:</strong> {application.buying_obstacles}</p>
-                <p><strong>Real Estate Agent:</strong> {application.real_estate_agent}</p>
-                <p><strong>Homebuying Journey:</strong> {application.homebuying_journey}</p>
+              <h3 className="font-semibold text-lg text-primary">Additional Information</h3>
+              <div className="space-y-2 text-card-foreground">
+                <p><strong className="text-primary">Military Service:</strong> {application.military_service?.join(', ') || 'None'}</p>
+                <p><strong className="text-primary">Financial Institutions:</strong> {application.financial_institutions?.join(', ') || 'None'}</p>
+                <p><strong className="text-primary">Buying Obstacles:</strong> {application.buying_obstacles}</p>
+                <p><strong className="text-primary">Real Estate Agent:</strong> {application.real_estate_agent}</p>
+                <p><strong className="text-primary">Homebuying Journey:</strong> {application.homebuying_journey}</p>
               </div>
             </div>
           </div>

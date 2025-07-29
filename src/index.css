@@ -6,14 +6,16 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 100%;
+    /* Light, neutral background */
+    --background: 0 0% 98%;
+    --foreground: 220 15% 20%;
 
-    --card: 220 45% 20%;
-    --card-foreground: 0 0% 100%;
+    /* Softer card colors for better readability */
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 20%;
 
-    --popover: 220 45% 20%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 20%;
 
     /* Dark blue primary matching the website */
     --primary: 220 45% 20%;
@@ -21,12 +23,13 @@
     --primary-light: 220 40% 25%;
     --primary-dark: 220 50% 15%;
 
-    /* Secondary blue */
-    --secondary: 220 40% 25%;
-    --secondary-foreground: 0 0% 100%;
+    /* Lighter secondary for better contrast */
+    --secondary: 220 20% 85%;
+    --secondary-foreground: 220 45% 20%;
 
-    --muted: 220 40% 25%;
-    --muted-foreground: 0 0% 70%;
+    /* Better muted colors */
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 15% 40%;
 
     /* Gold accent matching the lighthouse logo */
     --accent: 45 100% 65%;
@@ -39,8 +42,9 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 35% 30%;
-    --input: 220 35% 25%;
+    /* Softer borders and inputs */
+    --border: 220 15% 85%;
+    --input: 0 0% 100%;
     --ring: 45 100% 65%;
 
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));

@@ -277,33 +277,12 @@ const Application = () => {
       console.log('Raw formData:', formData);
       
       try {
-        // Test without array fields first
+        // Try with minimal fields first
         const applicationData = {
           loan_type: loanType,
-          homebuying_journey: formData.homebuyingJourney,
-          home_budget: formData.homeBudget,
-          home_type: formData.homeType,
-          home_use: formData.homeUse,
-          first_time_buyer: formData.firstTimeBuyer,
-          purchase_timing: formData.purchaseTiming,
-          buying_obstacles: formData.buyingObstacles,
-          // Temporarily comment out array fields
-          // military_service: Array.isArray(formData.militaryService) && formData.militaryService.length > 0 ? formData.militaryService : null,
-          down_payment: formData.downPayment,
-          savings_amount: formData.savingsAmount,
-          // financial_institutions: Array.isArray(formData.financialInstitutions) && formData.financialInstitutions.length > 0 ? formData.financialInstitutions : null,
-          employment_status: formData.employmentStatus,
-          annual_income: formData.annualIncome,
-          bankruptcy: formData.bankruptcy,
-          credit_score: formData.creditScore,
-          credit_services: formData.creditServices,
-          real_estate_agent: formData.realEstateAgent,
-          location: formData.location,
-          zip_code: formData.zipCode,
           email: formData.email,
           first_name: formData.firstName,
-          last_name: formData.lastName,
-          phone: formData.phone
+          last_name: formData.lastName
         };
         
         console.log('About to insert application data:', JSON.stringify(applicationData, null, 2));

@@ -274,35 +274,41 @@ const Application = () => {
     } else {
       // Submit form to Supabase
       setIsSubmitting(true);
+      console.log('Submitting application with data:', formData);
+      console.log('Loan type:', loanType);
       try {
-        const { error } = await supabase
+        const applicationData = {
+          loan_type: loanType,
+          homebuying_journey: formData.homebuyingJourney,
+          home_budget: formData.homeBudget,
+          home_type: formData.homeType,
+          home_use: formData.homeUse,
+          first_time_buyer: formData.firstTimeBuyer,
+          purchase_timing: formData.purchaseTiming,
+          buying_obstacles: formData.buyingObstacles,
+          military_service: formData.militaryService,
+          down_payment: formData.downPayment,
+          savings_amount: formData.savingsAmount,
+          financial_institutions: formData.financialInstitutions,
+          employment_status: formData.employmentStatus,
+          annual_income: formData.annualIncome,
+          bankruptcy: formData.bankruptcy,
+          credit_score: formData.creditScore,
+          credit_services: formData.creditServices,
+          real_estate_agent: formData.realEstateAgent,
+          location: formData.location,
+          zip_code: formData.zipCode,
+          email: formData.email,
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          phone: formData.phone
+        };
+        
+        console.log('About to insert application data:', applicationData);
+        
+        const { data, error } = await supabase
           .from('mortgage_applications')
-          .insert({
-            loan_type: loanType,
-            homebuying_journey: formData.homebuyingJourney,
-            home_budget: formData.homeBudget,
-            home_type: formData.homeType,
-            home_use: formData.homeUse,
-            first_time_buyer: formData.firstTimeBuyer,
-            purchase_timing: formData.purchaseTiming,
-            buying_obstacles: formData.buyingObstacles,
-            military_service: formData.militaryService,
-            down_payment: formData.downPayment,
-            savings_amount: formData.savingsAmount,
-            financial_institutions: formData.financialInstitutions,
-            employment_status: formData.employmentStatus,
-            annual_income: formData.annualIncome,
-            bankruptcy: formData.bankruptcy,
-            credit_score: formData.creditScore,
-            credit_services: formData.creditServices,
-            real_estate_agent: formData.realEstateAgent,
-            location: formData.location,
-            zip_code: formData.zipCode,
-            email: formData.email,
-            first_name: formData.firstName,
-            last_name: formData.lastName,
-            phone: formData.phone
-          });
+          .insert(applicationData);
 
         if (error) {
           console.error('Error submitting application:', error);

@@ -305,6 +305,8 @@ const Application = () => {
         };
         
         console.log('About to insert application data:', JSON.stringify(applicationData, null, 2));
+        console.log('Military service array:', formData.militaryService);
+        console.log('Financial institutions array:', formData.financialInstitutions);
         
         // Insert without trying to select the result since RLS prevents public reads
         const { error } = await supabase

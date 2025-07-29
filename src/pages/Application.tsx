@@ -279,7 +279,8 @@ const Application = () => {
       console.log('Financial institutions type:', typeof formData.financialInstitutions, formData.financialInstitutions);
       
       try {
-        const applicationData = {
+        // First, let's try with just basic fields to isolate the issue
+        const basicData = {
           loan_type: loanType,
           homebuying_journey: formData.homebuyingJourney,
           home_budget: formData.homeBudget,
@@ -288,10 +289,8 @@ const Application = () => {
           first_time_buyer: formData.firstTimeBuyer,
           purchase_timing: formData.purchaseTiming,
           buying_obstacles: formData.buyingObstacles,
-          military_service: Array.isArray(formData.militaryService) && formData.militaryService.length > 0 ? formData.militaryService : null,
           down_payment: formData.downPayment,
           savings_amount: formData.savingsAmount,
-          financial_institutions: Array.isArray(formData.financialInstitutions) && formData.financialInstitutions.length > 0 ? formData.financialInstitutions : null,
           employment_status: formData.employmentStatus,
           annual_income: formData.annualIncome,
           bankruptcy: formData.bankruptcy,
@@ -305,27 +304,42 @@ const Application = () => {
           last_name: formData.lastName,
           phone: formData.phone
         };
-        
-        console.log('About to insert application data:', JSON.stringify(applicationData, null, 2));
-        
-        const { data, error } = await supabase
-          .from('mortgage_applications')
-          .insert(applicationData);
 
-        if (error) {
-          console.error('Error submitting application:', error);
-          toast({
-            title: "Error",
-            description: "Failed to submit application. Please try again.",
-            variant: "destructive",
-          });
-        } else {
-          toast({
-            title: "Success!",
-            description: "Your application has been submitted successfully.",
-          });
-          navigate('/thank-you');
+        console.log('About to insert basic data first:', JSON.stringify(basicData, null, 2));
+        
+        const { data: insertData, error: insertError } = await supabase
+          .from('mortgage_applications')
+          .insert(basicData)
+          .select()
+          .single();
+
+        if (insertError) {
+          console.error('Error with basic insert:', insertError);
+          // If basic insert fails, throw the error
+          throw insertError;
         }
+
+        console.log('Basic insert successful, now updating with arrays:', insertData);
+
+        // Now update with the array fields
+        const { error: updateError } = await supabase
+          .from('mortgage_applications')
+          .update({
+            military_service: formData.militaryService && formData.militaryService.length > 0 ? formData.militaryService : null,
+            financial_institutions: formData.financialInstitutions && formData.financialInstitutions.length > 0 ? formData.financialInstitutions : null
+          })
+          .eq('id', insertData.id);
+
+        if (updateError) {
+          console.error('Error updating with arrays:', updateError);
+          throw updateError;
+        }
+
+        toast({
+          title: "Success!",
+          description: "Your application has been submitted successfully.",
+        });
+        navigate('/thank-you');
       } catch (error) {
         console.error('Error submitting application:', error);
         toast({

@@ -277,6 +277,7 @@ const Application = () => {
       console.log('Raw formData:', formData);
       
       try {
+        // Test without array fields first
         const applicationData = {
           loan_type: loanType,
           homebuying_journey: formData.homebuyingJourney,
@@ -286,10 +287,11 @@ const Application = () => {
           first_time_buyer: formData.firstTimeBuyer,
           purchase_timing: formData.purchaseTiming,
           buying_obstacles: formData.buyingObstacles,
-          military_service: Array.isArray(formData.militaryService) && formData.militaryService.length > 0 ? formData.militaryService : null,
+          // Temporarily comment out array fields
+          // military_service: Array.isArray(formData.militaryService) && formData.militaryService.length > 0 ? formData.militaryService : null,
           down_payment: formData.downPayment,
           savings_amount: formData.savingsAmount,
-          financial_institutions: Array.isArray(formData.financialInstitutions) && formData.financialInstitutions.length > 0 ? formData.financialInstitutions : null,
+          // financial_institutions: Array.isArray(formData.financialInstitutions) && formData.financialInstitutions.length > 0 ? formData.financialInstitutions : null,
           employment_status: formData.employmentStatus,
           annual_income: formData.annualIncome,
           bankruptcy: formData.bankruptcy,

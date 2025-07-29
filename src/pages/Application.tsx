@@ -274,8 +274,10 @@ const Application = () => {
     } else {
       // Submit form to Supabase
       setIsSubmitting(true);
-      console.log('Submitting application with data:', formData);
-      console.log('Loan type:', loanType);
+      console.log('Raw formData:', formData);
+      console.log('Military service type:', typeof formData.militaryService, formData.militaryService);
+      console.log('Financial institutions type:', typeof formData.financialInstitutions, formData.financialInstitutions);
+      
       try {
         const applicationData = {
           loan_type: loanType,

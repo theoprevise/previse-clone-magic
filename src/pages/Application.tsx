@@ -380,15 +380,7 @@ const Application = () => {
   }, []);
 
   return (
-    <div className="min-h-screen animate-gradient-shift bg-gradient-to-br from-primary via-primary-dark via-secondary to-primary-dark bg-[length:400%_400%]">
-      {/* Enhanced animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-accent/8 rounded-full blur-3xl animate-float shadow-accent"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-56 h-56 bg-accent/12 rounded-full blur-2xl animate-pulse-slow shadow-glow"></div>
-        <div className="absolute top-1/2 left-1/2 w-40 h-40 bg-accent/10 rounded-full blur-xl animate-float shadow-accent" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-3/4 left-1/3 w-24 h-24 bg-success/8 rounded-full blur-lg animate-bounce-soft" style={{animationDelay: '4s'}}></div>
-        <div className="absolute top-1/3 right-1/3 w-32 h-32 bg-accent-light/6 rounded-full blur-2xl animate-float" style={{animationDelay: '6s'}}></div>
-      </div>
+    <div className="min-h-screen bg-[var(--gradient-application)]">
 
       <div className="relative z-10">
         {/* Header */}

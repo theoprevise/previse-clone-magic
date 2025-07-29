@@ -306,7 +306,7 @@ const Application = () => {
           phone: formData.phone
         };
         
-        console.log('About to insert application data:', applicationData);
+        console.log('About to insert application data:', JSON.stringify(applicationData, null, 2));
         
         const { data, error } = await supabase
           .from('mortgage_applications')

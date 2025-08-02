@@ -6,57 +6,61 @@
 
 @layer base {
   :root {
-    /* Light, neutral background */
-    --background: 0 0% 98%;
-    --foreground: 220 15% 20%;
+    /* Cyberpunk dark background with subtle grey tones */
+    --background: 240 15% 8%;
+    --foreground: 0 0% 95%;
 
-    /* Softer card colors for better readability */
-    --card: 0 0% 100%;
-    --card-foreground: 220 15% 20%;
+    /* Dark cards with subtle purple tints */
+    --card: 260 20% 12%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 20%;
+    --popover: 260 20% 12%;
+    --popover-foreground: 0 0% 95%;
 
-    /* Dark blue primary matching the website */
-    --primary: 220 45% 20%;
+    /* Deep purple primary with neon accents */
+    --primary: 260 80% 25%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 220 40% 25%;
-    --primary-dark: 220 50% 15%;
+    --primary-light: 280 60% 45%;
+    --primary-dark: 260 90% 15%;
 
-    /* Lighter secondary for better contrast */
-    --secondary: 220 20% 85%;
-    --secondary-foreground: 220 45% 20%;
+    /* Dark grey secondary with purple hints */
+    --secondary: 240 15% 20%;
+    --secondary-foreground: 0 0% 90%;
 
-    /* Better muted colors */
-    --muted: 220 15% 95%;
-    --muted-foreground: 220 15% 40%;
+    /* Muted dark greys */
+    --muted: 240 10% 15%;
+    --muted-foreground: 240 5% 65%;
 
-    /* Gold accent matching the lighthouse logo */
-    --accent: 45 100% 65%;
-    --accent-foreground: 220 45% 20%;
-    --accent-light: 45 95% 70%;
+    /* Neon pink accent for cyberpunk feel */
+    --accent: 330 100% 70%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 320 90% 80%;
 
-    --success: 140 70% 50%;
+    /* Cyberpunk orange for success states */
+    --success: 25 100% 60%;
     --success-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    /* Neon red for destructive actions */
+    --destructive: 0 100% 65%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Softer borders and inputs */
-    --border: 220 15% 85%;
-    --input: 0 0% 100%;
-    --ring: 45 100% 65%;
+    /* Dark borders with subtle purple glow */
+    --border: 260 30% 25%;
+    --input: 260 20% 12%;
+    --ring: 330 100% 70%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary-dark)), hsl(var(--primary)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-light)));
-    --gradient-application: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 25%, hsl(var(--primary)) 50%, hsl(var(--secondary)) 75%, hsl(var(--primary-dark)) 100%);
+    /* Cyberpunk gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary-dark)), hsl(var(--primary)), hsl(330 100% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(240 15% 8%), hsl(var(--primary-dark)), hsl(330 100% 70%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(25 100% 60%));
+    --gradient-application: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(330 100% 70%) 25%, hsl(25 100% 60%) 50%, hsl(var(--primary-light)) 75%, hsl(var(--primary-dark)) 100%);
 
-    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.25);
-    --shadow-medium: 0 8px 30px -8px hsl(0 0% 0% / 0.35);
-    --shadow-strong: 0 16px 40px -12px hsl(0 0% 0% / 0.45);
-    --shadow-accent: 0 10px 30px -5px hsl(var(--accent) / 0.3);
-    --shadow-glow: 0 0 20px hsl(var(--accent) / 0.4);
+    /* Neon glow shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(330 100% 70% / 0.25);
+    --shadow-medium: 0 8px 30px -8px hsl(260 80% 25% / 0.35);
+    --shadow-strong: 0 16px 40px -12px hsl(330 100% 70% / 0.45);
+    --shadow-accent: 0 10px 30px -5px hsl(var(--accent) / 0.5);
+    --shadow-glow: 0 0 30px hsl(var(--accent) / 0.6);
 
     --radius: 0.5rem;
 

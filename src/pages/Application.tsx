@@ -328,7 +328,7 @@ const Application = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1C2C4B] to-[#243555]">
+    <div className="min-h-screen bg-background">
 
       <div className="relative z-10">
         {/* Header */}

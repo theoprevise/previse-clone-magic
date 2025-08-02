@@ -19,50 +19,40 @@ const Application = () => {
     homebuyingJourney: "",
     // Step 2: Home budget
     homeBudget: "",
-    // Step 3: Home type
-    homeType: "",
-    // Step 4: Home use
-    homeUse: "",
-    // Step 5: First time buyer
+    // Step 3: First time buyer
     firstTimeBuyer: "",
-    // Step 6: Purchase timing
+    // Step 4: Purchase timing
     purchaseTiming: "",
-    // Step 7: Buying obstacles
-    buyingObstacles: "",
-    // Step 8: Military service
+    // Step 5: Military service
     militaryService: [] as string[],
-    // Step 9: Down payment
-    downPayment: "",
-    // Step 10: Savings amount
+    // Step 6: Savings amount
     savingsAmount: "",
-    // Step 11: Financial institutions
-    financialInstitutions: [] as string[],
-    // Step 12: Employment status
+    // Step 7: Employment status
     employmentStatus: "",
-    // Step 13: Annual income
+    // Step 8: Annual income
     annualIncome: "",
-    // Step 14: Bankruptcy
+    // Step 9: Bankruptcy
     bankruptcy: "",
-    // Step 15: Credit score
+    // Step 10: Credit score
     creditScore: "",
-    // Step 16: Credit services
+    // Step 11: Credit services
     creditServices: "",
-    // Step 17: Real estate agent
+    // Step 12: Real estate agent
     realEstateAgent: "",
-    // Step 18: Location
+    // Step 13: Location
     location: "",
-    // Step 19: ZIP code
+    // Step 14: ZIP code
     zipCode: "",
-    // Step 20: Email
+    // Step 15: Email
     email: "",
-    // Step 21: Name
+    // Step 16: Name
     firstName: "",
     lastName: "",
-    // Step 22: Phone
+    // Step 17: Phone
     phone: ""
   });
 
-  const totalSteps = 22;
+  const totalSteps = 17;
   const progress = ((currentStep - 1) / totalSteps) * 100;
 
   const questions = [
@@ -80,42 +70,21 @@ const Application = () => {
       key: "homeBudget",
       options: ["Less than $200,000", "$200,000 - $300,000", "$300,000 - $400,000", "$400,000 - $500,000", "$500,000 - $700,000", "More than $700,000"]
     },
-    // Step 3: Home type
-    {
-      title: "What kind of home are you looking for?",
-      type: "single-choice",
-      key: "homeType",
-      options: ["Single family home", "Townhouse", "Condo", "Multi-family home", "Manufactured home"]
-    },
-    // Step 4: Home use
-    {
-      title: "How will you use your new home?",
-      type: "single-choice",
-      key: "homeUse",
-      options: ["Primary residence", "Investment property", "Second home", "Vacation home"]
-    },
-    // Step 5: First time buyer
+    // Step 3: First time buyer
     {
       title: "Is this your first time purchasing a home?",
       type: "single-choice",
       key: "firstTimeBuyer",
       options: ["Yes", "No"]
     },
-    // Step 6: Purchase timing
+    // Step 4: Purchase timing
     {
       title: "When are you planning to make your home purchase?",
       type: "single-choice",
       key: "purchaseTiming",
       options: ["Immediately", "Within 30 days", "2-3 months", "3-6 months", "6+ months", "Just exploring options"]
     },
-    // Step 7: Buying obstacles
-    {
-      title: "What's preventing you from buying a home now?",
-      type: "single-choice",
-      key: "buyingObstacles",
-      options: ["Down payment", "Credit score", "Income/employment", "Finding the right home", "Market conditions", "Nothing - I'm ready"]
-    },
-    // Step 8: Military service (multi-select)
+    // Step 5: Military service (multi-select)
     {
       title: "Have you or your spouse ever served in the military?",
       subtitle: "We may be able to get you access to VA loan benefits",
@@ -123,36 +92,21 @@ const Application = () => {
       key: "militaryService",
       options: ["Currently serving", "Veteran", "Spouse of veteran", "None of the above"]
     },
-    // Step 9: Down payment
-    {
-      title: "How much of a down payment would you like to make?",
-      subtitle: "Don't include closing costs",
-      type: "single-choice",
-      key: "downPayment",
-      options: ["0%", "3%", "5%", "10%", "15%", "20%", "25%+", "I'm not sure"]
-    },
-    // Step 10: Savings amount
+    // Step 6: Savings amount
     {
       title: "How much do you currently have saved for a home purchase?",
       type: "single-choice",
       key: "savingsAmount",
       options: ["Less than $5,000", "$5,000 - $15,000", "$15,000 - $25,000", "$25,000 - $50,000", "$50,000 - $100,000", "More than $100,000"]
     },
-    // Step 11: Financial institutions (multi-select)
-    {
-      title: "Do you have an active account with any of these institutions?",
-      type: "multi-choice",
-      key: "financialInstitutions",
-      options: ["Bank of America", "Wells Fargo", "Chase", "Citibank", "US Bank", "PNC Bank", "Capital One", "Other", "None of the above"]
-    },
-    // Step 12: Employment status
+    // Step 7: Employment status
     {
       title: "What is your current employment status?",
       type: "single-choice",
       key: "employmentStatus",
       options: ["Employed (W-2)", "Self-employed", "Retired", "Military", "Contract/1099", "Unemployed", "Other"]
     },
-    // Step 13: Annual income
+    // Step 8: Annual income
     {
       title: "What is your household gross (before taxes) annual income?",
       subtitle: "Include income from all household members",
@@ -160,49 +114,49 @@ const Application = () => {
       key: "annualIncome",
       options: ["Less than $50,000", "$50,000 - $75,000", "$75,000 - $100,000", "$100,000 - $150,000", "$150,000 - $200,000", "More than $200,000"]
     },
-    // Step 14: Bankruptcy
+    // Step 9: Bankruptcy
     {
       title: "Have you declared bankruptcy in the last 3 years?",
       type: "single-choice",
       key: "bankruptcy",
       options: ["Yes", "No"]
     },
-    // Step 15: Credit score
+    // Step 10: Credit score
     {
       title: "What is your current credit score?",
       type: "single-choice",
       key: "creditScore",
       options: ["Excellent (740+)", "Good (680-739)", "Fair (640-679)", "Poor (580-639)", "Very Poor (Below 580)", "I don't know"]
     },
-    // Step 16: Credit services
+    // Step 11: Credit services
     {
       title: "Are you interested in other credit services?",
       type: "single-choice",
       key: "creditServices",
       options: ["Credit monitoring", "Credit repair", "Debt consolidation", "Personal loans", "Credit cards", "None of the above"]
     },
-    // Step 17: Real estate agent
+    // Step 12: Real estate agent
     {
       title: "Are you working with a real estate agent?",
       type: "single-choice",
       key: "realEstateAgent",
       options: ["Yes", "No", "I need a referral"]
     },
-    // Step 18: Location
+    // Step 13: Location
     {
       title: "Where are you looking to buy?",
       type: "input",
       key: "location",
       placeholder: "Enter city, state"
     },
-    // Step 19: ZIP code
+    // Step 14: ZIP code
     {
       title: "What's your current ZIP code?",
       type: "input",
       key: "zipCode",
       placeholder: "Enter ZIP code"
     },
-    // Step 20: Email
+    // Step 15: Email
     {
       title: "What is your email address?",
       subtitle: "Your information is secure. Continuing here means you agree to our privacy policy and to receive information from Previse Mortgage about your loan options.",
@@ -210,13 +164,13 @@ const Application = () => {
       key: "email",
       placeholder: "Enter email address"
     },
-    // Step 21: Name
+    // Step 16: Name
     {
       title: "What is your name?",
       type: "name-input",
       key: "name"
     },
-    // Step 22: Phone
+    // Step 17: Phone
     {
       title: "What's the best number to reach you?",
       type: "phone-input",
@@ -228,7 +182,7 @@ const Application = () => {
 
   const handleOptionSelect = (value: string) => {
     if (currentQuestion.type === "multi-choice") {
-      const currentKey = currentQuestion.key as "militaryService" | "financialInstitutions";
+      const currentKey = currentQuestion.key as "militaryService";
       const currentValues = formData[currentKey];
       
       if (value === "None of the above") {
@@ -281,15 +235,10 @@ const Application = () => {
           loan_type: loanType,
           homebuying_journey: formData.homebuyingJourney,
           home_budget: formData.homeBudget,
-          home_type: formData.homeType,
-          home_use: formData.homeUse,
           first_time_buyer: formData.firstTimeBuyer,
           purchase_timing: formData.purchaseTiming,
-          buying_obstacles: formData.buyingObstacles,
           military_service: Array.isArray(formData.militaryService) && formData.militaryService.length > 0 ? formData.militaryService : null,
-          down_payment: formData.downPayment,
           savings_amount: formData.savingsAmount,
-          financial_institutions: Array.isArray(formData.financialInstitutions) && formData.financialInstitutions.length > 0 ? formData.financialInstitutions : null,
           employment_status: formData.employmentStatus,
           annual_income: formData.annualIncome,
           bankruptcy: formData.bankruptcy,
@@ -306,7 +255,6 @@ const Application = () => {
         
         console.log('About to insert application data:', JSON.stringify(applicationData, null, 2));
         console.log('Military service array:', formData.militaryService);
-        console.log('Financial institutions array:', formData.financialInstitutions);
         
         // Insert without trying to select the result since RLS prevents public reads
         const { error } = await supabase
@@ -362,7 +310,7 @@ const Application = () => {
     if (question.type === "single-choice") {
       return !!formData[question.key as keyof typeof formData];
     } else if (question.type === "multi-choice") {
-      const currentKey = question.key as "militaryService" | "financialInstitutions";
+      const currentKey = question.key as "militaryService";
       return formData[currentKey].length > 0;
     } else if (question.type === "input") {
       return !!formData[question.key as keyof typeof formData];
@@ -458,7 +406,7 @@ const Application = () => {
                 <div className="space-y-6">
                   <div className="space-y-4 bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 shadow-medium">
                     {currentQuestion.options?.map((option, index) => {
-                      const currentKey = currentQuestion.key as "militaryService" | "financialInstitutions";
+                      const currentKey = currentQuestion.key as "militaryService";
                       return (
                         <div key={option} className="flex items-center space-x-4 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-300">
                           <input
@@ -579,15 +527,7 @@ const Application = () => {
                   </Button>
 
                   <div className="text-xs text-white/60 text-center leading-relaxed bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 shadow-soft">
-                    By submitting, I am providing my electronic signature and I agree my information 
-                    may be shared and that I may be contacted at this number (including through emails, 
-                    and/or autodialed or pre-recorded calls or texts or generative AI, carrier rates may 
-                    apply) by the company I may select in the next part of this form, or their designated 
-                    agent, for marketing purposes and for receiving lending or homebuying assistance or 
-                    information, even if I am on a Do Not Call List. I agree to accept delivery of 
-                    documents electronically; I agree to the privacy policy and terms. I may receive 
-                    service without this consent by contacting Mortgage Research Center. I agree that 
-                    my consent is not required or a condition of any purchase.
+                    By submitting, I am providing my electronic signature and I agree my information may be shared and that I may be contacted at this number (including through emails, and/or autodialed or pre-recorded calls or texts or generative AI, carrier rates may apply) by the company I may select in the next part of this form, or their designated agent, for marketing purposes and for receiving lending or homebuying assistance or information, even if I am on a Do Not Call List. I agree to accept delivery of documents electronically; I agree to the privacy policy and terms. I may receive service without this consent by contacting Previse Mortgage LLC. I agree that my consent is not required or a condition of any purchase.
                   </div>
                 </div>
               )}

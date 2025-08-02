@@ -17,7 +17,7 @@ const Index = () => {
       <CalendlySection />
       <FAQSection />
       <Footer />
-      {/* <ChatBot /> */}
+      <ChatBot />
     </div>
   );
 };

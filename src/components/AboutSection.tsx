@@ -56,14 +56,6 @@ const AboutSection = () => {
               </p>
             </div>
             
-            <div className="flex justify-center">
-              <button 
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-                className="bg-gradient-to-r from-accent via-accent-light to-accent text-primary font-bold py-4 px-8 rounded-full hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-accent/50 text-lg min-w-[200px]"
-              >
-                Schedule Appointment
-              </button>
-            </div>
           </div>
         </div>
       </div>

@@ -21,15 +21,10 @@ interface MortgageApplication {
   phone: string | null;
   loan_type: string | null;
   home_budget: string | null;
-  home_type: string | null;
-  home_use: string | null;
   first_time_buyer: string | null;
   purchase_timing: string | null;
-  buying_obstacles: string | null;
   military_service: string[] | null;
-  down_payment: string | null;
   savings_amount: string | null;
-  financial_institutions: string[] | null;
   employment_status: string | null;
   annual_income: string | null;
   bankruptcy: string | null;
@@ -143,8 +138,6 @@ const AdminDashboard = () => {
               <div className="space-y-2 text-card-foreground">
                 <p><strong className="text-primary">Loan Type:</strong> {application.loan_type}</p>
                 <p><strong className="text-primary">Home Budget:</strong> {application.home_budget}</p>
-                <p><strong className="text-primary">Home Type:</strong> {application.home_type}</p>
-                <p><strong className="text-primary">Home Use:</strong> {application.home_use}</p>
                 <p><strong className="text-primary">First Time Buyer:</strong> {application.first_time_buyer}</p>
                 <p><strong className="text-primary">Purchase Timing:</strong> {application.purchase_timing}</p>
               </div>
@@ -153,7 +146,6 @@ const AdminDashboard = () => {
             <div className="space-y-3">
               <h3 className="font-semibold text-lg text-primary">Financial Information</h3>
               <div className="space-y-2 text-card-foreground">
-                <p><strong className="text-primary">Down Payment:</strong> {application.down_payment}</p>
                 <p><strong className="text-primary">Savings Amount:</strong> {application.savings_amount}</p>
                 <p><strong className="text-primary">Employment Status:</strong> {application.employment_status}</p>
                 <p><strong className="text-primary">Annual Income:</strong> {application.annual_income}</p>
@@ -167,8 +159,6 @@ const AdminDashboard = () => {
               <h3 className="font-semibold text-lg text-primary">Additional Information</h3>
               <div className="space-y-2 text-card-foreground">
                 <p><strong className="text-primary">Military Service:</strong> {application.military_service?.join(', ') || 'None'}</p>
-                <p><strong className="text-primary">Financial Institutions:</strong> {application.financial_institutions?.join(', ') || 'None'}</p>
-                <p><strong className="text-primary">Buying Obstacles:</strong> {application.buying_obstacles}</p>
                 <p><strong className="text-primary">Real Estate Agent:</strong> {application.real_estate_agent}</p>
                 <p><strong className="text-primary">Homebuying Journey:</strong> {application.homebuying_journey}</p>
               </div>

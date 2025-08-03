@@ -108,7 +108,7 @@ const AdminDashboard = () => {
   const ApplicationDetailDialog = ({ application }: { application: MortgageApplication }) => (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" size="sm" className="border-black text-black hover:bg-black hover:text-white">
+        <Button variant="outline" size="sm" className="border-black text-white hover:bg-black hover:text-white">
           <Eye className="h-4 w-4 mr-2" />
           View Details
         </Button>
@@ -191,7 +191,7 @@ const AdminDashboard = () => {
             <p className="text-xl text-black">Mortgage Application Management</p>
             <p className="text-sm text-black">Welcome, {user.email}</p>
           </div>
-          <Button variant="outline" onClick={handleSignOut} className="border-white text-white hover:bg-gray-100">
+          <Button variant="outline" onClick={handleSignOut} className="border-black text-white hover:bg-gray-100">
             <LogOut className="h-4 w-4 mr-2" />
             Sign Out
           </Button>

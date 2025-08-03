@@ -91,10 +91,10 @@ const AdminDashboard = () => {
   // Show loading while checking authentication
   if (authLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center">
+      <div className="min-h-screen bg-white text-black flex items-center justify-center">
         <div className="text-center">
-          <Shield className="h-8 w-8 animate-spin mx-auto mb-4" />
-          <p>Checking authentication...</p>
+          <Shield className="h-8 w-8 animate-spin mx-auto mb-4 text-black" />
+          <p className="text-black">Checking authentication...</p>
         </div>
       </div>
     );
@@ -113,54 +113,54 @@ const AdminDashboard = () => {
           View Details
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-4xl max-h-[80vh] bg-card text-card-foreground border border-border">
+      <DialogContent className="max-w-4xl max-h-[80vh] bg-white text-black border border-gray-300">
         <DialogHeader>
-          <DialogTitle className="text-primary">Application Details</DialogTitle>
-          <DialogDescription className="text-muted-foreground">
+          <DialogTitle className="text-black">Application Details</DialogTitle>
+          <DialogDescription className="text-black">
             Application from {application.first_name} {application.last_name} - {formatDate(application.created_at)}
           </DialogDescription>
         </DialogHeader>
         <ScrollArea className="h-[60vh] pr-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-card-foreground">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-black">
             <div className="space-y-3">
-              <h3 className="font-semibold text-lg text-primary">Personal Information</h3>
-              <div className="space-y-2 text-card-foreground">
-                <p><strong className="text-primary">Name:</strong> {application.first_name} {application.last_name}</p>
-                <p><strong className="text-primary">Email:</strong> {application.email}</p>
-                <p><strong className="text-primary">Phone:</strong> {application.phone}</p>
-                <p><strong className="text-primary">Location:</strong> {application.location}</p>
-                <p><strong className="text-primary">ZIP Code:</strong> {application.zip_code}</p>
+              <h3 className="font-semibold text-lg text-black">Personal Information</h3>
+              <div className="space-y-2 text-black">
+                <p><strong className="text-black">Name:</strong> {application.first_name} {application.last_name}</p>
+                <p><strong className="text-black">Email:</strong> {application.email}</p>
+                <p><strong className="text-black">Phone:</strong> {application.phone}</p>
+                <p><strong className="text-black">Location:</strong> {application.location}</p>
+                <p><strong className="text-black">ZIP Code:</strong> {application.zip_code}</p>
               </div>
             </div>
 
             <div className="space-y-3">
-              <h3 className="font-semibold text-lg text-primary">Loan Information</h3>
-              <div className="space-y-2 text-card-foreground">
-                <p><strong className="text-primary">Loan Type:</strong> {application.loan_type}</p>
-                <p><strong className="text-primary">Home Budget:</strong> {application.home_budget}</p>
-                <p><strong className="text-primary">First Time Buyer:</strong> {application.first_time_buyer}</p>
-                <p><strong className="text-primary">Purchase Timing:</strong> {application.purchase_timing}</p>
+              <h3 className="font-semibold text-lg text-black">Loan Information</h3>
+              <div className="space-y-2 text-black">
+                <p><strong className="text-black">Loan Type:</strong> {application.loan_type}</p>
+                <p><strong className="text-black">Home Budget:</strong> {application.home_budget}</p>
+                <p><strong className="text-black">First Time Buyer:</strong> {application.first_time_buyer}</p>
+                <p><strong className="text-black">Purchase Timing:</strong> {application.purchase_timing}</p>
               </div>
             </div>
 
             <div className="space-y-3">
-              <h3 className="font-semibold text-lg text-primary">Financial Information</h3>
-              <div className="space-y-2 text-card-foreground">
-                <p><strong className="text-primary">Savings Amount:</strong> {application.savings_amount}</p>
-                <p><strong className="text-primary">Employment Status:</strong> {application.employment_status}</p>
-                <p><strong className="text-primary">Annual Income:</strong> {application.annual_income}</p>
-                <p><strong className="text-primary">Credit Score:</strong> {application.credit_score}</p>
-                <p><strong className="text-primary">Bankruptcy:</strong> {application.bankruptcy}</p>
-                <p><strong className="text-primary">Credit Services:</strong> {application.credit_services}</p>
+              <h3 className="font-semibold text-lg text-black">Financial Information</h3>
+              <div className="space-y-2 text-black">
+                <p><strong className="text-black">Savings Amount:</strong> {application.savings_amount}</p>
+                <p><strong className="text-black">Employment Status:</strong> {application.employment_status}</p>
+                <p><strong className="text-black">Annual Income:</strong> {application.annual_income}</p>
+                <p><strong className="text-black">Credit Score:</strong> {application.credit_score}</p>
+                <p><strong className="text-black">Bankruptcy:</strong> {application.bankruptcy}</p>
+                <p><strong className="text-black">Credit Services:</strong> {application.credit_services}</p>
               </div>
             </div>
 
             <div className="space-y-3">
-              <h3 className="font-semibold text-lg text-primary">Additional Information</h3>
-              <div className="space-y-2 text-card-foreground">
-                <p><strong className="text-primary">Military Service:</strong> {application.military_service?.join(', ') || 'None'}</p>
-                <p><strong className="text-primary">Real Estate Agent:</strong> {application.real_estate_agent}</p>
-                <p><strong className="text-primary">Homebuying Journey:</strong> {application.homebuying_journey}</p>
+              <h3 className="font-semibold text-lg text-black">Additional Information</h3>
+              <div className="space-y-2 text-black">
+                <p><strong className="text-black">Military Service:</strong> {application.military_service?.join(', ') || 'None'}</p>
+                <p><strong className="text-black">Real Estate Agent:</strong> {application.real_estate_agent}</p>
+                <p><strong className="text-black">Homebuying Journey:</strong> {application.homebuying_journey}</p>
               </div>
             </div>
           </div>
@@ -171,11 +171,11 @@ const AdminDashboard = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-primary/5 to-secondary/5 p-8">
+      <div className="min-h-screen bg-white text-black p-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
-            <Shield className="h-8 w-8 animate-spin mx-auto mb-4" />
-            <p>Loading applications...</p>
+            <Shield className="h-8 w-8 animate-spin mx-auto mb-4 text-black" />
+            <p className="text-black">Loading applications...</p>
           </div>
         </div>
       </div>
@@ -183,71 +183,71 @@ const AdminDashboard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary/5 to-secondary/5 p-8">
+    <div className="min-h-screen bg-white text-black p-8">
       <div className="max-w-7xl mx-auto space-y-8">
         <div className="flex justify-between items-center">
           <div className="space-y-2">
-            <h1 className="text-4xl font-bold text-primary">Admin Dashboard</h1>
-            <p className="text-xl text-muted-foreground">Mortgage Application Management</p>
-            <p className="text-sm text-muted-foreground">Welcome, {user.email}</p>
+            <h1 className="text-4xl font-bold text-black">Admin Dashboard</h1>
+            <p className="text-xl text-black">Mortgage Application Management</p>
+            <p className="text-sm text-black">Welcome, {user.email}</p>
           </div>
-          <Button variant="outline" onClick={handleSignOut}>
+          <Button variant="outline" onClick={handleSignOut} className="border-black text-black hover:bg-gray-100">
             <LogOut className="h-4 w-4 mr-2" />
             Sign Out
           </Button>
         </div>
 
         {error && (
-          <Alert variant="destructive">
-            <AlertDescription>{error}</AlertDescription>
+          <Alert variant="destructive" className="bg-red-50 border-red-200 text-black">
+            <AlertDescription className="text-black">{error}</AlertDescription>
           </Alert>
         )}
 
-        <Card>
+        <Card className="bg-white border-gray-300">
           <CardHeader>
-            <CardTitle>Application Overview</CardTitle>
-            <CardDescription>
+            <CardTitle className="text-black">Application Overview</CardTitle>
+            <CardDescription className="text-black">
               Total applications: {applications.length}
             </CardDescription>
           </CardHeader>
           <CardContent>
             <Tabs defaultValue="all" className="w-full">
-              <TabsList>
-                <TabsTrigger value="all">All Applications</TabsTrigger>
-                <TabsTrigger value="recent">Recent (Last 7 days)</TabsTrigger>
+              <TabsList className="bg-gray-100">
+                <TabsTrigger value="all" className="text-black data-[state=active]:bg-white data-[state=active]:text-black">All Applications</TabsTrigger>
+                <TabsTrigger value="recent" className="text-black data-[state=active]:bg-white data-[state=active]:text-black">Recent (Last 7 days)</TabsTrigger>
               </TabsList>
               
               <TabsContent value="all" className="space-y-4">
-                <div className="rounded-md border">
-                  <Table>
+                <div className="rounded-md border border-gray-300">
+                  <Table className="bg-white">
                     <TableHeader>
-                      <TableRow>
-                        <TableHead>Date</TableHead>
-                        <TableHead>Name</TableHead>
-                        <TableHead>Email</TableHead>
-                        <TableHead>Loan Type</TableHead>
-                        <TableHead>Budget</TableHead>
-                        <TableHead>Location</TableHead>
-                        <TableHead>Actions</TableHead>
+                      <TableRow className="bg-gray-50">
+                        <TableHead className="text-black">Date</TableHead>
+                        <TableHead className="text-black">Name</TableHead>
+                        <TableHead className="text-black">Email</TableHead>
+                        <TableHead className="text-black">Loan Type</TableHead>
+                        <TableHead className="text-black">Budget</TableHead>
+                        <TableHead className="text-black">Location</TableHead>
+                        <TableHead className="text-black">Actions</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
                       {applications.map((application) => (
-                        <TableRow key={application.id}>
-                          <TableCell className="font-medium">
+                        <TableRow key={application.id} className="hover:bg-gray-50">
+                          <TableCell className="font-medium text-black">
                             {formatDate(application.created_at)}
                           </TableCell>
-                          <TableCell>
+                          <TableCell className="text-black">
                             {application.first_name} {application.last_name}
                           </TableCell>
-                          <TableCell>{application.email}</TableCell>
+                          <TableCell className="text-black">{application.email}</TableCell>
                           <TableCell>
-                            <Badge variant="outline">
+                            <Badge variant="outline" className="border-black text-black">
                               {application.loan_type || 'Not specified'}
                             </Badge>
                           </TableCell>
-                          <TableCell>{application.home_budget}</TableCell>
-                          <TableCell>{application.location}</TableCell>
+                          <TableCell className="text-black">{application.home_budget}</TableCell>
+                          <TableCell className="text-black">{application.location}</TableCell>
                           <TableCell>
                             <ApplicationDetailDialog application={application} />
                           </TableCell>
@@ -259,17 +259,17 @@ const AdminDashboard = () => {
               </TabsContent>
 
               <TabsContent value="recent" className="space-y-4">
-                <div className="rounded-md border">
-                  <Table>
+                <div className="rounded-md border border-gray-300">
+                  <Table className="bg-white">
                     <TableHeader>
-                      <TableRow>
-                        <TableHead>Date</TableHead>
-                        <TableHead>Name</TableHead>
-                        <TableHead>Email</TableHead>
-                        <TableHead>Loan Type</TableHead>
-                        <TableHead>Budget</TableHead>
-                        <TableHead>Location</TableHead>
-                        <TableHead>Actions</TableHead>
+                      <TableRow className="bg-gray-50">
+                        <TableHead className="text-black">Date</TableHead>
+                        <TableHead className="text-black">Name</TableHead>
+                        <TableHead className="text-black">Email</TableHead>
+                        <TableHead className="text-black">Loan Type</TableHead>
+                        <TableHead className="text-black">Budget</TableHead>
+                        <TableHead className="text-black">Location</TableHead>
+                        <TableHead className="text-black">Actions</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -281,21 +281,21 @@ const AdminDashboard = () => {
                           return appDate >= weekAgo;
                         })
                         .map((application) => (
-                          <TableRow key={application.id}>
-                            <TableCell className="font-medium">
+                          <TableRow key={application.id} className="hover:bg-gray-50">
+                            <TableCell className="font-medium text-black">
                               {formatDate(application.created_at)}
                             </TableCell>
-                            <TableCell>
+                            <TableCell className="text-black">
                               {application.first_name} {application.last_name}
                             </TableCell>
-                            <TableCell>{application.email}</TableCell>
+                            <TableCell className="text-black">{application.email}</TableCell>
                             <TableCell>
-                              <Badge variant="outline">
+                              <Badge variant="outline" className="border-black text-black">
                                 {application.loan_type || 'Not specified'}
                               </Badge>
                             </TableCell>
-                            <TableCell>{application.home_budget}</TableCell>
-                            <TableCell>{application.location}</TableCell>
+                            <TableCell className="text-black">{application.home_budget}</TableCell>
+                            <TableCell className="text-black">{application.location}</TableCell>
                             <TableCell>
                               <ApplicationDetailDialog application={application} />
                             </TableCell>

@@ -108,7 +108,7 @@ const AdminDashboard = () => {
   const ApplicationDetailDialog = ({ application }: { application: MortgageApplication }) => (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" size="sm">
+        <Button variant="outline" size="sm" className="border-black text-black hover:bg-black hover:text-white">
           <Eye className="h-4 w-4 mr-2" />
           View Details
         </Button>

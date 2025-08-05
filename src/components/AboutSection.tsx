@@ -55,6 +55,46 @@ const AboutSection = () => {
                 with personalized guidance every step of the way.
               </p>
             </div>
+
+            {/* Why Choose Us Section */}
+            <div className="mt-20">
+              <div className="text-center mb-12">
+                <h3 className="font-serif text-3xl lg:text-4xl font-bold text-white mb-6">
+                  Why Choose Us
+                </h3>
+                <div className="w-16 h-1 bg-gradient-to-r from-accent via-accent-light to-accent mx-auto rounded-full"></div>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-6">
+                  <h4 className="text-accent font-semibold text-lg mb-3">Fast Local Pre-Approvals</h4>
+                  <p className="text-white/90 leading-relaxed">
+                    Get locally managed pre-approvals quickly with personalized attention from someone who understands your market and community needs.
+                  </p>
+                </div>
+                
+                <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-6">
+                  <h4 className="text-accent font-semibold text-lg mb-3">Transparent Service</h4>
+                  <p className="text-white/90 leading-relaxed">
+                    Clear communication throughout the process with no hidden fees or surprises. You'll always know exactly where you stand.
+                  </p>
+                </div>
+                
+                <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-6">
+                  <h4 className="text-accent font-semibold text-lg mb-3">Strong Closing Record</h4>
+                  <p className="text-white/90 leading-relaxed">
+                    Proven track record of successful closings with attention to detail that ensures your home purchase goes smoothly.
+                  </p>
+                </div>
+                
+                <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-6">
+                  <h4 className="text-accent font-semibold text-lg mb-3">Competitive Rates</h4>
+                  <p className="text-white/90 leading-relaxed">
+                    Access to competitive interest rates and loan programs designed to save you money over the life of your mortgage.
+                  </p>
+                </div>
+              </div>
+            </div>
             
           </div>
         </div>

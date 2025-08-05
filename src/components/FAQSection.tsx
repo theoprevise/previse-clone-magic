@@ -9,42 +9,52 @@ const FAQSection = () => {
     {
       icon: "🏛️",
       question: "What types of home loans do you offer?",
-      answer: "We offer a comprehensive range of loan products including Conventional loans, FHA loans, VA loans, USDA loans, Jumbo loans, DSCR loans, Bank Statement loans, and Construction loans. Each program is designed to meet different financial situations and homeownership goals."
+      answer: "We offer comprehensive mortgage solutions including: Conventional loans (down payments as low as 3%), FHA loans (3.5% down), VA loans (0% down for eligible veterans), USDA loans (0% down for rural areas), jumbo loans (up to $3M+), DSCR investment property loans, bank statement loans for self-employed borrowers, and construction-to-permanent financing. Each loan type has specific requirements and benefits tailored to different borrower situations in the Wichita, Kansas area."
     },
     {
       icon: "💳",
       question: "Will applying for a mortgage affect my credit score?",
-      answer: "A mortgage pre-qualification involves a soft credit check that won't affect your credit score. However, when you formally apply for a mortgage, we'll perform a hard credit inquiry, which may temporarily lower your score by a few points. Multiple mortgage inquiries within a 14-45 day window are typically counted as a single inquiry."
+      answer: "Yes, applying for a mortgage results in a hard credit inquiry which may temporarily lower your credit score by 2-5 points. However, multiple mortgage inquiries within a 14-45 day window are typically counted as a single inquiry for scoring purposes. This minimal impact is temporary, and your score usually recovers within a few months. The benefits of getting pre-approved far outweigh the temporary score impact."
     },
     {
       icon: "📊",
       question: "How much do I need for a down payment?",
-      answer: "Down payment requirements vary by loan type. Conventional loans can be as low as 3%, FHA loans require 3.5%, VA and USDA loans offer 0% down options for qualified buyers, and Jumbo loans typically require 10-20%. We'll help you find the program that works best for your situation."
+      answer: "Down payment requirements vary significantly by loan type: VA and USDA loans require 0% down, FHA loans require 3.5% minimum, conventional loans can be as low as 3% for first-time buyers or 5% for others, and jumbo loans typically require 10-20%. Additionally, you'll need funds for closing costs (2-5% of loan amount), which can sometimes be rolled into the loan or covered by seller concessions."
     },
     {
       icon: "💼",
       question: "How do I get pre-approved for a mortgage?",
-      answer: "Getting pre-approved involves submitting a complete loan application with documentation of your income, assets, and debts. We'll verify your information and provide a pre-approval letter stating the loan amount you qualify for. This typically takes 1-3 business days and gives you a competitive advantage when making offers."
+      answer: "Getting pre-approved involves submitting a complete mortgage application with supporting documentation including: recent pay stubs (2-3 months), tax returns (2 years), bank statements (2 months), employment verification, and asset documentation. We review your credit, income, and debt-to-income ratio to determine your qualified loan amount. Pre-approval typically takes 24-48 hours and gives you a committed loan amount from the lender."
     },
     {
       icon: "⏰",
       question: "How long does the mortgage process take?",
-      answer: "The typical mortgage process takes 30-45 days from application to closing. However, we often close loans in as little as 15-21 days with our streamlined process and advanced technology. Timeline depends on loan type, property type, and how quickly documentation is provided."
+      answer: "The typical mortgage process takes 30-45 days from application to closing in Wichita, Kansas. Our advanced technology and local processing can often close loans faster: purchase loans in 21-30 days, refinances in 15-30 days, and cash-out refinances in 30-45 days. Timeline factors include loan complexity, property type, appraisal scheduling, and borrower documentation completeness."
     },
     {
       icon: "💯",
       question: "What credit score do I need to qualify?",
-      answer: "Credit score requirements vary by loan program. FHA loans can go as low as 580, VA loans typically require 620+, and conventional loans generally need 620+ for best rates. However, we work with borrowers across the credit spectrum and can often find solutions even for lower scores."
+      answer: "Minimum credit score requirements depend on loan type: FHA loans accept scores as low as 580 (or 500 with 10% down), VA loans have no official minimum but 580+ is preferred, USDA loans typically require 640+, conventional loans generally need 620+, and jumbo loans often require 700+. Lower scores may qualify with higher down payments or stronger compensating factors like high income or significant assets."
     },
     {
       icon: "💭",
       question: "What's the difference between pre-qualification and pre-approval?",
-      answer: "Pre-qualification is an estimate based on basic financial information you provide, while pre-approval involves verifying your income, assets, and credit with documentation. Pre-approval carries more weight with sellers and gives you a better idea of your actual buying power."
+      answer: "Pre-qualification is an initial estimate based on basic information you provide without credit check or documentation verification - it gives you a rough idea of your potential loan amount. Pre-approval involves a comprehensive review including credit check, income verification, asset documentation, and full underwriting analysis, providing a committed loan amount from the lender. Pre-approval carries significantly more weight with sellers."
     },
     {
       icon: "🏠",
       question: "Can I refinance my current mortgage?",
-      answer: "Yes! We offer rate-and-term refinancing to lower your payment or shorten your loan term, and cash-out refinancing to access your home's equity. Refinancing can make sense when rates drop, your credit improves, or you need to access cash for home improvements or debt consolidation."
+      answer: "Yes, we offer several refinancing options in the Wichita area: Rate-and-term refinancing to lower your interest rate or change loan terms, cash-out refinancing to access home equity for improvements or debt consolidation, streamline refinancing for existing FHA/VA loans with minimal documentation, and no-closing-cost options where closing costs are built into the rate. Refinancing typically makes sense when rates drop by 0.5-1% or when you need to access equity."
+    },
+    {
+      icon: "🌾",
+      question: "Are there special programs for first-time homebuyers in Kansas?",
+      answer: "Yes, Kansas offers several first-time homebuyer programs: Kansas Housing Resources Corporation (KHRC) provides down payment assistance grants up to $5,000, FHA loans with 3.5% down payment, VA loans for eligible veterans with 0% down, USDA loans for qualifying rural areas with 0% down, and conventional loans with as little as 3% down. Additionally, many local Wichita programs offer closing cost assistance and favorable interest rates."
+    },
+    {
+      icon: "💰",
+      question: "How much house can I afford in Wichita?",
+      answer: "In Wichita, Kansas, your housing payment (including principal, interest, taxes, and insurance) should typically not exceed 28-31% of your gross monthly income. With the median home price in Wichita around $150,000-$200,000, a household income of $50,000-$60,000 can often qualify for a typical home purchase. Use our pre-approval process to determine your exact purchasing power based on your specific financial situation."
     }
   ];
 

@@ -31,12 +31,6 @@ const Header = () => {
             >
               Resources
             </button>
-            <button 
-              onClick={() => navigate('/ai-readiness')}
-              className="text-white/90 hover:text-accent transition-colors duration-300 text-lg font-medium"
-            >
-              AI Analysis
-            </button>
             <a href="#contact" className="text-white/90 hover:text-accent transition-colors duration-300 text-lg font-medium">Contact</a>
           </nav>
 
@@ -72,12 +66,6 @@ const Header = () => {
                 className="text-white/90 hover:text-accent transition-colors duration-300 text-lg font-medium px-4 text-left"
               >
                 Resources
-              </button>
-              <button 
-                onClick={() => {navigate('/ai-readiness'); setIsMenuOpen(false);}}
-                className="text-white/90 hover:text-accent transition-colors duration-300 text-lg font-medium px-4 text-left"
-              >
-                AI Analysis
               </button>
               <a href="#contact" className="text-white/90 hover:text-accent transition-colors duration-300 text-lg font-medium px-4">Contact</a>
               <div className="px-4 pt-4">

@@ -191,10 +191,20 @@ const AdminDashboard = () => {
             <p className="text-xl text-black">Mortgage Application Management</p>
             <p className="text-sm text-black">Welcome, {user.email}</p>
           </div>
-          <Button variant="outline" onClick={handleSignOut} className="border-black text-white hover:bg-black hover:text-white">
-            <LogOut className="h-4 w-4 mr-2" />
-            Sign Out
-          </Button>
+          <div className="flex items-center gap-4">
+            <Button 
+              variant="outline" 
+              onClick={() => navigate('/ai-readiness')}
+              className="border-black text-white hover:bg-black hover:text-white"
+            >
+              <Shield className="h-4 w-4 mr-2" />
+              AI Analysis
+            </Button>
+            <Button variant="outline" onClick={handleSignOut} className="border-black text-white hover:bg-black hover:text-white">
+              <LogOut className="h-4 w-4 mr-2" />
+              Sign Out
+            </Button>
+          </div>
         </div>
 
         {error && (

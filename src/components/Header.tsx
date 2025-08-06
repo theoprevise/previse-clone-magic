@@ -8,7 +8,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-primary/95 backdrop-blur-md border-b border-accent/20 sticky top-0 z-50 shadow-lg">
+    <header className="bg-primary/95 backdrop-blur-md border-b border-accent/20 shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -21,18 +21,6 @@ const Header = () => {
             />
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            <a href="#about" className="text-white/90 hover:text-accent transition-colors duration-300 text-lg font-medium">About</a>
-            <a href="#services" className="text-white/90 hover:text-accent transition-colors duration-300 text-lg font-medium">Services</a>
-            <button 
-              onClick={() => navigate('/services-faq')}
-              className="text-white/90 hover:text-accent transition-colors duration-300 text-lg font-medium"
-            >
-              Resources
-            </button>
-            <a href="#contact" className="text-white/90 hover:text-accent transition-colors duration-300 text-lg font-medium">Contact</a>
-          </nav>
 
           {/* CTA Button */}
           <div className="hidden lg:block">
@@ -59,15 +47,6 @@ const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden bg-primary/95 backdrop-blur-md border-t border-accent/20 py-4">
             <nav className="flex flex-col space-y-4">
-              <a href="#about" className="text-white/90 hover:text-accent transition-colors duration-300 text-lg font-medium px-4">About</a>
-              <a href="#services" className="text-white/90 hover:text-accent transition-colors duration-300 text-lg font-medium px-4">Services</a>
-              <button 
-                onClick={() => {navigate('/services-faq'); setIsMenuOpen(false);}}
-                className="text-white/90 hover:text-accent transition-colors duration-300 text-lg font-medium px-4 text-left"
-              >
-                Resources
-              </button>
-              <a href="#contact" className="text-white/90 hover:text-accent transition-colors duration-300 text-lg font-medium px-4">Contact</a>
               <div className="px-4 pt-4">
                 <Button 
                   size="lg" 

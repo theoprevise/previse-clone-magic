@@ -1,4 +1,8 @@
+import { useNavigate } from 'react-router-dom';
+
 const Footer = () => {
+  const navigate = useNavigate();
+  
   return (
     <footer className="bg-gradient-to-t from-primary-dark to-primary py-16 border-t border-accent/20 relative overflow-hidden">
       {/* Animated background elements */}
@@ -36,6 +40,22 @@ const Footer = () => {
               <span className="hidden sm:block">•</span>
               <span>CO #100542483 | PA #115609</span>
             </div>
+          </div>
+
+          {/* Legal Links */}
+          <div className="flex justify-center gap-6 mt-8 pt-6 border-t border-white/10">
+            <button
+              onClick={() => navigate('/privacy-policy')}
+              className="text-white/60 hover:text-accent transition-colors duration-300 text-sm underline"
+            >
+              Privacy Policy
+            </button>
+            <button
+              onClick={() => navigate('/terms-of-service')}
+              className="text-white/60 hover:text-accent transition-colors duration-300 text-sm underline"
+            >
+              Terms of Service
+            </button>
           </div>
           
         </div>

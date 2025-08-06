@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import StructuredData from "./StructuredData";
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -53,7 +54,9 @@ const FAQSection = () => {
   };
 
   return (
-    <section id="faq" className="py-24 bg-gradient-to-b from-primary to-primary-dark relative overflow-hidden" itemScope itemType="https://schema.org/FAQPage">
+    <>
+      <StructuredData type="faq" />
+      <section id="faq" className="py-24 bg-gradient-to-b from-primary to-primary-dark relative overflow-hidden" itemScope itemType="https://schema.org/FAQPage">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float" style={{animationDelay: '1s'}}></div>
@@ -127,6 +130,7 @@ const FAQSection = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

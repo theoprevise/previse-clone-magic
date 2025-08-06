@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import StructuredData from "./StructuredData";
 
 const HeroSection = () => {
   const navigate = useNavigate();
   return (
-    <section id="home" className="relative min-h-screen bg-gradient-to-br from-primary via-primary-dark to-primary flex items-center justify-center overflow-hidden">
+    <>
+      <StructuredData type="service" />
+      <section id="home" className="relative min-h-screen bg-gradient-to-br from-primary via-primary-dark to-primary flex items-center justify-center overflow-hidden" itemScope itemType="https://schema.org/FinancialService">
       {/* Animated background elements - symmetrical */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-pulse"></div>
@@ -27,7 +30,7 @@ const HeroSection = () => {
         <div className="max-w-5xl mx-auto">
           {/* Main heading with modern typography */}
           <div className="mb-8 animate-fade-in">
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-8xl font-bold leading-relaxed mb-8 text-white pb-4">
+            <h1 className="font-serif text-5xl md:text-6xl lg:text-8xl font-bold leading-relaxed mb-8 text-white pb-4" itemProp="name">
               <span className="block mb-4">Professionalized</span>
               <span className="block bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent py-4" style={{ paddingBottom: '0.5rem', lineHeight: '1.2' }}>
                 Loan Financing
@@ -42,7 +45,7 @@ const HeroSection = () => {
             <div className="w-20 h-0.5 bg-gradient-to-r from-accent to-transparent"></div>
           </div>
           
-          <p className="text-xl lg:text-2xl text-white/90 mb-16 max-w-2xl mx-auto leading-relaxed animate-fade-in delay-500">
+          <p className="text-xl lg:text-2xl text-white/90 mb-16 max-w-2xl mx-auto leading-relaxed animate-fade-in delay-500" itemProp="description">
             Get the guidance you need with cutting-edge technology and personalized service
           </p>
           
@@ -62,6 +65,7 @@ const HeroSection = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

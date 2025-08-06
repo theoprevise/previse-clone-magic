@@ -45,16 +45,6 @@ const FAQSection = () => {
       icon: "🏠",
       question: "Can I refinance my current mortgage?",
       answer: "Yes, we offer several refinancing options in the Wichita area: Rate-and-term refinancing to lower your interest rate or change loan terms, cash-out refinancing to access home equity for improvements or debt consolidation, streamline refinancing for existing FHA/VA loans with minimal documentation, and no-closing-cost options where closing costs are built into the rate. Refinancing typically makes sense when rates drop by 0.5-1% or when you need to access equity."
-    },
-    {
-      icon: "🌾",
-      question: "Are there special programs for first-time homebuyers in Kansas?",
-      answer: "Yes, Kansas offers several first-time homebuyer programs: Kansas Housing Resources Corporation (KHRC) provides down payment assistance grants up to $5,000, FHA loans with 3.5% down payment, VA loans for eligible veterans with 0% down, USDA loans for qualifying rural areas with 0% down, and conventional loans with as little as 3% down. Additionally, many local Wichita programs offer closing cost assistance and favorable interest rates."
-    },
-    {
-      icon: "💰",
-      question: "How much house can I afford in Wichita?",
-      answer: "In Wichita, Kansas, your housing payment (including principal, interest, taxes, and insurance) should typically not exceed 28-31% of your gross monthly income. With the median home price in Wichita around $150,000-$200,000, a household income of $50,000-$60,000 can often qualify for a typical home purchase. Use our pre-approval process to determine your exact purchasing power based on your specific financial situation."
     }
   ];
 

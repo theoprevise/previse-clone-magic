@@ -14,16 +14,123 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      mortgage_applications: {
+        Row: {
+          additional_info: string | null
+          annual_income: string | null
+          bankruptcy: string | null
+          budget: string | null
+          created_at: string
+          credit_score: string | null
+          credit_services: string | null
+          down_payment: string | null
+          email: string | null
+          employment_status: string | null
+          first_name: string | null
+          first_time_buyer: string | null
+          home_budget: string | null
+          homebuying_journey: string | null
+          id: string
+          last_name: string | null
+          loan_type: string | null
+          location: string | null
+          military_service: string[] | null
+          phone: string | null
+          purchase_timing: string | null
+          real_estate_agent: string | null
+          savings_amount: string | null
+          timeline: string | null
+          zip_code: string | null
+        }
+        Insert: {
+          additional_info?: string | null
+          annual_income?: string | null
+          bankruptcy?: string | null
+          budget?: string | null
+          created_at?: string
+          credit_score?: string | null
+          credit_services?: string | null
+          down_payment?: string | null
+          email?: string | null
+          employment_status?: string | null
+          first_name?: string | null
+          first_time_buyer?: string | null
+          home_budget?: string | null
+          homebuying_journey?: string | null
+          id?: string
+          last_name?: string | null
+          loan_type?: string | null
+          location?: string | null
+          military_service?: string[] | null
+          phone?: string | null
+          purchase_timing?: string | null
+          real_estate_agent?: string | null
+          savings_amount?: string | null
+          timeline?: string | null
+          zip_code?: string | null
+        }
+        Update: {
+          additional_info?: string | null
+          annual_income?: string | null
+          bankruptcy?: string | null
+          budget?: string | null
+          created_at?: string
+          credit_score?: string | null
+          credit_services?: string | null
+          down_payment?: string | null
+          email?: string | null
+          employment_status?: string | null
+          first_name?: string | null
+          first_time_buyer?: string | null
+          home_budget?: string | null
+          homebuying_journey?: string | null
+          id?: string
+          last_name?: string | null
+          loan_type?: string | null
+          location?: string | null
+          military_service?: string[] | null
+          phone?: string | null
+          purchase_timing?: string | null
+          real_estate_agent?: string | null
+          savings_amount?: string | null
+          timeline?: string | null
+          zip_code?: string | null
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +257,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "user"],
+    },
   },
 } as const

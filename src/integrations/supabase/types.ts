@@ -7,124 +7,23 @@ export type Json =
   | Json[]
 
 export type Database = {
-  // Allows to automatically instanciate createClient with right options
+  // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "12.2.12 (cd3cf9e)"
+    PostgrestVersion: "13.0.5"
   }
   public: {
     Tables: {
-      mortgage_applications: {
-        Row: {
-          annual_income: string | null
-          bankruptcy: string | null
-          created_at: string
-          credit_score: string | null
-          credit_services: string | null
-          email: string | null
-          employment_status: string | null
-          first_name: string | null
-          first_time_buyer: string | null
-          home_budget: string | null
-          homebuying_journey: string | null
-          id: string
-          last_name: string | null
-          loan_type: string | null
-          location: string | null
-          military_service: string[] | null
-          phone: string | null
-          purchase_timing: string | null
-          real_estate_agent: string | null
-          savings_amount: string | null
-          updated_at: string
-          zip_code: string | null
-        }
-        Insert: {
-          annual_income?: string | null
-          bankruptcy?: string | null
-          created_at?: string
-          credit_score?: string | null
-          credit_services?: string | null
-          email?: string | null
-          employment_status?: string | null
-          first_name?: string | null
-          first_time_buyer?: string | null
-          home_budget?: string | null
-          homebuying_journey?: string | null
-          id?: string
-          last_name?: string | null
-          loan_type?: string | null
-          location?: string | null
-          military_service?: string[] | null
-          phone?: string | null
-          purchase_timing?: string | null
-          real_estate_agent?: string | null
-          savings_amount?: string | null
-          updated_at?: string
-          zip_code?: string | null
-        }
-        Update: {
-          annual_income?: string | null
-          bankruptcy?: string | null
-          created_at?: string
-          credit_score?: string | null
-          credit_services?: string | null
-          email?: string | null
-          employment_status?: string | null
-          first_name?: string | null
-          first_time_buyer?: string | null
-          home_budget?: string | null
-          homebuying_journey?: string | null
-          id?: string
-          last_name?: string | null
-          loan_type?: string | null
-          location?: string | null
-          military_service?: string[] | null
-          phone?: string | null
-          purchase_timing?: string | null
-          real_estate_agent?: string | null
-          savings_amount?: string | null
-          updated_at?: string
-          zip_code?: string | null
-        }
-        Relationships: []
-      }
-      user_roles: {
-        Row: {
-          created_at: string
-          id: string
-          role: Database["public"]["Enums"]["app_role"]
-          user_id: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          role: Database["public"]["Enums"]["app_role"]
-          user_id: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          role?: Database["public"]["Enums"]["app_role"]
-          user_id?: string
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      has_role: {
-        Args: {
-          _user_id: string
-          _role: Database["public"]["Enums"]["app_role"]
-        }
-        Returns: boolean
-      }
+      [_ in never]: never
     }
     Enums: {
-      app_role: "admin" | "user"
+      [_ in never]: never
     }
     CompositeTypes: {
       [_ in never]: never
@@ -251,8 +150,6 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {
-      app_role: ["admin", "user"],
-    },
+    Enums: {},
   },
 } as const

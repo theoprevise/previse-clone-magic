@@ -57,7 +57,7 @@ const ContactSection = () => {
                   </a>
                 </p>
                 <p className="text-white/80 mt-4">
-                  2001 Stoverstown Rd. York PA 17362
+                  Spring Grove, PA 17362
                 </p>
                 <p className="text-white/80">
                   7178195196

@@ -20,7 +20,6 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "telephone": "+1-717-XXX-XXXX",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "2001 Stoverstown Road",
             "addressLocality": "Spring Grove",
             "addressRegion": "PA",
             "postalCode": "17362",

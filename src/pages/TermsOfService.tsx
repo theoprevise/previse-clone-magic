@@ -28,7 +28,7 @@ const TermsOfService = () => {
             <section>
               <h2 className="text-2xl font-semibold text-accent mb-4">3. About Previse Mortgage</h2>
               <p className="leading-relaxed">
-                Previse Mortgage LLC (NMLS #2730429) is a Pennsylvania-company (incorporated June 4, 2025), headquartered at 2001 Stoverstown Road, Spring Grove, PA 17362. We are licensed to originate residential mortgage loans in Pennsylvania (and possibly other states upon license expansion) via the NMLS system. Loans are subject to credit approval and underwriting.
+                Previse Mortgage LLC (NMLS #2730429, PA Broker #115658) is a Pennsylvania-company (incorporated June 4, 2025), headquartered in Spring Grove, PA 17362. We are licensed to originate residential mortgage loans in Pennsylvania (and possibly other states upon license expansion) via the NMLS system. Loans are subject to credit approval and underwriting.
               </p>
             </section>
 
@@ -113,7 +113,7 @@ const TermsOfService = () => {
               <h2 className="text-2xl font-semibold text-accent mb-4">14. Contact Information</h2>
               <div className="leading-relaxed">
                 <p className="font-semibold">Previse Mortgage LLC</p>
-                <p>2001 Stoverstown Road, Spring Grove, PA 17362</p>
+                <p>Spring Grove, PA 17362</p>
                 <p>Email: teddy@previsemortgage.com</p>
               </div>
             </section>

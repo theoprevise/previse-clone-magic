@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 mb-12 max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-white mb-4">Previse Mortgage</h3>
             <div className="space-y-2 text-white/80 text-lg">
-              <p>2001 Stoverstown Rd. York PA 17362</p>
+              <p>Spring Grove, PA 17362</p>
               <p className="text-accent font-semibold text-xl">(717) 819-5196</p>
             </div>
           </div>

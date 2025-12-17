@@ -5,7 +5,7 @@ import AboutSection from "@/components/AboutSection";
 import FAQSection from "@/components/FAQSection";
 import CalendlySection from "@/components/CalendlySection";
 import Footer from "@/components/Footer";
-import ChatBot from "@/components/ChatBot";
+import GoHighLevelChat from "@/components/GoHighLevelChat";
 import StructuredData from "@/components/StructuredData";
 import SEOHead from "@/components/SEOHead";
 import { useEffect } from "react";
@@ -32,7 +32,7 @@ const Index = () => {
       <CalendlySection />
       <FAQSection />
       <Footer />
-      <ChatBot />
+      <GoHighLevelChat />
     </div>
   );
 };

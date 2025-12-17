@@ -5,7 +5,7 @@ const GoHighLevelChat = () => {
 
   useEffect(() => {
     // Check if script already exists
-    if (document.querySelector('script[data-widget-id="6941fa334ca1821c63dd36d0"]')) {
+    if (document.querySelector('script[data-widget-id="694202b4cd151717b26384fb"]')) {
       setIsLoaded(true);
       return;
     }
@@ -13,7 +13,7 @@ const GoHighLevelChat = () => {
     const script = document.createElement('script');
     script.src = 'https://widgets.leadconnectorhq.com/loader.js';
     script.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
-    script.setAttribute('data-widget-id', '6941fa334ca1821c63dd36d0');
+    script.setAttribute('data-widget-id', '694202b4cd151717b26384fb');
     script.async = true;
     
     script.onload = () => {

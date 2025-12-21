@@ -7,7 +7,7 @@ const ServicesSection = () => {
     {
       icon: Home,
       title: "Purchase Loans",
-      description: "First-time homebuyers and move-up buyers can choose from conventional, FHA, VA, and USDA loan programs.",
+      description: "First-time homebuyers and move-up buyers can choose from conventional, FHA, and USDA loan programs.",
       features: ["Down payments as low as 3%", "Competitive interest rates", "First-time buyer programs", "Expert guidance"]
     },
     {

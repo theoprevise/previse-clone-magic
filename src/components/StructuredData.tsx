@@ -45,7 +45,6 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "serviceType": [
             "Conventional Loans",
             "FHA Loans", 
-            "VA Loans",
             "USDA Loans",
             "Jumbo Loans",
             "Refinancing",
@@ -66,7 +65,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
               "name": "What types of home loans do you offer?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "We offer comprehensive mortgage solutions including: Conventional loans (down payments as low as 3%), FHA loans (3.5% down), VA loans (0% down for eligible veterans), USDA loans (0% down for rural areas), jumbo loans (up to $3M+), DSCR investment property loans, bank statement loans for self-employed borrowers, and construction-to-permanent financing."
+                "text": "We offer comprehensive mortgage solutions including: Conventional loans (down payments as low as 3%), FHA loans (3.5% down), USDA loans (0% down for rural areas), jumbo loans (up to $3M+), DSCR investment property loans, bank statement loans for self-employed borrowers, and construction-to-permanent financing."
               }
             },
             {
@@ -82,7 +81,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
               "name": "How much do I need for a down payment?",
               "acceptedAnswer": {
                 "@type": "Answer", 
-                "text": "Down payment requirements vary by loan type: VA and USDA loans require 0% down, FHA loans require 3.5% minimum, conventional loans can be as low as 3% for first-time buyers, and jumbo loans typically require 10-20%."
+                "text": "Down payment requirements vary by loan type: USDA loans require 0% down, FHA loans require 3.5% minimum, conventional loans can be as low as 3% for first-time buyers, and jumbo loans typically require 10-20%."
               }
             },
             {
@@ -106,7 +105,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
               "name": "What credit score do I need to qualify?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Minimum credit score requirements depend on loan type: FHA loans accept scores as low as 580, VA loans prefer 580+, USDA loans typically require 640+, conventional loans need 620+, and jumbo loans often require 700+."
+                "text": "Minimum credit score requirements depend on loan type: FHA loans accept scores as low as 580, USDA loans typically require 640+, conventional loans need 620+, and jumbo loans often require 700+."
               }
             }
           ]
@@ -144,14 +143,6 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
                   "@type": "Service",
                   "name": "FHA Loans",
                   "description": "Government-backed loans with low down payment options"
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service", 
-                  "name": "VA Loans",
-                  "description": "Zero down payment loans for eligible veterans and service members"
                 }
               }
             ]

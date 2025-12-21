@@ -1,4 +1,4 @@
-import { Home, DollarSign, Shield, Star, TrendingUp, Building, ArrowLeft } from "lucide-react";
+import { Home, DollarSign, Shield, TrendingUp, Building, ArrowLeft, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
@@ -29,14 +29,14 @@ const MortgageSolutions = () => {
       ]
     },
     {
-      icon: Star,
-      title: "VA Loans",
-      description: "Exclusive benefits for military service members",
+      icon: TrendingUp,
+      title: "Non-Conventional",
+      description: "Alternative financing for unique situations",
       details: [
-        "No down payment required",
-        "No PMI required",
-        "Competitive rates",
-        "For veterans and active duty"
+        "Bank statement loans",
+        "DSCR (investment property)",
+        "Asset-based lending",
+        "Self-employed friendly"
       ]
     },
     {
@@ -51,14 +51,14 @@ const MortgageSolutions = () => {
       ]
     },
     {
-      icon: TrendingUp,
-      title: "Non-Conventional",
-      description: "Alternative financing for unique situations",
+      icon: Briefcase,
+      title: "Bank Statement Loans",
+      description: "Alternative documentation for self-employed",
       details: [
-        "Bank statement loans",
-        "DSCR (investment property)",
-        "Asset-based lending",
-        "Self-employed friendly"
+        "12-24 month statements",
+        "Self-employed friendly",
+        "Asset-based qualifying",
+        "Flexible verification"
       ]
     },
     {

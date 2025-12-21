@@ -258,8 +258,7 @@ const CurrentMortgageRates = () => {
                   Get Your Personalized Rate
                 </h2>
                 <p className="text-white/80 mb-6">
-                  The rates shown are averages. Your actual rate could be lower! 
-                  Get a personalized quote in minutes with no impact to your credit score.
+                  The rates shown are averages. Your actual rate will depend on various factors like: credit score, down payment, loan amount, property type. Contact us for a personalized rate quote based on your specific situation.
                 </p>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-center gap-2 text-white/80">

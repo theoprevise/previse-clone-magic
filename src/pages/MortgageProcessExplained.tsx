@@ -30,7 +30,7 @@ const processSteps = [
     description: "Get pre-approved to understand your budget and show sellers you're a serious buyer.",
     details: [
       "Submit basic financial information",
-      "Lender reviews credit score and income",
+      "Previse Mortgage reviews credit score and income",
       "Receive pre-approval letter with loan amount",
       "Valid for 60-90 days typically"
     ],
@@ -83,7 +83,7 @@ const processSteps = [
     icon: Building,
     title: "Processing & Underwriting",
     duration: "2-4 weeks",
-    description: "Your lender verifies all information and assesses the risk of your loan.",
+    description: "Previse Mortgage verifies all information and assesses the risk of your loan.",
     details: [
       "Loan processor reviews your file",
       "Employment and income verification",
@@ -99,7 +99,7 @@ const processSteps = [
     duration: "1-2 weeks",
     description: "An independent appraiser confirms the home's value matches the purchase price.",
     details: [
-      "Lender orders professional appraisal",
+      "Previse Mortgage orders professional appraisal",
       "Appraiser inspects the property",
       "Report compares to similar homes",
       "Must meet or exceed purchase price"

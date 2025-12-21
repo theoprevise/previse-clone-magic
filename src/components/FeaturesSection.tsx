@@ -10,7 +10,7 @@ const FeaturesSection = () => {
       title: "Fast Closing",
       description: "Advanced technology meets personalized service",
       items: [
-        "Timely coatings real-time view",
+        "Timely responses and real-time view of the process",
         "AI-driven efficiency",
         "Fewer delays, more clarity"
       ]

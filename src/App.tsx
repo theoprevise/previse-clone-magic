@@ -25,6 +25,8 @@ import CurrentMortgageRates from "./pages/CurrentMortgageRates";
 import VALoans from "./pages/VALoans";
 import CreditScoreTips from "./pages/CreditScoreTips";
 import MortgageProcessExplained from "./pages/MortgageProcessExplained";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 const queryClient = new QueryClient();
 
@@ -56,6 +58,8 @@ const App = () => (
           <Route path="/va-loans" element={<VALoans />} />
           <Route path="/credit-score-mortgage-tips" element={<CreditScoreTips />} />
           <Route path="/how-the-mortgage-process-works" element={<MortgageProcessExplained />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

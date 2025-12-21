@@ -10,6 +10,7 @@ import {
   Trees, 
   TrendingUp, 
   ArrowRight,
+  ArrowLeft,
   CheckCircle2,
   Users,
   DollarSign,
@@ -121,8 +122,20 @@ const MortgagePrograms = () => {
     <div className="min-h-screen bg-gradient-to-b from-primary via-primary-dark to-primary">
       <Header />
       
+      {/* Back to Home */}
+      <div className="container mx-auto px-4 pt-6">
+        <Button 
+          variant="ghost" 
+          onClick={() => navigate('/')}
+          className="text-white hover:text-accent"
+        >
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          Back to Home
+        </Button>
+      </div>
+      
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-12 overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-pulse" />

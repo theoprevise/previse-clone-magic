@@ -30,6 +30,12 @@ const Header = () => {
             >
               Loan Programs
             </button>
+            <button 
+              onClick={() => navigate('/first-time-homebuyer')}
+              className="text-white/80 hover:text-accent transition-colors font-medium"
+            >
+              First-Time Buyers
+            </button>
             <Button 
               size="lg" 
               variant="hero"
@@ -58,6 +64,12 @@ const Header = () => {
                 className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
               >
                 Loan Programs
+              </button>
+              <button 
+                onClick={() => {navigate('/first-time-homebuyer'); setIsMenuOpen(false);}}
+                className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
+              >
+                First-Time Buyers
               </button>
               <Button 
                 size="lg" 

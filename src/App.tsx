@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import MortgageSolutions from "./pages/MortgageSolutions";
 import MortgagePrograms from "./pages/MortgagePrograms";
 import ServicesAndFAQ from "./pages/ServicesAndFAQ";
+import FirstTimeHomebuyer from "./pages/FirstTimeHomebuyer";
 import AIReadinessAnalysis from "./pages/AIReadinessAnalysis";
 import Application from "./pages/Application";
 import ThankYou from "./pages/ThankYou";
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/mortgage-solutions" element={<MortgageSolutions />} />
           <Route path="/mortgage-programs" element={<MortgagePrograms />} />
           <Route path="/services-faq" element={<ServicesAndFAQ />} />
+          <Route path="/first-time-homebuyer" element={<FirstTimeHomebuyer />} />
           <Route path="/ai-readiness" element={<AIReadinessAnalysis />} />
           <Route path="/application/:loanType" element={<Application />} />
           <Route path="/thank-you" element={<ThankYou />} />

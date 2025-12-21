@@ -260,7 +260,7 @@ const FirstTimeHomebuyer = () => {
                 <div className="p-3 bg-accent/20 rounded-xl">
                   <ClipboardCheck className="h-6 w-6 text-accent" />
                 </div>
-                <h3 className="text-2xl font-bold text-white">Pre-Approval Documents</h3>
+                <h3 className="text-2xl font-bold text-white">Possible Documents Needed</h3>
               </div>
               <ul className="space-y-3">
                 {preApprovalChecklist.map((item, idx) => {

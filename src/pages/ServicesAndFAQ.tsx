@@ -16,7 +16,7 @@ const ServicesAndFAQ = () => {
         "Stronger offers that sellers accept",
         "Lock in rates early"
       ],
-      proofOfTrust: "Local Wichita expertise with 15+ years serving Kansas homebuyers",
+      proofOfTrust: "15+ years of expertise serving homebuyers",
       nextStep: "Apply online in 10 minutes or schedule consultation"
     },
     {
@@ -28,7 +28,7 @@ const ServicesAndFAQ = () => {
         "Cash-out for home improvements",
         "No closing cost options available"
       ],
-      proofOfTrust: "Successfully closed 500+ refinances in Wichita metro area",
+      proofOfTrust: "Successfully closed 500+ refinances",
       nextStep: "Get rate quote and savings analysis"
     },
     {
@@ -40,7 +40,7 @@ const ServicesAndFAQ = () => {
         "First-time buyer grants available",
         "Step-by-step guidance throughout"
       ],
-      proofOfTrust: "Helped 200+ first-time buyers in Wichita achieve homeownership",
+      proofOfTrust: "Helped 200+ first-time buyers achieve homeownership",
       nextStep: "Schedule free homebuyer consultation"
     },
     {
@@ -52,7 +52,7 @@ const ServicesAndFAQ = () => {
         "Portfolio lending options",
         "Competitive investor rates"
       ],
-      proofOfTrust: "Local market knowledge of Kansas rental property values",
+      proofOfTrust: "Expert knowledge of local rental property values",
       nextStep: "Discuss investment strategy and loan options"
     },
     {
@@ -64,7 +64,7 @@ const ServicesAndFAQ = () => {
         "Flexible down payment options",
         "Fast approval process"
       ],
-      proofOfTrust: "Experienced with high-value properties in Wichita's premium neighborhoods",
+      proofOfTrust: "Experienced with high-value properties in premium neighborhoods",
       nextStep: "Get jumbo loan pre-qualification"
     },
     {
@@ -76,7 +76,7 @@ const ServicesAndFAQ = () => {
         "Custom home financing",
         "Lot purchase options"
       ],
-      proofOfTrust: "Worked with local Wichita builders for seamless construction financing",
+      proofOfTrust: "Worked with local builders for seamless construction financing",
       nextStep: "Review construction plans and timeline"
     }
   ];
@@ -103,8 +103,8 @@ const ServicesAndFAQ = () => {
       answer: "Pre-qualification is an estimate based on basic information. Pre-approval involves credit check, income verification, and full underwriting review, providing a committed loan amount from the lender."
     },
     {
-      question: "Are there programs for first-time homebuyers in Kansas?",
-      answer: "Yes, Kansas offers down payment assistance, USDA rural loans for qualifying areas, VA loans for veterans, and FHA loans with 3.5% down. Local Wichita programs may provide additional grants."
+      question: "Are there programs for first-time homebuyers?",
+      answer: "Yes, there are various down payment assistance options, USDA rural loans for qualifying areas, and FHA loans with 3.5% down. Local programs may provide additional grants depending on your location."
     },
     {
       question: "How much should I put down on a house?",

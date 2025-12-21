@@ -1,8 +1,12 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const Schedule = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     // Load Calendly script
     const script = document.createElement('script');
@@ -23,9 +27,21 @@ const Schedule = () => {
     <div className="min-h-screen bg-gradient-to-b from-primary-dark via-primary to-primary-dark">
         <Header />
         
-        <main className="pt-24 pb-16">
+        {/* Back to Home */}
+        <div className="container mx-auto px-4 pt-6">
+          <Button 
+            variant="ghost" 
+            onClick={() => navigate('/')}
+            className="text-white hover:text-accent"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to Home
+          </Button>
+        </div>
+        
+        <main className="pt-8 pb-16">
           {/* Hero Section */}
-          <section className="py-16 relative overflow-hidden">
+          <section className="py-12 relative overflow-hidden">
             {/* Background elements */}
             <div className="absolute inset-0">
               <div className="absolute top-1/4 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-float"></div>

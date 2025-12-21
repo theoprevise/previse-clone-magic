@@ -213,14 +213,20 @@ const MortgagePrograms = () => {
                           </li>
                         ))}
                       </ul>
-                      <Button 
-                        variant="outline"
-                        className="w-full border-accent/30 text-accent hover:bg-accent/10"
-                        onClick={() => navigate('/application/Mortgage')}
+                      <a 
+                        href="https://previsemortgage.my1003app.com?time=1766329396091"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full"
                       >
-                        Apply for {program.title}
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
+                        <Button 
+                          variant="outline"
+                          className="w-full border-accent/30 text-accent hover:bg-accent/10"
+                        >
+                          Apply for {program.title}
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                      </a>
                     </div>
                   </div>
                 </Card>

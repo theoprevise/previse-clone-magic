@@ -51,16 +51,19 @@ const HeroSection = () => {
           
           {/* Modern CTA button */}
           <div className="flex justify-center animate-fade-in delay-700">
-            <Button 
-              size="lg" 
-              className="group bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-primary border-0 px-10 py-4 rounded-full text-lg font-bold min-w-[200px] shadow-2xl hover:shadow-accent/25 transition-all duration-300 transform hover:-translate-y-1"
-                  onClick={() => {
-                    navigate('/application/Mortgage');
-                  }}
+            <a 
+              href="https://previsemortgage.my1003app.com?time=1766329396091"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Apply Now
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={20} />
-            </Button>
+              <Button 
+                size="lg" 
+                className="group bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-primary border-0 px-10 py-4 rounded-full text-lg font-bold min-w-[200px] shadow-2xl hover:shadow-accent/25 transition-all duration-300 transform hover:-translate-y-1"
+              >
+                Apply Now
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={20} />
+              </Button>
+            </a>
           </div>
         </div>
       </div>

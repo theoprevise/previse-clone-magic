@@ -57,25 +57,6 @@ const loanPrograms = [
     highlights: ["Low down payment options", "Flexible credit requirements", "Gift funds allowed for down payment"]
   },
   {
-    id: "va",
-    icon: Shield,
-    title: "VA Loans",
-    description: "Exclusive benefits for veterans, active military, and eligible surviving spouses.",
-    bestFor: [
-      "Active-duty military members",
-      "Veterans with honorable discharge",
-      "National Guard and Reserve members",
-      "Eligible surviving spouses"
-    ],
-    qualifications: [
-      "Certificate of Eligibility (COE) required",
-      "No minimum credit score (lenders may require 620+)",
-      "No down payment required",
-      "Must meet military service requirements"
-    ],
-    highlights: ["Zero down payment", "No PMI required", "Competitive interest rates", "Limited closing costs"]
-  },
-  {
     id: "usda",
     icon: Trees,
     title: "USDA Loans",

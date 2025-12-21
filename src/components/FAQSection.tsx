@@ -10,7 +10,7 @@ const FAQSection = () => {
     {
       icon: "🏛️",
       question: "What types of home loans do you offer?",
-      answer: "We offer comprehensive mortgage solutions including: Conventional loans (down payments as low as 3%), FHA loans (3.5% down), VA loans (0% down for eligible veterans), USDA loans (0% down for rural areas), jumbo loans (up to $3M+), DSCR investment property loans, bank statement loans for self-employed borrowers, and construction-to-permanent financing. Each loan type has specific requirements and benefits tailored to different borrower situations in the Wichita, Kansas area."
+      answer: "We offer comprehensive mortgage solutions including: Conventional loans (down payments as low as 3%), FHA loans (3.5% down), USDA loans (0% down for rural areas), jumbo loans (up to $3M+), DSCR investment property loans, bank statement loans for self-employed borrowers, and construction-to-permanent financing. Each loan type has specific requirements and benefits tailored to different borrower situations in the Wichita, Kansas area."
     },
     {
       icon: "💳",
@@ -20,7 +20,7 @@ const FAQSection = () => {
     {
       icon: "📊",
       question: "How much do I need for a down payment?",
-      answer: "Down payment requirements vary significantly by loan type: VA and USDA loans require 0% down, FHA loans require 3.5% minimum, conventional loans can be as low as 3% for first-time buyers or 5% for others, and jumbo loans typically require 10-20%. Additionally, you'll need funds for closing costs (2-5% of loan amount), which can sometimes be rolled into the loan or covered by seller concessions."
+      answer: "Down payment requirements vary significantly by loan type: USDA loans require 0% down, FHA loans require 3.5% minimum, conventional loans can be as low as 3% for first-time buyers or 5% for others, and jumbo loans typically require 10-20%. Additionally, you'll need funds for closing costs (2-5% of loan amount), which can sometimes be rolled into the loan or covered by seller concessions."
     },
     {
       icon: "💼",
@@ -35,7 +35,7 @@ const FAQSection = () => {
     {
       icon: "💯",
       question: "What credit score do I need to qualify?",
-      answer: "Minimum credit score requirements depend on loan type: FHA loans accept scores as low as 580 (or 500 with 10% down), VA loans have no official minimum but 580+ is preferred, USDA loans typically require 640+, conventional loans generally need 620+, and jumbo loans often require 700+. Lower scores may qualify with higher down payments or stronger compensating factors like high income or significant assets."
+      answer: "Minimum credit score requirements depend on loan type: FHA loans accept scores as low as 580 (or 500 with 10% down), USDA loans typically require 640+, conventional loans generally need 620+, and jumbo loans often require 700+. Lower scores may qualify with higher down payments or stronger compensating factors like high income or significant assets."
     },
     {
       icon: "💭",
@@ -45,7 +45,7 @@ const FAQSection = () => {
     {
       icon: "🏠",
       question: "Can I refinance my current mortgage?",
-      answer: "Yes, we offer several refinancing options in the Wichita area: Rate-and-term refinancing to lower your interest rate or change loan terms, cash-out refinancing to access home equity for improvements or debt consolidation, streamline refinancing for existing FHA/VA loans with minimal documentation, and no-closing-cost options where closing costs are built into the rate. Refinancing typically makes sense when rates drop by 0.5-1% or when you need to access equity."
+      answer: "Yes, we offer several refinancing options in the Wichita area: Rate-and-term refinancing to lower your interest rate or change loan terms, cash-out refinancing to access home equity for improvements or debt consolidation, streamline refinancing for existing FHA loans with minimal documentation, and no-closing-cost options where closing costs are built into the rate. Refinancing typically makes sense when rates drop by 0.5-1% or when you need to access equity."
     }
   ];
 

@@ -43,7 +43,6 @@ const steps = [
     description: "Know exactly how much you can afford and show sellers you're serious.",
     details: [
       "Gather income documents (W-2s, pay stubs)",
-      "Provide bank statements and assets",
       "Complete mortgage application",
       "Receive your pre-approval letter"
     ]

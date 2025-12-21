@@ -31,11 +31,11 @@ const Schedule = () => {
         <div className="container mx-auto px-4 pt-6">
           <Button 
             variant="ghost" 
-            onClick={() => navigate('/')}
+            onClick={() => navigate(-1)}
             className="text-white hover:text-accent"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Home
+            Back
           </Button>
         </div>
         

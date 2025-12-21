@@ -48,7 +48,7 @@ const CalendlySection = () => {
           <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
             <div 
               className="calendly-inline-widget rounded-2xl overflow-hidden" 
-              data-url="https://calendly.com/team-previsemortgage/30min?background_color=1e3557&text_color=ffffff" 
+              data-url="https://calendly.com/previsemortgage/30min" 
               style={{minWidth:"320px", height:"700px"}}
             ></div>
           </div>

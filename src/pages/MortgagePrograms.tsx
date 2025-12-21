@@ -240,23 +240,15 @@ const MortgagePrograms = () => {
             <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
               Take our quick AI-powered assessment to discover which mortgage program best fits your unique financial situation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Button 
                 size="lg" 
                 variant="hero"
-                onClick={() => navigate('/ai-readiness')}
                 className="group"
-              >
-                Find My Best Program
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10"
-                onClick={() => navigate('/mortgage-solutions')}
+                onClick={() => navigate('/schedule')}
               >
                 Talk to an Expert
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
           </Card>

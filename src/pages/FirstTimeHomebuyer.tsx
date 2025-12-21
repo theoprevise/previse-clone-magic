@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { 
   ArrowRight,
+  ArrowLeft,
   CheckCircle2,
   CircleDollarSign,
   FileText,
@@ -151,8 +152,20 @@ const FirstTimeHomebuyer = () => {
     <div className="min-h-screen bg-gradient-to-b from-primary via-primary-dark to-primary">
       <Header />
       
+      {/* Back to Home */}
+      <div className="container mx-auto px-4 pt-6">
+        <Button 
+          variant="ghost" 
+          onClick={() => navigate('/')}
+          className="text-white hover:text-accent"
+        >
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          Back to Home
+        </Button>
+      </div>
+      
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-12 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />

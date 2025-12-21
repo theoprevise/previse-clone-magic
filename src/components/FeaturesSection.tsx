@@ -54,7 +54,7 @@ const FeaturesSection = () => {
               Why Choose Previse
             </span>
           </div>
-          <h2 className="font-serif text-4xl lg:text-6xl font-bold text-white mb-8 max-w-4xl mx-auto leading-tight">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 max-w-4xl mx-auto leading-tight">
             Your trusted partner in<br />
             <span className="bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">
               home financing

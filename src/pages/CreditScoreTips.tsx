@@ -192,7 +192,7 @@ const CreditScoreTips = () => {
                 </span>
               </div>
               
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white">
+              <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-8 text-white">
                 Credit Score &<br />
                 <span className="bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">
                   Mortgage Approval Tips
@@ -206,7 +206,7 @@ const CreditScoreTips = () => {
                 <div className="w-20 h-0.5 bg-gradient-to-r from-accent to-transparent"></div>
               </div>
               
-              <p className="text-xl lg:text-2xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
                 Discover what credit score you need for a mortgage and learn proven strategies to boost your score before applying.
               </p>
               
@@ -241,7 +241,7 @@ const CreditScoreTips = () => {
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
-              <h2 className="font-serif text-4xl lg:text-5xl font-bold text-white mb-6">
+              <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
                 Credit Score Ranges for <span className="bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">Mortgages</span>
               </h2>
               <p className="text-xl text-white/80 max-w-2xl mx-auto">
@@ -294,7 +294,7 @@ const CreditScoreTips = () => {
                   Actionable Tips
                 </span>
               </div>
-              <h2 className="font-serif text-4xl lg:text-5xl font-bold text-white mb-6">
+              <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
                 Quick Wins to <span className="bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">Boost Your Score</span>
               </h2>
               <p className="text-xl text-white/80 max-w-2xl mx-auto">
@@ -349,7 +349,7 @@ const CreditScoreTips = () => {
                   Avoid These Pitfalls
                 </span>
               </div>
-              <h2 className="font-serif text-4xl lg:text-5xl font-bold text-white mb-6">
+              <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
                 Common Mistakes to <span className="text-red-400">Avoid</span>
               </h2>
               <p className="text-xl text-white/80 max-w-2xl mx-auto">
@@ -387,7 +387,7 @@ const CreditScoreTips = () => {
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
-              <h2 className="font-serif text-4xl lg:text-5xl font-bold text-white mb-6">
+              <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
                 Beyond Credit Score: <span className="bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">Other Factors</span>
               </h2>
               <p className="text-xl text-white/80 max-w-2xl mx-auto">
@@ -432,7 +432,7 @@ const CreditScoreTips = () => {
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
-              <h2 className="font-serif text-4xl lg:text-5xl font-bold text-white mb-6">
+              <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
                 Frequently Asked <span className="bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">Questions</span>
               </h2>
             </div>
@@ -463,7 +463,7 @@ const CreditScoreTips = () => {
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="font-serif text-4xl lg:text-5xl font-bold text-white mb-6">
+              <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
                 Ready to Take the <span className="bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">Next Step?</span>
               </h2>
               <p className="text-xl text-white/80 mb-10">

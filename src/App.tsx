@@ -24,6 +24,7 @@ import Refinance from "./pages/Refinance";
 import CurrentMortgageRates from "./pages/CurrentMortgageRates";
 import VALoans from "./pages/VALoans";
 import CreditScoreTips from "./pages/CreditScoreTips";
+import MortgageProcessExplained from "./pages/MortgageProcessExplained";
 
 const queryClient = new QueryClient();
 
@@ -54,6 +55,7 @@ const App = () => (
           <Route path="/current-mortgage-rates" element={<CurrentMortgageRates />} />
           <Route path="/va-loans" element={<VALoans />} />
           <Route path="/credit-score-mortgage-tips" element={<CreditScoreTips />} />
+          <Route path="/how-the-mortgage-process-works" element={<MortgageProcessExplained />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

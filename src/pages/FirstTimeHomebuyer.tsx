@@ -63,7 +63,7 @@ const steps = [
     number: "04",
     icon: FileText,
     title: "Complete the Loan Process",
-    description: "Work with your lender to finalize your mortgage.",
+    description: "Work with Previse to finalize your mortgage.",
     details: [
       "Lock in your interest rate",
       "Complete home inspection and appraisal",

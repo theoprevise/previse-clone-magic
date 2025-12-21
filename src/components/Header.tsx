@@ -49,12 +49,6 @@ const Header = () => {
             >
               Refinance
             </button>
-            <button 
-              onClick={() => navigate('/current-mortgage-rates')}
-              className="text-white/80 hover:text-accent transition-colors font-medium"
-            >
-              Rates
-            </button>
             <Button 
               size="lg" 
               variant="hero"
@@ -101,12 +95,6 @@ const Header = () => {
                 className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
               >
                 Refinance
-              </button>
-              <button 
-                onClick={() => {navigate('/current-mortgage-rates'); setIsMenuOpen(false);}}
-                className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
-              >
-                Rates
               </button>
               <Button 
                 size="lg" 

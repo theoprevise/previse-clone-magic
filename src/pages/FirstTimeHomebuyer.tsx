@@ -166,19 +166,10 @@ const FirstTimeHomebuyer = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Your Complete Guide to <span className="text-accent">Buying Your First Home</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
               Buying your first home doesn't have to be overwhelming. We'll guide you through every step, 
               from pre-approval to getting your keys.
             </p>
-            <Button 
-              size="lg" 
-              variant="hero"
-              onClick={() => navigate('/ai-readiness')}
-              className="group"
-            >
-              Get Your Personalized Plan
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
           </div>
         </div>
       </section>
@@ -196,51 +187,40 @@ const FirstTimeHomebuyer = () => {
           </div>
 
           <div className="relative">
-            {/* Connection Line */}
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-secondary to-accent/50 transform -translate-x-1/2" />
-            
-            <div className="space-y-12">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
               {steps.map((step, index) => {
                 const IconComponent = step.icon;
-                const isEven = index % 2 === 0;
                 
                 return (
                   <div 
                     key={step.number}
-                    className={`relative flex flex-col lg:flex-row items-center gap-8 ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
+                    className="flex flex-col items-center"
                   >
-                    {/* Content Card */}
-                    <div className={`w-full lg:w-5/12 ${isEven ? 'lg:text-right' : 'lg:text-left'}`}>
-                      <Card className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 hover:bg-white/10 transition-all duration-300 hover:border-accent/30">
-                        <div className={`flex items-start gap-4 ${isEven ? 'lg:flex-row-reverse' : ''}`}>
-                          <div className="p-3 bg-accent/20 rounded-xl flex-shrink-0">
-                            <IconComponent className="h-6 w-6 text-accent" />
-                          </div>
-                          <div className={isEven ? 'lg:text-right' : ''}>
-                            <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
-                            <p className="text-white/70 mb-4">{step.description}</p>
-                            <ul className={`space-y-2 ${isEven ? 'lg:text-right' : ''}`}>
-                              {step.details.map((detail, idx) => (
-                                <li key={idx} className={`flex items-center gap-2 text-sm text-white/80 ${isEven ? 'lg:flex-row-reverse' : ''}`}>
-                                  <CheckCircle2 className="h-4 w-4 text-success flex-shrink-0" />
-                                  <span>{detail}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      </Card>
-                    </div>
-                    
-                    {/* Step Number Circle */}
-                    <div className="relative z-10 flex-shrink-0">
+                    {/* Step Number Circle - Now on top */}
+                    <div className="relative z-10 flex-shrink-0 mb-6">
                       <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent to-secondary flex items-center justify-center shadow-lg shadow-accent/30">
                         <span className="text-xl font-bold text-primary">{step.number}</span>
                       </div>
                     </div>
                     
-                    {/* Spacer for layout */}
-                    <div className="hidden lg:block w-5/12" />
+                    {/* Content Card */}
+                    <Card className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 hover:bg-white/10 transition-all duration-300 hover:border-accent/30 w-full max-w-md">
+                      <div className="flex flex-col items-center text-center">
+                        <div className="p-3 bg-accent/20 rounded-xl mb-4">
+                          <IconComponent className="h-6 w-6 text-accent" />
+                        </div>
+                        <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
+                        <p className="text-white/70 mb-4">{step.description}</p>
+                        <ul className="space-y-2 text-left w-full">
+                          {step.details.map((detail, idx) => (
+                            <li key={idx} className="flex items-center gap-2 text-sm text-white/80">
+                              <CheckCircle2 className="h-4 w-4 text-success flex-shrink-0" />
+                              <span>{detail}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </Card>
                   </div>
                 );
               })}

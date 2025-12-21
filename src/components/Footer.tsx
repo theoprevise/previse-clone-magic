@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router-dom';
+import logoFull from "@/assets/logo-full.png";
+
 const Footer = () => {
   const navigate = useNavigate();
   return <footer className="bg-gradient-to-t from-primary-dark to-primary py-16 border-t border-accent/20 relative overflow-hidden">
@@ -17,7 +19,7 @@ const Footer = () => {
         <div className="text-center">
           {/* Logo section */}
           <div className="mb-12">
-            <img src="https://img1.wsimg.com/isteam/ip/bc7cebe9-b604-4d0e-9c6e-660ac5ced5e1/tmplacbura9.webp/:/rs=w:205,h:70,cg:true,m/cr=w:205,h:70/qt=q:95" alt="Previse Mortgage" className="h-16 mx-auto mb-8 hover:scale-105 transition-transform duration-300" />
+            <img src={logoFull} alt="Previse Mortgage" className="h-16 mx-auto mb-8 hover:scale-105 transition-transform duration-300" />
           </div>
           
           {/* Company info in modern card */}

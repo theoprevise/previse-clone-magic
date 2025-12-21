@@ -304,11 +304,11 @@ const MortgageCalculator = () => {
                     {refinanceSavings && (
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="bg-accent/10 border border-accent/30 rounded-2xl p-6 text-center">
-                          <p className="text-white/60 mb-2">Monthly Savings</p>
+                          <p className="text-white/60 mb-2">Estimated Monthly Savings</p>
                           <p className="text-3xl font-bold text-accent">{formatCurrency(refinanceSavings.monthly)}</p>
                         </div>
                         <div className="bg-accent/10 border border-accent/30 rounded-2xl p-6 text-center">
-                          <p className="text-white/60 mb-2">Total Savings Over Loan</p>
+                          <p className="text-white/60 mb-2">Estimated Total Savings Over Loan</p>
                           <p className="text-3xl font-bold text-accent">{formatCurrency(refinanceSavings.total)}</p>
                         </div>
                       </div>

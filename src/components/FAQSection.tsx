@@ -10,7 +10,7 @@ const FAQSection = () => {
     {
       icon: "🏛️",
       question: "What types of home loans do you offer?",
-      answer: "We offer comprehensive mortgage solutions including: Conventional loans (down payments as low as 3%), FHA loans (3.5% down), USDA loans (0% down for rural areas), jumbo loans (up to $3M+), DSCR investment property loans, bank statement loans for self-employed borrowers, and construction-to-permanent financing. Each loan type has specific requirements and benefits tailored to different borrower situations in the Wichita, Kansas area."
+      answer: "We offer comprehensive mortgage solutions including: Conventional loans (down payments as low as 3%), FHA loans (3.5% down), USDA loans (0% down for rural areas), jumbo loans (up to $3M+), DSCR investment property loans, bank statement loans for self-employed borrowers, and construction-to-permanent financing. Each loan type has specific requirements and benefits tailored to different borrower situations."
     },
     {
       icon: "💳",

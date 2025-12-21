@@ -388,11 +388,15 @@ const MortgageCalculator = () => {
                       Schedule Consultation
                     </Button>
                   </Link>
-                  <Link to="/application/conventional">
+                  <a 
+                    href="https://previsemortgage.my1003app.com?time=1766329396091"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 px-8 py-6 rounded-xl">
                       Start Application
                     </Button>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

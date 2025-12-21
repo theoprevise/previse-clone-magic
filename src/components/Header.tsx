@@ -52,7 +52,7 @@ const Header = () => {
             <Button 
               size="lg" 
               variant="hero"
-              onClick={() => navigate('/mortgage-solutions')}
+              onClick={() => navigate('/mortgage-programs')}
               className="font-semibold"
             >
               Get Started
@@ -99,7 +99,7 @@ const Header = () => {
               <Button 
                 size="lg" 
                 variant="hero"
-                onClick={() => {navigate('/mortgage-solutions'); setIsMenuOpen(false);}}
+                onClick={() => {navigate('/mortgage-programs'); setIsMenuOpen(false);}}
                 className="w-full font-semibold"
               >
                 Get Started

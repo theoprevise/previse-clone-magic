@@ -377,11 +377,11 @@ const MortgageCalculator = () => {
                     {affordability && (
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="bg-accent/10 border border-accent/30 rounded-2xl p-6 text-center">
-                          <p className="text-white/60 mb-2">Maximum Home Price</p>
+                          <p className="text-white/60 mb-2">Estimated Maximum Home Price</p>
                           <p className="text-3xl font-bold text-accent">{formatCurrency(affordability.maxHome)}</p>
                         </div>
                         <div className="bg-accent/10 border border-accent/30 rounded-2xl p-6 text-center">
-                          <p className="text-white/60 mb-2">Max Monthly Payment</p>
+                          <p className="text-white/60 mb-2">Estimated Max Monthly Payment</p>
                           <p className="text-3xl font-bold text-accent">{formatCurrency(affordability.maxPayment)}</p>
                         </div>
                       </div>

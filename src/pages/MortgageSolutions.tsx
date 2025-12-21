@@ -1,6 +1,9 @@
-import { Home, DollarSign, Shield, Star, TrendingUp, Building } from "lucide-react";
+import { Home, DollarSign, Shield, Star, TrendingUp, Building, ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const MortgageSolutions = () => {
+  const navigate = useNavigate();
 
   const mortgageTypes = [
     {
@@ -82,8 +85,20 @@ const MortgageSolutions = () => {
       </div>
 
       <div className="relative z-10">
+        {/* Back to Home */}
+        <div className="container mx-auto px-4 pt-8">
+          <Button 
+            variant="ghost" 
+            onClick={() => navigate('/')}
+            className="text-white hover:text-accent"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to Home
+          </Button>
+        </div>
+
         {/* Hero Section */}
-        <div className="container mx-auto px-4 py-16 text-center">
+        <div className="container mx-auto px-4 py-12 text-center">
           <div className="max-w-4xl mx-auto">
             <h1 className="font-serif text-5xl lg:text-7xl font-bold text-white mb-8 leading-tight">
               Mortgage 

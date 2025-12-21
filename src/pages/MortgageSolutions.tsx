@@ -100,13 +100,13 @@ const MortgageSolutions = () => {
         {/* Hero Section */}
         <div className="container mx-auto px-4 py-12 text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="font-serif text-5xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+            <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight">
               Mortgage 
               <span className="block bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">
                 Solutions
               </span>
             </h1>
-            <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg lg:text-xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
               Explore our comprehensive range of mortgage products designed to meet your unique financing needs
             </p>
           </div>

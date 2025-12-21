@@ -123,13 +123,13 @@ const MortgageCalculator = () => {
                   Free Tools
                 </span>
               </div>
-              <h1 className="font-serif text-4xl lg:text-6xl font-bold text-white mb-6">
+              <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
                 Mortgage<br />
                 <span className="bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">
                   Calculator Tools
                 </span>
               </h1>
-              <p className="text-xl text-white/80 max-w-2xl mx-auto">
+              <p className="text-base md:text-lg lg:text-xl text-white/80 max-w-2xl mx-auto">
                 Plan your home purchase with our easy-to-use calculators. Get estimates for monthly payments, refinance savings, and affordability.
               </p>
             </div>

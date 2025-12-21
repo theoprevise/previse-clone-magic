@@ -137,19 +137,10 @@ const MortgagePrograms = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Find Your Perfect <span className="text-accent">Mortgage Program</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
               Explore our comprehensive range of loan programs designed to fit every financial situation. 
               From first-time buyers to seasoned investors, we have the right solution for you.
             </p>
-            <Button 
-              size="lg" 
-              variant="hero"
-              onClick={() => navigate('/ai-readiness')}
-              className="group"
-            >
-              See Which Program Fits You
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
           </div>
         </div>
       </section>

@@ -43,6 +43,12 @@ const Header = () => {
             >
               Calculators
             </button>
+            <button 
+              onClick={() => navigate('/refinance')}
+              className="text-white/80 hover:text-accent transition-colors font-medium"
+            >
+              Refinance
+            </button>
             <Button 
               size="lg" 
               variant="hero"
@@ -83,6 +89,12 @@ const Header = () => {
                 className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
               >
                 Calculators
+              </button>
+              <button 
+                onClick={() => {navigate('/refinance'); setIsMenuOpen(false);}}
+                className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
+              >
+                Refinance
               </button>
               <Button 
                 size="lg" 

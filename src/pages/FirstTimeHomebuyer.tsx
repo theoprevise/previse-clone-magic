@@ -344,7 +344,7 @@ const FirstTimeHomebuyer = () => {
               <Button 
                 size="lg" 
                 variant="hero"
-                onClick={() => navigate('/ai-readiness')}
+                onClick={() => navigate('/schedule')}
                 className="group"
               >
                 Get Your Personalized Plan

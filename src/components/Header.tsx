@@ -48,28 +48,28 @@ const Header = () => {
           {/* Navigation Links */}
           <nav className="hidden lg:flex items-center gap-6">
             <button 
-              onClick={() => navigate('/mortgage-programs')}
-              className="text-white/80 hover:text-accent transition-colors font-medium"
-            >
-              Loan Programs
-            </button>
-            <button 
               onClick={() => navigate('/first-time-homebuyer')}
               className="text-white/80 hover:text-accent transition-colors font-medium"
             >
               First-Time Buyers
             </button>
             <button 
-              onClick={() => navigate('/mortgage-calculator')}
-              className="text-white/80 hover:text-accent transition-colors font-medium"
-            >
-              Calculators
-            </button>
-            <button 
               onClick={() => navigate('/refinance')}
               className="text-white/80 hover:text-accent transition-colors font-medium"
             >
               Refinance
+            </button>
+            <button 
+              onClick={() => navigate('/mortgage-programs')}
+              className="text-white/80 hover:text-accent transition-colors font-medium"
+            >
+              Loan Programs
+            </button>
+            <button 
+              onClick={() => navigate('/mortgage-calculator')}
+              className="text-white/80 hover:text-accent transition-colors font-medium"
+            >
+              Calculators
             </button>
             
             {/* Resources Dropdown */}
@@ -126,28 +126,28 @@ const Header = () => {
           <div className="lg:hidden bg-primary/95 backdrop-blur-md border-t border-accent/20 py-4">
             <nav className="flex flex-col space-y-2 px-4">
               <button 
-                onClick={() => {navigate('/mortgage-programs'); setIsMenuOpen(false);}}
-                className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
-              >
-                Loan Programs
-              </button>
-              <button 
                 onClick={() => {navigate('/first-time-homebuyer'); setIsMenuOpen(false);}}
                 className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
               >
                 First-Time Buyers
               </button>
               <button 
-                onClick={() => {navigate('/mortgage-calculator'); setIsMenuOpen(false);}}
-                className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
-              >
-                Calculators
-              </button>
-              <button 
                 onClick={() => {navigate('/refinance'); setIsMenuOpen(false);}}
                 className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
               >
                 Refinance
+              </button>
+              <button 
+                onClick={() => {navigate('/mortgage-programs'); setIsMenuOpen(false);}}
+                className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
+              >
+                Loan Programs
+              </button>
+              <button 
+                onClick={() => {navigate('/mortgage-calculator'); setIsMenuOpen(false);}}
+                className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
+              >
+                Calculators
               </button>
               
               {/* Mobile Resources Dropdown */}

@@ -16,6 +16,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { useAuth } from "@/hooks/useAuth";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { useToast } from "@/hooks/use-toast";
+import RichTextEditor from "@/components/RichTextEditor";
 
 interface MortgageApplication {
   id: string;
@@ -539,14 +540,10 @@ const AdminDashboard = () => {
                         </div>
 
                         <div className="space-y-2">
-                          <Label htmlFor="content" className="text-black">Content * (HTML supported)</Label>
-                          <Textarea
-                            id="content"
-                            value={blogForm.content}
-                            onChange={(e) => setBlogForm({ ...blogForm, content: e.target.value })}
-                            placeholder="Write your blog post content here. HTML tags are supported."
-                            rows={12}
-                            className="bg-white border-gray-300 text-black font-mono text-sm"
+                          <Label className="text-black">Content *</Label>
+                          <RichTextEditor
+                            content={blogForm.content}
+                            onChange={(content) => setBlogForm({ ...blogForm, content })}
                           />
                         </div>
 

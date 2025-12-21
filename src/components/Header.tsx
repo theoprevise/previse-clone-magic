@@ -15,7 +15,6 @@ const Header = () => {
     { label: "Credit Score & Approval Tips", path: "/credit-score-mortgage-tips" },
     { label: "How the Mortgage Process Works", path: "/how-the-mortgage-process-works" },
     { label: "Current Mortgage Rates", path: "/current-mortgage-rates" },
-    { label: "VA Loans", path: "/va-loans" },
   ];
 
   // Close dropdown when clicking outside

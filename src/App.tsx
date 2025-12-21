@@ -22,6 +22,7 @@ import Schedule from "./pages/Schedule";
 import MortgageCalculator from "./pages/MortgageCalculator";
 import Refinance from "./pages/Refinance";
 import CurrentMortgageRates from "./pages/CurrentMortgageRates";
+import VALoans from "./pages/VALoans";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +51,7 @@ const App = () => (
           <Route path="/mortgage-calculator" element={<MortgageCalculator />} />
           <Route path="/refinance" element={<Refinance />} />
           <Route path="/current-mortgage-rates" element={<CurrentMortgageRates />} />
+          <Route path="/va-loans" element={<VALoans />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -199,7 +199,7 @@ const MortgagePrograms = () => {
                     {/* Best For */}
                     <div className="lg:col-span-4">
                       <div className="flex items-center gap-2 mb-4">
-                        <Users className="h-5 w-5 text-secondary" />
+                        <Users className="h-5 w-5 text-white" />
                         <h3 className="text-lg font-semibold text-white">Best For</h3>
                       </div>
                       <ul className="space-y-2">
@@ -215,7 +215,7 @@ const MortgagePrograms = () => {
                     {/* Qualifications */}
                     <div className="lg:col-span-4">
                       <div className="flex items-center gap-2 mb-4">
-                        <DollarSign className="h-5 w-5 text-secondary" />
+                        <DollarSign className="h-5 w-5 text-white" />
                         <h3 className="text-lg font-semibold text-white">Quick Qualifications</h3>
                       </div>
                       <ul className="space-y-2 mb-6">

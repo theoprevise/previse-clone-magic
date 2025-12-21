@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import logoFull from "@/assets/logo-full.png";
 import logoIcon from "@/assets/logo-icon.png";
+
 const Footer = () => {
   const navigate = useNavigate();
   return <footer className="bg-gradient-to-t from-primary-dark to-primary py-16 border-t border-accent/20 relative overflow-hidden">
@@ -19,7 +19,7 @@ const Footer = () => {
         <div className="text-center">
           {/* Logo section */}
           <div className="mb-12">
-            <img src={logoFull} alt="Previse Mortgage" className="h-16 mx-auto mb-8 hover:scale-105 transition-transform duration-300" />
+            <img src={logoIcon} alt="Previse Mortgage" className="h-20 mx-auto mb-8 hover:scale-105 transition-transform duration-300" />
           </div>
           
           {/* Company info in modern card */}
@@ -49,11 +49,6 @@ const Footer = () => {
             <button onClick={() => navigate('/terms-of-service')} className="text-white/60 hover:text-accent transition-colors duration-300 text-sm underline">
               Terms of Service
             </button>
-          </div>
-
-          {/* Lighthouse Icon */}
-          <div className="mt-8">
-            <img src={logoIcon} alt="Previse Mortgage" className="h-20 mx-auto opacity-80 hover:opacity-100 transition-opacity duration-300" />
           </div>
           
         </div>

@@ -1,9 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { ArrowLeft, Home, DollarSign, Shield, Star, TrendingUp, Building } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Home, DollarSign, Shield, Star, TrendingUp, Building } from "lucide-react";
 
 const MortgageSolutions = () => {
-  const navigate = useNavigate();
 
   const mortgageTypes = [
     {
@@ -85,18 +82,6 @@ const MortgageSolutions = () => {
       </div>
 
       <div className="relative z-10">
-        {/* Header */}
-        <div className="container mx-auto px-4 pt-12">
-          <Button 
-            variant="ghost" 
-            onClick={() => navigate('/')}
-            className="text-white hover:text-accent mb-8"
-          >
-            <ArrowLeft className="mr-2" size={20} />
-            Back to Home
-          </Button>
-        </div>
-
         {/* Hero Section */}
         <div className="container mx-auto px-4 py-16 text-center">
           <div className="max-w-4xl mx-auto">
@@ -118,8 +103,7 @@ const MortgageSolutions = () => {
             {mortgageTypes.map((mortgage, index) => (
               <div 
                 key={index} 
-                className="group relative cursor-pointer"
-                onClick={() => navigate('/application/Mortgage')}
+                className="group relative"
               >
                 {/* Glass morphism card */}
                 <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 h-full hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/10 transform-gpu">
@@ -152,7 +136,6 @@ const MortgageSolutions = () => {
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </div>

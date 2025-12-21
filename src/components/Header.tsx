@@ -37,6 +37,12 @@ const Header = () => {
             >
               First-Time Buyers
             </button>
+            <button 
+              onClick={() => navigate('/mortgage-calculator')}
+              className="text-white/80 hover:text-accent transition-colors font-medium"
+            >
+              Calculators
+            </button>
             <Button 
               size="lg" 
               variant="hero"
@@ -71,6 +77,12 @@ const Header = () => {
                 className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
               >
                 First-Time Buyers
+              </button>
+              <button 
+                onClick={() => {navigate('/mortgage-calculator'); setIsMenuOpen(false);}}
+                className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
+              >
+                Calculators
               </button>
               <Button 
                 size="lg" 

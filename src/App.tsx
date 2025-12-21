@@ -20,6 +20,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import Schedule from "./pages/Schedule";
 import MortgageCalculator from "./pages/MortgageCalculator";
+import Refinance from "./pages/Refinance";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/mortgage-calculator" element={<MortgageCalculator />} />
+          <Route path="/refinance" element={<Refinance />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

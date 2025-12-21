@@ -43,7 +43,7 @@ const processSteps = [
     duration: "2-12 weeks",
     description: "Search for homes within your budget with your pre-approval letter in hand.",
     details: [
-      "Work with a real estate agent",
+      "Browse listings online and in person",
       "Tour homes in your price range",
       "Consider location, size, and condition",
       "Research neighborhoods and schools"
@@ -57,7 +57,7 @@ const processSteps = [
     duration: "1-5 days",
     description: "Submit an offer on your chosen home and negotiate terms with the seller.",
     details: [
-      "Determine offer price with your agent",
+      "Determine a competitive offer price",
       "Include earnest money deposit",
       "Negotiate contingencies and closing date",
       "Sign purchase agreement when accepted"

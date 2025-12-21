@@ -204,7 +204,7 @@ const MortgageProcessExplained = () => {
                 </span>
               </div>
               
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white">
+              <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-8 text-white">
                 How the Mortgage<br />
                 <span className="bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">
                   Process Works
@@ -282,7 +282,7 @@ const MortgageProcessExplained = () => {
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
-              <h2 className="font-serif text-4xl lg:text-5xl font-bold text-white mb-6">
+              <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
                 The 8 Steps to <span className="bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">Homeownership</span>
               </h2>
               <p className="text-xl text-white/80 max-w-2xl mx-auto">
@@ -374,7 +374,7 @@ const MortgageProcessExplained = () => {
                   Be Prepared
                 </span>
               </div>
-              <h2 className="font-serif text-4xl lg:text-5xl font-bold text-white mb-6">
+              <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
                 Documents You'll <span className="bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">Need</span>
               </h2>
               <p className="text-xl text-white/80 max-w-2xl mx-auto">
@@ -414,7 +414,7 @@ const MortgageProcessExplained = () => {
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
-              <h2 className="font-serif text-4xl lg:text-5xl font-bold text-white mb-6">
+              <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
                 Common <span className="bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">Questions</span>
               </h2>
             </div>
@@ -445,7 +445,7 @@ const MortgageProcessExplained = () => {
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="font-serif text-4xl lg:text-5xl font-bold text-white mb-6">
+              <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
                 Ready to Start Your <span className="bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">Journey?</span>
               </h2>
               <p className="text-xl text-white/80 mb-10">

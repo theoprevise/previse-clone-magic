@@ -30,7 +30,7 @@ const HeroSection = () => {
         <div className="max-w-5xl mx-auto">
           {/* Main heading with modern typography */}
           <div className="mb-8 animate-fade-in">
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-8xl font-bold leading-relaxed mb-8 text-white pb-4" itemProp="name">
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-relaxed mb-8 text-white pb-4" itemProp="name">
               <span className="block mb-4">Professionalized</span>
               <span className="block bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent py-4" style={{ paddingBottom: '0.5rem', lineHeight: '1.2' }}>
                 Loan Financing
@@ -45,7 +45,7 @@ const HeroSection = () => {
             <div className="w-20 h-0.5 bg-gradient-to-r from-accent to-transparent"></div>
           </div>
           
-          <p className="text-xl lg:text-2xl text-white/90 mb-16 max-w-2xl mx-auto leading-relaxed animate-fade-in delay-500" itemProp="description">
+          <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-16 max-w-2xl mx-auto leading-relaxed animate-fade-in delay-500" itemProp="description">
             Get the guidance you need with cutting-edge technology and personalized service
           </p>
           

@@ -22,8 +22,14 @@ const Header = () => {
           </div>
 
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
+          {/* Navigation Links */}
+          <nav className="hidden lg:flex items-center gap-6">
+            <button 
+              onClick={() => navigate('/mortgage-programs')}
+              className="text-white/80 hover:text-accent transition-colors font-medium"
+            >
+              Loan Programs
+            </button>
             <Button 
               size="lg" 
               variant="hero"
@@ -32,7 +38,7 @@ const Header = () => {
             >
               Get Started
             </Button>
-          </div>
+          </nav>
 
           {/* Mobile Menu Button */}
           <button
@@ -46,17 +52,21 @@ const Header = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="lg:hidden bg-primary/95 backdrop-blur-md border-t border-accent/20 py-4">
-            <nav className="flex flex-col space-y-4">
-              <div className="px-4 pt-4">
-                <Button 
-                  size="lg" 
-                  variant="hero"
-                  onClick={() => {navigate('/mortgage-solutions'); setIsMenuOpen(false);}}
-                  className="w-full font-semibold"
-                >
-                  Get Started
-                </Button>
-              </div>
+            <nav className="flex flex-col space-y-4 px-4">
+              <button 
+                onClick={() => {navigate('/mortgage-programs'); setIsMenuOpen(false);}}
+                className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
+              >
+                Loan Programs
+              </button>
+              <Button 
+                size="lg" 
+                variant="hero"
+                onClick={() => {navigate('/mortgage-solutions'); setIsMenuOpen(false);}}
+                className="w-full font-semibold"
+              >
+                Get Started
+              </Button>
             </nav>
           </div>
         )}

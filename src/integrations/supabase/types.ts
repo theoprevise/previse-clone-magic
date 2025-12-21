@@ -53,6 +53,48 @@ export type Database = {
         }
         Relationships: []
       }
+      leads: {
+        Row: {
+          address: string | null
+          city: string | null
+          created_at: string
+          email: string
+          first_name: string
+          id: string
+          last_name: string
+          phone: string | null
+          source: string | null
+          state: string | null
+          zip_code: string | null
+        }
+        Insert: {
+          address?: string | null
+          city?: string | null
+          created_at?: string
+          email: string
+          first_name: string
+          id?: string
+          last_name: string
+          phone?: string | null
+          source?: string | null
+          state?: string | null
+          zip_code?: string | null
+        }
+        Update: {
+          address?: string | null
+          city?: string | null
+          created_at?: string
+          email?: string
+          first_name?: string
+          id?: string
+          last_name?: string
+          phone?: string | null
+          source?: string | null
+          state?: string | null
+          zip_code?: string | null
+        }
+        Relationships: []
+      }
       mortgage_applications: {
         Row: {
           additional_info: string | null

@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import GoHighLevelChat from "@/components/GoHighLevelChat";
 import StructuredData from "@/components/StructuredData";
 import SEOHead from "@/components/SEOHead";
-import { useEffect } from "react";
+import LeadCapturePopup from "@/components/LeadCapturePopup";
 
 const Index = () => {
   return (
@@ -33,6 +33,7 @@ const Index = () => {
       <FAQSection />
       <Footer />
       <GoHighLevelChat />
+      <LeadCapturePopup />
     </div>
   );
 };

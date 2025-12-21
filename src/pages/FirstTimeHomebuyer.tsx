@@ -320,8 +320,7 @@ const FirstTimeHomebuyer = () => {
               return (
                 <Card 
                   key={idx}
-                  className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 hover:bg-white/10 transition-all duration-300 hover:border-accent/30 group cursor-pointer"
-                  onClick={() => navigate('/mortgage-programs')}
+                  className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 hover:bg-white/10 transition-all duration-300 hover:border-accent/30 group"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div className="p-3 bg-accent/20 rounded-xl group-hover:bg-accent/30 transition-colors">

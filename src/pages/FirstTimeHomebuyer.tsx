@@ -51,7 +51,7 @@ const steps = [
     number: "03",
     icon: Search,
     title: "Find Your Dream Home",
-    description: "Work with a real estate agent to find the perfect property.",
+    description: "Search for the perfect property that fits your needs and budget.",
     details: [
       "Determine your must-haves and nice-to-haves",
       "Research neighborhoods and schools",

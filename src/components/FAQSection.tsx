@@ -30,7 +30,7 @@ const FAQSection = () => {
     {
       icon: "⏰",
       question: "How long does the mortgage process take?",
-      answer: "The typical mortgage process takes 30-45 days from application to closing in Wichita, Kansas. Our advanced technology and local processing can often close loans faster: purchase loans in 21-30 days, refinances in 15-30 days, and cash-out refinances in 30-45 days. Timeline factors include loan complexity, property type, appraisal scheduling, and borrower documentation completeness."
+      answer: "The typical mortgage process takes 30-45 days from application to closing. Our advanced technology and streamlined processing can often close loans faster: purchase loans in 21-30 days, refinances in 15-30 days, and cash-out refinances in 30-45 days. Timeline factors include loan complexity, property type, appraisal scheduling, and borrower documentation completeness."
     },
     {
       icon: "💯",
@@ -45,7 +45,7 @@ const FAQSection = () => {
     {
       icon: "🏠",
       question: "Can I refinance my current mortgage?",
-      answer: "Yes, we offer several refinancing options in the Wichita area: Rate-and-term refinancing to lower your interest rate or change loan terms, cash-out refinancing to access home equity for improvements or debt consolidation, streamline refinancing for existing FHA loans with minimal documentation, and no-closing-cost options where closing costs are built into the rate. Refinancing typically makes sense when rates drop by 0.5-1% or when you need to access equity."
+      answer: "Yes, we offer several refinancing options: Rate-and-term refinancing to lower your interest rate or change loan terms, cash-out refinancing to access home equity for improvements or debt consolidation, streamline refinancing for existing FHA loans with minimal documentation, and no-closing-cost options where closing costs are built into the rate. Refinancing typically makes sense when rates drop by 0.5-1% or when you need to access equity."
     }
   ];
 

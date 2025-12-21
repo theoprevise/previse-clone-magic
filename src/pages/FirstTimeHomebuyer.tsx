@@ -175,10 +175,10 @@ const FirstTimeHomebuyer = () => {
             <span className="inline-block px-4 py-2 bg-accent/20 border border-accent/30 rounded-full text-accent text-sm font-medium mb-6 animate-fade-in">
               First-Time Homebuyer Resource
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
               Your Complete Guide to <span className="text-accent">Buying Your First Home</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+            <p className="text-base md:text-lg lg:text-xl text-white/80 leading-relaxed">
               Buying your first home doesn't have to be overwhelming. We'll guide you through every step, 
               from pre-approval to getting your keys.
             </p>
@@ -190,10 +190,10 @@ const FirstTimeHomebuyer = () => {
       <section className="py-20 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
               Your Step-by-Step <span className="text-accent">Homebuying Journey</span>
             </h2>
-            <p className="text-lg text-white/70 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
               Follow these five steps to navigate your path to homeownership with confidence.
             </p>
           </div>
@@ -245,10 +245,10 @@ const FirstTimeHomebuyer = () => {
       <section className="py-20 bg-white/5">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
               Essential <span className="text-accent">Checklists</span>
             </h2>
-            <p className="text-lg text-white/70 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
               Stay organized with these must-have checklists for your homebuying journey.
             </p>
           </div>
@@ -305,10 +305,10 @@ const FirstTimeHomebuyer = () => {
       <section className="py-20 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
               Down Payment <span className="text-accent">Assistance Programs</span>
             </h2>
-            <p className="text-lg text-white/70 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
               Don't let the down payment hold you back. Explore these programs designed to help first-time buyers.
             </p>
           </div>
@@ -345,10 +345,10 @@ const FirstTimeHomebuyer = () => {
             <div className="p-4 bg-accent/20 rounded-full w-fit mx-auto mb-6">
               <Home className="h-10 w-10 text-accent" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
               Ready to Start Your Homebuying Journey?
             </h2>
-            <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-white/80 mb-8 max-w-2xl mx-auto">
               Get a personalized plan based on your unique financial situation. Our experts will guide you every step of the way.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

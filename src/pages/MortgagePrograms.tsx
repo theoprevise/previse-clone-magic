@@ -128,10 +128,10 @@ const MortgagePrograms = () => {
             <span className="inline-block px-4 py-2 bg-accent/20 border border-accent/30 rounded-full text-accent text-sm font-medium mb-6 animate-fade-in">
               Home Loan Options
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
               Find Your Perfect <span className="text-accent">Mortgage Program</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+            <p className="text-base md:text-lg lg:text-xl text-white/80 leading-relaxed">
               Explore our comprehensive range of loan programs designed to fit every financial situation. 
               From first-time buyers to seasoned investors, we have the right solution for you.
             </p>
@@ -234,10 +234,10 @@ const MortgagePrograms = () => {
       <section className="py-20 relative">
         <div className="container mx-auto px-4">
           <Card className="bg-gradient-to-r from-accent/20 to-secondary/20 backdrop-blur-xl border border-accent/30 p-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
               Not Sure Which Program Is Right for You?
             </h2>
-            <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-white/80 mb-8 max-w-2xl mx-auto">
               Take our quick AI-powered assessment to discover which mortgage program best fits your unique financial situation.
             </p>
             <div className="flex justify-center">

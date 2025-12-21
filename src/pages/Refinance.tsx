@@ -153,10 +153,10 @@ const Refinance = () => {
             <span className="inline-block px-4 py-2 bg-accent/20 border border-accent/30 rounded-full text-accent text-sm font-medium mb-6 animate-fade-in">
               Refinance Options
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
               Lower Your Payments & <span className="text-accent">Save Thousands</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-base md:text-lg lg:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto">
               Discover how refinancing can help you reduce your monthly payments, shorten your loan term, or access your home equity.
             </p>
           </div>
@@ -167,10 +167,10 @@ const Refinance = () => {
       <section className="py-16 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
               When Should You <span className="text-accent">Refinance?</span>
             </h2>
-            <p className="text-lg text-white/70 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
               Refinancing makes sense in many situations. Here are the most common reasons homeowners refinance.
             </p>
           </div>
@@ -207,10 +207,10 @@ const Refinance = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
                 Refinance <span className="text-accent">Savings Estimator</span>
               </h2>
-              <p className="text-lg text-white/70">
+              <p className="text-base md:text-lg text-white/70">
                 See how much you could save by refinancing your current mortgage.
               </p>
             </div>
@@ -322,10 +322,10 @@ const Refinance = () => {
       <section className="py-16 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
               Real <span className="text-accent">Savings Examples</span>
             </h2>
-            <p className="text-lg text-white/70 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
               See how different refinancing scenarios can impact your finances.
             </p>
           </div>
@@ -374,10 +374,10 @@ const Refinance = () => {
             <div className="p-4 bg-accent/20 rounded-full w-fit mx-auto mb-6">
               <TrendingDown className="h-10 w-10 text-accent" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
               Ready to Check Current Rates?
             </h2>
-            <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-white/80 mb-8 max-w-2xl mx-auto">
               Get a personalized rate quote and see exactly how much you could save by refinancing your mortgage.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -19,9 +19,6 @@ const LeadCapturePopup = () => {
     last_name: "",
     email: "",
     phone: "",
-    city: "",
-    state: "",
-    zip_code: "",
   });
 
   useEffect(() => {
@@ -68,9 +65,6 @@ const LeadCapturePopup = () => {
         last_name: formData.last_name.trim(),
         email: formData.email.trim(),
         phone: formData.phone.trim() || null,
-        city: formData.city.trim() || null,
-        state: formData.state.trim() || null,
-        zip_code: formData.zip_code.trim() || null,
         source: "popup",
       });
 
@@ -164,39 +158,6 @@ const LeadCapturePopup = () => {
               onChange={handleChange}
               placeholder="(555) 123-4567"
             />
-          </div>
-
-          <div className="grid grid-cols-3 gap-3">
-            <div className="space-y-2">
-              <Label htmlFor="city">City</Label>
-              <Input
-                id="city"
-                name="city"
-                value={formData.city}
-                onChange={handleChange}
-                placeholder="City"
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="state">State</Label>
-              <Input
-                id="state"
-                name="state"
-                value={formData.state}
-                onChange={handleChange}
-                placeholder="PA"
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="zip_code">ZIP</Label>
-              <Input
-                id="zip_code"
-                name="zip_code"
-                value={formData.zip_code}
-                onChange={handleChange}
-                placeholder="12345"
-              />
-            </div>
           </div>
 
           <Button

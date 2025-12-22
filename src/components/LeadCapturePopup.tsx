@@ -92,27 +92,27 @@ const LeadCapturePopup = () => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
-      <div className="relative w-full max-w-md max-h-[90vh] bg-background rounded-2xl shadow-2xl border border-border overflow-hidden animate-fade-in flex flex-col">
+      <div className="relative w-full max-w-sm bg-background rounded-xl shadow-2xl border border-border overflow-hidden animate-fade-in">
         {/* Header */}
-        <div className="bg-primary px-6 py-4 text-primary-foreground flex-shrink-0">
+        <div className="bg-primary px-4 py-3 text-primary-foreground">
           <button
             onClick={handleClose}
-            className="absolute top-3 right-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+            className="absolute top-2 right-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
             aria-label="Close popup"
           >
             <X className="h-5 w-5" />
           </button>
-          <h2 className="text-xl font-bold">Get Your Free Consultation</h2>
-          <p className="text-sm opacity-90 mt-1">
+          <h2 className="text-lg font-bold">Get Your Free Consultation</h2>
+          <p className="text-xs opacity-90">
             Let us help you find the perfect mortgage solution.
           </p>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="p-6 space-y-4 overflow-y-auto flex-1">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <Label htmlFor="first_name">First Name *</Label>
+        <form onSubmit={handleSubmit} className="p-4 space-y-3">
+          <div className="grid grid-cols-2 gap-3">
+            <div className="space-y-1">
+              <Label htmlFor="first_name" className="text-sm">First Name *</Label>
               <Input
                 id="first_name"
                 name="first_name"
@@ -120,10 +120,11 @@ const LeadCapturePopup = () => {
                 onChange={handleChange}
                 placeholder="John"
                 required
+                className="h-9"
               />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="last_name">Last Name *</Label>
+            <div className="space-y-1">
+              <Label htmlFor="last_name" className="text-sm">Last Name *</Label>
               <Input
                 id="last_name"
                 name="last_name"
@@ -131,12 +132,13 @@ const LeadCapturePopup = () => {
                 onChange={handleChange}
                 placeholder="Doe"
                 required
+                className="h-9"
               />
             </div>
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="email">Email *</Label>
+          <div className="space-y-1">
+            <Label htmlFor="email" className="text-sm">Email *</Label>
             <Input
               id="email"
               name="email"
@@ -145,11 +147,12 @@ const LeadCapturePopup = () => {
               onChange={handleChange}
               placeholder="john@example.com"
               required
+              className="h-9"
             />
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="phone">Phone Number</Label>
+          <div className="space-y-1">
+            <Label htmlFor="phone" className="text-sm">Phone Number</Label>
             <Input
               id="phone"
               name="phone"
@@ -157,13 +160,13 @@ const LeadCapturePopup = () => {
               value={formData.phone}
               onChange={handleChange}
               placeholder="(555) 123-4567"
+              className="h-9"
             />
           </div>
 
           <Button
             type="submit"
             className="w-full"
-            size="lg"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Submitting..." : "Get My Free Consultation"}

@@ -19,7 +19,6 @@ const LeadCapturePopup = () => {
     last_name: "",
     email: "",
     phone: "",
-    address: "",
     city: "",
     state: "",
     zip_code: "",
@@ -69,7 +68,6 @@ const LeadCapturePopup = () => {
         last_name: formData.last_name.trim(),
         email: formData.email.trim(),
         phone: formData.phone.trim() || null,
-        address: formData.address.trim() || null,
         city: formData.city.trim() || null,
         state: formData.state.trim() || null,
         zip_code: formData.zip_code.trim() || null,
@@ -165,17 +163,6 @@ const LeadCapturePopup = () => {
               value={formData.phone}
               onChange={handleChange}
               placeholder="(555) 123-4567"
-            />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="address">Street Address</Label>
-            <Input
-              id="address"
-              name="address"
-              value={formData.address}
-              onChange={handleChange}
-              placeholder="123 Main St"
             />
           </div>
 

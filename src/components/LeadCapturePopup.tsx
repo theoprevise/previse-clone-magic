@@ -98,9 +98,9 @@ const LeadCapturePopup = () => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
-      <div className="relative w-full max-w-md bg-background rounded-2xl shadow-2xl border border-border overflow-hidden animate-fade-in">
+      <div className="relative w-full max-w-md max-h-[90vh] bg-background rounded-2xl shadow-2xl border border-border overflow-hidden animate-fade-in flex flex-col">
         {/* Header */}
-        <div className="bg-primary px-6 py-4 text-primary-foreground">
+        <div className="bg-primary px-6 py-4 text-primary-foreground flex-shrink-0">
           <button
             onClick={handleClose}
             className="absolute top-3 right-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
@@ -115,7 +115,7 @@ const LeadCapturePopup = () => {
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="p-6 space-y-4">
+        <form onSubmit={handleSubmit} className="p-6 space-y-4 overflow-y-auto flex-1">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="first_name">First Name *</Label>

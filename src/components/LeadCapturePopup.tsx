@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { X } from "lucide-react";
+import { X, CheckCircle, Sparkles, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -12,6 +12,7 @@ const STORAGE_KEY = "lead_popup_dismissed";
 const LeadCapturePopup = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
   const { toast } = useToast();
 
   const [formData, setFormData] = useState({
@@ -35,6 +36,7 @@ const LeadCapturePopup = () => {
 
   const handleClose = () => {
     setIsOpen(false);
+    setShowThankYou(false);
     localStorage.setItem(STORAGE_KEY, "true");
   };
 
@@ -70,12 +72,7 @@ const LeadCapturePopup = () => {
 
       if (error) throw error;
 
-      toast({
-        title: "Thank You!",
-        description: "We'll be in touch with you soon.",
-      });
-
-      handleClose();
+      setShowThankYou(true);
     } catch (error) {
       console.error("Error submitting lead:", error);
       toast({
@@ -89,6 +86,79 @@ const LeadCapturePopup = () => {
   };
 
   if (!isOpen) return null;
+
+  // Thank You State
+  if (showThankYou) {
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+        <div className="relative w-full max-w-sm bg-background rounded-xl shadow-2xl border border-border overflow-hidden animate-scale-in">
+          {/* Animated Background */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-0 left-1/4 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-pulse" />
+            <div className="absolute bottom-0 right-1/4 w-16 h-16 bg-accent/20 rounded-full blur-lg animate-bounce" style={{ animationDuration: '3s' }} />
+            <div className="absolute top-1/2 right-0 w-12 h-12 bg-success/15 rounded-full blur-md animate-pulse" style={{ animationDelay: '1s' }} />
+          </div>
+          
+          {/* Close Button */}
+          <button
+            onClick={handleClose}
+            className="absolute top-3 right-3 z-10 text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Close popup"
+          >
+            <X className="h-5 w-5" />
+          </button>
+
+          {/* Content */}
+          <div className="relative z-10 p-6 text-center">
+            {/* Success Icon with Animation */}
+            <div className="mb-4 animate-bounce" style={{ animationDuration: '2s' }}>
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-success/20 rounded-full border-2 border-success/40">
+                <CheckCircle className="w-8 h-8 text-success animate-pulse" />
+              </div>
+            </div>
+
+            {/* Sparkles */}
+            <div className="absolute top-8 left-8 animate-pulse" style={{ animationDelay: '0.5s' }}>
+              <Sparkles className="w-5 h-5 text-accent" />
+            </div>
+            <div className="absolute top-12 right-10 animate-pulse" style={{ animationDelay: '1s' }}>
+              <Sparkles className="w-4 h-4 text-primary" />
+            </div>
+            <div className="absolute bottom-20 left-12 animate-pulse" style={{ animationDelay: '1.5s' }}>
+              <Heart className="w-4 h-4 text-destructive/60" />
+            </div>
+
+            {/* Thank You Message */}
+            <h2 className="text-2xl font-bold text-foreground mb-2 animate-fade-in">
+              Thank You, {formData.first_name}!
+            </h2>
+            <p className="text-muted-foreground text-sm mb-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              We've received your request and a mortgage specialist will contact you within 24 hours.
+            </p>
+
+            {/* Decorative Divider */}
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <div className="h-px w-12 bg-gradient-to-r from-transparent to-border" />
+              <Heart className="w-4 h-4 text-primary animate-pulse" />
+              <div className="h-px w-12 bg-gradient-to-l from-transparent to-border" />
+            </div>
+
+            <p className="text-xs text-muted-foreground mb-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              We're excited to help you on your homeownership journey!
+            </p>
+
+            <Button
+              onClick={handleClose}
+              className="w-full animate-fade-in"
+              style={{ animationDelay: '0.6s' }}
+            >
+              Close
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">

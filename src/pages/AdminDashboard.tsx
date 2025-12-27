@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { Eye, LogOut, Shield, Plus, Edit, Trash2, BookOpen } from "lucide-react";
+import { Eye, LogOut, Shield, Plus, Edit, Trash2, BookOpen, Users } from "lucide-react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useAuth } from "@/hooks/useAuth";
@@ -54,9 +54,24 @@ interface BlogPost {
   updated_at: string;
 }
 
+interface Lead {
+  id: string;
+  first_name: string;
+  last_name: string;
+  email: string;
+  phone: string | null;
+  address: string | null;
+  city: string | null;
+  state: string | null;
+  zip_code: string | null;
+  source: string | null;
+  created_at: string;
+}
+
 const AdminDashboard = () => {
   const [applications, setApplications] = useState<MortgageApplication[]>([]);
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+  const [leads, setLeads] = useState<Lead[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [blogDialogOpen, setBlogDialogOpen] = useState(false);
@@ -82,6 +97,7 @@ const AdminDashboard = () => {
     if (user && isAdmin) {
       fetchApplications();
       fetchBlogPosts();
+      fetchLeads();
     }
   }, [user, isAdmin, authLoading, navigate]);
 
@@ -114,6 +130,42 @@ const AdminDashboard = () => {
       setBlogPosts(data || []);
     } catch (error) {
       console.error('Error fetching blog posts:', error);
+    }
+  };
+
+  const fetchLeads = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('leads')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (error) throw error;
+      setLeads(data || []);
+    } catch (error) {
+      console.error('Error fetching leads:', error);
+    }
+  };
+
+  const handleDeleteLead = async (leadId: string) => {
+    if (!confirm("Are you sure you want to delete this lead?")) return;
+
+    try {
+      const { error } = await supabase
+        .from('leads')
+        .delete()
+        .eq('id', leadId);
+
+      if (error) throw error;
+      toast({ title: "Lead deleted successfully" });
+      fetchLeads();
+    } catch (error: any) {
+      console.error('Error deleting lead:', error);
+      toast({ 
+        title: "Error deleting lead", 
+        description: error.message,
+        variant: "destructive" 
+      });
     }
   };
 
@@ -366,6 +418,10 @@ const AdminDashboard = () => {
             <TabsTrigger value="blog" className="text-black data-[state=active]:bg-white data-[state=active]:text-black">
               <BookOpen className="h-4 w-4 mr-2" />
               Blog Posts ({blogPosts.length})
+            </TabsTrigger>
+            <TabsTrigger value="leads" className="text-black data-[state=active]:bg-white data-[state=active]:text-black">
+              <Users className="h-4 w-4 mr-2" />
+              Leads ({leads.length})
             </TabsTrigger>
           </TabsList>
 
@@ -652,6 +708,117 @@ const AdminDashboard = () => {
                                     <Eye className="h-4 w-4" />
                                   </Button>
                                 )}
+                              </div>
+                            </TableCell>
+                          </TableRow>
+                        ))
+                      )}
+                    </TableBody>
+                  </Table>
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="leads" className="space-y-4">
+            <Card className="bg-white border-gray-300">
+              <CardHeader>
+                <CardTitle className="text-black">Lead Submissions</CardTitle>
+                <CardDescription className="text-black">
+                  Total leads from popup forms: {leads.length}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="rounded-md border border-gray-300">
+                  <Table className="bg-white">
+                    <TableHeader>
+                      <TableRow className="bg-gray-50">
+                        <TableHead className="text-black">Date</TableHead>
+                        <TableHead className="text-black">Name</TableHead>
+                        <TableHead className="text-black">Email</TableHead>
+                        <TableHead className="text-black">Phone</TableHead>
+                        <TableHead className="text-black">Location</TableHead>
+                        <TableHead className="text-black">Source</TableHead>
+                        <TableHead className="text-black">Actions</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {leads.length === 0 ? (
+                        <TableRow>
+                          <TableCell colSpan={7} className="text-center text-gray-500 py-8">
+                            No leads captured yet.
+                          </TableCell>
+                        </TableRow>
+                      ) : (
+                        leads.map((lead) => (
+                          <TableRow key={lead.id} className="hover:bg-gray-50">
+                            <TableCell className="font-medium text-black">
+                              {formatDate(lead.created_at)}
+                            </TableCell>
+                            <TableCell className="text-black">
+                              {lead.first_name} {lead.last_name}
+                            </TableCell>
+                            <TableCell className="text-black">{lead.email}</TableCell>
+                            <TableCell className="text-black">{lead.phone || '-'}</TableCell>
+                            <TableCell className="text-black">
+                              {[lead.city, lead.state, lead.zip_code].filter(Boolean).join(', ') || '-'}
+                            </TableCell>
+                            <TableCell>
+                              <Badge variant="outline" className="border-black text-black">
+                                {lead.source || 'popup'}
+                              </Badge>
+                            </TableCell>
+                            <TableCell>
+                              <div className="flex gap-2">
+                                <Dialog>
+                                  <DialogTrigger asChild>
+                                    <Button variant="outline" size="sm" className="border-gray-300 text-black hover:bg-gray-100">
+                                      <Eye className="h-4 w-4" />
+                                    </Button>
+                                  </DialogTrigger>
+                                  <DialogContent className="max-w-md bg-white text-black border border-gray-300">
+                                    <DialogHeader>
+                                      <DialogTitle className="text-black">Lead Details</DialogTitle>
+                                      <DialogDescription className="text-black">
+                                        Submitted on {formatDate(lead.created_at)}
+                                      </DialogDescription>
+                                    </DialogHeader>
+                                    <div className="space-y-3 text-black">
+                                      <div>
+                                        <strong>Name:</strong> {lead.first_name} {lead.last_name}
+                                      </div>
+                                      <div>
+                                        <strong>Email:</strong> {lead.email}
+                                      </div>
+                                      <div>
+                                        <strong>Phone:</strong> {lead.phone || 'Not provided'}
+                                      </div>
+                                      <div>
+                                        <strong>Address:</strong> {lead.address || 'Not provided'}
+                                      </div>
+                                      <div>
+                                        <strong>City:</strong> {lead.city || 'Not provided'}
+                                      </div>
+                                      <div>
+                                        <strong>State:</strong> {lead.state || 'Not provided'}
+                                      </div>
+                                      <div>
+                                        <strong>ZIP Code:</strong> {lead.zip_code || 'Not provided'}
+                                      </div>
+                                      <div>
+                                        <strong>Source:</strong> {lead.source || 'popup'}
+                                      </div>
+                                    </div>
+                                  </DialogContent>
+                                </Dialog>
+                                <Button 
+                                  variant="outline" 
+                                  size="sm"
+                                  onClick={() => handleDeleteLead(lead.id)}
+                                  className="border-red-300 text-red-600 hover:bg-red-50"
+                                >
+                                  <Trash2 className="h-4 w-4" />
+                                </Button>
                               </div>
                             </TableCell>
                           </TableRow>

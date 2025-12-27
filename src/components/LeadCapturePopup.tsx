@@ -168,7 +168,7 @@ const LeadCapturePopup = () => {
         <div className="bg-primary px-4 py-3 text-primary-foreground flex items-center gap-3">
           <img src={lighthouseIcon} alt="Lighthouse icon" className="h-10 w-10 object-contain" />
           <div>
-            <h2 className="text-lg font-bold">Let us help you.</h2>
+            <h2 className="text-lg font-bold">Let us help you</h2>
             <p className="text-xs opacity-90">
               Find the perfect mortgage solution.
             </p>

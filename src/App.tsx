@@ -63,6 +63,9 @@ const App = () => (
           <Route path="/how-the-mortgage-process-works" element={<MortgageProcessExplained />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/webinar" element={<Webinar />} />
+          <Route path="/webinar-thank-you" element={<WebinarThankYou />} />
+          <Route path="/webinar-replay" element={<WebinarReplay />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

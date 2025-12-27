@@ -10,7 +10,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { Eye, LogOut, Shield, Plus, Edit, Trash2, BookOpen, Users } from "lucide-react";
+import { Eye, LogOut, Shield, Plus, Edit, Trash2, BookOpen, Users, Video, Mail, CheckCircle } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useAuth } from "@/hooks/useAuth";
@@ -68,10 +69,24 @@ interface Lead {
   created_at: string;
 }
 
+interface WebinarRegistration {
+  id: string;
+  first_name: string;
+  last_name: string;
+  email: string;
+  phone: string | null;
+  registered_at: string;
+  webinar_date: string;
+  attended: boolean;
+  reminder_sent: boolean;
+  thank_you_sent: boolean;
+}
+
 const AdminDashboard = () => {
   const [applications, setApplications] = useState<MortgageApplication[]>([]);
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [leads, setLeads] = useState<Lead[]>([]);
+  const [webinarRegistrations, setWebinarRegistrations] = useState<WebinarRegistration[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [blogDialogOpen, setBlogDialogOpen] = useState(false);
@@ -84,6 +99,7 @@ const AdminDashboard = () => {
     featured_image: "",
     published: false
   });
+  const [sendingThankYou, setSendingThankYou] = useState<string | null>(null);
   const { user, isAdmin, signOut, loading: authLoading } = useAuth();
   const navigate = useNavigate();
   const { toast } = useToast();
@@ -98,6 +114,7 @@ const AdminDashboard = () => {
       fetchApplications();
       fetchBlogPosts();
       fetchLeads();
+      fetchWebinarRegistrations();
     }
   }, [user, isAdmin, authLoading, navigate]);
 
@@ -144,6 +161,96 @@ const AdminDashboard = () => {
       setLeads(data || []);
     } catch (error) {
       console.error('Error fetching leads:', error);
+    }
+  };
+
+  const fetchWebinarRegistrations = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('webinar_registrations')
+        .select('*')
+        .order('registered_at', { ascending: false });
+
+      if (error) throw error;
+      setWebinarRegistrations(data || []);
+    } catch (error) {
+      console.error('Error fetching webinar registrations:', error);
+    }
+  };
+
+  const handleToggleAttended = async (registration: WebinarRegistration) => {
+    try {
+      const { error } = await supabase
+        .from('webinar_registrations')
+        .update({ attended: !registration.attended })
+        .eq('id', registration.id);
+
+      if (error) throw error;
+      toast({ title: `Marked as ${!registration.attended ? 'attended' : 'not attended'}` });
+      fetchWebinarRegistrations();
+    } catch (error: any) {
+      console.error('Error updating attendance:', error);
+      toast({ 
+        title: "Error updating attendance", 
+        description: error.message,
+        variant: "destructive" 
+      });
+    }
+  };
+
+  const handleSendThankYou = async (registration: WebinarRegistration) => {
+    setSendingThankYou(registration.id);
+    try {
+      const { error } = await supabase.functions.invoke('send-webinar-thankyou', {
+        body: {
+          firstName: registration.first_name,
+          lastName: registration.last_name,
+          email: registration.email,
+          replayLink: `${window.location.origin}/webinar-replay`
+        }
+      });
+
+      if (error) throw error;
+
+      // Update the thank_you_sent status
+      await supabase
+        .from('webinar_registrations')
+        .update({ thank_you_sent: true })
+        .eq('id', registration.id);
+
+      toast({ title: "Thank you email sent successfully" });
+      fetchWebinarRegistrations();
+    } catch (error: any) {
+      console.error('Error sending thank you email:', error);
+      toast({ 
+        title: "Error sending email", 
+        description: error.message,
+        variant: "destructive" 
+      });
+    } finally {
+      setSendingThankYou(null);
+    }
+  };
+
+  const handleDeleteRegistration = async (registrationId: string) => {
+    if (!confirm("Are you sure you want to delete this registration?")) return;
+
+    try {
+      const { error } = await supabase
+        .from('webinar_registrations')
+        .delete()
+        .eq('id', registrationId);
+
+      if (error) throw error;
+      toast({ title: "Registration deleted successfully" });
+      fetchWebinarRegistrations();
+    } catch (error: any) {
+      console.error('Error deleting registration:', error);
+      toast({ 
+        title: "Error deleting registration", 
+        description: error.message,
+        variant: "destructive" 
+      });
     }
   };
 
@@ -422,6 +529,10 @@ const AdminDashboard = () => {
             <TabsTrigger value="leads" className="text-black data-[state=active]:bg-white data-[state=active]:text-black">
               <Users className="h-4 w-4 mr-2" />
               Leads ({leads.length})
+            </TabsTrigger>
+            <TabsTrigger value="webinar" className="text-black data-[state=active]:bg-white data-[state=active]:text-black">
+              <Video className="h-4 w-4 mr-2" />
+              Webinar ({webinarRegistrations.length})
             </TabsTrigger>
           </TabsList>
 
@@ -815,6 +926,96 @@ const AdminDashboard = () => {
                                   variant="outline" 
                                   size="sm"
                                   onClick={() => handleDeleteLead(lead.id)}
+                                  className="border-red-300 text-red-600 hover:bg-red-50"
+                                >
+                                  <Trash2 className="h-4 w-4" />
+                                </Button>
+                              </div>
+                            </TableCell>
+                          </TableRow>
+                        ))
+                      )}
+                    </TableBody>
+                  </Table>
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="webinar" className="space-y-4">
+            <Card className="bg-white border-gray-300">
+              <CardHeader>
+                <CardTitle className="text-black">Webinar Registrations</CardTitle>
+                <CardDescription className="text-black">
+                  Total registrations: {webinarRegistrations.length} | Attended: {webinarRegistrations.filter(r => r.attended).length}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="rounded-md border border-gray-300">
+                  <Table className="bg-white">
+                    <TableHeader>
+                      <TableRow className="bg-gray-50">
+                        <TableHead className="text-black">Date Registered</TableHead>
+                        <TableHead className="text-black">Name</TableHead>
+                        <TableHead className="text-black">Email</TableHead>
+                        <TableHead className="text-black">Phone</TableHead>
+                        <TableHead className="text-black">Attended</TableHead>
+                        <TableHead className="text-black">Thank You Sent</TableHead>
+                        <TableHead className="text-black">Actions</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {webinarRegistrations.length === 0 ? (
+                        <TableRow>
+                          <TableCell colSpan={7} className="text-center text-gray-500 py-8">
+                            No webinar registrations yet.
+                          </TableCell>
+                        </TableRow>
+                      ) : (
+                        webinarRegistrations.map((registration) => (
+                          <TableRow key={registration.id} className="hover:bg-gray-50">
+                            <TableCell className="font-medium text-black">
+                              {formatDate(registration.registered_at)}
+                            </TableCell>
+                            <TableCell className="text-black">
+                              {registration.first_name} {registration.last_name}
+                            </TableCell>
+                            <TableCell className="text-black">{registration.email}</TableCell>
+                            <TableCell className="text-black">{registration.phone || '-'}</TableCell>
+                            <TableCell>
+                              <Checkbox
+                                checked={registration.attended}
+                                onCheckedChange={() => handleToggleAttended(registration)}
+                              />
+                            </TableCell>
+                            <TableCell>
+                              {registration.thank_you_sent ? (
+                                <Badge className="bg-green-100 text-green-700 border-green-300">
+                                  <CheckCircle className="h-3 w-3 mr-1" />
+                                  Sent
+                                </Badge>
+                              ) : (
+                                <Badge variant="outline" className="border-gray-300 text-gray-500">
+                                  Pending
+                                </Badge>
+                              )}
+                            </TableCell>
+                            <TableCell>
+                              <div className="flex gap-2">
+                                <Button 
+                                  variant="outline" 
+                                  size="sm"
+                                  onClick={() => handleSendThankYou(registration)}
+                                  disabled={sendingThankYou === registration.id || registration.thank_you_sent}
+                                  className="border-gray-300 text-black hover:bg-gray-100"
+                                >
+                                  <Mail className="h-4 w-4 mr-1" />
+                                  {sendingThankYou === registration.id ? 'Sending...' : 'Thank You'}
+                                </Button>
+                                <Button 
+                                  variant="outline" 
+                                  size="sm"
+                                  onClick={() => handleDeleteRegistration(registration.id)}
                                   className="border-red-300 text-red-600 hover:bg-red-50"
                                 >
                                   <Trash2 className="h-4 w-4" />

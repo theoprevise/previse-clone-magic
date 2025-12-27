@@ -239,7 +239,7 @@ const LeadCapturePopup = () => {
             className="w-full"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Submitting..." : "Get My Free Consultation"}
+            {isSubmitting ? "Submitting..." : "Submit"}
           </Button>
 
           <p className="text-xs text-muted-foreground text-center">

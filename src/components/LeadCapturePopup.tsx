@@ -172,9 +172,9 @@ const LeadCapturePopup = () => {
           >
             <X className="h-5 w-5" />
           </button>
-          <h2 className="text-lg font-bold">Get Your Free Consultation</h2>
+          <h2 className="text-lg font-bold">Let us help you.</h2>
           <p className="text-xs opacity-90">
-            Let us help you find the perfect mortgage solution.
+            Find the perfect mortgage solution.
           </p>
         </div>
 

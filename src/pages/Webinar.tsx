@@ -8,7 +8,6 @@ import {
   ArrowLeft,
   Calendar,
   Clock,
-  Users,
   Video,
   CheckCircle2,
   Home,
@@ -19,6 +18,7 @@ import {
   HelpCircle
 } from "lucide-react";
 import { useEffect, useState } from "react";
+import teddyImage from "@/assets/teddy-carbone.jpg";
 
 const WEBINAR_DATE = new Date('2026-01-15T18:00:00-05:00');
 
@@ -49,7 +49,7 @@ const topics = [
     description: "How to find and evaluate your perfect home"
   },
   {
-    icon: Users,
+    icon: Target,
     title: "Working with Professionals",
     description: "Agents, lenders, inspectors - building your team"
   }
@@ -243,16 +243,21 @@ const Webinar = () => {
           <div className="max-w-4xl mx-auto">
             <Card className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12">
               <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="w-32 h-32 bg-gradient-to-br from-accent to-secondary rounded-full flex items-center justify-center flex-shrink-0">
-                  <Users className="h-16 w-16 text-white" />
+                <div className="w-40 h-40 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-accent/30 shadow-xl">
+                  <img 
+                    src={teddyImage} 
+                    alt="Teddy Carbone - Mortgage Expert"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="text-center md:text-left">
-                  <h3 className="text-2xl font-bold text-white mb-2">Your Host: Previse Home Loans Team</h3>
-                  <p className="text-accent font-medium mb-4">Mortgage Experts with 20+ Years Combined Experience</p>
+                  <h3 className="text-2xl font-bold text-white mb-2">Your Host: Teddy Carbone</h3>
+                  <p className="text-accent font-medium mb-4">Mortgage Expert with 10+ Years Experience</p>
                   <p className="text-white/70 leading-relaxed">
-                    Our team has helped hundreds of first-time homebuyers navigate the mortgage process. 
-                    We're passionate about education and believe that informed buyers make the best decisions. 
-                    Join us to get answers to your questions and insider tips you won't find anywhere else.
+                    Teddy Carbone has 10+ years in finance and is dedicated to providing hassle-free, 
+                    honest mortgage advice. He's passionate about educating first-time homebuyers and 
+                    believes that informed buyers make the best decisions. Join Teddy to get personalized 
+                    answers to your questions and insider tips you won't find anywhere else.
                   </p>
                 </div>
               </div>

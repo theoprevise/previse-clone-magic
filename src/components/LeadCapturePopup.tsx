@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import lighthouseIcon from "@/assets/lighthouse-icon.png";
 
 const POPUP_DELAY_MS = 15000; // 15 seconds
 const STORAGE_KEY = "lead_popup_dismissed";
@@ -164,7 +165,14 @@ const LeadCapturePopup = () => {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
       <div className="relative w-full max-w-sm bg-background rounded-xl shadow-2xl border border-border overflow-hidden animate-fade-in">
         {/* Header */}
-        <div className="bg-primary px-4 py-3 text-primary-foreground">
+        <div className="bg-primary px-4 py-3 text-primary-foreground flex items-center gap-3">
+          <img src={lighthouseIcon} alt="Lighthouse icon" className="h-10 w-10 object-contain" />
+          <div>
+            <h2 className="text-lg font-bold">Let us help you.</h2>
+            <p className="text-xs opacity-90">
+              Find the perfect mortgage solution.
+            </p>
+          </div>
           <button
             onClick={handleClose}
             className="absolute top-2 right-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
@@ -172,10 +180,6 @@ const LeadCapturePopup = () => {
           >
             <X className="h-5 w-5" />
           </button>
-          <h2 className="text-lg font-bold">Let us help you.</h2>
-          <p className="text-xs opacity-90">
-            Find the perfect mortgage solution.
-          </p>
         </div>
 
         {/* Form */}

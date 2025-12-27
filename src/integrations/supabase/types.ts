@@ -197,6 +197,45 @@ export type Database = {
         }
         Relationships: []
       }
+      webinar_registrations: {
+        Row: {
+          attended: boolean
+          email: string
+          first_name: string
+          id: string
+          last_name: string
+          phone: string | null
+          registered_at: string
+          reminder_sent: boolean
+          thank_you_sent: boolean
+          webinar_date: string
+        }
+        Insert: {
+          attended?: boolean
+          email: string
+          first_name: string
+          id?: string
+          last_name: string
+          phone?: string | null
+          registered_at?: string
+          reminder_sent?: boolean
+          thank_you_sent?: boolean
+          webinar_date?: string
+        }
+        Update: {
+          attended?: boolean
+          email?: string
+          first_name?: string
+          id?: string
+          last_name?: string
+          phone?: string | null
+          registered_at?: string
+          reminder_sent?: boolean
+          thank_you_sent?: boolean
+          webinar_date?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

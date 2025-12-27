@@ -27,6 +27,9 @@ import CreditScoreTips from "./pages/CreditScoreTips";
 import MortgageProcessExplained from "./pages/MortgageProcessExplained";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import Webinar from "./pages/Webinar";
+import WebinarThankYou from "./pages/WebinarThankYou";
+import WebinarReplay from "./pages/WebinarReplay";
 
 const queryClient = new QueryClient();
 

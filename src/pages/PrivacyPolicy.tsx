@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
             <section>
               <h2 className="text-2xl font-semibold text-accent mb-4">1. Introduction</h2>
               <p className="leading-relaxed">
-                Previse Mortgage LLC ("Previse Mortgage," "we," "us," or "our") is a Pennsylvania-limited liability company (formed June 4, 2025) located in Spring Grove, PA 17362. This Privacy Policy explains how we collect, use, disclose, and protect your personal information when you visit previsemortgage.com, apply for services, or contact us.
+                Previse Mortgage ("we," "us," or "our") is a Pennsylvania-limited liability company (formed June 4, 2025) located in Spring Grove, PA 17362. This Privacy Policy explains how we collect, use, disclose, and protect your personal information when you visit previsemortgage.com, apply for services, or contact us.
               </p>
             </section>
 

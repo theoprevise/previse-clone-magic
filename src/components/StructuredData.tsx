@@ -14,7 +14,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
         structuredData = {
           "@context": "https://schema.org",
           "@type": "MortgageLender",
-          "name": "Previse Mortgage LLC",
+          "name": "Previse Mortgage",
           "description": "Professional mortgage lending services specializing in home loans, refinancing, and investment property financing in Pennsylvania",
           "url": "https://previsemortgage.com",
           "telephone": "+1-717-XXX-XXXX",
@@ -119,7 +119,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "serviceType": "Mortgage Lending",
           "provider": {
             "@type": "Organization",
-            "name": "Previse Mortgage LLC"
+            "name": "Previse Mortgage"
           },
           "areaServed": {
             "@type": "State", 
@@ -170,7 +170,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           },
           "mainEntity": {
             "@type": "Organization",
-            "name": "Previse Mortgage LLC"
+            "name": "Previse Mortgage"
           }
         };
         break;

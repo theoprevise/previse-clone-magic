@@ -97,45 +97,23 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
         utm_source: utmParams.utm_source || null,
         utm_medium: utmParams.utm_medium || null,
         utm_campaign: utmParams.utm_campaign || null,
-        zapier_synced: false,
       };
 
-      // Insert lead into database
-      const { data: insertedLead, error: insertError } = await supabase
-        .from('leads')
-        .insert(leadData)
-        .select('id')
-        .single();
+      // Submit via Edge Function (server-side insert + Zapier)
+      const { data: fnData, error: fnError } = await supabase.functions.invoke('send-to-zapier', {
+        body: leadData,
+      });
 
-      if (insertError) {
-        console.error('Error inserting lead:', {
-          message: insertError.message,
-          code: (insertError as any).code,
-          details: (insertError as any).details,
-          hint: (insertError as any).hint,
+      if (fnError) {
+        console.error('send-to-zapier error:', {
+          message: fnError.message,
+          details: (fnError as any).details,
+          context: (fnError as any).context,
         });
-        throw new Error(`Failed to submit your information: ${insertError.message}`);
+        throw new Error(`Failed to submit your information: ${fnError.message}`);
       }
 
-      console.log('Lead inserted:', insertedLead);
-
-      // Send to Zapier via edge function
-      try {
-        const { error: zapierError } = await supabase.functions.invoke('send-to-zapier', {
-          body: {
-            id: insertedLead.id,
-            ...leadData,
-          },
-        });
-
-        if (zapierError) {
-          console.error('Zapier sync error:', zapierError);
-          // Don't fail the form submission if Zapier fails
-        }
-      } catch (zapierErr) {
-        console.error('Zapier sync failed:', zapierErr);
-        // Don't fail the form submission if Zapier fails
-      }
+      console.log('Lead submitted via function:', fnData);
 
       toast({
         title: "Success!",

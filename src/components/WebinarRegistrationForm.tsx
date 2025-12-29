@@ -62,6 +62,23 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
 
       if (dbError) throw dbError;
 
+      // Send to Zapier
+      const { error: zapierError } = await supabase.functions.invoke('send-to-zapier', {
+        body: {
+          first_name: result.data.firstName,
+          last_name: result.data.lastName,
+          email: result.data.email,
+          phone: result.data.phone || '',
+          campaign_type: 'webinar_registration',
+          event_name: 'First-Time Homebuyer Webinar'
+        }
+      });
+
+      if (zapierError) {
+        console.error('Zapier error:', zapierError);
+        // Don't fail registration if Zapier fails
+      }
+
       // Send confirmation email
       const { error: emailError } = await supabase.functions.invoke('send-webinar-confirmation', {
         body: {

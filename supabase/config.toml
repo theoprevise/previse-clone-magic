@@ -14,3 +14,6 @@ verify_jwt = false
 
 [functions.send-webinar-thankyou]
 verify_jwt = false
+
+[functions.test-zapier-webhook]
+verify_jwt = false

@@ -70,6 +70,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "priceRange": "$$",
           "openingHours": "Mo-Fr 09:00-17:00",
           "sameAs": [
+            "https://share.google/Qb66UAgJXHgDTVqBk",
             "https://www.google.com/maps/place/Spring+Grove,+PA+17362"
           ]
         };

@@ -15,9 +15,13 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "@context": "https://schema.org",
           "@type": "MortgageLender",
           "name": "Previse Mortgage",
+          "alternateName": ["Previse Mortgage Company", "Previse Mortgage Services"],
+          "legalName": "Previse Mortgage",
           "description": "Professional mortgage lending services specializing in home loans, refinancing, and investment property financing in Pennsylvania",
           "url": "https://previsemortgage.com",
-          "telephone": "+1-717-XXX-XXXX",
+          "telephone": "+1-717-999-9999",
+          "email": "teddy@previsemortgage.com",
+          "foundingDate": "2025-06-04",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Spring Grove",
@@ -34,24 +38,40 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
             "@type": "State",
             "name": "Pennsylvania"
           },
-          "hasCredential": {
-            "@type": "EducationalOccupationalCredential",
-            "credentialCategory": "NMLS License",
-            "recognizedBy": {
-              "@type": "Organization",
-              "name": "Nationwide Multistate Licensing System"
+          "hasCredential": [
+            {
+              "@type": "EducationalOccupationalCredential",
+              "credentialCategory": "NMLS License",
+              "credentialValue": "#2730429",
+              "recognizedBy": {
+                "@type": "Organization",
+                "name": "Nationwide Multistate Licensing System"
+              }
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              "credentialCategory": "PA Broker License",
+              "credentialValue": "#115658",
+              "recognizedBy": {
+                "@type": "GovernmentOrganization",
+                "name": "Pennsylvania Department of Banking and Securities"
+              }
             }
-          },
+          ],
           "serviceType": [
             "Conventional Loans",
             "FHA Loans", 
+            "VA Loans",
             "USDA Loans",
             "Jumbo Loans",
             "Refinancing",
             "Investment Property Loans"
           ],
           "priceRange": "$$",
-          "openingHours": "Mo-Fr 09:00-17:00"
+          "openingHours": "Mo-Fr 09:00-17:00",
+          "sameAs": [
+            "https://www.google.com/maps/place/Spring+Grove,+PA+17362"
+          ]
         };
         break;
 
@@ -62,10 +82,10 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "What types of home loans do you offer?",
+              "name": "What types of home loans does Previse Mortgage offer?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "We offer comprehensive mortgage solutions including: Conventional loans (down payments as low as 3%), FHA loans (3.5% down), USDA loans (0% down for rural areas), jumbo loans (up to $3M+), DSCR investment property loans, bank statement loans for self-employed borrowers, and construction-to-permanent financing."
+                "text": "Previse Mortgage offers comprehensive mortgage solutions including: Conventional loans (down payments as low as 3%), FHA loans (3.5% down), USDA loans (0% down for rural areas), jumbo loans (up to $3M+), DSCR investment property loans, bank statement loans for self-employed borrowers, and construction-to-permanent financing."
               }
             },
             {
@@ -86,7 +106,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
             },
             {
               "@type": "Question",
-              "name": "How do I get pre-approved for a mortgage?",
+              "name": "How do I get pre-approved for a mortgage at Previse Mortgage?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Getting pre-approved involves submitting a complete mortgage application with supporting documentation including recent pay stubs, tax returns, bank statements, employment verification, and asset documentation. Pre-approval typically takes 24-48 hours."
@@ -97,7 +117,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
               "name": "How long does the mortgage process take?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "The typical mortgage process takes 30-45 days from application to closing. Our advanced technology and local processing can often close purchase loans in 21-30 days and refinances in 15-30 days."
+                "text": "The typical mortgage process takes 30-45 days from application to closing. Previse Mortgage's advanced technology and local processing can often close purchase loans in 21-30 days and refinances in 15-30 days."
               }
             },
             {
@@ -118,8 +138,9 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "@type": "Service",
           "serviceType": "Mortgage Lending",
           "provider": {
-            "@type": "Organization",
-            "name": "Previse Mortgage"
+            "@type": "MortgageLender",
+            "name": "Previse Mortgage",
+            "url": "https://previsemortgage.com"
           },
           "areaServed": {
             "@type": "State", 
@@ -127,7 +148,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           },
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "Mortgage Services",
+            "name": "Previse Mortgage Services",
             "itemListElement": [
               {
                 "@type": "Offer",
@@ -143,6 +164,14 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
                   "@type": "Service",
                   "name": "FHA Loans",
                   "description": "Government-backed loans with low down payment options"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "VA Loans",
+                  "description": "Zero down payment loans for eligible veterans and active military"
                 }
               }
             ]
@@ -169,8 +198,9 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
             ]
           },
           "mainEntity": {
-            "@type": "Organization",
-            "name": "Previse Mortgage"
+            "@type": "MortgageLender",
+            "name": "Previse Mortgage",
+            "url": "https://previsemortgage.com"
           }
         };
         break;

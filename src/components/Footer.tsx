@@ -19,12 +19,13 @@ const Footer = () => {
         <div className="text-center">
           {/* Logo section */}
           <div className="mb-12">
-            <img src={logoIcon} alt="Previse Mortgage" className="h-20 mx-auto mb-8 hover:scale-105 transition-transform duration-300" />
+            <img src={logoIcon} alt="Previse Mortgage Logo - Pennsylvania Mortgage Lender" className="h-20 mx-auto mb-8 hover:scale-105 transition-transform duration-300" />
           </div>
           
           {/* Company info in modern card */}
           <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 mb-12 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">Previse Mortgage</h3>
+            <h3 className="text-2xl font-bold text-white mb-2">Previse Mortgage</h3>
+            <p className="text-accent/80 text-sm mb-4 italic">Foresee • Anticipate • Deliver</p>
             <div className="space-y-2 text-white/80 text-lg">
               <p>Spring Grove, PA 17362</p>
               <a 

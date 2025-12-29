@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
+import { Youtube, Facebook, Instagram } from 'lucide-react';
 import logoIcon from "@/assets/logo-icon.png";
-
 const Footer = () => {
   const navigate = useNavigate();
   return <footer className="bg-gradient-to-t from-primary-dark to-primary py-16 border-t border-accent/20 relative overflow-hidden">
@@ -39,6 +39,37 @@ const Footer = () => {
                 className="block text-white/80 hover:text-accent transition-colors"
               >
                 teddy@previsemortgage.com
+              </a>
+            </div>
+
+            {/* Social Media Links */}
+            <div className="flex justify-center gap-4 mt-6 pt-6 border-t border-white/10">
+              <a
+                href="https://www.youtube.com/@PreviseMortgage"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-red-600 rounded-full transition-all duration-300 hover:scale-110"
+                aria-label="YouTube"
+              >
+                <Youtube className="w-5 h-5 text-white" />
+              </a>
+              <a
+                href="https://www.facebook.com/previsemortgage"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-blue-600 rounded-full transition-all duration-300 hover:scale-110"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5 text-white" />
+              </a>
+              <a
+                href="https://www.instagram.com/previsemortgage"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-pink-600 rounded-full transition-all duration-300 hover:scale-110"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5 text-white" />
               </a>
             </div>
           </div>

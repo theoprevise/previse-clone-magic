@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { 
   Home, 
   Shield, 
@@ -101,6 +102,12 @@ const MortgagePrograms = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary via-primary-dark to-primary">
+      <SEOHead 
+        title="Mortgage Programs | FHA, VA, Conventional & USDA Loans | Previse Mortgage"
+        description="Explore mortgage loan programs at Previse Mortgage. Compare FHA, VA, Conventional, USDA, and Jumbo loans. Find the perfect home financing solution in Pennsylvania."
+        keywords="mortgage programs, FHA loans, VA loans, conventional loans, USDA loans, jumbo loans, Pennsylvania mortgage, home loan options"
+        canonicalUrl="https://previsemortgage.com/mortgage-programs"
+      />
       <Header />
       
       {/* Back to Home */}

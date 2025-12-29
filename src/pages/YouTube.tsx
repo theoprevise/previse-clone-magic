@@ -96,7 +96,7 @@ const YouTube = () => {
           campaignType="youtube"
           eventName="YouTube Subscriber"
           submitButtonText="Get Free Resources"
-          successRedirectPath="/thank-you"
+          successRedirectPath="/youtube-thank-you"
         />
       }
       formTitle="Subscribe for Free Resources"

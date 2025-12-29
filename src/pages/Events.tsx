@@ -74,7 +74,7 @@ const Events = () => {
           campaignType="educational_event"
           eventName="Educational Event"
           submitButtonText="Register for Event"
-          successRedirectPath="/thank-you"
+          successRedirectPath="/events-thank-you"
         />
       }
       formTitle="Register for Upcoming Events"

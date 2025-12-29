@@ -27,7 +27,18 @@ const Footer = () => {
             <h3 className="text-2xl font-bold text-white mb-4">Previse Mortgage</h3>
             <div className="space-y-2 text-white/80 text-lg">
               <p>Spring Grove, PA 17362</p>
-              <p className="text-accent font-semibold text-xl">(717) 819-5196</p>
+              <a 
+                href="tel:+17178195196" 
+                className="block text-accent font-semibold text-xl hover:text-accent/80 transition-colors"
+              >
+                (717) 819-5196
+              </a>
+              <a 
+                href="mailto:teddy@previsemortgage.com" 
+                className="block text-white/80 hover:text-accent transition-colors"
+              >
+                teddy@previsemortgage.com
+              </a>
             </div>
           </div>
 

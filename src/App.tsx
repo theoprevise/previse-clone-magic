@@ -73,6 +73,7 @@ const App = () => (
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/webinar" element={<Webinar />} />
           <Route path="/webinar-thank-you" element={<WebinarThankYou />} />
+          <Route path="/webinar/thank-you" element={<WebinarThankYou />} />
           <Route path="/webinar-replay" element={<WebinarReplay />} />
           <Route path="/open-house" element={<OpenHouse />} />
           <Route path="/open-house-thank-you" element={<OpenHouseThankYou />} />

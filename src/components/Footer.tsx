@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Youtube, Facebook, Instagram } from 'lucide-react';
+import { Youtube, Facebook, Instagram, Linkedin } from 'lucide-react';
 import logoIcon from "@/assets/logo-icon.png";
 const Footer = () => {
   const navigate = useNavigate();
@@ -54,7 +54,7 @@ const Footer = () => {
                 <Youtube className="w-5 h-5 text-white" />
               </a>
               <a
-                href="https://www.facebook.com/previsemortgage"
+                href="https://www.facebook.com/PreviseMortgage"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-blue-600 rounded-full transition-all duration-300 hover:scale-110"
@@ -70,6 +70,15 @@ const Footer = () => {
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5 text-white" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/previsemortgage/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-blue-700 rounded-full transition-all duration-300 hover:scale-110"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5 text-white" />
               </a>
             </div>
           </div>

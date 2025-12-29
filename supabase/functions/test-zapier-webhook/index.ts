@@ -12,7 +12,21 @@ serve(async (req) => {
   }
 
   try {
-    const webhookUrl = "https://hooks.zapier.com/hooks/catch/25742852/uw3xqpk/";
+    const webhookUrl = Deno.env.get("ZAPIER_WEBHOOK_URL");
+    
+    if (!webhookUrl) {
+      console.error("ZAPIER_WEBHOOK_URL is not configured");
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: "ZAPIER_WEBHOOK_URL is not configured",
+        }),
+        {
+          status: 500,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        }
+      );
+    }
     
     const testData = {
       first_name: "Test",

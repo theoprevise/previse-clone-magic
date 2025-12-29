@@ -69,9 +69,18 @@ const YouTubeThankYou = () => {
             {/* CTA to subscribe */}
             <div className="mb-8 animate-slide-up" style={{animationDelay: '0.5s'}}>
               <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                <p className="text-white/80 text-lg">
+                <p className="text-white/80 text-lg mb-4">
                   <strong className="text-accent">While you're here:</strong> Don't forget to subscribe to our YouTube channel and hit the bell icon for notifications!
                 </p>
+                <a
+                  href="https://www.youtube.com/@PreviseMortgage"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
+                >
+                  <Youtube className="w-5 h-5" />
+                  Subscribe on YouTube
+                </a>
               </div>
             </div>
 

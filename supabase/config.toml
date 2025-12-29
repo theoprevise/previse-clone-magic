@@ -17,3 +17,6 @@ verify_jwt = false
 
 [functions.test-zapier-webhook]
 verify_jwt = false
+
+[functions.send-to-zapier]
+verify_jwt = false

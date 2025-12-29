@@ -56,41 +56,59 @@ export type Database = {
       leads: {
         Row: {
           address: string | null
+          campaign_type: string | null
           city: string | null
           created_at: string
           email: string
+          event_name: string | null
           first_name: string
           id: string
           last_name: string
           phone: string | null
           source: string | null
           state: string | null
+          utm_campaign: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          zapier_synced: boolean | null
           zip_code: string | null
         }
         Insert: {
           address?: string | null
+          campaign_type?: string | null
           city?: string | null
           created_at?: string
           email: string
+          event_name?: string | null
           first_name: string
           id?: string
           last_name: string
           phone?: string | null
           source?: string | null
           state?: string | null
+          utm_campaign?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          zapier_synced?: boolean | null
           zip_code?: string | null
         }
         Update: {
           address?: string | null
+          campaign_type?: string | null
           city?: string | null
           created_at?: string
           email?: string
+          event_name?: string | null
           first_name?: string
           id?: string
           last_name?: string
           phone?: string | null
           source?: string | null
           state?: string | null
+          utm_campaign?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          zapier_synced?: boolean | null
           zip_code?: string | null
         }
         Relationships: []

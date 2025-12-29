@@ -8,7 +8,7 @@ interface SEOHeadProps {
 }
 
 const SEOHead = ({ 
-  title = "Previse Mortgage LLC - Professional Mortgage Services in Pennsylvania",
+  title = "Previse Mortgage - Professional Mortgage Services in Pennsylvania",
   description = "Expert mortgage lending services in Pennsylvania. Specializing in home loans, refinancing, VA loans, FHA loans, and investment property financing with competitive rates and personalized service.",
   keywords = "mortgage lender, home loans, refinancing, VA loans, FHA loans, Pennsylvania mortgage, Spring Grove PA, NMLS licensed, investment property loans, first time homebuyer",
   canonicalUrl = "https://previsemortgage.com"
@@ -68,7 +68,7 @@ const SEOHead = ({
     setOGTag('og:description', description);
     setOGTag('og:url', canonicalUrl);
     setOGTag('og:type', 'website');
-    setOGTag('og:site_name', 'Previse Mortgage LLC');
+    setOGTag('og:site_name', 'Previse Mortgage');
     
     // Twitter Card tags
     const setTwitterTag = (name: string, content: string) => {

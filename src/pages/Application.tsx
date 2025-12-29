@@ -527,7 +527,7 @@ const Application = () => {
                   </Button>
 
                   <div className="text-xs text-white/60 text-center leading-relaxed bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 shadow-soft">
-                    By submitting, I am providing my electronic signature and I agree my information may be shared and that I may be contacted at this number (including through emails, and/or autodialed or pre-recorded calls or texts or generative AI, carrier rates may apply) by the company I may select in the next part of this form, or their designated agent, for marketing purposes and for receiving lending or homebuying assistance or information, even if I am on a Do Not Call List. I agree to accept delivery of documents electronically; I agree to the privacy policy and terms. I may receive service without this consent by contacting Previse Mortgage LLC. I agree that my consent is not required or a condition of any purchase.
+                    By submitting, I am providing my electronic signature and I agree my information may be shared and that I may be contacted at this number (including through emails, and/or autodialed or pre-recorded calls or texts or generative AI, carrier rates may apply) by the company I may select in the next part of this form, or their designated agent, for marketing purposes and for receiving lending or homebuying assistance or information, even if I am on a Do Not Call List. I agree to accept delivery of documents electronically; I agree to the privacy policy and terms. I may receive service without this consent by contacting Previse Mortgage. I agree that my consent is not required or a condition of any purchase.
                   </div>
                 </div>
               )}

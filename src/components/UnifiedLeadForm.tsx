@@ -108,8 +108,13 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
         .single();
 
       if (insertError) {
-        console.error('Error inserting lead:', insertError);
-        throw new Error('Failed to submit your information. Please try again.');
+        console.error('Error inserting lead:', {
+          message: insertError.message,
+          code: (insertError as any).code,
+          details: (insertError as any).details,
+          hint: (insertError as any).hint,
+        });
+        throw new Error(`Failed to submit your information: ${insertError.message}`);
       }
 
       console.log('Lead inserted:', insertedLead);

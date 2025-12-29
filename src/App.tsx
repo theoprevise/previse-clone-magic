@@ -31,9 +31,13 @@ import Webinar from "./pages/Webinar";
 import WebinarThankYou from "./pages/WebinarThankYou";
 import WebinarReplay from "./pages/WebinarReplay";
 import OpenHouse from "./pages/OpenHouse";
+import OpenHouseThankYou from "./pages/OpenHouseThankYou";
 import Events from "./pages/Events";
+import EventsThankYou from "./pages/EventsThankYou";
 import YouTube from "./pages/YouTube";
+import YouTubeThankYou from "./pages/YouTubeThankYou";
 import Social from "./pages/Social";
+import SocialThankYou from "./pages/SocialThankYou";
 
 const queryClient = new QueryClient();
 
@@ -71,9 +75,13 @@ const App = () => (
           <Route path="/webinar-thank-you" element={<WebinarThankYou />} />
           <Route path="/webinar-replay" element={<WebinarReplay />} />
           <Route path="/open-house" element={<OpenHouse />} />
+          <Route path="/open-house-thank-you" element={<OpenHouseThankYou />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/events-thank-you" element={<EventsThankYou />} />
           <Route path="/youtube" element={<YouTube />} />
+          <Route path="/youtube-thank-you" element={<YouTubeThankYou />} />
           <Route path="/social" element={<Social />} />
+          <Route path="/social-thank-you" element={<SocialThankYou />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

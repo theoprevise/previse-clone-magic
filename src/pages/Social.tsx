@@ -67,7 +67,7 @@ const Social = () => {
               campaignType="social_media"
               eventName="Social Media Lead"
               submitButtonText="Get My Free Quote"
-              successRedirectPath="/thank-you"
+              successRedirectPath="/social-thank-you"
             />
           </Card>
 

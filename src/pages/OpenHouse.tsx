@@ -75,7 +75,7 @@ const OpenHouse = () => {
           eventName="Open House Event"
           showAddressField={true}
           submitButtonText="Reserve My Spot"
-          successRedirectPath="/thank-you"
+          successRedirectPath="/open-house-thank-you"
         />
       }
       formTitle="Reserve Your Spot"

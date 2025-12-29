@@ -31,6 +31,7 @@ const HeroSection = () => {
           {/* Main heading with modern typography */}
           <div className="mb-8 animate-fade-in">
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-relaxed mb-8 text-white pb-4" itemProp="name">
+              <span className="block mb-2 text-lg md:text-xl lg:text-2xl font-sans font-medium text-accent tracking-wide">Previse Mortgage</span>
               <span className="block mb-4">Professionalized</span>
               <span className="block bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent py-4" style={{ paddingBottom: '0.5rem', lineHeight: '1.2' }}>
                 Loan Financing
@@ -46,7 +47,7 @@ const HeroSection = () => {
           </div>
           
           <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-16 max-w-2xl mx-auto leading-relaxed animate-fade-in delay-500" itemProp="description">
-            Get the guidance you need with cutting-edge technology and personalized service
+            Previse Mortgage delivers the guidance you need with cutting-edge technology and personalized service
           </p>
           
           {/* Modern CTA button */}

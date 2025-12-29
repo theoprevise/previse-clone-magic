@@ -27,7 +27,7 @@ const AboutSection = () => {
               <div className="relative max-w-sm mx-auto">
                 <img 
                   src="/lovable-uploads/db4b2cd8-b7e7-45fa-a676-5be234dd4750.png" 
-                  alt="Teddy Carbone - Professional Mortgage Loan Officer with 10+ years experience in home financing and refinancing solutions"
+                  alt="Teddy Carbone - Previse Mortgage Loan Officer with 10+ years experience in Pennsylvania home financing and refinancing"
                   className="rounded-2xl shadow-2xl w-full group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                   width="400"
@@ -50,7 +50,7 @@ const AboutSection = () => {
             
             <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 max-w-2xl mx-auto mb-12">
               <p className="text-xl text-white/90 leading-relaxed">
-                <span className="text-accent font-semibold">Teddy Carbone</span> has 10+ years in finance 
+                <span className="text-accent font-semibold">Teddy Carbone</span>, founder of <span className="text-accent font-semibold">Previse Mortgage</span>, has 10+ years in finance 
                 and is dedicated to hassle-free honest mortgage advice. Experience modern lending 
                 with personalized guidance every step of the way.
               </p>

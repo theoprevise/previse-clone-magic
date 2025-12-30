@@ -16,7 +16,7 @@ const leadSchema = z.object({
   address: z.string().trim().max(200, "Address too long").optional(),
 });
 
-type CampaignType = 'open_house' | 'webinar' | 'educational_event' | 'youtube' | 'social_media' | 'popup' | 'fha_loans' | 'conventional_loans' | 'usda_loans' | 'va_loans' | 'paid_campaign' | 'prequal_calculator' | 'exit_intent' | string;
+type CampaignType = 'open_house' | 'webinar' | 'educational_event' | 'youtube' | 'social_media' | 'popup' | 'fha_loans' | 'conventional_loans' | 'usda_loans' | 'va_loans' | 'paid_campaign' | 'prequal_calculator' | 'exit_intent' | 'homebuyer_guide' | string;
 
 interface UnifiedLeadFormProps {
   campaignType: CampaignType;

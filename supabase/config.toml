@@ -26,3 +26,6 @@ verify_jwt = false
 
 [functions.sms-notification]
 verify_jwt = false
+
+[functions.send-guide-confirmation]
+verify_jwt = false

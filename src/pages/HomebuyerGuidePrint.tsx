@@ -9,7 +9,7 @@ const HomebuyerGuidePrint = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* Print Controls - Hidden when printing */}
       <div className="print:hidden sticky top-0 z-50 bg-primary text-primary-foreground p-4 shadow-lg">
         <div className="container mx-auto flex items-center justify-between">
@@ -32,18 +32,18 @@ const HomebuyerGuidePrint = () => {
         {/* Cover Page */}
         <div className="page-break-after min-h-[100vh] flex flex-col items-center justify-center text-center p-8 bg-gradient-to-br from-primary/5 to-accent/10 print:bg-white rounded-lg print:rounded-none mb-8 print:mb-0">
           <img src={logoFull} alt="Previse Mortgage" className="h-16 mb-8" />
-          <h1 className="text-5xl font-bold text-primary mb-4">
+          <h1 className="text-5xl font-bold text-gray-900 mb-4">
             The Complete First-Time Homebuyer Guide
           </h1>
-          <p className="text-2xl text-muted-foreground mb-8">
+          <p className="text-2xl text-gray-700 mb-8">
             Your Step-by-Step Roadmap to Homeownership
           </p>
           <div className="w-32 h-1 bg-accent mb-8"></div>
-          <p className="text-lg text-muted-foreground max-w-md">
+          <p className="text-lg text-gray-600 max-w-md">
             Everything you need to know about buying your first home, 
             from pre-approval to closing day.
           </p>
-          <div className="mt-12 text-sm text-muted-foreground">
+          <div className="mt-12 text-sm text-gray-600">
             <p>Previse Mortgage</p>
             <p>NMLS #2611291</p>
             <p>www.previsemortgage.com</p>
@@ -52,10 +52,10 @@ const HomebuyerGuidePrint = () => {
 
         {/* Table of Contents */}
         <div className="page-break-after mb-8 print:mb-0 p-8">
-          <h2 className="text-3xl font-bold text-primary mb-8 border-b-2 border-accent pb-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 border-b-2 border-accent pb-4">
             Table of Contents
           </h2>
-          <nav className="space-y-3 text-lg">
+          <nav className="space-y-3 text-lg text-gray-800">
             {[
               "Introduction: Your Path to Homeownership",
               "Step 1: Assess Your Financial Health",
@@ -70,9 +70,9 @@ const HomebuyerGuidePrint = () => {
               "Mortgage Terminology Glossary",
               "Next Steps: Schedule Your Consultation"
             ].map((item, index) => (
-              <div key={index} className="flex items-center justify-between border-b border-dashed border-muted py-2">
+              <div key={index} className="flex items-center justify-between border-b border-dashed border-gray-300 py-2">
                 <span>{item}</span>
-                <span className="text-muted-foreground">{index + 3}</span>
+                <span className="text-gray-600">{index + 3}</span>
               </div>
             ))}
           </nav>
@@ -80,10 +80,10 @@ const HomebuyerGuidePrint = () => {
 
         {/* Introduction */}
         <section className="page-break-after mb-8 print:mb-0 p-8">
-          <h2 className="text-3xl font-bold text-primary mb-6 border-b-2 border-accent pb-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-accent pb-4">
             Introduction: Your Path to Homeownership
           </h2>
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg max-w-none text-gray-800">
             <p className="text-lg leading-relaxed mb-6">
               Congratulations on taking the first step toward homeownership! Buying your first home 
               is one of the most significant financial decisions you'll ever make, and we're here 
@@ -94,9 +94,9 @@ const HomebuyerGuidePrint = () => {
               just starting to explore the idea of homeownership or you're ready to begin the 
               process, you'll find everything you need to know right here.
             </p>
-            <div className="bg-accent/10 p-6 rounded-lg border-l-4 border-accent my-8">
-              <h3 className="text-xl font-semibold text-primary mb-3">What You'll Learn:</h3>
-              <ul className="space-y-2">
+            <div className="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-500 my-8">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">What You'll Learn:</h3>
+              <ul className="space-y-2 text-gray-800">
                 <li>✓ How to prepare your finances for a mortgage</li>
                 <li>✓ The step-by-step home buying process</li>
                 <li>✓ What documents you'll need</li>
@@ -114,17 +114,17 @@ const HomebuyerGuidePrint = () => {
 
         {/* Step 1 */}
         <section className="page-break-after mb-8 print:mb-0 p-8">
-          <h2 className="text-3xl font-bold text-primary mb-6 border-b-2 border-accent pb-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-accent pb-4">
             Step 1: Assess Your Financial Health
           </h2>
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg max-w-none text-gray-800">
             <p className="text-lg leading-relaxed mb-6">
               Before you start shopping for homes, it's essential to understand your financial 
               situation. This will help you determine how much house you can afford and what 
               type of loan might be best for you.
             </p>
 
-            <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">Check Your Credit Score</h3>
+            <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Check Your Credit Score</h3>
             <p className="mb-4">
               Your credit score is one of the most important factors in getting approved for a mortgage 
               and determining your interest rate. Here's what different scores typically mean:
@@ -148,7 +148,7 @@ const HomebuyerGuidePrint = () => {
               </div>
             </div>
 
-            <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">Calculate Your Debt-to-Income Ratio</h3>
+            <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Calculate Your Debt-to-Income Ratio</h3>
             <p className="mb-4">
               Lenders want to see that your monthly debt payments don't exceed a certain percentage 
               of your income. The general rule is:
@@ -158,7 +158,7 @@ const HomebuyerGuidePrint = () => {
               <li><strong>Back-end ratio:</strong> Total debts should be ≤ 43% of gross income</li>
             </ul>
 
-            <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">Save for Your Down Payment</h3>
+            <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Save for Your Down Payment</h3>
             <p className="mb-4">
               While 20% down is ideal, many first-time buyer programs require much less:
             </p>
@@ -173,30 +173,30 @@ const HomebuyerGuidePrint = () => {
 
         {/* Step 2 */}
         <section className="page-break-after mb-8 print:mb-0 p-8">
-          <h2 className="text-3xl font-bold text-primary mb-6 border-b-2 border-accent pb-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-accent pb-4">
             Step 2: Get Pre-Approved
           </h2>
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg max-w-none text-gray-800">
             <p className="text-lg leading-relaxed mb-6">
               Getting pre-approved is a crucial step that shows sellers you're a serious buyer. 
               A pre-approval letter tells you exactly how much you can borrow and gives you 
               confidence when making offers.
             </p>
 
-            <div className="bg-primary/5 p-6 rounded-lg border border-primary/20 my-6">
-              <h3 className="text-xl font-semibold text-primary mb-3">Pre-Qualification vs. Pre-Approval</h3>
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 my-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Pre-Qualification vs. Pre-Approval</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <p className="font-semibold">Pre-Qualification</p>
-                  <ul className="text-sm space-y-1">
+                  <p className="font-semibold text-gray-900">Pre-Qualification</p>
+                  <ul className="text-sm space-y-1 text-gray-700">
                     <li>• Quick estimate based on self-reported info</li>
                     <li>• No credit check required</li>
                     <li>• Not verified by lender</li>
                   </ul>
                 </div>
                 <div>
-                  <p className="font-semibold">Pre-Approval (Recommended)</p>
-                  <ul className="text-sm space-y-1">
+                  <p className="font-semibold text-gray-900">Pre-Approval (Recommended)</p>
+                  <ul className="text-sm space-y-1 text-gray-700">
                     <li>• Based on verified financial documents</li>
                     <li>• Includes credit check</li>
                     <li>• Stronger offer when house hunting</li>
@@ -205,7 +205,7 @@ const HomebuyerGuidePrint = () => {
               </div>
             </div>
 
-            <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">The Pre-Approval Process</h3>
+            <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">The Pre-Approval Process</h3>
             <ol className="space-y-4">
               <li><strong>1. Choose a lender</strong> - Compare rates and fees from multiple lenders</li>
               <li><strong>2. Submit application</strong> - Complete the loan application with your information</li>
@@ -214,9 +214,9 @@ const HomebuyerGuidePrint = () => {
               <li><strong>5. Receive pre-approval letter</strong> - Usually within 1-3 business days</li>
             </ol>
 
-            <div className="bg-accent/10 p-6 rounded-lg border-l-4 border-accent mt-8">
-              <p className="font-semibold text-primary">💡 Pro Tip:</p>
-              <p>Pre-approval letters are typically valid for 60-90 days. If you haven't found a home 
+            <div className="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-500 mt-8">
+              <p className="font-semibold text-gray-900">💡 Pro Tip:</p>
+              <p className="text-gray-700">Pre-approval letters are typically valid for 60-90 days. If you haven't found a home 
               by then, you may need to get re-approved with updated documentation.</p>
             </div>
           </div>
@@ -224,16 +224,16 @@ const HomebuyerGuidePrint = () => {
 
         {/* Step 3 */}
         <section className="page-break-after mb-8 print:mb-0 p-8">
-          <h2 className="text-3xl font-bold text-primary mb-6 border-b-2 border-accent pb-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-accent pb-4">
             Step 3: Find Your Dream Home
           </h2>
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg max-w-none text-gray-800">
             <p className="text-lg leading-relaxed mb-6">
               Now comes the exciting part—house hunting! With your pre-approval in hand, 
               you're ready to start looking for your perfect home.
             </p>
 
-            <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">Create Your Must-Have List</h3>
+            <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Create Your Must-Have List</h3>
             <p className="mb-4">Divide your preferences into three categories:</p>
             
             <div className="grid md:grid-cols-3 gap-4 my-6">
@@ -251,7 +251,7 @@ const HomebuyerGuidePrint = () => {
               </div>
             </div>
 
-            <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">Working with a Real Estate Agent</h3>
+            <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Working with a Real Estate Agent</h3>
             <p className="mb-4">A good buyer's agent will:</p>
             <ul className="space-y-2">
               <li>• Help you find properties that match your criteria</li>
@@ -261,7 +261,7 @@ const HomebuyerGuidePrint = () => {
               <li>• Guide you through the offer process</li>
             </ul>
 
-            <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">Making an Offer</h3>
+            <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Making an Offer</h3>
             <p className="mb-4">When you find the right home, your agent will help you prepare an offer including:</p>
             <ul className="space-y-2">
               <li>• <strong>Offer price</strong> - Based on market analysis</li>
@@ -274,39 +274,39 @@ const HomebuyerGuidePrint = () => {
 
         {/* Step 4 */}
         <section className="page-break-after mb-8 print:mb-0 p-8">
-          <h2 className="text-3xl font-bold text-primary mb-6 border-b-2 border-accent pb-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-accent pb-4">
             Step 4: Complete the Loan Process
           </h2>
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg max-w-none text-gray-800">
             <p className="text-lg leading-relaxed mb-6">
               Once your offer is accepted, it's time to finalize your mortgage. This is called 
               "going under contract" and typically takes 30-45 days to complete.
             </p>
 
-            <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">Key Steps in the Process</h3>
+            <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Key Steps in the Process</h3>
             
             <div className="space-y-6">
               <div className="border-l-4 border-accent pl-4">
-                <h4 className="font-semibold text-primary">1. Home Inspection</h4>
-                <p className="text-muted-foreground">Hire a professional inspector to evaluate the property's condition. 
+                <h4 className="font-semibold text-gray-900">1. Home Inspection</h4>
+                <p className="text-gray-700">Hire a professional inspector to evaluate the property's condition. 
                 This usually costs $300-$500 and can reveal issues that may affect your decision or price negotiation.</p>
               </div>
 
               <div className="border-l-4 border-accent pl-4">
-                <h4 className="font-semibold text-primary">2. Appraisal</h4>
-                <p className="text-muted-foreground">Your lender will order an appraisal to ensure the home's value 
+                <h4 className="font-semibold text-gray-900">2. Appraisal</h4>
+                <p className="text-gray-700">Your lender will order an appraisal to ensure the home's value 
                 supports the loan amount. This protects both you and the lender.</p>
               </div>
 
               <div className="border-l-4 border-accent pl-4">
-                <h4 className="font-semibold text-primary">3. Underwriting</h4>
-                <p className="text-muted-foreground">The lender's underwriting team reviews all documentation to 
+                <h4 className="font-semibold text-gray-900">3. Underwriting</h4>
+                <p className="text-gray-700">The lender's underwriting team reviews all documentation to 
                 make a final lending decision. They may request additional documents during this phase.</p>
               </div>
 
               <div className="border-l-4 border-accent pl-4">
-                <h4 className="font-semibold text-primary">4. Clear to Close</h4>
-                <p className="text-muted-foreground">Once underwriting approves your loan, you'll receive a 
+                <h4 className="font-semibold text-gray-900">4. Clear to Close</h4>
+                <p className="text-gray-700">Once underwriting approves your loan, you'll receive a 
                 "clear to close" and can schedule your closing date.</p>
               </div>
             </div>
@@ -326,15 +326,15 @@ const HomebuyerGuidePrint = () => {
 
         {/* Step 5 */}
         <section className="page-break-after mb-8 print:mb-0 p-8">
-          <h2 className="text-3xl font-bold text-primary mb-6 border-b-2 border-accent pb-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-accent pb-4">
             Step 5: Close and Get Your Keys
           </h2>
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg max-w-none text-gray-800">
             <p className="text-lg leading-relaxed mb-6">
               Closing day is when ownership officially transfers to you. Here's what to expect.
             </p>
 
-            <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">Before Closing Day</h3>
+            <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Before Closing Day</h3>
             <ul className="space-y-2 mb-6">
               <li>• <strong>Review Closing Disclosure</strong> - You'll receive this at least 3 days before closing</li>
               <li>• <strong>Do a final walkthrough</strong> - Verify the home's condition and any agreed repairs</li>
@@ -342,7 +342,7 @@ const HomebuyerGuidePrint = () => {
               <li>• <strong>Bring required documents</strong> - ID, proof of insurance, etc.</li>
             </ul>
 
-            <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">At the Closing Table</h3>
+            <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">At the Closing Table</h3>
             <p className="mb-4">You'll sign numerous documents including:</p>
             <ul className="space-y-2 mb-6">
               <li>• Promissory Note - Your promise to repay the loan</li>
@@ -363,16 +363,16 @@ const HomebuyerGuidePrint = () => {
 
         {/* Pre-Approval Checklist */}
         <section className="page-break-after mb-8 print:mb-0 p-8">
-          <h2 className="text-3xl font-bold text-primary mb-6 border-b-2 border-accent pb-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-accent pb-4">
             Pre-Approval Document Checklist
           </h2>
-          <p className="text-lg text-muted-foreground mb-6">
+          <p className="text-lg text-gray-700 mb-6">
             Gather these documents before applying for pre-approval to speed up the process.
           </p>
           
-          <div className="space-y-6">
+          <div className="space-y-6 text-gray-800">
             <div>
-              <h3 className="text-xl font-semibold text-primary mb-4">Income Verification</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Income Verification</h3>
               <div className="space-y-3">
                 {[
                   "Pay stubs from the last 30 days",
@@ -390,7 +390,7 @@ const HomebuyerGuidePrint = () => {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-primary mb-4">Asset Documentation</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Asset Documentation</h3>
               <div className="space-y-3">
                 {[
                   "Bank statements from the past 2-3 months (all pages)",
@@ -407,7 +407,7 @@ const HomebuyerGuidePrint = () => {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-primary mb-4">Identification</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Identification</h3>
               <div className="space-y-3">
                 {[
                   "Government-issued photo ID (driver's license or passport)",
@@ -423,7 +423,7 @@ const HomebuyerGuidePrint = () => {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-primary mb-4">Other Documents</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Other Documents</h3>
               <div className="space-y-3">
                 {[
                   "Rental history or landlord contact information",
@@ -443,16 +443,16 @@ const HomebuyerGuidePrint = () => {
 
         {/* Closing Day Checklist */}
         <section className="page-break-after mb-8 print:mb-0 p-8">
-          <h2 className="text-3xl font-bold text-primary mb-6 border-b-2 border-accent pb-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-accent pb-4">
             Closing Day Essentials Checklist
           </h2>
-          <p className="text-lg text-muted-foreground mb-6">
+          <p className="text-lg text-gray-700 mb-6">
             Don't forget these items on closing day!
           </p>
 
-          <div className="space-y-6">
+          <div className="space-y-6 text-gray-800">
             <div>
-              <h3 className="text-xl font-semibold text-primary mb-4">Documents to Bring</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Documents to Bring</h3>
               <div className="space-y-3">
                 {[
                   "Government-issued photo ID for all borrowers",
@@ -469,7 +469,7 @@ const HomebuyerGuidePrint = () => {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-primary mb-4">Payment</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Payment</h3>
               <div className="space-y-3">
                 {[
                   "Cashier's check or wire transfer confirmation for closing costs",
@@ -484,7 +484,7 @@ const HomebuyerGuidePrint = () => {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-primary mb-4">Before Closing</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Before Closing</h3>
               <div className="space-y-3">
                 {[
                   "Complete final walkthrough of the property",
@@ -501,7 +501,7 @@ const HomebuyerGuidePrint = () => {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-primary mb-4">After Closing</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">After Closing</h3>
               <div className="space-y-3">
                 {[
                   "Keep copies of all signed documents in a safe place",
@@ -521,19 +521,19 @@ const HomebuyerGuidePrint = () => {
 
         {/* Down Payment Assistance */}
         <section className="page-break-after mb-8 print:mb-0 p-8">
-          <h2 className="text-3xl font-bold text-primary mb-6 border-b-2 border-accent pb-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-accent pb-4">
             Down Payment Assistance Programs
           </h2>
-          <p className="text-lg text-muted-foreground mb-6">
+          <p className="text-lg text-gray-700 mb-6">
             Many first-time homebuyers qualify for assistance programs that can help with 
             down payment and closing costs.
           </p>
 
-          <div className="space-y-6">
-            <div className="border rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-primary mb-3">FHA Loans</h3>
+          <div className="space-y-6 text-gray-800">
+            <div className="border border-gray-200 rounded-lg p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">FHA Loans</h3>
               <p className="mb-3">Backed by the Federal Housing Administration</p>
-              <ul className="space-y-2 text-muted-foreground">
+              <ul className="space-y-2 text-gray-700">
                 <li>• Down payment as low as 3.5%</li>
                 <li>• Credit scores as low as 580</li>
                 <li>• More flexible debt-to-income ratios</li>
@@ -541,10 +541,10 @@ const HomebuyerGuidePrint = () => {
               </ul>
             </div>
 
-            <div className="border rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-primary mb-3">VA Loans</h3>
+            <div className="border border-gray-200 rounded-lg p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">VA Loans</h3>
               <p className="mb-3">For eligible veterans, active military, and surviving spouses</p>
-              <ul className="space-y-2 text-muted-foreground">
+              <ul className="space-y-2 text-gray-700">
                 <li>• No down payment required</li>
                 <li>• No private mortgage insurance</li>
                 <li>• Competitive interest rates</li>
@@ -552,10 +552,10 @@ const HomebuyerGuidePrint = () => {
               </ul>
             </div>
 
-            <div className="border rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-primary mb-3">USDA Loans</h3>
+            <div className="border border-gray-200 rounded-lg p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">USDA Loans</h3>
               <p className="mb-3">For properties in eligible rural and suburban areas</p>
-              <ul className="space-y-2 text-muted-foreground">
+              <ul className="space-y-2 text-gray-700">
                 <li>• No down payment required</li>
                 <li>• Below-market interest rates</li>
                 <li>• Income limits apply</li>
@@ -563,10 +563,10 @@ const HomebuyerGuidePrint = () => {
               </ul>
             </div>
 
-            <div className="border rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-primary mb-3">State & Local Programs</h3>
+            <div className="border border-gray-200 rounded-lg p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">State & Local Programs</h3>
               <p className="mb-3">Many states and cities offer additional assistance</p>
-              <ul className="space-y-2 text-muted-foreground">
+              <ul className="space-y-2 text-gray-700">
                 <li>• Down payment grants (don't need to be repaid)</li>
                 <li>• Second mortgages with deferred payments</li>
                 <li>• Closing cost assistance</li>
@@ -575,9 +575,9 @@ const HomebuyerGuidePrint = () => {
             </div>
           </div>
 
-          <div className="bg-accent/10 p-6 rounded-lg border-l-4 border-accent mt-8">
-            <p className="font-semibold text-primary">💡 Ask Us About Programs You Qualify For</p>
-            <p className="text-muted-foreground">
+          <div className="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-500 mt-8">
+            <p className="font-semibold text-gray-900">💡 Ask Us About Programs You Qualify For</p>
+            <p className="text-gray-700">
               We can help you identify which programs you're eligible for based on your 
               income, location, and other factors. Contact us for a personalized consultation.
             </p>
@@ -586,11 +586,11 @@ const HomebuyerGuidePrint = () => {
 
         {/* Common Mistakes */}
         <section className="page-break-after mb-8 print:mb-0 p-8">
-          <h2 className="text-3xl font-bold text-primary mb-6 border-b-2 border-accent pb-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-accent pb-4">
             Common First-Time Buyer Mistakes to Avoid
           </h2>
 
-          <div className="space-y-6">
+          <div className="space-y-6 text-gray-800">
             {[
               {
                 mistake: "Not Getting Pre-Approved First",
@@ -634,10 +634,10 @@ const HomebuyerGuidePrint = () => {
               }
             ].map((item, index) => (
               <div key={index} className="border-l-4 border-red-400 pl-4">
-                <h3 className="text-lg font-semibold text-primary mb-2">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {index + 1}. {item.mistake}
                 </h3>
-                <p className="text-muted-foreground mb-2"><strong>Why it's a problem:</strong> {item.why}</p>
+                <p className="text-gray-700 mb-2"><strong>Why it's a problem:</strong> {item.why}</p>
                 <p className="text-green-700"><strong>Solution:</strong> {item.solution}</p>
               </div>
             ))}
@@ -646,7 +646,7 @@ const HomebuyerGuidePrint = () => {
 
         {/* Glossary */}
         <section className="page-break-after mb-8 print:mb-0 p-8">
-          <h2 className="text-3xl font-bold text-primary mb-6 border-b-2 border-accent pb-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-accent pb-4">
             Mortgage Terminology Glossary
           </h2>
 
@@ -672,9 +672,9 @@ const HomebuyerGuidePrint = () => {
               { term: "Title Insurance", definition: "Protection against claims or disputes over property ownership." },
               { term: "Underwriting", definition: "The process of evaluating a loan application for approval." }
             ].map((item, index) => (
-              <div key={index} className="p-3 border rounded">
-                <p className="font-semibold text-primary">{item.term}</p>
-                <p className="text-sm text-muted-foreground">{item.definition}</p>
+              <div key={index} className="p-3 border border-gray-200 rounded">
+                <p className="font-semibold text-gray-900">{item.term}</p>
+                <p className="text-sm text-gray-700">{item.definition}</p>
               </div>
             ))}
           </div>
@@ -682,35 +682,35 @@ const HomebuyerGuidePrint = () => {
 
         {/* Next Steps */}
         <section className="p-8">
-          <h2 className="text-3xl font-bold text-primary mb-6 border-b-2 border-accent pb-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-accent pb-4">
             Next Steps: Schedule Your Consultation
           </h2>
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg max-w-none text-gray-800">
             <p className="text-lg leading-relaxed mb-6">
               You've taken the first step by reading this guide. Now let's turn your 
               homeownership dreams into reality.
             </p>
 
-            <div className="bg-primary/5 p-8 rounded-lg border border-primary/20 text-center my-8">
-              <h3 className="text-2xl font-bold text-primary mb-4">Ready to Get Started?</h3>
-              <p className="text-lg text-muted-foreground mb-6">
+            <div className="bg-gray-50 p-8 rounded-lg border border-gray-200 text-center my-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Get Started?</h3>
+              <p className="text-lg text-gray-700 mb-6">
                 Schedule a free, no-obligation consultation with one of our mortgage experts. 
                 We'll review your situation and help you understand your options.
               </p>
-              <div className="space-y-2">
-                <p className="text-xl font-semibold text-primary">Previse Mortgage</p>
-                <p className="text-lg">📞 Call or Text: (555) 123-4567</p>
-                <p className="text-lg">📧 Email: hello@previsemortgage.com</p>
+              <div className="space-y-2 text-gray-800">
+                <p className="text-xl font-semibold text-gray-900">Previse Mortgage</p>
+                <p className="text-lg">📞 Call or Text: (717) 801-8498</p>
+                <p className="text-lg">📧 Email: teddy@previsemortgage.com</p>
                 <p className="text-lg">🌐 Web: www.previsemortgage.com</p>
               </div>
             </div>
 
-            <div className="text-center mt-12 pt-8 border-t">
+            <div className="text-center mt-12 pt-8 border-t border-gray-200">
               <img src={logoFull} alt="Previse Mortgage" className="h-12 mx-auto mb-4" />
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-gray-600">
                 Previse Mortgage | NMLS #2611291
               </p>
-              <p className="text-xs text-muted-foreground mt-2">
+              <p className="text-xs text-gray-500 mt-2">
                 © {new Date().getFullYear()} Previse Mortgage. All rights reserved.
                 This guide is for informational purposes only and does not constitute financial advice.
               </p>

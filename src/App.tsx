@@ -54,10 +54,11 @@ const queryClient = new QueryClient();
 const ConditionalLeadPopup = () => {
   const location = useLocation();
   
-  // Pages that already have lead capture forms - don't show popup
+  // Landing pages and pages with lead capture forms - don't show popup
   const pagesWithForms = [
     '/',
     '/webinar',
+    '/webinar-replay',
     '/open-house', 
     '/events',
     '/youtube',
@@ -66,14 +67,23 @@ const ConditionalLeadPopup = () => {
     '/offer',
     '/lp',
     '/pre-qualify',
-    '/first-time-homebuyer'
+    '/first-time-homebuyer',
+    '/schedule',
+    '/refinance',
+    '/va-loans',
+    '/fha-loans',
+    '/conventional-loans',
+    '/usda-loans',
+    '/mortgage-calculator',
+    '/ai-readiness'
   ];
   
-  // Don't show popup on pages with forms or thank-you pages
+  // Don't show popup on landing pages, thank-you pages, print pages, or application pages
   const shouldHidePopup = 
     pagesWithForms.includes(location.pathname) || 
     location.pathname.includes('thank-you') ||
-    location.pathname.includes('-print');
+    location.pathname.includes('-print') ||
+    location.pathname.startsWith('/application');
     
   if (shouldHidePopup) return null;
   return <LeadCapturePopup />;

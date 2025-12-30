@@ -150,7 +150,7 @@ const HomebuyerGuidePrint = () => {
 
             <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Calculate Your Debt-to-Income Ratio</h3>
             <p className="mb-4">
-              Lenders want to see that your monthly debt payments don't exceed a certain percentage 
+              At Previse Mortgage, we look at your monthly debt payments to ensure they don't exceed a certain percentage 
               of your income. The general rule is:
             </p>
             <ul className="space-y-2 mb-6">
@@ -205,12 +205,12 @@ const HomebuyerGuidePrint = () => {
               </div>
             </div>
 
-            <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">The Pre-Approval Process</h3>
+            <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">The Pre-Approval Process with Previse Mortgage</h3>
             <ol className="space-y-4">
-              <li><strong>1. Choose a lender</strong> - Compare rates and fees from multiple lenders</li>
+              <li><strong>1. Contact Teddy Carbone</strong> - Reach out to discuss your goals and get personalized guidance</li>
               <li><strong>2. Submit application</strong> - Complete the loan application with your information</li>
               <li><strong>3. Provide documentation</strong> - Submit required financial documents</li>
-              <li><strong>4. Credit check</strong> - Lender reviews your credit history</li>
+              <li><strong>4. Credit check</strong> - Teddy reviews your credit history and full financial picture</li>
               <li><strong>5. Receive pre-approval letter</strong> - Usually within 1-3 business days</li>
             </ol>
 
@@ -303,7 +303,7 @@ const HomebuyerGuidePrint = () => {
               <p className="text-gray-700">
                 Instead of paying an agent 2.5-3%, consider hiring a real estate attorney for $500-$1,500 
                 to review contracts and handle the legal paperwork. You get professional protection at a 
-                fraction of the cost. Your lender (that's us!) will guide you through the financing side.
+                fraction of the cost. Teddy Carbone and the Previse Mortgage team will guide you through the financing side.
               </p>
             </div>
           </div>
@@ -331,14 +331,14 @@ const HomebuyerGuidePrint = () => {
 
               <div className="border-l-4 border-accent pl-4">
                 <h4 className="font-semibold text-gray-900">2. Appraisal</h4>
-                <p className="text-gray-700">Your lender will order an appraisal to ensure the home's value 
-                supports the loan amount. This protects both you and the lender.</p>
+                <p className="text-gray-700">Previse Mortgage will order an appraisal to ensure the home's value 
+                supports the loan amount. This protects both you and us.</p>
               </div>
 
               <div className="border-l-4 border-accent pl-4">
                 <h4 className="font-semibold text-gray-900">3. Underwriting</h4>
-                <p className="text-gray-700">The lender's underwriting team reviews all documentation to 
-                make a final lending decision. They may request additional documents during this phase.</p>
+                <p className="text-gray-700">Our underwriting team at Previse Mortgage reviews all documentation to 
+                make a final lending decision. Teddy will keep you informed and may request additional documents during this phase.</p>
               </div>
 
               <div className="border-l-4 border-accent pl-4">
@@ -352,7 +352,7 @@ const HomebuyerGuidePrint = () => {
               <h3 className="text-xl font-semibold text-red-800 mb-3">⚠️ What NOT to Do During This Process</h3>
               <ul className="space-y-2 text-red-700">
                 <li>• Don't make large purchases or open new credit accounts</li>
-                <li>• Don't change jobs without consulting your lender</li>
+                <li>• Don't change jobs without consulting Teddy first</li>
                 <li>• Don't move money between accounts without documentation</li>
                 <li>• Don't co-sign on anyone else's loans</li>
                 <li>• Don't close any credit accounts</li>
@@ -704,7 +704,7 @@ const HomebuyerGuidePrint = () => {
               { term: "Interest Rate", definition: "The percentage charged on the loan principal." },
               { term: "Loan-to-Value Ratio", definition: "Loan amount divided by the home's appraised value." },
               { term: "PMI", definition: "Private Mortgage Insurance - required when down payment is less than 20%." },
-              { term: "Pre-Approval", definition: "Lender's commitment to lend based on verified financial information." },
+              { term: "Pre-Approval", definition: "Previse Mortgage's commitment to lend based on verified financial information." },
               { term: "Principal", definition: "The original loan amount, not including interest." },
               { term: "Title Insurance", definition: "Protection against claims or disputes over property ownership." },
               { term: "Underwriting", definition: "The process of evaluating a loan application for approval." }
@@ -731,8 +731,8 @@ const HomebuyerGuidePrint = () => {
             <div className="bg-gray-50 p-8 rounded-lg border border-gray-200 text-center my-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Get Started?</h3>
               <p className="text-lg text-gray-700 mb-6">
-                Schedule a free, no-obligation consultation with one of our mortgage experts. 
-                We'll review your situation and help you understand your options.
+                Schedule a free, no-obligation consultation with Teddy Carbone. 
+                He'll review your situation and help you understand your options.
               </p>
               <div className="space-y-2 text-gray-800">
                 <p className="text-xl font-semibold text-gray-900">Previse Mortgage</p>

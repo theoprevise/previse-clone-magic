@@ -10,6 +10,7 @@ import GoHighLevelChat from "@/components/GoHighLevelChat";
 import StructuredData from "@/components/StructuredData";
 import SEOHead from "@/components/SEOHead";
 import LeadCapturePopup from "@/components/LeadCapturePopup";
+import FloatingContactWidget from "@/components/FloatingContactWidget";
 
 const Index = () => {
   return (
@@ -36,6 +37,7 @@ const Index = () => {
       <Footer />
       <GoHighLevelChat />
       <LeadCapturePopup />
+      <FloatingContactWidget />
     </div>
   );
 };

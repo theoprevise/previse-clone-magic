@@ -69,21 +69,16 @@ const HomebuyerGuideThankYou = () => {
             {/* Download Button */}
             <Card className="bg-card/50 backdrop-blur-sm border-accent/20 shadow-2xl shadow-accent/10 max-w-md mx-auto mb-12">
               <CardContent className="p-8">
-                <a 
-                  href="/downloads/first-time-homebuyer-guide.pdf" 
-                  download
-                  className="block"
+                <Button 
+                  size="lg" 
+                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold py-6 text-lg mb-4"
+                  onClick={() => navigate('/homebuyer-guide-print')}
                 >
-                  <Button 
-                    size="lg" 
-                    className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold py-6 text-lg"
-                  >
-                    <Download className="mr-2 h-5 w-5" />
-                    Download Your Free Guide (PDF)
-                  </Button>
-                </a>
-                <p className="text-sm text-muted-foreground mt-4">
-                  We've also sent a copy to your email for easy access.
+                  <Download className="mr-2 h-5 w-5" />
+                  View & Download Your Free Guide
+                </Button>
+                <p className="text-sm text-muted-foreground">
+                  Click above to view the guide. Use your browser's print function to save as PDF.
                 </p>
               </CardContent>
             </Card>

@@ -45,6 +45,8 @@ import YouTubeThankYou from "./pages/YouTubeThankYou";
 import Social from "./pages/Social";
 import SocialThankYou from "./pages/SocialThankYou";
 import PreQualify from "./pages/PreQualify";
+import HomebuyerGuide from "./pages/HomebuyerGuide";
+import HomebuyerGuideThankYou from "./pages/HomebuyerGuideThankYou";
 
 const queryClient = new QueryClient();
 
@@ -106,6 +108,8 @@ const App = () => (
           <Route path="/youtube-thank-you" element={<YouTubeThankYou />} />
           <Route path="/social" element={<Social />} />
           <Route path="/social-thank-you" element={<SocialThankYou />} />
+          <Route path="/homebuyer-guide" element={<HomebuyerGuide />} />
+          <Route path="/homebuyer-guide-thank-you" element={<HomebuyerGuideThankYou />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -12,6 +12,7 @@ const Header = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const resourcesLinks = [
+    { label: "Free Homebuyer Guide", path: "/homebuyer-guide" },
     { label: "Blog", path: "/blog" },
     { label: "Credit Score & Approval Tips", path: "/credit-score-mortgage-tips" },
     { label: "How the Mortgage Process Works", path: "/how-the-mortgage-process-works" },

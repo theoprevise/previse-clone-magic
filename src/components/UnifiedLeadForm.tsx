@@ -16,13 +16,16 @@ const leadSchema = z.object({
   address: z.string().trim().max(200, "Address too long").optional(),
 });
 
-type CampaignType = 'open_house' | 'webinar' | 'educational_event' | 'youtube' | 'social_media' | 'popup';
+type CampaignType = 'open_house' | 'webinar' | 'educational_event' | 'youtube' | 'social_media' | 'popup' | 'fha_loans' | 'conventional_loans' | 'usda_loans' | 'va_loans' | 'paid_campaign' | 'prequal_calculator' | 'exit_intent' | string;
 
 interface UnifiedLeadFormProps {
   campaignType: CampaignType;
   eventName?: string;
   showAddressField?: boolean;
+  showAddress?: boolean;
   submitButtonText?: string;
+  buttonText?: string;
+  source?: string;
   successRedirectPath?: string;
   onSuccess?: () => void;
   className?: string;
@@ -32,11 +35,16 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
   campaignType,
   eventName,
   showAddressField = false,
+  showAddress = false,
   submitButtonText = "Get Started",
+  buttonText,
+  source,
   successRedirectPath,
   onSuccess,
   className = "",
 }) => {
+  const effectiveShowAddress = showAddress || showAddressField;
+  const effectiveButtonText = buttonText || submitButtonText;
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { toast } = useToast();
@@ -93,7 +101,7 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
         address: validatedData.address || null,
         campaign_type: campaignType,
         event_name: eventName || null,
-        source: 'landing_page',
+        source: source || 'landing_page',
         utm_source: utmParams.utm_source || null,
         utm_medium: utmParams.utm_medium || null,
         utm_campaign: utmParams.utm_campaign || null,
@@ -228,7 +236,7 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
         )}
       </div>
 
-      {showAddressField && (
+      {effectiveShowAddress && (
         <div className="space-y-2">
           <Label htmlFor="address" className="text-foreground">Property Address</Label>
           <Input
@@ -258,7 +266,7 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
             Submitting...
           </>
         ) : (
-          submitButtonText
+          effectiveButtonText
         )}
       </Button>
     </form>

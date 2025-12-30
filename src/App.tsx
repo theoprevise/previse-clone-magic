@@ -6,6 +6,7 @@ import { AuthProvider } from "@/hooks/useAuth";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import LeadCapturePopup from "./components/LeadCapturePopup";
+import ExitIntentPopup from "./components/ExitIntentPopup";
 import Index from "./pages/Index";
 import MortgageSolutions from "./pages/MortgageSolutions";
 import MortgagePrograms from "./pages/MortgagePrograms";
@@ -24,6 +25,10 @@ import MortgageCalculator from "./pages/MortgageCalculator";
 import Refinance from "./pages/Refinance";
 import CurrentMortgageRates from "./pages/CurrentMortgageRates";
 import VALoans from "./pages/VALoans";
+import FHALoans from "./pages/FHALoans";
+import ConventionalLoans from "./pages/ConventionalLoans";
+import USDALoans from "./pages/USDALoans";
+import CampaignLanding from "./pages/CampaignLanding";
 import CreditScoreTips from "./pages/CreditScoreTips";
 import MortgageProcessExplained from "./pages/MortgageProcessExplained";
 import Blog from "./pages/Blog";
@@ -39,14 +44,22 @@ import YouTube from "./pages/YouTube";
 import YouTubeThankYou from "./pages/YouTubeThankYou";
 import Social from "./pages/Social";
 import SocialThankYou from "./pages/SocialThankYou";
+import PreQualify from "./pages/PreQualify";
 
 const queryClient = new QueryClient();
 
 const ConditionalLeadPopup = () => {
   const location = useLocation();
-  // Only show popup on pages other than homepage
-  if (location.pathname === '/') return null;
+  // Only show popup on pages other than homepage and thank-you pages
+  if (location.pathname === '/' || location.pathname.includes('thank-you')) return null;
   return <LeadCapturePopup />;
+};
+
+const ConditionalExitIntent = () => {
+  const location = useLocation();
+  // Don't show on thank-you pages or admin pages
+  if (location.pathname.includes('thank-you') || location.pathname.includes('admin')) return null;
+  return <ExitIntentPopup />;
 };
 
 const App = () => (
@@ -58,6 +71,7 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <ConditionalLeadPopup />
+        <ConditionalExitIntent />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/mortgage-solutions" element={<MortgageSolutions />} />
@@ -76,6 +90,12 @@ const App = () => (
           <Route path="/refinance" element={<Refinance />} />
           <Route path="/current-mortgage-rates" element={<CurrentMortgageRates />} />
           <Route path="/va-loans" element={<VALoans />} />
+          <Route path="/fha-loans" element={<FHALoans />} />
+          <Route path="/conventional-loans" element={<ConventionalLoans />} />
+          <Route path="/usda-loans" element={<USDALoans />} />
+          <Route path="/pre-qualify" element={<PreQualify />} />
+          <Route path="/offer" element={<CampaignLanding />} />
+          <Route path="/lp" element={<CampaignLanding />} />
           <Route path="/credit-score-mortgage-tips" element={<CreditScoreTips />} />
           <Route path="/how-the-mortgage-process-works" element={<MortgageProcessExplained />} />
           <Route path="/blog" element={<Blog />} />

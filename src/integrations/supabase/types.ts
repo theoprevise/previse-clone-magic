@@ -53,6 +53,129 @@ export type Database = {
         }
         Relationships: []
       }
+      email_campaigns: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          is_active: boolean | null
+          name: string
+          trigger_event: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          is_active?: boolean | null
+          name: string
+          trigger_event: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          is_active?: boolean | null
+          name?: string
+          trigger_event?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      email_sends: {
+        Row: {
+          campaign_id: string
+          clicked_at: string | null
+          id: string
+          lead_id: string
+          opened_at: string | null
+          sent_at: string
+          status: string
+          step_id: string | null
+        }
+        Insert: {
+          campaign_id: string
+          clicked_at?: string | null
+          id?: string
+          lead_id: string
+          opened_at?: string | null
+          sent_at?: string
+          status?: string
+          step_id?: string | null
+        }
+        Update: {
+          campaign_id?: string
+          clicked_at?: string | null
+          id?: string
+          lead_id?: string
+          opened_at?: string | null
+          sent_at?: string
+          status?: string
+          step_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "email_sends_campaign_id_fkey"
+            columns: ["campaign_id"]
+            isOneToOne: false
+            referencedRelation: "email_campaigns"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "email_sends_lead_id_fkey"
+            columns: ["lead_id"]
+            isOneToOne: false
+            referencedRelation: "leads"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "email_sends_step_id_fkey"
+            columns: ["step_id"]
+            isOneToOne: false
+            referencedRelation: "email_sequence_steps"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      email_sequence_steps: {
+        Row: {
+          body_template: string
+          campaign_id: string
+          created_at: string
+          delay_hours: number
+          id: string
+          step_order: number
+          subject: string
+        }
+        Insert: {
+          body_template: string
+          campaign_id: string
+          created_at?: string
+          delay_hours?: number
+          id?: string
+          step_order: number
+          subject: string
+        }
+        Update: {
+          body_template?: string
+          campaign_id?: string
+          created_at?: string
+          delay_hours?: number
+          id?: string
+          step_order?: number
+          subject?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "email_sequence_steps_campaign_id_fkey"
+            columns: ["campaign_id"]
+            isOneToOne: false
+            referencedRelation: "email_campaigns"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       leads: {
         Row: {
           address: string | null
@@ -60,11 +183,18 @@ export type Database = {
           city: string | null
           created_at: string
           email: string
+          email_sequence_started_at: string | null
+          email_sequence_step: number | null
           event_name: string | null
           first_name: string
           id: string
+          last_activity_at: string | null
           last_name: string
+          lead_score: number | null
+          notes: string | null
           phone: string | null
+          score_breakdown: Json | null
+          sms_opt_in: boolean | null
           source: string | null
           state: string | null
           utm_campaign: string | null
@@ -79,11 +209,18 @@ export type Database = {
           city?: string | null
           created_at?: string
           email: string
+          email_sequence_started_at?: string | null
+          email_sequence_step?: number | null
           event_name?: string | null
           first_name: string
           id?: string
+          last_activity_at?: string | null
           last_name: string
+          lead_score?: number | null
+          notes?: string | null
           phone?: string | null
+          score_breakdown?: Json | null
+          sms_opt_in?: boolean | null
           source?: string | null
           state?: string | null
           utm_campaign?: string | null
@@ -98,11 +235,18 @@ export type Database = {
           city?: string | null
           created_at?: string
           email?: string
+          email_sequence_started_at?: string | null
+          email_sequence_step?: number | null
           event_name?: string | null
           first_name?: string
           id?: string
+          last_activity_at?: string | null
           last_name?: string
+          lead_score?: number | null
+          notes?: string | null
           phone?: string | null
+          score_breakdown?: Json | null
+          sms_opt_in?: boolean | null
           source?: string | null
           state?: string | null
           utm_campaign?: string | null
@@ -259,6 +403,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      calculate_lead_score: {
+        Args: { lead_row: Database["public"]["Tables"]["leads"]["Row"] }
+        Returns: number
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]

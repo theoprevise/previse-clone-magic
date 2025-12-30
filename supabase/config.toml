@@ -20,3 +20,9 @@ verify_jwt = false
 
 [functions.send-to-zapier]
 verify_jwt = false
+
+[functions.email-drip-campaign]
+verify_jwt = false
+
+[functions.sms-notification]
+verify_jwt = false

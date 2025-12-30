@@ -9,7 +9,6 @@ import Footer from "@/components/Footer";
 import GoHighLevelChat from "@/components/GoHighLevelChat";
 import StructuredData from "@/components/StructuredData";
 import SEOHead from "@/components/SEOHead";
-import LeadCapturePopup from "@/components/LeadCapturePopup";
 import FloatingContactWidget from "@/components/FloatingContactWidget";
 
 const Index = () => {
@@ -36,7 +35,6 @@ const Index = () => {
       <FAQSection />
       <Footer />
       <GoHighLevelChat />
-      <LeadCapturePopup />
       <FloatingContactWidget />
     </div>
   );

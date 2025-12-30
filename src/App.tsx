@@ -3,8 +3,9 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AuthProvider } from "@/hooks/useAuth";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
+import LeadCapturePopup from "./components/LeadCapturePopup";
 import Index from "./pages/Index";
 import MortgageSolutions from "./pages/MortgageSolutions";
 import MortgagePrograms from "./pages/MortgagePrograms";
@@ -41,6 +42,13 @@ import SocialThankYou from "./pages/SocialThankYou";
 
 const queryClient = new QueryClient();
 
+const ConditionalLeadPopup = () => {
+  const location = useLocation();
+  // Only show popup on pages other than homepage
+  if (location.pathname === '/') return null;
+  return <LeadCapturePopup />;
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <AuthProvider>
@@ -49,6 +57,7 @@ const App = () => (
         <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <ConditionalLeadPopup />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/mortgage-solutions" element={<MortgageSolutions />} />

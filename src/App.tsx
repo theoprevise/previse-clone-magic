@@ -53,8 +53,29 @@ const queryClient = new QueryClient();
 
 const ConditionalLeadPopup = () => {
   const location = useLocation();
-  // Only show popup on pages other than homepage and thank-you pages
-  if (location.pathname === '/' || location.pathname.includes('thank-you')) return null;
+  
+  // Pages that already have lead capture forms - don't show popup
+  const pagesWithForms = [
+    '/',
+    '/webinar',
+    '/open-house', 
+    '/events',
+    '/youtube',
+    '/social',
+    '/homebuyer-guide',
+    '/offer',
+    '/lp',
+    '/pre-qualify',
+    '/first-time-homebuyer'
+  ];
+  
+  // Don't show popup on pages with forms or thank-you pages
+  const shouldHidePopup = 
+    pagesWithForms.includes(location.pathname) || 
+    location.pathname.includes('thank-you') ||
+    location.pathname.includes('-print');
+    
+  if (shouldHidePopup) return null;
   return <LeadCapturePopup />;
 };
 

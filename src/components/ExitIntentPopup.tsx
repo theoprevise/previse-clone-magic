@@ -64,13 +64,17 @@ const ExitIntentPopup = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase.from('leads').insert({
+      const leadData = {
         first_name: formData.firstName,
         last_name: formData.lastName,
         email: formData.email,
         phone: formData.phone || null,
         source: 'exit_intent',
-        campaign_type: 'exit_intent'
+        campaign_type: 'exit_intent',
+      };
+
+      const { error } = await supabase.functions.invoke('send-to-zapier', {
+        body: leadData,
       });
 
       if (error) throw error;

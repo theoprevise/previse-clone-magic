@@ -63,12 +63,17 @@ const LeadCapturePopup = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase.from("leads").insert({
+      const leadData = {
         first_name: formData.first_name.trim(),
         last_name: formData.last_name.trim(),
         email: formData.email.trim(),
         phone: formData.phone.trim() || null,
         source: "popup",
+        campaign_type: "popup",
+      };
+
+      const { error } = await supabase.functions.invoke('send-to-zapier', {
+        body: leadData,
       });
 
       if (error) throw error;

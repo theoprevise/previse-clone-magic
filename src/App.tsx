@@ -6,7 +6,7 @@ import { AuthProvider } from "@/hooks/useAuth";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import LeadCapturePopup from "./components/LeadCapturePopup";
-import ExitIntentPopup from "./components/ExitIntentPopup";
+
 import Index from "./pages/Index";
 import MortgageSolutions from "./pages/MortgageSolutions";
 import MortgagePrograms from "./pages/MortgagePrograms";
@@ -55,12 +55,6 @@ const ConditionalLeadPopup = () => {
   return <LeadCapturePopup />;
 };
 
-const ConditionalExitIntent = () => {
-  const location = useLocation();
-  // Don't show on thank-you pages or admin pages
-  if (location.pathname.includes('thank-you') || location.pathname.includes('admin')) return null;
-  return <ExitIntentPopup />;
-};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -71,7 +65,7 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <ConditionalLeadPopup />
-        <ConditionalExitIntent />
+        
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/mortgage-solutions" element={<MortgageSolutions />} />

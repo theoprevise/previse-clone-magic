@@ -38,11 +38,11 @@ const FloatingContactWidget = () => {
             </p>
             
             <a 
-              href="tel:+17175770727"
+              href="tel:+17178195196"
               className="flex items-center justify-center gap-3 bg-accent hover:bg-accent-light text-primary font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl mb-4 group"
             >
               <Phone className="w-5 h-5 group-hover:animate-pulse" />
-              <span className="text-lg">(717) 577-0727</span>
+              <span className="text-lg">(717) 819-5196</span>
             </a>
             
             {/* Disclaimer */}

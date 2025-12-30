@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Printer, Download, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import logoFull from "@/assets/logo-full.png";
+import logoPrint from "@/assets/previse-logo-print.png";
 
 const HomebuyerGuidePrint = () => {
   const handlePrint = () => {
@@ -31,7 +31,7 @@ const HomebuyerGuidePrint = () => {
       <div className="print:p-0 p-8 max-w-4xl mx-auto">
         {/* Cover Page */}
         <div className="page-break-after min-h-[100vh] flex flex-col items-center justify-center text-center p-8 bg-gradient-to-br from-primary/5 to-accent/10 print:bg-white rounded-lg print:rounded-none mb-8 print:mb-0">
-          <img src={logoFull} alt="Previse Mortgage" className="h-16 mb-8" />
+          <img src={logoPrint} alt="Previse Mortgage" className="h-20 mb-8 rounded-lg" />
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
             The Complete First-Time Homebuyer Guide
           </h1>
@@ -251,15 +251,28 @@ const HomebuyerGuidePrint = () => {
               </div>
             </div>
 
-            <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Working with a Real Estate Agent</h3>
-            <p className="mb-4">A good buyer's agent will:</p>
+            <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Searching the Market Yourself</h3>
+            <p className="mb-4">
+              One of the best ways to save money when buying a home is to do your own research and 
+              connect directly with sellers. By skipping the buyer's agent, you can often negotiate 
+              a better deal since sellers won't have to pay buyer's agent commissions.
+            </p>
+            <p className="font-semibold text-gray-900 mb-2">Here's how to search effectively on your own:</p>
             <ul className="space-y-2">
-              <li>• Help you find properties that match your criteria</li>
-              <li>• Schedule and accompany you to showings</li>
-              <li>• Provide market insights and comparable sales data</li>
-              <li>• Negotiate on your behalf</li>
-              <li>• Guide you through the offer process</li>
+              <li>• <strong>Use online tools:</strong> Zillow, Realtor.com, and Redfin let you search listings, view photos, and track market trends</li>
+              <li>• <strong>Attend open houses:</strong> Visit homes in person to get a feel for neighborhoods and property conditions</li>
+              <li>• <strong>Research comparable sales:</strong> Look at recent sales in the area to understand fair market value</li>
+              <li>• <strong>Contact sellers directly:</strong> Many For Sale By Owner (FSBO) listings are open to direct negotiations</li>
+              <li>• <strong>Drive neighborhoods:</strong> Sometimes the best homes aren't listed online yet—look for "For Sale" signs</li>
             </ul>
+            
+            <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500 mt-6">
+              <p className="font-semibold text-gray-900">💰 Save Thousands:</p>
+              <p className="text-gray-700">
+                Buyer's agent commissions typically range from 2.5-3% of the home price. On a $300,000 home, 
+                that's $7,500-$9,000 that could stay in your pocket or be used to negotiate a lower purchase price.
+              </p>
+            </div>
 
             <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Making an Offer</h3>
             <p className="mb-4">When you find the right home, your agent will help you prepare an offer including:</p>
@@ -699,14 +712,14 @@ const HomebuyerGuidePrint = () => {
               </p>
               <div className="space-y-2 text-gray-800">
                 <p className="text-xl font-semibold text-gray-900">Previse Mortgage</p>
-                <p className="text-lg">📞 Call or Text: (717) 801-8498</p>
+                <p className="text-lg">📞 Call or Text: (717) 819-5196</p>
                 <p className="text-lg">📧 Email: teddy@previsemortgage.com</p>
                 <p className="text-lg">🌐 Web: www.previsemortgage.com</p>
               </div>
             </div>
 
             <div className="text-center mt-12 pt-8 border-t border-gray-200">
-              <img src={logoFull} alt="Previse Mortgage" className="h-12 mx-auto mb-4" />
+              <img src={logoPrint} alt="Previse Mortgage" className="h-14 mx-auto mb-4 rounded-lg" />
               <p className="text-sm text-gray-600">
                 Previse Mortgage | NMLS #2611291
               </p>

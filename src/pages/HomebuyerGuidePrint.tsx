@@ -225,16 +225,27 @@ const HomebuyerGuidePrint = () => {
         {/* Step 3 */}
         <section className="page-break-after mb-8 print:mb-0 p-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-accent pb-4">
-            Step 3: Find Your Dream Home
+            Step 3: Find Your Dream Home (Without an Agent)
           </h2>
           <div className="prose prose-lg max-w-none text-gray-800">
             <p className="text-lg leading-relaxed mb-6">
               Now comes the exciting part—house hunting! With your pre-approval in hand, 
-              you're ready to start looking for your perfect home.
+              you're ready to start looking for your perfect home. The good news? You don't 
+              need a real estate agent to find and buy a great home, and going without one 
+              can save you thousands of dollars.
             </p>
 
+            <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500 mb-8">
+              <p className="font-semibold text-gray-900">💰 Why Skip the Buyer's Agent?</p>
+              <p className="text-gray-700">
+                Buyer's agent commissions typically range from 2.5-3% of the home price. On a $300,000 home, 
+                that's $7,500-$9,000 that could stay in your pocket or be used to negotiate a lower purchase price. 
+                With today's online tools, you have access to the same listings agents use.
+              </p>
+            </div>
+
             <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Create Your Must-Have List</h3>
-            <p className="mb-4">Divide your preferences into three categories:</p>
+            <p className="mb-4">Before you start searching, divide your preferences into three categories:</p>
             
             <div className="grid md:grid-cols-3 gap-4 my-6">
               <div className="bg-green-50 p-4 rounded-lg border border-green-200">
@@ -251,37 +262,50 @@ const HomebuyerGuidePrint = () => {
               </div>
             </div>
 
-            <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Searching the Market Yourself</h3>
+            <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Search the Market Yourself</h3>
             <p className="mb-4">
-              One of the best ways to save money when buying a home is to do your own research and 
-              connect directly with sellers. By skipping the buyer's agent, you can often negotiate 
-              a better deal since sellers won't have to pay buyer's agent commissions.
+              Today's technology gives you direct access to the same home listings that agents use. 
+              Take control of your home search with these powerful tools and strategies:
             </p>
-            <p className="font-semibold text-gray-900 mb-2">Here's how to search effectively on your own:</p>
-            <ul className="space-y-2">
-              <li>• <strong>Use online tools:</strong> Zillow, Realtor.com, and Redfin let you search listings, view photos, and track market trends</li>
-              <li>• <strong>Attend open houses:</strong> Visit homes in person to get a feel for neighborhoods and property conditions</li>
-              <li>• <strong>Research comparable sales:</strong> Look at recent sales in the area to understand fair market value</li>
-              <li>• <strong>Contact sellers directly:</strong> Many For Sale By Owner (FSBO) listings are open to direct negotiations</li>
-              <li>• <strong>Drive neighborhoods:</strong> Sometimes the best homes aren't listed online yet—look for "For Sale" signs</li>
+            <ul className="space-y-2 mb-6">
+              <li>• <strong>Zillow, Realtor.com, Redfin:</strong> Search all MLS listings, view photos, virtual tours, and price history</li>
+              <li>• <strong>Set up alerts:</strong> Get instant notifications when new homes matching your criteria hit the market</li>
+              <li>• <strong>Research neighborhoods:</strong> Use these sites to check school ratings, crime stats, and local amenities</li>
+              <li>• <strong>Track market trends:</strong> Monitor days on market and price changes to identify motivated sellers</li>
             </ul>
-            
-            <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500 mt-6">
-              <p className="font-semibold text-gray-900">💰 Save Thousands:</p>
+
+            <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Connect Directly with Sellers</h3>
+            <p className="mb-4">
+              Once you find homes you like, reach out directly to sellers or their listing agents:
+            </p>
+            <ul className="space-y-2 mb-6">
+              <li>• <strong>Attend open houses:</strong> Meet sellers or listing agents in person and ask questions directly</li>
+              <li>• <strong>Look for FSBO listings:</strong> For Sale By Owner homes are often priced lower and sellers are open to negotiation</li>
+              <li>• <strong>Contact listing agents:</strong> Call the seller's agent directly to schedule private showings</li>
+              <li>• <strong>Drive neighborhoods:</strong> Look for "For Sale" signs—some homes aren't listed online yet</li>
+              <li>• <strong>Network locally:</strong> Tell friends, family, and coworkers you're looking—word of mouth finds hidden gems</li>
+            </ul>
+
+            <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Making an Offer Without an Agent</h3>
+            <p className="mb-4">
+              You can absolutely make an offer on your own. Here's what to include:
+            </p>
+            <ul className="space-y-2 mb-6">
+              <li>• <strong>Offer price:</strong> Research comparable sales to determine fair market value</li>
+              <li>• <strong>Earnest money deposit:</strong> Shows you're serious (typically 1-3% of price)</li>
+              <li>• <strong>Contingencies:</strong> Protect yourself with inspection and financing contingencies</li>
+              <li>• <strong>Closing timeline:</strong> Propose a realistic closing date (typically 30-45 days)</li>
+              <li>• <strong>Pre-approval letter:</strong> Include this to show sellers you're qualified</li>
+            </ul>
+
+            <div className="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-500 mt-6">
+              <p className="font-semibold text-gray-900">💡 Pro Tip: Hire a Real Estate Attorney</p>
               <p className="text-gray-700">
-                Buyer's agent commissions typically range from 2.5-3% of the home price. On a $300,000 home, 
-                that's $7,500-$9,000 that could stay in your pocket or be used to negotiate a lower purchase price.
+                Instead of paying an agent 2.5-3%, consider hiring a real estate attorney for $500-$1,500 
+                to review contracts and handle the legal paperwork. You get professional protection at a 
+                fraction of the cost. Your lender (that's us!) will guide you through the financing side.
               </p>
             </div>
-
-            <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Making an Offer</h3>
-            <p className="mb-4">When you find the right home, your agent will help you prepare an offer including:</p>
-            <ul className="space-y-2">
-              <li>• <strong>Offer price</strong> - Based on market analysis</li>
-              <li>• <strong>Earnest money deposit</strong> - Shows good faith (typically 1-3%)</li>
-              <li>• <strong>Contingencies</strong> - Conditions that must be met (inspection, financing)</li>
-              <li>• <strong>Closing timeline</strong> - Proposed closing date</li>
-            </ul>
           </div>
         </section>
 

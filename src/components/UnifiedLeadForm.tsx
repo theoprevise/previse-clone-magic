@@ -3,6 +3,7 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { Loader2 } from 'lucide-react';
@@ -56,6 +57,7 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
     phone: '',
     address: '',
   });
+  const [smsOptIn, setSmsOptIn] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -105,6 +107,7 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
         utm_source: utmParams.utm_source || null,
         utm_medium: utmParams.utm_medium || null,
         utm_campaign: utmParams.utm_campaign || null,
+        sms_opt_in: smsOptIn,
       };
 
       // Submit via Edge Function (server-side insert + Zapier)
@@ -136,6 +139,7 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
         phone: '',
         address: '',
       });
+      setSmsOptIn(false);
 
       // Handle success callback or redirect
       if (onSuccess) {
@@ -254,6 +258,18 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
           )}
         </div>
       )}
+
+      <div className="flex items-start gap-3">
+        <Checkbox
+          id="sms_opt_in"
+          checked={smsOptIn}
+          onCheckedChange={(checked) => setSmsOptIn(checked as boolean)}
+          className="mt-1"
+        />
+        <label htmlFor="sms_opt_in" className="text-xs text-muted-foreground leading-relaxed cursor-pointer">
+          I consent to receive SMS/text messages from Previse Mortgage regarding my inquiry. Message and data rates may apply. Reply STOP to opt out.
+        </label>
+      </div>
 
       <Button
         type="submit"

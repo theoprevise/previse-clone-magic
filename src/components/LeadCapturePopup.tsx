@@ -3,6 +3,7 @@ import { X, CheckCircle, Sparkles, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import lighthouseIcon from "@/assets/lighthouse-icon.png";
@@ -22,6 +23,7 @@ const LeadCapturePopup = () => {
     email: "",
     phone: "",
   });
+  const [smsOptIn, setSmsOptIn] = useState(false);
 
   useEffect(() => {
     // Check if popup was already dismissed
@@ -70,6 +72,7 @@ const LeadCapturePopup = () => {
         phone: formData.phone.trim() || null,
         source: "popup",
         campaign_type: "popup",
+        sms_opt_in: smsOptIn,
       };
 
       const { error } = await supabase.functions.invoke('send-to-zapier', {
@@ -241,6 +244,18 @@ const LeadCapturePopup = () => {
               placeholder="(555) 123-4567"
               className="h-9"
             />
+          </div>
+
+          <div className="flex items-start gap-2">
+            <Checkbox
+              id="sms_opt_in_popup"
+              checked={smsOptIn}
+              onCheckedChange={(checked) => setSmsOptIn(checked as boolean)}
+              className="mt-0.5"
+            />
+            <label htmlFor="sms_opt_in_popup" className="text-xs text-muted-foreground leading-relaxed cursor-pointer">
+              I consent to receive SMS/text messages from Previse Mortgage.
+            </label>
           </div>
 
           <Button

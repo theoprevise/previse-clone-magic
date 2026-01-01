@@ -19,6 +19,7 @@ const HeroLeadForm = () => {
     email: '',
     helpType: '',
     consent: false,
+    smsOptIn: false,
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,6 +50,7 @@ const HeroLeadForm = () => {
         campaign_type: 'hero_form',
         event_name: `Interest: ${formData.helpType || 'General'}`,
         source: 'website_hero',
+        sms_opt_in: formData.smsOptIn,
       };
 
       const { error } = await supabase.functions.invoke('send-to-zapier', {
@@ -69,6 +71,7 @@ const HeroLeadForm = () => {
         email: '',
         helpType: '',
         consent: false,
+        smsOptIn: false,
       });
 
       navigate('/thank-you');
@@ -152,7 +155,19 @@ const HeroLeadForm = () => {
             className="mt-1"
           />
           <label htmlFor="consent" className="text-xs text-gray-500 leading-relaxed cursor-pointer">
-            I consent to receive texts and calls, including marketing, from Previse Mortgage. This consent is not a condition of purchase.
+            I consent to receive calls and emails, including marketing, from Previse Mortgage. This consent is not a condition of purchase.
+          </label>
+        </div>
+
+        <div className="flex items-start gap-3">
+          <Checkbox
+            id="smsOptIn"
+            checked={formData.smsOptIn}
+            onCheckedChange={(checked) => setFormData(prev => ({ ...prev, smsOptIn: checked as boolean }))}
+            className="mt-1"
+          />
+          <label htmlFor="smsOptIn" className="text-xs text-gray-500 leading-relaxed cursor-pointer">
+            I also consent to receive SMS/text messages. Message and data rates may apply. Reply STOP to opt out.
           </label>
         </div>
         

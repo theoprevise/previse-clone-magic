@@ -4,6 +4,7 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
@@ -24,6 +25,7 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [smsOptIn, setSmsOptIn] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const navigate = useNavigate();
@@ -70,7 +72,8 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
           email: result.data.email,
           phone: result.data.phone || '',
           campaign_type: 'webinar_registration',
-          event_name: 'First-Time Homebuyer Webinar'
+          event_name: 'First-Time Homebuyer Webinar',
+          sms_opt_in: smsOptIn
         }
       });
 
@@ -172,6 +175,18 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
           className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
           disabled={loading}
         />
+      </div>
+
+      <div className="flex items-start gap-2">
+        <Checkbox
+          id="smsOptIn"
+          checked={smsOptIn}
+          onCheckedChange={(checked) => setSmsOptIn(checked as boolean)}
+          className="mt-0.5 border-white/30"
+        />
+        <label htmlFor="smsOptIn" className="text-xs text-white/70 leading-relaxed cursor-pointer">
+          I consent to receive SMS/text messages from Previse Mortgage. Message and data rates may apply.
+        </label>
       </div>
 
       <Button 

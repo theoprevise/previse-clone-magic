@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { X, Gift, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Checkbox } from '@/components/ui/checkbox';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 
@@ -15,6 +16,7 @@ const ExitIntentPopup = () => {
     email: '',
     phone: ''
   });
+  const [smsOptIn, setSmsOptIn] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -71,6 +73,7 @@ const ExitIntentPopup = () => {
         phone: formData.phone || null,
         source: 'exit_intent',
         campaign_type: 'exit_intent',
+        sms_opt_in: smsOptIn,
       };
 
       const { error } = await supabase.functions.invoke('send-to-zapier', {
@@ -191,6 +194,18 @@ const ExitIntentPopup = () => {
                 onChange={handleChange}
                 className="border-gray-200 focus:border-accent"
               />
+
+              <div className="flex items-start gap-2">
+                <Checkbox
+                  id="sms_opt_in_exit"
+                  checked={smsOptIn}
+                  onCheckedChange={(checked) => setSmsOptIn(checked as boolean)}
+                  className="mt-0.5 border-gray-300"
+                />
+                <label htmlFor="sms_opt_in_exit" className="text-xs text-gray-600 leading-relaxed cursor-pointer">
+                  I consent to receive SMS/text messages from Previse Mortgage.
+                </label>
+              </div>
               
               <Button
                 type="submit"

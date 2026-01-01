@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
+import { Checkbox } from '@/components/ui/checkbox';
 import { 
   Calculator, 
   DollarSign, 
@@ -27,6 +28,7 @@ interface PreQualData {
   lastName: string;
   email: string;
   phone: string;
+  smsOptIn: boolean;
 }
 
 const PreQualificationCalculator = () => {
@@ -48,7 +50,8 @@ const PreQualificationCalculator = () => {
     firstName: '',
     lastName: '',
     email: '',
-    phone: ''
+    phone: '',
+    smsOptIn: false
   });
 
   const { toast } = useToast();
@@ -131,6 +134,7 @@ const PreQualificationCalculator = () => {
         source: 'prequal_calculator',
         campaign_type: 'prequal_calculator',
         event_name: `PreQual: Income $${formData.annualIncome}, Credit ${formData.creditScore}`,
+        sms_opt_in: formData.smsOptIn,
       };
 
       const { error } = await supabase.functions.invoke('send-to-zapier', {
@@ -309,7 +313,7 @@ const PreQualificationCalculator = () => {
                 required
               />
             </div>
-            <div>
+            <div className="space-y-2">
               <Label htmlFor="phone">Phone (Optional)</Label>
               <Input
                 id="phone"
@@ -319,6 +323,17 @@ const PreQualificationCalculator = () => {
                 value={formData.phone}
                 onChange={handleChange}
               />
+            </div>
+            <div className="flex items-start gap-2 pt-2">
+              <Checkbox
+                id="smsOptIn"
+                checked={formData.smsOptIn}
+                onCheckedChange={(checked) => setFormData(prev => ({ ...prev, smsOptIn: checked as boolean }))}
+                className="mt-0.5"
+              />
+              <label htmlFor="smsOptIn" className="text-xs text-muted-foreground leading-relaxed cursor-pointer">
+                I consent to receive SMS/text messages from Previse Mortgage. Message and data rates may apply.
+              </label>
             </div>
           </div>
         );

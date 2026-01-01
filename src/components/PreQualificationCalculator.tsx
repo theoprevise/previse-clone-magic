@@ -28,7 +28,7 @@ interface PreQualData {
   lastName: string;
   email: string;
   phone: string;
-  smsOptIn: boolean;
+  consent: boolean;
 }
 
 const PreQualificationCalculator = () => {
@@ -51,7 +51,7 @@ const PreQualificationCalculator = () => {
     lastName: '',
     email: '',
     phone: '',
-    smsOptIn: false
+    consent: false
   });
 
   const { toast } = useToast();
@@ -114,10 +114,10 @@ const PreQualificationCalculator = () => {
   };
 
   const handleSubmit = async () => {
-    if (!formData.firstName || !formData.lastName || !formData.email) {
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.consent) {
       toast({
         title: "Required fields missing",
-        description: "Please fill in your contact information.",
+        description: "Please fill in your contact information and agree to receive communications.",
         variant: "destructive"
       });
       return;
@@ -134,7 +134,7 @@ const PreQualificationCalculator = () => {
         source: 'prequal_calculator',
         campaign_type: 'prequal_calculator',
         event_name: `PreQual: Income $${formData.annualIncome}, Credit ${formData.creditScore}`,
-        sms_opt_in: formData.smsOptIn,
+        sms_opt_in: formData.consent,
       };
 
       const { error } = await supabase.functions.invoke('send-to-zapier', {
@@ -326,13 +326,14 @@ const PreQualificationCalculator = () => {
             </div>
             <div className="flex items-start gap-2 pt-2">
               <Checkbox
-                id="smsOptIn"
-                checked={formData.smsOptIn}
-                onCheckedChange={(checked) => setFormData(prev => ({ ...prev, smsOptIn: checked as boolean }))}
+                id="consent"
+                checked={formData.consent}
+                onCheckedChange={(checked) => setFormData(prev => ({ ...prev, consent: checked as boolean }))}
                 className="mt-0.5"
+                required
               />
-              <label htmlFor="smsOptIn" className="text-xs text-muted-foreground leading-relaxed cursor-pointer">
-                I consent to receive SMS/text messages from Previse Mortgage. Message and data rates may apply.
+              <label htmlFor="consent" className="text-xs text-muted-foreground leading-relaxed cursor-pointer">
+                I consent to receive calls, emails, and SMS/text messages from Previse Mortgage. *
               </label>
             </div>
           </div>

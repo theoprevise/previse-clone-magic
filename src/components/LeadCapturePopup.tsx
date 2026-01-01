@@ -23,7 +23,7 @@ const LeadCapturePopup = () => {
     email: "",
     phone: "",
   });
-  const [smsOptIn, setSmsOptIn] = useState(false);
+  const [consent, setConsent] = useState(false);
 
   useEffect(() => {
     // Check if popup was already dismissed
@@ -53,10 +53,10 @@ const LeadCapturePopup = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.first_name || !formData.last_name || !formData.email) {
+    if (!formData.first_name || !formData.last_name || !formData.email || !consent) {
       toast({
         title: "Required Fields",
-        description: "Please fill in your name and email.",
+        description: "Please fill in your name, email, and agree to receive communications.",
         variant: "destructive",
       });
       return;
@@ -72,7 +72,7 @@ const LeadCapturePopup = () => {
         phone: formData.phone.trim() || null,
         source: "popup",
         campaign_type: "popup",
-        sms_opt_in: smsOptIn,
+        sms_opt_in: consent,
       };
 
       const { error } = await supabase.functions.invoke('send-to-zapier', {
@@ -248,13 +248,14 @@ const LeadCapturePopup = () => {
 
           <div className="flex items-start gap-2">
             <Checkbox
-              id="sms_opt_in_popup"
-              checked={smsOptIn}
-              onCheckedChange={(checked) => setSmsOptIn(checked as boolean)}
+              id="consent_popup"
+              checked={consent}
+              onCheckedChange={(checked) => setConsent(checked as boolean)}
               className="mt-0.5"
+              required
             />
-            <label htmlFor="sms_opt_in_popup" className="text-xs text-muted-foreground leading-relaxed cursor-pointer">
-              I consent to receive SMS/text messages from Previse Mortgage.
+            <label htmlFor="consent_popup" className="text-xs text-muted-foreground leading-relaxed cursor-pointer">
+              I consent to receive calls, emails, and SMS/text messages from Previse Mortgage. *
             </label>
           </div>
 
@@ -265,10 +266,6 @@ const LeadCapturePopup = () => {
           >
             {isSubmitting ? "Submitting..." : "Submit"}
           </Button>
-
-          <p className="text-xs text-muted-foreground text-center">
-            By submitting, you agree to be contacted about mortgage services.
-          </p>
         </form>
       </div>
     </div>

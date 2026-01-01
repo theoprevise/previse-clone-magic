@@ -25,7 +25,7 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [smsOptIn, setSmsOptIn] = useState(false);
+  const [consent, setConsent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const navigate = useNavigate();
@@ -34,6 +34,15 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrors({});
+
+    if (!consent) {
+      toast({
+        title: "Consent Required",
+        description: "Please agree to receive communications to continue.",
+        variant: "destructive"
+      });
+      return;
+    }
 
     // Validate input
     const result = registrationSchema.safeParse({ firstName, lastName, email, phone });
@@ -73,7 +82,7 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
           phone: result.data.phone || '',
           campaign_type: 'webinar_registration',
           event_name: 'First-Time Homebuyer Webinar',
-          sms_opt_in: smsOptIn
+          sms_opt_in: consent
         }
       });
 
@@ -179,13 +188,14 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
 
       <div className="flex items-start gap-2">
         <Checkbox
-          id="smsOptIn"
-          checked={smsOptIn}
-          onCheckedChange={(checked) => setSmsOptIn(checked as boolean)}
+          id="consent"
+          checked={consent}
+          onCheckedChange={(checked) => setConsent(checked as boolean)}
           className="mt-0.5 border-white/30"
+          required
         />
-        <label htmlFor="smsOptIn" className="text-xs text-white/70 leading-relaxed cursor-pointer">
-          I consent to receive SMS/text messages from Previse Mortgage. Message and data rates may apply.
+        <label htmlFor="consent" className="text-xs text-white/70 leading-relaxed cursor-pointer">
+          I consent to receive calls, emails, and SMS/text messages from Previse Mortgage. *
         </label>
       </div>
 
@@ -205,10 +215,6 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
           "Register for Free"
         )}
       </Button>
-
-      <p className="text-center text-white/50 text-xs">
-        By registering, you agree to receive emails about the webinar. We respect your privacy.
-      </p>
     </form>
   );
 };

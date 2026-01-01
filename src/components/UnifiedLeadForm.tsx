@@ -57,7 +57,7 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
     phone: '',
     address: '',
   });
-  const [smsOptIn, setSmsOptIn] = useState(false);
+  const [consent, setConsent] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -87,6 +87,16 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!consent) {
+      toast({
+        title: "Consent Required",
+        description: "Please agree to receive communications to continue.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
     setIsSubmitting(true);
     setErrors({});
 
@@ -107,7 +117,7 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
         utm_source: utmParams.utm_source || null,
         utm_medium: utmParams.utm_medium || null,
         utm_campaign: utmParams.utm_campaign || null,
-        sms_opt_in: smsOptIn,
+        sms_opt_in: consent,
       };
 
       // Submit via Edge Function (server-side insert + Zapier)
@@ -139,7 +149,7 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
         phone: '',
         address: '',
       });
-      setSmsOptIn(false);
+      setConsent(false);
 
       // Handle success callback or redirect
       if (onSuccess) {
@@ -261,13 +271,14 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
 
       <div className="flex items-start gap-3">
         <Checkbox
-          id="sms_opt_in"
-          checked={smsOptIn}
-          onCheckedChange={(checked) => setSmsOptIn(checked as boolean)}
+          id="consent"
+          checked={consent}
+          onCheckedChange={(checked) => setConsent(checked as boolean)}
           className="mt-1"
+          required
         />
-        <label htmlFor="sms_opt_in" className="text-xs text-muted-foreground leading-relaxed cursor-pointer">
-          I consent to receive SMS/text messages from Previse Mortgage regarding my inquiry. Message and data rates may apply. Reply STOP to opt out.
+        <label htmlFor="consent" className="text-xs text-muted-foreground leading-relaxed cursor-pointer">
+          I consent to receive calls, emails, and SMS/text messages from Previse Mortgage. Message and data rates may apply. Reply STOP to opt out. *
         </label>
       </div>
 

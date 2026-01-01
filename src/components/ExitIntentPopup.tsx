@@ -16,7 +16,7 @@ const ExitIntentPopup = () => {
     email: '',
     phone: ''
   });
-  const [smsOptIn, setSmsOptIn] = useState(false);
+  const [consent, setConsent] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -54,10 +54,10 @@ const ExitIntentPopup = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.firstName || !formData.lastName || !formData.email) {
+    if (!formData.firstName || !formData.lastName || !formData.email || !consent) {
       toast({
         title: "Required fields missing",
-        description: "Please fill in all required fields.",
+        description: "Please fill in all required fields and agree to receive communications.",
         variant: "destructive"
       });
       return;
@@ -73,7 +73,7 @@ const ExitIntentPopup = () => {
         phone: formData.phone || null,
         source: 'exit_intent',
         campaign_type: 'exit_intent',
-        sms_opt_in: smsOptIn,
+        sms_opt_in: consent,
       };
 
       const { error } = await supabase.functions.invoke('send-to-zapier', {
@@ -197,13 +197,14 @@ const ExitIntentPopup = () => {
 
               <div className="flex items-start gap-2">
                 <Checkbox
-                  id="sms_opt_in_exit"
-                  checked={smsOptIn}
-                  onCheckedChange={(checked) => setSmsOptIn(checked as boolean)}
+                  id="consent_exit"
+                  checked={consent}
+                  onCheckedChange={(checked) => setConsent(checked as boolean)}
                   className="mt-0.5 border-gray-300"
+                  required
                 />
-                <label htmlFor="sms_opt_in_exit" className="text-xs text-gray-600 leading-relaxed cursor-pointer">
-                  I consent to receive SMS/text messages from Previse Mortgage.
+                <label htmlFor="consent_exit" className="text-xs text-gray-600 leading-relaxed cursor-pointer">
+                  I consent to receive calls, emails, and SMS/text messages from Previse Mortgage. *
                 </label>
               </div>
               
@@ -214,11 +215,6 @@ const ExitIntentPopup = () => {
               >
                 {isSubmitting ? 'Submitting...' : 'Claim My Free Consultation'}
               </Button>
-
-              <p className="text-xs text-gray-500 text-center">
-                By submitting, you agree to receive calls and texts from Previse Mortgage. 
-                This is not a condition of purchase.
-              </p>
             </form>
           </>
         )}

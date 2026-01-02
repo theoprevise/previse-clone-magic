@@ -99,129 +99,107 @@ const CookieConsent = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-[9999] p-4 animate-slide-up">
-      <div className="max-w-4xl mx-auto bg-card border border-border rounded-xl shadow-2xl overflow-hidden">
-        <div className="p-5 md:p-6">
-          <div className="flex items-start gap-4">
-            <div className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 flex-shrink-0">
-              <Cookie className="w-6 h-6 text-accent" />
+    <div className="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:bottom-6 z-[9999] animate-slide-up">
+      <div className="max-w-md bg-primary/95 backdrop-blur-md border border-accent/20 rounded-lg shadow-glow overflow-hidden">
+        <div className="p-4">
+          {/* Header */}
+          <div className="flex items-center justify-between gap-3 mb-2">
+            <div className="flex items-center gap-2">
+              <Cookie className="w-4 h-4 text-accent" />
+              <span className="text-sm font-medium text-foreground">Cookie Preferences</span>
             </div>
-            
-            <div className="flex-1">
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
-                  <Cookie className="w-5 h-5 md:hidden text-accent" />
-                  We Value Your Privacy
-                </h3>
-                <button
-                  onClick={handleRejectNonEssential}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                  aria-label="Close"
-                >
-                  <X className="w-5 h-5" />
-                </button>
+            <button
+              onClick={handleRejectNonEssential}
+              className="text-muted-foreground hover:text-foreground transition-colors p-1"
+              aria-label="Close"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+          
+          {/* Description */}
+          <p className="text-xs text-muted-foreground mb-3 leading-relaxed">
+            We use cookies to enhance your experience.{" "}
+            <Link to="/privacy-policy" className="text-accent hover:underline">
+              Learn more
+            </Link>
+          </p>
+
+          {/* Expanded preferences */}
+          {showDetails && (
+            <div className="mb-3 p-3 bg-muted/30 rounded-md space-y-2 animate-fade-in border border-border/50">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Shield className="w-3 h-3 text-green-400" />
+                  <span className="text-xs text-foreground">Essential</span>
+                </div>
+                <span className="text-[10px] text-muted-foreground">Always on</span>
               </div>
               
-              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                We use cookies and similar technologies to enhance your experience, analyze site traffic, and for marketing purposes. 
-                By clicking "Accept All", you consent to our use of cookies. You can manage your preferences or learn more in our{" "}
-                <Link to="/privacy-policy" className="text-accent hover:underline">
-                  Privacy Policy
-                </Link>.
-              </p>
-
-              {showDetails && (
-                <div className="mb-4 p-4 bg-muted/50 rounded-lg space-y-3 animate-fade-in">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm font-medium text-foreground flex items-center gap-2">
-                        <Shield className="w-4 h-4 text-green-500" />
-                        Necessary Cookies
-                      </p>
-                      <p className="text-xs text-muted-foreground">Required for the website to function</p>
-                    </div>
-                    <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded">Always On</span>
-                  </div>
-                  
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm font-medium text-foreground">Analytics Cookies</p>
-                      <p className="text-xs text-muted-foreground">Help us understand how visitors use our site</p>
-                    </div>
-                    <label className="relative inline-flex items-center cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={preferences.analytics}
-                        onChange={(e) => setPreferences(p => ({ ...p, analytics: e.target.checked }))}
-                        className="sr-only peer"
-                      />
-                      <div className="w-9 h-5 bg-muted peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-accent rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-accent"></div>
-                    </label>
-                  </div>
-                  
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm font-medium text-foreground">Marketing Cookies</p>
-                      <p className="text-xs text-muted-foreground">Used to deliver personalized advertising</p>
-                    </div>
-                    <label className="relative inline-flex items-center cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={preferences.marketing}
-                        onChange={(e) => setPreferences(p => ({ ...p, marketing: e.target.checked }))}
-                        className="sr-only peer"
-                      />
-                      <div className="w-9 h-5 bg-muted peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-accent rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-accent"></div>
-                    </label>
-                  </div>
-                  
-                  <p className="text-xs text-muted-foreground pt-2 border-t border-border">
-                    You can opt out of RB2B tracking at any time by visiting{" "}
-                    <a 
-                      href="https://app.retention.com/optout" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-accent hover:underline"
-                    >
-                      https://app.retention.com/optout
-                    </a>
-                  </p>
-                </div>
-              )}
-
-              <div className="flex flex-col sm:flex-row gap-2 sm:items-center">
-                <Button
-                  onClick={handleAcceptAll}
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium"
-                >
-                  Accept All
-                </Button>
-                <Button
-                  onClick={handleRejectNonEssential}
-                  variant="outline"
-                  className="border-border hover:bg-muted"
-                >
-                  Reject Non-Essential
-                </Button>
-                {showDetails ? (
-                  <Button
-                    onClick={handleSavePreferences}
-                    variant="ghost"
-                    className="text-muted-foreground hover:text-foreground"
-                  >
-                    Save Preferences
-                  </Button>
-                ) : (
-                  <Button
-                    onClick={() => setShowDetails(true)}
-                    variant="ghost"
-                    className="text-muted-foreground hover:text-foreground"
-                  >
-                    Manage Preferences
-                  </Button>
-                )}
+              <div className="flex items-center justify-between">
+                <span className="text-xs text-foreground">Analytics</span>
+                <label className="relative inline-flex items-center cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={preferences.analytics}
+                    onChange={(e) => setPreferences(p => ({ ...p, analytics: e.target.checked }))}
+                    className="sr-only peer"
+                  />
+                  <div className="w-7 h-4 bg-muted rounded-full peer peer-checked:after:translate-x-3 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-foreground after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-accent"></div>
+                </label>
+              </div>
+              
+              <div className="flex items-center justify-between">
+                <span className="text-xs text-foreground">Marketing</span>
+                <label className="relative inline-flex items-center cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={preferences.marketing}
+                    onChange={(e) => setPreferences(p => ({ ...p, marketing: e.target.checked }))}
+                    className="sr-only peer"
+                  />
+                  <div className="w-7 h-4 bg-muted rounded-full peer peer-checked:after:translate-x-3 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-foreground after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-accent"></div>
+                </label>
               </div>
             </div>
+          )}
+
+          {/* Buttons */}
+          <div className="flex items-center gap-2">
+            <Button
+              onClick={handleAcceptAll}
+              size="sm"
+              className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground text-xs h-8"
+            >
+              Accept All
+            </Button>
+            <Button
+              onClick={handleRejectNonEssential}
+              size="sm"
+              variant="outline"
+              className="flex-1 border-border/50 hover:bg-muted/50 text-xs h-8"
+            >
+              Reject
+            </Button>
+            {showDetails ? (
+              <Button
+                onClick={handleSavePreferences}
+                size="sm"
+                variant="ghost"
+                className="text-accent hover:text-accent/80 text-xs h-8 px-2"
+              >
+                Save
+              </Button>
+            ) : (
+              <Button
+                onClick={() => setShowDetails(true)}
+                size="sm"
+                variant="ghost"
+                className="text-muted-foreground hover:text-foreground text-xs h-8 px-2"
+              >
+                Customize
+              </Button>
+            )}
           </div>
         </div>
       </div>

@@ -177,7 +177,7 @@ const CookieConsent = () => {
               onClick={handleRejectNonEssential}
               size="sm"
               variant="outline"
-              className="flex-1 border-border/50 hover:bg-muted/50 text-xs h-8"
+              className="flex-1 border-accent/40 text-foreground hover:bg-accent/10 text-xs h-8"
             >
               Reject
             </Button>

@@ -55,14 +55,27 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-accent mb-4">5. Data Security</h2>
+              <h2 className="text-2xl font-semibold text-accent mb-4">5. Cookies and Online Tracking</h2>
+              <p className="leading-relaxed mb-4">
+                When you visit or log in to our website, cookies and similar technologies may be used by our online data partners or vendors to associate these activities with other personal information they or others have about you, including by association with your email. We (or service providers on our behalf) may then send communications and marketing to these email addresses.
+              </p>
+              <p className="leading-relaxed">
+                You may opt out of receiving this advertising by visiting{" "}
+                <a href="https://app.retention.com/optout" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                  https://app.retention.com/optout
+                </a>.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-accent mb-4">6. Data Security</h2>
               <p className="leading-relaxed">
                 Your privacy is critical. We implement reasonable physical, electronic, and administrative safeguards to protect your data, including encryption, firewalls, access controls, and secure hosting. While no system is 100% secure, we continuously assess risk and adapt our practices to current standards.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-accent mb-4">6. Retention and Deletion</h2>
+              <h2 className="text-2xl font-semibold text-accent mb-4">7. Retention and Deletion</h2>
               <p className="leading-relaxed mb-4">We retain personal data for as long as necessary for:</p>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li>The duration of any mortgage application, last loan servicing or refinancing;</li>
@@ -75,7 +88,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-accent mb-4">7. Your Rights</h2>
+              <h2 className="text-2xl font-semibold text-accent mb-4">8. Your Rights</h2>
               <p className="leading-relaxed mb-4">Depending on applicable laws, you may have rights to:</p>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li>Access, correct, or delete your personal data.</li>
@@ -85,21 +98,21 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-accent mb-4">8. International Transfers</h2>
+              <h2 className="text-2xl font-semibold text-accent mb-4">9. International Transfers</h2>
               <p className="leading-relaxed">
                 If we or any partner processes your information outside the U.S., it will be handled under similar privacy safeguards consistent with U.S. law.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-accent mb-4">9. Children's Privacy</h2>
+              <h2 className="text-2xl font-semibold text-accent mb-4">10. Children's Privacy</h2>
               <p className="leading-relaxed">
                 Our services are intended for individuals 18 or older and not knowingly provided to minors under 13. We do not knowingly collect information from children under 13.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-accent mb-4">10. Updates to This Policy</h2>
+              <h2 className="text-2xl font-semibold text-accent mb-4">11. Updates to This Policy</h2>
               <p className="leading-relaxed">
                 We may update this Privacy Policy from time to time. The latest version will be posted here, with the "Effective Date" updated accordingly.
               </p>

@@ -6,6 +6,7 @@ import { AuthProvider } from "@/hooks/useAuth";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import LeadCapturePopup from "./components/LeadCapturePopup";
+import CookieConsent from "./components/CookieConsent";
 
 import Index from "./pages/Index";
 import MortgageSolutions from "./pages/MortgageSolutions";
@@ -99,6 +100,7 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <ConditionalLeadPopup />
+        <CookieConsent />
         
         <Routes>
           <Route path="/" element={<Index />} />

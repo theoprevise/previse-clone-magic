@@ -49,6 +49,7 @@ import PreQualify from "./pages/PreQualify";
 import HomebuyerGuide from "./pages/HomebuyerGuide";
 import HomebuyerGuideThankYou from "./pages/HomebuyerGuideThankYou";
 import HomebuyerGuidePrint from "./pages/HomebuyerGuidePrint";
+import ScheduleThankYou from "./pages/ScheduleThankYou";
 
 const queryClient = new QueryClient();
 
@@ -116,6 +117,7 @@ const App = () => (
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/schedule" element={<Schedule />} />
+          <Route path="/schedule-thank-you" element={<ScheduleThankYou />} />
           <Route path="/mortgage-calculator" element={<MortgageCalculator />} />
           <Route path="/refinance" element={<Refinance />} />
           <Route path="/current-mortgage-rates" element={<CurrentMortgageRates />} />

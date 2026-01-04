@@ -7,18 +7,19 @@ import Footer from "@/components/Footer";
 
 const Schedule = () => {
   const navigate = useNavigate();
+  
   useEffect(() => {
-    // Load Calendly script
+    // Load GoHighLevel booking script
     const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.src = 'https://link.previsemortgage.com/js/form_embed.js';
+    script.type = 'text/javascript';
     script.async = true;
-    document.head.appendChild(script);
+    document.body.appendChild(script);
 
-    // Clean up script when component unmounts
     return () => {
-      const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
+      const existingScript = document.querySelector('script[src="https://link.previsemortgage.com/js/form_embed.js"]');
       if (existingScript) {
-        document.head.removeChild(existingScript);
+        document.body.removeChild(existingScript);
       }
     };
   }, []);
@@ -66,14 +67,16 @@ const Schedule = () => {
                 </p>
               </div>
 
-              {/* Calendly Widget */}
+              {/* Booking Widget */}
               <div className="max-w-5xl mx-auto">
                 <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
-                  <div 
-                    className="calendly-inline-widget rounded-2xl overflow-hidden" 
-                    data-url="https://calendly.com/previsemortgage/30min" 
-                    style={{minWidth:"320px", height:"700px"}}
-                  ></div>
+                  <iframe 
+                    src="https://link.previsemortgage.com/widget/booking/MiB1LE4lMUcxJjgAKwnN" 
+                    style={{width: "100%", border: "none", overflow: "hidden", minHeight: "700px"}}
+                    scrolling="no" 
+                    id="MiB1LE4lMUcxJjgAKwnN_schedule"
+                    className="rounded-2xl"
+                  />
                 </div>
               </div>
 

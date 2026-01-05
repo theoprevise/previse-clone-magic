@@ -53,10 +53,10 @@ const LeadCapturePopup = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.first_name || !formData.last_name || !formData.email || !consent) {
+    if (!formData.first_name || !formData.last_name || !formData.email || !formData.phone || !consent) {
       toast({
         title: "Required Fields",
-        description: "Please fill in your name, email, and agree to receive communications.",
+        description: "Please fill in your name, email, phone, and agree to receive communications.",
         variant: "destructive",
       });
       return;
@@ -234,7 +234,7 @@ const LeadCapturePopup = () => {
           </div>
 
           <div className="space-y-1">
-            <Label htmlFor="phone" className="text-sm">Phone Number</Label>
+            <Label htmlFor="phone" className="text-sm">Phone Number *</Label>
             <Input
               id="phone"
               name="phone"
@@ -242,6 +242,7 @@ const LeadCapturePopup = () => {
               value={formData.phone}
               onChange={handleChange}
               placeholder="(555) 123-4567"
+              required
               className="h-9"
             />
           </div>

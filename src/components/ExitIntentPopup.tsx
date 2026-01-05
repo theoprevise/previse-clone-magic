@@ -54,10 +54,10 @@ const ExitIntentPopup = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.firstName || !formData.lastName || !formData.email || !consent) {
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !consent) {
       toast({
         title: "Required fields missing",
-        description: "Please fill in all required fields and agree to receive communications.",
+        description: "Please fill in all required fields including phone number.",
         variant: "destructive"
       });
       return;
@@ -189,9 +189,10 @@ const ExitIntentPopup = () => {
               <Input
                 name="phone"
                 type="tel"
-                placeholder="Phone Number (Optional)"
+                placeholder="Phone Number *"
                 value={formData.phone}
                 onChange={handleChange}
+                required
                 className="border-gray-200 focus:border-accent"
               />
 

@@ -15,7 +15,8 @@ const ContactSection = () => {
                 <div>
                   <input 
                     type="text" 
-                    placeholder="Name" 
+                    placeholder="Name*" 
+                    required
                     className="w-full p-4 bg-transparent border-2 border-border rounded-lg text-white placeholder-white/60 focus:border-accent focus:outline-none"
                   />
                 </div>
@@ -23,6 +24,15 @@ const ContactSection = () => {
                   <input 
                     type="email" 
                     placeholder="Email*" 
+                    required
+                    className="w-full p-4 bg-transparent border-2 border-border rounded-lg text-white placeholder-white/60 focus:border-accent focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <input 
+                    type="tel" 
+                    placeholder="Phone*" 
+                    required
                     className="w-full p-4 bg-transparent border-2 border-border rounded-lg text-white placeholder-white/60 focus:border-accent focus:outline-none"
                   />
                 </div>

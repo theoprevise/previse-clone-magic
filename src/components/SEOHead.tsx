@@ -5,13 +5,15 @@ interface SEOHeadProps {
   description?: string;
   keywords?: string;
   canonicalUrl?: string;
+  noIndex?: boolean;
 }
 
 const SEOHead = ({ 
   title = "Previse Mortgage - Professional Mortgage Services in Pennsylvania",
   description = "Expert mortgage lending services in Pennsylvania. Specializing in home loans, refinancing, VA loans, FHA loans, and investment property financing with competitive rates and personalized service.",
   keywords = "mortgage lender, home loans, refinancing, VA loans, FHA loans, Pennsylvania mortgage, Spring Grove PA, NMLS licensed, investment property loans, first time homebuyer",
-  canonicalUrl = "https://previsemortgage.com"
+  canonicalUrl = "https://previsemortgage.com",
+  noIndex = false
 }: SEOHeadProps) => {
   
   useEffect(() => {
@@ -89,10 +91,16 @@ const SEOHead = ({
 
     // Add robots meta tag for SEO
     const robotsTag = document.querySelector('meta[name="robots"]') as HTMLMetaElement;
-    if (!robotsTag) {
+    const robotsContent = noIndex 
+      ? 'noindex, nofollow' 
+      : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
+    
+    if (robotsTag) {
+      robotsTag.content = robotsContent;
+    } else {
       const robots = document.createElement('meta');
       robots.name = 'robots';
-      robots.content = 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
+      robots.content = robotsContent;
       document.head.appendChild(robots);
     }
 
@@ -105,7 +113,7 @@ const SEOHead = ({
       document.head.appendChild(viewport);
     }
 
-  }, [title, description, keywords, canonicalUrl]);
+  }, [title, description, keywords, canonicalUrl, noIndex]);
 
   return null;
 };

@@ -50,6 +50,7 @@ import HomebuyerGuide from "./pages/HomebuyerGuide";
 import HomebuyerGuideThankYou from "./pages/HomebuyerGuideThankYou";
 import HomebuyerGuidePrint from "./pages/HomebuyerGuidePrint";
 import ScheduleThankYou from "./pages/ScheduleThankYou";
+import OptIn from "./pages/OptIn";
 
 const queryClient = new QueryClient();
 
@@ -147,6 +148,7 @@ const App = () => (
           <Route path="/homebuyer-guide" element={<HomebuyerGuide />} />
           <Route path="/homebuyer-guide-thank-you" element={<HomebuyerGuideThankYou />} />
           <Route path="/homebuyer-guide-print" element={<HomebuyerGuidePrint />} />
+          <Route path="/opt-in" element={<OptIn />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

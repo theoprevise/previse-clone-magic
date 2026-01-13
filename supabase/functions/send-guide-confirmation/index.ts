@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "npm:resend@2.0.0";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
@@ -23,7 +24,54 @@ const handler = async (req: Request): Promise<Response> => {
   try {
     const { firstName, email }: GuideConfirmationRequest = await req.json();
 
-    console.log(`Sending guide confirmation to ${email}`);
+    // Validate required fields
+    if (!firstName || !email) {
+      return new Response(
+        JSON.stringify({ error: 'firstName and email are required' }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    console.log(`Processing guide confirmation request for ${email}`);
+
+    // Use service role to verify the lead exists in database
+    const supabaseClient = createClient(
+      Deno.env.get('SUPABASE_URL') ?? '',
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+    );
+
+    // Verify the lead exists in the database
+    const { data: lead, error: leadError } = await supabaseClient
+      .from('leads')
+      .select('*')
+      .eq('email', email)
+      .eq('first_name', firstName)
+      .order('created_at', { ascending: false })
+      .limit(1)
+      .single();
+
+    if (leadError || !lead) {
+      console.log("Lead not found for:", email, leadError?.message);
+      return new Response(
+        JSON.stringify({ error: 'Lead not found' }),
+        { status: 404, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    // Verify the lead was created recently (within 10 minutes) to prevent abuse
+    const leadCreatedAt = new Date(lead.created_at);
+    const now = new Date();
+    const leadAge = now.getTime() - leadCreatedAt.getTime();
+    
+    if (leadAge > 10 * 60 * 1000) { // 10 minutes
+      console.log("Lead too old for guide confirmation:", email);
+      return new Response(
+        JSON.stringify({ error: 'Guide already sent' }),
+        { status: 409, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    console.log(`Sending guide confirmation to verified lead: ${email}`);
 
     const emailResponse = await resend.emails.send({
       from: "Previse Mortgage <noreply@previsemortgage.com>",
@@ -134,7 +182,7 @@ const handler = async (req: Request): Promise<Response> => {
   } catch (error: any) {
     console.error("Error sending guide confirmation email:", error);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: "Internal server error" }),
       {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },

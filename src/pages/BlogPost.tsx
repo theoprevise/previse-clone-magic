@@ -1,4 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
+import DOMPurify from "dompurify";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -10,7 +11,6 @@ import {
   ArrowLeft,
   ArrowRight
 } from "lucide-react";
-
 interface BlogPost {
   id: string;
   title: string;
@@ -164,7 +164,17 @@ const BlogPost = () => {
                   prose-strong:text-white
                   prose-ul:text-white/80 prose-ol:text-white/80
                   prose-li:marker:text-accent"
-                dangerouslySetInnerHTML={{ __html: post.content }}
+                dangerouslySetInnerHTML={{ 
+                  __html: DOMPurify.sanitize(post.content, {
+                    ALLOWED_TAGS: [
+                      'p', 'br', 'strong', 'em', 'u', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+                      'ul', 'ol', 'li', 'a', 'blockquote', 'img', 'code', 'pre',
+                      'table', 'thead', 'tbody', 'tr', 'th', 'td', 'div', 'span'
+                    ],
+                    ALLOWED_ATTR: ['href', 'target', 'rel', 'src', 'alt', 'class', 'style'],
+                    ALLOW_DATA_ATTR: false
+                  })
+                }}
               />
             </article>
           </div>

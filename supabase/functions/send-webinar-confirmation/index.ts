@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "npm:resend@2.0.0";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
@@ -26,7 +27,65 @@ const handler = async (req: Request): Promise<Response> => {
   try {
     const { firstName, lastName, email, webinarDate }: WebinarConfirmationRequest = await req.json();
     
+    // Validate required fields
+    if (!firstName || !email || !webinarDate) {
+      return new Response(
+        JSON.stringify({ error: 'firstName, email, and webinarDate are required' }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
     console.log("Processing registration for:", email);
+
+    // Use service role to verify the registration exists in database
+    const supabaseClient = createClient(
+      Deno.env.get('SUPABASE_URL') ?? '',
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+    );
+
+    // Verify the registration exists and was just created (within 5 minutes)
+    const { data: registration, error: regError } = await supabaseClient
+      .from('webinar_registrations')
+      .select('*')
+      .eq('email', email)
+      .eq('first_name', firstName)
+      .order('registered_at', { ascending: false })
+      .limit(1)
+      .single();
+
+    if (regError || !registration) {
+      console.log("Registration not found for:", email, regError?.message);
+      return new Response(
+        JSON.stringify({ error: 'Registration not found' }),
+        { status: 404, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    // Verify the webinar date matches (within 1 minute tolerance for timezone differences)
+    const requestedDate = new Date(webinarDate);
+    const registeredDate = new Date(registration.webinar_date);
+    const timeDiff = Math.abs(requestedDate.getTime() - registeredDate.getTime());
+    
+    if (timeDiff > 60000) { // 1 minute tolerance
+      console.log("Webinar date mismatch for:", email);
+      return new Response(
+        JSON.stringify({ error: 'Webinar date mismatch' }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    // Verify registration was created recently (within 5 minutes)
+    const registrationTime = new Date(registration.registered_at);
+    const now = new Date();
+    const registrationAge = now.getTime() - registrationTime.getTime();
+    
+    if (registrationAge > 5 * 60 * 1000) { // 5 minutes
+      console.log("Registration too old, confirmation already sent for:", email);
+      return new Response(
+        JSON.stringify({ error: 'Confirmation already sent' }),
+        { status: 409, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
 
     const date = new Date(webinarDate);
     const formattedDate = date.toLocaleDateString('en-US', {

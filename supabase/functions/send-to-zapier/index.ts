@@ -92,13 +92,44 @@ serve(async (req) => {
       if (insertErr) {
         console.error("Error inserting lead server-side:", insertErr);
         return new Response(
-          JSON.stringify({ success: false, error: insertErr.message }),
+          JSON.stringify({ success: false, error: "Failed to save lead" }),
           { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
         );
       }
 
       leadId = inserted.id;
       console.log("Lead inserted server-side:", leadId);
+    } else {
+      // Verify the lead exists and email matches (prevents tampering)
+      const { data: existingLead, error: lookupError } = await supabase
+        .from("leads")
+        .select("id, zapier_synced, email")
+        .eq("id", leadId)
+        .single();
+
+      if (lookupError || !existingLead) {
+        console.error("Lead not found:", leadId);
+        return new Response(
+          JSON.stringify({ success: false, error: "Lead not found" }),
+          { status: 404, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
+
+      if (existingLead.email !== email) {
+        console.error("Email mismatch for lead:", leadId);
+        return new Response(
+          JSON.stringify({ success: false, error: "Verification failed" }),
+          { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
+
+      if (existingLead.zapier_synced) {
+        console.log("Lead already synced:", leadId);
+        return new Response(
+          JSON.stringify({ success: true, message: "Already synced", lead_id: leadId }),
+          { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
     }
 
     // Prepare payload for Zapier

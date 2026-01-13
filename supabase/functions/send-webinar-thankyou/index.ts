@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "npm:resend@2.0.0";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
@@ -24,9 +25,75 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
+    // Verify admin authorization
+    const authHeader = req.headers.get('Authorization');
+    if (!authHeader) {
+      console.log("Missing authorization header");
+      return new Response(
+        JSON.stringify({ error: 'Authorization required' }),
+        { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    const supabaseClient = createClient(
+      Deno.env.get('SUPABASE_URL') ?? '',
+      Deno.env.get('SUPABASE_ANON_KEY') ?? '',
+      { global: { headers: { Authorization: authHeader } } }
+    );
+
+    // Verify user is authenticated
+    const { data: { user }, error: userError } = await supabaseClient.auth.getUser();
+    if (userError || !user) {
+      console.log("User not authenticated:", userError?.message);
+      return new Response(
+        JSON.stringify({ error: 'Unauthorized' }),
+        { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    // Check if user has admin role
+    const { data: roleData, error: roleError } = await supabaseClient
+      .from('user_roles')
+      .select('role')
+      .eq('user_id', user.id)
+      .eq('role', 'admin')
+      .single();
+
+    if (roleError || !roleData) {
+      console.log("User not admin:", roleError?.message);
+      return new Response(
+        JSON.stringify({ error: 'Admin access required' }),
+        { status: 403, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
     const { firstName, lastName, email, replayUrl }: ThankYouEmailRequest = await req.json();
     
-    console.log("Sending thank you email to:", email);
+    // Validate required fields
+    if (!firstName || !email) {
+      return new Response(
+        JSON.stringify({ error: 'firstName and email are required' }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    // Verify the registration exists in the database
+    const { data: registration, error: regError } = await supabaseClient
+      .from('webinar_registrations')
+      .select('*')
+      .eq('email', email)
+      .eq('first_name', firstName)
+      .single();
+
+    if (regError || !registration) {
+      console.log("Registration not found for:", email);
+      return new Response(
+        JSON.stringify({ error: 'Registration not found' }),
+        { status: 404, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    console.log("Sending thank you email to verified registration:", email);
 
     const emailResponse = await resend.emails.send({
       from: "Previse Home Loans <onboarding@resend.dev>",
@@ -79,7 +146,7 @@ const handler = async (req: Request): Promise<Response> => {
               Ready to take action? Schedule a free, no-obligation consultation with our team. 
               We'll review your unique situation and create a personalized plan for your homebuying journey.
             </p>
-            <a href="https://yourwebsite.com/schedule" 
+            <a href="https://previsemortgage.com/schedule" 
                style="display: inline-block; background: #28a745; color: white; padding: 12px 30px; text-decoration: none; border-radius: 8px; font-weight: bold;">
               Schedule Free Consultation
             </a>
@@ -89,16 +156,16 @@ const handler = async (req: Request): Promise<Response> => {
             <h3 style="color: #2d1b69; margin-top: 0;">📚 Helpful Resources</h3>
             <ul style="padding-left: 20px; margin-bottom: 0;">
               <li style="margin-bottom: 8px;">
-                <a href="https://yourwebsite.com/first-time-homebuyer" style="color: #2d1b69;">First-Time Homebuyer Guide</a>
+                <a href="https://previsemortgage.com/first-time-homebuyer" style="color: #2d1b69;">First-Time Homebuyer Guide</a>
               </li>
               <li style="margin-bottom: 8px;">
-                <a href="https://yourwebsite.com/mortgage-calculator" style="color: #2d1b69;">Mortgage Calculator</a>
+                <a href="https://previsemortgage.com/mortgage-calculator" style="color: #2d1b69;">Mortgage Calculator</a>
               </li>
               <li style="margin-bottom: 8px;">
-                <a href="https://yourwebsite.com/mortgage-programs" style="color: #2d1b69;">Loan Program Comparison</a>
+                <a href="https://previsemortgage.com/mortgage-programs" style="color: #2d1b69;">Loan Program Comparison</a>
               </li>
               <li style="margin-bottom: 0;">
-                <a href="https://yourwebsite.com/credit-score-mortgage-tips" style="color: #2d1b69;">Credit Score Tips</a>
+                <a href="https://previsemortgage.com/credit-score-mortgage-tips" style="color: #2d1b69;">Credit Score Tips</a>
               </li>
             </ul>
           </div>
@@ -112,7 +179,7 @@ const handler = async (req: Request): Promise<Response> => {
           </div>
 
           <div style="border-top: 1px solid #e9ecef; padding-top: 20px; text-align: center; color: #666; font-size: 14px;">
-            <p>Have questions? Reply to this email or call us at (555) 123-4567</p>
+            <p>Have questions? Reply to this email or call us at (717) 801-8498</p>
             <p style="margin-bottom: 0;">© 2025 Previse Home Loans. All rights reserved.</p>
           </div>
         </body>

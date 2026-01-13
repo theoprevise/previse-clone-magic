@@ -60,10 +60,10 @@ const Header = () => {
               Refinance
             </button>
             <button 
-              onClick={() => navigate('/mortgage-programs')}
+              onClick={() => navigate('/dscr-loans')}
               className="text-white/80 hover:text-accent transition-colors font-medium"
             >
-              Loan Programs
+              DSCR Loans
             </button>
             <button 
               onClick={() => navigate('/mortgage-calculator')}
@@ -72,10 +72,10 @@ const Header = () => {
               Calculators
             </button>
             <button 
-              onClick={() => navigate('/dscr-loans')}
+              onClick={() => navigate('/mortgage-programs')}
               className="text-white/80 hover:text-accent transition-colors font-medium"
             >
-              DSCR Loans
+              Loan Programs
             </button>
             
             {/* Resources Dropdown */}
@@ -144,10 +144,10 @@ const Header = () => {
                 Refinance
               </button>
               <button 
-                onClick={() => {navigate('/mortgage-programs'); setIsMenuOpen(false);}}
+                onClick={() => {navigate('/dscr-loans'); setIsMenuOpen(false);}}
                 className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
               >
-                Loan Programs
+                DSCR Loans
               </button>
               <button 
                 onClick={() => {navigate('/mortgage-calculator'); setIsMenuOpen(false);}}
@@ -156,10 +156,10 @@ const Header = () => {
                 Calculators
               </button>
               <button 
-                onClick={() => {navigate('/dscr-loans'); setIsMenuOpen(false);}}
+                onClick={() => {navigate('/mortgage-programs'); setIsMenuOpen(false);}}
                 className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
               >
-                DSCR Loans
+                Loan Programs
               </button>
               
               {/* Mobile Resources Dropdown */}

@@ -29,6 +29,7 @@ import VALoans from "./pages/VALoans";
 import FHALoans from "./pages/FHALoans";
 import ConventionalLoans from "./pages/ConventionalLoans";
 import USDALoans from "./pages/USDALoans";
+import DSCRLoans from "./pages/DSCRLoans";
 import CampaignLanding from "./pages/CampaignLanding";
 import CreditScoreTips from "./pages/CreditScoreTips";
 import MortgageProcessExplained from "./pages/MortgageProcessExplained";
@@ -77,6 +78,7 @@ const ConditionalLeadPopup = () => {
     '/fha-loans',
     '/conventional-loans',
     '/usda-loans',
+    '/dscr-loans',
     '/mortgage-calculator',
     '/ai-readiness'
   ];
@@ -126,6 +128,7 @@ const App = () => (
           <Route path="/fha-loans" element={<FHALoans />} />
           <Route path="/conventional-loans" element={<ConventionalLoans />} />
           <Route path="/usda-loans" element={<USDALoans />} />
+          <Route path="/dscr-loans" element={<DSCRLoans />} />
           <Route path="/pre-qualify" element={<PreQualify />} />
           <Route path="/offer" element={<CampaignLanding />} />
           <Route path="/lp" element={<CampaignLanding />} />

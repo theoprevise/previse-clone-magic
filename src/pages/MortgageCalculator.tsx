@@ -224,7 +224,7 @@ const MortgageCalculator = () => {
                       </div>
                     </div>
 
-                    <Button onClick={calculateMonthlyPayment} className="w-full bg-accent hover:bg-accent-light text-primary-dark font-semibold py-6 rounded-xl mb-6">
+                    <Button onClick={calculateMonthlyPayment} variant="accent" size="lg" className="w-full py-6 rounded-xl mb-6">
                       Calculate Payment
                     </Button>
 
@@ -297,7 +297,7 @@ const MortgageCalculator = () => {
                       </div>
                     </div>
 
-                    <Button onClick={calculateRefinanceSavings} className="w-full bg-accent hover:bg-accent-light text-primary-dark font-semibold py-6 rounded-xl mb-6">
+                    <Button onClick={calculateRefinanceSavings} variant="accent" size="lg" className="w-full py-6 rounded-xl mb-6">
                       Calculate Savings
                     </Button>
 
@@ -370,7 +370,7 @@ const MortgageCalculator = () => {
                       </div>
                     </div>
 
-                    <Button onClick={calculateAffordability} className="w-full bg-accent hover:bg-accent-light text-primary-dark font-semibold py-6 rounded-xl mb-6">
+                    <Button onClick={calculateAffordability} variant="accent" size="lg" className="w-full py-6 rounded-xl mb-6">
                       Calculate Affordability
                     </Button>
 
@@ -398,7 +398,7 @@ const MortgageCalculator = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link to="/schedule">
-                    <Button className="bg-accent hover:bg-accent-light text-primary-dark font-semibold px-8 py-6 rounded-xl">
+                    <Button variant="accent" size="lg" className="px-8 py-6 rounded-xl">
                       Schedule Consultation
                     </Button>
                   </Link>

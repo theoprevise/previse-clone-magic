@@ -57,10 +57,16 @@ const PrivacyPolicy = () => {
             <section>
               <h2 className="text-2xl font-semibold text-accent mb-4">5. Cookies and Online Tracking</h2>
               <p className="leading-relaxed mb-4">
+                By continuing to use our website, you consent to our use of cookies and similar technologies. Cookies help us operate and improve our site, analyze usage patterns, and deliver personalized content and advertising.
+              </p>
+              <p className="leading-relaxed mb-4">
                 When you visit or log in to our website, cookies and similar technologies may be used by our online data partners or vendors to associate these activities with other personal information they or others have about you, including by association with your email. We (or service providers on our behalf) may then send communications and marketing to these email addresses.
               </p>
+              <p className="leading-relaxed mb-4">
+                <strong>Managing Your Cookie Preferences:</strong> You can manage your cookie preferences at any time by clicking "Manage" on our cookie notice banner, or by adjusting your browser settings to block or delete cookies. Please note that disabling cookies may affect the functionality of our website.
+              </p>
               <p className="leading-relaxed">
-                You may opt out of receiving this advertising by visiting{" "}
+                You may also opt out of receiving targeted advertising by visiting{" "}
                 <a href="https://app.retention.com/optout" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
                   https://app.retention.com/optout
                 </a>.

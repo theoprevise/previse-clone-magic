@@ -192,7 +192,7 @@ const MortgageCalculator = () => {
                     className="data-[state=active]:bg-accent data-[state=active]:text-primary-dark rounded-xl py-3 text-white/70 justify-center text-xs md:text-sm"
                   >
                     <Calculator className="w-4 h-4 mr-1 md:mr-2" />
-                    <span className="hidden sm:inline">Monthly </span>Payment
+                    <span className="hidden sm:inline">Monthly</span> Payment
                   </TabsTrigger>
                   <TabsTrigger 
                     value="refinance"
@@ -284,11 +284,20 @@ const MortgageCalculator = () => {
                       Calculate Payment
                     </Button>
 
-                    {monthlyPayment && (
-                      <div className="bg-accent/10 border border-accent/30 rounded-2xl p-6 text-center">
+                    {monthlyPayment !== null && (
+                      <div className={`${monthlyPayment > 0 ? 'bg-accent/10 border-accent/30' : 'bg-orange-500/10 border-orange-500/30'} border rounded-2xl p-6 text-center`}>
                         <p className="text-white/60 mb-2">Estimated Monthly Payment</p>
-                        <p className="text-4xl font-bold text-accent">{formatCurrency(monthlyPayment)}</p>
-                        <p className="text-white/50 text-sm mt-2">Principal & Interest only. Does not include taxes and insurance.</p>
+                        {monthlyPayment > 0 ? (
+                          <>
+                            <p className="text-4xl font-bold text-accent">{formatCurrency(monthlyPayment)}</p>
+                            <p className="text-white/50 text-sm mt-2">Principal & Interest only. Does not include taxes and insurance.</p>
+                          </>
+                        ) : (
+                          <>
+                            <p className="text-2xl font-bold text-orange-400">Unable to Calculate</p>
+                            <p className="text-orange-300/70 text-sm mt-2">Please enter valid values for home price, down payment, and interest rate.</p>
+                          </>
+                        )}
                       </div>
                     )}
                   </div>
@@ -358,16 +367,24 @@ const MortgageCalculator = () => {
                     </Button>
 
                     {refinanceSavings && (
-                      <div className="grid md:grid-cols-2 gap-4">
-                        <div className="bg-accent/10 border border-accent/30 rounded-2xl p-6 text-center">
-                          <p className="text-white/60 mb-2">Estimated Monthly Savings</p>
-                          <p className="text-3xl font-bold text-accent">{formatCurrency(refinanceSavings.monthly)}</p>
+                      refinanceSavings.monthly > 0 ? (
+                        <div className="grid md:grid-cols-2 gap-4">
+                          <div className="bg-accent/10 border border-accent/30 rounded-2xl p-6 text-center">
+                            <p className="text-white/60 mb-2">Estimated Monthly Savings</p>
+                            <p className="text-3xl font-bold text-accent">{formatCurrency(refinanceSavings.monthly)}</p>
+                          </div>
+                          <div className="bg-accent/10 border border-accent/30 rounded-2xl p-6 text-center">
+                            <p className="text-white/60 mb-2">Estimated Total Savings Over Loan</p>
+                            <p className="text-3xl font-bold text-accent">{formatCurrency(refinanceSavings.total)}</p>
+                          </div>
                         </div>
-                        <div className="bg-accent/10 border border-accent/30 rounded-2xl p-6 text-center">
-                          <p className="text-white/60 mb-2">Estimated Total Savings Over Loan</p>
-                          <p className="text-3xl font-bold text-accent">{formatCurrency(refinanceSavings.total)}</p>
+                      ) : (
+                        <div className="bg-orange-500/10 border border-orange-500/30 rounded-2xl p-6 text-center">
+                          <p className="text-white/60 mb-2">Refinance Analysis</p>
+                          <p className="text-2xl font-bold text-orange-400">No Savings Detected</p>
+                          <p className="text-orange-300/70 text-sm mt-2">The new rate doesn't appear to offer savings. Try a lower interest rate or verify your inputs.</p>
                         </div>
-                      </div>
+                      )
                     )}
                   </div>
                 </TabsContent>
@@ -431,16 +448,24 @@ const MortgageCalculator = () => {
                     </Button>
 
                     {affordability && (
-                      <div className="grid md:grid-cols-2 gap-4">
-                        <div className="bg-accent/10 border border-accent/30 rounded-2xl p-6 text-center">
-                          <p className="text-white/60 mb-2">Estimated Maximum Home Price</p>
-                          <p className="text-3xl font-bold text-accent">{formatCurrency(affordability.maxHome)}</p>
+                      affordability.maxHome > 0 && affordability.maxPayment > 0 ? (
+                        <div className="grid md:grid-cols-2 gap-4">
+                          <div className="bg-accent/10 border border-accent/30 rounded-2xl p-6 text-center">
+                            <p className="text-white/60 mb-2">Estimated Maximum Home Price</p>
+                            <p className="text-3xl font-bold text-accent">{formatCurrency(affordability.maxHome)}</p>
+                          </div>
+                          <div className="bg-accent/10 border border-accent/30 rounded-2xl p-6 text-center">
+                            <p className="text-white/60 mb-2">Estimated Max Monthly Payment</p>
+                            <p className="text-3xl font-bold text-accent">{formatCurrency(affordability.maxPayment)}</p>
+                          </div>
                         </div>
-                        <div className="bg-accent/10 border border-accent/30 rounded-2xl p-6 text-center">
-                          <p className="text-white/60 mb-2">Estimated Max Monthly Payment</p>
-                          <p className="text-3xl font-bold text-accent">{formatCurrency(affordability.maxPayment)}</p>
+                      ) : (
+                        <div className="bg-orange-500/10 border border-orange-500/30 rounded-2xl p-6 text-center">
+                          <p className="text-white/60 mb-2">Affordability Analysis</p>
+                          <p className="text-2xl font-bold text-orange-400">Insufficient Income</p>
+                          <p className="text-orange-300/70 text-sm mt-2">Based on the provided income and debts, we cannot calculate a viable home budget. Consider reducing monthly debts or increasing income.</p>
                         </div>
-                      </div>
+                      )
                     )}
                   </div>
                 </TabsContent>

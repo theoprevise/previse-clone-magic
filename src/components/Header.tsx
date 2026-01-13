@@ -12,6 +12,7 @@ const Header = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const resourcesLinks = [
+    { label: "Mortgage Calculators", path: "/mortgage-calculator" },
     { label: "Free Homebuyer Guide", path: "/homebuyer-guide" },
     { label: "Blog", path: "/blog" },
     { label: "Credit Score & Approval Tips", path: "/credit-score-mortgage-tips" },
@@ -64,12 +65,6 @@ const Header = () => {
               className="text-white/80 hover:text-accent transition-colors font-medium"
             >
               DSCR Loans
-            </button>
-            <button 
-              onClick={() => navigate('/mortgage-calculator')}
-              className="text-white/80 hover:text-accent transition-colors font-medium"
-            >
-              Calculators
             </button>
             <button 
               onClick={() => navigate('/mortgage-programs')}
@@ -148,12 +143,6 @@ const Header = () => {
                 className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
               >
                 DSCR Loans
-              </button>
-              <button 
-                onClick={() => {navigate('/mortgage-calculator'); setIsMenuOpen(false);}}
-                className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
-              >
-                Calculators
               </button>
               <button 
                 onClick={() => {navigate('/mortgage-programs'); setIsMenuOpen(false);}}

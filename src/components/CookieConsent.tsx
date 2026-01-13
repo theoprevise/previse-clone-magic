@@ -106,10 +106,10 @@ const CookieConsent = () => {
           <div className="flex items-center justify-between gap-3 mb-2">
             <div className="flex items-center gap-2">
               <Cookie className="w-4 h-4 text-accent" />
-              <span className="text-sm font-medium text-foreground">Cookie Preferences</span>
+              <span className="text-sm font-medium text-foreground">Cookie Notice</span>
             </div>
             <button
-              onClick={handleRejectNonEssential}
+              onClick={handleAcceptAll}
               className="text-muted-foreground hover:text-foreground transition-colors p-1"
               aria-label="Close"
             >
@@ -119,9 +119,9 @@ const CookieConsent = () => {
           
           {/* Description */}
           <p className="text-xs text-muted-foreground mb-3 leading-relaxed">
-            We use cookies to enhance your experience.{" "}
+            We use cookies to enhance your experience. By continuing to browse, you agree to our use of cookies.{" "}
             <Link to="/privacy-policy" className="text-accent hover:underline">
-              Learn more
+              Privacy Policy
             </Link>
           </p>
 
@@ -171,15 +171,7 @@ const CookieConsent = () => {
               size="sm"
               className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground text-xs h-8"
             >
-              Accept All
-            </Button>
-            <Button
-              onClick={handleRejectNonEssential}
-              size="sm"
-              variant="outline"
-              className="flex-1 border-accent/40 text-foreground hover:bg-accent/10 text-xs h-8"
-            >
-              Reject
+              Got it
             </Button>
             {showDetails ? (
               <Button
@@ -197,7 +189,7 @@ const CookieConsent = () => {
                 variant="ghost"
                 className="text-muted-foreground hover:text-foreground text-xs h-8 px-2"
               >
-                Customize
+                Manage
               </Button>
             )}
           </div>

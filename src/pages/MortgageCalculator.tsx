@@ -186,7 +186,7 @@ const MortgageCalculator = () => {
             {/* Calculator Tabs */}
             <div className="max-w-4xl mx-auto">
               <Tabs defaultValue="monthly" className="w-full">
-                <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 bg-white/5 border border-white/10 rounded-2xl p-2 mb-8">
+                <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 bg-white/5 border border-white/10 rounded-2xl p-2 mb-8 h-auto gap-2">
                   <TabsTrigger 
                     value="monthly" 
                     className="data-[state=active]:bg-accent data-[state=active]:text-primary-dark rounded-xl py-3 text-white/70 justify-center text-xs md:text-sm"

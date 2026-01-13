@@ -105,12 +105,12 @@ const HeroLeadForm = () => {
           <SelectTrigger className="bg-gray-50 border-gray-200 text-gray-900">
             <SelectValue placeholder="How can we help you?" />
           </SelectTrigger>
-          <SelectContent className="bg-white border-gray-200">
-            <SelectItem value="purchase">Buying a Home</SelectItem>
-            <SelectItem value="refinance">Refinancing</SelectItem>
-            <SelectItem value="first-time">First-Time Buyer</SelectItem>
-            <SelectItem value="investment">Investment Property</SelectItem>
-            <SelectItem value="other">Other</SelectItem>
+          <SelectContent className="bg-white border-gray-200 z-50">
+            <SelectItem value="purchase" className="text-gray-900 hover:bg-gray-100 focus:bg-gray-100 focus:text-gray-900">Buying a Home</SelectItem>
+            <SelectItem value="refinance" className="text-gray-900 hover:bg-gray-100 focus:bg-gray-100 focus:text-gray-900">Refinancing</SelectItem>
+            <SelectItem value="first-time" className="text-gray-900 hover:bg-gray-100 focus:bg-gray-100 focus:text-gray-900">First-Time Buyer</SelectItem>
+            <SelectItem value="investment" className="text-gray-900 hover:bg-gray-100 focus:bg-gray-100 focus:text-gray-900">Investment Property</SelectItem>
+            <SelectItem value="other" className="text-gray-900 hover:bg-gray-100 focus:bg-gray-100 focus:text-gray-900">Other</SelectItem>
           </SelectContent>
         </Select>
         

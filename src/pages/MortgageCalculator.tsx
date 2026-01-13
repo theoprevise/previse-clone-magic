@@ -140,21 +140,21 @@ const MortgageCalculator = () => {
                 <TabsList className="grid w-full grid-cols-3 bg-white/5 border border-white/10 rounded-2xl p-2 mb-8">
                   <TabsTrigger 
                     value="monthly" 
-                    className="data-[state=active]:bg-accent data-[state=active]:text-primary-dark rounded-xl py-3 text-white/70"
+                    className="data-[state=active]:bg-accent data-[state=active]:text-primary-dark rounded-xl py-3 text-white/70 justify-center"
                   >
                     <Calculator className="w-4 h-4 mr-2" />
                     Monthly Payment
                   </TabsTrigger>
                   <TabsTrigger 
                     value="refinance"
-                    className="data-[state=active]:bg-accent data-[state=active]:text-primary-dark rounded-xl py-3 text-white/70"
+                    className="data-[state=active]:bg-accent data-[state=active]:text-primary-dark rounded-xl py-3 text-white/70 justify-center"
                   >
                     <RefreshCw className="w-4 h-4 mr-2" />
                     Refinance
                   </TabsTrigger>
                   <TabsTrigger 
                     value="affordability"
-                    className="data-[state=active]:bg-accent data-[state=active]:text-primary-dark rounded-xl py-3 text-white/70"
+                    className="data-[state=active]:bg-accent data-[state=active]:text-primary-dark rounded-xl py-3 text-white/70 justify-center"
                   >
                     <Home className="w-4 h-4 mr-2" />
                     Affordability

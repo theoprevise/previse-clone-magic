@@ -42,8 +42,15 @@
     <meta name="geo.position" content="39.8784;-76.8635" />
     <meta name="ICBM" content="39.8784, -76.8635" />
     
+    <!-- Preconnect to critical origins for faster resource loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://backend.leadconnectorhq.com">
+    <link rel="preconnect" href="https://widgets.leadconnectorhq.com">
+    
+    <!-- Preload LCP hero background image for faster paint -->
+    <link rel="preload" as="image" href="/lovable-uploads/d7d9e1d7-4741-4705-97a2-a94043e38964.png" fetchpriority="high">
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <!-- Calendly CSS -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">

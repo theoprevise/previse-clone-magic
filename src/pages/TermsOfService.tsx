@@ -14,7 +14,7 @@ const TermsOfService = () => {
             <section>
               <h2 className="text-2xl font-semibold text-accent mb-4">1. Acceptance</h2>
               <p className="leading-relaxed">
-                By accessing or using this website or applying for services, you agree to these Terms & Conditions and our Privacy Policy. Do not use the site if you do not agree.
+                By accessing or using this website or applying for services, you agree to these Terms & Conditions and our Privacy Policy, including our use of cookies as described therein. Continued use of our website constitutes acceptance of our cookie practices. If you do not agree, please do not use the site.
               </p>
             </section>
 

@@ -55,14 +55,39 @@
     <!-- Calendly CSS -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     
-    <!-- Leadsy AI Tracking -->
-    <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="16avQfsObm2EC3LC8" data-version="062024"></script>
-    
-    <!-- Previse Mortgage Tracking -->
-    <script src="https://link.previsemortgage.com/js/external-tracking.js" data-tracking-id="tk_33ba4ae1f9d84ee7a0d401546bdf6e2e"></script>
-    
-    <!-- RB2B Tracking -->
-    <script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("EN4M0HLJ0ZOM");</script>
+    <!-- Defer non-critical tracking scripts to improve LCP -->
+    <script>
+      // Load non-critical tracking scripts after page load
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          // Leadsy AI Tracking
+          var leadsy = document.createElement('script');
+          leadsy.id = 'vtag-ai-js';
+          leadsy.async = true;
+          leadsy.src = 'https://r2.leadsy.ai/tag.js';
+          leadsy.dataset.pid = '16avQfsObm2EC3LC8';
+          leadsy.dataset.version = '062024';
+          document.head.appendChild(leadsy);
+          
+          // Previse Mortgage Tracking
+          var previse = document.createElement('script');
+          previse.async = true;
+          previse.src = 'https://link.previsemortgage.com/js/external-tracking.js';
+          previse.dataset.trackingId = 'tk_33ba4ae1f9d84ee7a0d401546bdf6e2e';
+          document.head.appendChild(previse);
+          
+          // RB2B Tracking
+          !function(key) {
+            if (window.reb2b) return;
+            window.reb2b = {loaded: true};
+            var s = document.createElement("script");
+            s.async = true;
+            s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";
+            document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);
+          }("EN4M0HLJ0ZOM");
+        }, 2000); // 2 second delay after load
+      });
+    </script>
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />

@@ -1,15 +1,21 @@
+import { lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import FeaturesSection from "@/components/FeaturesSection";
-import WhyPreviseSection from "@/components/WhyPreviseSection";
-import AboutSection from "@/components/AboutSection";
-import FAQSection from "@/components/FAQSection";
-import CalendlySection from "@/components/CalendlySection";
-import Footer from "@/components/Footer";
-import GoHighLevelChat from "@/components/GoHighLevelChat";
 import StructuredData from "@/components/StructuredData";
 import SEOHead from "@/components/SEOHead";
-import FloatingContactWidget from "@/components/FloatingContactWidget";
+
+// Lazy load below-fold components for better LCP
+const FeaturesSection = lazy(() => import("@/components/FeaturesSection"));
+const WhyPreviseSection = lazy(() => import("@/components/WhyPreviseSection"));
+const AboutSection = lazy(() => import("@/components/AboutSection"));
+const FAQSection = lazy(() => import("@/components/FAQSection"));
+const CalendlySection = lazy(() => import("@/components/CalendlySection"));
+const Footer = lazy(() => import("@/components/Footer"));
+const GoHighLevelChat = lazy(() => import("@/components/GoHighLevelChat"));
+const FloatingContactWidget = lazy(() => import("@/components/FloatingContactWidget"));
+
+// Minimal loading fallback that doesn't affect layout
+const SectionFallback = () => <div className="min-h-[200px]" />;
 
 const Index = () => {
   return (
@@ -28,14 +34,16 @@ const Index = () => {
       }} />
       <Header />
       <HeroSection />
-      <FeaturesSection />
-      <WhyPreviseSection />
-      <AboutSection />
-      <CalendlySection />
-      <FAQSection />
-      <Footer />
-      <GoHighLevelChat />
-      <FloatingContactWidget />
+      <Suspense fallback={<SectionFallback />}>
+        <FeaturesSection />
+        <WhyPreviseSection />
+        <AboutSection />
+        <CalendlySection />
+        <FAQSection />
+        <Footer />
+        <GoHighLevelChat />
+        <FloatingContactWidget />
+      </Suspense>
     </div>
   );
 };

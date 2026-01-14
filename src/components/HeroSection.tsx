@@ -17,12 +17,15 @@ const HeroSection = () => {
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse delay-1500"></div>
         </div>
         
-        {/* Background Image with overlay */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{
-            backgroundImage: "url('/lovable-uploads/d7d9e1d7-4741-4705-97a2-a94043e38964.png')"
-          }}
+        {/* Background Image - using img tag for better LCP performance */}
+        <img 
+          src="/lovable-uploads/d7d9e1d7-4741-4705-97a2-a94043e38964.png"
+          alt=""
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          width="1920"
+          height="1080"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/40 to-primary/60"></div>
         

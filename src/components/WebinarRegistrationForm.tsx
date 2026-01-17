@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -196,7 +196,7 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
           required
         />
         <label htmlFor="consent" className="text-xs text-white/70 leading-relaxed cursor-pointer">
-          I consent to receive calls, emails, and SMS/text messages from Previse Mortgage. *
+          I consent to receive calls, emails, and SMS/text messages from Previse Mortgage. Message and data rates may apply. Reply STOP to opt out. View our <Link to="/privacy-policy" className="text-white underline hover:text-white/80">Privacy Policy</Link>. *
         </label>
       </div>
 

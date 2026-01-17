@@ -1,4 +1,4 @@
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -108,7 +108,7 @@ const CampaignLanding = () => {
                 buttonText="Get My Free Consultation"
               />
               <p className="text-xs text-white/50 text-center mt-4">
-                By submitting, you consent to receive calls and texts from Previse Mortgage.
+                By submitting, you consent to receive calls and texts from Previse Mortgage. View our <Link to="/privacy-policy" className="text-accent underline hover:text-accent/80">Privacy Policy</Link>.
               </p>
             </Card>
           </div>

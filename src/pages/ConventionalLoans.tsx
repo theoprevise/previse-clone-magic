@@ -94,8 +94,9 @@ const ConventionalLoans = () => {
             <Card className="bg-white/10 backdrop-blur-xl border border-white/20 p-6 md:p-8">
               <h2 className="text-xl font-bold text-white mb-4 text-center">Get Your Conventional Loan Rate</h2>
               <UnifiedLeadForm 
-                source="conventional_loans_page"
-                campaignType="conventional_loans"
+                source="loan_page_conventional"
+                campaignType="conventional_loan_inquiry"
+                eventName="Conventional Loan Interest"
                 showAddress={false}
                 buttonText="Get My Rate Quote"
               />

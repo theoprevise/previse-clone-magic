@@ -48,9 +48,9 @@ const HeroLeadForm = () => {
         last_name: formData.lastName,
         email: formData.email,
         phone: formData.phone,
-        campaign_type: 'hero_form',
-        event_name: `Interest: ${formData.helpType || 'General'}`,
-        source: 'website_hero',
+        campaign_type: 'homepage_hero_form',
+        event_name: `Interest: ${formData.helpType || 'General Inquiry'}`,
+        source: 'homepage_hero_contact_form',
         sms_opt_in: formData.consent
       };
       const {

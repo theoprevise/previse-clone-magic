@@ -93,8 +93,9 @@ const YouTube = () => {
       heroDescription="Subscribe to our channel and get weekly videos with mortgage tips, market updates, and homebuying strategies delivered straight to your inbox."
       formComponent={
         <UnifiedLeadForm
-          campaignType="youtube"
-          eventName="YouTube Subscriber"
+          campaignType="youtube_channel_subscriber"
+          source="youtube_landing_page"
+          eventName="YouTube Channel Subscriber Lead"
           submitButtonText="Get Free Resources"
           successRedirectPath="/youtube-thank-you"
         />

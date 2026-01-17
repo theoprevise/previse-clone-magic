@@ -132,7 +132,8 @@ serve(async (req) => {
       }
     }
 
-    // Prepare payload for Zapier
+    // Prepare payload for Zapier with specific source tracking
+    const leadSource = incoming.source || "website_unknown";
     const zapierPayload = {
       ...incoming,
       id: leadId,
@@ -142,7 +143,8 @@ serve(async (req) => {
       phone,
       campaign_type,
       timestamp: new Date().toISOString(),
-      source: "previse_mortgage_landing_page",
+      source: leadSource,
+      source_detail: `previsemortgage.com | ${leadSource} | ${campaign_type}`,
     };
 
     console.log("Sending to Zapier:", zapierPayload);

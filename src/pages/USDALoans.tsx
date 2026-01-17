@@ -94,8 +94,9 @@ const USDALoans = () => {
             <Card className="bg-white/10 backdrop-blur-xl border border-white/20 p-6 md:p-8">
               <h2 className="text-xl font-bold text-white mb-4 text-center">Check Your USDA Eligibility</h2>
               <UnifiedLeadForm 
-                source="usda_loans_page"
-                campaignType="usda_loans"
+                source="loan_page_usda_rural"
+                campaignType="usda_loan_inquiry"
+                eventName="USDA Loan Interest - Rural Property"
                 showAddress={true}
                 buttonText="Check My Eligibility"
               />

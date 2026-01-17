@@ -71,8 +71,9 @@ const ExitIntentPopup = () => {
         last_name: formData.lastName,
         email: formData.email,
         phone: formData.phone || null,
-        source: 'exit_intent',
-        campaign_type: 'exit_intent',
+        source: 'exit_intent_popup',
+        campaign_type: 'website_exit_intent',
+        event_name: 'User attempted to leave page',
         sms_opt_in: consent,
       };
 

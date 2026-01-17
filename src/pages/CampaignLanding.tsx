@@ -101,8 +101,9 @@ const CampaignLanding = () => {
                 </p>
               </div>
               <UnifiedLeadForm 
-                source={`campaign_${utmSource}`}
-                campaignType={utmCampaign || 'paid_campaign'}
+                source={`paid_campaign_${utmSource}_${utmMedium || 'unknown'}`}
+                campaignType={utmCampaign || 'paid_advertising'}
+                eventName={`Paid Ad Lead: ${utmSource} via ${utmMedium || 'direct'}`}
                 showAddress={false}
                 buttonText="Get My Free Consultation"
               />

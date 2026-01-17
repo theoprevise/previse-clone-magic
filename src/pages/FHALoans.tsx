@@ -97,8 +97,9 @@ const FHALoans = () => {
             <Card className="bg-white/10 backdrop-blur-xl border border-white/20 p-6 md:p-8">
               <h2 className="text-xl font-bold text-white mb-4 text-center">Get Pre-Approved for an FHA Loan</h2>
               <UnifiedLeadForm 
-                source="fha_loans_page"
-                campaignType="fha_loans"
+                source="loan_page_fha"
+                campaignType="fha_loan_inquiry"
+                eventName="FHA Loan Interest - Low Down Payment"
                 showAddress={false}
                 buttonText="Check My FHA Eligibility"
               />

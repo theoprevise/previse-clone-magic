@@ -101,8 +101,9 @@ const DSCRLoans = () => {
             <Card className="bg-white/10 backdrop-blur-xl border border-white/20 p-6 md:p-8">
               <h2 className="text-xl font-bold text-white mb-4 text-center">Get Pre-Approved for a DSCR Loan</h2>
               <UnifiedLeadForm 
-                source="dscr_loans_page"
-                campaignType="dscr_loans"
+                source="loan_page_dscr_investor"
+                campaignType="dscr_investment_loan"
+                eventName="DSCR Loan Interest - Investment Property"
                 showAddress={false}
                 buttonText="Get My DSCR Quote"
               />

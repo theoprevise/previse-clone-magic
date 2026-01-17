@@ -122,11 +122,9 @@ const OptIn = () => {
               <div className="flex items-start space-x-3">
                 <Checkbox id="transactionalConsent" checked={transactionalConsent} onCheckedChange={checked => setTransactionalConsent(checked as boolean)} className="mt-1 border-gray-400 data-[state=checked]:bg-primary data-[state=checked]:border-primary" />
                 <Label htmlFor="transactionalConsent" className="text-sm text-gray-600 leading-relaxed cursor-pointer">
-                  I consent to receive transactional messages from Previse Mortgage at the phone number provided. Message frequency may vary. Message & Data rates may apply. Reply HELP for help or STOP to opt-out.
+                  By checking this box, I consent to receive SMS text messages from Previse Mortgage at the phone number provided. Messages may include loan status updates, appointment reminders, and account notifications. Message frequency varies (typically 1-5 messages per month). Message and data rates may apply. Reply STOP to unsubscribe or HELP for assistance. Consent is not a condition of purchase. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary underline hover:text-primary/80">Terms of Service</Link>.
                 </Label>
               </div>
-
-              
             </div>
 
             <Button type="submit" className="w-full h-12 text-base font-semibold bg-green-500 hover:bg-green-600 text-white" disabled={isSubmitting}>

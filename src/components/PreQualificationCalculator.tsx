@@ -131,9 +131,9 @@ const PreQualificationCalculator = () => {
         last_name: formData.lastName,
         email: formData.email,
         phone: formData.phone || null,
-        source: 'prequal_calculator',
-        campaign_type: 'prequal_calculator',
-        event_name: `PreQual: Income $${formData.annualIncome}, Credit ${formData.creditScore}`,
+        source: 'prequalification_calculator_tool',
+        campaign_type: 'mortgage_calculator',
+        event_name: `PreQual Calculator: Income $${formData.annualIncome.toLocaleString()}, Credit ${formData.creditScore}, Down Payment $${formData.downPayment.toLocaleString()}`,
         sms_opt_in: formData.consent,
       };
 

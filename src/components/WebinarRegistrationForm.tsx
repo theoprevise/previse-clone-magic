@@ -81,7 +81,8 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
           email: result.data.email,
           phone: result.data.phone || '',
           campaign_type: 'webinar_registration',
-          event_name: 'First-Time Homebuyer Webinar',
+          source: 'webinar_registration_form',
+          event_name: `Webinar Registration: First-Time Homebuyer - ${new Date(webinarDate).toLocaleDateString()}`,
           sms_opt_in: consent
         }
       });

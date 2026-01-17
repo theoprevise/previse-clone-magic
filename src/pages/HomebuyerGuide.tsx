@@ -130,8 +130,9 @@ const HomebuyerGuide = () => {
                   </div>
                   
                   <UnifiedLeadForm 
-                    campaignType="homebuyer_guide"
-                    source="homebuyer_guide_landing"
+                    campaignType="lead_magnet_download"
+                    source="homebuyer_guide_download_page"
+                    eventName="Downloaded First-Time Homebuyer Guide"
                     buttonText="Download Free Guide"
                     successRedirectPath="/homebuyer-guide-thank-you"
                   />

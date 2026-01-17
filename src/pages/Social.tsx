@@ -64,8 +64,9 @@ const Social = () => {
             </p>
             
             <UnifiedLeadForm
-              campaignType="social_media"
-              eventName="Social Media Lead"
+              campaignType="social_media_organic"
+              source="social_media_landing_page"
+              eventName="Social Media Lead - Organic"
               submitButtonText="Get My Free Quote"
               successRedirectPath="/social-thank-you"
             />

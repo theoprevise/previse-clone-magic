@@ -70,8 +70,9 @@ const LeadCapturePopup = () => {
         last_name: formData.last_name.trim(),
         email: formData.email.trim(),
         phone: formData.phone.trim() || null,
-        source: "popup",
-        campaign_type: "popup",
+        source: "timed_lead_capture_popup",
+        campaign_type: "website_popup_offer",
+        event_name: "Timed popup displayed after page load",
         sms_opt_in: consent,
       };
 

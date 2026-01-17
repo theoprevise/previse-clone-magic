@@ -57,13 +57,14 @@ const OptIn = () => {
         error
       } = await supabase.functions.invoke("send-to-zapier", {
         body: {
-          firstName: formData.firstName,
-          lastName: formData.lastName,
+          first_name: formData.firstName,
+          last_name: formData.lastName,
           phone: formData.phone,
           email: formData.email,
-          source: "sms_opt_in",
-          smsOptIn: transactionalConsent,
-          marketingOptIn: marketingConsent
+          source: "sms_optin_page",
+          campaign_type: "sms_marketing_optin",
+          event_name: `SMS Opt-In: Transactional=${transactionalConsent}, Marketing=${marketingConsent}`,
+          sms_opt_in: transactionalConsent
         }
       });
       if (error) throw error;

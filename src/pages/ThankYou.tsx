@@ -33,7 +33,7 @@ const ThankYou = () => {
               </h1>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 shadow-medium">
                 <p className="text-white/90 text-xl lg:text-2xl leading-relaxed">
-                  Your application has been submitted successfully. We will be in contact with you shortly to discuss your mortgage options.
+                  Your information has been received. We'll be in touch with you shortly!
                 </p>
               </div>
             </div>
@@ -42,7 +42,7 @@ const ThankYou = () => {
             <div className="mb-12 animate-slide-up" style={{animationDelay: '0.4s'}}>
               <div className="bg-accent/10 backdrop-blur-sm rounded-xl p-6 border border-accent/20 shadow-accent">
                 <p className="text-white/80 text-lg">
-                  A mortgage specialist will contact you within 24 hours to review your application and answer any questions you may have.
+                  A member of our team will reach out within 24 hours to assist you.
                 </p>
               </div>
             </div>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -139,7 +140,7 @@ const HomebuyerGuide = () => {
 
                   <p className="text-xs text-muted-foreground text-center mt-4">
                     By downloading, you agree to receive helpful homebuying tips. 
-                    Unsubscribe anytime.
+                    Unsubscribe anytime. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link>.
                   </p>
                 </CardContent>
               </Card>

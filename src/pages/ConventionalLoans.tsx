@@ -179,8 +179,8 @@ const ConventionalLoans = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {[
-              { icon: TrendingUp, title: "Best Rates Available", description: "Often the lowest rates for qualified buyers" },
-              { icon: DollarSign, title: "No PMI with 20%", description: "Avoid extra monthly insurance costs" },
+              { icon: TrendingUp, title: "Competitive Rates", description: "Typically lower rates for highly qualified borrowers*" },
+              { icon: DollarSign, title: "No PMI with 20%", description: "May avoid extra monthly insurance costs" },
               { icon: Building2, title: "Investment Properties", description: "Finance rental and investment homes" },
               { icon: Percent, title: "Flexible Terms", description: "15, 20, or 30-year options available" }
             ].map((benefit, idx) => (

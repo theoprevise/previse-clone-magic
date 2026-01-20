@@ -8,13 +8,13 @@ import { CheckCircle, Shield, Clock, TrendingUp } from 'lucide-react';
 const Social = () => {
   const benefits = [
     {
-      title: "Fast Pre-Approval",
-      description: "Get pre-approved in as little as 24 hours",
+      title: "Quick Pre-Qualification",
+      description: "Get pre-qualified in as little as 24 hours*",
       icon: <Clock className="h-5 w-5" />,
     },
     {
       title: "Competitive Rates",
-      description: "Access to the best rates in the market",
+      description: "Access competitive rates for qualified borrowers",
       icon: <TrendingUp className="h-5 w-5" />,
     },
     {

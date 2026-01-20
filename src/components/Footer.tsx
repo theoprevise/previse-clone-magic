@@ -83,6 +83,25 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Regulatory Disclaimer */}
+          <div className="bg-white/5 border border-white/10 rounded-lg p-6 mb-8 max-w-4xl mx-auto">
+            <p className="text-white/60 text-xs leading-relaxed mb-3">
+              <strong className="text-white/80">Equal Housing Opportunity.</strong> Previse Mortgage is committed to ensuring 
+              equal access to mortgage credit. All lending decisions are made without regard to race, color, religion, national origin, 
+              sex, marital status, age, or other protected characteristics under the Equal Credit Opportunity Act.
+            </p>
+            <p className="text-white/60 text-xs leading-relaxed mb-3">
+              <strong className="text-white/80">Disclaimer:</strong> All loans are subject to credit approval. Interest rates, fees, and 
+              terms are subject to change without notice and may vary based on credit score, down payment, loan amount, property type, 
+              and other factors. This is not a commitment to lend. All rates and terms shown are for illustration purposes only. 
+              The actual terms of your loan will be provided in a Loan Estimate upon application.
+            </p>
+            <p className="text-white/60 text-xs leading-relaxed">
+              *Savings and rate benefits described are estimates only and are not guaranteed. Your actual results may vary. 
+              Pre-qualification is not a commitment to lend and does not guarantee final loan approval.
+            </p>
+          </div>
+
           {/* Legal info */}
           <div className="space-y-2 text-white/60 text-sm max-w-3xl mx-auto">
             <p className="text-base font-medium">Copyright © 2025 Previse Mortgage • All Rights Reserved.</p>

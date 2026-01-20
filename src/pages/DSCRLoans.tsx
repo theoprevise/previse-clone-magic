@@ -206,16 +206,16 @@ const DSCRLoans = () => {
                   Monthly Rent ÷ Monthly Payment
                 </div>
                 <p className="text-white/70">
-                  Ratio of 1.0 or higher typically qualifies
+                  Ratio of 1.25 or higher typically qualifies
                 </p>
               </div>
             </div>
             <div className="mt-8 p-6 bg-accent/10 border border-accent/20 rounded-xl">
               <h4 className="font-semibold text-lg text-white mb-2">Example:</h4>
               <p className="text-white/80">
-                If your property rents for <strong className="text-accent">$2,000/month</strong> and 
+                If your property rents for <strong className="text-accent">$2,250/month</strong> and 
                 the mortgage payment is <strong className="text-accent">$1,800/month</strong>, 
-                your DSCR is <strong className="text-success">1.11</strong>—you qualify!
+                your DSCR is <strong className="text-success">1.25</strong>—you qualify!
               </p>
             </div>
           </Card>

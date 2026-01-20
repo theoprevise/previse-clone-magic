@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { ChevronDown, ChevronUp, HelpCircle } from "lucide-react";
 import StructuredData from "./StructuredData";
 
 const FAQSection = () => {
@@ -8,44 +7,24 @@ const FAQSection = () => {
 
   const faqs = [
     {
-      icon: "🏛️",
-      question: "What types of home loans do you offer?",
-      answer: "We offer comprehensive mortgage solutions including: Conventional loans (down payments as low as 3%), FHA loans (3.5% down), USDA loans (0% down for rural areas), jumbo loans (up to $3M+), DSCR investment property loans, bank statement loans for self-employed borrowers, and construction-to-permanent financing. Each loan type has specific requirements and benefits tailored to different borrower situations."
+      question: "What types of investment property loans do you offer?",
+      answer: "We specialize in DSCR loans for real estate investors, bank statement loans for self-employed borrowers, and traditional investment property financing. DSCR loans qualify based on rental income, not personal income."
     },
     {
-      icon: "💳",
-      question: "Will applying for a mortgage affect my credit score?",
-      answer: "Yes, applying for a mortgage results in a hard credit inquiry which may temporarily lower your credit score by 2-5 points. However, multiple mortgage inquiries within a 14-45 day window are typically counted as a single inquiry for scoring purposes. This minimal impact is temporary, and your score usually recovers within a few months. The benefits of getting pre-approved far outweigh the temporary score impact."
-    },
-    {
-      icon: "📊",
-      question: "How much do I need for a down payment?",
-      answer: "Down payment requirements vary significantly by loan type: USDA loans require 0% down, FHA loans require 3.5% minimum, conventional loans can be as low as 3% for first-time buyers or 5% for others, and jumbo loans typically require 10-20%. Additionally, you'll need funds for closing costs (2-5% of loan amount), which can sometimes be rolled into the loan or covered by seller concessions."
-    },
-    {
-      icon: "💼",
-      question: "How do I get pre-approved for a mortgage?",
-      answer: "Getting pre-approved involves submitting a complete mortgage application with supporting documentation including: recent pay stubs (2-3 months), tax returns (2 years), bank statements (2 months), employment verification, and asset documentation. We review your credit, income, and debt-to-income ratio to determine your qualified loan amount. Pre-approval typically takes 24-48 hours and gives you a committed loan amount from the lender."
-    },
-    {
-      icon: "⏰",
-      question: "How long does the mortgage process take?",
-      answer: "The typical mortgage process takes 30-45 days from application to closing. Our advanced technology and streamlined processing can often close loans faster: purchase loans in 21-30 days, refinances in 15-30 days, and cash-out refinances in 30-45 days. Timeline factors include loan complexity, property type, appraisal scheduling, and borrower documentation completeness."
-    },
-    {
-      icon: "💯",
       question: "What credit score do I need to qualify?",
-      answer: "Minimum credit score requirements depend on loan type: FHA loans accept scores as low as 580 (or 500 with 10% down), USDA loans typically require 640+, conventional loans generally need 620+, and jumbo loans often require 700+. Lower scores may qualify with higher down payments or stronger compensating factors like high income or significant assets."
+      answer: "For most loan programs, we recommend a minimum credit score of 680+. DSCR loans typically require 680+, while conventional loans may accept 620+. Higher scores unlock better rates and terms."
     },
     {
-      icon: "💭",
-      question: "What's the difference between pre-qualification and pre-approval?",
-      answer: "Pre-qualification is an initial estimate based on basic information you provide without credit check or documentation verification - it gives you a rough idea of your potential loan amount. Pre-approval involves a comprehensive review including credit check, income verification, asset documentation, and full underwriting analysis, providing a committed loan amount from the lender. Pre-approval carries significantly more weight with sellers."
+      question: "What loan amounts do you work with?",
+      answer: "We focus on loan amounts of $250,000 and above. This includes conventional loans, jumbo loans up to $3M+, and DSCR investment property loans for qualified borrowers."
     },
     {
-      icon: "🏠",
-      question: "Can I refinance my current mortgage?",
-      answer: "Yes, we offer several refinancing options: Rate-and-term refinancing to lower your interest rate or change loan terms, cash-out refinancing to access home equity for improvements or debt consolidation, streamline refinancing for existing FHA loans with minimal documentation, and no-closing-cost options where closing costs are built into the rate. Refinancing typically makes sense when rates drop by 0.5-1% or when you need to access equity."
+      question: "How quickly can you close a loan?",
+      answer: "Our technology-driven process enables fast closings: purchase loans in 21-30 days, refinances in 15-30 days. DSCR and investment loans may take 30-45 days depending on property complexity."
+    },
+    {
+      question: "Can I refinance my investment property?",
+      answer: "Yes! We offer rate-and-term refinancing, cash-out refinancing to access equity, and DSCR refinancing for rental properties. Refinancing can lower your rate or help you pull equity for additional investments."
     }
   ];
 
@@ -56,80 +35,66 @@ const FAQSection = () => {
   return (
     <>
       <StructuredData type="faq" />
-      <section id="faq" className="py-24 bg-gradient-to-b from-primary to-primary-dark relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float" style={{animationDelay: '1s'}}></div>
-        <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-accent/10 rounded-full blur-2xl animate-pulse-slow"></div>
-        <div className="absolute top-1/2 right-1/4 w-40 h-40 bg-accent/6 rounded-full blur-2xl animate-float" style={{animationDelay: '3s'}}></div>
-        <div className="absolute bottom-1/4 left-1/2 w-24 h-24 bg-accent/8 rounded-full blur-lg animate-pulse-slow" style={{animationDelay: '2s'}}></div>
-      </div>
+      <section id="faq" className="py-16 bg-gradient-to-b from-primary to-primary-dark relative overflow-hidden">
+        {/* Minimal background */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-accent/5 rounded-full blur-3xl"></div>
+        </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-20">
-            <div className="inline-block mb-6">
-              <span className="text-accent text-sm font-bold uppercase tracking-wider bg-accent/10 px-4 py-2 rounded-full">
-                Support Center
-              </span>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <HelpCircle className="text-accent" size={20} />
+                <span className="text-accent text-sm font-bold uppercase tracking-wider">
+                  FAQ
+                </span>
+              </div>
+              <h2 className="font-serif text-2xl lg:text-3xl font-bold text-white mb-4">
+                Common <span className="text-accent">Questions</span>
+              </h2>
             </div>
-            <h2 className="font-serif text-4xl lg:text-6xl font-bold text-white mb-8">
-              Frequently Asked<br />
-              <span className="bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">
-                Questions
-              </span>
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-accent via-accent-light to-accent mx-auto rounded-full mb-8"></div>
-          </div>
-          
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 mb-12">
-            <p className="text-white/90 text-center text-lg">
-              Please reach us at{" "}
-              <a href="mailto:teddy@previsemortgage.com" className="text-accent hover:text-accent-light transition-colors duration-300 font-semibold">
-                teddy@previsemortgage.com
-              </a>{" "}
-              if you cannot find an answer to your question.
-            </p>
-          </div>
+            
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 mb-6">
+              <p className="text-white/90 text-center text-sm">
+                Questions? Email{" "}
+                <a href="mailto:teddy@previsemortgage.com" className="text-accent hover:text-accent-light transition-colors font-semibold">
+                  teddy@previsemortgage.com
+                </a>
+              </p>
+            </div>
 
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <article key={index} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300">
-                <button
-                  onClick={() => toggleFAQ(index)}
-                  className="w-full p-6 text-left focus:outline-none group"
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4">
-                      <div className="text-3xl group-hover:scale-110 transition-transform duration-300">
-                        {faq.icon}
-                      </div>
-                      <h3 className="text-lg font-semibold text-white group-hover:text-accent transition-colors duration-300">
+            <div className="space-y-3">
+              {faqs.map((faq, index) => (
+                <article key={index} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden hover:bg-white/10 transition-all duration-300">
+                  <button
+                    onClick={() => toggleFAQ(index)}
+                    className="w-full p-4 text-left focus:outline-none group"
+                  >
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-base font-semibold text-white group-hover:text-accent transition-colors duration-300 pr-4">
                         {faq.question}
                       </h3>
+                      <div className="text-accent flex-shrink-0">
+                        {openIndex === index ? (
+                          <ChevronUp size={18} />
+                        ) : (
+                          <ChevronDown size={18} />
+                        )}
+                      </div>
                     </div>
-                    <div className="text-accent group-hover:scale-110 transition-transform duration-300">
-                      {openIndex === index ? (
-                        <ChevronUp size={20} />
-                      ) : (
-                        <ChevronDown size={20} />
-                      )}
+                  </button>
+                  {openIndex === index && (
+                    <div className="px-4 pb-4 animate-fade-in">
+                      <p className="text-white/80 leading-relaxed text-sm">{faq.answer}</p>
                     </div>
-                  </div>
-                </button>
-                {openIndex === index && (
-                  <div className="px-6 pb-6 animate-fade-in">
-                    <div className="pl-16 border-l-2 border-accent/30 ml-4">
-                      <p className="text-white/90 leading-relaxed text-lg">{faq.answer}</p>
-                    </div>
-                  </div>
-                )}
-              </article>
-            ))}
+                  )}
+                </article>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 };

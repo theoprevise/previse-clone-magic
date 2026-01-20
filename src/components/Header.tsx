@@ -12,8 +12,8 @@ const Header = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const resourcesLinks = [
-    { label: "Mortgage Calculators", path: "/mortgage-calculator" },
-    { label: "Free Homebuyer Guide", path: "/homebuyer-guide" },
+    { label: "First-Time Homebuyer Guide", path: "/first-time-homebuyer" },
+    { label: "Free Homebuyer Guide Download", path: "/homebuyer-guide" },
     { label: "Blog", path: "/blog" },
     { label: "Credit Score & Approval Tips", path: "/credit-score-mortgage-tips" },
     { label: "How the Mortgage Process Works", path: "/how-the-mortgage-process-works" },
@@ -49,10 +49,10 @@ const Header = () => {
           {/* Navigation Links */}
           <nav className="hidden lg:flex items-center gap-6">
             <button 
-              onClick={() => navigate('/first-time-homebuyer')}
+              onClick={() => navigate('/dscr-loans')}
               className="text-white/80 hover:text-accent transition-colors font-medium"
             >
-              First-Time Buyers
+              Investor Loans
             </button>
             <button 
               onClick={() => navigate('/refinance')}
@@ -61,16 +61,16 @@ const Header = () => {
               Refinance
             </button>
             <button 
-              onClick={() => navigate('/dscr-loans')}
+              onClick={() => navigate('/va-loans')}
               className="text-white/80 hover:text-accent transition-colors font-medium"
             >
-              DSCR Loans
+              VA Loans
             </button>
             <button 
-              onClick={() => navigate('/mortgage-programs')}
+              onClick={() => navigate('/mortgage-calculator')}
               className="text-white/80 hover:text-accent transition-colors font-medium"
             >
-              Loan Programs
+              Calculators
             </button>
             
             {/* Resources Dropdown */}
@@ -127,10 +127,10 @@ const Header = () => {
           <div className="lg:hidden bg-primary/95 backdrop-blur-md border-t border-accent/20 py-4">
             <nav className="flex flex-col space-y-2 px-4">
               <button 
-                onClick={() => {navigate('/first-time-homebuyer'); setIsMenuOpen(false);}}
+                onClick={() => {navigate('/dscr-loans'); setIsMenuOpen(false);}}
                 className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
               >
-                First-Time Buyers
+                Investor Loans
               </button>
               <button 
                 onClick={() => {navigate('/refinance'); setIsMenuOpen(false);}}
@@ -139,16 +139,16 @@ const Header = () => {
                 Refinance
               </button>
               <button 
-                onClick={() => {navigate('/dscr-loans'); setIsMenuOpen(false);}}
+                onClick={() => {navigate('/va-loans'); setIsMenuOpen(false);}}
                 className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
               >
-                DSCR Loans
+                VA Loans
               </button>
               <button 
-                onClick={() => {navigate('/mortgage-programs'); setIsMenuOpen(false);}}
+                onClick={() => {navigate('/mortgage-calculator'); setIsMenuOpen(false);}}
                 className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
               >
-                Loan Programs
+                Calculators
               </button>
               
               {/* Mobile Resources Dropdown */}

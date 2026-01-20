@@ -42,7 +42,7 @@ const investorPrograms = [
     title: "Portfolio Loans",
     description: "Consolidate multiple properties under one loan for simplified management.",
     highlights: ["Multiple properties", "Streamlined payments", "Flexible terms"],
-    path: "/mortgage-programs",
+    path: "",
     featured: false
   },
   {
@@ -50,7 +50,7 @@ const investorPrograms = [
     title: "Bank Statement Loans",
     description: "For self-employed investors who show income through bank deposits, not tax returns.",
     highlights: ["12-24 month statements", "Self-employed friendly", "Competitive rates"],
-    path: "/mortgage-programs",
+    path: "",
     featured: false
   }
 ];
@@ -168,10 +168,10 @@ const Investors = () => {
             {investorPrograms.map((program, idx) => (
               <Card 
                 key={idx}
-                className={`bg-white/5 backdrop-blur-xl border p-6 hover:bg-white/10 transition-all duration-500 hover:-translate-y-1 cursor-pointer ${
+                className={`bg-white/5 backdrop-blur-xl border p-6 transition-all duration-500 ${
                   program.featured ? 'border-accent/40 ring-1 ring-accent/20' : 'border-white/10'
-                }`}
-                onClick={() => navigate(program.path)}
+                } ${program.path ? 'hover:bg-white/10 hover:-translate-y-1 cursor-pointer' : ''}`}
+                onClick={() => program.path && navigate(program.path)}
               >
                 {program.featured && (
                   <span className="inline-block px-3 py-1 bg-accent/20 text-accent text-xs font-bold rounded-full mb-4">

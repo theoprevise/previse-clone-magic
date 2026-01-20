@@ -37,9 +37,9 @@ const Index = () => {
       <Suspense fallback={<SectionFallback />}>
         <FeaturesSection />
         <WhyPreviseSection />
-        <AboutSection />
         <CalendlySection />
         <FAQSection />
+        <AboutSection />
         <Footer />
         <GoHighLevelChat />
         <FloatingContactWidget />

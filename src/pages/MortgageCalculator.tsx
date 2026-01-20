@@ -110,14 +110,14 @@ const MortgageCalculator = () => {
       // DSCR = Gross Rental Income / Total Debt Service
       const dscr = rent / totalDebtService;
       let status = "";
-      if (dscr >= 1.25) {
+      if (dscr >= 1.5) {
         status = "Excellent - Strong qualification";
+      } else if (dscr >= 1.25) {
+        status = "Good - Meets minimum requirement";
       } else if (dscr >= 1.0) {
-        status = "Good - May qualify with some lenders";
-      } else if (dscr >= 0.75) {
-        status = "Marginal - Limited options available";
+        status = "Marginal - Below minimum threshold";
       } else {
-        status = "Below threshold - May not qualify";
+        status = "Below threshold - Does not qualify";
       }
       setDscrResult({
         ratio: dscr,
@@ -448,7 +448,7 @@ const MortgageCalculator = () => {
                             <p className="text-xl font-bold text-white">{formatCurrency(parseFloat(monthlyRent) || 0)}</p>
                           </div>
                         </div>
-                        <p className="text-white/50 text-xs text-center">Most lenders require a minimum DSCR of 1.0-1.25. Higher ratios may qualify for better rates.</p>
+                        <p className="text-white/50 text-xs text-center">Minimum DSCR of 1.25 required. Higher ratios may qualify for better rates.</p>
                       </div>}
                   </div>
                 </TabsContent>

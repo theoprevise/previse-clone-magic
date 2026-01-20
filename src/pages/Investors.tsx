@@ -256,7 +256,7 @@ const Investors = () => {
                 <p className="text-white/60 text-sm">Minimum loan size</p>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-accent mb-2">1.0+</div>
+                <div className="text-4xl font-bold text-accent mb-2">1.25+</div>
                 <p className="text-white font-semibold mb-1">DSCR Ratio</p>
                 <p className="text-white/60 text-sm">For DSCR loans</p>
               </div>

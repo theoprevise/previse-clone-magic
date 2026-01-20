@@ -22,7 +22,7 @@ const ProcessSection = () => {
       icon: CheckCircle,
       step: "03",
       title: "Processing & Underwriting",
-      description: "Our team reviews your application and works with underwriters for quick approval.",
+      description: "Our team reviews your application and coordinates with underwriters. Subject to credit approval.",
       details: ["File review", "Appraisal ordering", "Underwriting submission", "Condition clearance"]
     },
     {

@@ -9,12 +9,12 @@ const ServicesAndFAQ = () => {
   const services = [
     {
       icon: CheckCircle,
-      headline: "Mortgage Pre-Approval",
+      headline: "Mortgage Pre-Qualification",
       keyBenefits: [
-        "Get approved in 24-48 hours",
-        "Know your exact budget before house hunting",
-        "Stronger offers that sellers accept",
-        "Lock in rates early"
+        "Get pre-qualified in as little as 24-48 hours*",
+        "Understand your potential budget before house hunting",
+        "Stronger offers with pre-qualification letter",
+        "Discuss rate options early"
       ],
       proofOfTrust: "15+ years of expertise serving homebuyers",
       nextStep: "Apply online in 10 minutes or schedule consultation"
@@ -23,21 +23,21 @@ const ServicesAndFAQ = () => {
       icon: RefreshCw,
       headline: "Refinancing Services",
       keyBenefits: [
-        "Lower monthly payments",
-        "Reduce interest rates",
+        "Potentially lower monthly payments*",
+        "Explore reduced interest rate options",
         "Cash-out for home improvements",
-        "No closing cost options available"
+        "Various closing cost options available"
       ],
       proofOfTrust: "Successfully closed 500+ refinances",
-      nextStep: "Get rate quote and savings analysis"
+      nextStep: "Get rate quote and savings estimate"
     },
     {
       icon: Home,
       headline: "First-Time Homebuyer Programs",
       keyBenefits: [
-        "Down payments as low as 3%",
-        "FHA, VA, USDA loan options",
-        "First-time buyer grants available",
+        "Down payments as low as 3% for qualified borrowers",
+        "FHA, USDA loan options",
+        "Down payment assistance programs may be available",
         "Step-by-step guidance throughout"
       ],
       proofOfTrust: "Helped 200+ first-time buyers achieve homeownership",
@@ -47,12 +47,12 @@ const ServicesAndFAQ = () => {
       icon: Building,
       headline: "Investment Property Loans",
       keyBenefits: [
-        "Finance up to 4 units",
+        "Finance up to 4 units for qualified borrowers",
         "DSCR loans for investors",
         "Portfolio lending options",
-        "Competitive investor rates"
+        "Competitive investor rates for qualified borrowers"
       ],
-      proofOfTrust: "Expert knowledge of local rental property values",
+      proofOfTrust: "Expert knowledge of rental property financing",
       nextStep: "Discuss investment strategy and loan options"
     },
     {

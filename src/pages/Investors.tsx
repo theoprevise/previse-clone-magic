@@ -69,12 +69,12 @@ const investorBenefits = [
   {
     icon: Calculator,
     title: "Quick Closings",
-    description: "Streamlined process means faster approvals and closings in as little as 21 days"
+    description: "Streamlined process for faster closings, subject to credit approval"
   },
   {
     icon: PiggyBank,
     title: "Competitive Rates",
-    description: "Access institutional-level rates designed for serious real estate investors"
+    description: "Access competitive rates for qualified real estate investors"
   },
   {
     icon: BarChart3,

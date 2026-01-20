@@ -25,20 +25,20 @@ const refinanceReasons = [
   {
     icon: TrendingDown,
     title: "Lower Your Interest Rate",
-    description: "Even a small rate reduction can save you thousands over the life of your loan.",
-    savings: "Save $200-500/month"
+    description: "Even a small rate reduction may save you thousands over the life of your loan.*",
+    savings: "Potential monthly savings*"
   },
   {
     icon: Clock,
     title: "Shorten Your Loan Term",
     description: "Pay off your home faster and build equity quicker with a shorter term.",
-    savings: "Pay off 10-15 years early"
+    savings: "Build equity faster"
   },
   {
     icon: Wallet,
     title: "Lower Monthly Payments",
-    description: "Extend your term or get a better rate to reduce your monthly burden.",
-    savings: "Free up cash flow"
+    description: "Extend your term or get a better rate to potentially reduce your monthly payments.*",
+    savings: "Potential cash flow relief"
   },
   {
     icon: PiggyBank,
@@ -55,8 +55,8 @@ const refinanceReasons = [
   {
     icon: Home,
     title: "Remove PMI",
-    description: "If you have 20% equity, refinancing can eliminate private mortgage insurance.",
-    savings: "Save $100-300/month"
+    description: "If you have 20% equity, refinancing may eliminate private mortgage insurance.",
+    savings: "Potential PMI savings*"
   }
 ];
 
@@ -154,10 +154,10 @@ const Refinance = () => {
               Refinance Options
             </span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-              Lower Your Payments & <span className="text-accent">Save Thousands</span>
+              Lower Your Payments & <span className="text-accent">Potentially Save</span>
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto">
-              Discover how refinancing can help you reduce your monthly payments, shorten your loan term, or access your home equity.
+              Discover how refinancing may help you reduce your monthly payments, shorten your loan term, or access your home equity. Results depend on individual circumstances.*
             </p>
           </div>
         </div>
@@ -323,10 +323,10 @@ const Refinance = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
-              Real <span className="text-accent">Savings Examples</span>
+              Illustrative <span className="text-accent">Savings Examples</span>
             </h2>
             <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
-              See how different refinancing scenarios can impact your finances.
+              These examples are for illustration only. Your actual savings may vary based on individual circumstances.*
             </p>
           </div>
 
@@ -356,13 +356,21 @@ const Refinance = () => {
                       <span className="text-success font-medium">{example.monthlySavings}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-white/60">Lifetime Savings:</span>
+                      <span className="text-white/60">Potential Savings:</span>
                       <span className="text-success font-bold">{example.lifetimeSavings}</span>
                     </div>
                   </div>
                 </div>
               </Card>
             ))}
+          </div>
+          
+          <div className="mt-8 p-4 bg-white/5 border border-white/10 rounded-xl max-w-4xl mx-auto">
+            <p className="text-white/60 text-xs text-center">
+              *Representative examples are hypothetical and for illustration purposes only. They do not represent actual offers or guaranteed results. 
+              Your actual rate, APR, monthly payment, and total savings will depend on your creditworthiness, loan terms, property value, and other factors. 
+              All loans are subject to credit approval.
+            </p>
           </div>
         </div>
       </section>

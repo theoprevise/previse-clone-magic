@@ -151,7 +151,7 @@ const ExitIntentPopup = () => {
                 Get a FREE Mortgage Consultation
               </h2>
               <p className="text-white/90">
-                No obligation • Expert advice • Save thousands
+                No obligation • Expert advice • Personalized guidance
               </p>
             </div>
 

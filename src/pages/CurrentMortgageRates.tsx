@@ -125,13 +125,13 @@ const CurrentMortgageRates = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <span className="inline-block px-4 py-2 bg-accent/20 border border-accent/30 rounded-full text-accent text-sm font-medium mb-6 animate-fade-in">
-              Updated Weekly
+              Updated Weekly • For Illustrative Purposes
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Current <span className="text-accent">Mortgage Rates</span>
             </h1>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto mb-4">
-              Compare today's competitive mortgage rates. Your actual rate may vary based on your unique financial situation.
+              Compare today's competitive mortgage rates. Your actual rate will vary based on your unique financial situation and creditworthiness.*
             </p>
             <div className="flex items-center justify-center gap-2 text-white/60 text-sm">
               <Calendar className="h-4 w-4" />
@@ -203,9 +203,10 @@ const CurrentMortgageRates = () => {
               <div className="flex items-start gap-3">
                 <Info className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                 <p className="text-white/60 text-sm">
-                  <strong className="text-white">Rate Disclaimer:</strong> Rates shown are for informational purposes only and are subject to change without notice. 
-                  Your actual rate will depend on your credit score, down payment, loan amount, property type, and other factors. 
-                  Contact us for a personalized rate quote based on your specific situation.
+                  <strong className="text-white">Rate Disclaimer:</strong> Rates shown are for informational purposes only, are subject to change without notice, and do not constitute a commitment to lend. 
+                  Rates displayed assume a loan amount of $300,000, 20% down payment, 740+ credit score, and owner-occupied single-family residence. 
+                  Your actual rate, APR, and loan terms will depend on your credit score, down payment, loan amount, property type, and other factors. 
+                  All loans are subject to credit approval. Contact us for a personalized rate quote based on your specific situation.
                 </p>
               </div>
             </div>
@@ -252,7 +253,7 @@ const CurrentMortgageRates = () => {
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <Clock className="h-6 w-6 text-accent" />
-                  <span className="text-accent font-semibold">Quick Pre-Approval</span>
+                  <span className="text-accent font-semibold">Quick Pre-Qualification</span>
                 </div>
                 <h2 className="text-3xl font-bold text-white mb-4">
                   Get Your Personalized Rate
@@ -296,6 +297,7 @@ const CurrentMortgageRates = () => {
                     variant="outline"
                     className="border-white/30 text-white hover:bg-white/10 w-full"
                   >
+                    Start Pre-Qualification
                     Start Pre-Approval
                   </Button>
                 </a>

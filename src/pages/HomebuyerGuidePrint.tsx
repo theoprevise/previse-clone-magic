@@ -132,11 +132,11 @@ const HomebuyerGuidePrint = () => {
             <div className="grid grid-cols-2 gap-4 my-6">
               <div className="bg-green-50 p-4 rounded-lg border border-green-200">
                 <p className="font-semibold text-green-800">740+ Excellent</p>
-                <p className="text-sm text-green-700">Best rates available</p>
+                <p className="text-sm text-green-700">Typically qualifies for competitive rates*</p>
               </div>
               <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
                 <p className="font-semibold text-blue-800">670-739 Good</p>
-                <p className="text-sm text-blue-700">Competitive rates</p>
+                <p className="text-sm text-blue-700">May qualify for competitive rates*</p>
               </div>
               <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
                 <p className="font-semibold text-yellow-800">580-669 Fair</p>

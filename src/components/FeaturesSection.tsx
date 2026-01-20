@@ -14,7 +14,7 @@ const FeaturesSection = () => {
         "Finance unlimited properties",
         "Competitive rates for rentals"
       ],
-      path: "/dscr-loans"
+      path: "/investors"
     },
     {
       icon: RefreshCcw,

@@ -49,7 +49,7 @@ const Header = () => {
           {/* Navigation Links */}
           <nav className="hidden lg:flex items-center gap-6">
             <button 
-              onClick={() => navigate('/dscr-loans')}
+              onClick={() => navigate('/investors')}
               className="text-white/80 hover:text-accent transition-colors font-medium"
             >
               Investor Loans
@@ -127,7 +127,7 @@ const Header = () => {
           <div className="lg:hidden bg-primary/95 backdrop-blur-md border-t border-accent/20 py-4">
             <nav className="flex flex-col space-y-2 px-4">
               <button 
-                onClick={() => {navigate('/dscr-loans'); setIsMenuOpen(false);}}
+                onClick={() => {navigate('/investors'); setIsMenuOpen(false);}}
                 className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
               >
                 Investor Loans

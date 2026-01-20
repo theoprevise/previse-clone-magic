@@ -35,11 +35,11 @@ const HeroSection = () => {
             <div className="text-center lg:text-left">
               {/* Main heading */}
               <div className="mb-6 animate-fade-in">
-                <span className="inline-block mb-4 text-lg md:text-xl font-medium text-accent tracking-wide">Investor & Refinance Specialists</span>
+                <span className="inline-block mb-4 text-lg md:text-xl font-medium text-accent tracking-wide">Previse Mortgage</span>
                 <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white mb-4" itemProp="name">
-                  <span className="block mb-2">DSCR & Investment</span>
+                  <span className="block mb-2">Professionalized</span>
                   <span className="block bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">
-                    Property Loans
+                    Loan Financing
                   </span>
                 </h1>
               </div>
@@ -52,7 +52,7 @@ const HeroSection = () => {
               </div>
               
               <p className="text-lg md:text-xl text-white/90 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed animate-fade-in delay-500" itemProp="description">
-                Financing for real estate investors, refinancing homeowners, and VA-eligible borrowers. Loans starting at $250K with competitive rates.
+                Previse Mortgage delivers the guidance you need with cutting-edge technology and personalized service
               </p>
               
               {/* Teddy Image + CTA */}

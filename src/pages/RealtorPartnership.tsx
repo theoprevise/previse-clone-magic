@@ -19,17 +19,17 @@ const RealtorPartnership = () => {
     {
       icon: Handshake,
       title: "You Offer a Trusted Resource",
-      description: "When investor questions arise, you introduce Previse as a financing resource."
+      description: "When your clients have financing questions, you introduce Previse as a trusted mortgage resource."
     },
     {
       icon: MessageSquare,
-      title: "Investor Opts In",
-      description: "The investor opts in to a short, clarity-focused conversation."
+      title: "Client Opts In",
+      description: "Your client opts in to a clarity-focused conversation about their financing options."
     },
     {
       icon: TrendingUp,
       title: "Education & Clarity",
-      description: "Previse provides education around DSCR, cash flow, and structure."
+      description: "Previse provides education around loan programs, qualifications, and structure."
     },
     {
       icon: Users,
@@ -42,7 +42,7 @@ const RealtorPartnership = () => {
     {
       icon: Shield,
       title: "Confident Clients",
-      description: "Investor clients feel more confident and prepared"
+      description: "Clients feel more confident and prepared throughout the process"
     },
     {
       icon: CheckCircle,
@@ -62,18 +62,18 @@ const RealtorPartnership = () => {
   ];
 
   const whenToIntroduce = [
-    "First-time investor conversations",
-    "DSCR or Non-QM questions",
-    "Cash flow analysis uncertainty",
+    "First-time homebuyer conversations",
+    "Pre-approval or qualification questions",
+    "Clients comparing loan programs (FHA, VA, Conventional, DSCR)",
     "Before an offer is submitted"
   ];
 
   return (
     <>
       <SEOHead 
-        title="Realtor Partnership | Investor Co-Marketing System | Previse Mortgage"
-        description="Partner with Previse Mortgage to support your investor clients with DSCR and investor financing education. No pressure, no quotas — just clarity."
-        keywords="realtor partnership, investor financing, DSCR loans, real estate agents, co-marketing, investor clients"
+        title="Realtor Partnership | Co-Marketing System | Previse Mortgage"
+        description="Partner with Previse Mortgage to support your clients with expert mortgage guidance. No pressure, no quotas — just clarity for first-time buyers, investors, and everyone in between."
+        keywords="realtor partnership, mortgage partner, real estate agents, co-marketing, first-time homebuyer, FHA loans, VA loans, conventional loans"
       />
       
       <div className="min-h-screen bg-primary">
@@ -94,12 +94,12 @@ const RealtorPartnership = () => {
                 </div>
                 
                 <h1 className="heading-hero text-white">
-                  Realtor–Investor<br />
+                  Realtor<br />
                   <span className="text-accent">Co-Marketing System</span>
                 </h1>
                 
                 <p className="text-body-lg text-white/80 max-w-xl">
-                  A simple, professional way to support your investor clients with clarity around DSCR and investor financing — without pressure, sales tactics, or disruption to your client relationships.
+                  A simple, professional way to support all your clients — first-time buyers, move-up buyers, investors, and beyond — with clarity around financing options, without pressure, sales tactics, or disruption to your client relationships.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -115,9 +115,9 @@ const RealtorPartnership = () => {
                     variant="outline" 
                     size="xl"
                     className="border-white/30 text-white hover:bg-white/10"
-                    onClick={() => navigate('/investors')}
+                    onClick={() => navigate('/mortgage-programs')}
                   >
-                    Learn About DSCR Loans
+                    View Our Loan Programs
                   </Button>
                 </div>
               </div>
@@ -126,7 +126,7 @@ const RealtorPartnership = () => {
               <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8">
                 <h2 className="heading-card text-white mb-6">What This Is</h2>
                 <p className="text-body text-white/80 mb-8">
-                  This is an <span className="text-accent font-semibold">education-first collaboration</span> designed to help investors understand financing structure early, so they can write stronger offers and move forward with confidence.
+                  This is an <span className="text-accent font-semibold">education-first collaboration</span> designed to help your clients — whether they're first-time buyers, seasoned homeowners, or investors — understand their financing options early, so they can write stronger offers and move forward with confidence.
                 </p>
                 
                 <div className="border-t border-white/10 pt-6">

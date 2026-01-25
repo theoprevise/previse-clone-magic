@@ -52,7 +52,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-primary-dark to-primary relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-b from-primary to-primary-dark relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-accent/5 rounded-full blur-3xl animate-float"></div>
@@ -63,14 +63,14 @@ const FeaturesSection = () => {
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
             <span className="text-accent text-sm font-bold uppercase tracking-wider bg-accent/10 px-4 py-2 rounded-full">
-              Loan Programs
+              Our Specialties
             </span>
           </div>
-          <h2 className="heading-section text-white mb-6 max-w-3xl mx-auto">
-            Solutions for <span className="text-accent">Every</span> Borrower
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 max-w-3xl mx-auto leading-tight">
+            Financing for <span className="text-accent">Investors</span> & <span className="text-accent">Homeowners</span>
           </h2>
-          <p className="text-body text-white/80 max-w-2xl mx-auto">
-            From first-time buyers to seasoned investors — we have the right program for your goals.
+          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+            Specialized lending for qualified borrowers. Minimum $250K loan amount, 680+ credit score recommended.
           </p>
         </div>
 

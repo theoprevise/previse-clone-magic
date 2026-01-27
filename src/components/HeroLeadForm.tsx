@@ -120,7 +120,7 @@ const HeroLeadForm = () => {
           consent: checked as boolean
         }))} className="mt-1" required />
           <label htmlFor="consent" className="text-xs text-gray-500 leading-relaxed cursor-pointer">
-            By submitting this form, you agree to receive informational and conversational SMS/text messages related to your inquiry. Message and data rates may apply. Reply STOP to opt out at any time. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link>. *
+            By submitting this form, you agree to receive informational and conversational SMS/text messages related to your inquiry. Message and data rates may apply. Reply STOP to opt out at any time. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link>. <span className="text-red-500 font-bold">*</span>
           </label>
         </div>
         

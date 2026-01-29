@@ -123,6 +123,21 @@ const PrivacyPolicy = () => {
                 We may update this Privacy Policy from time to time. The latest version will be posted here, with the "Effective Date" updated accordingly.
               </p>
             </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-accent mb-4">12. SMS/Text Messaging Program</h2>
+              <p className="leading-relaxed mb-4">
+                When you provide your phone number and consent on our website forms, you are opting in to receive SMS/text messages from Previse Mortgage regarding your mortgage inquiry, loan status updates, and promotional offers.
+              </p>
+              <ul className="list-disc list-inside space-y-2 ml-4">
+                <li><strong>Message Frequency:</strong> Message frequency varies based on your inquiry and loan process.</li>
+                <li><strong>Message & Data Rates:</strong> Standard message and data rates may apply depending on your carrier and plan.</li>
+                <li><strong>Opt-Out:</strong> Reply STOP to any message to unsubscribe from our SMS program at any time.</li>
+                <li><strong>Help:</strong> Reply HELP to any message for customer support information, or contact us at teddy@previsemortgage.com.</li>
+                <li><strong>Carriers:</strong> Carriers are not liable for delayed or undelivered messages.</li>
+                <li><strong>Privacy:</strong> Your phone number will not be sold or shared with third parties for marketing purposes.</li>
+              </ul>
+            </section>
           </div>
         </div>
       </div>

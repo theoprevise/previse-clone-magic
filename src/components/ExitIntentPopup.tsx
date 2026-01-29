@@ -207,7 +207,7 @@ const ExitIntentPopup = () => {
                   required
                 />
                 <label htmlFor="consent_exit" className="text-xs text-gray-600 leading-relaxed cursor-pointer">
-                  I consent to receive calls, emails, and SMS/text messages from Previse Mortgage. Message and data rates may apply. Reply STOP to opt out. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link>. *
+                  By submitting this form, you consent to receive recurring informational and promotional SMS/text messages from Previse Mortgage at the phone number provided. Message frequency varies. Message and data rates may apply. Reply HELP for help or STOP to cancel at any time. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link>. <span className="text-red-500 font-semibold">(Required)</span>
                 </label>
               </div>
               

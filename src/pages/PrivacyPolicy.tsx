@@ -127,19 +127,22 @@ const PrivacyPolicy = () => {
             <section>
               <h2 className="text-2xl font-semibold text-accent mb-4">12. SMS/Text Messaging Program</h2>
               <p className="leading-relaxed mb-4">
-                If you provide your mobile phone number to consent to receive SMS messages, we may send you informational and conversational text messages related to your inquiry. Message frequency may vary. Message and data rates may apply. You may opt out at any time by replying STOP. We do not sell or share SMS opt-in data with third parties for marketing purposes.
+                If you provide your mobile phone number and consent to receive SMS messages, we may send you informational and conversational text messages related to your inquiry. Message frequency may vary. Message and data rates may apply. You may opt out at any time by replying STOP. <strong>We do not sell, rent, or share your mobile phone number or SMS opt-in data with third parties for their marketing purposes.</strong>
               </p>
               <p className="leading-relaxed mb-4">
-                When you provide your phone number and consent on our website forms, you are opting in to receive SMS/text messages from Previse Mortgage regarding your mortgage inquiry, loan status updates, and promotional offers.
+                When you provide your phone number and consent on our website forms, you are opting in to receive SMS/text messages from Previse Mortgage regarding your mortgage inquiry, application status updates, appointment reminders, and responses to your questions.
               </p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
+              <ul className="list-disc list-inside space-y-2 ml-4 mb-4">
                 <li><strong>Message Frequency:</strong> Message frequency varies based on your inquiry and loan process.</li>
                 <li><strong>Message & Data Rates:</strong> Standard message and data rates may apply depending on your carrier and plan.</li>
-                <li><strong>Opt-Out:</strong> Reply STOP to any message to unsubscribe from our SMS program at any time.</li>
-                <li><strong>Help:</strong> Reply HELP to any message for customer support information, or contact us at teddy@previsemortgage.com.</li>
-                <li><strong>Carriers:</strong> Carriers are not liable for delayed or undelivered messages.</li>
-                <li><strong>Privacy:</strong> Your phone number will not be sold or shared with third parties for marketing purposes.</li>
+                <li><strong>Opt-Out:</strong> Reply STOP to any message to unsubscribe from our SMS program at any time. You will receive a confirmation message and no further SMS messages will be sent.</li>
+                <li><strong>Help:</strong> Reply HELP to any message for customer support information, or contact us at teddy@previsemortgage.com or call (717) 500-2007.</li>
+                <li><strong>Carrier Disclaimer:</strong> Carriers are not liable for delayed or undelivered messages. Message delivery is subject to effective transmission from your wireless carrier.</li>
+                <li><strong>Mobile Information Sharing:</strong> Your mobile phone number and SMS consent information will not be sold, rented, or shared with any third parties for their marketing or promotional purposes. We only use your mobile information to communicate with you about your mortgage inquiry and related services.</li>
               </ul>
+              <p className="leading-relaxed">
+                For complete SMS program terms and conditions, please see Section 12 of our <a href="/terms-of-service" className="text-accent hover:underline">Terms of Service</a>.
+              </p>
             </section>
           </div>
         </div>

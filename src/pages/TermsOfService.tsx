@@ -96,25 +96,45 @@ const TermsOfService = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-accent mb-4">12. Communication</h2>
+              <h2 className="text-2xl font-semibold text-accent mb-4">12. SMS/Text Messaging Terms</h2>
+              <p className="leading-relaxed mb-4">
+                By opting in to receive SMS/text messages from Previse Mortgage, you agree to the following terms:
+              </p>
+              <ul className="list-disc list-inside space-y-2 ml-4 mb-4">
+                <li><strong>SMS Use Cases:</strong> We may send you informational and conversational text messages related to your mortgage inquiry, application status updates, appointment reminders, and responses to your questions.</li>
+                <li><strong>Message Frequency:</strong> Message frequency varies based on your inquiry and the stage of your mortgage process.</li>
+                <li><strong>Message & Data Rates:</strong> Standard message and data rates may apply depending on your wireless carrier and plan.</li>
+                <li><strong>Opt-Out:</strong> You may opt out of SMS messages at any time by replying STOP to any message you receive from us. Upon receipt of your STOP request, we will send a confirmation message and discontinue SMS communications.</li>
+                <li><strong>Customer Support:</strong> For help with our SMS program, reply HELP to any message, or contact us at teddy@previsemortgage.com or call (717) 500-2007.</li>
+                <li><strong>Carrier Liability:</strong> Wireless carriers are not liable for delayed or undelivered messages. Message delivery is subject to effective transmission from your wireless carrier.</li>
+                <li><strong>Age Requirement:</strong> You must be 18 years of age or older to opt in to our SMS messaging program.</li>
+              </ul>
               <p className="leading-relaxed">
-                If you consent, we may send marketing and loan-related communications via email, SMS, mail, or phone. You may opt out at any time as described in section 6 of the Privacy Policy.
+                For more information about how we handle your mobile phone number and SMS data, please see Section 12 of our <a href="/privacy-policy" className="text-accent hover:underline">Privacy Policy</a>.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-accent mb-4">13. Waiver and Severability</h2>
+              <h2 className="text-2xl font-semibold text-accent mb-4">13. Other Communications</h2>
+              <p className="leading-relaxed">
+                If you consent, we may also send marketing and loan-related communications via email, mail, or phone. You may opt out at any time by contacting us or following the unsubscribe instructions in our communications.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-accent mb-4">14. Waiver and Severability</h2>
               <p className="leading-relaxed">
                 Our failure to enforce a right does not waive it. If any part of these Terms is invalid, it will be severed, and the remainder will remain in full force.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-accent mb-4">14. Contact Information</h2>
+              <h2 className="text-2xl font-semibold text-accent mb-4">15. Contact Information</h2>
               <div className="leading-relaxed">
                 <p className="font-semibold">Previse Mortgage</p>
                 <p>Spring Grove, PA 17362</p>
                 <p>Email: teddy@previsemortgage.com</p>
+                <p>Phone: (717) 500-2007</p>
               </div>
             </section>
           </div>

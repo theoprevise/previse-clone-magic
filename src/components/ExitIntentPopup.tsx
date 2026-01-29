@@ -55,7 +55,7 @@ const ExitIntentPopup = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !consent) {
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone) {
       toast({
         title: "Required fields missing",
         description: "Please fill in all required fields including phone number.",
@@ -204,12 +204,15 @@ const ExitIntentPopup = () => {
                   checked={consent}
                   onCheckedChange={(checked) => setConsent(checked as boolean)}
                   className="mt-0.5 border-gray-300"
-                  required
                 />
                 <label htmlFor="consent_exit" className="text-xs text-gray-600 leading-relaxed cursor-pointer">
-                  By submitting this form, you consent to receive recurring informational and promotional SMS/text messages from Previse Mortgage at the phone number provided. Message frequency varies. Message and data rates may apply. Reply HELP for help or STOP to cancel at any time. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link>. <span className="text-red-500 font-semibold">(Required)</span>
+                  I agree to receive informational and conversational SMS text messages from Previse Mortgage related to my inquiry. Message Frequency may vary. Message & Data rates may apply. Reply STOP to opt out at any time.
                 </label>
               </div>
+              
+              <p className="text-xs text-gray-500 leading-relaxed">
+                By submitting this form, you consent to receive informational and conversational SMS text messages from Previse Mortgage regarding your inquiry. Message frequency may vary. Message and Data rates may apply. Reply STOP to opt out at any time. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary underline hover:text-primary/80">Terms of Service</Link>.
+              </p>
               
               <Button
                 type="submit"

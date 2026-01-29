@@ -54,10 +54,10 @@ const LeadCapturePopup = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.first_name || !formData.last_name || !formData.email || !formData.phone || !consent) {
+    if (!formData.first_name || !formData.last_name || !formData.email || !formData.phone) {
       toast({
         title: "Required Fields",
-        description: "Please fill in your name, email, phone, and agree to receive communications.",
+        description: "Please fill in your name, email, and phone number.",
         variant: "destructive",
       });
       return;
@@ -255,12 +255,15 @@ const LeadCapturePopup = () => {
               checked={consent}
               onCheckedChange={(checked) => setConsent(checked as boolean)}
               className="mt-0.5"
-              required
             />
             <label htmlFor="consent_popup" className="text-xs text-muted-foreground leading-relaxed cursor-pointer">
-              By submitting this form, you consent to receive recurring informational and promotional SMS/text messages from Previse Mortgage at the phone number provided. Message frequency varies. Message and data rates may apply. Reply HELP for help or STOP to cancel at any time. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link>. <span className="text-destructive font-semibold">(Required)</span>
+              I agree to receive informational and conversational SMS text messages from Previse Mortgage related to my inquiry. Message Frequency may vary. Message & Data rates may apply. Reply STOP to opt out at any time.
             </label>
           </div>
+          
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            By submitting this form, you consent to receive informational and conversational SMS text messages from Previse Mortgage regarding your inquiry. Message frequency may vary. Message and Data rates may apply. Reply STOP to opt out at any time. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary underline hover:text-primary/80">Terms of Service</Link>.
+          </p>
 
           <Button
             type="submit"

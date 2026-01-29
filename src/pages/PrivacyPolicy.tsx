@@ -127,6 +127,9 @@ const PrivacyPolicy = () => {
             <section>
               <h2 className="text-2xl font-semibold text-accent mb-4">12. SMS/Text Messaging Program</h2>
               <p className="leading-relaxed mb-4">
+                If you provide your mobile phone number to consent to receive SMS messages, we may send you informational and conversational text messages related to your inquiry. Message frequency may vary. Message and data rates may apply. You may opt out at any time by replying STOP. We do not sell or share SMS opt-in data with third parties for marketing purposes.
+              </p>
+              <p className="leading-relaxed mb-4">
                 When you provide your phone number and consent on our website forms, you are opting in to receive SMS/text messages from Previse Mortgage regarding your mortgage inquiry, loan status updates, and promotional offers.
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4">

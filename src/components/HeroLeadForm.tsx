@@ -118,11 +118,15 @@ const HeroLeadForm = () => {
           <Checkbox id="consent" checked={formData.consent} onCheckedChange={checked => setFormData(prev => ({
           ...prev,
           consent: checked as boolean
-        }))} className="mt-1" required />
+        }))} className="mt-1" />
           <label htmlFor="consent" className="text-xs text-gray-500 leading-relaxed cursor-pointer">
-            By submitting this form, you consent to receive recurring informational and promotional SMS/text messages from Previse Mortgage at the phone number provided. Message frequency varies. Message and data rates may apply. Reply HELP for help or STOP to cancel at any time. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link>. <span className="text-red-500 font-semibold">(Required)</span>
+            I agree to receive informational and conversational SMS text messages from Previse Mortgage related to my inquiry. Message Frequency may vary. Message & Data rates may apply. Reply STOP to opt out at any time.
           </label>
         </div>
+        
+        <p className="text-xs text-gray-500 leading-relaxed">
+          By submitting this form, you consent to receive informational and conversational SMS text messages from Previse Mortgage regarding your inquiry. Message frequency may vary. Message and Data rates may apply. Reply STOP to opt out at any time. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary underline hover:text-primary/80">Terms of Service</Link>.
+        </p>
         
         <Button type="submit" disabled={isSubmitting} className="w-full bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-primary font-bold py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
           {isSubmitting ? <>

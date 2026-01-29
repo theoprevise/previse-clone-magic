@@ -33,10 +33,10 @@ const HeroLeadForm = () => {
   };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.firstName || !formData.email || !formData.phone || !formData.consent) {
+    if (!formData.firstName || !formData.email || !formData.phone) {
       toast({
         title: "Please fill required fields",
-        description: "Name, email, phone, and consent are required.",
+        description: "Name, email, and phone are required.",
         variant: "destructive"
       });
       return;

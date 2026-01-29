@@ -196,7 +196,7 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
           required
         />
         <label htmlFor="consent" className="text-xs text-white/70 leading-relaxed cursor-pointer">
-          I consent to receive calls, emails, and SMS/text messages from Previse Mortgage. Message and data rates may apply. Reply STOP to opt out. View our <Link to="/privacy-policy" className="text-white underline hover:text-white/80">Privacy Policy</Link>. *
+          By submitting this form, you agree to receive informational and conversational SMS/text messages related to your inquiry. Message and data rates may apply. Reply STOP to opt out at any time. View our <Link to="/privacy-policy" className="text-white underline hover:text-white/80">Privacy Policy</Link>. <span className="text-red-400 font-semibold">(Required)</span>
         </label>
       </div>
 

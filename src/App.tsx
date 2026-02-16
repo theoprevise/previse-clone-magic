@@ -53,6 +53,9 @@ import HomebuyerGuide from "./pages/HomebuyerGuide";
 import HomebuyerGuideThankYou from "./pages/HomebuyerGuideThankYou";
 import HomebuyerGuidePrint from "./pages/HomebuyerGuidePrint";
 import ScheduleThankYou from "./pages/ScheduleThankYou";
+import PennsylvaniaMortgage from "./pages/PennsylvaniaMortgage";
+import YorkPAMortgage from "./pages/YorkPAMortgage";
+import HarrisburgPAMortgage from "./pages/HarrisburgPAMortgage";
 
 
 const queryClient = new QueryClient();
@@ -83,7 +86,10 @@ const ConditionalLeadPopup = () => {
     '/dscr-loans',
     '/investors',
     '/mortgage-calculator',
-    '/ai-readiness'
+    '/ai-readiness',
+    '/pennsylvania-mortgage',
+    '/mortgage-lender-york-pa',
+    '/mortgage-lender-harrisburg-pa'
   ];
   
   // Don't show popup on landing pages, thank-you pages, print pages, or application pages
@@ -156,6 +162,10 @@ const App = () => (
           <Route path="/homebuyer-guide" element={<HomebuyerGuide />} />
           <Route path="/homebuyer-guide-thank-you" element={<HomebuyerGuideThankYou />} />
           <Route path="/homebuyer-guide-print" element={<HomebuyerGuidePrint />} />
+          
+          <Route path="/pennsylvania-mortgage" element={<PennsylvaniaMortgage />} />
+          <Route path="/mortgage-lender-york-pa" element={<YorkPAMortgage />} />
+          <Route path="/mortgage-lender-harrisburg-pa" element={<HarrisburgPAMortgage />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

@@ -186,12 +186,12 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
           className="mt-0.5 border-white/30"
         />
         <label htmlFor="consent" className="text-xs text-white/70 leading-relaxed cursor-pointer">
-          I agree to receive informational and conversational SMS text messages from Previse Mortgage related to my inquiry. Message Frequency may vary. Message & Data rates may apply. Reply STOP to opt out at any time.
+          I agree to receive informational and conversational SMS text messages from Previse Mortgage LLC related to my inquiry. Message Frequency may vary. Message & Data rates may apply. Reply STOP to opt out at any time.
         </label>
       </div>
       
       <p className="text-xs text-white/60 leading-relaxed">
-        By submitting this form, you consent to receive informational and conversational SMS text messages from Previse Mortgage regarding your inquiry. Message frequency may vary. Message and Data rates may apply. Reply STOP to opt out at any time. View our <Link to="/privacy-policy" className="text-white underline hover:text-white/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-white underline hover:text-white/80">Terms of Service</Link>.
+        By submitting this form, you consent to receive informational and conversational SMS text messages from Previse Mortgage LLC regarding your inquiry. Message frequency may vary. Message and Data rates may apply. Reply STOP to opt out at any time. View our <Link to="/privacy-policy" className="text-white underline hover:text-white/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-white underline hover:text-white/80">Terms of Service</Link>.
       </p>
 
       <Button 

@@ -84,7 +84,7 @@ const HeroLeadForm = () => {
     }
   };
   return <div className="bg-white/95 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-2xl border border-white/20">
-      <h3 className="text-2xl font-bold text-primary mb-1 text-center">Previse Mortgage LLC</h3>
+      <h3 className="text-2xl font-bold text-primary mb-1 text-center">Get in Touch</h3>
       <p className="text-gray-600 text-center mb-6 text-sm">Fill out the form and we'll be in touch</p>
       
       <form onSubmit={handleSubmit} className="space-y-4">

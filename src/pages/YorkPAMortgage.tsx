@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import SEOHead from "@/components/SEOHead";
 import StructuredData from "@/components/StructuredData";
+import FAQStructuredData from "@/components/FAQStructuredData";
 import { MapPin, ArrowRight, Phone, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -122,6 +123,13 @@ const YorkPAMortgage = () => {
       </section>
 
       {/* FAQ */}
+      <FAQStructuredData faqs={[
+        { q: "What are mortgage rates in York, PA right now?", a: "Mortgage rates in York fluctuate daily based on market conditions. As a broker, we compare rates from multiple lenders to find the lowest available for your loan scenario. Contact us or visit our rates page for today's York PA mortgage rates." },
+        { q: "Is York, PA a good place to buy a house?", a: "Yes. York County offers some of the most affordable housing in the Mid-Atlantic with strong appreciation trends, quality school districts, and easy access to Harrisburg, Baltimore, and the I-83 corridor. It's an excellent market for both primary residence and investment purchases." },
+        { q: "Are there USDA-eligible areas in York County?", a: "Many communities in York County qualify for USDA zero-down financing, particularly in the southern and western portions of the county. Towns like Stewartstown, Glen Rock, and Shrewsbury often fall within eligible zones. We can verify your property's eligibility quickly." },
+        { q: "How do I get pre-approved for a mortgage in York, PA?", a: "Start by completing our online pre-qualification form — it takes just a few minutes and won't affect your credit score. We'll review your information and connect you with a loan officer to discuss your options and get you a pre-approval letter for your home search." },
+        { q: "Do you work with local York County real estate agents?", a: "Absolutely. We partner with real estate agents across York County and can provide fast pre-approval letters, responsive communication, and reliable closings. If you're an agent, visit our Realtor Partnership page to learn how we support your buyers." },
+      ]} />
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">

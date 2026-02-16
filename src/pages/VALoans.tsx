@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import FAQStructuredData from "@/components/FAQStructuredData";
 import { 
   Shield, 
   ArrowRight,
@@ -227,6 +228,13 @@ const VALoans = () => {
       </section>
 
       {/* FAQ Section */}
+      <FAQStructuredData faqs={[
+        { q: "Do VA loans have a maximum loan amount?", a: "For veterans with full entitlement (meaning you've never used your VA loan benefit or have fully restored it), there is no maximum loan amount. For those with reduced entitlement, county loan limits apply. In most Pennsylvania counties, the 2024 limit is $766,550." },
+        { q: "Can I use my VA loan benefit more than once?", a: "Yes. VA loan entitlement can be restored and reused. If you've paid off a previous VA loan or sold the property, your entitlement can be fully restored. You can even have two VA loans at the same time if you have remaining entitlement." },
+        { q: "What credit score do I need for a VA loan?", a: "The VA itself does not set a minimum credit score, but most lenders require a score of at least 620. Some lenders may go lower. We work with multiple wholesale lenders and can often find VA loan options for borrowers with credit scores in the 580-620 range." },
+        { q: "Can I use a VA loan to buy a multi-family property?", a: "Yes. VA loans can be used to purchase properties with up to four units, as long as you occupy one of the units as your primary residence. This is an excellent strategy for veterans who want to house-hack—living in one unit while renting out the others to offset their mortgage payment." },
+        { q: "Are VA loans only for first-time homebuyers?", a: "No. VA loans are available to all eligible veterans and service members regardless of whether they've owned a home before. There's no first-time buyer requirement, and the benefit can be used multiple times throughout your lifetime." },
+      ]} />
       <section className="py-16 relative">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">

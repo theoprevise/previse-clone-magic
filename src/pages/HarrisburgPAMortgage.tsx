@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import SEOHead from "@/components/SEOHead";
 import StructuredData from "@/components/StructuredData";
+import FAQStructuredData from "@/components/FAQStructuredData";
 import { MapPin, ArrowRight, Phone, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -126,6 +127,13 @@ const HarrisburgPAMortgage = () => {
       </section>
 
       {/* FAQ */}
+      <FAQStructuredData faqs={[
+        { q: "What are mortgage rates in Harrisburg, PA?", a: "Rates in the Harrisburg area change daily. As a mortgage broker, we compare offers from multiple lenders to secure the most competitive rate for your specific situation. Visit our rates page or call us for a personalized quote." },
+        { q: "Is Harrisburg a good place to buy a home?", a: "The Greater Harrisburg area offers excellent value with median home prices well below the national average, a stable economy driven by government and healthcare, quality schools, and easy access to major employment centers. It's a strong market for both homeowners and investors." },
+        { q: "What down payment assistance is available in the Harrisburg area?", a: "Several programs are available including PHFA Keystone Home Loan, Keystone Advantage Assistance (up to $6,000), and Dauphin County-specific assistance programs. We help you identify and apply for every program you qualify for." },
+        { q: "How long does it take to close on a house in Harrisburg?", a: "A typical mortgage closing in the Harrisburg area takes 30-45 days from accepted offer to settlement. With a strong pre-approval and responsive documentation, we often close in under 30 days. We coordinate closely with local settlement companies to ensure a smooth process." },
+        { q: "Do you serve areas outside of Harrisburg?", a: "Yes! We serve the entire Greater Harrisburg region including Cumberland County (Camp Hill, Mechanicsburg, Carlisle), Perry County, Lebanon County, and beyond. We are licensed across all of Pennsylvania." },
+      ]} />
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">

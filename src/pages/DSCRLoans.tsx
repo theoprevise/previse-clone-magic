@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import FAQStructuredData from "@/components/FAQStructuredData";
 import UnifiedLeadForm from "@/components/UnifiedLeadForm";
 import { 
   Building2, 
@@ -292,6 +293,13 @@ const DSCRLoans = () => {
             </div>
 
             {/* DSCR FAQ Section */}
+            <FAQStructuredData faqs={[
+              { q: "What is the minimum DSCR ratio required?", a: "Most DSCR loan programs require a minimum ratio of 1.0 to 1.25. A DSCR of 1.25 means the property's rental income is 25% higher than the mortgage payment. Some programs accept ratios below 1.0 with larger down payments and higher credit scores." },
+              { q: "Can I use a DSCR loan for a short-term rental or Airbnb?", a: "Yes, many DSCR loan programs accept short-term rental income from platforms like Airbnb and VRBO. Income is typically calculated using a 12-month rental projection or actual booking history. Speak with your loan officer about documentation requirements for short-term rentals." },
+              { q: "How many properties can I finance with DSCR loans?", a: "There is no limit on the number of properties you can finance with DSCR loans. Unlike conventional mortgages which cap at 10 financed properties, DSCR programs allow unlimited properties as long as each one meets the ratio requirements independently." },
+              { q: "Do I need to be a U.S. citizen to get a DSCR loan?", a: "No, DSCR loans are available to foreign nationals and non-permanent residents investing in U.S. real estate. Since qualification is based on property income rather than personal income, these loans are particularly popular with international investors." },
+              { q: "What is the typical interest rate on a DSCR loan?", a: "DSCR loan rates are typically 0.5% to 1.5% higher than conventional mortgage rates, depending on your credit score, DSCR ratio, down payment, and property type. Borrowers with 740+ credit scores, 25%+ down payments, and DSCR ratios above 1.25 get the best rates." },
+            ]} />
             <h2 className="text-2xl md:text-3xl font-bold text-white mt-16 mb-8">
               Frequently Asked Questions About <span className="text-accent">DSCR Loans</span>
             </h2>

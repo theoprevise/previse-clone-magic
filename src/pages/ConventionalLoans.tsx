@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import FAQStructuredData from "@/components/FAQStructuredData";
 import UnifiedLeadForm from "@/components/UnifiedLeadForm";
 import { 
   Building2, 
@@ -228,6 +229,13 @@ const ConventionalLoans = () => {
       </section>
 
       {/* FAQ Section */}
+      <FAQStructuredData faqs={[
+        { q: "What credit score do I need for a conventional loan?", a: "The minimum credit score for a conventional mortgage is typically 620. However, borrowers with scores of 740 or higher receive the best interest rates. Scores between 620-700 may still qualify but with slightly higher rates or PMI costs." },
+        { q: "How much do I need for a down payment on a conventional loan?", a: "Conventional loans require as little as 3% down for first-time homebuyers through programs like HomeReady and Home Possible. A 5% minimum applies for most other borrowers. Putting 20% down eliminates the need for private mortgage insurance." },
+        { q: "When can I remove PMI from my conventional mortgage?", a: "PMI is automatically canceled when your loan balance reaches 78% of the original home value. You can also request PMI removal once you reach 80% loan-to-value, or earlier if your home has appreciated significantly and you can prove it with an appraisal." },
+        { q: "Can I use a conventional loan to buy an investment property?", a: "Yes. Conventional loans are one of the few loan types that allow financing for investment properties and second homes. Down payment requirements are typically 15-25% for investment properties, and interest rates may be slightly higher than for primary residences." },
+        { q: "What is the maximum loan amount for a conventional mortgage in Pennsylvania?", a: "The conforming loan limit for most Pennsylvania counties is $766,550 for 2024. Loans above this amount are considered jumbo loans and may have different qualification requirements. Contact us for the current limits in your specific county." },
+      ]} />
       <section className="py-16 relative">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">

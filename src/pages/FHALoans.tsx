@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import FAQStructuredData from "@/components/FAQStructuredData";
 import UnifiedLeadForm from "@/components/UnifiedLeadForm";
 import { 
   Home, 
@@ -245,6 +246,13 @@ const FHALoans = () => {
             </div>
 
             {/* FHA FAQ Section */}
+            <FAQStructuredData faqs={[
+              { q: "What credit score do I need for an FHA loan?", a: "You need a minimum credit score of 580 to qualify for the 3.5% down payment option. Borrowers with scores between 500 and 579 may qualify with a 10% down payment. Higher credit scores will help you secure better interest rates." },
+              { q: "Can I use an FHA loan to buy an investment property?", a: "No, FHA loans are only available for primary residences. You must live in the home as your main residence. If you're looking to finance an investment property, consider a DSCR loan or conventional investment property mortgage." },
+              { q: "How much is the FHA down payment?", a: "The minimum FHA down payment is 3.5% of the purchase price with a credit score of 580 or higher. On a $300,000 home, that's just $10,500. Your entire down payment can come from gift funds from family members, making FHA loans even more accessible." },
+              { q: "How long does it take to close an FHA loan?", a: "FHA loans typically take 30 to 45 days to close from application to funding. The timeline depends on factors like the appraisal, your documentation readiness, and current lender volume. At Previse Mortgage, we work to close as quickly as possible." },
+              { q: "Can I refinance an FHA loan?", a: "Yes, FHA offers several refinance options including the FHA Streamline Refinance, which requires minimal documentation and no appraisal. You can also refinance from an FHA loan into a conventional loan once you've built sufficient equity." },
+            ]} />
             <h2 className="text-2xl md:text-3xl font-bold text-white mt-16 mb-8">
               Frequently Asked Questions About <span className="text-accent">FHA Loans</span>
             </h2>

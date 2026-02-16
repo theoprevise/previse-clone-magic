@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import FAQStructuredData from "@/components/FAQStructuredData";
 import { 
   ArrowLeft, 
   ArrowRight, 
@@ -413,6 +414,13 @@ const Refinance = () => {
       </section>
 
       {/* FAQ Section */}
+      <FAQStructuredData faqs={[
+        { q: "How much does it cost to refinance a mortgage?", a: "Refinancing closing costs typically range from 2% to 5% of the loan amount, or roughly $3,000 to $10,000 for most loans. Costs include appraisal fees, title insurance, origination fees, and recording fees. Some lenders offer 'no-closing-cost' refinances where fees are rolled into the loan or offset by a slightly higher rate." },
+        { q: "Can I refinance with bad credit?", a: "Yes, though your options may be more limited. FHA Streamline Refinances don't require a credit check for existing FHA borrowers. For conventional refinances, most lenders require a minimum score of 620. We work with multiple lenders and can often find solutions for borrowers with imperfect credit." },
+        { q: "How long does a refinance take?", a: "A typical refinance takes 30 to 45 days from application to closing. Streamline refinances (FHA or VA) can sometimes close in as little as 2-3 weeks. The timeline depends on factors like appraisal scheduling, title work, and how quickly you provide documentation." },
+        { q: "Should I refinance from a 30-year to a 15-year mortgage?", a: "Shortening your term to 15 years will increase your monthly payment but dramatically reduce the total interest you pay. For example, on a $300,000 loan, switching from a 30-year at 7% to a 15-year at 6.25% could save over $125,000 in interest. This strategy works best for homeowners who can comfortably afford the higher payment." },
+        { q: "What is a cash-out refinance and how much equity do I need?", a: "A cash-out refinance lets you borrow against your home equity and receive the difference as cash at closing. Most lenders require you to maintain at least 20% equity after the cash-out (80% loan-to-value). For example, if your home is worth $400,000, you could potentially borrow up to $320,000 minus your current loan balance." },
+      ]} />
       <section className="py-16 relative">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">

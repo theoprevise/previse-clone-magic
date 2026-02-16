@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
@@ -101,6 +102,12 @@ const CurrentMortgageRates = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary via-primary-dark to-primary">
+      <SEOHead 
+        title="Current Mortgage Rates Today | Compare Home Loan Rates | Previse Mortgage"
+        description="Compare today's mortgage rates for 30-year fixed, 15-year fixed, FHA, VA, and jumbo loans. Updated weekly with rate trends and expert analysis. Get a personalized rate quote."
+        keywords="current mortgage rates, today's mortgage rates, 30 year fixed rate, 15 year mortgage rate, FHA rates, VA loan rates, jumbo mortgage rates, compare mortgage rates, best mortgage rates"
+        canonicalUrl="https://previsemortgage.com/current-mortgage-rates"
+      />
       <Header />
       
       {/* Back Button */}
@@ -245,6 +252,89 @@ const CurrentMortgageRates = () => {
         </div>
       </section>
 
+      {/* Educational Content Section */}
+      <section className="py-16 relative">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto prose-invert">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
+              Understanding <span className="text-accent">Mortgage Rates</span> in 2026
+            </h2>
+            <div className="space-y-4 text-white/80 leading-relaxed">
+              <p>
+                Mortgage rates are one of the most important factors in determining your monthly payment and the total cost of homeownership. Even a small difference in your interest rate—as little as 0.25%—can save or cost you tens of thousands of dollars over the life of a 30-year mortgage. Understanding how rates work and what influences them helps you make smarter borrowing decisions.
+              </p>
+              <p>
+                Mortgage interest rates are influenced by a combination of macroeconomic factors and your personal financial profile. The Federal Reserve's monetary policy, inflation expectations, the bond market, and overall economic conditions all play a role in setting baseline rates. Your individual rate is then adjusted based on your credit score, down payment, loan type, property type, and loan amount.
+              </p>
+              <h3 className="text-xl font-bold text-white mt-8 mb-4">Fixed-Rate vs. Adjustable-Rate Mortgages (ARM)</h3>
+              <p>
+                A fixed-rate mortgage locks in your interest rate for the entire loan term—typically 15 or 30 years. Your monthly principal and interest payment never changes, making budgeting predictable. An adjustable-rate mortgage (ARM) starts with a lower fixed rate for an initial period (usually 5 or 7 years), then adjusts periodically based on market conditions. ARMs can be a smart choice if you plan to sell or refinance before the adjustment period begins.
+              </p>
+              <h3 className="text-xl font-bold text-white mt-8 mb-4">How to Get the Best Mortgage Rate</h3>
+              <p>
+                The best mortgage rates go to borrowers with strong credit scores (740+), substantial down payments (20%+), low debt-to-income ratios, and stable employment history. Here are actionable steps to improve your rate: pay down existing debts to lower your DTI, avoid opening new credit accounts before applying, save for a larger down payment, and compare offers from multiple lenders. At Previse Mortgage, we shop across our lending partners to find you the most competitive rate available.
+              </p>
+              <h3 className="text-xl font-bold text-white mt-8 mb-4">Rate vs. APR: What's the Difference?</h3>
+              <p>
+                The interest rate is the cost of borrowing the principal loan amount. The Annual Percentage Rate (APR) includes the interest rate plus other loan costs like origination fees, discount points, and mortgage insurance. APR gives you a more complete picture of the total cost of the loan. When comparing mortgage offers, always look at both the rate and APR to make an apples-to-apples comparison.
+              </p>
+              <h3 className="text-xl font-bold text-white mt-8 mb-4">Should You Lock Your Mortgage Rate?</h3>
+              <p>
+                A rate lock guarantees your interest rate for a specific period—typically 30 to 60 days—while your loan is being processed. If rates rise during that period, you're protected. Rate locks are especially valuable in volatile rate environments. Ask your Previse Mortgage loan officer about rate lock options, including float-down provisions that allow you to benefit if rates drop after you lock.
+              </p>
+            </div>
+
+            {/* Rates FAQ */}
+            <h2 className="text-2xl md:text-3xl font-bold text-white mt-16 mb-8">
+              Mortgage Rate <span className="text-accent">FAQ</span>
+            </h2>
+            <div className="space-y-4">
+              {[
+                {
+                  q: "How often do mortgage rates change?",
+                  a: "Mortgage rates can change daily, sometimes multiple times per day. Rates are influenced by bond market movements, economic data releases, Federal Reserve decisions, and global events. That's why the rates shown on this page are updated weekly and serve as general guidance—your actual rate will be determined at the time of your application."
+                },
+                {
+                  q: "What credit score do I need for the best mortgage rate?",
+                  a: "Borrowers with credit scores of 740 or higher typically qualify for the best available rates. Scores between 700 and 739 get very competitive rates, while scores from 680 to 699 are still strong. Below 680, you may pay slightly higher rates but can still qualify for many loan programs including FHA loans."
+                },
+                {
+                  q: "Are mortgage rates the same for all loan types?",
+                  a: "No, rates vary by loan type. Conventional loans, FHA loans, VA loans, USDA loans, and jumbo loans each have different rate structures. VA loans typically offer the lowest rates because they're backed by the Department of Veterans Affairs. FHA loans have competitive rates but include mortgage insurance that increases the effective cost."
+                },
+                {
+                  q: "Should I pay points to lower my mortgage rate?",
+                  a: "Paying discount points (each point equals 1% of the loan amount) can lower your rate by approximately 0.25%. This makes sense if you plan to keep the loan long enough to recoup the upfront cost—typically 4 to 7 years. If you might sell or refinance sooner, saving on points is usually the better financial decision."
+                },
+                {
+                  q: "How can I get a personalized mortgage rate quote?",
+                  a: "Contact Previse Mortgage for a personalized rate quote based on your specific financial situation. We'll review your credit score, income, down payment, loan amount, and property type to provide an accurate rate. There's no obligation and no impact to your credit score for an initial consultation."
+                }
+              ].map((faq, idx) => (
+                <article key={idx} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden">
+                  <div className="p-5">
+                    <h3 className="text-base font-semibold text-white mb-2">{faq.q}</h3>
+                    <p className="text-white/80 text-sm leading-relaxed">{faq.a}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            {/* Internal Links */}
+            <div className="mt-12 p-6 bg-white/5 border border-white/10 rounded-xl">
+              <h3 className="text-lg font-bold text-white mb-4">Explore Your Options</h3>
+              <div className="flex flex-wrap gap-3">
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/mortgage-calculator')}>Payment Calculator</Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/refinance')}>Refinance Options</Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/fha-loans')}>FHA Loans</Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/conventional-loans')}>Conventional Loans</Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/first-time-homebuyer')}>First-Time Buyer Guide</Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Quick Approval Section */}
       <section className="py-16 relative">
         <div className="container mx-auto px-4">
@@ -297,7 +387,6 @@ const CurrentMortgageRates = () => {
                     variant="outline"
                     className="border-white/30 text-white hover:bg-white/10 w-full"
                   >
-                    Start Pre-Qualification
                     Start Pre-Approval
                   </Button>
                 </a>

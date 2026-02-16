@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { 
   ArrowRight,
   ArrowLeft,
@@ -149,6 +150,12 @@ const FirstTimeHomebuyer = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary via-primary-dark to-primary">
+      <SEOHead 
+        title="First-Time Homebuyer Guide | Steps to Buying Your First Home | Previse Mortgage"
+        description="Complete first-time homebuyer guide: learn about down payment assistance, FHA loans, pre-approval steps, and how to buy your first home with confidence. Expert guidance from Previse Mortgage."
+        keywords="first time homebuyer, buying first home, down payment assistance, FHA loan first time buyer, how to buy a house, homebuyer guide, pre-approval, mortgage for first time buyers"
+        canonicalUrl="https://previsemortgage.com/first-time-homebuyer"
+      />
       <Header />
       
       {/* Back to Home */}
@@ -334,6 +341,90 @@ const FirstTimeHomebuyer = () => {
                 </Card>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Educational Content Section */}
+      <section className="py-16 relative">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto prose-invert">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
+              Everything You Need to Know as a <span className="text-accent">First-Time Homebuyer</span>
+            </h2>
+            <div className="space-y-4 text-white/80 leading-relaxed">
+              <p>
+                Buying your first home is one of the most significant financial decisions you'll ever make. As a first-time homebuyer, you have access to special mortgage programs, down payment assistance, and tax benefits that can make homeownership more affordable than you think. Understanding your options before you start house hunting puts you in the strongest possible position.
+              </p>
+              <p>
+                The first step in the homebuying process is getting pre-approved for a mortgage. Pre-approval tells you exactly how much you can borrow, gives you a clear budget for your home search, and signals to sellers that you're a serious, qualified buyer. At Previse Mortgage, we make pre-approval fast and straightforward—most borrowers receive their pre-approval letter within 24 hours.
+              </p>
+              <h3 className="text-xl font-bold text-white mt-8 mb-4">How Much House Can I Afford?</h3>
+              <p>
+                A common rule of thumb is that your monthly mortgage payment should not exceed 28% of your gross monthly income. However, lenders look at your total debt-to-income (DTI) ratio, which includes car payments, student loans, credit card minimums, and other debts. Most loan programs allow a maximum DTI of 43-50%. Use our <a href="/mortgage-calculator" className="text-accent hover:underline">mortgage calculator</a> to estimate your monthly payment based on different home prices and down payment amounts.
+              </p>
+              <h3 className="text-xl font-bold text-white mt-8 mb-4">First-Time Homebuyer Loan Programs</h3>
+              <p>
+                Several mortgage programs are designed specifically for first-time homebuyers. <a href="/fha-loans" className="text-accent hover:underline">FHA loans</a> require as little as 3.5% down and accept credit scores as low as 580. USDA loans offer zero down payment for homes in eligible rural areas. Conventional 97 loans require just 3% down for qualified first-time buyers. Your Previse Mortgage loan officer will help you compare all available programs to find the one that saves you the most money.
+              </p>
+              <h3 className="text-xl font-bold text-white mt-8 mb-4">Down Payment Assistance Programs</h3>
+              <p>
+                Many first-time buyers don't realize that down payment assistance (DPA) programs exist at the federal, state, and local levels. These programs offer grants, forgivable loans, and matched savings plans that can cover part or all of your down payment and closing costs. Pennsylvania offers several DPA programs for qualified buyers, and your loan officer can help you determine your eligibility.
+              </p>
+              <h3 className="text-xl font-bold text-white mt-8 mb-4">Closing Costs Explained</h3>
+              <p>
+                In addition to your down payment, you'll need to budget for closing costs, which typically range from 2% to 5% of the loan amount. Closing costs include lender fees, appraisal fees, title insurance, attorney fees, and prepaid items like property taxes and homeowner's insurance. Some of these costs can be negotiated, and in some cases, sellers may agree to contribute toward your closing costs as part of the purchase agreement.
+              </p>
+            </div>
+
+            {/* First-Time Buyer FAQ */}
+            <h2 className="text-2xl md:text-3xl font-bold text-white mt-16 mb-8">
+              First-Time Homebuyer <span className="text-accent">FAQ</span>
+            </h2>
+            <div className="space-y-4">
+              {[
+                {
+                  q: "How much do I need for a down payment on my first home?",
+                  a: "It depends on the loan program. FHA loans require 3.5% down, Conventional 97 requires 3%, USDA and VA loans offer 0% down for eligible borrowers. Down payment assistance programs may further reduce or eliminate your out-of-pocket costs."
+                },
+                {
+                  q: "What credit score do I need to buy a house?",
+                  a: "The minimum credit score varies by loan type. FHA loans accept scores as low as 580 (or 500 with 10% down). Conventional loans typically require 620+. Higher credit scores unlock better interest rates and terms, so improving your score before applying can save thousands over the life of your loan."
+                },
+                {
+                  q: "Should I get pre-approved before looking at homes?",
+                  a: "Absolutely. Pre-approval tells you your exact budget, strengthens your offers in competitive markets, and speeds up the closing process once you find a home. Most real estate agents won't show homes to buyers who aren't pre-approved."
+                },
+                {
+                  q: "What's the difference between pre-qualification and pre-approval?",
+                  a: "Pre-qualification is an informal estimate of what you might borrow based on self-reported information. Pre-approval is a formal commitment from a lender after verifying your income, assets, credit, and employment. Pre-approval carries much more weight with sellers."
+                },
+                {
+                  q: "How long does it take to buy a house from start to finish?",
+                  a: "The typical homebuying timeline is 2 to 4 months from pre-approval to closing. This includes time for house hunting (varies widely), making an offer, home inspection, appraisal, and loan processing. The loan closing process itself typically takes 21 to 45 days."
+                }
+              ].map((faq, idx) => (
+                <article key={idx} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden">
+                  <div className="p-5">
+                    <h3 className="text-base font-semibold text-white mb-2">{faq.q}</h3>
+                    <p className="text-white/80 text-sm leading-relaxed">{faq.a}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            {/* Internal Links */}
+            <div className="mt-12 p-6 bg-white/5 border border-white/10 rounded-xl">
+              <h3 className="text-lg font-bold text-white mb-4">Helpful Resources</h3>
+              <div className="flex flex-wrap gap-3">
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/fha-loans')}>FHA Loans</Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/conventional-loans')}>Conventional Loans</Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/usda-loans')}>USDA Loans</Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/mortgage-calculator')}>Payment Calculator</Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/credit-score-mortgage-tips')}>Credit Score Tips</Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/current-mortgage-rates')}>Current Rates</Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

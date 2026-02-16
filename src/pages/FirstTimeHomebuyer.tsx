@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import FAQStructuredData from "@/components/FAQStructuredData";
 import { 
   ArrowRight,
   ArrowLeft,
@@ -378,6 +379,13 @@ const FirstTimeHomebuyer = () => {
             </div>
 
             {/* First-Time Buyer FAQ */}
+            <FAQStructuredData faqs={[
+              { q: "How much do I need for a down payment on my first home?", a: "It depends on the loan program. FHA loans require 3.5% down, Conventional 97 requires 3%, USDA and VA loans offer 0% down for eligible borrowers. Down payment assistance programs may further reduce or eliminate your out-of-pocket costs." },
+              { q: "What credit score do I need to buy a house?", a: "The minimum credit score varies by loan type. FHA loans accept scores as low as 580 (or 500 with 10% down). Conventional loans typically require 620+. Higher credit scores unlock better interest rates and terms, so improving your score before applying can save thousands over the life of your loan." },
+              { q: "Should I get pre-approved before looking at homes?", a: "Absolutely. Pre-approval tells you your exact budget, strengthens your offers in competitive markets, and speeds up the closing process once you find a home. Most real estate agents won't show homes to buyers who aren't pre-approved." },
+              { q: "What's the difference between pre-qualification and pre-approval?", a: "Pre-qualification is an informal estimate of what you might borrow based on self-reported information. Pre-approval is a formal commitment from a lender after verifying your income, assets, credit, and employment. Pre-approval carries much more weight with sellers." },
+              { q: "How long does it take to buy a house from start to finish?", a: "The typical homebuying timeline is 2 to 4 months from pre-approval to closing. This includes time for house hunting (varies widely), making an offer, home inspection, appraisal, and loan processing. The loan closing process itself typically takes 21 to 45 days." },
+            ]} />
             <h2 className="text-2xl md:text-3xl font-bold text-white mt-16 mb-8">
               First-Time Homebuyer <span className="text-accent">FAQ</span>
             </h2>

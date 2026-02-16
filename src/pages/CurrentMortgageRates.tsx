@@ -13,6 +13,7 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import FAQStructuredData from "@/components/FAQStructuredData";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
@@ -285,6 +286,13 @@ const CurrentMortgageRates = () => {
             </div>
 
             {/* Rates FAQ */}
+            <FAQStructuredData faqs={[
+              { q: "How often do mortgage rates change?", a: "Mortgage rates can change daily, sometimes multiple times per day. Rates are influenced by bond market movements, economic data releases, Federal Reserve decisions, and global events. That's why the rates shown on this page are updated weekly and serve as general guidance—your actual rate will be determined at the time of your application." },
+              { q: "What credit score do I need for the best mortgage rate?", a: "Borrowers with credit scores of 740 or higher typically qualify for the best available rates. Scores between 700 and 739 get very competitive rates, while scores from 680 to 699 are still strong. Below 680, you may pay slightly higher rates but can still qualify for many loan programs including FHA loans." },
+              { q: "Are mortgage rates the same for all loan types?", a: "No, rates vary by loan type. Conventional loans, FHA loans, VA loans, USDA loans, and jumbo loans each have different rate structures. VA loans typically offer the lowest rates because they're backed by the Department of Veterans Affairs. FHA loans have competitive rates but include mortgage insurance that increases the effective cost." },
+              { q: "Should I pay points to lower my mortgage rate?", a: "Paying discount points (each point equals 1% of the loan amount) can lower your rate by approximately 0.25%. This makes sense if you plan to keep the loan long enough to recoup the upfront cost—typically 4 to 7 years. If you might sell or refinance sooner, saving on points is usually the better financial decision." },
+              { q: "How can I get a personalized mortgage rate quote?", a: "Contact Previse Mortgage for a personalized rate quote based on your specific financial situation. We'll review your credit score, income, down payment, loan amount, and property type to provide an accurate rate. There's no obligation and no impact to your credit score for an initial consultation." },
+            ]} />
             <h2 className="text-2xl md:text-3xl font-bold text-white mt-16 mb-8">
               Mortgage Rate <span className="text-accent">FAQ</span>
             </h2>

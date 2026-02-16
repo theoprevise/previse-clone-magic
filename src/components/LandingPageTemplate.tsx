@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import FAQStructuredData from '@/components/FAQStructuredData';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { ArrowLeft, CheckCircle } from 'lucide-react';
@@ -191,6 +192,8 @@ export const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({
 
       {/* FAQ Section */}
       {faqs && faqs.length > 0 && (
+        <>
+        <FAQStructuredData faqs={faqs} />
         <section className="py-16 md:py-20 bg-muted/30">
           <div className="container mx-auto px-4">
             <h2 className="heading-section text-center text-foreground mb-12">
@@ -206,6 +209,7 @@ export const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({
             </div>
           </div>
         </section>
+        </>
       )}
 
       {/* Bottom CTA Section */}

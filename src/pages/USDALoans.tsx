@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import FAQStructuredData from "@/components/FAQStructuredData";
 import UnifiedLeadForm from "@/components/UnifiedLeadForm";
 import { 
   Trees, 
@@ -228,6 +229,13 @@ const USDALoans = () => {
       </section>
 
       {/* FAQ Section */}
+      <FAQStructuredData faqs={[
+        { q: "What areas in Pennsylvania are USDA eligible?", a: "Large portions of Pennsylvania qualify for USDA financing, including many communities in Adams, Cumberland, Franklin, Perry, Lebanon, and York counties. Even some suburban areas outside major cities may qualify. We can check any specific address for USDA eligibility in minutes." },
+        { q: "What is the income limit for a USDA loan in PA?", a: "USDA income limits are based on your county and household size. Generally, your household income must be at or below 115% of the area median income. For a family of four in many PA counties, this can be $100,000 or more. Limits are updated annually by USDA." },
+        { q: "Do USDA loans have mortgage insurance?", a: "USDA loans have a guarantee fee instead of traditional mortgage insurance. The upfront fee is 1% of the loan amount (can be financed into the loan) and the annual fee is 0.35%—significantly lower than FHA's mortgage insurance premium." },
+        { q: "Can I use a USDA loan to buy a fixer-upper?", a: "The property must meet USDA minimum property standards, meaning it needs to be safe, sanitary, and structurally sound. Major repairs may need to be completed before closing. However, minor cosmetic issues are typically acceptable." },
+        { q: "How long does a USDA loan take to close?", a: "USDA loans typically take 30-45 days to close, similar to other mortgage types. The USDA guarantee process adds a few extra days compared to conventional loans, but with proper preparation and documentation, closings can often be completed within 35 days." },
+      ]} />
       <section className="py-16 relative">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">

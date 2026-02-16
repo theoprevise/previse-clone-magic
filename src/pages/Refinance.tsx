@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -127,6 +128,12 @@ const Refinance = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary via-primary-dark to-primary">
+      <SEOHead
+        title="Refinance Your Mortgage in Pennsylvania | Lower Rates | Previse Mortgage"
+        description="Refinance your Pennsylvania mortgage to lower your rate, reduce monthly payments, or access home equity. Cash-out and rate-and-term refinancing with competitive rates."
+        keywords="refinance mortgage Pennsylvania, mortgage refinancing PA, cash out refinance, lower mortgage rate, rate and term refinance, home equity, refinance calculator, Pennsylvania refinance rates"
+        canonicalUrl="https://previsemortgage.com/refinance"
+      />
       <Header />
       
       {/* Back Button */}
@@ -371,6 +378,74 @@ const Refinance = () => {
               Your actual rate, APR, monthly payment, and total savings will depend on your creditworthiness, loan terms, property value, and other factors. 
               All loans are subject to credit approval.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Educational Content Section */}
+      <section className="py-16 relative">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 md:p-12">
+              <h2 className="text-3xl font-bold text-white mb-6">Mortgage Refinancing in Pennsylvania: What You Need to Know</h2>
+              <div className="space-y-4 text-white/80 leading-relaxed">
+                <p>
+                  Refinancing your mortgage means replacing your current home loan with a new one—ideally with better terms, a lower interest rate, or access to your home's equity. For Pennsylvania homeowners, refinancing can be a powerful financial tool that saves thousands of dollars over the life of the loan or provides cash for major expenses like home improvements, debt consolidation, or college tuition.
+                </p>
+                <p>
+                  The two most common types of refinancing are <strong>rate-and-term refinancing</strong> (where you change your interest rate, loan term, or both) and <strong>cash-out refinancing</strong> (where you borrow more than you owe and receive the difference in cash). Rate-and-term refinances typically have lower closing costs and better rates, while cash-out refinances offer flexibility to access your home equity for any purpose.
+                </p>
+                <h3 className="text-2xl font-bold text-white mt-8 mb-4">When Does Refinancing Make Financial Sense?</h3>
+                <p>
+                  The general rule of thumb is that refinancing makes sense when you can reduce your interest rate by at least 0.5% to 1%, though this varies based on your loan balance, remaining term, and closing costs. The key metric is your <strong>break-even point</strong>—the number of months it takes for your monthly savings to exceed the cost of refinancing. If you plan to stay in your home past that point, refinancing is typically worthwhile.
+                </p>
+                <p>
+                  For example, if refinancing costs $4,000 in closing costs and saves you $200 per month, your break-even point is 20 months. After that, every month represents pure savings. As a mortgage broker, we calculate this for every client and only recommend refinancing when the math clearly works in your favor.
+                </p>
+                <h3 className="text-2xl font-bold text-white mt-8 mb-4">Refinancing Options for Pennsylvania Homeowners</h3>
+                <p>
+                  Pennsylvania homeowners have access to multiple refinance programs depending on their current loan type. <a href="/fha-loans" className="text-accent hover:underline">FHA borrowers</a> can use the FHA Streamline Refinance for a simplified process with minimal documentation. VA borrowers can take advantage of the VA Interest Rate Reduction Refinance Loan (IRRRL). Conventional borrowers have the widest range of options, including switching to a shorter term, removing PMI, or doing a cash-out refinance up to 80% of their home's value.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 relative">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-white text-center mb-10">Refinance FAQ</h2>
+            <div className="space-y-6">
+              {[
+                {
+                  q: "How much does it cost to refinance a mortgage?",
+                  a: "Refinancing closing costs typically range from 2% to 5% of the loan amount, or roughly $3,000 to $10,000 for most loans. Costs include appraisal fees, title insurance, origination fees, and recording fees. Some lenders offer 'no-closing-cost' refinances where fees are rolled into the loan or offset by a slightly higher rate."
+                },
+                {
+                  q: "Can I refinance with bad credit?",
+                  a: "Yes, though your options may be more limited. FHA Streamline Refinances don't require a credit check for existing FHA borrowers. For conventional refinances, most lenders require a minimum score of 620. We work with multiple lenders and can often find solutions for borrowers with imperfect credit."
+                },
+                {
+                  q: "How long does a refinance take?",
+                  a: "A typical refinance takes 30 to 45 days from application to closing. Streamline refinances (FHA or VA) can sometimes close in as little as 2-3 weeks. The timeline depends on factors like appraisal scheduling, title work, and how quickly you provide documentation."
+                },
+                {
+                  q: "Should I refinance from a 30-year to a 15-year mortgage?",
+                  a: "Shortening your term to 15 years will increase your monthly payment but dramatically reduce the total interest you pay. For example, on a $300,000 loan, switching from a 30-year at 7% to a 15-year at 6.25% could save over $125,000 in interest. This strategy works best for homeowners who can comfortably afford the higher payment."
+                },
+                {
+                  q: "What is a cash-out refinance and how much equity do I need?",
+                  a: "A cash-out refinance lets you borrow against your home equity and receive the difference as cash at closing. Most lenders require you to maintain at least 20% equity after the cash-out (80% loan-to-value). For example, if your home is worth $400,000, you could potentially borrow up to $320,000 minus your current loan balance."
+                },
+              ].map((faq, i) => (
+                <div key={i} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-6">
+                  <h3 className="text-lg font-semibold text-white mb-2">{faq.q}</h3>
+                  <p className="text-white/70 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

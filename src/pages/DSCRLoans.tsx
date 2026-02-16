@@ -256,6 +256,92 @@ const DSCRLoans = () => {
         </div>
       </section>
 
+      {/* In-Depth Educational Content */}
+      <section className="py-16 relative">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto prose-invert">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
+              What Is a <span className="text-accent">DSCR Loan</span> and Why Do Investors Use Them?
+            </h2>
+            <div className="space-y-4 text-white/80 leading-relaxed">
+              <p>
+                A DSCR loan (Debt Service Coverage Ratio loan) is a type of investment property mortgage that qualifies borrowers based on the rental income a property generates rather than the borrower's personal income. This makes DSCR loans one of the most powerful financing tools for real estate investors, self-employed borrowers, and anyone who wants to grow a rental property portfolio without traditional income documentation.
+              </p>
+              <p>
+                Unlike conventional mortgages that require W-2s, tax returns, and employment verification, DSCR loans focus on one simple question: does the property's rental income cover the mortgage payment? If the property generates enough rent to cover the principal, interest, taxes, insurance, and any HOA fees, you can qualify—regardless of your personal income or employment situation.
+              </p>
+              <h3 className="text-xl font-bold text-white mt-8 mb-4">How the DSCR Ratio Is Calculated</h3>
+              <p>
+                The DSCR ratio is calculated by dividing the property's gross monthly rental income by its total monthly debt obligation (PITIA—principal, interest, taxes, insurance, and association dues). A DSCR of 1.0 means the property breaks even. Most lenders require a minimum DSCR of 1.25, meaning the rental income is 25% higher than the monthly payment. Higher DSCR ratios unlock better interest rates and loan terms.
+              </p>
+              <p>
+                For example, if a rental property generates $2,500 per month in rent and the total monthly mortgage payment is $2,000, the DSCR is 1.25—qualifying you for financing. Properties with higher ratios demonstrate stronger cash flow and may qualify for lower rates and higher leverage.
+              </p>
+              <h3 className="text-xl font-bold text-white mt-8 mb-4">DSCR Loan Requirements</h3>
+              <p>
+                DSCR loans have different requirements than traditional mortgages. You'll typically need a minimum credit score of 620 (though 680+ gets better rates), a down payment of 20-25%, and a property that meets the minimum DSCR threshold. No W-2s, tax returns, or bank statements are required. The property can be a single-family rental, multi-family (2-4 units), condo, or townhouse.
+              </p>
+              <h3 className="text-xl font-bold text-white mt-8 mb-4">Who Should Consider a DSCR Loan?</h3>
+              <p>
+                DSCR loans are ideal for real estate investors building a rental portfolio, self-employed borrowers whose tax returns don't reflect their true earning power, foreign nationals investing in U.S. real estate, and anyone who wants to qualify based on property performance rather than personal financials. If you're looking to scale your investment portfolio quickly, DSCR loans remove the traditional income documentation bottleneck.
+              </p>
+              <h3 className="text-xl font-bold text-white mt-8 mb-4">DSCR Loans vs. Conventional Investment Property Loans</h3>
+              <p>
+                Conventional investment property loans require full income documentation, limit you to 10 financed properties, and count all existing mortgages against your DTI ratio. DSCR loans have no limit on the number of properties you can finance, don't require personal income verification, and qualify each property independently. This makes DSCR loans far more scalable for serious investors.
+              </p>
+            </div>
+
+            {/* DSCR FAQ Section */}
+            <h2 className="text-2xl md:text-3xl font-bold text-white mt-16 mb-8">
+              Frequently Asked Questions About <span className="text-accent">DSCR Loans</span>
+            </h2>
+            <div className="space-y-4">
+              {[
+                {
+                  q: "What is the minimum DSCR ratio required?",
+                  a: "Most DSCR loan programs require a minimum ratio of 1.0 to 1.25. A DSCR of 1.25 means the property's rental income is 25% higher than the mortgage payment. Some programs accept ratios below 1.0 with larger down payments and higher credit scores."
+                },
+                {
+                  q: "Can I use a DSCR loan for a short-term rental or Airbnb?",
+                  a: "Yes, many DSCR loan programs accept short-term rental income from platforms like Airbnb and VRBO. Income is typically calculated using a 12-month rental projection or actual booking history. Speak with your loan officer about documentation requirements for short-term rentals."
+                },
+                {
+                  q: "How many properties can I finance with DSCR loans?",
+                  a: "There is no limit on the number of properties you can finance with DSCR loans. Unlike conventional mortgages which cap at 10 financed properties, DSCR programs allow unlimited properties as long as each one meets the ratio requirements independently."
+                },
+                {
+                  q: "Do I need to be a U.S. citizen to get a DSCR loan?",
+                  a: "No, DSCR loans are available to foreign nationals and non-permanent residents investing in U.S. real estate. Since qualification is based on property income rather than personal income, these loans are particularly popular with international investors."
+                },
+                {
+                  q: "What is the typical interest rate on a DSCR loan?",
+                  a: "DSCR loan rates are typically 0.5% to 1.5% higher than conventional mortgage rates, depending on your credit score, DSCR ratio, down payment, and property type. Borrowers with 740+ credit scores, 25%+ down payments, and DSCR ratios above 1.25 get the best rates."
+                }
+              ].map((faq, idx) => (
+                <article key={idx} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden">
+                  <div className="p-5">
+                    <h3 className="text-base font-semibold text-white mb-2">{faq.q}</h3>
+                    <p className="text-white/80 text-sm leading-relaxed">{faq.a}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            {/* Internal Links */}
+            <div className="mt-12 p-6 bg-white/5 border border-white/10 rounded-xl">
+              <h3 className="text-lg font-bold text-white mb-4">Explore More Mortgage Options</h3>
+              <div className="flex flex-wrap gap-3">
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/investors')}>Investor Hub</Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/conventional-loans')}>Conventional Loans</Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/fha-loans')}>FHA Loans</Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/mortgage-calculator')}>Mortgage Calculator</Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/current-mortgage-rates')}>Current Rates</Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 relative">
         <div className="container mx-auto px-4">

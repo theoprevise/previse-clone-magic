@@ -32,6 +32,7 @@ const Index = () => {
         description: "Expert mortgage lending services in Pennsylvania with competitive rates and personalized service",
         url: "https://previsemortgage.com"
       }} />
+      <StructuredData type="loanOrCredit" />
       <Header />
       <HeroSection />
       <Suspense fallback={<SectionFallback />}>

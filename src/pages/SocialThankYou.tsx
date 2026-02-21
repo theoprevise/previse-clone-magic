@@ -1,12 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Home, MessageCircle, Gift, TrendingUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import SEOHead from "@/components/SEOHead";
 
 const SocialThankYou = () => {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen animate-gradient-shift bg-gradient-to-br from-primary via-primary-dark via-secondary to-primary-dark bg-[length:400%_400%]">
+      <SEOHead title="Thanks for Connecting | Previse Mortgage" noIndex={true} />
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-accent/8 rounded-full blur-3xl animate-float shadow-accent"></div>

@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import UnifiedLeadForm from '@/components/UnifiedLeadForm';
 import { Card } from '@/components/ui/card';
 import { CheckCircle, Shield, Clock, TrendingUp } from 'lucide-react';
+import SEOHead from '@/components/SEOHead';
 
 const Social = () => {
   const benefits = [
@@ -26,6 +27,7 @@ const Social = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead title="Get Pre-Approved | Previse Mortgage" noIndex={true} />
       <Header />
       
       {/* Mobile-First Hero Section */}

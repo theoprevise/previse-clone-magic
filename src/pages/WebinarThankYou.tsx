@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { 
   CheckCircle2,
   Calendar,
@@ -56,6 +57,7 @@ const WebinarThankYou = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary via-primary-dark to-primary">
+      <SEOHead title="Webinar Registration Confirmed | Previse Mortgage" noIndex={true} />
       <Header />
       
       <section className="relative py-20 overflow-hidden">

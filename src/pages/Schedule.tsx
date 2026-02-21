@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 
 const Schedule = () => {
   const navigate = useNavigate();
@@ -26,6 +27,12 @@ const Schedule = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary-dark via-primary to-primary-dark">
+        <SEOHead 
+          title="Schedule a Free Mortgage Consultation | Previse Mortgage"
+          description="Book a free 30-minute mortgage consultation with Previse Mortgage. Get expert advice on home loans, refinancing, and investment property financing in Pennsylvania."
+          keywords="mortgage consultation, free mortgage advice, schedule mortgage appointment, Pennsylvania mortgage advisor"
+          canonicalUrl="https://previsemortgage.com/schedule"
+        />
         <Header />
         
         {/* Back to Home */}
@@ -108,6 +115,22 @@ const Schedule = () => {
                   </div>
                   <h3 className="text-white font-semibold mb-2">Expert Guidance</h3>
                   <p className="text-white/60 text-sm">Work with experienced mortgage professionals</p>
+                </div>
+              </div>
+
+              {/* Educational Content for SEO */}
+              <div className="max-w-4xl mx-auto mt-16 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-4">What to Expect During Your Mortgage Consultation</h2>
+                <div className="space-y-4 text-white/70 leading-relaxed">
+                  <p>
+                    A mortgage consultation is your opportunity to sit down with an experienced loan officer and discuss your unique financial situation. During your free 30-minute session, we'll review your income, credit profile, and homebuying goals to determine which loan programs you may qualify for—including FHA, conventional, USDA, VA, and investment property options.
+                  </p>
+                  <p>
+                    Many borrowers aren't aware of the full range of programs available to them. For example, first-time homebuyers in Pennsylvania may qualify for down payment assistance through the Pennsylvania Housing Finance Agency (PHFA), which can significantly reduce out-of-pocket costs. Self-employed borrowers often assume they can't qualify for a mortgage, but bank statement loan programs offer flexible income verification that doesn't rely on tax returns.
+                  </p>
+                  <p>
+                    Our consultations are completely free and come with no obligation. Whether you're ready to buy this month or planning for the future, getting pre-qualified early gives you a clear picture of your budget and strengthens your position when you find the right home. We'll also discuss current interest rates, closing cost estimates, and strategies to improve your credit score if needed.
+                  </p>
                 </div>
               </div>
             </div>

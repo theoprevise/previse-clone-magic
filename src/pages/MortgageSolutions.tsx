@@ -1,6 +1,7 @@
 import { Home, DollarSign, Shield, TrendingUp, Building, ArrowLeft, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import SEOHead from "@/components/SEOHead";
 
 const MortgageSolutions = () => {
   const navigate = useNavigate();
@@ -76,6 +77,12 @@ const MortgageSolutions = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary via-primary-dark to-primary">
+      <SEOHead 
+        title="Mortgage Solutions | Home Loan Programs | Previse Mortgage"
+        description="Explore mortgage solutions including USDA, FHA, conventional, bank statement, and investment property loans. Find the right home financing program for your needs in Pennsylvania."
+        keywords="mortgage solutions, home loan programs, USDA loans, FHA loans, conventional mortgage, bank statement loans, investment property financing, Pennsylvania mortgage"
+        canonicalUrl="https://previsemortgage.com/mortgage-solutions"
+      />
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-accent/5 rounded-full blur-3xl animate-float"></div>
@@ -113,7 +120,7 @@ const MortgageSolutions = () => {
         </div>
 
         {/* Mortgage Solutions Grid */}
-        <div className="container mx-auto px-4 pb-24">
+        <div className="container mx-auto px-4 pb-16">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {mortgageTypes.map((mortgage, index) => (
               <div 
@@ -150,6 +157,29 @@ const MortgageSolutions = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Educational Content Section */}
+        <div className="container mx-auto px-4 pb-24">
+          <div className="max-w-4xl mx-auto bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
+              Choosing the Right <span className="text-accent">Mortgage Program</span>
+            </h2>
+            <div className="space-y-4 text-white/80 leading-relaxed">
+              <p>
+                Selecting the right mortgage program is one of the most important financial decisions you'll make. Each loan type is designed for different borrower profiles, financial situations, and property types. Understanding the differences between government-backed programs like <Link to="/fha-loans" className="text-accent hover:underline">FHA</Link> and <Link to="/usda-loans" className="text-accent hover:underline">USDA loans</Link> versus <Link to="/conventional-loans" className="text-accent hover:underline">conventional financing</Link> can save you thousands of dollars over the life of your loan.
+              </p>
+              <p>
+                For borrowers with limited savings, government-backed programs offer lower down payment requirements—as little as 0% for USDA and 3.5% for FHA loans. If you have strong credit and can put down 20% or more, conventional loans eliminate private mortgage insurance entirely, reducing your monthly payment significantly. Self-employed borrowers and real estate investors may benefit from alternative documentation programs like bank statement loans or <Link to="/dscr-loans" className="text-accent hover:underline">DSCR (Debt Service Coverage Ratio) loans</Link> that qualify based on property cash flow rather than personal tax returns.
+              </p>
+              <p>
+                At Previse Mortgage, we take the time to analyze your complete financial picture—income, credit history, savings, and long-term goals—before recommending a specific program. As a licensed Pennsylvania mortgage broker, we have access to multiple wholesale lenders, which means we can compare rates and terms across different loan products to find the option that truly fits your situation. Whether you're a <Link to="/first-time-homebuyer" className="text-accent hover:underline">first-time homebuyer</Link> exploring down payment assistance or a seasoned <Link to="/investors" className="text-accent hover:underline">real estate investor</Link> scaling your portfolio, our team provides the expert guidance you need to make a confident, informed decision.
+              </p>
+              <p>
+                Ready to explore your options? <Link to="/schedule" className="text-accent hover:underline font-semibold">Schedule a free consultation</Link> or use our <Link to="/mortgage-calculator" className="text-accent hover:underline">mortgage calculator</Link> to estimate your monthly payments across different loan scenarios.
+              </p>
+            </div>
           </div>
         </div>
       </div>

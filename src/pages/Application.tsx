@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import { ArrowLeft, ArrowRight, Shield } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
+import SEOHead from "@/components/SEOHead";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
@@ -329,6 +330,7 @@ const Application = () => {
 
   return (
     <div className="min-h-screen bg-primary">
+      <SEOHead title={`${formatLoanType(loanType || '')} Application | Previse Mortgage`} noIndex={true} />
 
       <div className="relative z-10">
         {/* Header */}

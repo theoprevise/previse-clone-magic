@@ -3,12 +3,14 @@ import { CheckCircle, Calendar, Clock, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 
 const ScheduleThankYou = () => {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary-dark via-primary to-primary-dark">
+      <SEOHead title="Appointment Confirmed | Previse Mortgage" noIndex={true} />
       <Header />
       
       <main className="pt-24 pb-16">

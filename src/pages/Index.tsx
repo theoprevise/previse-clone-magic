@@ -38,10 +38,10 @@ const Index = () => {
       <HeroSection />
       <Suspense fallback={<SectionFallback />}>
         <FeaturesSection />
-        <HomeLoansContent />
         <WhyPreviseSection />
         <CalendlySection />
         <FAQSection />
+        <HomeLoansContent />
         <AboutSection />
         <Footer />
         <GoHighLevelChat />

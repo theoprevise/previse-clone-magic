@@ -1,13 +1,14 @@
 import { useEffect } from 'react';
 
 interface StructuredDataProps {
-  type: 'organization' | 'faq' | 'service' | 'webpage';
+  type: 'organization' | 'faq' | 'service' | 'webpage' | 'loanOrCredit';
   data?: any;
 }
 
 const StructuredData = ({ type, data }: StructuredDataProps) => {
   useEffect(() => {
     let structuredData;
+    const scripts: HTMLScriptElement[] = [];
 
     switch (type) {
       case 'organization':
@@ -202,6 +203,30 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
             "@type": "MortgageLender",
             "name": "Previse Mortgage",
             "url": "https://previsemortgage.com"
+          }
+        };
+        break;
+
+      case 'loanOrCredit':
+        structuredData = {
+          "@context": "https://schema.org",
+          "@type": "LoanOrCredit",
+          "name": "Previse Mortgage Home Loans",
+          "description": "Professional mortgage lending services including conventional, FHA, VA, USDA, and investment property loans in Pennsylvania",
+          "provider": {
+            "@type": "MortgageLender",
+            "name": "Previse Mortgage",
+            "url": "https://previsemortgage.com"
+          },
+          "loanType": "Mortgage",
+          "currency": "USD",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "47",
+            "reviewCount": "47"
           }
         };
         break;

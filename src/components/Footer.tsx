@@ -1,6 +1,41 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Youtube, Facebook, Instagram, Linkedin } from 'lucide-react';
 import logoIcon from "@/assets/logo-icon.png";
+
+const footerLinks = {
+  "Loan Programs": [
+    { label: "FHA Loans", path: "/fha-loans" },
+    { label: "VA Loans", path: "/va-loans" },
+    { label: "USDA Loans", path: "/usda-loans" },
+    { label: "Conventional Loans", path: "/conventional-loans" },
+    { label: "DSCR Loans", path: "/dscr-loans" },
+    { label: "Mortgage Solutions", path: "/mortgage-solutions" },
+    { label: "Mortgage Programs", path: "/mortgage-programs" },
+  ],
+  "Resources": [
+    { label: "First-Time Homebuyer", path: "/first-time-homebuyer" },
+    { label: "Homebuyer Guide", path: "/homebuyer-guide" },
+    { label: "Credit Score Tips", path: "/credit-score-mortgage-tips" },
+    { label: "Mortgage Process", path: "/how-the-mortgage-process-works" },
+    { label: "Blog", path: "/blog" },
+    { label: "Services & FAQ", path: "/services-faq" },
+  ],
+  "Tools & Services": [
+    { label: "Mortgage Calculator", path: "/mortgage-calculator" },
+    { label: "Current Rates", path: "/current-mortgage-rates" },
+    { label: "Pre-Qualify", path: "/pre-qualify" },
+    { label: "Refinance", path: "/refinance" },
+    { label: "Investor Loans", path: "/investors" },
+    { label: "Schedule Consultation", path: "/schedule" },
+    { label: "Realtor Partnership", path: "/realtor-partnership" },
+  ],
+  "Service Areas": [
+    { label: "Pennsylvania Mortgage", path: "/pennsylvania-mortgage" },
+    { label: "York, PA", path: "/mortgage-lender-york-pa" },
+    { label: "Harrisburg, PA", path: "/mortgage-lender-harrisburg-pa" },
+  ],
+};
+
 const Footer = () => {
   const navigate = useNavigate();
   return <footer className="bg-gradient-to-t from-primary-dark to-primary py-16 border-t border-accent/20 relative overflow-hidden">
@@ -16,6 +51,25 @@ const Footer = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
+        {/* Footer Links Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          {Object.entries(footerLinks).map(([category, links]) => (
+            <div key={category}>
+              <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">{category}</h4>
+              <ul className="space-y-2">
+                {links.map((link) => (
+                  <li key={link.path}>
+                    <Link to={link.path} className="text-white/60 hover:text-accent transition-colors text-sm">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="border-t border-white/10 pt-12">
         <div className="text-center">
           {/* Logo section */}
           <div className="mb-12">
@@ -120,6 +174,7 @@ const Footer = () => {
             </button>
           </div>
           
+        </div>
         </div>
       </div>
     </footer>;

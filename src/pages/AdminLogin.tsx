@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -39,6 +40,7 @@ const AdminLogin = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center p-4">
+      <SEOHead title="Admin Login | Previse Mortgage" noIndex={true} />
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1 text-center">
           <div className="flex justify-center mb-4">
@@ -46,7 +48,7 @@ const AdminLogin = () => {
               <Shield className="h-8 w-8 text-primary" />
             </div>
           </div>
-          <CardTitle className="text-2xl font-bold">Admin Login</CardTitle>
+          <h1 className="text-2xl font-bold">Admin Login</h1>
           <CardDescription>
             Enter your admin credentials to access the dashboard
           </CardDescription>

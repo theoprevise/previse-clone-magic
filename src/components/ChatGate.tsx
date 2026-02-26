@@ -118,16 +118,18 @@ const ChatGate = () => {
 
   return (
     <>
-      {/* Custom floating button — only shown when GHL panel is not open */}
-      <div className="fixed bottom-6 left-6 z-[9999]">
-        <button
-          onClick={handleFloatingClick}
-          aria-label="Open chat"
-          className="w-14 h-14 rounded-full bg-accent text-primary shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center ring-2 ring-accent/20"
-        >
-          <MessageCircle className="h-6 w-6" />
-        </button>
-      </div>
+      {/* Custom floating button — only shown when not yet unlocked */}
+      {!isUnlocked && (
+        <div className="fixed bottom-6 left-6 z-[9999]">
+          <button
+            onClick={handleFloatingClick}
+            aria-label="Open chat"
+            className="w-14 h-14 rounded-full bg-accent text-primary shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center ring-2 ring-accent/20"
+          >
+            <MessageCircle className="h-6 w-6" />
+          </button>
+        </div>
+      )}
 
       {/* Gate modal */}
       {isOpen && (

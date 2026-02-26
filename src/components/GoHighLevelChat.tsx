@@ -34,7 +34,14 @@ const GoHighLevelChat = () => {
     const style = document.createElement('style');
     style.id = 'ghl-chat-animations';
     style.textContent = `
-      /* Animation for GoHighLevel chat widget */
+      /* Hide the native GHL floating button — we use ChatGate instead */
+      [class*="chat-widget-button"],
+      .lc_text-widget-button {
+        display: none !important;
+        pointer-events: none !important;
+      }
+
+      /* Animation for GoHighLevel chat widget panel */
       [class*="chat-widget-container"],
       [id*="chat-widget"],
       .lc_text-widget-container {
@@ -51,18 +58,6 @@ const GoHighLevelChat = () => {
           opacity: 1;
           transform: scale(1) translateY(0);
         }
-      }
-      
-      /* Pulse animation for the chat button */
-      [class*="chat-widget-button"],
-      .lc_text-widget-button {
-        transition: transform 0.2s ease, box-shadow 0.2s ease !important;
-      }
-      
-      [class*="chat-widget-button"]:hover,
-      .lc_text-widget-button:hover {
-        transform: scale(1.1) !important;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3) !important;
       }
     `;
     

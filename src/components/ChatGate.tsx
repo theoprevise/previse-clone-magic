@@ -21,12 +21,21 @@ const ChatGate = () => {
 
   // Once unlocked, trigger the GHL chat widget to open
   const openGHLWidget = () => {
-    // GHL widget injects a button — find and click it
+    // Temporarily restore pointer-events so the click lands, then hide again
     const btn = document.querySelector<HTMLElement>(
-      '[class*="chat-widget-button"], .lc_text-widget-button, [id*="chat-widget-button"]'
+      '.lc_text-widget--bubble, [class*="chat-widget-button"], .lc_text-widget-button'
     );
     if (btn) {
+      btn.style.setProperty('display', 'block', 'important');
+      btn.style.setProperty('visibility', 'visible', 'important');
+      btn.style.setProperty('pointer-events', 'auto', 'important');
       btn.click();
+      // Re-hide after click so the button doesn't flash for long
+      setTimeout(() => {
+        btn.style.setProperty('display', 'none', 'important');
+        btn.style.setProperty('visibility', 'hidden', 'important');
+        btn.style.setProperty('pointer-events', 'none', 'important');
+      }, 100);
     }
   };
 

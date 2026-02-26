@@ -7,7 +7,6 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import LeadCapturePopup from "./components/LeadCapturePopup";
 import CookieConsent from "./components/CookieConsent";
-import ChatGate from "./components/ChatGate";
 
 import Index from "./pages/Index";
 import MortgageSolutions from "./pages/MortgageSolutions";
@@ -115,7 +114,6 @@ const App = () => (
         <ScrollToTop />
         <ConditionalLeadPopup />
         <CookieConsent />
-        <ChatGate />
         
         <Routes>
           <Route path="/" element={<Index />} />

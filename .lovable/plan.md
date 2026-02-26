@@ -1,68 +1,78 @@
 
-## Chat Gate: Seamless Transition + Phone Pre-fill
+# A2P/10DLC Compliance Fix Plan
 
-### Problem 1: Confusing Re-appearance
-Currently the flow is:
-1. User submits phone → modal closes → GHL script loads → GHL bubble appears → gets programmatically clicked → panel opens
+## Overview
+Update all website forms to meet CTIA Messaging Principles and Best Practices requirements for A2P verification. This involves standardizing consent language and adding required disclosures.
 
-The bubble flickering in and out is jarring. The fix is to **keep the gate modal open** and transition it into a loading state ("Starting chat...") while the GHL script loads in the background. Only once the GHL panel is confirmed open do we hide everything. The user sees a smooth spinner → chat opens.
+## Changes Required
 
-### Problem 2: Phone Number Tie-in to GHL Widget
-The GHL chat widget exposes a JavaScript method to identify a contact before they interact:
+### 1. Update Consent Language Across All Forms
 
-```js
-window.LeadConnector?.chat?.openChat?.();
-// and for identity:
-window.HL_CHAT_WIDGET?.setContactInfo?.({ phone: "...", name: "...", email: "..." });
-```
+**New standardized opt-in text to use everywhere:**
 
-The GHL widget config (confirmed from the network request) shows `"enable-contact-form": false` and `"default-consent-check": true`, which means GHL may not ask for contact info at all on this particular widget — the chat goes straight to the live chat queue. However, GHL does support pre-filling contact data via their `window.LC_API` or by setting `window.HL_CHAT_WIDGET` properties before the widget initializes.
+> By submitting this form, you consent to receive recurring informational and promotional SMS/text messages from Previse Mortgage at the phone number provided. Message frequency varies. Message and data rates may apply. Reply HELP for help or STOP to cancel at any time. View our [Privacy Policy].
 
-The most reliable approach: **pass the phone number as a pre-set identity via a global variable before the GHL script loads**, so when GHL initializes, it already has the contact's phone. GHL reads `window.__lc` or similar pre-initialization config objects.
+This includes all required elements:
+- Brand name (Previse Mortgage)
+- Recurring message disclosure
+- Message frequency statement
+- Data rates disclosure
+- HELP instructions
+- STOP opt-out instructions
+- Privacy Policy link
 
-Additionally, we store the phone in `localStorage` as `previse_chat_phone` so on return visits (when the widget is already loaded), we can still pass it.
+### 2. Files to Update
 
-### Implementation Plan
+| File | Current Status | Action |
+|------|----------------|--------|
+| `src/components/HeroLeadForm.tsx` | Partial compliance | Update consent text |
+| `src/components/UnifiedLeadForm.tsx` | Partial compliance | Update consent text |
+| `src/components/WebinarRegistrationForm.tsx` | Partial compliance | Update consent text |
+| `src/components/ExitIntentPopup.tsx` | Old language | Update consent text |
+| `src/components/LeadCapturePopup.tsx` | Old language | Update consent text |
 
-**`src/components/ChatGate.tsx`** — Changes:
-- After form submit validation passes, switch the modal to a "loading/connecting" state instead of closing it
-- Dispatch the `previse:chat-unlocked` event with the phone number as a custom event detail
-- Listen for the GHL panel to open (poll for `.lc_text-widget--open` class or use a timeout), then close the gate modal
-- Hide our custom floating button once GHL is fully open (GHL manages the toggle from there)
-- Fix the Supabase upsert — the 400 error in the network logs shows `"there is no unique or exclusion constraint matching the ON CONFLICT specification"` — the `email` column on the `leads` table has no unique constraint, so we need to use a plain `insert` instead of `upsert`
+### 3. Add SMS Policy Section to Privacy Policy
 
-**`src/components/GoHighLevelChat.tsx`** — Changes:
-- Listen for the `previse:chat-unlocked` event and read the phone from `event.detail`
-- Before appending the GHL script, set `window.CHAT_WIDGET_PREFILL = { phone }` as a global
-- After the script loads and the widget initializes, call GHL's pre-fill API: `window.HL_CHAT_WIDGET?.setData?.({ phone })` — this is the documented way to pass contact data to the GHL widget
-- Store the phone in `localStorage` as `previse_chat_phone` for return visits
+Add a new section (Section 12) to `src/pages/PrivacyPolicy.tsx`:
 
-**Database fix:**
-- Change the `supabase.from('leads').upsert(...)` call to a plain `.insert()` since there is no unique constraint on the email column for anonymous/chat leads. This removes the 400 error entirely.
+**"SMS/Text Messaging Program"** section covering:
+- What messages you'll send
+- Frequency disclosure
+- Opt-out instructions
+- Customer support contact
+- Data rates notice
+- Carrier liability disclaimer
 
-### Flow After Changes
+---
 
+## Technical Details
+
+### Consent Text Template (for developers)
 ```text
-User clicks chat bubble
-        ↓
-Gate modal opens (phone + consent)
-        ↓
-User submits → modal transitions to "Connecting to chat..."
-        ↓
-GHL script loads in background, phone is pre-set globally
-        ↓
-GHL widget initializes → phone pre-filled into its contact fields
-        ↓
-GHL panel opens → gate modal fades out automatically
-        ↓
-User is now in the live chat, no re-appearance or confusion
+By submitting this form, you consent to receive recurring informational and promotional SMS/text messages from Previse Mortgage at the phone number provided. Message frequency varies. Message and data rates may apply. Reply HELP for help or STOP to cancel at any time. View our Privacy Policy. (Required)
 ```
 
-### On Return Visits
-- `localStorage` has `previse_chat_unlocked = true` and `previse_chat_phone = 7175550100`
-- GHL script loads on page load
-- Our custom button triggers GHL panel open directly
-- Phone is still passed to GHL from localStorage on each open
+### Privacy Policy SMS Section Content
+```text
+12. SMS/Text Messaging Program
 
-### Note on GHL Contact Form
-The network response confirms this widget has `"enable-contact-form": false` — meaning GHL does **not** ask users for their info again inside the widget. Our gate already captured it. The pre-fill via `window` globals ensures GHL's backend can still associate the session with the phone number when the contact is created in their CRM.
+When you provide your phone number and consent on our website forms, you are opting in to receive SMS/text messages from Previse Mortgage regarding your mortgage inquiry, loan status updates, and promotional offers.
+
+- Message Frequency: Message frequency varies based on your inquiry and loan process.
+- Message & Data Rates: Standard message and data rates may apply depending on your carrier and plan.
+- Opt-Out: Reply STOP to any message to unsubscribe from our SMS program at any time.
+- Help: Reply HELP to any message for customer support information, or contact us at teddy@previsemortgage.com.
+- Carriers: Carriers are not liable for delayed or undelivered messages.
+- Privacy: Your phone number will not be sold or shared with third parties for marketing purposes.
+```
+
+---
+
+## Expected Outcome
+
+After these changes, your opt-in flow will comply with:
+- CTIA Messaging Principles and Best Practices (Section 5.1.2)
+- 10DLC registration requirements
+- Carrier A2P verification standards
+
+This should resolve the "provided opt-in information" rejection reason.

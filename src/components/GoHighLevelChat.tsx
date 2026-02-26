@@ -1,5 +1,22 @@
 import { useEffect, useState } from 'react';
 
+// Inject CSS immediately to hide GHL button before it renders
+const hideStyle = document.createElement('style');
+hideStyle.id = 'ghl-hide-button';
+hideStyle.textContent = `
+  .lc_text-widget--bubble,
+  [class*="chat-widget-button"],
+  .lc_text-widget-button {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+`;
+if (!document.getElementById('ghl-hide-button')) {
+  document.head.appendChild(hideStyle);
+}
+
 const GoHighLevelChat = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -22,8 +39,21 @@ const GoHighLevelChat = () => {
 
     document.body.appendChild(script);
 
+    // MutationObserver to keep the button hidden even after late DOM injection
+    const observer = new MutationObserver(() => {
+      const btn = document.querySelector<HTMLElement>(
+        '.lc_text-widget--bubble, [class*="chat-widget-button"], .lc_text-widget-button'
+      );
+      if (btn) {
+        btn.style.setProperty('display', 'none', 'important');
+        btn.style.setProperty('visibility', 'hidden', 'important');
+        btn.style.setProperty('pointer-events', 'none', 'important');
+      }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+
     return () => {
-      // Don't remove on cleanup to prevent re-loading issues
+      observer.disconnect();
     };
   }, []);
 

@@ -19,24 +19,9 @@ const ChatGate = () => {
     setIsUnlocked(unlocked);
   }, []);
 
-  // Once unlocked, trigger the GHL chat widget to open
+  // Fire event — GoHighLevelChat loads the script and opens the panel
   const openGHLWidget = () => {
-    // Temporarily restore pointer-events so the click lands, then hide again
-    const btn = document.querySelector<HTMLElement>(
-      '.lc_text-widget--bubble, [class*="chat-widget-button"], .lc_text-widget-button'
-    );
-    if (btn) {
-      btn.style.setProperty('display', 'block', 'important');
-      btn.style.setProperty('visibility', 'visible', 'important');
-      btn.style.setProperty('pointer-events', 'auto', 'important');
-      btn.click();
-      // Re-hide after click so the button doesn't flash for long
-      setTimeout(() => {
-        btn.style.setProperty('display', 'none', 'important');
-        btn.style.setProperty('visibility', 'hidden', 'important');
-        btn.style.setProperty('pointer-events', 'none', 'important');
-      }, 100);
-    }
+    window.dispatchEvent(new Event('previse:chat-unlocked'));
   };
 
   const handleFloatingClick = () => {
@@ -90,8 +75,7 @@ const ChatGate = () => {
     setIsOpen(false);
     setIsSubmitting(false);
 
-    // Small delay so GHL widget has time to render
-    setTimeout(openGHLWidget, 300);
+    openGHLWidget();
   };
 
   return (

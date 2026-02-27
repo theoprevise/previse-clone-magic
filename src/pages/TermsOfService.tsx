@@ -133,7 +133,7 @@ const TermsOfService = () => {
               <div className="leading-relaxed">
                 <p className="font-semibold">Previse Mortgage</p>
                 <p>Spring Grove, PA 17362</p>
-                <p>Email: teddy@previsemortgage.com</p>
+                <p>Email: team@previsemortgage.com</p>
                 <p>Phone: (717) 500-2007</p>
               </div>
             </section>

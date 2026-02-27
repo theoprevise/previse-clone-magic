@@ -42,7 +42,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const emailResponse = await resend.emails.send({
       from: "Previse Mortgage <onboarding@resend.dev>",
-      to: ["teddy@previsemortgage.com"],
+      to: ["team@previsemortgage.com"],
       subject: `New Mortgage Application - ${record.first_name || 'Unknown'} ${record.last_name || 'Applicant'}`,
       html: emailContent,
     });

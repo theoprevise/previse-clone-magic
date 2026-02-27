@@ -165,9 +165,9 @@ const HomebuyerGuideThankYou = () => {
                   <Phone className="w-4 h-4" />
                   (717) 801-8498
                 </a>
-                <a href="mailto:teddy@previsemortgage.com" className="flex items-center gap-2 hover:text-accent transition-colors">
+                <a href="mailto:team@previsemortgage.com" className="flex items-center gap-2 hover:text-accent transition-colors">
                   <Mail className="w-4 h-4" />
-                  teddy@previsemortgage.com
+                  team@previsemortgage.com
                 </a>
               </div>
             </div>

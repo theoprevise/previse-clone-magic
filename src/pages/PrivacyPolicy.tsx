@@ -136,7 +136,7 @@ const PrivacyPolicy = () => {
                 <li><strong>Message Frequency:</strong> Message frequency varies based on your inquiry and loan process.</li>
                 <li><strong>Message & Data Rates:</strong> Standard message and data rates may apply depending on your carrier and plan.</li>
                 <li><strong>Opt-Out:</strong> Reply STOP to any message to unsubscribe from our SMS program at any time. You will receive a confirmation message and no further SMS messages will be sent.</li>
-                <li><strong>Help:</strong> Reply HELP to any message for customer support information, or contact us at teddy@previsemortgage.com or call (717) 500-2007.</li>
+                <li><strong>Help:</strong> Reply HELP to any message for customer support information, or contact us at team@previsemortgage.com or call (717) 500-2007.</li>
                 <li><strong>Carrier Disclaimer:</strong> Carriers are not liable for delayed or undelivered messages. Message delivery is subject to effective transmission from your wireless carrier.</li>
                 <li><strong>Mobile Information Sharing:</strong> Your mobile phone number and SMS consent information will not be sold, rented, or shared with any third parties for their marketing or promotional purposes. We only use your mobile information to communicate with you about your mortgage inquiry and related services.</li>
               </ul>

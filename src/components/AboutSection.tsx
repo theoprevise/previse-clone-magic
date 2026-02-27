@@ -67,7 +67,6 @@ const AboutSection = () => {
               <a href="mailto:rainev@previsemortgage.com" className="text-accent hover:text-accent-light text-sm font-medium transition-colors">
                 rainev@previsemortgage.com
               </a>
-              </p>
             </div>
           </div>
         </div>

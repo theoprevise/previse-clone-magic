@@ -89,7 +89,7 @@ const PrivacyPolicy = () => {
                 <li>Resolving disputes, claims, or inquiries.</li>
               </ul>
               <p className="leading-relaxed mt-4">
-                You may request access to your personal information, corrections, or deletion (subject to regulatory retention requirements) by contacting teddy@previsemortgage.com.
+                You may request access to your personal information, corrections, or deletion (subject to regulatory retention requirements) by contacting team@previsemortgage.com.
               </p>
             </section>
 

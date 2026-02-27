@@ -105,7 +105,7 @@ const TermsOfService = () => {
                 <li><strong>Message Frequency:</strong> Message frequency varies based on your inquiry and the stage of your mortgage process.</li>
                 <li><strong>Message & Data Rates:</strong> Standard message and data rates may apply depending on your wireless carrier and plan.</li>
                 <li><strong>Opt-Out:</strong> You may opt out of SMS messages at any time by replying STOP to any message you receive from us. Upon receipt of your STOP request, we will send a confirmation message and discontinue SMS communications.</li>
-                <li><strong>Customer Support:</strong> For help with our SMS program, reply HELP to any message, or contact us at teddy@previsemortgage.com or call (717) 500-2007.</li>
+                <li><strong>Customer Support:</strong> For help with our SMS program, reply HELP to any message, or contact us at team@previsemortgage.com or call (717) 500-2007.</li>
                 <li><strong>Carrier Liability:</strong> Wireless carriers are not liable for delayed or undelivered messages. Message delivery is subject to effective transmission from your wireless carrier.</li>
                 <li><strong>Age Requirement:</strong> You must be 18 years of age or older to opt in to our SMS messaging program.</li>
               </ul>

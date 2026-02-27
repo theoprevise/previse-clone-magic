@@ -58,8 +58,8 @@ const FAQSection = () => {
             <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 mb-6">
               <p className="text-white/90 text-center text-sm">
                 Questions? Email{" "}
-                <a href="mailto:teddy@previsemortgage.com" className="text-accent hover:text-accent-light transition-colors font-semibold">
-                  teddy@previsemortgage.com
+                <a href="mailto:team@previsemortgage.com" className="text-accent hover:text-accent-light transition-colors font-semibold">
+                  team@previsemortgage.com
                 </a>
               </p>
             </div>

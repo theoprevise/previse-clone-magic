@@ -56,7 +56,7 @@ const AboutSection = () => {
               />
               <h3 className="text-xl font-bold text-white">Raine Valentine</h3>
               <p className="text-accent font-medium text-sm mb-1">Loan Officer</p>
-              <p className="text-white/60 text-xs mb-3">Licensed in PA</p>
+              <p className="text-white/60 text-xs mb-3">NMLS# 2083380 · Licensed in PA</p>
               <p className="text-white/80 text-sm leading-relaxed">
                 Raine brings a personal, client-first approach to every transaction, 
                 ensuring families feel supported throughout their entire mortgage journey.

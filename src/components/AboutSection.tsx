@@ -38,10 +38,13 @@ const AboutSection = () => {
               <h3 className="text-xl font-bold text-white">Teddy Carbone</h3>
               <p className="text-accent font-medium text-sm mb-1">Founder & Loan Officer</p>
               <p className="text-white/60 text-xs mb-3">NMLS# 2723255 · Licensed in PA</p>
-              <p className="text-white/80 text-sm leading-relaxed">
+              <p className="text-white/80 text-sm leading-relaxed mb-3">
                 With 10+ years in finance, Teddy founded Previse Mortgage to deliver 
                 hassle-free, honest mortgage advice with modern technology.
               </p>
+              <a href="mailto:teddy@previsemortgage.com" className="text-accent hover:text-accent-light text-sm font-medium transition-colors">
+                teddy@previsemortgage.com
+              </a>
             </div>
             
             {/* Raine */}
@@ -57,10 +60,13 @@ const AboutSection = () => {
               <h3 className="text-xl font-bold text-white">Raine Valentine</h3>
               <p className="text-accent font-medium text-sm mb-1">Loan Officer</p>
               <p className="text-white/60 text-xs mb-3">NMLS# 2083380 · Licensed in PA</p>
-              <p className="text-white/80 text-sm leading-relaxed">
+              <p className="text-white/80 text-sm leading-relaxed mb-3">
                 Raine brings a personal, client-first approach to every transaction, 
                 ensuring families feel supported throughout their entire mortgage journey.
               </p>
+              <a href="mailto:rainev@previsemortgage.com" className="text-accent hover:text-accent-light text-sm font-medium transition-colors">
+                rainev@previsemortgage.com
+              </a>
             </div>
           </div>
         </div>

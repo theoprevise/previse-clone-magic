@@ -30,7 +30,7 @@ const AboutSection = () => {
               <img 
                 src={teddyImage} 
                 alt="Teddy Carbone - Founder & Loan Officer at Previse Mortgage"
-                className="rounded-xl shadow-xl w-32 h-32 object-cover object-top mb-4 group-hover:scale-105 transition-transform duration-500"
+                className="rounded-xl shadow-xl w-32 h-40 object-cover object-[center_20%] mb-4 group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
                 width="128"
                 height="128"

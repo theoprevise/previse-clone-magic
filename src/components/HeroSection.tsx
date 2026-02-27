@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import StructuredData from "./StructuredData";
 import HeroLeadForm from "./HeroLeadForm";
 import teddyImage from '@/assets/teddy-carbone.jpg';
+import raineImage from '@/assets/raine-valentine.jpg';
 
 const HeroSection = () => {
   return (
@@ -35,11 +36,11 @@ const HeroSection = () => {
             <div className="text-center lg:text-left">
               {/* Main heading */}
               <div className="mb-6 animate-fade-in">
-                <span className="inline-block mb-4 text-lg md:text-xl font-medium text-accent tracking-wide">Previse Mortgage</span>
+                <span className="inline-block mb-4 text-lg md:text-xl font-medium text-accent tracking-wide">Family-Owned Mortgage Brokerage</span>
                 <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white mb-4" itemProp="name">
-                  <span className="block mb-2">Professionalized</span>
+                  <span className="block mb-2">Your Family's</span>
                   <span className="block bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">
-                    Loan Financing
+                    Mortgage Team
                   </span>
                 </h1>
               </div>
@@ -52,21 +53,27 @@ const HeroSection = () => {
               </div>
               
               <p className="text-lg md:text-xl text-white/90 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed animate-fade-in delay-500" itemProp="description">
-                Previse Mortgage delivers the guidance you need with cutting-edge technology and personalized service
+                A family-owned brokerage delivering personalized mortgage guidance with cutting-edge technology and genuine care for your homeownership journey.
               </p>
               
-              {/* Teddy Image + CTA */}
-              <div className="flex flex-col sm:flex-row items-center gap-6 animate-fade-in delay-700">
-                <div className="flex items-center gap-4">
-                  <img 
-                    src={teddyImage} 
-                    alt="Teddy Carbone - Senior Mortgage Advisor" 
-                    className="w-20 h-20 rounded-full border-4 border-accent shadow-xl object-cover"
-                  />
+              {/* Team Photos + CTA */}
+              <div className="flex flex-col items-center lg:items-start gap-6 animate-fade-in delay-700">
+                <div className="flex items-center gap-6">
+                  <div className="flex -space-x-4">
+                    <img 
+                      src={teddyImage} 
+                      alt="Teddy Carbone - Loan Officer" 
+                      className="w-16 h-16 rounded-full border-3 border-accent shadow-xl object-cover relative z-10"
+                    />
+                    <img 
+                      src={raineImage} 
+                      alt="Raine Valentine - Loan Officer" 
+                      className="w-16 h-16 rounded-full border-3 border-accent shadow-xl object-cover"
+                    />
+                  </div>
                   <div className="text-left">
-                    <p className="text-white font-bold text-lg">Teddy Carbone</p>
-                    <p className="text-white/80 text-sm">Senior Mortgage Advisor</p>
-                    <p className="text-accent text-sm font-medium">NMLS# 2723255</p>
+                    <p className="text-white font-bold text-base">Meet Our Team</p>
+                    <p className="text-white/80 text-sm">Licensed Loan Officers in PA</p>
                   </div>
                 </div>
                 
@@ -74,7 +81,6 @@ const HeroSection = () => {
                   href="https://previsemortgage.my1003app.com?time=1766329396091"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="sm:ml-auto"
                 >
                   <Button 
                     size="lg" 

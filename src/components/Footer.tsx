@@ -89,10 +89,10 @@ const Footer = () => {
                 (717) 819-5196
               </a>
               <a 
-                href="mailto:teddy@previsemortgage.com" 
+                href="mailto:team@previsemortgage.com" 
                 className="block text-white/80 hover:text-accent transition-colors"
               >
-                teddy@previsemortgage.com
+                team@previsemortgage.com
               </a>
             </div>
 

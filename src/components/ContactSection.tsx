@@ -62,8 +62,8 @@ const ContactSection = () => {
               <div>
                 <h3 className="text-2xl font-bold text-accent mb-2">+1 (717)-819-5196</h3>
                 <p className="text-white/80">
-                  <a href="mailto:teddy@previsemortgage.com" className="hover:text-accent transition-colors">
-                    teddy@previsemortgage.com
+                  <a href="mailto:team@previsemortgage.com" className="hover:text-accent transition-colors">
+                    team@previsemortgage.com
                   </a>
                 </p>
                 <p className="text-white/80 mt-4">

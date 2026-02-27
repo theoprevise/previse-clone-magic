@@ -161,7 +161,7 @@ const Footer = () => {
             <p className="text-base font-medium">Copyright © 2025 Previse Mortgage • All Rights Reserved.</p>
             <p>Previse Mortgage NMLS# 2730429</p>
             <p>PA Broker License #115658</p>
-            <p>MLO Licenses: CO# 100542483 | PA# 115609</p>
+            <p>MLO Licenses: CO# 100542483 | PA# 115609 | PA# 119453</p>
           </div>
 
           {/* Legal Links */}

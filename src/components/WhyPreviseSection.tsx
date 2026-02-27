@@ -47,7 +47,7 @@ const WhyPreviseSection = () => {
                 "While other lenders react to problems, <span className="text-accent font-semibold">Previse Mortgage</span> stays 
                 ahead — using modern technology and proactive service to ensure a smooth, stress-free closing."
               </p>
-              <p className="text-accent font-semibold mt-4">— Teddy Carbone, Founder of Previse Mortgage</p>
+              <p className="text-accent font-semibold mt-4">— The Previse Mortgage Team</p>
             </div>
           </div>
           

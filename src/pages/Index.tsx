@@ -22,9 +22,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-primary">
       <SEOHead 
-        title="Previse Mortgage - Professional Mortgage Services in Pennsylvania | Home Loans & Refinancing"
-        description="Expert mortgage lending services in Pennsylvania. Specializing in home loans, refinancing, FHA loans, and investment property financing with competitive rates and personalized service."
-        keywords="mortgage lender, home loans, refinancing, FHA loans, Pennsylvania mortgage, Spring Grove PA, NMLS licensed, investment property loans, first time homebuyer, conventional loans, jumbo loans, USDA loans"
+        title="Previse Mortgage - Family-Owned Mortgage Brokerage in Pennsylvania | Home Loans & Refinancing"
+        description="Family-owned mortgage brokerage in Pennsylvania. Our team specializes in home loans, refinancing, FHA loans, and investment property financing with competitive rates and personalized service."
+        keywords="mortgage broker, family-owned mortgage, home loans, refinancing, FHA loans, Pennsylvania mortgage, Spring Grove PA, NMLS licensed, investment property loans, first time homebuyer, conventional loans"
         canonicalUrl="https://previsemortgage.com"
       />
       <StructuredData type="organization" />

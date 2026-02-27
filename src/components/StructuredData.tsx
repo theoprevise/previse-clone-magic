@@ -21,7 +21,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "description": "Professional mortgage lending services specializing in home loans, refinancing, and investment property financing in Pennsylvania",
           "url": "https://previsemortgage.com",
           "telephone": "+1-717-819-5196",
-          "email": "teddy@previsemortgage.com",
+          "email": "team@previsemortgage.com",
           "foundingDate": "2025-06-04",
           "address": {
             "@type": "PostalAddress",

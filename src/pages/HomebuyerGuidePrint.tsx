@@ -737,7 +737,7 @@ const HomebuyerGuidePrint = () => {
               <div className="space-y-2 text-gray-800">
                 <p className="text-xl font-semibold text-gray-900">Previse Mortgage</p>
                 <p className="text-lg">📞 Call or Text: (717) 819-5196</p>
-                <p className="text-lg">📧 Email: teddy@previsemortgage.com</p>
+                <p className="text-lg">📧 Email: team@previsemortgage.com</p>
                 <p className="text-lg">🌐 Web: www.previsemortgage.com</p>
               </div>
             </div>

@@ -101,7 +101,7 @@ const handler = async (req: Request): Promise<Response> => {
     });
 
     const emailResponse = await resend.emails.send({
-      from: "Teddy Carbone - Previse Home Loans <teddy@previsemortgage.com>",
+      from: "Previse Mortgage <team@previsemortgage.com>",
       to: [email],
       subject: "You're Registered! First-Time Homebuyer Webinar Confirmation",
       html: `

@@ -152,7 +152,7 @@ const handler = async (req: Request): Promise<Response> => {
                 Mortgage Loan Officer | NMLS #2436937
               </p>
               <p style="color: #a0a0b0; margin: 10px 0 0 0; font-size: 14px;">
-                📞 (717) 801-8498 | ✉️ teddy@previsemortgage.com
+                📞 (717) 801-8498 | ✉️ team@previsemortgage.com
               </p>
             </div>
             

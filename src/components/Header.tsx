@@ -14,6 +14,7 @@ const Header = () => {
   const resourcesLinks = [
     { label: "First-Time Homebuyer Guide", path: "/first-time-homebuyer" },
     { label: "Free Homebuyer Guide Download", path: "/homebuyer-guide" },
+    { label: "Free DSCR Loan Guide", path: "/dscr-loan-guide" },
     { label: "Credit Score & Approval Tips", path: "/credit-score-mortgage-tips" },
     { label: "How the Mortgage Process Works", path: "/how-the-mortgage-process-works" },
   ];

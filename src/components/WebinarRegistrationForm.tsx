@@ -166,7 +166,7 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="phone" className="text-white">Phone Number (optional)</Label>
+        <Label htmlFor="phone" className="text-white">Phone Number *</Label>
         <Input
           id="phone"
           type="tel"
@@ -175,7 +175,11 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
           placeholder="(555) 123-4567"
           className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
           disabled={loading}
+          required
         />
+        {errors.phone && (
+          <p className="text-red-400 text-sm">{errors.phone}</p>
+        )}
       </div>
 
       <div className="flex items-start gap-2">

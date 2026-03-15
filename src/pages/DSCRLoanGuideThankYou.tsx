@@ -13,7 +13,8 @@ import {
   FileText,
   MessageCircle,
   BarChart3,
-  Building2
+  Building2,
+  Download
 } from "lucide-react";
 
 const DSCRLoanGuideThankYou = () => {

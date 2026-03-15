@@ -56,6 +56,8 @@ import ScheduleThankYou from "./pages/ScheduleThankYou";
 import PennsylvaniaMortgage from "./pages/PennsylvaniaMortgage";
 import YorkPAMortgage from "./pages/YorkPAMortgage";
 import HarrisburgPAMortgage from "./pages/HarrisburgPAMortgage";
+import DSCRLoanGuide from "./pages/DSCRLoanGuide";
+import DSCRLoanGuideThankYou from "./pages/DSCRLoanGuideThankYou";
 
 
 const queryClient = new QueryClient();

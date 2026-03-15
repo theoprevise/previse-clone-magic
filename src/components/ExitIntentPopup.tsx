@@ -198,20 +198,8 @@ const ExitIntentPopup = () => {
                 className="border-gray-200 focus:border-accent"
               />
 
-              <div className="flex items-start gap-2">
-                <Checkbox
-                  id="consent_exit"
-                  checked={consent}
-                  onCheckedChange={(checked) => setConsent(checked as boolean)}
-                  className="mt-0.5 border-gray-300"
-                />
-                <label htmlFor="consent_exit" className="text-xs text-gray-600 leading-relaxed cursor-pointer">
-                  I agree to receive informational and conversational SMS text messages from Previse Mortgage LLC related to my inquiry. Message Frequency may vary. Message & Data rates may apply. Reply STOP to opt out at any time.
-                </label>
-              </div>
-              
               <p className="text-xs text-gray-500 leading-relaxed">
-                By submitting this form, you consent to receive informational and conversational SMS text messages from Previse Mortgage LLC regarding your inquiry. Message frequency may vary. Message and Data rates may apply. Reply STOP to opt out at any time. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary underline hover:text-primary/80">Terms of Service</Link>.
+                By submitting this form, you consent to be contacted by Previse Mortgage LLC via phone, email, or other communication methods regarding your inquiry. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary underline hover:text-primary/80">Terms of Service</Link>.
               </p>
               
               <Button

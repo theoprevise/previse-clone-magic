@@ -76,7 +76,7 @@ const handler = async (req: Request): Promise<Response> => {
     const emailResponse = await resend.emails.send({
       from: "Previse Mortgage <noreply@previsemortgage.com>",
       to: [email],
-      subject: "Your First-Time Homebuyer Guide is Ready!",
+      subject: firstName ? `${firstName}, Your Guide is Ready!` : "Your Guide is Ready!",
       html: `
         <!DOCTYPE html>
         <html>

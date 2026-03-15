@@ -166,6 +166,9 @@ const App = () => (
           <Route path="/homebuyer-guide-thank-you" element={<HomebuyerGuideThankYou />} />
           <Route path="/homebuyer-guide-print" element={<HomebuyerGuidePrint />} />
           
+          <Route path="/dscr-loan-guide" element={<DSCRLoanGuide />} />
+          <Route path="/dscr-loan-guide-thank-you" element={<DSCRLoanGuideThankYou />} />
+          
           <Route path="/pennsylvania-mortgage" element={<PennsylvaniaMortgage />} />
           <Route path="/mortgage-lender-york-pa" element={<YorkPAMortgage />} />
           <Route path="/mortgage-lender-harrisburg-pa" element={<HarrisburgPAMortgage />} />

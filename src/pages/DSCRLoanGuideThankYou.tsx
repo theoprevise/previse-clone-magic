@@ -13,7 +13,8 @@ import {
   FileText,
   MessageCircle,
   BarChart3,
-  Building2
+  Building2,
+  Download
 } from "lucide-react";
 
 const DSCRLoanGuideThankYou = () => {
@@ -64,23 +65,38 @@ const DSCRLoanGuideThankYou = () => {
             
             <p className="text-lg text-muted-foreground mb-8">
               Thank you for downloading The Complete DSCR Loan Investor Guide. 
-              Check your email for your copy and additional investor resources.
+              Click below to view and download your copy, and check your email for additional resources.
             </p>
 
-            {/* CTA Card */}
-            <Card className="bg-card/50 backdrop-blur-sm border-accent/20 shadow-2xl shadow-accent/10 max-w-md mx-auto mb-12">
+            {/* Download Button */}
+            <Card className="bg-card/50 backdrop-blur-sm border-accent/20 shadow-2xl shadow-accent/10 max-w-md mx-auto mb-6">
               <CardContent className="p-8">
                 <Button 
                   size="lg" 
                   className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold py-6 text-lg mb-4"
+                  onClick={() => navigate('/dscr-loan-guide-print')}
+                >
+                  <Download className="mr-2 h-5 w-5" />
+                  View & Download Your Free Guide
+                </Button>
+                <p className="text-sm text-muted-foreground">
+                  Click above to view the guide. Use your browser's print function to save as PDF.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Secondary CTA */}
+            <Card className="bg-card/50 backdrop-blur-sm border-accent/10 max-w-md mx-auto mb-12">
+              <CardContent className="p-6">
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="w-full border-accent/50 text-foreground hover:bg-accent/10 font-semibold"
                   onClick={() => navigate('/dscr-loans')}
                 >
                   <Building2 className="mr-2 h-5 w-5" />
                   Explore DSCR Loan Options
                 </Button>
-                <p className="text-sm text-muted-foreground">
-                  See current DSCR loan programs and get pre-approved today.
-                </p>
               </CardContent>
             </Card>
 

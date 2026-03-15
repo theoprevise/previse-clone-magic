@@ -58,6 +58,7 @@ import YorkPAMortgage from "./pages/YorkPAMortgage";
 import HarrisburgPAMortgage from "./pages/HarrisburgPAMortgage";
 import DSCRLoanGuide from "./pages/DSCRLoanGuide";
 import DSCRLoanGuideThankYou from "./pages/DSCRLoanGuideThankYou";
+import DSCRLoanGuidePrint from "./pages/DSCRLoanGuidePrint";
 
 
 const queryClient = new QueryClient();
@@ -168,6 +169,7 @@ const App = () => (
           
           <Route path="/dscr-loan-guide" element={<DSCRLoanGuide />} />
           <Route path="/dscr-loan-guide-thank-you" element={<DSCRLoanGuideThankYou />} />
+          <Route path="/dscr-loan-guide-print" element={<DSCRLoanGuidePrint />} />
           
           <Route path="/pennsylvania-mortgage" element={<PennsylvaniaMortgage />} />
           <Route path="/mortgage-lender-york-pa" element={<YorkPAMortgage />} />

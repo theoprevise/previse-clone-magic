@@ -86,6 +86,7 @@ const ConditionalLeadPopup = () => {
     '/conventional-loans',
     '/usda-loans',
     '/dscr-loans',
+    '/dscr-loan-guide',
     '/investors',
     '/mortgage-calculator',
     '/ai-readiness',

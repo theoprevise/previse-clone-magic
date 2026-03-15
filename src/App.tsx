@@ -56,6 +56,8 @@ import ScheduleThankYou from "./pages/ScheduleThankYou";
 import PennsylvaniaMortgage from "./pages/PennsylvaniaMortgage";
 import YorkPAMortgage from "./pages/YorkPAMortgage";
 import HarrisburgPAMortgage from "./pages/HarrisburgPAMortgage";
+import DSCRLoanGuide from "./pages/DSCRLoanGuide";
+import DSCRLoanGuideThankYou from "./pages/DSCRLoanGuideThankYou";
 
 
 const queryClient = new QueryClient();
@@ -84,6 +86,7 @@ const ConditionalLeadPopup = () => {
     '/conventional-loans',
     '/usda-loans',
     '/dscr-loans',
+    '/dscr-loan-guide',
     '/investors',
     '/mortgage-calculator',
     '/ai-readiness',
@@ -162,6 +165,9 @@ const App = () => (
           <Route path="/homebuyer-guide" element={<HomebuyerGuide />} />
           <Route path="/homebuyer-guide-thank-you" element={<HomebuyerGuideThankYou />} />
           <Route path="/homebuyer-guide-print" element={<HomebuyerGuidePrint />} />
+          
+          <Route path="/dscr-loan-guide" element={<DSCRLoanGuide />} />
+          <Route path="/dscr-loan-guide-thank-you" element={<DSCRLoanGuideThankYou />} />
           
           <Route path="/pennsylvania-mortgage" element={<PennsylvaniaMortgage />} />
           <Route path="/mortgage-lender-york-pa" element={<YorkPAMortgage />} />

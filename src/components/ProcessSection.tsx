@@ -264,11 +264,11 @@ const ProcessSection = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <div className="bg-background rounded-2xl p-8 shadow-soft max-w-4xl mx-auto border border-border">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-white mb-4">
               Ready to Close Fast — Without the Stress?
             </h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-white/70 mb-6">
               Whether you're a buyer on a tight timeline, an agent who needs a lender that performs, 
               or an investor who won't accept last-minute surprises — Previse Mortgage delivers 
               fast closings backed by thorough upfront work.

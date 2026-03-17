@@ -53,7 +53,7 @@ const HeroSection = () => {
               </div>
               
               <p className="text-lg md:text-xl text-white/90 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed animate-fade-in delay-500" itemProp="description">
-                A family-owned brokerage delivering personalized mortgage guidance with cutting-edge technology and genuine care for your homeownership journey.
+                Self-employed? Investor? Complex income? Previse Mortgage specializes in the loans big banks won't touch — DSCR, bank statement, non-QM, and creative financing solutions backed by 50+ wholesale lenders.
               </p>
               
               {/* Team Photos + CTA */}

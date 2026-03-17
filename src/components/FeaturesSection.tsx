@@ -63,14 +63,15 @@ const FeaturesSection = () => {
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
             <span className="text-accent text-sm font-bold uppercase tracking-wider bg-accent/10 px-4 py-2 rounded-full">
-              Our Specialties
+              Complex Borrower & Investor Specialist
             </span>
           </div>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 max-w-3xl mx-auto leading-tight">
-            Financing for <span className="text-accent">Investors</span> & <span className="text-accent">Homeowners</span>
+            The Loans <span className="text-accent">Big Banks</span> Won't Touch
           </h2>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
-            Specialized lending for qualified borrowers. Minimum $250K loan amount, 680+ credit score recommended.
+            Previse Mortgage is built for self-employed borrowers, real estate investors, and anyone whose 
+            financial story doesn't fit a standard box. We find solutions where others see risk.
           </p>
         </div>
 

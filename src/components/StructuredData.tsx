@@ -108,19 +108,19 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
               "@type": "Review",
               "author": { "@type": "Person", "name": "First-Time Homebuyer" },
               "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "reviewBody": "I was terrified of making a mistake on my first home. Teddy didn't rush me — he spent an hour walking through FHA vs conventional with my actual numbers, explained mortgage insurance, and honestly told me to wait two months to save more. When I was ready, he guided me through every line of the closing disclosure. I've never felt more informed."
+              "reviewBody": "I was terrified of making a mistake on my first home. Teddy walked me through FHA vs conventional with my actual numbers, explained mortgage insurance, and honestly told me to wait two months. When I was ready, he guided me through every line of the closing disclosure. No surprises, clear fees, honest explanations."
             },
             {
               "@type": "Review",
               "author": { "@type": "Person", "name": "Self-Employed Borrower" },
               "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "reviewBody": "What stood out was the complete lack of pressure. Teddy walked me through three different scenarios, explained the pros and cons of each, and let me decide on my own timeline. As a self-employed business owner turned down by two banks, I finally felt like someone was advising me, not selling me."
+              "reviewBody": "Before I even applied, Teddy showed me three scenarios side by side with all fees itemized. He explained which costs were his, which were third-party, and which could change. When I brought a competing Loan Estimate, he welcomed the comparison and walked me through it line by line. No hidden fees, no bait and switch."
             },
             {
               "@type": "Review",
               "author": { "@type": "Person", "name": "Repeat Client & Investor" },
               "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "reviewBody": "Six months after closing, Teddy called to let me know rates had dropped and a refi could save me $200/month. No other lender has ever followed up like that. Between the Planning Session, the closing walkthrough, and the post-closing check-ins, Previse feels like having a mortgage strategist on call for life."
+              "reviewBody": "Six months after closing, Teddy called to let me know rates had dropped and a refi could save me $200/month. The rate-lock and fee transparency were excellent from day one. Previse feels like having a mortgage strategist on call for life."
             }
           ],
           "sameAs": [

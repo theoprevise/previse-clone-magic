@@ -7,30 +7,30 @@ const ProcessSection = () => {
     {
       icon: FileSearch,
       step: "01",
-      title: "Pre-Qualification",
-      description: "Quick 10-minute consultation to understand your goals and determine your buying power.",
-      details: ["Credit review", "Income assessment", "Debt-to-income analysis", "Rate quote"]
+      title: "Digital Application",
+      description: "Apply online in minutes. Upload documents through our secure portal — no branch visit needed.",
+      details: ["Fully digital application", "Secure document upload", "E-disclosures & e-signatures", "Instant pre-qualification"]
     },
     {
       icon: Calculator,
       step: "02", 
-      title: "Application & Documentation",
-      description: "Complete your loan application and gather required documentation with our guided process.",
-      details: ["Online application", "Document upload portal", "Income verification", "Asset documentation"]
+      title: "AI-Enhanced Processing",
+      description: "Automated income verification and intelligent document analysis pre-screen your file before human review.",
+      details: ["Automated underwriting", "Digital income verification", "Early condition detection", "Transparent low-fee pricing"]
     },
     {
       icon: CheckCircle,
       step: "03",
-      title: "Processing & Underwriting",
-      description: "Our team reviews your application and coordinates with underwriters. Subject to credit approval.",
-      details: ["File review", "Appraisal ordering", "Underwriting submission", "Condition clearance"]
+      title: "Proactive Communication",
+      description: "Weekly status check-ins, 24-hour response guarantee, and a personalized document roadmap — you never chase us.",
+      details: ["Weekly loan officer updates", "24-hour response guarantee", "Same person start to finish", "No handoffs or call centers"]
     },
     {
       icon: Key,
       step: "04",
-      title: "Closing & Funding",
-      description: "Final loan approval, closing coordination, and funding to complete your home purchase.",
-      details: ["Clear to close", "Closing coordination", "Final walkthrough", "Keys to your new home!"]
+      title: "Fast Closing & E-Close",
+      description: "21-day closings on purchase loans. E-closing available. Complex files close on time because we front-load the hard work.",
+      details: ["21-day closing target", "E-closing available", "Boutique high-touch service", "Keys to your new home!"]
     }
   ];
 

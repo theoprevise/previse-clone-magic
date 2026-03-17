@@ -7,24 +7,36 @@ const FAQSection = () => {
 
   const faqs = [
     {
-      question: "What types of investment property loans do you offer?",
-      answer: "We specialize in DSCR loans for real estate investors, bank statement loans for self-employed borrowers, and traditional investment property financing. DSCR loans qualify based on rental income, not personal income."
+      question: "What happens in a Previse Planning Session?",
+      answer: "A Previse Planning Session is a free, 30-minute education-focused consultation — not a sales call. We review your financial picture, walk through loan options side-by-side (FHA vs conventional, ARM vs fixed, points vs no points), discuss your 5-year life plan, and give you honest guidance — even if that means recommending you wait or use a different lender."
     },
     {
-      question: "What credit score do I need to qualify?",
-      answer: "For most loan programs, we recommend a minimum credit score of 680+. DSCR loans typically require 680+, while conventional loans may accept 620+. Higher scores unlock better rates and terms."
+      question: "Should I choose FHA or conventional? How do I decide?",
+      answer: "It depends on your credit score, down payment, and long-term plan. FHA loans accept lower credit scores (580+) with 3.5% down but carry mortgage insurance for the loan's life. Conventional loans require 620+ credit but let you drop MI at 80% equity. In your Planning Session, we run both scenarios with your real numbers so you can see the monthly payment, total cost, and break-even point clearly."
     },
     {
-      question: "What loan amounts do you work with?",
-      answer: "We focus on loan amounts of $250,000 and above. This includes conventional loans, jumbo loans up to $3M+, and DSCR investment property loans for qualified borrowers."
+      question: "Will Previse Mortgage help me understand closing disclosures line by line?",
+      answer: "Yes — that's core to our process. Before closing, we schedule an Underwriting Pre-Brief where we walk through every line of your Closing Disclosure, explain each fee, and answer every question. No surprises at the closing table."
     },
     {
-      question: "How quickly can you close a loan?",
-      answer: "Our technology-driven process enables fast closings: purchase loans in 21-30 days, refinances in 15-30 days. DSCR and investment loans may take 30-45 days depending on property complexity."
+      question: "What if I'm not sure I can afford to buy right now?",
+      answer: "That's exactly what the Planning Session is for. We'll review your income, debts, savings, and goals to determine a comfortable budget — not just what you qualify for. If the honest answer is 'wait 6 months and save more,' we'll tell you that and help you build a plan to get there."
     },
     {
-      question: "Can I refinance my investment property?",
-      answer: "Yes! We offer rate-and-term refinancing, cash-out refinancing to access equity, and DSCR refinancing for rental properties. Refinancing can lower your rate or help you pull equity for additional investments."
+      question: "Does Previse Mortgage support me after closing?",
+      answer: "Absolutely. Our After-Closing Care program includes lifetime loan officer access (call or text Teddy or Raine anytime), annual rate and equity reviews to identify refinancing opportunities, and priority processing for future purchases or investment properties. Your relationship with Previse doesn't end when the loan funds."
+    },
+    {
+      question: "What types of loans does Previse Mortgage specialize in?",
+      answer: "We specialize in complex borrower scenarios: DSCR investment property loans, bank statement loans for self-employed borrowers, non-QM financing, and creative loan structuring. We also offer conventional, FHA, VA, and USDA loans — all with broker-level pricing from 50+ wholesale lenders."
+    },
+    {
+      question: "How quickly can Previse Mortgage close a loan?",
+      answer: "Our fast closing guarantee targets 21 days on purchase loans. We achieve this through AI-enhanced processing, digital application and e-closing, and front-loading the hard underwriting work. Complex files (DSCR, bank statement, non-QM) that would stall at big banks close on schedule."
+    },
+    {
+      question: "Is it better to pay points or accept a higher rate?",
+      answer: "It depends on how long you plan to stay in the home. Points lower your rate but cost money upfront — the 'break-even' point is typically 3-5 years. In your Planning Session, we calculate the exact break-even for your scenario and align the decision with your life plan and timeline."
     }
   ];
 
@@ -47,19 +59,27 @@ const FAQSection = () => {
               <div className="inline-flex items-center gap-2 mb-4">
                 <HelpCircle className="text-accent" size={20} />
                 <span className="text-accent text-sm font-bold uppercase tracking-wider">
-                  FAQ
+                  Common Questions from First-Time & Anxious Buyers
                 </span>
               </div>
               <h2 className="font-serif text-2xl lg:text-3xl font-bold text-white mb-4">
-                Common <span className="text-accent">Questions</span>
+                Answers That <span className="text-accent">Educate</span>, Not Sell
               </h2>
+              <p className="text-white/70 text-sm max-w-xl mx-auto">
+                The questions below reflect what real borrowers ask when they're nervous, unsure, or comparing options. 
+                We answer them the same way we would in a Planning Session — honestly.
+              </p>
             </div>
             
             <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 mb-6">
               <p className="text-white/90 text-center text-sm">
-                Questions? Email{" "}
+                Have a question not listed here? Email{" "}
                 <a href="mailto:team@previsemortgage.com" className="text-accent hover:text-accent-light transition-colors font-semibold">
                   team@previsemortgage.com
+                </a>{" "}
+                or{" "}
+                <a href="#contact" className="text-accent hover:text-accent-light transition-colors font-semibold">
+                  book a free Planning Session
                 </a>
               </p>
             </div>

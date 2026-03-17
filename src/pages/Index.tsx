@@ -40,10 +40,10 @@ const Index = () => {
       <Header />
       <HeroSection />
       <Suspense fallback={<SectionFallback />}>
-        <ProcessSection />
-        <HybridTechHumanSection />
         <WhyPreviseSection />
         <CalendlySection />
+        <ProcessSection />
+        <HybridTechHumanSection />
         <FeaturesSection />
         <FAQSection />
         <TransparencySection />

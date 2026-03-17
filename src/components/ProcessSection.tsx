@@ -69,7 +69,7 @@ const ProcessSection = () => {
     {
       icon: Shield,
       title: "Strengthen Buyer Offers",
-      description: "A Previse pre-approval with a 21-day closing commitment gives your buyer's offer a competitive edge. Listing agents trust specific timelines over vague promises."
+      description: "A Previse pre-approval with a target closing timeline gives your buyer's offer a competitive edge. Listing agents trust specific timelines over vague promises."
     },
     {
       icon: CalendarCheck,

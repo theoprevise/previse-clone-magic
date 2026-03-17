@@ -277,7 +277,7 @@ const ProcessSection = () => {
               <Button size="lg" variant="hero">
                 Start My Application
               </Button>
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:text-white">
                 Schedule a Planning Session
               </Button>
             </div>

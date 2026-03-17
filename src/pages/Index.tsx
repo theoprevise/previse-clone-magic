@@ -42,6 +42,7 @@ const Index = () => {
         <WhyPreviseSection />
         <CalendlySection />
         <FAQSection />
+        <TransparencySection />
         <HomeLoansContent />
         <AboutSection />
         <Footer />

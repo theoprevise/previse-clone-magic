@@ -187,11 +187,11 @@ const ProcessSection = () => {
         </div>
 
         {/* Timestamped Case Studies */}
-        <div className="bg-primary/5 border border-primary/10 rounded-3xl p-8 md:p-12 mb-16">
-          <h3 className="text-2xl font-bold text-foreground text-center mb-3">
+        <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 mb-16">
+          <h3 className="text-2xl font-bold text-white text-center mb-3">
             Real Timelines from Recent Closings
           </h3>
-          <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto text-sm">
+          <p className="text-white/60 text-center mb-10 max-w-2xl mx-auto text-sm">
             Not hypotheticals — these are real closing timelines from actual Previse Mortgage transactions.
           </p>
           <div className="grid md:grid-cols-3 gap-6">

@@ -83,12 +83,11 @@ serve(async (req) => {
     }
 
     if (action === "send") {
-      // Check for recent unexpired OTP (rate limiting — block if sent < 60s ago)
+      // Check for recent OTP (rate limiting — block if sent < 60s ago, regardless of expiry)
       const { data: existing } = await supabase
         .from("phone_otps")
-        .select("created_at, expires_at")
+        .select("created_at")
         .eq("phone", normalizedPhone)
-        .gt("expires_at", new Date().toISOString())
         .order("created_at", { ascending: false })
         .limit(1)
         .maybeSingle();
@@ -96,6 +95,7 @@ serve(async (req) => {
       if (existing) {
         const secondsAgo = (Date.now() - new Date(existing.created_at).getTime()) / 1000;
         if (secondsAgo < 60) {
+          const retryAfter = Math.ceil(60 - secondsAgo);
           return new Response(
             JSON.stringify({ error: "Please wait before requesting a new code.", retryAfter: Math.ceil(60 - secondsAgo) }),
             { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }

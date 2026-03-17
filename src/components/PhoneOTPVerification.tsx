@@ -42,13 +42,17 @@ const PhoneOTPVerification = ({ phone, onVerified, className = '' }: PhoneOTPVer
         body: { action: 'send', phone },
       });
       if (fnError) throw new Error(fnError.message);
-      if (!data?.success) throw new Error(data?.error || 'Failed to send code');
+      if (data?.error) throw new Error(data.error);
+      if (!data?.success) throw new Error('Failed to send code');
       setStep('verify');
+      // Reset cooldown each time a code is successfully sent
+      if (cooldownRef.current) clearInterval(cooldownRef.current);
       startCooldown();
       // Focus first OTP input
       setTimeout(() => inputRefs.current[0]?.focus(), 100);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to send verification code');
+      const msg = err instanceof Error ? err.message : 'Failed to send verification code';
+      setError(msg);
     } finally {
       setIsSending(false);
     }

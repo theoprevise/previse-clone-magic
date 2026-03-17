@@ -33,8 +33,8 @@ const ProcessSection = () => {
       step: "04",
       title: "Clear-to-Close & E-Close",
       time: "Days 14–21",
-      description: "21-day closings on purchase loans. E-closing available. Complex files close on time because we front-load the hard work.",
-      details: ["21-day closing target", "E-closing available", "Line-by-line CD walkthrough", "Keys to your new home!"]
+      description: "Purchase closings as fast as 21 days. E-closing available. Complex files close on time because we front-load the hard work.",
+      details: ["As fast as 21-day closings", "E-closing available", "Line-by-line CD walkthrough", "Keys to your new home!"]
     }
   ];
 
@@ -69,7 +69,7 @@ const ProcessSection = () => {
     {
       icon: Shield,
       title: "Strengthen Buyer Offers",
-      description: "A Previse pre-approval with a 21-day closing commitment gives your buyer's offer a competitive edge. Listing agents trust specific timelines over vague promises."
+      description: "A Previse pre-approval with a target closing timeline gives your buyer's offer a competitive edge. Listing agents trust specific timelines over vague promises."
     },
     {
       icon: CalendarCheck,
@@ -94,13 +94,13 @@ const ProcessSection = () => {
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="text-accent text-sm font-bold uppercase tracking-wider bg-accent/10 px-4 py-2 rounded-full">
-            21-Day Closing Guarantee · Real Performance Data · Agent-Ready Proof Points
+            Closings as Fast as 21 Days · Real Performance Data · Agent-Ready Proof Points
           </span>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-6 mb-6">
             Fast <span className="text-accent">and</span> Thorough — Not One or the Other
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
-            Other lenders promise speed but surprise you at the finish line. Previse Mortgage closes in 21 days 
+            Other lenders promise speed but surprise you at the finish line. Previse Mortgage targets closings as fast as 21 days 
             <em> because</em> we front-load the hard work — not by skipping it. AI-enhanced processing catches 
             issues on day one so humans solve them before they become delays.
           </p>

@@ -32,7 +32,7 @@ const FAQSection = () => {
     },
     {
       question: "How quickly can Previse Mortgage close a loan?",
-      answer: "Our fast closing guarantee targets 21 days on purchase loans. We achieve this through AI-enhanced processing, digital application and e-closing, and front-loading the hard underwriting work. Complex files (DSCR, bank statement, non-QM) that would stall at big banks close on schedule."
+      answer: "We target closings as fast as 21 days on purchase loans, subject to file complexity and third-party timelines. We achieve this through AI-enhanced processing, digital application and e-closing, and front-loading the hard underwriting work. Complex files (DSCR, bank statement, non-QM) that would stall at big banks close on schedule because we identify issues early."
     },
     {
       question: "Is it better to pay points or accept a higher rate?",

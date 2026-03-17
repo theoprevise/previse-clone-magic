@@ -80,13 +80,18 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
             }
           ],
           "serviceType": [
+            "DSCR Investment Property Loans",
+            "Bank Statement Loans",
+            "Non-QM Financing",
+            "Flexible Non-QM Underwriting",
             "Conventional Loans",
             "FHA Loans", 
             "VA Loans",
             "USDA Loans",
-            "Jumbo Loans",
             "Refinancing",
-            "Investment Property Loans"
+            "First-Time Homebuyer Programs",
+            "Digital Application & E-Closing",
+            "Fast Closing Guarantee"
           ],
           "priceRange": "$$",
           "openingHours": "Mo-Fr 09:00-17:00",

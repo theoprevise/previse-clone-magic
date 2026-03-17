@@ -209,22 +209,22 @@ const TransparencySection = () => {
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {[
               {
-                quote: "As a self-employed business owner, I was turned down by two big banks. Previse Mortgage found me a bank statement loan with a rate I didn't think was possible. Their thorough process actually gave me confidence that everything was done right.",
+                quote: "What stood out most was the complete lack of pressure. Teddy walked me through three different scenarios, explained the pros and cons of each, and let me decide on my own timeline. As a self-employed business owner turned down by two banks, I finally felt like someone was advising me, not selling me.",
                 name: "Recent Client",
                 type: "Self-Employed Borrower",
-                highlight: "Bank Statement Loan Success"
+                highlight: "Advisory, Never Pushy"
               },
               {
-                quote: "I was nervous about buying my first home. Teddy walked me through every step, explained every document, and never rushed me. The communication was excellent — I always knew exactly where my loan stood. Even after closing, he checked in to make sure everything was smooth.",
+                quote: "I was nervous about buying my first home and expected a hard sell. Instead, Teddy spent an hour educating me on loan types, honestly told me which programs I wouldn't qualify for, and explained every document before asking for it. The communication was excellent — I always knew where I stood. No pressure, ever.",
                 name: "Recent Client", 
                 type: "First-Time Homebuyer",
-                highlight: "First-Time Buyer Experience"
+                highlight: "Education-First Experience"
               },
               {
-                quote: "I've closed multiple DSCR loans through Previse for my rental properties. They understand investor deals and their attention to detail means no last-minute surprises at the closing table. They've become my go-to for every new acquisition.",
+                quote: "I've worked with pushy loan officers before — Previse is the opposite. They took the time to understand my investment strategy, recommended against one property that didn't pencil, and helped me close three DSCR loans that did. Their consultative approach has made them my go-to for every acquisition.",
                 name: "Recent Client",
                 type: "Real Estate Investor",
-                highlight: "Investment Property Specialist"
+                highlight: "Consultative Investment Partner"
               }
             ].map((testimonial, idx) => (
               <div key={idx} className="bg-background border border-border rounded-2xl p-6 flex flex-col">

@@ -7,30 +7,30 @@ const ProcessSection = () => {
     {
       icon: FileSearch,
       step: "01",
-      title: "Pre-Qualification",
-      description: "Quick 10-minute consultation to understand your goals and determine your buying power.",
-      details: ["Credit review", "Income assessment", "Debt-to-income analysis", "Rate quote"]
+      title: "Digital Application",
+      description: "Apply online in minutes. Upload documents through our secure portal — no branch visit needed.",
+      details: ["Fully digital application", "Secure document upload", "E-disclosures & e-signatures", "Instant pre-qualification"]
     },
     {
       icon: Calculator,
       step: "02", 
-      title: "Application & Documentation",
-      description: "Complete your loan application and gather required documentation with our guided process.",
-      details: ["Online application", "Document upload portal", "Income verification", "Asset documentation"]
+      title: "AI-Enhanced Processing",
+      description: "Automated income verification and intelligent document analysis pre-screen your file before human review.",
+      details: ["Automated underwriting", "Digital income verification", "Early condition detection", "Transparent low-fee pricing"]
     },
     {
       icon: CheckCircle,
       step: "03",
-      title: "Processing & Underwriting",
-      description: "Our team reviews your application and coordinates with underwriters. Subject to credit approval.",
-      details: ["File review", "Appraisal ordering", "Underwriting submission", "Condition clearance"]
+      title: "Proactive Communication",
+      description: "Weekly status check-ins, 24-hour response guarantee, and a personalized document roadmap — you never chase us.",
+      details: ["Weekly loan officer updates", "24-hour response guarantee", "Same person start to finish", "No handoffs or call centers"]
     },
     {
       icon: Key,
       step: "04",
-      title: "Closing & Funding",
-      description: "Final loan approval, closing coordination, and funding to complete your home purchase.",
-      details: ["Clear to close", "Closing coordination", "Final walkthrough", "Keys to your new home!"]
+      title: "Fast Closing & E-Close",
+      description: "21-day closings on purchase loans. E-closing available. Complex files close on time because we front-load the hard work.",
+      details: ["21-day closing target", "E-closing available", "Boutique high-touch service", "Keys to your new home!"]
     }
   ];
 
@@ -38,13 +38,13 @@ const ProcessSection = () => {
     <section id="process" className="py-20 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <span className="text-accent font-semibold text-lg">Our Process</span>
+          <span className="text-accent font-semibold text-lg">Fast Closing Guarantee · Digital Application · Proactive Communication</span>
           <h2 className="text-4xl font-bold text-primary mt-2 mb-6">
-            Simple Steps to Homeownership
+            21-Day Closings — Even on Complex Files
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Our streamlined mortgage process is designed to be transparent, efficient, and stress-free. 
-            Here's how we'll guide you from application to closing.
+            Previse Mortgage combines AI-enhanced processing with hybrid digital + human support to close loans faster. 
+            Apply online, get weekly updates, and work with the same loan officer from click to keys.
           </p>
         </div>
 
@@ -86,11 +86,11 @@ const ProcessSection = () => {
         <div className="text-center">
           <div className="bg-white rounded-2xl p-8 shadow-soft max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-primary mb-4">
-              Ready to Get Started?
+              Experience the Previse Mortgage Difference
             </h3>
             <p className="text-muted-foreground mb-6">
-              The typical mortgage process takes 30-45 days, but we often close loans in as little as 15-21 days. 
-              Let's start your journey to homeownership today.
+              Fast closing guarantee. Transparent pricing. Boutique service. Whether you're self-employed, an investor, or a first-time buyer with a complex file — 
+              Previse Mortgage's hybrid digital + human model gets you to closing faster with less stress.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="hero">

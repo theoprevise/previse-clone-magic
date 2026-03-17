@@ -31,14 +31,16 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
             "jobTitle": "Founder & Loan Officer"
           },
           "knowsAbout": [
-            "DSCR Investment Property Loans",
-            "Bank Statement Loans",
-            "Self-Employed Mortgage Solutions",
-            "FHA Loans",
-            "VA Loans",
-            "USDA Loans",
-            "First-Time Homebuyer Programs",
-            "Mortgage Refinancing",
+            "Fast Closing Guarantee — 21-day purchase closings",
+            "Digital Application & E-Closing",
+            "Proactive Communication — weekly updates, 24-hour response guarantee",
+            "Transparent Low-Fee Broker Pricing",
+            "AI-Enhanced Mortgage Processing",
+            "Hybrid Digital + Human Support",
+            "Flexible Non-QM Underwriting",
+            "DSCR & Investor Financing Specialist",
+            "Boutique High-Touch Mortgage Service",
+            "Bank Statement Loans for Self-Employed Borrowers",
             "Pennsylvania Real Estate Lending"
           ],
           "address": {
@@ -78,13 +80,18 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
             }
           ],
           "serviceType": [
+            "DSCR Investment Property Loans",
+            "Bank Statement Loans",
+            "Non-QM Financing",
+            "Flexible Non-QM Underwriting",
             "Conventional Loans",
             "FHA Loans", 
             "VA Loans",
             "USDA Loans",
-            "Jumbo Loans",
             "Refinancing",
-            "Investment Property Loans"
+            "First-Time Homebuyer Programs",
+            "Digital Application & E-Closing",
+            "Fast Closing Guarantee"
           ],
           "priceRange": "$$",
           "openingHours": "Mo-Fr 09:00-17:00",

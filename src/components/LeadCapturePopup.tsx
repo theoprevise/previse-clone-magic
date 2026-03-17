@@ -4,18 +4,19 @@ import { X, CheckCircle, Sparkles, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import lighthouseIcon from "@/assets/lighthouse-icon.png";
+import PhoneOTPVerification from "@/components/PhoneOTPVerification";
 
-const POPUP_DELAY_MS = 15000; // 15 seconds
+const POPUP_DELAY_MS = 15000;
 const STORAGE_KEY = "lead_popup_dismissed";
 
 const LeadCapturePopup = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
+  const [step, setStep] = useState<'form' | 'otp'>('form');
   const { toast } = useToast();
 
   const [formData, setFormData] = useState({
@@ -24,73 +25,62 @@ const LeadCapturePopup = () => {
     email: "",
     phone: "",
   });
-  const [consent, setConsent] = useState(false);
 
   useEffect(() => {
-    // Check if popup was already dismissed
     const dismissed = localStorage.getItem(STORAGE_KEY);
     if (dismissed) return;
-
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, POPUP_DELAY_MS);
-
+    const timer = setTimeout(() => setIsOpen(true), POPUP_DELAY_MS);
     return () => clearTimeout(timer);
   }, []);
 
   const handleClose = () => {
     setIsOpen(false);
     setShowThankYou(false);
+    setStep('form');
     localStorage.setItem(STORAGE_KEY, "true");
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleFormNext = (e: React.FormEvent) => {
     e.preventDefault();
-    
     if (!formData.first_name || !formData.last_name || !formData.email || !formData.phone) {
       toast({
         title: "Required Fields",
-        description: "Please fill in your name, email, and phone number.",
+        description: "Please fill in all fields.",
         variant: "destructive",
       });
       return;
     }
+    if (formData.phone.replace(/\D/g, '').length < 10) {
+      toast({ title: "Invalid Phone", description: "Please enter a valid phone number.", variant: "destructive" });
+      return;
+    }
+    setStep('otp');
+  };
 
+  const handlePhoneVerified = async () => {
     setIsSubmitting(true);
-
     try {
       const leadData = {
         first_name: formData.first_name.trim(),
         last_name: formData.last_name.trim(),
         email: formData.email.trim(),
-        phone: formData.phone.trim() || null,
+        phone: formData.phone.trim(),
         source: "timed_lead_capture_popup",
         campaign_type: "website_popup_offer",
         event_name: "Timed popup displayed after page load",
-        sms_opt_in: consent,
+        sms_opt_in: true,
       };
-
-      const { error } = await supabase.functions.invoke('send-to-zapier', {
-        body: leadData,
-      });
-
+      const { error } = await supabase.functions.invoke('send-to-zapier', { body: leadData });
       if (error) throw error;
-
       setShowThankYou(true);
     } catch (error) {
       console.error("Error submitting lead:", error);
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
+      toast({ title: "Error", description: "Something went wrong. Please try again.", variant: "destructive" });
+      setStep('otp');
     } finally {
       setIsSubmitting(false);
     }
@@ -103,68 +93,33 @@ const LeadCapturePopup = () => {
     return (
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
         <div className="relative w-full max-w-sm bg-background rounded-xl shadow-2xl border border-border overflow-hidden animate-scale-in">
-          {/* Animated Background */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute top-0 left-1/4 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-pulse" />
             <div className="absolute bottom-0 right-1/4 w-16 h-16 bg-accent/20 rounded-full blur-lg animate-bounce" style={{ animationDuration: '3s' }} />
-            <div className="absolute top-1/2 right-0 w-12 h-12 bg-success/15 rounded-full blur-md animate-pulse" style={{ animationDelay: '1s' }} />
           </div>
-          
-          {/* Close Button */}
-          <button
-            onClick={handleClose}
-            className="absolute top-3 right-3 z-10 text-muted-foreground hover:text-foreground transition-colors"
-            aria-label="Close popup"
-          >
+          <button onClick={handleClose} className="absolute top-3 right-3 z-10 text-muted-foreground hover:text-foreground transition-colors" aria-label="Close popup">
             <X className="h-5 w-5" />
           </button>
-
-          {/* Content */}
           <div className="relative z-10 p-6 text-center">
-            {/* Success Icon with Animation */}
             <div className="mb-4 animate-bounce" style={{ animationDuration: '2s' }}>
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-success/20 rounded-full border-2 border-success/40">
-                <CheckCircle className="w-8 h-8 text-success animate-pulse" />
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full border-2 border-green-300">
+                <CheckCircle className="w-8 h-8 text-green-500 animate-pulse" />
               </div>
             </div>
-
-            {/* Sparkles */}
             <div className="absolute top-8 left-8 animate-pulse" style={{ animationDelay: '0.5s' }}>
               <Sparkles className="w-5 h-5 text-accent" />
             </div>
             <div className="absolute top-12 right-10 animate-pulse" style={{ animationDelay: '1s' }}>
               <Sparkles className="w-4 h-4 text-primary" />
             </div>
-            <div className="absolute bottom-20 left-12 animate-pulse" style={{ animationDelay: '1.5s' }}>
-              <Heart className="w-4 h-4 text-destructive/60" />
-            </div>
-
-            {/* Thank You Message */}
-            <h2 className="text-2xl font-bold text-foreground mb-2 animate-fade-in">
-              Thank You, {formData.first_name}!
-            </h2>
-            <p className="text-muted-foreground text-sm mb-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              We've received your request and a mortgage specialist will contact you within 24 hours.
-            </p>
-
-            {/* Decorative Divider */}
+            <h2 className="text-2xl font-bold text-foreground mb-2">Thank You, {formData.first_name}!</h2>
+            <p className="text-muted-foreground text-sm mb-4">We've received your request and a mortgage specialist will contact you within 24 hours.</p>
             <div className="flex items-center justify-center gap-2 mb-4">
               <div className="h-px w-12 bg-gradient-to-r from-transparent to-border" />
               <Heart className="w-4 h-4 text-primary animate-pulse" />
               <div className="h-px w-12 bg-gradient-to-l from-transparent to-border" />
             </div>
-
-            <p className="text-xs text-muted-foreground mb-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-              We're excited to help you on your homeownership journey!
-            </p>
-
-            <Button
-              onClick={handleClose}
-              className="w-full animate-fade-in"
-              style={{ animationDelay: '0.6s' }}
-            >
-              Close
-            </Button>
+            <Button onClick={handleClose} className="w-full">Close</Button>
           </div>
         </div>
       </div>
@@ -178,89 +133,66 @@ const LeadCapturePopup = () => {
         <div className="bg-primary px-4 py-3 text-primary-foreground flex items-center gap-3">
           <img src={lighthouseIcon} alt="Lighthouse icon" className="h-10 w-10 object-contain" />
           <div>
-            <h2 className="text-lg font-bold">Let us help you</h2>
+            <h2 className="text-lg font-bold">
+              {step === 'otp' ? 'Verify Your Phone' : 'Let us help you'}
+            </h2>
             <p className="text-xs opacity-90">
-              Find the perfect mortgage solution.
+              {step === 'otp' ? 'Enter the code we sent you' : 'Find the perfect mortgage solution.'}
             </p>
           </div>
-          <button
-            onClick={handleClose}
-            className="absolute top-2 right-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-            aria-label="Close popup"
-          >
+          <button onClick={handleClose} className="absolute top-2 right-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors" aria-label="Close popup">
             <X className="h-5 w-5" />
           </button>
         </div>
 
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="p-4 space-y-3">
-          <div className="grid grid-cols-2 gap-3">
-            <div className="space-y-1">
-              <Label htmlFor="first_name" className="text-sm">First Name *</Label>
-              <Input
-                id="first_name"
-                name="first_name"
-                value={formData.first_name}
-                onChange={handleChange}
-                placeholder="John"
-                required
-                className="h-9"
-              />
+        {step === 'form' ? (
+          <form onSubmit={handleFormNext} className="p-4 space-y-3">
+            <div className="grid grid-cols-2 gap-3">
+              <div className="space-y-1">
+                <Label htmlFor="first_name" className="text-sm">First Name *</Label>
+                <Input id="first_name" name="first_name" value={formData.first_name} onChange={handleChange} placeholder="John" required className="h-9" />
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="last_name" className="text-sm">Last Name *</Label>
+                <Input id="last_name" name="last_name" value={formData.last_name} onChange={handleChange} placeholder="Doe" required className="h-9" />
+              </div>
             </div>
             <div className="space-y-1">
-              <Label htmlFor="last_name" className="text-sm">Last Name *</Label>
-              <Input
-                id="last_name"
-                name="last_name"
-                value={formData.last_name}
-                onChange={handleChange}
-                placeholder="Doe"
-                required
-                className="h-9"
-              />
+              <Label htmlFor="email" className="text-sm">Email *</Label>
+              <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="john@example.com" required className="h-9" />
             </div>
-          </div>
-
-          <div className="space-y-1">
-            <Label htmlFor="email" className="text-sm">Email *</Label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="john@example.com"
-              required
-              className="h-9"
+            <div className="space-y-1">
+              <Label htmlFor="phone" className="text-sm">Phone Number *</Label>
+              <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="(555) 123-4567" required className="h-9" />
+              <p className="text-xs text-muted-foreground">A verification code will be sent to this number.</p>
+            </div>
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              By submitting, you consent to be contacted by Previse Mortgage LLC via phone, email, or SMS. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary underline hover:text-primary/80">Terms of Service</Link>.
+            </p>
+            <Button type="submit" className="w-full">
+              Next: Verify Phone →
+            </Button>
+          </form>
+        ) : (
+          <div className="p-4 space-y-3">
+            <div className="p-3 bg-muted/50 rounded-lg text-sm space-y-0.5">
+              <p className="font-medium">{formData.first_name} {formData.last_name}</p>
+              <p className="text-muted-foreground">{formData.email}</p>
+              <p className="text-muted-foreground">{formData.phone}</p>
+            </div>
+            <PhoneOTPVerification
+              phone={formData.phone}
+              onVerified={handlePhoneVerified}
             />
+            <button
+              type="button"
+              onClick={() => setStep('form')}
+              className="text-sm text-primary hover:underline block mx-auto"
+            >
+              ← Edit info
+            </button>
           </div>
-
-          <div className="space-y-1">
-            <Label htmlFor="phone" className="text-sm">Phone Number *</Label>
-            <Input
-              id="phone"
-              name="phone"
-              type="tel"
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder="(555) 123-4567"
-              required
-              className="h-9"
-            />
-          </div>
-
-          <p className="text-xs text-muted-foreground leading-relaxed">
-            By submitting this form, you consent to be contacted by Previse Mortgage LLC via phone, email, or other communication methods regarding your inquiry. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary underline hover:text-primary/80">Terms of Service</Link>.
-          </p>
-
-          <Button
-            type="submit"
-            className="w-full"
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? "Submitting..." : "Submit"}
-          </Button>
-        </form>
+        )}
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { Lightbulb, Eye, Target, Sparkles } from "lucide-react";
+import { Lightbulb, Eye, Target, Sparkles, HandHeart } from "lucide-react";
 
 const WhyPreviseSection = () => {
   return (
@@ -15,7 +15,7 @@ const WhyPreviseSection = () => {
           <div className="text-center mb-16">
             <div className="inline-block mb-6">
               <span className="text-accent text-sm font-bold uppercase tracking-wider bg-accent/10 px-4 py-2 rounded-full">
-                Our Name, Our Promise
+                Advice Over Pressure
               </span>
             </div>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
@@ -28,38 +28,51 @@ const WhyPreviseSection = () => {
           <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 mb-12">
             <div className="flex items-start gap-6 mb-8">
               <div className="w-16 h-16 bg-gradient-to-br from-accent/20 to-accent/10 rounded-2xl flex items-center justify-center flex-shrink-0">
-                <Eye className="text-accent" size={32} />
+                <HandHeart className="text-accent" size={32} />
               </div>
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                  <span className="text-accent">Previse</span> means to <em className="text-accent-light">foresee</em> or <em className="text-accent-light">anticipate</em>
+                  Advisory-First, <span className="text-accent">Never Pushy</span>
                 </h3>
                 <p className="text-xl text-white/90 leading-relaxed">
-                  At <strong className="text-accent">Previse Mortgage</strong>, we don't just process loans — we anticipate your needs, 
-                  foresee potential challenges, and prepare solutions before problems arise. That's the 
-                  <strong className="text-accent"> Previse</strong> difference.
+                  At <strong className="text-accent">Previse Mortgage</strong>, we believe that a mortgage is one of the 
+                  biggest financial decisions you'll ever make — and no one should feel pressured into it. 
+                  Our job is to educate, advise, and present your options clearly. <strong className="text-accent">We'd rather lose a deal 
+                  by being honest than close one by being pushy.</strong>
                 </p>
               </div>
             </div>
             
             <div className="border-t border-white/10 pt-8">
               <p className="text-lg text-white/80 leading-relaxed italic">
-                "While other lenders react to problems, <span className="text-accent font-semibold">Previse Mortgage</span> stays 
-                ahead — using modern technology and proactive service to ensure a smooth, stress-free closing."
+                "Previse Mortgage operates on a simple principle: <span className="text-accent font-semibold">advice over pressure</span>. 
+                Every consultation starts with understanding your situation — not selling you a product. 
+                We'll tell you when we're the right fit, and we'll tell you when you'd be better served elsewhere. 
+                That's not a sales pitch. That's how we've built our reputation."
               </p>
-              <p className="text-accent font-semibold mt-4">— The Previse Mortgage Team</p>
+              <p className="text-accent font-semibold mt-4">— Teddy Carbone, Founder</p>
             </div>
           </div>
           
-          {/* Three pillars */}
-          <div className="grid md:grid-cols-3 gap-6">
+          {/* Four pillars */}
+          <div className="grid md:grid-cols-4 gap-6">
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center group hover:bg-white/10 transition-all duration-300">
+              <div className="w-14 h-14 bg-gradient-to-br from-accent/20 to-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Eye className="text-accent" size={28} />
+              </div>
+              <h4 className="text-lg font-bold text-white mb-2">Educate First</h4>
+              <p className="text-white/70 text-sm">
+                Every consultation begins with a structured scenario walkthrough — we explain your options, trade-offs, and costs before any application
+              </p>
+            </div>
+            
             <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center group hover:bg-white/10 transition-all duration-300">
               <div className="w-14 h-14 bg-gradient-to-br from-accent/20 to-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Lightbulb className="text-accent" size={28} />
               </div>
               <h4 className="text-lg font-bold text-white mb-2">Anticipate</h4>
               <p className="text-white/70 text-sm">
-                <span className="text-accent">Previse Mortgage</span> anticipates market changes and prepares you for success
+                We foresee challenges in your file and prepare solutions before they become problems — that's what "Previse" means
               </p>
             </div>
             
@@ -67,9 +80,9 @@ const WhyPreviseSection = () => {
               <div className="w-14 h-14 bg-gradient-to-br from-accent/20 to-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Target className="text-accent" size={28} />
               </div>
-              <h4 className="text-lg font-bold text-white mb-2">Prepare</h4>
+              <h4 className="text-lg font-bold text-white mb-2">Be Transparent</h4>
               <p className="text-white/70 text-sm">
-                We prepare your loan file proactively to avoid last-minute surprises
+                If Previse isn't the best option for your situation, we'll tell you — and point you in the right direction
               </p>
             </div>
             
@@ -77,9 +90,9 @@ const WhyPreviseSection = () => {
               <div className="w-14 h-14 bg-gradient-to-br from-accent/20 to-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Sparkles className="text-accent" size={28} />
               </div>
-              <h4 className="text-lg font-bold text-white mb-2">Deliver</h4>
+              <h4 className="text-lg font-bold text-white mb-2">Deliver with Certainty</h4>
               <p className="text-white/70 text-sm">
-                <span className="text-accent">Previse Mortgage</span> delivers on-time closings with confidence
+                Our meticulous process means when we say you're approved, you can trust it — on-time closings with confidence
               </p>
             </div>
           </div>

@@ -13,14 +13,15 @@ const AboutSection = () => {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
             <span className="text-accent text-sm font-bold uppercase tracking-wider bg-accent/10 px-3 py-1 rounded-full">
-              Meet Our Team
+              Your Advisors, Not Salespeople
             </span>
             <h2 className="font-serif text-2xl lg:text-3xl font-bold text-white mt-3 mb-4">
-              A Family-Owned <span className="text-accent">Mortgage Brokerage</span>
+              A Family-Owned <span className="text-accent">Advisory Brokerage</span>
             </h2>
             <p className="text-white/80 max-w-2xl mx-auto">
-              At Previse Mortgage, we treat every client like family. Our dedicated team brings 
-              experience, integrity, and a personal touch to every loan.
+              At Previse Mortgage, you'll never feel pressured into a decision. Our team takes a consultative, 
+              education-first approach — explaining your options, answering every question, and giving you 
+              honest advice even when it means recommending someone else.
             </p>
           </div>
           
@@ -39,8 +40,9 @@ const AboutSection = () => {
               <p className="text-accent font-medium text-sm mb-1">Founder & Loan Officer</p>
               <p className="text-white/60 text-xs mb-3">NMLS# 2723255 · PA# 119453</p>
               <p className="text-white/80 text-sm leading-relaxed mb-3">
-                With 10+ years in finance, Teddy founded Previse Mortgage to deliver 
-                hassle-free, honest mortgage advice with modern technology.
+                With 10+ years in finance, Teddy founded Previse Mortgage on a simple principle: advice over pressure. 
+                He starts every consultation by understanding your situation — not selling a product — and will 
+                honestly tell you when another lender is a better fit.
               </p>
               <a href="mailto:teddy@previsemortgage.com" className="text-accent hover:text-accent-light text-sm font-medium transition-colors">
                 teddy@previsemortgage.com
@@ -61,8 +63,9 @@ const AboutSection = () => {
               <p className="text-accent font-medium text-sm mb-1">Loan Officer</p>
               <p className="text-white/60 text-xs mb-3">NMLS# 2083380 · PA# 119453</p>
               <p className="text-white/80 text-sm leading-relaxed mb-3">
-                Raine brings a personal, client-first approach to every transaction, 
-                ensuring families feel supported throughout their entire mortgage journey.
+                Raine brings a consultative, low-pressure approach to every conversation. She takes the time 
+                to walk clients through scenarios, answer questions patiently, and ensure families feel 
+                informed and confident — never rushed — throughout their entire mortgage journey.
               </p>
               <a href="mailto:rainev@previsemortgage.com" className="text-accent hover:text-accent-light text-sm font-medium transition-colors">
                 rainev@previsemortgage.com

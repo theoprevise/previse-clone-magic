@@ -230,7 +230,7 @@ const ProcessSection = () => {
                     </li>
                   ))}
                 </ul>
-                <p className="text-muted-foreground text-xs italic leading-relaxed border-t border-border pt-3">
+                <p className="text-white/50 text-xs italic leading-relaxed border-t border-white/10 pt-3">
                   "{study.quote}"
                 </p>
               </div>

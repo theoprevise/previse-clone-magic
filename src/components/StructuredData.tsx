@@ -100,19 +100,20 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
               "@type": "Review",
               "author": { "@type": "Person", "name": "Self-Employed Borrower" },
               "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "reviewBody": "As a self-employed business owner, I was turned down by two big banks. Previse Mortgage found me a bank statement loan with a rate I didn't think was possible. Their thorough process gave me confidence."
+              "reviewBody": "What stood out most was the complete lack of pressure. Teddy walked me through three different scenarios, explained the pros and cons of each, and let me decide on my own timeline. As a self-employed borrower turned down by two banks, I finally felt like someone was advising me, not selling me."
             },
             {
               "@type": "Review",
               "author": { "@type": "Person", "name": "First-Time Homebuyer" },
               "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "reviewBody": "Teddy walked me through every step, explained every document, and never rushed me. The communication was excellent — I always knew exactly where my loan stood."
+              "reviewBody": "I expected a hard sell but instead Teddy spent an hour educating me on loan types, honestly told me which programs I wouldn't qualify for, and explained every document before asking for it. No pressure, ever. The consultative approach made all the difference."
             },
             {
               "@type": "Review",
               "author": { "@type": "Person", "name": "Real Estate Investor" },
               "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "reviewBody": "I've closed multiple DSCR loans through Previse for my rental properties. They understand investor deals and their attention to detail means no last-minute surprises."
+              "reviewBody": "Previse is the opposite of pushy. They took the time to understand my investment strategy, recommended against one property that didn't pencil, and helped me close three DSCR loans that did. Their consultative approach has made them my go-to for every acquisition."
+            }
             }
           ],
           "sameAs": [

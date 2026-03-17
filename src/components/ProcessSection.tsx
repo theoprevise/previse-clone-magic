@@ -110,11 +110,11 @@ const ProcessSection = () => {
         <div className="grid lg:grid-cols-4 gap-8 mb-16">
           {steps.map((step, index) => (
             <div key={index} className="relative">
-              <Card className="bg-background shadow-soft hover:shadow-medium transition-all duration-300 h-full border border-border">
+              <Card className="bg-white/5 backdrop-blur-xl border border-white/10 hover:bg-white/10 transition-all duration-300 h-full">
                 <CardContent className="p-8 text-center">
                   <div className="relative mb-6">
-                    <div className="inline-flex items-center justify-center w-20 h-20 bg-primary/10 rounded-full mb-4">
-                      <step.icon className="text-primary" size={32} />
+                    <div className="inline-flex items-center justify-center w-20 h-20 bg-accent/15 rounded-full mb-4">
+                      <step.icon className="text-accent" size={32} />
                     </div>
                     <div className="absolute -top-2 -right-2 w-8 h-8 bg-accent text-accent-foreground rounded-full flex items-center justify-center text-sm font-bold">
                       {step.step}

@@ -31,7 +31,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
             "jobTitle": "Founder & Loan Officer"
           },
           "knowsAbout": [
-            "Fast Closing Guarantee — 21-day purchase closings",
+            "Closings as fast as 21 days on qualified purchase loans",
             "Digital Application & E-Closing",
             "Proactive Communication — weekly updates, 24-hour response guarantee",
             "Transparent Low-Fee Broker Pricing",

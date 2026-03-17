@@ -241,22 +241,22 @@ const ProcessSection = () => {
         {/* Agent-Facing Proof Points */}
         <div className="bg-accent/5 border border-accent/20 rounded-3xl p-8 md:p-12 mb-16">
           <div className="text-center mb-10">
-            <h3 className="text-2xl font-bold text-foreground mb-3">
+            <h3 className="text-2xl font-bold text-white mb-3">
               For Agents: Speed & Predictability That Wins Offers
             </h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-sm leading-relaxed">
+            <p className="text-white/60 max-w-2xl mx-auto text-sm leading-relaxed">
               When your buyer's offer needs a lender that listing agents trust, Previse's specific 
               closing commitments and direct loan officer access give you a competitive edge.
             </p>
           </div>
           <div className="grid md:grid-cols-4 gap-6">
             {agentProofPoints.map((point, idx) => (
-              <div key={idx} className="bg-background/80 border border-border rounded-xl p-5 text-center">
+              <div key={idx} className="bg-white/5 border border-white/10 rounded-xl p-5 text-center">
                 <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-3">
                   <point.icon className="text-accent" size={24} />
                 </div>
-                <h4 className="font-bold text-foreground text-sm mb-2">{point.title}</h4>
-                <p className="text-muted-foreground text-xs leading-relaxed">{point.description}</p>
+                <h4 className="font-bold text-white text-sm mb-2">{point.title}</h4>
+                <p className="text-white/60 text-xs leading-relaxed">{point.description}</p>
               </div>
             ))}
           </div>

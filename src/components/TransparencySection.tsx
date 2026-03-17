@@ -1,4 +1,4 @@
-import { Shield, MessageCircle, Search, Users, Star, CheckCircle, Heart, Phone, FileCheck, ArrowRight } from "lucide-react";
+import { Shield, MessageCircle, Search, Users, Star, CheckCircle, Heart, Phone, FileCheck, ArrowRight, Clock, CalendarCheck, FileText, ListChecks } from "lucide-react";
 
 const TransparencySection = () => {
   return (
@@ -74,49 +74,81 @@ const TransparencySection = () => {
             </div>
           </div>
 
-          {/* Our Approach */}
+          {/* Service Standards - Concrete, visible promises */}
           <div className="bg-primary/5 border border-primary/10 rounded-3xl p-8 md:p-12 mb-16">
             <h3 className="text-2xl font-bold text-foreground mb-3 text-center">
-              Our Approach: Thorough by Design
+              Our Service Standards: What You Can Count On
             </h3>
-            <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto text-sm">
-              We intentionally trade speed-at-all-costs for certainty-at-closing. For complex borrowers, 
-              this difference means everything.
+            <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto text-sm">
+              We don't just say "high-touch service" — we back it with specific, measurable commitments 
+              so your experience feels predictable and guided, never stressful.
             </p>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Search className="text-accent" size={28} />
+            <div className="grid md:grid-cols-4 gap-6 mb-10">
+              {[
+                {
+                  icon: <Clock className="text-accent" size={24} />,
+                  title: "24-Hour Response Promise",
+                  description: "Every question, email, or call gets a response within 24 hours during underwriting — guaranteed. No chasing, no wondering."
+                },
+                {
+                  icon: <CalendarCheck className="text-accent" size={24} />,
+                  title: "Weekly Status Check-Ins",
+                  description: "Your loan officer contacts you every week with a clear update — even when nothing has changed — so you always know exactly where your loan stands."
+                },
+                {
+                  icon: <FileText className="text-accent" size={24} />,
+                  title: "Document Roadmap Upfront",
+                  description: "Before we ask for a single document, you'll receive a personalized checklist explaining exactly what's needed and why — no repeated surprise requests."
+                },
+                {
+                  icon: <ListChecks className="text-accent" size={24} />,
+                  title: "Underwriting Pre-Brief",
+                  description: "We walk you through the most demanding underwriting steps before they happen, so nothing feels unexpected. You'll know what's coming and why it matters."
+                }
+              ].map((standard, idx) => (
+                <div key={idx} className="bg-background/80 border border-border rounded-xl p-5 text-center">
+                  <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    {standard.icon}
+                  </div>
+                  <h4 className="font-bold text-foreground text-sm mb-2">{standard.title}</h4>
+                  <p className="text-muted-foreground text-xs leading-relaxed">{standard.description}</p>
                 </div>
-                <h4 className="font-bold text-foreground mb-2">Meticulous Underwriting</h4>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  We review every detail upfront so there are no surprises at closing. For complex files — 
-                  self-employment, investment properties, non-QM — this thoroughness is the difference 
-                  between a smooth close and a last-minute denial. We catch issues before they become problems.
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <MessageCircle className="text-accent" size={28} />
+              ))}
+            </div>
+
+            {/* Reframing the "why" behind thoroughness */}
+            <div className="bg-background/50 border border-border rounded-2xl p-6 md:p-8">
+              <h4 className="font-bold text-foreground mb-4 text-center text-lg">
+                Why Previse Mortgage's Underwriting Feels Different — By Design
+              </h4>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <Search className="text-accent mx-auto mb-3" size={24} />
+                  <h5 className="font-bold text-foreground text-sm mb-2">We Ask Hard Questions Early</h5>
+                  <p className="text-muted-foreground text-xs leading-relaxed">
+                    Big banks approve fast and deny late. We do the deep review upfront — so when we say 
+                    you're approved, you can trust it. Every document request has a clear reason, and we 
+                    explain it before asking.
+                  </p>
                 </div>
-                <h4 className="font-bold text-foreground mb-2">Proactive Communication</h4>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  You'll have direct access to your loan officer — Teddy or Raine — not a call center. 
-                  We provide clear timelines at the start, milestone updates throughout, and same-day 
-                  responses to your questions. When we say we'll call, we call.
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Shield className="text-accent" size={28} />
+                <div className="text-center">
+                  <MessageCircle className="text-accent mx-auto mb-3" size={24} />
+                  <h5 className="font-bold text-foreground text-sm mb-2">Direct Loan Officer Access</h5>
+                  <p className="text-muted-foreground text-xs leading-relaxed">
+                    You'll work directly with Teddy or Raine throughout your entire loan — same person, 
+                    start to finish. No handoffs, no call centers, no repeating your story to someone new. 
+                    When we say we'll call, we call.
+                  </p>
                 </div>
-                <h4 className="font-bold text-foreground mb-2">Broker Pricing Advantage</h4>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  As a broker, Previse Mortgage shops 50+ wholesale lenders — including niche non-QM 
-                  and investor-focused lenders that retail banks don't carry. For complex scenarios, 
-                  this access consistently delivers better rates and more program options than any 
-                  single bank can offer.
-                </p>
+                <div className="text-center">
+                  <Shield className="text-accent mx-auto mb-3" size={24} />
+                  <h5 className="font-bold text-foreground text-sm mb-2">Certainty Over Speed</h5>
+                  <p className="text-muted-foreground text-xs leading-relaxed">
+                    For complex borrowers — self-employed, investors, non-QM — our thorough approach is the 
+                    difference between a smooth closing and a last-minute denial. We trade rush for confidence, 
+                    and our clients thank us for it at the closing table.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

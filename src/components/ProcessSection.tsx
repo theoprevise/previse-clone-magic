@@ -176,9 +176,9 @@ const ProcessSection = () => {
             ))}
           </div>
 
-          <div className="bg-background/70 border border-accent/20 rounded-xl p-6 text-center">
-            <p className="text-muted-foreground text-sm leading-relaxed max-w-3xl mx-auto">
-              <strong className="text-foreground">How we hit these numbers:</strong> AI pre-screening catches 
+          <div className="bg-white/5 border border-accent/20 rounded-xl p-6 text-center">
+            <p className="text-white/70 text-sm leading-relaxed max-w-3xl mx-auto">
+              <strong className="text-white">How we hit these numbers:</strong> AI pre-screening catches 
               conditions within 48 hours. Documents are reviewed and cleared before submission. Appraisals are 
               ordered on day one, not day ten. Every file gets a pre-underwriting review so the formal submission 
               is clean — not a first draft. <em>This is what "fast because thorough" means in practice.</em>

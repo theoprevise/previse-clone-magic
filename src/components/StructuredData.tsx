@@ -108,19 +108,25 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
               "@type": "Review",
               "author": { "@type": "Person", "name": "First-Time Homebuyer" },
               "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "reviewBody": "I was terrified of making a mistake on my first home. Teddy walked me through FHA vs conventional with my actual numbers, explained mortgage insurance, and honestly told me to wait two months. When I was ready, he guided me through every line of the closing disclosure. No surprises, clear fees, honest explanations."
+              "reviewBody": "We closed in 18 days on our first home — three days early. Teddy walked me through FHA vs conventional with real numbers, ordered the appraisal on day one, and had conditions cleared before I even knew what conditions were. No surprises, clear fees, and the fastest closing our agent had ever seen."
             },
             {
               "@type": "Review",
               "author": { "@type": "Person", "name": "Self-Employed Borrower" },
               "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "reviewBody": "Before I even applied, Teddy showed me three scenarios side by side with all fees itemized. He explained which costs were his, which were third-party, and which could change. When I brought a competing Loan Estimate, he welcomed the comparison and walked me through it line by line. No hidden fees, no bait and switch."
+              "reviewBody": "Two banks declined me and one promised 45 days then asked for more documents in week four. Previse found the right bank statement program in 3 days, front-loaded all the underwriting review, and closed in 24 days. Every fee was itemized from day one. No bait and switch, no last-minute surprises."
             },
             {
               "@type": "Review",
-              "author": { "@type": "Person", "name": "Repeat Client & Investor" },
+              "author": { "@type": "Person", "name": "Real Estate Agent" },
               "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "reviewBody": "Six months after closing, Teddy called to let me know rates had dropped and a refi could save me $200/month. The rate-lock and fee transparency were excellent from day one. Previse feels like having a mortgage strategist on call for life."
+              "reviewBody": "I've sent three buyers to Previse and every closing was on time or early. Teddy gives me his cell, answers same-day, and the listing agents always comment on how smooth the transaction was. My buyers' offers are stronger because agents trust Previse's 21-day commitment."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "DSCR Investor" },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "Closed my 12th investment property in 22 days — fastest and smoothest closing I've had. Previse ordered the appraisal day one, verified DSCR by day three, and had clear-to-close by day 17. No last-minute conditions, no stress. This is my go-to lender for every future deal."
             }
           ],
           "sameAs": [

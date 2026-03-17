@@ -157,7 +157,7 @@ const ProcessSection = () => {
                 Closing Benchmarks — By Scenario
               </h3>
             </div>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-sm leading-relaxed">
+            <p className="text-white/60 max-w-2xl mx-auto text-sm leading-relaxed">
               We publish specific closing targets for every loan type — not vague "fast closing" promises. 
               These benchmarks reflect real performance data, not marketing claims.
             </p>

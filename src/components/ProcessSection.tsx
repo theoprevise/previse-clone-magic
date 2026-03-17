@@ -89,17 +89,17 @@ const ProcessSection = () => {
   ];
 
   return (
-    <section id="process" className="py-20 bg-secondary">
+    <section id="process" className="py-20 bg-gradient-to-b from-primary-dark to-primary relative overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="text-accent text-sm font-bold uppercase tracking-wider bg-accent/10 px-4 py-2 rounded-full">
             Closings as Fast as 21 Days · Real Performance Data · Agent-Ready Proof Points
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-6 mb-6">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-6 mb-6">
             Fast <span className="text-accent">and</span> Thorough — Not One or the Other
           </h2>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="text-white/70 text-lg max-w-3xl mx-auto leading-relaxed">
             Other lenders promise speed but surprise you at the finish line. Previse Mortgage targets closings as fast as 21 days 
             <em> because</em> we front-load the hard work — not by skipping it. AI-enhanced processing catches 
             issues on day one so humans solve them before they become delays.
@@ -110,11 +110,11 @@ const ProcessSection = () => {
         <div className="grid lg:grid-cols-4 gap-8 mb-16">
           {steps.map((step, index) => (
             <div key={index} className="relative">
-              <Card className="bg-background shadow-soft hover:shadow-medium transition-all duration-300 h-full border border-border">
+              <Card className="bg-white/5 backdrop-blur-xl border border-white/10 hover:bg-white/10 transition-all duration-300 h-full">
                 <CardContent className="p-8 text-center">
                   <div className="relative mb-6">
-                    <div className="inline-flex items-center justify-center w-20 h-20 bg-primary/10 rounded-full mb-4">
-                      <step.icon className="text-primary" size={32} />
+                    <div className="inline-flex items-center justify-center w-20 h-20 bg-accent/15 rounded-full mb-4">
+                      <step.icon className="text-accent" size={32} />
                     </div>
                     <div className="absolute -top-2 -right-2 w-8 h-8 bg-accent text-accent-foreground rounded-full flex items-center justify-center text-sm font-bold">
                       {step.step}
@@ -127,12 +127,12 @@ const ProcessSection = () => {
                     {step.time}
                   </div>
                   
-                  <h3 className="text-xl font-bold text-foreground mb-4">{step.title}</h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed text-sm">{step.description}</p>
+                  <h3 className="text-xl font-bold text-white mb-4">{step.title}</h3>
+                  <p className="text-white/70 mb-6 leading-relaxed text-sm">{step.description}</p>
                   
                   <ul className="space-y-2 text-left">
                     {step.details.map((detail, idx) => (
-                      <li key={idx} className="flex items-center text-sm text-foreground">
+                      <li key={idx} className="flex items-center text-sm text-white/80">
                         <div className="w-2 h-2 bg-accent rounded-full mr-3 flex-shrink-0"></div>
                         {detail}
                       </li>
@@ -153,11 +153,11 @@ const ProcessSection = () => {
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 mb-4">
               <BarChart3 className="text-accent" size={28} />
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+              <h3 className="text-2xl md:text-3xl font-bold text-white">
                 Closing Benchmarks — By Scenario
               </h3>
             </div>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-sm leading-relaxed">
+            <p className="text-white/60 max-w-2xl mx-auto text-sm leading-relaxed">
               We publish specific closing targets for every loan type — not vague "fast closing" promises. 
               These benchmarks reflect real performance data, not marketing claims.
             </p>
@@ -165,20 +165,20 @@ const ProcessSection = () => {
 
           <div className="grid md:grid-cols-4 gap-6 mb-8">
             {closingBenchmarks.map((item, idx) => (
-              <div key={idx} className="bg-background/90 border border-border rounded-xl p-6 text-center">
+              <div key={idx} className="bg-white/5 border border-white/10 rounded-xl p-6 text-center">
                 <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-3">
                   <item.icon className="text-accent" size={24} />
                 </div>
-                <h4 className="font-bold text-foreground text-sm mb-1">{item.scenario}</h4>
+                <h4 className="font-bold text-white text-sm mb-1">{item.scenario}</h4>
                 <div className="text-2xl font-bold text-accent mb-2">{item.target}</div>
-                <p className="text-muted-foreground text-xs leading-relaxed">{item.description}</p>
+                <p className="text-white/60 text-xs leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
 
-          <div className="bg-background/70 border border-accent/20 rounded-xl p-6 text-center">
-            <p className="text-muted-foreground text-sm leading-relaxed max-w-3xl mx-auto">
-              <strong className="text-foreground">How we hit these numbers:</strong> AI pre-screening catches 
+          <div className="bg-white/5 border border-accent/20 rounded-xl p-6 text-center">
+            <p className="text-white/70 text-sm leading-relaxed max-w-3xl mx-auto">
+              <strong className="text-white">How we hit these numbers:</strong> AI pre-screening catches 
               conditions within 48 hours. Documents are reviewed and cleared before submission. Appraisals are 
               ordered on day one, not day ten. Every file gets a pre-underwriting review so the formal submission 
               is clean — not a first draft. <em>This is what "fast because thorough" means in practice.</em>
@@ -187,11 +187,11 @@ const ProcessSection = () => {
         </div>
 
         {/* Timestamped Case Studies */}
-        <div className="bg-primary/5 border border-primary/10 rounded-3xl p-8 md:p-12 mb-16">
-          <h3 className="text-2xl font-bold text-foreground text-center mb-3">
+        <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 mb-16">
+          <h3 className="text-2xl font-bold text-white text-center mb-3">
             Real Timelines from Recent Closings
           </h3>
-          <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto text-sm">
+          <p className="text-white/60 text-center mb-10 max-w-2xl mx-auto text-sm">
             Not hypotheticals — these are real closing timelines from actual Previse Mortgage transactions.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
@@ -215,22 +215,22 @@ const ProcessSection = () => {
                 quote: "I've closed 12 investment properties. This was my fastest and smoothest closing — and my first with no last-minute surprises."
               }
             ].map((study, idx) => (
-              <div key={idx} className="bg-background/80 border border-border rounded-xl p-6">
+              <div key={idx} className="bg-white/5 border border-white/10 rounded-xl p-6">
                 <div className="mb-3">
                   <span className="text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full">
                     {study.type}
                   </span>
                 </div>
-                <div className="text-lg font-bold text-foreground mb-4">{study.timeline}</div>
+                <div className="text-lg font-bold text-white mb-4">{study.timeline}</div>
                 <ul className="space-y-2 mb-4">
                   {study.highlights.map((h, i) => (
-                    <li key={i} className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <li key={i} className="flex items-center gap-2 text-xs text-white/60">
                       <CheckCircle className="text-accent flex-shrink-0" size={14} />
                       {h}
                     </li>
                   ))}
                 </ul>
-                <p className="text-muted-foreground text-xs italic leading-relaxed border-t border-border pt-3">
+                <p className="text-white/50 text-xs italic leading-relaxed border-t border-white/10 pt-3">
                   "{study.quote}"
                 </p>
               </div>
@@ -241,22 +241,22 @@ const ProcessSection = () => {
         {/* Agent-Facing Proof Points */}
         <div className="bg-accent/5 border border-accent/20 rounded-3xl p-8 md:p-12 mb-16">
           <div className="text-center mb-10">
-            <h3 className="text-2xl font-bold text-foreground mb-3">
+            <h3 className="text-2xl font-bold text-white mb-3">
               For Agents: Speed & Predictability That Wins Offers
             </h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-sm leading-relaxed">
+            <p className="text-white/60 max-w-2xl mx-auto text-sm leading-relaxed">
               When your buyer's offer needs a lender that listing agents trust, Previse's specific 
               closing commitments and direct loan officer access give you a competitive edge.
             </p>
           </div>
           <div className="grid md:grid-cols-4 gap-6">
             {agentProofPoints.map((point, idx) => (
-              <div key={idx} className="bg-background/80 border border-border rounded-xl p-5 text-center">
+              <div key={idx} className="bg-white/5 border border-white/10 rounded-xl p-5 text-center">
                 <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-3">
                   <point.icon className="text-accent" size={24} />
                 </div>
-                <h4 className="font-bold text-foreground text-sm mb-2">{point.title}</h4>
-                <p className="text-muted-foreground text-xs leading-relaxed">{point.description}</p>
+                <h4 className="font-bold text-white text-sm mb-2">{point.title}</h4>
+                <p className="text-white/60 text-xs leading-relaxed">{point.description}</p>
               </div>
             ))}
           </div>
@@ -264,11 +264,11 @@ const ProcessSection = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <div className="bg-background rounded-2xl p-8 shadow-soft max-w-4xl mx-auto border border-border">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-white mb-4">
               Ready to Close Fast — Without the Stress?
             </h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-white/70 mb-6">
               Whether you're a buyer on a tight timeline, an agent who needs a lender that performs, 
               or an investor who won't accept last-minute surprises — Previse Mortgage delivers 
               fast closings backed by thorough upfront work.

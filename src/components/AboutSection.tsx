@@ -13,14 +13,15 @@ const AboutSection = () => {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
             <span className="text-accent text-sm font-bold uppercase tracking-wider bg-accent/10 px-3 py-1 rounded-full">
-              Meet Our Team
+              Your Advisors, Not Salespeople
             </span>
             <h2 className="font-serif text-2xl lg:text-3xl font-bold text-white mt-3 mb-4">
-              A Family-Owned <span className="text-accent">Mortgage Brokerage</span>
+              A Family-Owned <span className="text-accent">Advisory Brokerage</span>
             </h2>
             <p className="text-white/80 max-w-2xl mx-auto">
-              At Previse Mortgage, we treat every client like family. Our dedicated team brings 
-              experience, integrity, and a personal touch to every loan.
+              At Previse Mortgage, you'll never feel pressured into a decision. Our team takes a consultative, 
+              education-first approach — explaining your options, answering every question, and giving you 
+              honest advice even when it means recommending someone else.
             </p>
           </div>
           

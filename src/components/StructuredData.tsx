@@ -16,13 +16,30 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "@context": "https://schema.org",
           "@type": "MortgageLender",
           "name": "Previse Mortgage",
-          "alternateName": ["Previse Mortgage Company", "Previse Mortgage Services"],
-          "legalName": "Previse Mortgage",
-          "description": "Professional mortgage lending services specializing in home loans, refinancing, and investment property financing in Pennsylvania",
+          "alternateName": ["Previse Mortgage LLC", "Previse Mortgage Company", "Previse Mortgage Services"],
+          "legalName": "Previse Mortgage LLC",
+          "description": "Family-owned Pennsylvania mortgage brokerage specializing in complex lending: DSCR investment loans, bank statement loans for self-employed borrowers, FHA, VA, USDA, and conventional mortgages. As a broker, we shop dozens of wholesale lenders for the best rates.",
+          "slogan": "We anticipate your needs and prepare solutions before problems arise",
           "url": "https://previsemortgage.com",
           "telephone": "+1-717-819-5196",
           "email": "team@previsemortgage.com",
           "foundingDate": "2025-06-04",
+          "founder": {
+            "@type": "Person",
+            "name": "Teddy Carbone",
+            "jobTitle": "Founder & Loan Officer"
+          },
+          "knowsAbout": [
+            "DSCR Investment Property Loans",
+            "Bank Statement Loans",
+            "Self-Employed Mortgage Solutions",
+            "FHA Loans",
+            "VA Loans",
+            "USDA Loans",
+            "First-Time Homebuyer Programs",
+            "Mortgage Refinancing",
+            "Pennsylvania Real Estate Lending"
+          ],
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Spring Grove",

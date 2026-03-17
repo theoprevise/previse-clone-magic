@@ -165,13 +165,13 @@ const ProcessSection = () => {
 
           <div className="grid md:grid-cols-4 gap-6 mb-8">
             {closingBenchmarks.map((item, idx) => (
-              <div key={idx} className="bg-background/90 border border-border rounded-xl p-6 text-center">
+              <div key={idx} className="bg-white/5 border border-white/10 rounded-xl p-6 text-center">
                 <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-3">
                   <item.icon className="text-accent" size={24} />
                 </div>
-                <h4 className="font-bold text-foreground text-sm mb-1">{item.scenario}</h4>
+                <h4 className="font-bold text-white text-sm mb-1">{item.scenario}</h4>
                 <div className="text-2xl font-bold text-accent mb-2">{item.target}</div>
-                <p className="text-muted-foreground text-xs leading-relaxed">{item.description}</p>
+                <p className="text-white/60 text-xs leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>

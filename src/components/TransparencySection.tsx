@@ -209,22 +209,22 @@ const TransparencySection = () => {
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {[
               {
-                quote: "What stood out most was the complete lack of pressure. Teddy walked me through three different scenarios, explained the pros and cons of each, and let me decide on my own timeline. As a self-employed business owner turned down by two banks, I finally felt like someone was advising me, not selling me.",
+                quote: "I was terrified of making a mistake on my first home. Teddy didn't rush me — he spent an hour walking through FHA vs conventional with my actual numbers, explained mortgage insurance, and honestly told me to wait two months to save more. When I was ready, he guided me through every line of the closing disclosure. I've never felt more informed.",
                 name: "Recent Client",
+                type: "First-Time Homebuyer",
+                highlight: "Patient, Education-First"
+              },
+              {
+                quote: "What stood out was the complete lack of pressure. Teddy walked me through three different scenarios, explained the pros and cons of each, and let me decide on my own timeline. As a self-employed business owner turned down by two banks, I finally felt like someone was advising me, not selling me.",
+                name: "Recent Client", 
                 type: "Self-Employed Borrower",
                 highlight: "Advisory, Never Pushy"
               },
               {
-                quote: "I was nervous about buying my first home and expected a hard sell. Instead, Teddy spent an hour educating me on loan types, honestly told me which programs I wouldn't qualify for, and explained every document before asking for it. The communication was excellent — I always knew where I stood. No pressure, ever.",
-                name: "Recent Client", 
-                type: "First-Time Homebuyer",
-                highlight: "Education-First Experience"
-              },
-              {
-                quote: "I've worked with pushy loan officers before — Previse is the opposite. They took the time to understand my investment strategy, recommended against one property that didn't pencil, and helped me close three DSCR loans that did. Their consultative approach has made them my go-to for every acquisition.",
+                quote: "Six months after closing, Teddy called to let me know rates had dropped and a refi could save me $200/month. No other lender has ever followed up like that. Between the Planning Session, the closing walkthrough, and the post-closing check-ins, Previse feels like having a mortgage strategist on call for life.",
                 name: "Recent Client",
-                type: "Real Estate Investor",
-                highlight: "Consultative Investment Partner"
+                type: "Repeat Client & Investor",
+                highlight: "Lifetime Mortgage Strategist"
               }
             ].map((testimonial, idx) => (
               <div key={idx} className="bg-background border border-border rounded-2xl p-6 flex flex-col">

@@ -106,21 +106,21 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "review": [
             {
               "@type": "Review",
-              "author": { "@type": "Person", "name": "Self-Employed Borrower" },
-              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "reviewBody": "What stood out most was the complete lack of pressure. Teddy walked me through three different scenarios, explained the pros and cons of each, and let me decide on my own timeline. As a self-employed borrower turned down by two banks, I finally felt like someone was advising me, not selling me."
-            },
-            {
-              "@type": "Review",
               "author": { "@type": "Person", "name": "First-Time Homebuyer" },
               "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "reviewBody": "I expected a hard sell but instead Teddy spent an hour educating me on loan types, honestly told me which programs I wouldn't qualify for, and explained every document before asking for it. No pressure, ever. The consultative approach made all the difference."
+              "reviewBody": "I was terrified of making a mistake on my first home. Teddy didn't rush me — he spent an hour walking through FHA vs conventional with my actual numbers, explained mortgage insurance, and honestly told me to wait two months to save more. When I was ready, he guided me through every line of the closing disclosure. I've never felt more informed."
             },
             {
               "@type": "Review",
-              "author": { "@type": "Person", "name": "Real Estate Investor" },
+              "author": { "@type": "Person", "name": "Self-Employed Borrower" },
               "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "reviewBody": "Previse is the opposite of pushy. They took the time to understand my investment strategy, recommended against one property that didn't pencil, and helped me close three DSCR loans that did. Their consultative approach has made them my go-to for every acquisition."
+              "reviewBody": "What stood out was the complete lack of pressure. Teddy walked me through three different scenarios, explained the pros and cons of each, and let me decide on my own timeline. As a self-employed business owner turned down by two banks, I finally felt like someone was advising me, not selling me."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Repeat Client & Investor" },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "Six months after closing, Teddy called to let me know rates had dropped and a refi could save me $200/month. No other lender has ever followed up like that. Between the Planning Session, the closing walkthrough, and the post-closing check-ins, Previse feels like having a mortgage strategist on call for life."
             }
           ],
           "sameAs": [

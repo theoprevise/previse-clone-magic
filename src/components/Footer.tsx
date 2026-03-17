@@ -158,10 +158,13 @@ const Footer = () => {
 
           {/* Legal info */}
           <div className="space-y-2 text-white/60 text-sm max-w-3xl mx-auto">
-            <p className="text-base font-medium">Copyright © 2025 Previse Mortgage • All Rights Reserved.</p>
-            <p>Previse Mortgage NMLS# 2730429</p>
-            <p>PA Broker License #115658</p>
+            <p className="text-base font-medium">Copyright © 2025 Previse Mortgage LLC • All Rights Reserved.</p>
+            <p>Previse Mortgage LLC · NMLS# 2730429 · PA Broker License #115658</p>
             <p>MLO Licenses: CO# 100542483 | PA# 115609 | PA# 119453</p>
+            <p className="text-white/40 text-xs mt-2">
+              Previse Mortgage LLC is a U.S.-based mortgage brokerage licensed in Pennsylvania. 
+              Not affiliated with Precise Mortgages (UK), Precision Mortgage, or any other similarly named entity.
+            </p>
           </div>
 
           {/* Legal Links */}

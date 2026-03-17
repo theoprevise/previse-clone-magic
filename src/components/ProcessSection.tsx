@@ -127,12 +127,12 @@ const ProcessSection = () => {
                     {step.time}
                   </div>
                   
-                  <h3 className="text-xl font-bold text-foreground mb-4">{step.title}</h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed text-sm">{step.description}</p>
+                  <h3 className="text-xl font-bold text-white mb-4">{step.title}</h3>
+                  <p className="text-white/70 mb-6 leading-relaxed text-sm">{step.description}</p>
                   
                   <ul className="space-y-2 text-left">
                     {step.details.map((detail, idx) => (
-                      <li key={idx} className="flex items-center text-sm text-foreground">
+                      <li key={idx} className="flex items-center text-sm text-white/80">
                         <div className="w-2 h-2 bg-accent rounded-full mr-3 flex-shrink-0"></div>
                         {detail}
                       </li>

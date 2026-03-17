@@ -40,8 +40,9 @@ const AboutSection = () => {
               <p className="text-accent font-medium text-sm mb-1">Founder & Loan Officer</p>
               <p className="text-white/60 text-xs mb-3">NMLS# 2723255 · PA# 119453</p>
               <p className="text-white/80 text-sm leading-relaxed mb-3">
-                With 10+ years in finance, Teddy founded Previse Mortgage to deliver 
-                hassle-free, honest mortgage advice with modern technology.
+                With 10+ years in finance, Teddy founded Previse Mortgage on a simple principle: advice over pressure. 
+                He starts every consultation by understanding your situation — not selling a product — and will 
+                honestly tell you when another lender is a better fit.
               </p>
               <a href="mailto:teddy@previsemortgage.com" className="text-accent hover:text-accent-light text-sm font-medium transition-colors">
                 teddy@previsemortgage.com

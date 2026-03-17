@@ -89,7 +89,7 @@ const ProcessSection = () => {
   ];
 
   return (
-    <section id="process" className="py-20 bg-muted/30">
+    <section id="process" className="py-20 bg-gradient-to-b from-primary-dark to-primary relative overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Section header */}
         <div className="text-center mb-16">

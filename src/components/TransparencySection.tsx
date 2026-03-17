@@ -1,4 +1,4 @@
-import { Shield, MessageCircle, Search, Users, Star, CheckCircle, Heart, Phone, FileCheck, ArrowRight } from "lucide-react";
+import { Shield, MessageCircle, Search, Users, Star, CheckCircle, Heart, Phone, FileCheck, ArrowRight, Clock, CalendarCheck, FileText, ListChecks } from "lucide-react";
 
 const TransparencySection = () => {
   return (

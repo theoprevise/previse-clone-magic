@@ -17,6 +17,9 @@ const CalendlySection = lazy(() => import("@/components/CalendlySection"));
 const Footer = lazy(() => import("@/components/Footer"));
 const GoHighLevelChat = lazy(() => import("@/components/GoHighLevelChat"));
 const FloatingContactWidget = lazy(() => import("@/components/FloatingContactWidget"));
+const QuickCalculatorWidget = lazy(() => import("@/components/QuickCalculatorWidget"));
+const LoanFinderQuiz = lazy(() => import("@/components/LoanFinderQuiz"));
+const InteractiveComparisons = lazy(() => import("@/components/InteractiveComparisons"));
 
 // Minimal loading fallback that doesn't affect layout
 const SectionFallback = () => <div className="min-h-[200px]" />;
@@ -41,9 +44,12 @@ const Index = () => {
       <HeroSection />
       <Suspense fallback={<SectionFallback />}>
         <WhyPreviseSection />
+        <QuickCalculatorWidget />
+        <LoanFinderQuiz />
         <CalendlySection />
         <ProcessSection />
         <HybridTechHumanSection />
+        <InteractiveComparisons />
         <FeaturesSection />
         <FAQSection />
         <TransparencySection />

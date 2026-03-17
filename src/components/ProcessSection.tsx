@@ -215,16 +215,16 @@ const ProcessSection = () => {
                 quote: "I've closed 12 investment properties. This was my fastest and smoothest closing — and my first with no last-minute surprises."
               }
             ].map((study, idx) => (
-              <div key={idx} className="bg-background/80 border border-border rounded-xl p-6">
+              <div key={idx} className="bg-white/5 border border-white/10 rounded-xl p-6">
                 <div className="mb-3">
                   <span className="text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full">
                     {study.type}
                   </span>
                 </div>
-                <div className="text-lg font-bold text-foreground mb-4">{study.timeline}</div>
+                <div className="text-lg font-bold text-white mb-4">{study.timeline}</div>
                 <ul className="space-y-2 mb-4">
                   {study.highlights.map((h, i) => (
-                    <li key={i} className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <li key={i} className="flex items-center gap-2 text-xs text-white/60">
                       <CheckCircle className="text-accent flex-shrink-0" size={14} />
                       {h}
                     </li>

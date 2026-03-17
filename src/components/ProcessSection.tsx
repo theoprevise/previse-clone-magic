@@ -89,7 +89,7 @@ const ProcessSection = () => {
   ];
 
   return (
-    <section id="process" className="py-20 bg-secondary">
+    <section id="process" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         {/* Section header */}
         <div className="text-center mb-16">

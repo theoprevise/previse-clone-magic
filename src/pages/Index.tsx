@@ -25,26 +25,26 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-primary">
       <SEOHead 
-        title="Previse Mortgage - Complex Borrower & Investor Mortgage Specialist | DSCR, Bank Statement & Non-QM Loans in Pennsylvania"
-        description="Pennsylvania mortgage broker specializing in complex borrowers: DSCR investment loans, bank statement loans for self-employed, non-QM financing, and creative lending solutions. 50+ wholesale lenders. Family-owned."
-        keywords="DSCR loans, bank statement loans, self-employed mortgage, non-QM loans, investment property loans, complex borrower mortgage, Pennsylvania mortgage broker, creative financing, investor loans, first time homebuyer"
+        title="Previse Mortgage - Pennsylvania Mortgage Broker | Purchase, Refinance & Investment Loans"
+        description="Pennsylvania mortgage broker offering fast closings, transparent pricing, and dedicated advisors for home purchases, refinancing, and investment properties. DSCR, bank statement, and non-QM loans available. 50+ wholesale lenders. Family-owned."
+        keywords="Pennsylvania mortgage broker, home purchase loans, refinance mortgage, mortgage rates, first time homebuyer, DSCR loans, bank statement loans, self-employed mortgage, non-QM loans, investment property loans"
         canonicalUrl="https://previsemortgage.com"
       />
       <StructuredData type="organization" />
       <StructuredData type="webpage" data={{
-        title: "Previse Mortgage - Professional Mortgage Services in Pennsylvania",
-        description: "Expert mortgage lending services in Pennsylvania with competitive rates and personalized service",
+        title: "Previse Mortgage - Pennsylvania Mortgage Broker | Purchase, Refinance & Invest",
+        description: "Fast closings, transparent pricing, and dedicated advisors for home purchases, refinancing, and investment properties in Pennsylvania",
         url: "https://previsemortgage.com"
       }} />
       <StructuredData type="loanOrCredit" />
       <Header />
       <HeroSection />
       <Suspense fallback={<SectionFallback />}>
-        <FeaturesSection />
         <ProcessSection />
         <HybridTechHumanSection />
         <WhyPreviseSection />
         <CalendlySection />
+        <FeaturesSection />
         <FAQSection />
         <TransparencySection />
         <HomeLoansContent />

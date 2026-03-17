@@ -36,11 +36,11 @@ const HeroSection = () => {
             <div className="text-center lg:text-left">
               {/* Main heading */}
               <div className="mb-6 animate-fade-in">
-                <span className="inline-block mb-4 text-lg md:text-xl font-medium text-accent tracking-wide">Pennsylvania's Complex Borrower & Investor Mortgage Specialist</span>
+                <span className="inline-block mb-4 text-lg md:text-xl font-medium text-accent tracking-wide">Pennsylvania Mortgage Broker · Purchase · Refinance · Invest</span>
                 <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white mb-4" itemProp="name">
-                  <span className="block mb-2">Creative Lending</span>
+                  <span className="block mb-2">Your Home Loan,</span>
                   <span className="block bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">
-                    for Complex Borrowers
+                    Done Right
                   </span>
                 </h1>
               </div>
@@ -53,7 +53,7 @@ const HeroSection = () => {
               </div>
               
               <p className="text-lg md:text-xl text-white/90 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed animate-fade-in delay-500" itemProp="description">
-                Self-employed? Investor? Complex income? Previse Mortgage specializes in the loans big banks won't touch — DSCR, bank statement, non-QM, and creative financing solutions backed by 50+ wholesale lenders.
+                Buying your first home, refinancing for a better rate, or growing your investment portfolio — Previse Mortgage delivers fast closings, transparent pricing, and a dedicated advisor from start to finish. 50+ lenders. One trusted team.
               </p>
               
               {/* Team Photos + CTA */}

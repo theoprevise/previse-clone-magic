@@ -37,12 +37,14 @@ const AboutSection = () => {
                 height="128"
               />
               <h3 className="text-xl font-bold text-white">Teddy Carbone</h3>
-              <p className="text-accent font-medium text-sm mb-1">Founder & Loan Officer</p>
+              <p className="text-accent font-medium text-sm mb-1">Founder & Complex Scenario Specialist</p>
               <p className="text-white/60 text-xs mb-3">NMLS# 2723255 · PA# 119453</p>
               <p className="text-white/80 text-sm leading-relaxed mb-3">
-                With 10+ years in finance, Teddy founded Previse Mortgage on a simple principle: advice over pressure. 
-                He starts every consultation by understanding your situation — not selling a product — and will 
-                honestly tell you when another lender is a better fit.
+                With 10+ years in finance, Teddy founded Previse Mortgage to serve borrowers that big banks can't — 
+                self-employed contractors, multi-property investors, and anyone with a complex income story. 
+                He specializes in DSCR investment loans, bank statement qualification for self-employed borrowers, 
+                and non-QM solutions for recent credit events. His consultative approach starts with understanding 
+                your full financial picture before recommending a program from 50+ wholesale lenders.
               </p>
               <a href="mailto:teddy@previsemortgage.com" className="text-accent hover:text-accent-light text-sm font-medium transition-colors">
                 teddy@previsemortgage.com

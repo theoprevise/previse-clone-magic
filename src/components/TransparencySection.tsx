@@ -1,4 +1,4 @@
-import { Shield, MessageCircle, Search, Users, Star, CheckCircle, Heart, Phone, FileCheck, ArrowRight, Clock, CalendarCheck, FileText, ListChecks } from "lucide-react";
+import { Shield, MessageCircle, Search, Users, Star, CheckCircle, Heart, Phone, FileCheck, ArrowRight, Clock, CalendarCheck, FileText, ListChecks, Lock, DollarSign, Eye, Scale } from "lucide-react";
 
 const TransparencySection = () => {
   return (
@@ -8,7 +8,7 @@ const TransparencySection = () => {
           {/* Section header */}
           <div className="text-center mb-16">
             <span className="text-accent text-sm font-bold uppercase tracking-wider bg-accent/10 px-4 py-2 rounded-full">
-              Radical Clarity
+              Radical Transparency
             </span>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-6 mb-6">
               Is <span className="text-accent">Previse Mortgage</span> Right for You?
@@ -71,6 +71,98 @@ const TransparencySection = () => {
                 wholesale lenders and niche non-QM programs finds solutions that banks simply don't 
                 offer.</strong> That's where our pricing premium delivers real savings and certainty.
               </p>
+            </div>
+          </div>
+
+          {/* NO-SURPRISE CLOSING GUARANTEE — NEW */}
+          <div className="bg-gradient-to-br from-accent/5 via-accent/10 to-accent/5 border-2 border-accent/30 rounded-3xl p-8 md:p-12 mb-16">
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <Shield className="text-accent" size={28} />
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                  The No-Surprise Closing<sup>™</sup> Guarantee
+                </h3>
+              </div>
+              <p className="text-muted-foreground max-w-2xl mx-auto text-sm leading-relaxed">
+                Hidden fees and bait-and-switch tactics are the #1 source of borrower anxiety. Previse Mortgage eliminates 
+                that anxiety with a structured, transparent fee experience from first quote to closing table.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 mb-10">
+              <div className="bg-background/90 border border-border rounded-xl p-6 text-center">
+                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <DollarSign className="text-accent" size={24} />
+                </div>
+                <h4 className="font-bold text-foreground text-sm mb-2">Itemized Fee Breakdown — Day One</h4>
+                <p className="text-muted-foreground text-xs leading-relaxed">
+                  Within 24 hours of your Planning Session, you receive a detailed Loan Estimate with every fee 
+                  categorized: lender fees, third-party fees (title, appraisal, recording), and prepaid items. 
+                  We label each line and explain it in plain language — no "miscellaneous" charges.
+                </p>
+              </div>
+              <div className="bg-background/90 border border-border rounded-xl p-6 text-center">
+                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <Scale className="text-accent" size={24} />
+                </div>
+                <h4 className="font-bold text-foreground text-sm mb-2">Side-by-Side Scenario Comparison</h4>
+                <p className="text-muted-foreground text-xs leading-relaxed">
+                  We show you 2-3 loan scenarios side by side — different rates, points, and fee structures — 
+                  so you can compare total cost of ownership, not just the monthly payment. We welcome you to bring 
+                  competing Loan Estimates for an apples-to-apples comparison.
+                </p>
+              </div>
+              <div className="bg-background/90 border border-border rounded-xl p-6 text-center">
+                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <Eye className="text-accent" size={24} />
+                </div>
+                <h4 className="font-bold text-foreground text-sm mb-2">Closing Disclosure Walkthrough</h4>
+                <p className="text-muted-foreground text-xs leading-relaxed">
+                  Before you sign, we schedule a dedicated call to review your Closing Disclosure line by line. 
+                  We compare it against your original Loan Estimate, explain every change, and confirm 
+                  there are no surprises. If something changed, we explain why — or we fix it.
+                </p>
+              </div>
+            </div>
+
+            {/* Rate Lock Policy */}
+            <div className="bg-background/70 border border-accent/20 rounded-2xl p-6 md:p-8">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Lock className="text-accent" size={22} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground text-base mb-1">Previse Rate-Lock Policy — In Plain Language</h4>
+                  <p className="text-muted-foreground text-xs leading-relaxed">
+                    Rate locks protect you from rate increases while your loan is being processed. Here's exactly how ours works:
+                  </p>
+                </div>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4">
+                {[
+                  { 
+                    title: "When We Lock", 
+                    desc: "You choose when to lock — during your Planning Session or later. We never lock without your explicit consent. We'll advise you on timing, but the decision is always yours." 
+                  },
+                  { 
+                    title: "Lock Duration", 
+                    desc: "Standard locks are 30-45 days. For complex files (DSCR, non-QM), we recommend 45-60 days to ensure closing without pressure. Extended locks available on request." 
+                  },
+                  { 
+                    title: "If Rates Drop After Locking", 
+                    desc: "Many of our wholesale lenders offer float-down options — if rates drop significantly before closing, we can renegotiate. We proactively monitor rates and contact you if a float-down opportunity arises." 
+                  },
+                  { 
+                    title: "What Can Change vs What Can't", 
+                    desc: "Your locked rate and lender fees cannot increase. Third-party fees (title, appraisal) are estimates and may vary slightly, but we explain every variance before closing." 
+                  }
+                ].map((item, idx) => (
+                  <div key={idx} className="bg-background/80 border border-border rounded-lg p-4">
+                    <h5 className="font-bold text-foreground text-xs mb-1">{item.title}</h5>
+                    <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -153,7 +245,7 @@ const TransparencySection = () => {
             </div>
           </div>
 
-          {/* After-Closing Care - NEW section to address servicing transfer concern */}
+          {/* After-Closing Care */}
           <div className="bg-accent/5 border border-accent/20 rounded-3xl p-8 md:p-12 mb-16">
             <div className="text-center mb-8">
               <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -209,16 +301,16 @@ const TransparencySection = () => {
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {[
               {
-                quote: "I was terrified of making a mistake on my first home. Teddy didn't rush me — he spent an hour walking through FHA vs conventional with my actual numbers, explained mortgage insurance, and honestly told me to wait two months to save more. When I was ready, he guided me through every line of the closing disclosure. I've never felt more informed.",
+                quote: "I was terrified of making a mistake on my first home. Teddy didn't rush me — he spent an hour walking through FHA vs conventional with my actual numbers, explained mortgage insurance, and honestly told me to wait two months to save more. When I was ready, he guided me through every line of the closing disclosure. No surprises, clear fees, honest explanations.",
                 name: "Recent Client",
                 type: "First-Time Homebuyer",
-                highlight: "Patient, Education-First"
+                highlight: "No Surprises, Clear Fees"
               },
               {
-                quote: "What stood out was the complete lack of pressure. Teddy walked me through three different scenarios, explained the pros and cons of each, and let me decide on my own timeline. As a self-employed business owner turned down by two banks, I finally felt like someone was advising me, not selling me.",
+                quote: "What stood out was the complete lack of pressure — and the transparency. Before I even applied, Teddy showed me three scenarios side by side with all fees itemized. He explained which costs were his, which were third-party, and which could change. When I brought a competing Loan Estimate, he welcomed the comparison and walked me through it line by line.",
                 name: "Recent Client", 
                 type: "Self-Employed Borrower",
-                highlight: "Advisory, Never Pushy"
+                highlight: "Honest Fee Transparency"
               },
               {
                 quote: "Six months after closing, Teddy called to let me know rates had dropped and a refi could save me $200/month. No other lender has ever followed up like that. Between the Planning Session, the closing walkthrough, and the post-closing check-ins, Previse feels like having a mortgage strategist on call for life.",

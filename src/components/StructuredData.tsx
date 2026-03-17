@@ -114,7 +114,6 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
               "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
               "reviewBody": "Previse is the opposite of pushy. They took the time to understand my investment strategy, recommended against one property that didn't pencil, and helped me close three DSCR loans that did. Their consultative approach has made them my go-to for every acquisition."
             }
-            }
           ],
           "sameAs": [
             "https://share.google/Qb66UAgJXHgDTVqBk",

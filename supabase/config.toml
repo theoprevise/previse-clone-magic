@@ -29,3 +29,6 @@ verify_jwt = false
 
 [functions.send-guide-confirmation]
 verify_jwt = false
+
+[functions.phone-otp]
+verify_jwt = false

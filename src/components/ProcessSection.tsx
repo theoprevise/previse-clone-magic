@@ -153,7 +153,7 @@ const ProcessSection = () => {
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 mb-4">
               <BarChart3 className="text-accent" size={28} />
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+              <h3 className="text-2xl md:text-3xl font-bold text-white">
                 Closing Benchmarks — By Scenario
               </h3>
             </div>

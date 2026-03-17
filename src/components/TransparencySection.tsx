@@ -89,18 +89,7 @@ const TransparencySection = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 mb-10">
-              <div className="bg-background/90 border border-border rounded-xl p-6 text-center">
-                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <DollarSign className="text-accent" size={24} />
-                </div>
-                <h4 className="font-bold text-foreground text-sm mb-2">Itemized Fee Breakdown — Day One</h4>
-                <p className="text-muted-foreground text-xs leading-relaxed">
-                  Within 24 hours of your Planning Session, you receive a detailed Loan Estimate with every fee 
-                  categorized: lender fees, third-party fees (title, appraisal, recording), and prepaid items. 
-                  We label each line and explain it in plain language — no "miscellaneous" charges.
-                </p>
-              </div>
+            <div className="grid md:grid-cols-2 gap-6 mb-10">
               <div className="bg-background/90 border border-border rounded-xl p-6 text-center">
                 <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-3">
                   <Scale className="text-accent" size={24} />

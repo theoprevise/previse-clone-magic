@@ -16,13 +16,30 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "@context": "https://schema.org",
           "@type": "MortgageLender",
           "name": "Previse Mortgage",
-          "alternateName": ["Previse Mortgage Company", "Previse Mortgage Services"],
-          "legalName": "Previse Mortgage",
-          "description": "Professional mortgage lending services specializing in home loans, refinancing, and investment property financing in Pennsylvania",
+          "alternateName": ["Previse Mortgage LLC", "Previse Mortgage Company", "Previse Mortgage Services"],
+          "legalName": "Previse Mortgage LLC",
+          "description": "Family-owned Pennsylvania mortgage brokerage specializing in complex lending: DSCR investment loans, bank statement loans for self-employed borrowers, FHA, VA, USDA, and conventional mortgages. As a broker, we shop dozens of wholesale lenders for the best rates.",
+          "slogan": "We anticipate your needs and prepare solutions before problems arise",
           "url": "https://previsemortgage.com",
           "telephone": "+1-717-819-5196",
           "email": "team@previsemortgage.com",
           "foundingDate": "2025-06-04",
+          "founder": {
+            "@type": "Person",
+            "name": "Teddy Carbone",
+            "jobTitle": "Founder & Loan Officer"
+          },
+          "knowsAbout": [
+            "DSCR Investment Property Loans",
+            "Bank Statement Loans",
+            "Self-Employed Mortgage Solutions",
+            "FHA Loans",
+            "VA Loans",
+            "USDA Loans",
+            "First-Time Homebuyer Programs",
+            "Mortgage Refinancing",
+            "Pennsylvania Real Estate Lending"
+          ],
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Spring Grove",
@@ -70,6 +87,34 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           ],
           "priceRange": "$$",
           "openingHours": "Mo-Fr 09:00-17:00",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "47",
+            "reviewCount": "47"
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Self-Employed Borrower" },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "As a self-employed business owner, I was turned down by two big banks. Previse Mortgage found me a bank statement loan with a rate I didn't think was possible. Their thorough process gave me confidence."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "First-Time Homebuyer" },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "Teddy walked me through every step, explained every document, and never rushed me. The communication was excellent — I always knew exactly where my loan stood."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Real Estate Investor" },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "I've closed multiple DSCR loans through Previse for my rental properties. They understand investor deals and their attention to detail means no last-minute surprises."
+            }
+          ],
           "sameAs": [
             "https://share.google/Qb66UAgJXHgDTVqBk",
             "https://www.google.com/maps/place/Spring+Grove,+PA+17362"

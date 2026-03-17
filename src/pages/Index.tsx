@@ -8,6 +8,7 @@ import SEOHead from "@/components/SEOHead";
 const FeaturesSection = lazy(() => import("@/components/FeaturesSection"));
 const HomeLoansContent = lazy(() => import("@/components/HomeLoansContent"));
 const WhyPreviseSection = lazy(() => import("@/components/WhyPreviseSection"));
+const TransparencySection = lazy(() => import("@/components/TransparencySection"));
 const AboutSection = lazy(() => import("@/components/AboutSection"));
 const FAQSection = lazy(() => import("@/components/FAQSection"));
 const CalendlySection = lazy(() => import("@/components/CalendlySection"));
@@ -41,6 +42,7 @@ const Index = () => {
         <WhyPreviseSection />
         <CalendlySection />
         <FAQSection />
+        <TransparencySection />
         <HomeLoansContent />
         <AboutSection />
         <Footer />

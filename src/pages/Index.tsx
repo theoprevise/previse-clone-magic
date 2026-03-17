@@ -6,6 +6,7 @@ import SEOHead from "@/components/SEOHead";
 
 // Lazy load below-fold components for better LCP
 const FeaturesSection = lazy(() => import("@/components/FeaturesSection"));
+const HybridTechHumanSection = lazy(() => import("@/components/HybridTechHumanSection"));
 const HomeLoansContent = lazy(() => import("@/components/HomeLoansContent"));
 const WhyPreviseSection = lazy(() => import("@/components/WhyPreviseSection"));
 const TransparencySection = lazy(() => import("@/components/TransparencySection"));
@@ -39,6 +40,7 @@ const Index = () => {
       <HeroSection />
       <Suspense fallback={<SectionFallback />}>
         <FeaturesSection />
+        <HybridTechHumanSection />
         <WhyPreviseSection />
         <CalendlySection />
         <FAQSection />

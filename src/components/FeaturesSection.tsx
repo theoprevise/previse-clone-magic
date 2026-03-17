@@ -7,45 +7,45 @@ const FeaturesSection = () => {
   const features = [
     {
       icon: Building2,
-      title: "Investor Loans (DSCR)",
-      description: "Qualify based on property income, not personal income",
+      title: "DSCR Investment Loans",
+      description: "Qualify based on property income — not personal income or tax returns",
       items: [
-        "No tax returns or W-2s required",
-        "Finance unlimited properties",
-        "Competitive rates for rentals"
+        "No W-2s, tax returns, or DTI required",
+        "Finance unlimited rental properties",
+        "Close in LLC or entity name"
       ],
       path: "/investors"
     },
     {
-      icon: RefreshCcw,
-      title: "Refinancing",
-      description: "Lower your rate or access home equity",
+      icon: Shield,
+      title: "Bank Statement Loans",
+      description: "Self-employed? Use 12-24 months of deposits instead of tax returns",
       items: [
-        "Rate-and-term refinancing",
-        "Cash-out for investments",
-        "Fast 15-30 day closings"
+        "Personal or business statements",
+        "1099 and gig-economy friendly",
+        "Declined by a bank? Start here"
       ],
-      path: "/refinance"
+      path: "/mortgage-solutions"
     },
     {
-      icon: Shield,
-      title: "VA Loans",
-      description: "Exclusive benefits for those who served",
+      icon: RefreshCcw,
+      title: "Non-QM & Creative Financing",
+      description: "Solutions for borrowers who don't fit the standard mold",
       items: [
-        "0% down payment options",
-        "No private mortgage insurance",
-        "Competitive interest rates"
+        "Recent credit events OK",
+        "Asset depletion programs",
+        "Interest-only options available"
       ],
-      path: "/va-loans"
+      path: "/mortgage-programs"
     },
     {
       icon: TrendingUp,
-      title: "Traditional Financing",
-      description: "Conventional and jumbo loan options",
+      title: "Conventional, FHA & VA",
+      description: "Traditional programs with broker-level pricing advantages",
       items: [
-        "Loans from $250K to $3M+",
-        "First-time buyer programs",
-        "Flexible down payment options"
+        "First-time buyer programs (3% down)",
+        "VA loans — 0% down for veterans",
+        "FHA — 3.5% down, flexible credit"
       ],
       path: "/mortgage-programs"
     }

@@ -33,8 +33,8 @@ const ProcessSection = () => {
       step: "04",
       title: "Clear-to-Close & E-Close",
       time: "Days 14–21",
-      description: "21-day closings on purchase loans. E-closing available. Complex files close on time because we front-load the hard work.",
-      details: ["21-day closing target", "E-closing available", "Line-by-line CD walkthrough", "Keys to your new home!"]
+      description: "Purchase closings as fast as 21 days. E-closing available. Complex files close on time because we front-load the hard work.",
+      details: ["As fast as 21-day closings", "E-closing available", "Line-by-line CD walkthrough", "Keys to your new home!"]
     }
   ];
 

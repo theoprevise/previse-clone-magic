@@ -1,13 +1,10 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
-
-// In-memory OTP store: phone -> { code, expiresAt, attempts }
-// For production scale, use Redis/Supabase table. Fine for current traffic.
-const otpStore = new Map<string, { code: string; expiresAt: number; attempts: number }>();
 
 const GATEWAY_URL = "https://connector-gateway.lovable.dev/twilio";
 const OTP_EXPIRY_MS = 10 * 60 * 1000; // 10 minutes
@@ -53,6 +50,18 @@ serve(async (req) => {
     });
   }
 
+  const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
+  const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+  if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
+    return new Response(JSON.stringify({ error: "Supabase configuration missing" }), {
+      status: 500,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
+
+  // Use service role to bypass RLS
+  const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+
   try {
     const body = await req.json();
     const { action, phone, code } = body;
@@ -66,7 +75,6 @@ serve(async (req) => {
 
     const normalizedPhone = normalizePhone(phone);
 
-    // Validate it looks like a real phone number
     if (normalizedPhone.length < 10 || normalizedPhone.length > 16) {
       return new Response(JSON.stringify({ error: "Invalid phone number format" }), {
         status: 400,
@@ -75,25 +83,44 @@ serve(async (req) => {
     }
 
     if (action === "send") {
-      // Rate limiting: check if there's a recent unexpired OTP
-      const existing = otpStore.get(normalizedPhone);
-      if (existing && existing.expiresAt > Date.now()) {
-        const remainingSeconds = Math.ceil((existing.expiresAt - Date.now()) / 1000);
-        // Allow resend only if more than 60 seconds have passed
-        if (remainingSeconds > OTP_EXPIRY_MS / 1000 - 60) {
+      // Check for recent unexpired OTP (rate limiting — block if sent < 60s ago)
+      const { data: existing } = await supabase
+        .from("phone_otps")
+        .select("created_at, expires_at")
+        .eq("phone", normalizedPhone)
+        .gt("expires_at", new Date().toISOString())
+        .order("created_at", { ascending: false })
+        .limit(1)
+        .maybeSingle();
+
+      if (existing) {
+        const secondsAgo = (Date.now() - new Date(existing.created_at).getTime()) / 1000;
+        if (secondsAgo < 60) {
           return new Response(
-            JSON.stringify({ error: "Please wait before requesting a new code.", retryAfter: 60 }),
+            JSON.stringify({ error: "Please wait before requesting a new code.", retryAfter: Math.ceil(60 - secondsAgo) }),
             { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
           );
         }
       }
 
+      // Delete any old OTPs for this phone
+      await supabase.from("phone_otps").delete().eq("phone", normalizedPhone);
+
       const otp = generateOTP();
-      otpStore.set(normalizedPhone, {
+      const expiresAt = new Date(Date.now() + OTP_EXPIRY_MS).toISOString();
+
+      // Store OTP in DB
+      const { error: insertError } = await supabase.from("phone_otps").insert({
+        phone: normalizedPhone,
         code: otp,
-        expiresAt: Date.now() + OTP_EXPIRY_MS,
+        expires_at: expiresAt,
         attempts: 0,
       });
+
+      if (insertError) {
+        console.error("Failed to store OTP:", insertError);
+        throw new Error("Failed to store verification code");
+      }
 
       // Send via Twilio connector gateway
       const twilioRes = await fetch(`${GATEWAY_URL}/Messages.json`, {
@@ -112,6 +139,8 @@ serve(async (req) => {
 
       const twilioData = await twilioRes.json();
       if (!twilioRes.ok) {
+        // Clean up the stored OTP if SMS failed
+        await supabase.from("phone_otps").delete().eq("phone", normalizedPhone);
         console.error("Twilio error:", twilioData);
         throw new Error(`SMS sending failed [${twilioRes.status}]: ${JSON.stringify(twilioData)}`);
       }
@@ -132,7 +161,19 @@ serve(async (req) => {
         });
       }
 
-      const stored = otpStore.get(normalizedPhone);
+      // Fetch stored OTP
+      const { data: stored, error: fetchError } = await supabase
+        .from("phone_otps")
+        .select("*")
+        .eq("phone", normalizedPhone)
+        .order("created_at", { ascending: false })
+        .limit(1)
+        .maybeSingle();
+
+      if (fetchError) {
+        console.error("DB fetch error:", fetchError);
+        throw new Error("Failed to retrieve verification code");
+      }
 
       if (!stored) {
         return new Response(
@@ -141,17 +182,18 @@ serve(async (req) => {
         );
       }
 
-      if (Date.now() > stored.expiresAt) {
-        otpStore.delete(normalizedPhone);
+      if (new Date() > new Date(stored.expires_at)) {
+        await supabase.from("phone_otps").delete().eq("id", stored.id);
         return new Response(
           JSON.stringify({ error: "Verification code has expired. Please request a new one." }),
           { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
         );
       }
 
-      stored.attempts += 1;
-      if (stored.attempts > MAX_ATTEMPTS) {
-        otpStore.delete(normalizedPhone);
+      const newAttempts = stored.attempts + 1;
+
+      if (newAttempts > MAX_ATTEMPTS) {
+        await supabase.from("phone_otps").delete().eq("id", stored.id);
         return new Response(
           JSON.stringify({ error: "Too many attempts. Please request a new code." }),
           { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
@@ -159,14 +201,16 @@ serve(async (req) => {
       }
 
       if (stored.code !== code.trim()) {
+        // Increment attempts
+        await supabase.from("phone_otps").update({ attempts: newAttempts }).eq("id", stored.id);
         return new Response(
-          JSON.stringify({ error: `Incorrect code. ${MAX_ATTEMPTS - stored.attempts} attempts remaining.` }),
+          JSON.stringify({ error: `Incorrect code. ${MAX_ATTEMPTS - newAttempts} attempts remaining.` }),
           { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
         );
       }
 
       // OTP verified — clean up
-      otpStore.delete(normalizedPhone);
+      await supabase.from("phone_otps").delete().eq("id", stored.id);
 
       return new Response(JSON.stringify({ success: true, verified: true }), {
         status: 200,

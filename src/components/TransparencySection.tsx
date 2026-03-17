@@ -234,11 +234,11 @@ const TransparencySection = () => {
                 </div>
                 <div className="text-center">
                   <Shield className="text-accent mx-auto mb-3" size={24} />
-                  <h5 className="font-bold text-foreground text-sm mb-2">Certainty Over Speed</h5>
+                  <h5 className="font-bold text-foreground text-sm mb-2">Fast Because Thorough</h5>
                   <p className="text-muted-foreground text-xs leading-relaxed">
-                    For complex borrowers — self-employed, investors, non-QM — our thorough approach is the 
-                    difference between a smooth closing and a last-minute denial. We trade rush for confidence, 
-                    and our clients thank us for it at the closing table.
+                    Other lenders rush approvals and surprise you at closing. We front-load the deep review — 
+                    catching issues on day one so they're solved by day five. The result: 21-day closings 
+                    with no last-minute surprises, even on complex files. Speed and certainty, not one or the other.
                   </p>
                 </div>
               </div>

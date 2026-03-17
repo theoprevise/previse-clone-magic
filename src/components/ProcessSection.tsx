@@ -94,13 +94,13 @@ const ProcessSection = () => {
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="text-accent text-sm font-bold uppercase tracking-wider bg-accent/10 px-4 py-2 rounded-full">
-            21-Day Closing Guarantee · Real Performance Data · Agent-Ready Proof Points
+            Closings as Fast as 21 Days · Real Performance Data · Agent-Ready Proof Points
           </span>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-6 mb-6">
             Fast <span className="text-accent">and</span> Thorough — Not One or the Other
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
-            Other lenders promise speed but surprise you at the finish line. Previse Mortgage closes in 21 days 
+            Other lenders promise speed but surprise you at the finish line. Previse Mortgage targets closings as fast as 21 days 
             <em> because</em> we front-load the hard work — not by skipping it. AI-enhanced processing catches 
             issues on day one so humans solve them before they become delays.
           </p>

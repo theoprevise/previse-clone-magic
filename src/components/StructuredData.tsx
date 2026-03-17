@@ -120,7 +120,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
               "@type": "Review",
               "author": { "@type": "Person", "name": "Real Estate Agent" },
               "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "reviewBody": "I've sent three buyers to Previse and every closing was on time or early. Teddy gives me his cell, answers same-day, and the listing agents always comment on how smooth the transaction was. My buyers' offers are stronger because agents trust Previse's 21-day commitment."
+              "reviewBody": "I've sent three buyers to Previse and every closing was on time or early. Teddy gives me his cell, answers same-day, and the listing agents always comment on how smooth the transaction was. My buyers' offers are stronger because agents trust Previse's closing timelines."
             },
             {
               "@type": "Review",

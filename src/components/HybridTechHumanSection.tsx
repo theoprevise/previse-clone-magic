@@ -117,7 +117,7 @@ const HybridTechHumanSection = () => {
                   icon: Upload,
                   step: "4",
                   title: "Track & Close Digitally",
-                  desc: "Monitor progress in real-time. Get weekly updates from your advisor. E-sign disclosures. Close with confidence — 21-day target."
+                  desc: "Monitor progress in real-time. Get weekly updates from your advisor. E-sign disclosures. Close with confidence — as fast as 21 days."
                 }
               ].map((item, idx) => (
                 <div key={idx} className="bg-background/80 border border-border rounded-xl p-5 text-center relative">

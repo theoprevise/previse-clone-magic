@@ -237,7 +237,7 @@ const TransparencySection = () => {
                   <h5 className="font-bold text-foreground text-sm mb-2">Fast Because Thorough</h5>
                   <p className="text-muted-foreground text-xs leading-relaxed">
                     Other lenders rush approvals and surprise you at closing. We front-load the deep review — 
-                    catching issues on day one so they're solved by day five. The result: 21-day closings 
+                    catching issues on day one so they're solved by day five. The result: closings as fast as 21 days 
                     with no last-minute surprises, even on complex files. Speed and certainty, not one or the other.
                   </p>
                 </div>

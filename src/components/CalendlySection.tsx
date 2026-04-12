@@ -63,10 +63,10 @@ const CalendlySection = () => {
             ))}
           </div>
 
-          <div className="bg-white border border-border rounded-xl p-3 shadow-lg">
+          <div className="bg-background border border-border rounded-xl p-3 shadow-lg">
             <iframe 
               src="https://link.previsemortgage.com/widget/booking/mCGtajGuvJ2SRpcD595P" 
-              style={{width: "100%", border: "none", overflow: "hidden", minHeight: "400px", background: "white"}}
+              style={{width: "100%", border: "none", overflow: "hidden", minHeight: "400px"}}
               scrolling="no" 
               id="5tsGqmMjQvIcZuvXizTv_1769035890629_booking"
               className="rounded-lg"

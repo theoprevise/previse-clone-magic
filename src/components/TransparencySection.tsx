@@ -287,7 +287,7 @@ const TransparencySection = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="max-w-lg mx-auto mb-12">
             {[
               {
                 quote: "Previse Mortgage was very helpful and thorough. They advised us of various options so we felt informed and empowered to make the right choices for our family. Highly recommend them for personal, quality service.",

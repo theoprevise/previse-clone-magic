@@ -312,7 +312,7 @@ const PreQualificationCalculator = () => {
             </Button>
           ) : (
             <Button onClick={handleContactNext} disabled={isSubmitting} className="flex-1 bg-accent hover:bg-accent-light text-primary">
-              Next: Verify Phone →
+              Submit
             </Button>
           )}
         </div>

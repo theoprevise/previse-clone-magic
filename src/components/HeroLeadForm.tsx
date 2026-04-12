@@ -166,7 +166,7 @@ const HeroLeadForm = () => {
         </p>
         
         <Button type="submit" className="w-full bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-primary font-bold py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-          Next: Verify Phone →
+          Submit
         </Button>
       </form>
     </div>

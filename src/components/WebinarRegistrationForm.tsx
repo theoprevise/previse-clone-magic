@@ -148,7 +148,7 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
       </p>
 
       <Button type="submit" variant="hero" className="w-full" size="lg">
-        Next: Verify Phone →
+        Submit
       </Button>
     </form>
   );

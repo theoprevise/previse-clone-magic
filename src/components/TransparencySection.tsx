@@ -74,6 +74,45 @@ const TransparencySection = () => {
             </div>
           </div>
 
+          {/* Rate Lock Policy */}
+          <div className="bg-background/70 border border-accent/20 rounded-2xl p-6 md:p-8 mb-16">
+            <div className="flex items-start gap-4 mb-4">
+              <div className="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Lock className="text-accent" size={22} />
+              </div>
+              <div>
+                <h4 className="font-bold text-foreground text-base mb-1">Previse Rate-Lock Policy — In Plain Language</h4>
+                <p className="text-muted-foreground text-xs leading-relaxed">
+                  Rate locks protect you from rate increases while your loan is being processed. Here's exactly how ours works:
+                </p>
+              </div>
+            </div>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                { 
+                  title: "When We Lock", 
+                  desc: "You choose when to lock — during your Planning Session or later. We never lock without your explicit consent. We'll advise you on timing, but the decision is always yours." 
+                },
+                { 
+                  title: "Lock Duration", 
+                  desc: "Standard locks are 30-45 days. For complex files (DSCR, non-QM), we recommend 45-60 days to ensure closing without pressure. Extended locks available on request." 
+                },
+                { 
+                  title: "If Rates Drop After Locking", 
+                  desc: "Many of our wholesale lenders offer float-down options — if rates drop significantly before closing, we can renegotiate. We proactively monitor rates and contact you if a float-down opportunity arises." 
+                },
+                { 
+                  title: "What Can Change vs What Can't", 
+                  desc: "Your locked rate and lender fees cannot increase. Third-party fees (title, appraisal) are estimates and may vary slightly, but we explain every variance before closing." 
+                }
+              ].map((item, idx) => (
+                <div key={idx} className="bg-background/80 border border-border rounded-lg p-4">
+                  <h5 className="font-bold text-foreground text-xs mb-1">{item.title}</h5>
+                  <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
 
           {/* Service Standards - Concrete, visible promises */}
           <div className="bg-primary/5 border border-primary/10 rounded-3xl p-8 md:p-12 mb-16">

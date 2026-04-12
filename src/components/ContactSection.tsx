@@ -76,27 +76,8 @@ const ContactSection = () => {
                   <p className="text-white/70">We'll be in touch within 24 hours.</p>
                   <button onClick={() => { setStep('form'); setFormData({ name: '', email: '', phone: '', message: '' }); }} className="text-accent underline text-sm">Send another message</button>
                 </div>
-              ) : step === 'otp' ? (
-                <div className="space-y-4">
-                  <div className="p-3 bg-white/10 border border-white/20 rounded-lg text-sm space-y-0.5">
-                    <p className="font-medium text-white">{formData.name}</p>
-                    <p className="text-white/70">{formData.email}</p>
-                    <p className="text-white/70">{formData.phone}</p>
-                    {formData.message && <p className="text-white/50 truncate">"{formData.message}"</p>}
-                  </div>
-                  {isSubmitting ? (
-                    <div className="flex items-center justify-center gap-2 py-4 text-white/70">
-                      <Loader2 className="h-5 w-5 animate-spin" /> Sending your message…
-                    </div>
-                  ) : (
-                    <div className="[&_p]:text-white/80 [&_strong]:text-white [&_button:not([disabled])]:bg-white [&_button:not([disabled])]:text-primary [&_input]:bg-white/10 [&_input]:border-white/30 [&_input]:text-white">
-                      <PhoneOTPVerification phone={formData.phone} onVerified={handlePhoneVerified} />
-                    </div>
-                  )}
-                  <button type="button" onClick={() => setStep('form')} className="text-sm text-white/60 hover:text-white underline block mx-auto">← Edit info</button>
-                </div>
               ) : (
-                <form onSubmit={handleFormNext} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <input
                       name="name"
@@ -132,7 +113,6 @@ const ContactSection = () => {
                       className={`w-full p-4 bg-transparent border-2 rounded-lg text-white placeholder-white/60 focus:border-accent focus:outline-none ${errors.phone ? 'border-red-400' : 'border-border'}`}
                     />
                     {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone}</p>}
-                    <p className="text-white/40 text-xs mt-1">A verification code will be sent to this number.</p>
                   </div>
                   <div>
                     <textarea
@@ -146,9 +126,10 @@ const ContactSection = () => {
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-white text-primary py-4 rounded-full font-semibold text-lg hover:bg-white/90 transition-colors"
+                    disabled={isSubmitting}
+                    className="w-full bg-white text-primary py-4 rounded-full font-semibold text-lg hover:bg-white/90 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
                   >
-                    Next: Verify Phone →
+                    {isSubmitting ? <><Loader2 className="h-5 w-5 animate-spin" /> Sending...</> : 'Send Message'}
                   </button>
                 </form>
               )}

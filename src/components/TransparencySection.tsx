@@ -287,25 +287,13 @@ const TransparencySection = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="max-w-lg mx-auto mb-12">
             {[
               {
-                quote: "I was terrified of making a mistake on my first home. Teddy didn't rush me — he spent an hour walking through FHA vs conventional with my actual numbers, explained mortgage insurance, and honestly told me to wait two months to save more. When I was ready, he guided me through every line of the closing disclosure. No surprises, clear fees, honest explanations.",
-                name: "Recent Client",
-                type: "First-Time Homebuyer",
-                highlight: "No Surprises, Clear Fees"
-              },
-              {
-                quote: "What stood out was the complete lack of pressure — and the transparency. Before I even applied, Teddy showed me three scenarios side by side with all fees itemized. He explained which costs were his, which were third-party, and which could change. When I brought a competing Loan Estimate, he welcomed the comparison and walked me through it line by line.",
-                name: "Recent Client", 
-                type: "Self-Employed Borrower",
-                highlight: "Honest Fee Transparency"
-              },
-              {
-                quote: "Six months after closing, Teddy called to let me know rates had dropped and a refi could save me $200/month. No other lender has ever followed up like that. Between the Planning Session, the closing walkthrough, and the post-closing check-ins, Previse feels like having a mortgage strategist on call for life.",
-                name: "Recent Client",
-                type: "Repeat Client & Investor",
-                highlight: "Lifetime Mortgage Strategist"
+                quote: "Previse Mortgage was very helpful and thorough. They advised us of various options so we felt informed and empowered to make the right choices for our family. Highly recommend them for personal, quality service.",
+                name: "Sara Murphy",
+                type: "Google Review",
+                highlight: "Personal, Quality Service"
               }
             ].map((testimonial, idx) => (
               <div key={idx} className="bg-background border border-border rounded-2xl p-6 flex flex-col">

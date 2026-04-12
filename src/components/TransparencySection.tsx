@@ -287,13 +287,19 @@ const TransparencySection = () => {
             </p>
           </div>
 
-          <div className="max-w-lg mx-auto mb-12">
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
             {[
               {
                 quote: "Previse Mortgage was very helpful and thorough. They advised us of various options so we felt informed and empowered to make the right choices for our family. Highly recommend them for personal, quality service.",
                 name: "Sara Murphy",
                 type: "Google Review",
                 highlight: "Personal, Quality Service"
+              },
+              {
+                quote: "Teddy took the time to educate me on my mortgage options, including the USDA 0% down payment program, and helped me clearly understand the homebuying process. He was patient, honest, and empowering—never pushy—and focused on helping me make informed financial decisions that were right for me. Through Previse Mortgage, I gained clarity around setting financial goals, improving my credit score, and taking concrete steps toward homeownership. If you're looking for a mortgage company that prioritizes education, transparency, and genuine client care, I highly recommend Previse Mortgage.",
+                name: "Verified Client",
+                type: "Google Review",
+                highlight: "Education & Transparency"
               }
             ].map((testimonial, idx) => (
               <div key={idx} className="bg-background border border-border rounded-2xl p-6 flex flex-col">

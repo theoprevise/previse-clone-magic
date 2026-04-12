@@ -186,57 +186,6 @@ const ProcessSection = () => {
           </div>
         </div>
 
-        {/* Timestamped Case Studies */}
-        <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 mb-16">
-          <h3 className="text-2xl font-bold text-white text-center mb-3">
-            Real Timelines from Recent Closings
-          </h3>
-          <p className="text-white/60 text-center mb-10 max-w-2xl mx-auto text-sm">
-            Not hypotheticals — these are real closing timelines from actual Previse Mortgage transactions.
-          </p>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                type: "W-2 Purchase — York County, PA",
-                timeline: "Application to Keys: 18 Days",
-                highlights: ["Pre-approval: Same day", "Appraisal ordered: Day 1", "Conditions cleared: Day 10", "Clear-to-close: Day 15", "Closing & keys: Day 18"],
-                quote: "Our listing agent couldn't believe we closed three days early. Previse made the fastest, cleanest transaction I've experienced."
-              },
-              {
-                type: "Self-Employed Purchase — Lancaster County, PA",
-                timeline: "Application to Keys: 24 Days",
-                highlights: ["Bank statement review: Day 1-2", "Program match from 50+ lenders: Day 3", "Appraisal + conditions: Day 5-14", "Clear-to-close: Day 19", "Closing & keys: Day 24"],
-                quote: "Two banks declined me. Previse found the right program in 3 days and closed faster than the bank that turned me down promised they would."
-              },
-              {
-                type: "DSCR Investment — Dauphin County, PA",
-                timeline: "Application to Funded: 22 Days",
-                highlights: ["DSCR analysis: Day 1", "Property cash flow verified: Day 3", "Appraisal rush ordered: Day 1", "Clear-to-close: Day 17", "Funded in LLC: Day 22"],
-                quote: "I've closed 12 investment properties. This was my fastest and smoothest closing — and my first with no last-minute surprises."
-              }
-            ].map((study, idx) => (
-              <div key={idx} className="bg-white/5 border border-white/10 rounded-xl p-6">
-                <div className="mb-3">
-                  <span className="text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full">
-                    {study.type}
-                  </span>
-                </div>
-                <div className="text-lg font-bold text-white mb-4">{study.timeline}</div>
-                <ul className="space-y-2 mb-4">
-                  {study.highlights.map((h, i) => (
-                    <li key={i} className="flex items-center gap-2 text-xs text-white/60">
-                      <CheckCircle className="text-accent flex-shrink-0" size={14} />
-                      {h}
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-white/50 text-xs italic leading-relaxed border-t border-white/10 pt-3">
-                  "{study.quote}"
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* Agent-Facing Proof Points */}
         <div className="bg-accent/5 border border-accent/20 rounded-3xl p-8 md:p-12 mb-16">

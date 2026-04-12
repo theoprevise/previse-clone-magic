@@ -129,7 +129,7 @@ const ContactSection = () => {
                     disabled={isSubmitting}
                     className="w-full bg-white text-primary py-4 rounded-full font-semibold text-lg hover:bg-white/90 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
                   >
-                    {isSubmitting ? <><Loader2 className="h-5 w-5 animate-spin" /> Sending...</> : 'Send Message'}
+                    {isSubmitting ? <><Loader2 className="h-5 w-5 animate-spin" /> Sending...</> : 'Submit'}
                   </button>
                 </form>
               )}

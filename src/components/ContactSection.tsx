@@ -5,11 +5,10 @@ import { Button } from '@/components/ui/button';
 import { Loader2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
-import PhoneOTPVerification from '@/components/PhoneOTPVerification';
 
 const ContactSection = () => {
   const { toast } = useToast();
-  const [step, setStep] = useState<'form' | 'otp' | 'done'>('form');
+  const [step, setStep] = useState<'form' | 'done'>('form');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -19,17 +18,14 @@ const ContactSection = () => {
     if (errors[e.target.name]) setErrors(prev => ({ ...prev, [e.target.name]: '' }));
   };
 
-  const handleFormNext = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: Record<string, string> = {};
     if (!formData.name.trim()) newErrors.name = 'Name is required';
     if (!formData.email.trim()) newErrors.email = 'Email is required';
     if (!formData.phone.trim() || formData.phone.replace(/\D/g, '').length < 10) newErrors.phone = 'Valid phone required';
     if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return; }
-    setStep('otp');
-  };
 
-  const handlePhoneVerified = async () => {
     setIsSubmitting(true);
     try {
       const nameParts = formData.name.trim().split(' ');
@@ -54,7 +50,6 @@ const ContactSection = () => {
     } catch (err) {
       console.error('Contact form error:', err);
       toast({ title: "Something went wrong", description: "Please try again or call us directly.", variant: "destructive" });
-      setStep('otp');
     } finally {
       setIsSubmitting(false);
     }

@@ -223,10 +223,10 @@ const ProcessSection = () => {
               fast closings backed by thorough upfront work.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="hero">
+              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold shadow-lg shadow-accent/25">
                 Start My Application
               </Button>
-              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:text-white">
+              <Button size="lg" variant="outline" className="border-accent/50 text-accent hover:bg-accent/10 hover:text-accent">
                 Schedule a Planning Session
               </Button>
             </div>

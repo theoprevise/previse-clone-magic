@@ -18,7 +18,7 @@ const CalendlySection = () => {
   }, []);
 
   return (
-    <section id="contact" className="py-16 bg-gradient-to-b from-primary-dark to-primary relative overflow-hidden">
+    <section id="contact" className="py-16 bg-gradient-to-b from-background to-muted/30 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
@@ -27,10 +27,10 @@ const CalendlySection = () => {
                 Education First · No Obligation · No Pressure
               </span>
             </div>
-            <h2 className="font-serif text-2xl lg:text-3xl font-bold text-white mb-3">
+            <h2 className="font-serif text-2xl lg:text-3xl font-bold text-foreground mb-3">
               Book a Free <span className="text-accent">Previse Planning Session</span>
             </h2>
-            <p className="text-white/80 text-base max-w-2xl mx-auto leading-relaxed">
+            <p className="text-muted-foreground text-base max-w-2xl mx-auto leading-relaxed">
               Not a sales call — a structured mortgage education session built around your life goals. 
               We'll walk through scenarios, trade-offs, and strategies so you can make a confident, informed decision.
             </p>
@@ -55,15 +55,15 @@ const CalendlySection = () => {
                 desc: "If the best advice is 'wait 6 months,' we'll say that. If a different lender is better for your profile, we'll tell you"
               }
             ].map((item, idx) => (
-              <div key={idx} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-4 text-center">
+              <div key={idx} className="bg-accent/5 border border-accent/20 rounded-xl p-4 text-center">
                 <item.icon className="text-accent mx-auto mb-2" size={22} />
-                <h4 className="text-white font-bold text-sm mb-1">{item.title}</h4>
-                <p className="text-white/70 text-xs leading-relaxed">{item.desc}</p>
+                <h4 className="text-foreground font-bold text-sm mb-1">{item.title}</h4>
+                <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
 
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-3">
+          <div className="bg-background border border-border rounded-xl p-3 shadow-lg">
             <iframe 
               src="https://link.previsemortgage.com/widget/booking/mCGtajGuvJ2SRpcD595P" 
               style={{width: "100%", border: "none", overflow: "hidden", minHeight: "400px"}}
@@ -73,7 +73,7 @@ const CalendlySection = () => {
             />
           </div>
 
-          <p className="text-white/60 text-xs text-center mt-4">
+          <p className="text-muted-foreground text-xs text-center mt-4">
             Every Previse Planning Session is complimentary, confidential, and zero-obligation. 
             Average session: 30 minutes. You'll leave with clarity — whether you work with us or not.
           </p>

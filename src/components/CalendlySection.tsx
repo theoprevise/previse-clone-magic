@@ -18,64 +18,59 @@ const CalendlySection = () => {
   }, []);
 
   return (
-    <section id="contact" className="py-16 bg-gradient-to-b from-background to-muted/30 relative overflow-hidden">
+    <section id="contact" className="py-12 bg-muted/20 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <div className="inline-block mb-4">
-              <span className="text-accent text-sm font-bold uppercase tracking-wider bg-accent/10 px-4 py-2 rounded-full">
-                Education First · No Obligation · No Pressure
-              </span>
-            </div>
-            <h2 className="font-serif text-2xl lg:text-3xl font-bold text-foreground mb-3">
-              Book a Free <span className="text-accent">Previse Planning Session</span>
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-6">
+            <span className="text-accent text-xs font-semibold uppercase tracking-wider bg-accent/10 px-3 py-1.5 rounded-full">
+              Education First · No Obligation
+            </span>
+            <h2 className="font-serif text-xl lg:text-2xl font-bold text-foreground mt-3 mb-2">
+              Book a Free <span className="text-accent">Planning Session</span>
             </h2>
-            <p className="text-muted-foreground text-base max-w-2xl mx-auto leading-relaxed">
-              Not a sales call — a structured mortgage education session built around your life goals. 
-              We'll walk through scenarios, trade-offs, and strategies so you can make a confident, informed decision.
+            <p className="text-muted-foreground text-sm max-w-xl mx-auto leading-relaxed">
+              A structured mortgage education session built around your goals — not a sales call.
             </p>
           </div>
 
-          {/* What to expect */}
-          <div className="grid md:grid-cols-3 gap-4 mb-8">
+          <div className="grid md:grid-cols-3 gap-3 mb-6">
             {[
               {
                 icon: BookOpen,
                 title: "Scenario Education",
-                desc: "We compare FHA vs conventional, ARM vs fixed, points vs no points, and show you real numbers — not sales pitches"
+                desc: "Real numbers comparing loan options — not sales pitches"
               },
               {
                 icon: TrendingUp,
                 title: "Life-Plan Alignment",
-                desc: "Your mortgage should fit your 5-year plan. We discuss affordability limits, refi timing, and when to wait vs buy"
+                desc: "Mortgage strategies that fit your 5-year plan"
               },
               {
                 icon: Shield,
                 title: "Honest Next Steps",
-                desc: "If the best advice is 'wait 6 months,' we'll say that. If a different lender is better for your profile, we'll tell you"
+                desc: "If 'wait 6 months' is best, we'll tell you"
               }
             ].map((item, idx) => (
-              <div key={idx} className="bg-accent/5 border border-accent/20 rounded-xl p-4 text-center">
-                <item.icon className="text-accent mx-auto mb-2" size={22} />
-                <h4 className="text-foreground font-bold text-sm mb-1">{item.title}</h4>
-                <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>
+              <div key={idx} className="bg-background/60 border border-border/50 rounded-lg p-3 text-center">
+                <item.icon className="text-accent mx-auto mb-1.5" size={18} />
+                <h4 className="text-foreground font-semibold text-xs mb-0.5">{item.title}</h4>
+                <p className="text-muted-foreground text-[11px] leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
 
-          <div className="bg-background border border-border rounded-xl p-3 shadow-lg">
+          <div className="bg-background/80 border border-border/40 rounded-lg p-2 shadow-sm">
             <iframe 
               src="https://link.previsemortgage.com/widget/booking/mCGtajGuvJ2SRpcD595P" 
-              style={{width: "100%", border: "none", overflow: "hidden", minHeight: "400px"}}
+              style={{width: "100%", border: "none", overflow: "hidden", minHeight: "350px"}}
               scrolling="no" 
               id="5tsGqmMjQvIcZuvXizTv_1769035890629_booking"
-              className="rounded-lg"
+              className="rounded-md"
             />
           </div>
 
-          <p className="text-muted-foreground text-xs text-center mt-4">
-            Every Previse Planning Session is complimentary, confidential, and zero-obligation. 
-            Average session: 30 minutes. You'll leave with clarity — whether you work with us or not.
+          <p className="text-muted-foreground text-[11px] text-center mt-3">
+            Complimentary, confidential, zero-obligation. ~30 minutes.
           </p>
         </div>
       </div>

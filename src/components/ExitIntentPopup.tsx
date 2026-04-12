@@ -136,7 +136,7 @@ const ExitIntentPopup = () => {
                   By submitting, you consent to be contacted by Previse Mortgage LLC via phone, email, or SMS. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary underline hover:text-primary/80">Terms of Service</Link>.
                 </p>
                 <Button type="submit" className="w-full bg-accent hover:bg-accent-light text-primary font-bold py-6 text-lg">
-                  Next: Verify Phone →
+                  Submit
                 </Button>
               </form>
             ) : (

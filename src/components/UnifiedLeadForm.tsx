@@ -290,7 +290,7 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
         type="submit"
         className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold py-3"
       >
-        Next: Verify Phone →
+        Submit
       </Button>
     </form>
   );

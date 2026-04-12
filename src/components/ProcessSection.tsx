@@ -226,7 +226,7 @@ const ProcessSection = () => {
               <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold shadow-lg shadow-accent/25">
                 Start My Application
               </Button>
-              <Button size="lg" variant="outline" className="border-accent/50 text-accent hover:bg-accent/10 hover:text-accent">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary-light border border-primary-light/30 font-semibold">
                 Schedule a Planning Session
               </Button>
             </div>

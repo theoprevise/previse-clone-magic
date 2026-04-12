@@ -340,7 +340,7 @@ const TransparencySection = () => {
               and help us continue improving our service.
             </p>
             <a 
-              href="https://share.google/Qb66UAgJXHgDTVqBk"
+              href="https://g.page/r/CQVqJbLDScA0EBM/review"
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-xl font-semibold hover:bg-accent/90 transition-colors"

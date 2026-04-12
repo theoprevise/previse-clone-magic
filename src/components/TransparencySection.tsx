@@ -287,7 +287,7 @@ const TransparencySection = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
             {[
               {
                 quote: "Previse Mortgage was very helpful and thorough. They advised us of various options so we felt informed and empowered to make the right choices for our family. Highly recommend them for personal, quality service.",
@@ -300,6 +300,12 @@ const TransparencySection = () => {
                 name: "Verified Client",
                 type: "Google Review",
                 highlight: "Education & Transparency"
+              },
+              {
+                quote: "As someone in the industry, I am very selective about who I refer my associates to. But Teddy at Previse Mortgage is in a league of its own. What truly stands out is the level of trust he builds from the first conversation. He isn't just a mortgage specialist, he is a strategist who understands the complexities of the current market. If you're looking for a transparent, seamless experience with a local expert who actually picks up the phone, Teddy is your guy.",
+                name: "Neha Sachdeva",
+                type: "Google Review",
+                highlight: "Industry-Trusted Strategist"
               }
             ].map((testimonial, idx) => (
               <div key={idx} className="bg-background border border-border rounded-2xl p-6 flex flex-col">

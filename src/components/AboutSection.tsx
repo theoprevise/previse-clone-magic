@@ -1,5 +1,4 @@
 import teddyImage from '@/assets/teddy-carbone.jpg';
-import raineImage from '@/assets/raine-valentine.jpg';
 
 const AboutSection = () => {
   return (
@@ -25,7 +24,7 @@ const AboutSection = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="max-w-lg mx-auto">
             {/* Teddy */}
             <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 flex flex-col items-center text-center group hover:bg-white/10 transition-all duration-300">
               <img 
@@ -48,31 +47,6 @@ const AboutSection = () => {
               </p>
               <a href="mailto:teddy@previsemortgage.com" className="text-accent hover:text-accent-light text-sm font-medium transition-colors">
                 teddy@previsemortgage.com
-              </a>
-            </div>
-            
-            {/* Raine */}
-            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 flex flex-col items-center text-center group hover:bg-white/10 transition-all duration-300">
-              <img 
-                src={raineImage} 
-                alt="Raine Valentine - Loan Officer at Previse Mortgage"
-                className="rounded-xl shadow-xl w-32 h-40 object-cover object-[center_20%] mb-4 group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-                width="128"
-                height="128"
-              />
-              <h3 className="text-xl font-bold text-white">Raine Valentine</h3>
-              <p className="text-accent font-medium text-sm mb-1">Loan Officer & First-Time Buyer Specialist</p>
-              <p className="text-white/60 text-xs mb-3">NMLS# 2083380 · PA# 119453</p>
-              <p className="text-white/80 text-sm leading-relaxed mb-3">
-                Raine specializes in guiding first-time homebuyers and borrowers with non-traditional income through 
-                the mortgage process with patience and clarity. She excels at FHA, VA, and conventional programs 
-                for complex employment situations — multiple W-2s, 1099 income, gig workers, and mixed-income 
-                households. Her consultative approach ensures families feel informed and confident, never rushed 
-                or pressured into a decision.
-              </p>
-              <a href="mailto:rainev@previsemortgage.com" className="text-accent hover:text-accent-light text-sm font-medium transition-colors">
-                rainev@previsemortgage.com
               </a>
             </div>
           </div>

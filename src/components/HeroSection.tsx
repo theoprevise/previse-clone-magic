@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import StructuredData from "./StructuredData";
 import HeroLeadForm from "./HeroLeadForm";
 import teddyImage from '@/assets/teddy-carbone.jpg';
-import raineImage from '@/assets/raine-valentine.jpg';
+
 
 const HeroSection = () => {
   return (
@@ -59,21 +59,14 @@ const HeroSection = () => {
               {/* Team Photos + CTA */}
               <div className="flex flex-col items-center lg:items-start gap-6 animate-fade-in delay-700">
                 <div className="flex items-center gap-6">
-                  <div className="flex -space-x-4">
-                    <img 
-                      src={teddyImage} 
-                      alt="Teddy Carbone - Loan Officer" 
-                      className="w-16 h-16 rounded-full border-3 border-accent shadow-xl object-cover relative z-10"
-                    />
-                    <img 
-                      src={raineImage} 
-                      alt="Raine Valentine - Loan Officer" 
-                      className="w-16 h-16 rounded-full border-3 border-accent shadow-xl object-cover"
-                    />
-                  </div>
+                  <img 
+                    src={teddyImage} 
+                    alt="Teddy Carbone - Loan Officer" 
+                    className="w-16 h-16 rounded-full border-3 border-accent shadow-xl object-cover"
+                  />
                   <div className="text-left">
-                    <p className="text-white font-bold text-base">Meet Our Team</p>
-                    <p className="text-white/80 text-sm">Licensed Loan Officers in PA</p>
+                    <p className="text-white font-bold text-base">Teddy Carbone</p>
+                    <p className="text-white/80 text-sm">Licensed Loan Officer in PA</p>
                   </div>
                 </div>
                 

@@ -18,7 +18,7 @@ const CalendlySection = () => {
   }, []);
 
   return (
-    <section id="contact" className="py-16 bg-gradient-to-b from-background to-muted/30 relative overflow-hidden">
+    <section id="contact" className="py-16 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">

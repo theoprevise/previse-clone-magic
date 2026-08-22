@@ -69,7 +69,7 @@ const ExitIntentPopup = () => {
     } catch (error) {
       console.error('Error submitting lead:', error);
       toast({ title: "Something went wrong", description: "Please try again later.", variant: "destructive" });
-      setStep('otp');
+      setStep('form');
     } finally {
       setIsSubmitting(false);
     }

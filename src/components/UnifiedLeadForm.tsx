@@ -177,7 +177,7 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
         description: error instanceof Error ? error.message : "Something went wrong. Please try again.",
         variant: "destructive",
       });
-      void handlePhoneVerified();
+      setStep('form');
     } finally {
       setIsSubmitting(false);
     }

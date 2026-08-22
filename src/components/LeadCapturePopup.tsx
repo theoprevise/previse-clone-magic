@@ -58,7 +58,7 @@ const LeadCapturePopup = () => {
       toast({ title: "Invalid Phone", description: "Please enter a valid phone number.", variant: "destructive" });
       return;
     }
-    setStep('otp');
+    void handlePhoneVerified();
   };
 
   const handlePhoneVerified = async () => {
@@ -80,7 +80,7 @@ const LeadCapturePopup = () => {
     } catch (error) {
       console.error("Error submitting lead:", error);
       toast({ title: "Error", description: "Something went wrong. Please try again.", variant: "destructive" });
-      void handlePhoneVerified();
+      setStep('form');
     } finally {
       setIsSubmitting(false);
     }

@@ -71,7 +71,7 @@ const HeroLeadForm = () => {
     } catch (error) {
       console.error('Error submitting form:', error);
       toast({ title: "Something went wrong", description: "Please try again or call us directly.", variant: "destructive" });
-      setStep('otp');
+      setStep('form');
     } finally {
       setIsSubmitting(false);
     }

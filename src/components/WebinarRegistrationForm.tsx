@@ -82,7 +82,7 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
     } catch (error: any) {
       console.error('Registration error:', error);
       toast({ title: "Registration failed", description: error.message || "Please try again.", variant: "destructive" });
-      setStep('otp');
+      setStep('form');
     } finally {
       setLoading(false);
     }

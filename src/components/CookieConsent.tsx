@@ -119,7 +119,10 @@ const CookieConsent = () => {
           
           {/* Description */}
           <p className="text-xs text-muted-foreground mb-3 leading-relaxed">
-            We use cookies to enhance your experience. By continuing to browse, you agree to our use of cookies.{" "}
+            When you visit or log in to our website, cookies and similar technologies may be used by our online data partners or vendors to associate these activities with other personal information they or others have about you, including by association with your email. We (or service providers on our behalf) may then send communications and marketing to these email addresses. You may opt out of receiving this advertising by visiting{" "}
+            <a href="https://app.retention.com/optout" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+              https://app.retention.com/optout
+            </a>.{" "}
             <Link to="/privacy-policy" className="text-accent hover:underline">
               Privacy Policy
             </Link>

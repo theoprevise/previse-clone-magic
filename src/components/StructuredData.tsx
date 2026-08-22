@@ -55,10 +55,10 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
             "latitude": "39.8784",
             "longitude": "-76.8635"
           },
-          "areaServed": {
-            "@type": "State",
-            "name": "Pennsylvania"
-          },
+          "areaServed": [
+            { "@type": "State", "name": "Pennsylvania" },
+            { "@type": "State", "name": "Colorado" }
+          ],
           "hasCredential": [
             {
               "@type": "EducationalOccupationalCredential",

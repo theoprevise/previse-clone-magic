@@ -53,7 +53,7 @@ const HeroSection = () => {
               </div>
               
               <p className="text-lg md:text-xl text-white/90 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed animate-fade-in delay-500" itemProp="description">
-                Previse Mortgage specializes in investment property loans — DSCR, fix-and-flip, multifamily, and portfolio financing that qualify on the deal, not your tax returns. Close in an LLC, scale without loan caps, and keep your next acquisition on schedule. We also handle primary-residence purchases and refinances.
+                Previse Mortgage specializes in investment property loans — DSCR, fix-and-flip, multifamily, and portfolio financing that qualify on the deal, not your tax returns. Close in an LLC and scale without loan caps. We're licensed for residential purchase and refinance lending in Pennsylvania and Colorado, and we finance investment properties in any state.
               </p>
 
               

@@ -32,3 +32,5 @@ verify_jwt = false
 
 [functions.phone-otp]
 verify_jwt = false
+[functions.server-tagging]
+verify_jwt = false

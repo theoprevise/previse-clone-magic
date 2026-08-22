@@ -7,10 +7,8 @@ import SEOHead from "@/components/SEOHead";
 // Lazy load below-fold components for better LCP
 const FeaturesSection = lazy(() => import("@/components/FeaturesSection"));
 const ProcessSection = lazy(() => import("@/components/ProcessSection"));
-const HybridTechHumanSection = lazy(() => import("@/components/HybridTechHumanSection"));
 const HomeLoansContent = lazy(() => import("@/components/HomeLoansContent"));
 const WhyPreviseSection = lazy(() => import("@/components/WhyPreviseSection"));
-const TransparencySection = lazy(() => import("@/components/TransparencySection"));
 const AboutSection = lazy(() => import("@/components/AboutSection"));
 const FAQSection = lazy(() => import("@/components/FAQSection"));
 const CalendlySection = lazy(() => import("@/components/CalendlySection"));
@@ -19,7 +17,6 @@ const GoHighLevelChat = lazy(() => import("@/components/GoHighLevelChat"));
 const FloatingContactWidget = lazy(() => import("@/components/FloatingContactWidget"));
 const QuickCalculatorWidget = lazy(() => import("@/components/QuickCalculatorWidget"));
 const LoanFinderQuiz = lazy(() => import("@/components/LoanFinderQuiz"));
-const InteractiveComparisons = lazy(() => import("@/components/InteractiveComparisons"));
 
 // Minimal loading fallback that doesn't affect layout
 const SectionFallback = () => <div className="min-h-[200px]" />;
@@ -28,8 +25,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-primary">
       <SEOHead 
-        title="Investment Property Loans in PA | DSCR & Rental Financing"
-        description="Pennsylvania investment property lender: DSCR rental loans, multifamily, fix-and-flip, and portfolio financing with LLC closings and no tax returns. Purchase and refinance options too."
+        title="Investment Property Loans Nationwide | DSCR & Rental Financing"
+        description="Investment property loans in all 50 states: DSCR rental loans, multifamily, fix-and-flip, and portfolio financing with LLC closings and no tax returns. Licensed for home purchase and refinance in PA and CO."
         keywords="investment property loans Pennsylvania, DSCR loans, rental property financing, multifamily loans, fix and flip loans, portfolio loans, LLC mortgage, no tax return investor loan, cash-out refinance rental property"
         canonicalUrl="https://previsemortgage.com"
       />
@@ -49,13 +46,11 @@ const Index = () => {
         <LoanFinderQuiz />
         <CalendlySection />
         <ProcessSection />
-        <HybridTechHumanSection />
-        <InteractiveComparisons />
         <FAQSection />
-        <TransparencySection />
         <HomeLoansContent />
 
         <AboutSection />
+
         <Footer />
         <GoHighLevelChat />
         <FloatingContactWidget />

@@ -36,7 +36,7 @@ const HeroSection = () => {
             <div className="text-center lg:text-left">
               {/* Main heading */}
               <div className="mb-6 animate-fade-in">
-                <span className="inline-block mb-4 text-lg md:text-xl font-medium text-accent tracking-wide">Pennsylvania Investment Property Lender · DSCR · Multifamily · Portfolio</span>
+                <span className="inline-block mb-4 text-lg md:text-xl font-medium text-accent tracking-wide">Investment Property Lending Nationwide · Licensed in PA & CO</span>
                 <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white mb-4" itemProp="name">
                   <span className="block mb-2">Financing That Grows</span>
                   <span className="block bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">
@@ -53,7 +53,7 @@ const HeroSection = () => {
               </div>
               
               <p className="text-lg md:text-xl text-white/90 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed animate-fade-in delay-500" itemProp="description">
-                Previse Mortgage specializes in investment property loans — DSCR, fix-and-flip, multifamily, and portfolio financing that qualify on the deal, not your tax returns. Close in an LLC, scale without loan caps, and keep your next acquisition on schedule. We also handle primary-residence purchases and refinances.
+                Previse Mortgage specializes in investment property loans — DSCR, fix-and-flip, multifamily, and portfolio financing that qualify on the deal, not your tax returns. Close in an LLC and scale without loan caps. We're licensed for residential purchase and refinance lending in Pennsylvania and Colorado, and we finance investment properties in any state.
               </p>
 
               
@@ -67,7 +67,7 @@ const HeroSection = () => {
                   />
                   <div className="text-left">
                     <p className="text-white font-bold text-base">Teddy Carbone</p>
-                    <p className="text-white/80 text-sm">Licensed Loan Officer in PA</p>
+                    <p className="text-white/80 text-sm">Licensed Loan Officer in PA & CO</p>
                   </div>
                 </div>
                 

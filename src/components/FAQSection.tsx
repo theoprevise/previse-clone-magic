@@ -7,38 +7,39 @@ const FAQSection = () => {
 
   const faqs = [
     {
-      question: "What happens in a Previse Planning Session?",
-      answer: "A Previse Planning Session is a free, 30-minute education-focused consultation — not a sales call. We review your financial picture, walk through loan options side-by-side (FHA vs conventional, ARM vs fixed, points vs no points), discuss your 5-year life plan, and give you honest guidance — even if that means recommending you wait or use a different lender."
+      question: "What is a DSCR loan and how do I qualify?",
+      answer: "A DSCR (Debt Service Coverage Ratio) loan qualifies on the property's rental income rather than your personal income. We compare the market or in-place rent to the proposed payment (principal, interest, taxes, insurance, and any HOA dues). No W-2s, tax returns, or debt-to-income calculation is required. Qualifying ratios, credit minimums, and reserve requirements vary by lender and property type."
     },
     {
-      question: "Should I choose FHA or conventional? How do I decide?",
-      answer: "It depends on your credit score, down payment, and long-term plan. FHA loans accept lower credit scores (580+) with 3.5% down but carry mortgage insurance for the loan's life. Conventional loans require 620+ credit but let you drop MI at 80% equity. In your Planning Session, we run both scenarios with your real numbers so you can see the monthly payment, total cost, and break-even point clearly."
+      question: "Can I close an investment property loan in my LLC?",
+      answer: "Yes. Most of our investor programs allow title and the loan to be held in an LLC or other entity, usually with a personal guarantee. We help structure the entity documents up front so the closing isn't delayed by operating agreement or EIN issues."
     },
     {
-      question: "Will Previse Mortgage help me understand closing disclosures line by line?",
-      answer: "Yes — that's core to our process. Before closing, we schedule an Underwriting Pre-Brief where we walk through every line of your Closing Disclosure, explain each fee, and answer every question. No surprises at the closing table."
+      question: "How many rental properties can I finance with Previse?",
+      answer: "Conventional financing typically caps you at ten financed properties. Our DSCR and portfolio programs have no such cap — investors regularly finance additional doors, and blanket loans can combine several rentals into a single loan with one payment."
     },
     {
-      question: "What if I'm not sure I can afford to buy right now?",
-      answer: "That's exactly what the Planning Session is for. We'll review your income, debts, savings, and goals to determine a comfortable budget — not just what you qualify for. If the honest answer is 'wait 6 months and save more,' we'll tell you that and help you build a plan to get there."
+      question: "Can I use short-term rental (Airbnb) income to qualify?",
+      answer: "Often, yes. Several of our lenders will use short-term rental income documented through AirDNA projections or 12 months of platform statements. The market matters — some municipalities restrict short-term rentals — so we review local rules and lender appetite before you go under contract."
     },
     {
-      question: "Does Previse Mortgage support me after closing?",
-      answer: "Absolutely. Our After-Closing Care program includes lifetime loan officer access (call or text Teddy or Raine anytime), annual rate and equity reviews to identify refinancing opportunities, and priority processing for future purchases or investment properties. Your relationship with Previse doesn't end when the loan funds."
+      question: "How much down payment do investment property loans require?",
+      answer: "Plan on roughly 20-25% down for most DSCR and rental purchases, with pricing improving at lower loan-to-value. Rate-and-term or cash-out refinances on rentals generally allow up to 70-75% LTV. Exact terms depend on credit, property type, and DSCR coverage."
     },
     {
-      question: "What types of loans does Previse Mortgage specialize in?",
-      answer: "We specialize in complex borrower scenarios: DSCR investment property loans, bank statement loans for self-employed borrowers, non-QM financing, and creative loan structuring. We also offer conventional, FHA, VA, and USDA loans — all with broker-level pricing from 50+ wholesale lenders."
+      question: "Can I pull cash out of a rental to buy the next property?",
+      answer: "That's one of the most common reasons investors call us. A cash-out refinance on an existing rental converts trapped equity into a down payment for your next acquisition. We model the payment change, the resulting DSCR, and whether a blanket loan across several properties nets more usable capital."
     },
     {
-      question: "How quickly can Previse Mortgage close a loan?",
-      answer: "We target closings as fast as 21 days on purchase loans, subject to file complexity and third-party timelines. We achieve this through AI-enhanced processing, digital application and e-closing, and front-loading the hard underwriting work. Complex files (DSCR, bank statement, non-QM) that would stall at big banks close on schedule because we identify issues early."
+      question: "How quickly can Previse close an investor loan?",
+      answer: "We target closings as fast as 21 days, subject to file complexity, appraisal turn times, and third-party timelines. Investor files move faster here because we front-load entity documents, leases, and rent analysis instead of discovering them in underwriting."
     },
     {
-      question: "Is it better to pay points or accept a higher rate?",
-      answer: "It depends on how long you plan to stay in the home. Points lower your rate but cost money upfront — the 'break-even' point is typically 3-5 years. In your Planning Session, we calculate the exact break-even for your scenario and align the decision with your life plan and timeline."
+      question: "Do you also handle primary residences and refinances?",
+      answer: "Yes. Alongside our investor programs we offer conventional, FHA, VA, USDA, jumbo, and bank statement loans for primary homes and second homes, plus rate-and-term and cash-out refinances — all with broker pricing from 50+ wholesale lenders."
     }
   ];
+
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -59,17 +60,18 @@ const FAQSection = () => {
               <div className="inline-flex items-center gap-2 mb-4">
                 <HelpCircle className="text-accent" size={20} />
                 <span className="text-accent text-sm font-bold uppercase tracking-wider">
-                  Common Questions from First-Time & Anxious Buyers
+                  Common Questions from Real Estate Investors
                 </span>
               </div>
               <h2 className="font-serif text-2xl lg:text-3xl font-bold text-white mb-4">
-                Answers That <span className="text-accent">Educate</span>, Not Sell
+                Investor Financing, <span className="text-accent">Explained</span>
               </h2>
               <p className="text-white/70 text-sm max-w-xl mx-auto">
-                The questions below reflect what real borrowers ask when they're nervous, unsure, or comparing options. 
-                We answer them the same way we would in a Planning Session — honestly.
+                The questions below are what investors actually ask before an acquisition — DSCR math, LLC closings,
+                cash-out strategy, and timelines. We answer them the same way we would on a strategy call.
               </p>
             </div>
+
             
             <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 mb-6">
               <p className="text-white/90 text-center text-sm">

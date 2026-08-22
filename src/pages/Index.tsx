@@ -28,21 +28,22 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-primary">
       <SEOHead 
-        title="Previse Mortgage - Pennsylvania Mortgage Broker | Purchase, Refinance & Investment Loans"
-        description="Pennsylvania mortgage broker offering fast closings, transparent pricing, and dedicated advisors for home purchases, refinancing, and investment properties. DSCR, bank statement, and non-QM loans available. 50+ wholesale lenders. Family-owned."
-        keywords="Pennsylvania mortgage broker, home purchase loans, refinance mortgage, mortgage rates, first time homebuyer, DSCR loans, bank statement loans, self-employed mortgage, non-QM loans, investment property loans"
+        title="Investment Property Loans in PA | DSCR & Rental Financing"
+        description="Pennsylvania investment property lender: DSCR rental loans, multifamily, fix-and-flip, and portfolio financing with LLC closings and no tax returns. Purchase and refinance options too."
+        keywords="investment property loans Pennsylvania, DSCR loans, rental property financing, multifamily loans, fix and flip loans, portfolio loans, LLC mortgage, no tax return investor loan, cash-out refinance rental property"
         canonicalUrl="https://previsemortgage.com"
       />
       <StructuredData type="organization" />
       <StructuredData type="webpage" data={{
-        title: "Previse Mortgage - Pennsylvania Mortgage Broker | Purchase, Refinance & Invest",
-        description: "Fast closings, transparent pricing, and dedicated advisors for home purchases, refinancing, and investment properties in Pennsylvania",
+        title: "Previse Mortgage - Pennsylvania Investment Property & DSCR Lender",
+        description: "DSCR, multifamily, fix-and-flip and portfolio loans for Pennsylvania real estate investors, plus purchase and refinance financing.",
         url: "https://previsemortgage.com"
       }} />
       <StructuredData type="loanOrCredit" />
       <Header />
       <HeroSection />
       <Suspense fallback={<SectionFallback />}>
+        <FeaturesSection />
         <WhyPreviseSection />
         <QuickCalculatorWidget />
         <LoanFinderQuiz />
@@ -50,10 +51,10 @@ const Index = () => {
         <ProcessSection />
         <HybridTechHumanSection />
         <InteractiveComparisons />
-        <FeaturesSection />
         <FAQSection />
         <TransparencySection />
         <HomeLoansContent />
+
         <AboutSection />
         <Footer />
         <GoHighLevelChat />

@@ -7,49 +7,50 @@ const FeaturesSection = () => {
   const features = [
     {
       icon: Building2,
-      title: "DSCR Investment Loans",
-      description: "Qualify based on property income — not personal income or tax returns",
+      title: "DSCR Rental Loans",
+      description: "Qualify on the property's rent — not your personal income or tax returns",
       items: [
         "No W-2s, tax returns, or DTI required",
-        "Finance unlimited rental properties",
-        "Close in LLC or entity name"
+        "No cap on the number of financed rentals",
+        "Close in an LLC or entity name"
+      ],
+      path: "/dscr-loans"
+    },
+    {
+      icon: TrendingUp,
+      title: "Multifamily & Portfolio",
+      description: "2-4 units, small apartment buildings, and blanket loans across multiple doors",
+      items: [
+        "Roll several rentals into one loan",
+        "Cash-out to fund the next acquisition",
+        "Short-term rental income considered"
       ],
       path: "/investors"
     },
     {
-      icon: Shield,
-      title: "Bank Statement Loans",
-      description: "Self-employed? Use 12-24 months of deposits instead of tax returns",
+      icon: RefreshCcw,
+      title: "Fix & Flip / Bridge",
+      description: "Short-term capital for value-add projects and fast, competitive offers",
       items: [
-        "Personal or business statements",
-        "1099 and gig-economy friendly",
-        "Declined by a bank? Start here"
+        "Purchase plus rehab financing",
+        "Interest-only during the project",
+        "Exit into a DSCR refinance"
+      ],
+      path: "/mortgage-programs"
+    },
+    {
+      icon: Shield,
+      title: "Self-Employed & Non-QM",
+      description: "Bank statement and asset-based options for investors with complex income",
+      items: [
+        "12-24 months of deposits instead of returns",
+        "Recent credit events considered",
+        "Conventional, FHA & VA for your own home"
       ],
       path: "/mortgage-solutions"
-    },
-    {
-      icon: RefreshCcw,
-      title: "Non-QM & Creative Financing",
-      description: "Solutions for borrowers who don't fit the standard mold",
-      items: [
-        "Recent credit events OK",
-        "Asset depletion programs",
-        "Interest-only options available"
-      ],
-      path: "/mortgage-programs"
-    },
-    {
-      icon: TrendingUp,
-      title: "Conventional, FHA & VA",
-      description: "Traditional programs with broker-level pricing advantages",
-      items: [
-        "First-time buyer programs (3% down)",
-        "VA loans — 0% down for veterans",
-        "FHA — 3.5% down, flexible credit"
-      ],
-      path: "/mortgage-programs"
     }
   ];
+
 
 
   return (
@@ -64,17 +65,18 @@ const FeaturesSection = () => {
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
             <span className="text-accent text-sm font-bold uppercase tracking-wider bg-accent/10 px-4 py-2 rounded-full">
-              Complex Borrower & Investor Specialist
+              Investment Property Lending Specialist
             </span>
           </div>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 max-w-3xl mx-auto leading-tight">
-            The Loans <span className="text-accent">Big Banks</span> Won't Touch
+            Loans Built for <span className="text-accent">Real Estate Investors</span>
           </h2>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
-            Previse Mortgage is built for self-employed borrowers, real estate investors, and anyone whose 
-            financial story doesn't fit a standard box. We find solutions where others see risk.
+            Previse Mortgage underwrites the deal, not just the borrower. Rental cash flow, entity ownership,
+            and multiple financed properties are normal here — not exceptions that stall your file.
           </p>
         </div>
+
 
         {/* Program Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">

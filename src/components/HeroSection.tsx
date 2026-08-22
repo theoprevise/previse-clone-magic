@@ -36,11 +36,11 @@ const HeroSection = () => {
             <div className="text-center lg:text-left">
               {/* Main heading */}
               <div className="mb-6 animate-fade-in">
-                <span className="inline-block mb-4 text-lg md:text-xl font-medium text-accent tracking-wide">Pennsylvania Mortgage Broker · Purchase · Refinance · Invest</span>
+                <span className="inline-block mb-4 text-lg md:text-xl font-medium text-accent tracking-wide">Pennsylvania Investment Property Lender · DSCR · Multifamily · Portfolio</span>
                 <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white mb-4" itemProp="name">
-                  <span className="block mb-2">Your Home Loan,</span>
+                  <span className="block mb-2">Financing That Grows</span>
                   <span className="block bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">
-                    Done Right
+                    Your Rental Portfolio
                   </span>
                 </h1>
               </div>
@@ -53,8 +53,9 @@ const HeroSection = () => {
               </div>
               
               <p className="text-lg md:text-xl text-white/90 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed animate-fade-in delay-500" itemProp="description">
-                Buying your first home, refinancing for a better rate, or growing your investment portfolio — Previse Mortgage delivers fast closings, transparent pricing, and a dedicated advisor from start to finish. 50+ lenders. One trusted team.
+                Previse Mortgage specializes in investment property loans — DSCR, fix-and-flip, multifamily, and portfolio financing that qualify on the deal, not your tax returns. Close in an LLC, scale without loan caps, and keep your next acquisition on schedule. We also handle primary-residence purchases and refinances.
               </p>
+
               
               {/* Team Photos + CTA */}
               <div className="flex flex-col items-center lg:items-start gap-6 animate-fade-in delay-700">

@@ -230,7 +230,6 @@ const PreQualificationCalculator = () => {
               <Label htmlFor="phone">Phone Number *</Label>
               <Input id="phone" name="phone" type="tel" placeholder="(555) 123-4567" value={formData.phone} onChange={handleChange} className={contactErrors.phone ? 'border-destructive' : ''} />
               {contactErrors.phone && <p className="text-xs text-destructive mt-1">{contactErrors.phone}</p>}
-              <p className="text-xs text-muted-foreground mt-1">A verification code will be sent to this number.</p>
             </div>
             <div className="flex items-start gap-2 pt-2">
               <Checkbox id="consent" checked={formData.consent} onCheckedChange={(checked) => setFormData(prev => ({ ...prev, consent: checked as boolean }))} className="mt-0.5" />

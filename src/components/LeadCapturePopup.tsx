@@ -164,7 +164,6 @@ const LeadCapturePopup = () => {
             <div className="space-y-1">
               <Label htmlFor="phone" className="text-sm">Phone Number *</Label>
               <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="(555) 123-4567" required className="h-9" />
-              <p className="text-xs text-muted-foreground">A verification code will be sent to this number.</p>
             </div>
             <p className="text-xs text-muted-foreground leading-relaxed">
               By submitting, you consent to be contacted by Previse Mortgage LLC via phone, email, or SMS. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary underline hover:text-primary/80">Terms of Service</Link>.

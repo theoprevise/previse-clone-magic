@@ -279,7 +279,6 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
           )}
         </div>
         {errors.phone && <p className="text-sm text-destructive">{errors.phone}</p>}
-        <p className="text-xs text-muted-foreground">A verification code will be sent to this number.</p>
       </div>
 
       {effectiveShowAddress && (

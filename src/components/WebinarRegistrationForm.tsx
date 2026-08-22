@@ -140,7 +140,6 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
         <Label htmlFor="phone" className="text-white">Phone Number *</Label>
         <Input id="phone" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="(555) 123-4567" className="bg-white/10 border-white/20 text-white placeholder:text-white/50" />
         {errors.phone && <p className="text-red-400 text-sm">{errors.phone}</p>}
-        <p className="text-xs text-white/50">A verification code will be sent to this number.</p>
       </div>
 
       <p className="text-xs text-white/60 leading-relaxed">

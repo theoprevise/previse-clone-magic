@@ -130,7 +130,6 @@ const ExitIntentPopup = () => {
                 <div>
                   <Input name="phone" type="tel" placeholder="Phone Number *" value={formData.phone} onChange={handleChange} className={`border-gray-200 focus:border-accent ${errors.phone ? 'border-red-400' : ''}`} />
                   {errors.phone && <p className="text-xs text-red-500 mt-1">{errors.phone}</p>}
-                  <p className="text-xs text-gray-400 mt-1">A verification code will be sent to this number.</p>
                 </div>
                 <p className="text-xs text-gray-500 leading-relaxed">
                   By submitting, you consent to be contacted by Previse Mortgage LLC via phone, email, or SMS. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary underline hover:text-primary/80">Terms of Service</Link>.

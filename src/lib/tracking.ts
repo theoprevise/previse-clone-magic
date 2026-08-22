@@ -21,11 +21,8 @@ export type TrackOptions = {
   currency?: string;
 };
 
-declare global {
-  interface Window {
-    dataLayer?: unknown[];
-  }
-}
+
+
 
 const readCookie = (name: string): string | undefined => {
   if (typeof document === 'undefined') return undefined;

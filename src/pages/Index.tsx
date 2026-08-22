@@ -25,8 +25,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-primary">
       <SEOHead 
-        title="Investment Property Loans in PA | DSCR & Rental Financing"
-        description="Pennsylvania investment property lender: DSCR rental loans, multifamily, fix-and-flip, and portfolio financing with LLC closings and no tax returns. Purchase and refinance options too."
+        title="Investment Property Loans Nationwide | DSCR & Rental Financing"
+        description="Investment property loans in all 50 states: DSCR rental loans, multifamily, fix-and-flip, and portfolio financing with LLC closings and no tax returns. Licensed for home purchase and refinance in PA and CO."
         keywords="investment property loans Pennsylvania, DSCR loans, rental property financing, multifamily loans, fix and flip loans, portfolio loans, LLC mortgage, no tax return investor loan, cash-out refinance rental property"
         canonicalUrl="https://previsemortgage.com"
       />

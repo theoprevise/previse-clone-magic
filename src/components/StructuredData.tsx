@@ -77,6 +77,15 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
                 "@type": "GovernmentOrganization",
                 "name": "Pennsylvania Department of Banking and Securities"
               }
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              "credentialCategory": "CO Broker License",
+              "credentialValue": "#2730429",
+              "recognizedBy": {
+                "@type": "GovernmentOrganization",
+                "name": "Colorado Division of Real Estate"
+              }
             }
           ],
           "serviceType": [

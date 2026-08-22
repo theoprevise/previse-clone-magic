@@ -24,13 +24,8 @@ verify_jwt = false
 [functions.email-drip-campaign]
 verify_jwt = false
 
-[functions.sms-notification]
-verify_jwt = false
-
 [functions.send-guide-confirmation]
 verify_jwt = false
 
-[functions.phone-otp]
-verify_jwt = false
 [functions.server-tagging]
 verify_jwt = false

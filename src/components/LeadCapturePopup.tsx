@@ -134,10 +134,10 @@ const LeadCapturePopup = () => {
           <img src={lighthouseIcon} alt="Lighthouse icon" className="h-10 w-10 object-contain" />
           <div>
             <h2 className="text-lg font-bold">
-              {step === 'otp' ? 'Verify Your Phone' : 'Let us help you'}
+              Let us help you
             </h2>
             <p className="text-xs opacity-90">
-              {step === 'otp' ? 'Enter the code we sent you' : 'Find the perfect mortgage solution.'}
+              Find the perfect mortgage solution.
             </p>
           </div>
           <button onClick={handleClose} className="absolute top-2 right-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors" aria-label="Close popup">
@@ -145,7 +145,7 @@ const LeadCapturePopup = () => {
           </button>
         </div>
 
-        {step === 'form' ? (
+        <form onSubmit={handleFormNext} className="p-4 space-y-3">
           <form onSubmit={handleFormNext} className="p-4 space-y-3">
             <div className="grid grid-cols-2 gap-3">
               <div className="space-y-1">
@@ -171,27 +171,7 @@ const LeadCapturePopup = () => {
             <Button type="submit" className="w-full">
               Submit
             </Button>
-          </form>
-        ) : (
-          <div className="p-4 space-y-3">
-            <div className="p-3 bg-muted/50 rounded-lg text-sm space-y-0.5">
-              <p className="font-medium">{formData.first_name} {formData.last_name}</p>
-              <p className="text-muted-foreground">{formData.email}</p>
-              <p className="text-muted-foreground">{formData.phone}</p>
-            </div>
-            <PhoneOTPVerification
-              phone={formData.phone}
-              onVerified={handlePhoneVerified}
-            />
-            <button
-              type="button"
-              onClick={() => setStep('form')}
-              className="text-sm text-primary hover:underline block mx-auto"
-            >
-              ← Edit info
-            </button>
-          </div>
-        )}
+        </form>
       </div>
     </div>
   );

@@ -100,18 +100,18 @@ const ExitIntentPopup = () => {
               <div className="flex items-center justify-center gap-2 mb-2">
                 <Clock className="w-5 h-5 text-accent" />
                 <span className="text-accent font-semibold text-sm uppercase tracking-wider">
-                  {step === 'otp' ? 'One Last Step' : 'Wait! Before You Go...'}
+                  Wait! Before You Go...
                 </span>
               </div>
               <h2 className="text-2xl md:text-3xl font-bold mb-2">
-                {step === 'otp' ? 'Verify Your Phone Number' : 'Get a FREE Mortgage Consultation'}
+                Get a FREE Mortgage Consultation
               </h2>
               <p className="text-white/90">
-                {step === 'otp' ? "Enter the code we sent to confirm your number" : 'No obligation • Expert advice • Personalized guidance'}
+                No obligation • Expert advice • Personalized guidance
               </p>
             </div>
 
-            {step === 'form' ? (
+            <form onSubmit={handleFormNext} className="p-6 space-y-4">
               <form onSubmit={handleFormNext} className="p-6 space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
@@ -137,20 +137,7 @@ const ExitIntentPopup = () => {
                 <Button type="submit" className="w-full bg-accent hover:bg-accent-light text-primary font-bold py-6 text-lg">
                   Submit
                 </Button>
-              </form>
-            ) : (
-              <div className="p-6 space-y-4">
-                <div className="p-3 bg-gray-50 rounded-lg text-sm space-y-0.5 border border-gray-100">
-                  <p className="font-medium text-gray-900">{formData.firstName} {formData.lastName}</p>
-                  <p className="text-gray-500">{formData.email}</p>
-                  <p className="text-gray-500">{formData.phone}</p>
-                </div>
-                <PhoneOTPVerification phone={formData.phone} onVerified={handlePhoneVerified} />
-                <button type="button" onClick={() => setStep('form')} className="text-sm text-primary hover:underline block mx-auto">
-                  ← Edit info
-                </button>
-              </div>
-            )}
+            </form>
           </>
         )}
       </div>

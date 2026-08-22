@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+import { trackLead } from '@/lib/tracking';
 import { Loader2, CheckCircle2 } from 'lucide-react';
 import { z } from 'zod';
 import PhoneOTPVerification from '@/components/PhoneOTPVerification';
@@ -139,6 +140,21 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
       if (fnError) throw new Error(`Failed to submit: ${fnError.message}`);
 
       console.log('Lead submitted:', fnData);
+
+      await trackLead(
+        {
+          email: validatedData.email,
+          phone: validatedData.phone,
+          first_name: validatedData.first_name,
+          last_name: validatedData.last_name,
+        },
+        {
+          form: campaignType || 'unified_lead_form',
+          source: source || 'landing_page',
+          utm_source: utmParams.utm_source || '',
+          utm_campaign: utmParams.utm_campaign || '',
+        }
+      );
 
       toast({
         title: "Success!",

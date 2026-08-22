@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+import { trackLead } from '@/lib/tracking';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -59,6 +60,10 @@ const HeroLeadForm = () => {
       };
       const { error } = await supabase.functions.invoke('send-to-zapier', { body: leadData });
       if (error) throw error;
+      await trackLead(
+        { email: formData.email, phone: formData.phone, first_name: formData.firstName, last_name: formData.lastName },
+        { form: 'homepage_hero_form', interest: formData.helpType || 'general' }
+      );
       toast({ title: "Thank you!", description: "We'll be in touch shortly." });
       setFormData({ firstName: '', lastName: '', phone: '', email: '', helpType: '' });
       setStep('form');

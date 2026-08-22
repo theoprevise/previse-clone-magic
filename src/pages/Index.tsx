@@ -49,13 +49,11 @@ const Index = () => {
         <LoanFinderQuiz />
         <CalendlySection />
         <ProcessSection />
-        <HybridTechHumanSection />
-        <InteractiveComparisons />
         <FAQSection />
-        <TransparencySection />
         <HomeLoansContent />
 
         <AboutSection />
+
         <Footer />
         <GoHighLevelChat />
         <FloatingContactWidget />

@@ -101,7 +101,7 @@ const HomeLoansContent = () => {
                 to="/pre-qualify"
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-primary px-8 py-4 rounded-full text-lg font-bold shadow-2xl hover:shadow-accent/25 transition-all duration-300 transform hover:-translate-y-1"
               >
-                Explore Your Loan Options
+                Explore Investment Loan Options
                 <ArrowRight size={20} />
               </Link>
               <p className="text-white/60 text-sm mt-4">

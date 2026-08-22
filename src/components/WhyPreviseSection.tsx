@@ -15,11 +15,11 @@ const WhyPreviseSection = () => {
           <div className="text-center mb-16">
             <div className="inline-block mb-6">
               <span className="text-accent text-sm font-bold uppercase tracking-wider bg-accent/10 px-4 py-2 rounded-full">
-                Education First · Life-Plan Driven
+                Strategy First · Portfolio Driven
               </span>
             </div>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Your Mortgage Should Fit Your <span className="bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">Life Plan</span>
+              Financing Should Fit Your <span className="bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">Investment Plan</span>
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-accent via-accent-light to-accent mx-auto rounded-full"></div>
           </div>
@@ -35,24 +35,25 @@ const WhyPreviseSection = () => {
                   Advisory-First, <span className="text-accent">Never Pushy</span>
                 </h3>
                 <p className="text-xl text-white/90 leading-relaxed">
-                  At <strong className="text-accent">Previse Mortgage</strong>, every conversation starts with your goals — not ours. 
-                  We believe that a mortgage is one of the biggest financial decisions you'll ever make, and your loan officer's job is to 
-                  <strong className="text-accent"> educate, advise, and walk through scenarios</strong> so you feel confident and in control. 
-                  Sometimes the best advice is "wait six months." We'll tell you that too.
+                  At <strong className="text-accent">Previse Mortgage</strong>, every conversation starts with the deal and your long-term portfolio — not our pipeline.
+                  Leverage is the most powerful tool an investor has, and your loan officer's job is to
+                  <strong className="text-accent"> model the numbers, compare structures, and stress-test the exit</strong> before you commit capital.
+                  Sometimes the honest answer is "this deal doesn't cash flow." We'll tell you that too.
                 </p>
               </div>
             </div>
             
             <div className="border-t border-white/10 pt-8">
               <p className="text-lg text-white/80 leading-relaxed italic">
-                "Every Previse Planning Session starts the same way: <span className="text-accent font-semibold">we listen, then we teach</span>. 
-                We walk through FHA vs conventional, ARM vs fixed, points vs no points — real numbers, not sales pitches. 
-                We discuss your 5-year plan, your risk tolerance, and when buying makes sense vs when waiting does. 
-                If Previse isn't the right fit, we'll tell you who is."
+                "Every investor call starts the same way: <span className="text-accent font-semibold">we run the numbers, then we explain them</span>.
+                DSCR vs conventional, 30-year fixed vs interest-only, single-property vs blanket, cash-out now vs season and wait —
+                real figures on your actual property. We talk about reserves, vacancy, and what happens if rents soften.
+                If the financing doesn't serve the strategy, we'll say so."
               </p>
               <p className="text-accent font-semibold mt-4">— Teddy Carbone, Founder</p>
             </div>
           </div>
+
 
           {/* Educational Journey callout */}
           <div className="bg-accent/10 border border-accent/20 rounded-2xl p-6 md:p-8 mb-12">

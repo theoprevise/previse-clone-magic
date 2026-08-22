@@ -59,18 +59,19 @@ const WhyPreviseSection = () => {
           <div className="bg-accent/10 border border-accent/20 rounded-2xl p-6 md:p-8 mb-12">
             <div className="text-center mb-6">
               <GraduationCap className="text-accent mx-auto mb-3" size={32} />
-              <h3 className="text-xl font-bold text-white mb-2">The Previse Educational Journey</h3>
+              <h3 className="text-xl font-bold text-white mb-2">The Previse Deal Review</h3>
               <p className="text-white/70 text-sm max-w-2xl mx-auto">
-                Whether you book a Planning Session or start with a pre-qualification, we guide you through 
-                the key trade-offs that shape your mortgage — so you never feel lost or pressured.
+                Whether you're analyzing a first duplex or refinancing five doors, we walk through the
+                trade-offs that decide whether a deal pencils — before you're under contract.
               </p>
             </div>
             <div className="grid md:grid-cols-4 gap-4">
               {[
-                { icon: BarChart3, title: "Budget & Affordability", desc: "What can you truly afford without over-stretching? We run the numbers honestly." },
-                { icon: Lightbulb, title: "Loan Comparison", desc: "FHA vs conventional, ARM vs fixed, 15 vs 30 year — explained with your real scenario." },
-                { icon: Calendar, title: "Timing & Strategy", desc: "Buy now or wait? Lock the rate? Pay points? We map out each path clearly." },
-                { icon: Target, title: "Post-Close Planning", desc: "When to refinance, how equity builds, and your personalized mortgage roadmap ahead." }
+                { icon: BarChart3, title: "Cash Flow & DSCR", desc: "Rent versus PITIA, coverage ratio, vacancy and reserves — the honest numbers on the deal." },
+                { icon: Lightbulb, title: "Structure Comparison", desc: "DSCR vs conventional, fixed vs interest-only, single-property vs blanket loan." },
+                { icon: Calendar, title: "Timing & Leverage", desc: "How much to put down, when to season, and whether to close cash and refinance later." },
+                { icon: Target, title: "Scaling Plan", desc: "Cash-out strategy, entity setup, and the financing path to your next several doors." }
+
               ].map((item, idx) => (
                 <div key={idx} className="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
                   <item.icon className="text-accent mx-auto mb-2" size={22} />
@@ -87,9 +88,9 @@ const WhyPreviseSection = () => {
               <div className="w-14 h-14 bg-gradient-to-br from-accent/20 to-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Eye className="text-accent" size={28} />
               </div>
-              <h4 className="text-lg font-bold text-white mb-2">Educate First</h4>
+              <h4 className="text-lg font-bold text-white mb-2">Underwrite the Deal</h4>
               <p className="text-white/70 text-sm">
-                Every consultation begins with a structured scenario walkthrough — we explain your options, trade-offs, and costs before any application
+                We review rents, leases, and coverage ratios up front so the property is pre-vetted before you spend money on an appraisal
               </p>
             </div>
             
@@ -99,7 +100,7 @@ const WhyPreviseSection = () => {
               </div>
               <h4 className="text-lg font-bold text-white mb-2">Anticipate</h4>
               <p className="text-white/70 text-sm">
-                We foresee challenges in your file and prepare solutions before they become problems — that's what "Previse" means
+                Entity docs, leases, and payoff details get handled early — the issues that stall investor files never reach underwriting
               </p>
             </div>
             
@@ -109,7 +110,7 @@ const WhyPreviseSection = () => {
               </div>
               <h4 className="text-lg font-bold text-white mb-2">Be Transparent</h4>
               <p className="text-white/70 text-sm">
-                If Previse isn't the best option — or if the best advice is "wait" — we'll tell you and point you in the right direction
+                Rate, points, and lender fees on the table from day one — and if the deal doesn't cash flow, we'll say so
               </p>
             </div>
             
@@ -117,10 +118,11 @@ const WhyPreviseSection = () => {
               <div className="w-14 h-14 bg-gradient-to-br from-accent/20 to-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Sparkles className="text-accent" size={28} />
               </div>
-              <h4 className="text-lg font-bold text-white mb-2">Stay With You</h4>
+              <h4 className="text-lg font-bold text-white mb-2">Scale With You</h4>
               <p className="text-white/70 text-sm">
-                Your relationship with Previse doesn't end at closing — annual reviews, refi strategy, and lifetime loan officer access
+                Repeat-investor pricing, portfolio reviews, and a lender who already knows your entities on the next acquisition
               </p>
+
             </div>
           </div>
         </div>

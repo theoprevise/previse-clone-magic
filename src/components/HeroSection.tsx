@@ -67,7 +67,7 @@ const HeroSection = () => {
                   />
                   <div className="text-left">
                     <p className="text-white font-bold text-base">Teddy Carbone</p>
-                    <p className="text-white/80 text-sm">Licensed Loan Officer in PA</p>
+                    <p className="text-white/80 text-sm">Licensed Loan Officer in PA & CO</p>
                   </div>
                 </div>
                 

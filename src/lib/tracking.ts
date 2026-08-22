@@ -87,6 +87,35 @@ export async function trackEvent(
     /* no-op */
   }
 
+  // 1b. Meta Pixel (client-side only since CAPI is restricted for financial services)
+  try {
+    if (typeof window.fbq === 'function') {
+      const fbParams: Record<string, unknown> = { ...params, event_id: eventId };
+      if (value != null) {
+        fbParams.value = value;
+        fbParams.currency = currency ?? 'USD';
+      }
+      // Map our internal event names to Meta standard events where applicable.
+      const standardEvents: Record<string, string> = {
+        generate_lead: 'Lead',
+        page_view: 'PageView',
+        form_submit: 'Lead',
+        sign_up: 'CompleteRegistration',
+        schedule: 'Schedule',
+        contact: 'Contact',
+        view_item: 'ViewContent',
+      };
+      const metaEvent = standardEvents[eventName] ?? eventName;
+      if (metaEvent === eventName) {
+        window.fbq('trackCustom', eventName, fbParams);
+      } else {
+        window.fbq('track', metaEvent, fbParams);
+      }
+    }
+  } catch {
+    /* no-op */
+  }
+
   // 2. Server-side payload
   const payload = {
     event_name: eventName,

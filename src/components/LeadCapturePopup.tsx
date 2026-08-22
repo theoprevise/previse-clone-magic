@@ -80,7 +80,7 @@ const LeadCapturePopup = () => {
     } catch (error) {
       console.error("Error submitting lead:", error);
       toast({ title: "Error", description: "Something went wrong. Please try again.", variant: "destructive" });
-      setStep('otp');
+      void handlePhoneVerified();
     } finally {
       setIsSubmitting(false);
     }

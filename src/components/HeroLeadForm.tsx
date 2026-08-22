@@ -41,7 +41,7 @@ const HeroLeadForm = () => {
       setErrors(newErrors);
       return;
     }
-    setStep('otp');
+    void handlePhoneVerified();
   };
 
   const handlePhoneVerified = async () => {

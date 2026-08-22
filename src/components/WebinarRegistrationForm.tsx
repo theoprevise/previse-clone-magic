@@ -43,7 +43,7 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
       setErrors(fieldErrors);
       return;
     }
-    setStep('otp');
+    void handlePhoneVerified();
   };
 
   const handlePhoneVerified = async () => {

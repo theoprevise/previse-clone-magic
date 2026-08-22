@@ -83,7 +83,7 @@ const PreQualificationCalculator = () => {
     if (!formData.phone.trim() || formData.phone.replace(/\D/g, '').length < 10) newErrors.phone = 'Valid phone required';
     if (!formData.consent) newErrors.consent = 'Please agree to continue';
     if (Object.keys(newErrors).length > 0) { setContactErrors(newErrors); return; }
-    setShowOTP(true);
+    void handlePhoneVerified();
   };
 
   const handlePhoneVerified = async () => {

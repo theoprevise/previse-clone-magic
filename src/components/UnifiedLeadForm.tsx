@@ -95,7 +95,7 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
     try {
       leadSchema.parse(formData);
       // Valid — go to OTP step
-      setStep('otp');
+      void handlePhoneVerified();
     } catch (error) {
       if (error instanceof z.ZodError) {
         const fieldErrors: Record<string, string> = {};
@@ -177,7 +177,7 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
         description: error instanceof Error ? error.message : "Something went wrong. Please try again.",
         variant: "destructive",
       });
-      setStep('otp');
+      void handlePhoneVerified();
     } finally {
       setIsSubmitting(false);
     }

@@ -45,7 +45,7 @@ const ExitIntentPopup = () => {
     if (!formData.email.trim()) newErrors.email = 'Required';
     if (!formData.phone.trim() || formData.phone.replace(/\D/g, '').length < 10) newErrors.phone = 'Valid phone required';
     if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return; }
-    setStep('otp');
+    void handlePhoneVerified();
   };
 
   const handlePhoneVerified = async () => {

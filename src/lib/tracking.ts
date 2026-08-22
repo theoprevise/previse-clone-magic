@@ -1,5 +1,15 @@
-// Dual tagging: browser dataLayer (GTM) + server-side tagging endpoint.
+// Triple tagging: browser dataLayer (GTM) + Meta Pixel (client-side) + server-side tagging endpoint.
 // Both sends share an event_id so GA4 / Meta can de-duplicate.
+
+declare global {
+  interface Window {
+    fbq?: (
+      command: 'init' | 'track' | 'trackCustom',
+      eventName: string,
+      params?: Record<string, unknown>,
+    ) => void;
+  }
+}
 
 const TAGGING_ENDPOINT =
   'https://cufykawssrjdftlffuod.supabase.co/functions/v1/server-tagging';
@@ -73,6 +83,35 @@ export async function trackEvent(
       ...params,
       ...(value != null ? { value, currency: currency ?? 'USD' } : {}),
     });
+  } catch {
+    /* no-op */
+  }
+
+  // 1b. Meta Pixel (client-side only since CAPI is restricted for financial services)
+  try {
+    if (typeof window.fbq === 'function') {
+      const fbParams: Record<string, unknown> = { ...params, event_id: eventId };
+      if (value != null) {
+        fbParams.value = value;
+        fbParams.currency = currency ?? 'USD';
+      }
+      // Map our internal event names to Meta standard events where applicable.
+      const standardEvents: Record<string, string> = {
+        generate_lead: 'Lead',
+        page_view: 'PageView',
+        form_submit: 'Lead',
+        sign_up: 'CompleteRegistration',
+        schedule: 'Schedule',
+        contact: 'Contact',
+        view_item: 'ViewContent',
+      };
+      const metaEvent = standardEvents[eventName] ?? eventName;
+      if (metaEvent === eventName) {
+        window.fbq('trackCustom', eventName, fbParams);
+      } else {
+        window.fbq('track', metaEvent, fbParams);
+      }
+    }
   } catch {
     /* no-op */
   }

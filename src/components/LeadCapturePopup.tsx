@@ -7,7 +7,6 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import lighthouseIcon from "@/assets/lighthouse-icon.png";
-import PhoneOTPVerification from "@/components/PhoneOTPVerification";
 
 const POPUP_DELAY_MS = 15000;
 const STORAGE_KEY = "lead_popup_dismissed";
@@ -58,7 +57,7 @@ const LeadCapturePopup = () => {
       toast({ title: "Invalid Phone", description: "Please enter a valid phone number.", variant: "destructive" });
       return;
     }
-    setStep('otp');
+    void handlePhoneVerified();
   };
 
   const handlePhoneVerified = async () => {
@@ -80,7 +79,7 @@ const LeadCapturePopup = () => {
     } catch (error) {
       console.error("Error submitting lead:", error);
       toast({ title: "Error", description: "Something went wrong. Please try again.", variant: "destructive" });
-      setStep('otp');
+      setStep('form');
     } finally {
       setIsSubmitting(false);
     }
@@ -134,10 +133,10 @@ const LeadCapturePopup = () => {
           <img src={lighthouseIcon} alt="Lighthouse icon" className="h-10 w-10 object-contain" />
           <div>
             <h2 className="text-lg font-bold">
-              {step === 'otp' ? 'Verify Your Phone' : 'Let us help you'}
+              Let us help you
             </h2>
             <p className="text-xs opacity-90">
-              {step === 'otp' ? 'Enter the code we sent you' : 'Find the perfect mortgage solution.'}
+              Find the perfect mortgage solution.
             </p>
           </div>
           <button onClick={handleClose} className="absolute top-2 right-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors" aria-label="Close popup">
@@ -145,7 +144,6 @@ const LeadCapturePopup = () => {
           </button>
         </div>
 
-        {step === 'form' ? (
           <form onSubmit={handleFormNext} className="p-4 space-y-3">
             <div className="grid grid-cols-2 gap-3">
               <div className="space-y-1">
@@ -164,7 +162,6 @@ const LeadCapturePopup = () => {
             <div className="space-y-1">
               <Label htmlFor="phone" className="text-sm">Phone Number *</Label>
               <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="(555) 123-4567" required className="h-9" />
-              <p className="text-xs text-muted-foreground">A verification code will be sent to this number.</p>
             </div>
             <p className="text-xs text-muted-foreground leading-relaxed">
               By submitting, you consent to be contacted by Previse Mortgage LLC via phone, email, or SMS. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary underline hover:text-primary/80">Terms of Service</Link>.
@@ -172,27 +169,7 @@ const LeadCapturePopup = () => {
             <Button type="submit" className="w-full">
               Submit
             </Button>
-          </form>
-        ) : (
-          <div className="p-4 space-y-3">
-            <div className="p-3 bg-muted/50 rounded-lg text-sm space-y-0.5">
-              <p className="font-medium">{formData.first_name} {formData.last_name}</p>
-              <p className="text-muted-foreground">{formData.email}</p>
-              <p className="text-muted-foreground">{formData.phone}</p>
-            </div>
-            <PhoneOTPVerification
-              phone={formData.phone}
-              onVerified={handlePhoneVerified}
-            />
-            <button
-              type="button"
-              onClick={() => setStep('form')}
-              className="text-sm text-primary hover:underline block mx-auto"
-            >
-              ← Edit info
-            </button>
-          </div>
-        )}
+        </form>
       </div>
     </div>
   );

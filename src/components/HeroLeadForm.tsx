@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Loader2, Send, CheckCircle2 } from 'lucide-react';
-import PhoneOTPVerification from '@/components/PhoneOTPVerification';
 
 const HeroLeadForm = () => {
   const navigate = useNavigate();
@@ -41,7 +40,7 @@ const HeroLeadForm = () => {
       setErrors(newErrors);
       return;
     }
-    setStep('otp');
+    void handlePhoneVerified();
   };
 
   const handlePhoneVerified = async () => {
@@ -71,7 +70,7 @@ const HeroLeadForm = () => {
     } catch (error) {
       console.error('Error submitting form:', error);
       toast({ title: "Something went wrong", description: "Please try again or call us directly.", variant: "destructive" });
-      setStep('otp');
+      setStep('form');
     } finally {
       setIsSubmitting(false);
     }
@@ -86,27 +85,6 @@ const HeroLeadForm = () => {
     );
   }
 
-  if (step === 'otp') {
-    return (
-      <div className="bg-white/95 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-2xl border border-white/20">
-        <h3 className="text-2xl font-bold text-primary mb-1 text-center">Verify Your Phone</h3>
-        <p className="text-gray-600 text-center mb-6 text-sm">One last step — confirm your number</p>
-        <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg mb-4 text-sm space-y-1">
-          <p className="font-medium text-gray-900">{formData.firstName} {formData.lastName}</p>
-          <p className="text-gray-500">{formData.email}</p>
-          <p className="text-gray-500">{formData.phone}</p>
-        </div>
-        <PhoneOTPVerification phone={formData.phone} onVerified={handlePhoneVerified} />
-        <button
-          type="button"
-          onClick={() => setStep('form')}
-          className="mt-4 text-sm text-primary hover:underline block mx-auto"
-        >
-          ← Edit info
-        </button>
-      </div>
-    );
-  }
 
   return (
     <div className="bg-white/95 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-2xl border border-white/20">

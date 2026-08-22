@@ -12,7 +12,6 @@ import {
 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
-import PhoneOTPVerification from '@/components/PhoneOTPVerification';
 
 interface PreQualData {
   annualIncome: string;
@@ -83,7 +82,7 @@ const PreQualificationCalculator = () => {
     if (!formData.phone.trim() || formData.phone.replace(/\D/g, '').length < 10) newErrors.phone = 'Valid phone required';
     if (!formData.consent) newErrors.consent = 'Please agree to continue';
     if (Object.keys(newErrors).length > 0) { setContactErrors(newErrors); return; }
-    setShowOTP(true);
+    void handlePhoneVerified();
   };
 
   const handlePhoneVerified = async () => {
@@ -114,26 +113,6 @@ const PreQualificationCalculator = () => {
     }
   };
 
-  // OTP interstitial
-  if (showOTP) {
-    return (
-      <Card className="p-6 md:p-8 bg-card border-border max-w-md mx-auto">
-        <div className="flex items-center gap-3 mb-6">
-          <Calculator className="w-6 h-6 text-accent" />
-          <h2 className="text-xl font-bold text-foreground">Verify Your Phone</h2>
-        </div>
-        <div className="p-3 bg-muted/50 border border-border rounded-lg text-sm space-y-0.5 mb-4">
-          <p className="font-medium text-foreground">{formData.firstName} {formData.lastName}</p>
-          <p className="text-muted-foreground">{formData.email}</p>
-          <p className="text-muted-foreground">{formData.phone}</p>
-        </div>
-        <PhoneOTPVerification phone={formData.phone} onVerified={handlePhoneVerified} />
-        <button type="button" onClick={() => setShowOTP(false)} className="mt-4 text-sm text-primary hover:underline block mx-auto">
-          ← Back to contact info
-        </button>
-      </Card>
-    );
-  }
 
   const renderStep = () => {
     switch (step) {
@@ -230,7 +209,6 @@ const PreQualificationCalculator = () => {
               <Label htmlFor="phone">Phone Number *</Label>
               <Input id="phone" name="phone" type="tel" placeholder="(555) 123-4567" value={formData.phone} onChange={handleChange} className={contactErrors.phone ? 'border-destructive' : ''} />
               {contactErrors.phone && <p className="text-xs text-destructive mt-1">{contactErrors.phone}</p>}
-              <p className="text-xs text-muted-foreground mt-1">A verification code will be sent to this number.</p>
             </div>
             <div className="flex items-start gap-2 pt-2">
               <Checkbox id="consent" checked={formData.consent} onCheckedChange={(checked) => setFormData(prev => ({ ...prev, consent: checked as boolean }))} className="mt-0.5" />

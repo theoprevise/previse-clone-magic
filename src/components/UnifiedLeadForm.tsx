@@ -8,7 +8,6 @@ import { supabase } from '@/integrations/supabase/client';
 import { trackLead } from '@/lib/tracking';
 import { Loader2, CheckCircle2 } from 'lucide-react';
 import { z } from 'zod';
-import PhoneOTPVerification from '@/components/PhoneOTPVerification';
 
 const leadSchema = z.object({
   first_name: z.string().trim().min(1, "First name is required").max(50, "First name too long"),
@@ -95,7 +94,7 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
     try {
       leadSchema.parse(formData);
       // Valid — go to OTP step
-      setStep('otp');
+      void handlePhoneVerified();
     } catch (error) {
       if (error instanceof z.ZodError) {
         const fieldErrors: Record<string, string> = {};
@@ -177,7 +176,7 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
         description: error instanceof Error ? error.message : "Something went wrong. Please try again.",
         variant: "destructive",
       });
-      setStep('otp');
+      setStep('form');
     } finally {
       setIsSubmitting(false);
     }
@@ -188,31 +187,6 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
       <div className={`flex flex-col items-center justify-center py-8 space-y-3 ${className}`}>
         <Loader2 className="h-8 w-8 animate-spin text-primary" />
         <p className="text-sm text-muted-foreground">Submitting your information…</p>
-      </div>
-    );
-  }
-
-  if (step === 'otp') {
-    return (
-      <div className={`space-y-4 ${className}`}>
-        <div className="flex items-center gap-2 mb-2">
-          <button
-            type="button"
-            onClick={() => setStep('form')}
-            className="text-sm text-primary hover:underline"
-          >
-            ← Edit info
-          </button>
-        </div>
-        <div className="p-4 bg-primary/5 border border-primary/20 rounded-lg space-y-1 text-sm">
-          <p className="font-medium text-foreground">{formData.first_name} {formData.last_name}</p>
-          <p className="text-muted-foreground">{formData.email}</p>
-          <p className="text-muted-foreground">{formData.phone}</p>
-        </div>
-        <PhoneOTPVerification
-          phone={formData.phone}
-          onVerified={handlePhoneVerified}
-        />
       </div>
     );
   }
@@ -279,7 +253,6 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
           )}
         </div>
         {errors.phone && <p className="text-sm text-destructive">{errors.phone}</p>}
-        <p className="text-xs text-muted-foreground">A verification code will be sent to this number.</p>
       </div>
 
       {effectiveShowAddress && (

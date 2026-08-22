@@ -7,7 +7,6 @@ import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
-import PhoneOTPVerification from "@/components/PhoneOTPVerification";
 
 const registrationSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(50),
@@ -43,7 +42,7 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
       setErrors(fieldErrors);
       return;
     }
-    setStep('otp');
+    void handlePhoneVerified();
   };
 
   const handlePhoneVerified = async () => {
@@ -82,7 +81,7 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
     } catch (error: any) {
       console.error('Registration error:', error);
       toast({ title: "Registration failed", description: error.message || "Please try again.", variant: "destructive" });
-      setStep('otp');
+      setStep('form');
     } finally {
       setLoading(false);
     }
@@ -93,24 +92,6 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
       <div className="flex flex-col items-center justify-center py-8 space-y-3">
         <Loader2 className="h-8 w-8 animate-spin text-white" />
         <p className="text-sm text-white/70">Completing your registration…</p>
-      </div>
-    );
-  }
-
-  if (step === 'otp') {
-    return (
-      <div className="space-y-4">
-        <div className="p-3 bg-white/10 border border-white/20 rounded-lg text-sm space-y-0.5">
-          <p className="font-medium text-white">{firstName} {lastName}</p>
-          <p className="text-white/70">{email}</p>
-          <p className="text-white/70">{phone}</p>
-        </div>
-        <div className="[&_p]:text-white/80 [&_strong]:text-white [&_button:not([disabled])]:bg-white [&_button:not([disabled])]:text-primary [&_input]:bg-white/10 [&_input]:border-white/30 [&_input]:text-white">
-          <PhoneOTPVerification phone={phone} onVerified={handlePhoneVerified} />
-        </div>
-        <button type="button" onClick={() => setStep('form')} className="text-sm text-white/70 hover:text-white underline block mx-auto">
-          ← Edit info
-        </button>
       </div>
     );
   }
@@ -140,7 +121,6 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
         <Label htmlFor="phone" className="text-white">Phone Number *</Label>
         <Input id="phone" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="(555) 123-4567" className="bg-white/10 border-white/20 text-white placeholder:text-white/50" />
         {errors.phone && <p className="text-red-400 text-sm">{errors.phone}</p>}
-        <p className="text-xs text-white/50">A verification code will be sent to this number.</p>
       </div>
 
       <p className="text-xs text-white/60 leading-relaxed">

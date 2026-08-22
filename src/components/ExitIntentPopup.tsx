@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
-import PhoneOTPVerification from '@/components/PhoneOTPVerification';
 
 const ExitIntentPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,7 +44,7 @@ const ExitIntentPopup = () => {
     if (!formData.email.trim()) newErrors.email = 'Required';
     if (!formData.phone.trim() || formData.phone.replace(/\D/g, '').length < 10) newErrors.phone = 'Valid phone required';
     if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return; }
-    setStep('otp');
+    void handlePhoneVerified();
   };
 
   const handlePhoneVerified = async () => {
@@ -69,7 +68,7 @@ const ExitIntentPopup = () => {
     } catch (error) {
       console.error('Error submitting lead:', error);
       toast({ title: "Something went wrong", description: "Please try again later.", variant: "destructive" });
-      setStep('otp');
+      setStep('form');
     } finally {
       setIsSubmitting(false);
     }
@@ -100,18 +99,17 @@ const ExitIntentPopup = () => {
               <div className="flex items-center justify-center gap-2 mb-2">
                 <Clock className="w-5 h-5 text-accent" />
                 <span className="text-accent font-semibold text-sm uppercase tracking-wider">
-                  {step === 'otp' ? 'One Last Step' : 'Wait! Before You Go...'}
+                  Wait! Before You Go...
                 </span>
               </div>
               <h2 className="text-2xl md:text-3xl font-bold mb-2">
-                {step === 'otp' ? 'Verify Your Phone Number' : 'Get a FREE Mortgage Consultation'}
+                Get a FREE Mortgage Consultation
               </h2>
               <p className="text-white/90">
-                {step === 'otp' ? "Enter the code we sent to confirm your number" : 'No obligation • Expert advice • Personalized guidance'}
+                No obligation • Expert advice • Personalized guidance
               </p>
             </div>
 
-            {step === 'form' ? (
               <form onSubmit={handleFormNext} className="p-6 space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
@@ -130,7 +128,6 @@ const ExitIntentPopup = () => {
                 <div>
                   <Input name="phone" type="tel" placeholder="Phone Number *" value={formData.phone} onChange={handleChange} className={`border-gray-200 focus:border-accent ${errors.phone ? 'border-red-400' : ''}`} />
                   {errors.phone && <p className="text-xs text-red-500 mt-1">{errors.phone}</p>}
-                  <p className="text-xs text-gray-400 mt-1">A verification code will be sent to this number.</p>
                 </div>
                 <p className="text-xs text-gray-500 leading-relaxed">
                   By submitting, you consent to be contacted by Previse Mortgage LLC via phone, email, or SMS. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary underline hover:text-primary/80">Terms of Service</Link>.
@@ -138,20 +135,7 @@ const ExitIntentPopup = () => {
                 <Button type="submit" className="w-full bg-accent hover:bg-accent-light text-primary font-bold py-6 text-lg">
                   Submit
                 </Button>
-              </form>
-            ) : (
-              <div className="p-6 space-y-4">
-                <div className="p-3 bg-gray-50 rounded-lg text-sm space-y-0.5 border border-gray-100">
-                  <p className="font-medium text-gray-900">{formData.firstName} {formData.lastName}</p>
-                  <p className="text-gray-500">{formData.email}</p>
-                  <p className="text-gray-500">{formData.phone}</p>
-                </div>
-                <PhoneOTPVerification phone={formData.phone} onVerified={handlePhoneVerified} />
-                <button type="button" onClick={() => setStep('form')} className="text-sm text-primary hover:underline block mx-auto">
-                  ← Edit info
-                </button>
-              </div>
-            )}
+            </form>
           </>
         )}
       </div>

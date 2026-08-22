@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Loader2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
+import { trackLead } from '@/lib/tracking';
 import { useToast } from '@/hooks/use-toast';
 
 const ContactSection = () => {
@@ -45,6 +46,10 @@ const ContactSection = () => {
         },
       });
       if (error) throw error;
+      await trackLead(
+        { email: formData.email, phone: formData.phone, first_name: firstName, last_name: lastName },
+        { form: 'contact_section_form' }
+      );
       setStep('done');
       toast({ title: "Message sent!", description: "We'll be in touch within 24 hours." });
     } catch (err) {

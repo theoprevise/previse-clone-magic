@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
-import PhoneOTPVerification from '@/components/PhoneOTPVerification';
 
 const ExitIntentPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -111,7 +110,6 @@ const ExitIntentPopup = () => {
               </p>
             </div>
 
-            <form onSubmit={handleFormNext} className="p-6 space-y-4">
               <form onSubmit={handleFormNext} className="p-6 space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>

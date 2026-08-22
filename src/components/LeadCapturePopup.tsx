@@ -7,7 +7,6 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import lighthouseIcon from "@/assets/lighthouse-icon.png";
-import PhoneOTPVerification from "@/components/PhoneOTPVerification";
 
 const POPUP_DELAY_MS = 15000;
 const STORAGE_KEY = "lead_popup_dismissed";
@@ -145,7 +144,6 @@ const LeadCapturePopup = () => {
           </button>
         </div>
 
-        <form onSubmit={handleFormNext} className="p-4 space-y-3">
           <form onSubmit={handleFormNext} className="p-4 space-y-3">
             <div className="grid grid-cols-2 gap-3">
               <div className="space-y-1">

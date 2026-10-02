@@ -98,6 +98,8 @@ const PreQualificationCalculator = () => {
           campaign_type: 'mortgage_calculator',
           event_name: `PreQual Calculator: Income $${formData.annualIncome}, Credit ${formData.creditScore}, Down $${formData.downPayment}`,
           sms_opt_in: formData.consent,
+          sms_consent_text: formData.consent ? "I consent to receive calls, emails, and SMS/text messages from Previse Mortgage. Message and data rates may apply. Reply STOP to opt out. View our Privacy Policy." : null,
+          sms_consent_page: window.location.href,
         },
       });
       if (error) throw error;

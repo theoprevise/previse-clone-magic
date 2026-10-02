@@ -194,6 +194,9 @@ export type Database = {
           notes: string | null
           phone: string | null
           score_breakdown: Json | null
+          sms_consent_at: string | null
+          sms_consent_page: string | null
+          sms_consent_text: string | null
           sms_opt_in: boolean | null
           source: string | null
           state: string | null
@@ -220,6 +223,9 @@ export type Database = {
           notes?: string | null
           phone?: string | null
           score_breakdown?: Json | null
+          sms_consent_at?: string | null
+          sms_consent_page?: string | null
+          sms_consent_text?: string | null
           sms_opt_in?: boolean | null
           source?: string | null
           state?: string | null
@@ -246,6 +252,9 @@ export type Database = {
           notes?: string | null
           phone?: string | null
           score_breakdown?: Json | null
+          sms_consent_at?: string | null
+          sms_consent_page?: string | null
+          sms_consent_text?: string | null
           sms_opt_in?: boolean | null
           source?: string | null
           state?: string | null

@@ -3,6 +3,7 @@ import { useSearchParams, useNavigate, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { trackLead } from '@/lib/tracking';
@@ -271,6 +272,18 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
         </div>
       )}
 
+      <div className="flex items-start space-x-2">
+        <Checkbox
+          id="sms_opt_in"
+          checked={consent}
+          onCheckedChange={(checked) => setConsent(checked === true)}
+          className="mt-0.5"
+        />
+        <Label htmlFor="sms_opt_in" className="text-xs font-normal text-muted-foreground leading-relaxed cursor-pointer">
+          Yes, text me updates about my inquiry. (Message &amp; data rates may apply; reply STOP to opt out.)
+        </Label>
+      </div>
+
       <p className="text-xs text-muted-foreground leading-relaxed">
         By submitting this form, you consent to be contacted by Previse Mortgage LLC via phone, email, or other communication methods regarding your inquiry. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary underline hover:text-primary/80">Terms of Service</Link>.
       </p>
@@ -279,7 +292,7 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
         type="submit"
         className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold py-3"
       >
-        Submit
+        {effectiveButtonText}
       </Button>
     </form>
   );

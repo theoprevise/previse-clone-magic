@@ -1,3 +1,4 @@
+import SmsConsentCheckbox, { smsConsentFields } from '@/components/SmsConsentCheckbox';
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
@@ -13,6 +14,7 @@ const HeroLeadForm = () => {
   const { toast } = useToast();
   const [step, setStep] = useState<'form' | 'otp' | 'submitting'>('form');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [smsConsent, setSmsConsent] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -55,7 +57,7 @@ const HeroLeadForm = () => {
         campaign_type: 'homepage_hero_form',
         event_name: `Interest: ${formData.helpType || 'General Inquiry'}`,
         source: 'homepage_hero_contact_form',
-        sms_opt_in: true,
+        ...smsConsentFields(smsConsent),
       };
       const { error } = await supabase.functions.invoke('send-to-zapier', { body: leadData });
       if (error) throw error;
@@ -144,8 +146,9 @@ const HeroLeadForm = () => {
           </SelectContent>
         </Select>
         
+        <SmsConsentCheckbox checked={smsConsent} onChange={setSmsConsent} />
         <p className="text-xs text-gray-500 leading-relaxed">
-          By submitting this form, you consent to be contacted by Previse Mortgage LLC via phone, email, or SMS regarding your inquiry. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary underline hover:text-primary/80">Terms of Service</Link>.
+          By submitting this form, you consent to be contacted by Previse Mortgage LLC via phone or email regarding your inquiry. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary underline hover:text-primary/80">Terms of Service</Link>.
         </p>
         
         <Button type="submit" className="w-full bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-primary font-bold py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">

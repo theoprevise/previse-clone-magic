@@ -1,3 +1,4 @@
+import SmsConsentCheckbox, { smsConsentFields } from '@/components/SmsConsentCheckbox';
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { z } from "zod";
@@ -21,6 +22,7 @@ interface WebinarRegistrationFormProps {
 
 const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) => {
   const [firstName, setFirstName] = useState("");
+  const [smsConsent, setSmsConsent] = useState(false);
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -68,7 +70,7 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
           campaign_type: 'webinar_registration',
           source: 'webinar_registration_form',
           event_name: `Webinar Registration: First-Time Homebuyer - ${new Date(webinarDate).toLocaleDateString()}`,
-          sms_opt_in: true
+          ...smsConsentFields(smsConsent)
         }
       });
 
@@ -123,8 +125,9 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
         {errors.phone && <p className="text-red-400 text-sm">{errors.phone}</p>}
       </div>
 
+      <SmsConsentCheckbox checked={smsConsent} onChange={setSmsConsent} className="[&_label]:text-white/80" />
       <p className="text-xs text-white/60 leading-relaxed">
-        By submitting this form, you consent to be contacted by Previse Mortgage LLC via phone, email, or SMS regarding your inquiry. View our <Link to="/privacy-policy" className="text-white underline hover:text-white/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-white underline hover:text-white/80">Terms of Service</Link>.
+        By submitting this form, you consent to be contacted by Previse Mortgage LLC via phone or email regarding your inquiry. View our <Link to="/privacy-policy" className="text-white underline hover:text-white/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-white underline hover:text-white/80">Terms of Service</Link>.
       </p>
 
       <Button type="submit" variant="hero" className="w-full" size="lg">

@@ -1,3 +1,4 @@
+import SmsConsentCheckbox, { smsConsentFields } from '@/components/SmsConsentCheckbox';
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { X, CheckCircle, Sparkles, Heart } from "lucide-react";
@@ -13,6 +14,7 @@ const STORAGE_KEY = "lead_popup_dismissed";
 
 const LeadCapturePopup = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [smsConsent, setSmsConsent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
   const [step, setStep] = useState<'form' | 'otp'>('form');
@@ -71,7 +73,7 @@ const LeadCapturePopup = () => {
         source: "timed_lead_capture_popup",
         campaign_type: "website_popup_offer",
         event_name: "Timed popup displayed after page load",
-        sms_opt_in: true,
+        ...smsConsentFields(smsConsent),
       };
       const { error } = await supabase.functions.invoke('send-to-zapier', { body: leadData });
       if (error) throw error;
@@ -163,8 +165,9 @@ const LeadCapturePopup = () => {
               <Label htmlFor="phone" className="text-sm">Phone Number *</Label>
               <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="(555) 123-4567" required className="h-9" />
             </div>
+            <SmsConsentCheckbox checked={smsConsent} onChange={setSmsConsent} />
             <p className="text-xs text-muted-foreground leading-relaxed">
-              By submitting, you consent to be contacted by Previse Mortgage LLC via phone, email, or SMS. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary underline hover:text-primary/80">Terms of Service</Link>.
+              By submitting, you consent to be contacted by Previse Mortgage LLC via phone or email. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary underline hover:text-primary/80">Terms of Service</Link>.
             </p>
             <Button type="submit" className="w-full">
               Submit

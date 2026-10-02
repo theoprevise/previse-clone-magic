@@ -85,6 +85,13 @@ serve(async (req) => {
           address: incoming.address ?? null,
           source: incoming.source ?? "landing_page",
           zapier_synced: false,
+          sms_opt_in: incoming.sms_opt_in === true,
+          sms_consent_at: incoming.sms_opt_in === true ? new Date().toISOString() : null,
+          sms_consent_text: incoming.sms_opt_in === true
+            ? (typeof incoming.sms_consent_text === "string" ? incoming.sms_consent_text.slice(0, 2000) : "NOT CAPTURED: form sent no disclosure text")
+            : null,
+          sms_consent_page: incoming.sms_opt_in === true && typeof incoming.sms_consent_page === "string"
+            ? incoming.sms_consent_page.slice(0, 500) : null,
         })
         .select("id")
         .single();

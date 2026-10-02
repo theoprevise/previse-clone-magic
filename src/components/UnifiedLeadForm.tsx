@@ -131,6 +131,8 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
         utm_medium: utmParams.utm_medium || null,
         utm_campaign: utmParams.utm_campaign || null,
         sms_opt_in: consent,
+        sms_consent_text: consent ? "Yes, text me updates about my inquiry. (Message & data rates may apply; reply STOP to opt out.)" : null,
+        sms_consent_page: window.location.href,
       };
 
       const { data: fnData, error: fnError } = await supabase.functions.invoke('send-to-zapier', {

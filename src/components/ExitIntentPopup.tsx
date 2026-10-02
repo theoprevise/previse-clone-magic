@@ -1,3 +1,4 @@
+import SmsConsentCheckbox, { smsConsentFields } from '@/components/SmsConsentCheckbox';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { X, Gift, Clock } from 'lucide-react';
@@ -8,6 +9,7 @@ import { useToast } from '@/hooks/use-toast';
 
 const ExitIntentPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [smsConsent, setSmsConsent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
   const [step, setStep] = useState<'form' | 'otp'>('form');
@@ -59,7 +61,7 @@ const ExitIntentPopup = () => {
           source: 'exit_intent_popup',
           campaign_type: 'website_exit_intent',
           event_name: 'User attempted to leave page',
-          sms_opt_in: true,
+          ...smsConsentFields(smsConsent),
         },
       });
       if (error) throw error;
@@ -129,8 +131,9 @@ const ExitIntentPopup = () => {
                   <Input name="phone" type="tel" placeholder="Phone Number *" value={formData.phone} onChange={handleChange} className={`border-gray-200 focus:border-accent ${errors.phone ? 'border-red-400' : ''}`} />
                   {errors.phone && <p className="text-xs text-red-500 mt-1">{errors.phone}</p>}
                 </div>
+                <SmsConsentCheckbox checked={smsConsent} onChange={setSmsConsent} />
                 <p className="text-xs text-gray-500 leading-relaxed">
-                  By submitting, you consent to be contacted by Previse Mortgage LLC via phone, email, or SMS. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary underline hover:text-primary/80">Terms of Service</Link>.
+                  By submitting, you consent to be contacted by Previse Mortgage LLC via phone or email. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link> and <Link to="/terms-of-service" className="text-primary underline hover:text-primary/80">Terms of Service</Link>.
                 </p>
                 <Button type="submit" className="w-full bg-accent hover:bg-accent-light text-primary font-bold py-6 text-lg">
                   Submit

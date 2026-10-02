@@ -1,3 +1,4 @@
+import SmsConsentCheckbox, { smsConsentFields } from '@/components/SmsConsentCheckbox';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
@@ -11,6 +12,7 @@ const ContactSection = () => {
   const { toast } = useToast();
   const [step, setStep] = useState<'form' | 'done'>('form');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [smsConsent, setSmsConsent] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -42,7 +44,7 @@ const ContactSection = () => {
           campaign_type: 'contact_page',
           event_name: 'Contact Form Submission',
           notes: formData.message || null,
-          sms_opt_in: true,
+          ...smsConsentFields(smsConsent),
         },
       });
       if (error) throw error;
@@ -129,6 +131,7 @@ const ContactSection = () => {
                       className="w-full p-4 bg-transparent border-2 border-border rounded-lg text-white placeholder-white/60 focus:border-accent focus:outline-none resize-none"
                     />
                   </div>
+                  <SmsConsentCheckbox checked={smsConsent} onChange={setSmsConsent} className="[&_label]:text-white/80" />
                   <button
                     type="submit"
                     disabled={isSubmitting}

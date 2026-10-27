@@ -30,6 +30,7 @@ import FHALoans from "./pages/FHALoans";
 import ConventionalLoans from "./pages/ConventionalLoans";
 import USDALoans from "./pages/USDALoans";
 import DSCRLoans from "./pages/DSCRLoans";
+import ColoradoDSCR from "./pages/ColoradoDSCR";
 import Investors from "./pages/Investors";
 import RealtorPartnership from "./pages/RealtorPartnership";
 import CampaignLanding from "./pages/CampaignLanding";
@@ -87,6 +88,7 @@ const ConditionalLeadPopup = () => {
     '/conventional-loans',
     '/usda-loans',
     '/dscr-loans',
+    '/colorado-dscr-loans',
     '/dscr-loan-guide',
     '/investors',
     '/mortgage-calculator',
@@ -142,6 +144,7 @@ const App = () => (
           <Route path="/conventional-loans" element={<ConventionalLoans />} />
           <Route path="/usda-loans" element={<USDALoans />} />
           <Route path="/dscr-loans" element={<DSCRLoans />} />
+          <Route path="/colorado-dscr-loans" element={<ColoradoDSCR />} />
           <Route path="/investors" element={<Investors />} />
           <Route path="/realtor-partnership" element={<RealtorPartnership />} />
           <Route path="/pre-qualify" element={<PreQualify />} />

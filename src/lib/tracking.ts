@@ -1,3 +1,4 @@
+import { GOOGLE_ADS_LEAD_SEND_TO } from "./adConsent";
 // Triple tagging: browser dataLayer (GTM) + Meta Pixel (client-side) + server-side tagging endpoint.
 // Both sends share an event_id so GA4 / Meta can de-duplicate.
 

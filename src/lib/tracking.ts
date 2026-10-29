@@ -145,8 +145,20 @@ export async function trackEvent(
 }
 
 /** Convenience helper for lead form submissions. */
-export const trackLead = (user_data: TrackUserData, params: TrackOptions['params'] = {}) =>
-  trackEvent('generate_lead', { user_data, params, value: 1, currency: 'USD' });
+export const trackLead = (user_data: TrackUserData, params: TrackOptions['params'] = {}) => {
+  // Google Ads lead conversion. Consent Mode signals (set in index.html and the
+  // cookie notice) decide how much Google may store for each visitor.
+  try {
+    window.gtag?.('event', 'conversion', {
+      send_to: GOOGLE_ADS_LEAD_SEND_TO,
+      value: 1.0,
+      currency: 'USD',
+    });
+  } catch {
+    /* no-op */
+  }
+  return trackEvent('generate_lead', { user_data, params, value: 1, currency: 'USD' });
+};
 
 /** Convenience helper for SPA page views. */
 export const trackPageView = (path?: string) =>

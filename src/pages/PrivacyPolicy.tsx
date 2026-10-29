@@ -63,7 +63,11 @@ const PrivacyPolicy = () => {
                 When you visit or log in to our website, cookies and similar technologies may be used by our online data partners or vendors to associate these activities with other personal information they or others have about you, including by association with your email. We (or service providers on our behalf) may then send communications and marketing to these email addresses.
               </p>
               <p className="leading-relaxed mb-4">
-                <strong>Managing Your Cookie Preferences:</strong> You can manage your cookie preferences at any time by clicking "Manage" on our cookie notice banner, or by adjusting your browser settings to block or delete cookies. Please note that disabling cookies may affect the functionality of our website.
+                <strong>Google Ads:</strong> We use Google Ads conversion tracking to measure when a visitor who clicked one of our ads submits a lead form. Google receives information such as the ad click identifier, the page visited, and that a form was submitted, and uses it for ad measurement and optimization. Visitors in the EEA, UK, Switzerland, and Quebec are asked for consent first, and marketing cookies stay off unless they accept. Learn how Google uses this data at{" "}
+                <a href="https://business.safety.google/privacy/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">business.safety.google/privacy</a>.
+              </p>
+              <p className="leading-relaxed mb-4">
+                <strong>Managing Your Cookie Preferences:</strong> You can manage your cookie preferences at any time by clicking "Cookie settings" in our website footer, or by adjusting your browser settings to block or delete cookies. Please note that disabling cookies may affect the functionality of our website.
               </p>
               <p className="leading-relaxed">
                 You may also opt out of receiving targeted advertising by visiting{" "}

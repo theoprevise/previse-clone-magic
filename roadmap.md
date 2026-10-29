@@ -1,2 +1,2 @@
 - [ ] DSCR Search campaign: finish lead tracking + cookie notice
-- [ ] Pause Real Estate Investment Broker campaign (needs approval)
+- [x] Pause Real Estate Investment Broker campaign (needs approval)

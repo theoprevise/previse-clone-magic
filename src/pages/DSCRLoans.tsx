@@ -298,7 +298,7 @@ const DSCRLoans = () => {
               { q: "Can I use a DSCR loan for a short-term rental or Airbnb?", a: "Yes, many DSCR loan programs accept short-term rental income from platforms like Airbnb and VRBO. Income is typically calculated using a 12-month rental projection or actual booking history. Speak with your loan officer about documentation requirements for short-term rentals." },
               { q: "How many properties can I finance with DSCR loans?", a: "There is no limit on the number of properties you can finance with DSCR loans. Unlike conventional mortgages which cap at 10 financed properties, DSCR programs allow unlimited properties as long as each one meets the ratio requirements independently." },
               { q: "Do I need to be a U.S. citizen to get a DSCR loan?", a: "No, DSCR loans are available to foreign nationals and non-permanent residents investing in U.S. real estate. Since qualification is based on property income rather than personal income, these loans are particularly popular with international investors." },
-              { q: "What is the typical interest rate on a DSCR loan?", a: "DSCR loan rates are typically 0.5% to 1.5% higher than conventional mortgage rates, depending on your credit score, DSCR ratio, down payment, and property type. Borrowers with 740+ credit scores, 25%+ down payments, and DSCR ratios above 1.25 get the best rates." },
+              { q: "What is the typical interest rate on a DSCR loan?", a: "DSCR loan rates are typically 0.5% to 1.5% higher than conventional mortgage rates, depending on your credit score, DSCR ratio, down payment, and property type. Borrowers with 740+ credit scores, 25%+ down payments, and DSCR ratios above 1.25 get the most competitive rates." },
             ]} />
             <h2 className="text-2xl md:text-3xl font-bold text-white mt-16 mb-8">
               Frequently Asked Questions About <span className="text-accent">DSCR Loans</span>
@@ -323,7 +323,7 @@ const DSCRLoans = () => {
                 },
                 {
                   q: "What is the typical interest rate on a DSCR loan?",
-                  a: "DSCR loan rates are typically 0.5% to 1.5% higher than conventional mortgage rates, depending on your credit score, DSCR ratio, down payment, and property type. Borrowers with 740+ credit scores, 25%+ down payments, and DSCR ratios above 1.25 get the best rates."
+                  a: "DSCR loan rates are typically 0.5% to 1.5% higher than conventional mortgage rates, depending on your credit score, DSCR ratio, down payment, and property type. Borrowers with 740+ credit scores, 25%+ down payments, and DSCR ratios above 1.25 get the most competitive rates."
                 }
               ].map((faq, idx) => (
                 <article key={idx} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden">

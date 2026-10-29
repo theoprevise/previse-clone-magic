@@ -66,7 +66,7 @@ const PennsylvaniaMortgage = () => {
               Pennsylvania is one of the most diverse real estate markets in the United States, spanning rural farmland in Lancaster County to bustling urban neighborhoods in Philadelphia and Pittsburgh. Whether you are purchasing your first home in the suburbs of Harrisburg, investing in rental properties in York County, or refinancing a home in the Lehigh Valley, Previse Mortgage provides tailored lending solutions designed for Pennsylvania borrowers.
             </p>
             <p className="text-foreground/80 leading-relaxed">
-              As a licensed Pennsylvania mortgage broker (PA Broker License #115658), we have access to a wide network of wholesale lenders, which means we can shop multiple rate options on your behalf—often securing lower rates than borrowers find on their own. Our team understands the nuances of PA-specific programs, including the <strong>Pennsylvania Housing Finance Agency (PHFA)</strong> assistance programs that offer down payment and closing cost help to eligible first-time homebuyers.
+              As a licensed Pennsylvania mortgage broker (PA Broker License #115658), we have access to a wide network of wholesale lenders, which means we can shop multiple rate options on your behalf—helping you find competitive rates and terms that fit your goals. Our team understands the nuances of PA-specific programs, including the <strong>Pennsylvania Housing Finance Agency (PHFA)</strong> assistance programs that offer down payment and closing cost help to eligible first-time homebuyers.
             </p>
 
             <h3 className="text-2xl font-bold text-primary mt-10 mb-4">Mortgage Programs Available in Pennsylvania</h3>

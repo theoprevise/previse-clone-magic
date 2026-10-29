@@ -31,7 +31,7 @@ const loanPrograms = [
       "Primary residences, second homes, or investment properties"
     ],
     qualifications: [
-      "Credit score: 620+ (680+ for best rates)",
+      "Credit score: 620+ (680+ for more competitive rates)",
       "Down payment: 3-20%",
       "DTI ratio: Up to 45-50%",
       "Stable 2-year employment history"

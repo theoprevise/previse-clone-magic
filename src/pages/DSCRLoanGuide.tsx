@@ -57,7 +57,7 @@ const DSCRLoanGuide = () => {
     "Understand exactly how DSCR qualification works",
     "Avoid costly mistakes that disqualify properties",
     "Calculate your DSCR ratio before applying",
-    "Learn which property types qualify for the best rates",
+    "Learn which property types qualify for the most competitive rates",
     "Scale your portfolio faster with the right financing"
   ];
 

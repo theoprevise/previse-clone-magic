@@ -9,6 +9,7 @@ const FeaturesSection = lazy(() => import("@/components/FeaturesSection"));
 const ProcessSection = lazy(() => import("@/components/ProcessSection"));
 const HomeLoansContent = lazy(() => import("@/components/HomeLoansContent"));
 const WhyPreviseSection = lazy(() => import("@/components/WhyPreviseSection"));
+const GoogleReviewsSection = lazy(() => import("@/components/GoogleReviewsSection"));
 const AboutSection = lazy(() => import("@/components/AboutSection"));
 const FAQSection = lazy(() => import("@/components/FAQSection"));
 const CalendlySection = lazy(() => import("@/components/CalendlySection"));
@@ -42,6 +43,7 @@ const Index = () => {
       <Suspense fallback={<SectionFallback />}>
         <FeaturesSection />
         <WhyPreviseSection />
+        <GoogleReviewsSection />
         <QuickCalculatorWidget />
         <LoanFinderQuiz />
         <CalendlySection />

@@ -1,3 +1,3 @@
 - [x] DSCR Search campaign: finish lead tracking + cookie notice
-- [ ] DSCR Search campaign: create (budget pending)
+- [x] DSCR Search campaign: created
 - [x] Pause Real Estate Investment Broker campaign (needs approval)

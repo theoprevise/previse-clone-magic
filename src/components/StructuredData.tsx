@@ -100,7 +100,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
             "Refinancing",
             "First-Time Homebuyer Programs",
             "Digital Application & E-Closing",
-            "Fast Closing Guarantee"
+            "Fast, Predictable Closings"
           ],
           "priceRange": "$$",
           "openingHours": "Mo-Fr 09:00-17:00",
@@ -109,34 +109,13 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
             "ratingValue": "5.0",
             "bestRating": "5",
             "worstRating": "1",
-            "ratingCount": "47",
-            "reviewCount": "47"
+            "ratingCount": "4",
+            "reviewCount": "4"
           },
           "review": [
-            {
-              "@type": "Review",
-              "author": { "@type": "Person", "name": "First-Time Homebuyer" },
-              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "reviewBody": "We closed in 18 days on our first home — three days early. Teddy walked me through FHA vs conventional with real numbers, ordered the appraisal on day one, and had conditions cleared before I even knew what conditions were. No surprises, clear fees, and the fastest closing our agent had ever seen."
-            },
-            {
-              "@type": "Review",
-              "author": { "@type": "Person", "name": "Self-Employed Borrower" },
-              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "reviewBody": "Two banks declined me and one promised 45 days then asked for more documents in week four. Previse found the right bank statement program in 3 days, front-loaded all the underwriting review, and closed in 24 days. Every fee was itemized from day one. No bait and switch, no last-minute surprises."
-            },
-            {
-              "@type": "Review",
-              "author": { "@type": "Person", "name": "Real Estate Agent" },
-              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "reviewBody": "I've sent three buyers to Previse and every closing was on time or early. Teddy gives me his cell, answers same-day, and the listing agents always comment on how smooth the transaction was. My buyers' offers are stronger because agents trust Previse's closing timelines."
-            },
-            {
-              "@type": "Review",
-              "author": { "@type": "Person", "name": "DSCR Investor" },
-              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "reviewBody": "Closed my 12th investment property in 22 days — fastest and smoothest closing I've had. Previse ordered the appraisal day one, verified DSCR by day three, and had clear-to-close by day 17. No last-minute conditions, no stress. This is my go-to lender for every future deal."
-            }
+            { "@type": "Review", "author": { "@type": "Person", "name": "Brian Shipton" }, "datePublished": "2026-09-28", "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "reviewBody": "As an out-of-state investor and Florida real estate agent, I know how complicated transactions can get. I worked with Teddy to close my PA investment property, and while the loan took a little longer than expected, Teddy truly honored his word and got the deal done." },
+            { "@type": "Review", "author": { "@type": "Person", "name": "Sara Murphy" }, "datePublished": "2026-03-27", "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "reviewBody": "Previse Mortgage was very helpful and thorough. They advised us of various options so we felt informed and empowered to make the right choices for our family. Highly recommend them for personal, quality service." },
+            { "@type": "Review", "author": { "@type": "Person", "name": "Neha Sachdeva" }, "datePublished": "2026-01-05", "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "reviewBody": "As someone in the industry, I am very selective about who I refer my associates to. But Teddy at previse mortgage is in a league of its own." }
           ],
           "sameAs": [
             "https://www.google.com/maps/place/Previse+Mortgage/@37.8014293,-113.2198079,4z/data=!3m1!4b1!4m14!1m7!3m6!1s0x876c79dda1c4c85f:0x34c049c3b2256a05!2sPrevise+Mortgage!8m2!3d39.7533033!4d-91.8748824!16s%2Fg%2F11xmqf1pb8!3m5!1s0x876c79dda1c4c85f:0x34c049c3b2256a05!8m2!3d39.7533033!4d-91.8748824!16s%2Fg%2F11xmqf1pb8?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D"
@@ -292,8 +271,8 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
             "ratingValue": "5.0",
             "bestRating": "5",
             "worstRating": "1",
-            "ratingCount": "47",
-            "reviewCount": "47"
+            "ratingCount": "4",
+            "reviewCount": "4"
           }
         };
         break;

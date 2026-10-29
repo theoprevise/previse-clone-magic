@@ -1,3 +1,4 @@
+import { openCookieSettings } from "@/lib/adConsent";
 import { useNavigate, Link } from 'react-router-dom';
 import { Youtube, Facebook, Instagram, Linkedin } from 'lucide-react';
 import logoIcon from "@/assets/logo-icon.png";
@@ -175,6 +176,9 @@ const Footer = () => {
             </button>
             <button onClick={() => navigate('/terms-of-service')} className="text-white/60 hover:text-accent transition-colors duration-300 text-sm underline">
               Terms of Service
+            </button>
+            <button onClick={openCookieSettings} className="text-white/60 hover:text-accent transition-colors duration-300 text-sm underline">
+              Cookie settings
             </button>
           </div>
           

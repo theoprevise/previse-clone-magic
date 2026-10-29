@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { X, Cookie, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
+import { isConsentRequiredRegion, OPEN_COOKIE_SETTINGS_EVENT } from "@/lib/adConsent";
 
 const CONSENT_KEY = "cookie_consent";
 const CONSENT_VERSION = "1.0";
@@ -22,50 +23,61 @@ const CookieConsent = () => {
     marketing: true,
   });
 
-  useEffect(() => {
-    const savedConsent = localStorage.getItem(CONSENT_KEY);
-    
-    if (savedConsent) {
-      try {
-        const parsed: ConsentState = JSON.parse(savedConsent);
-        // Check if consent version matches
-        if (parsed.version === CONSENT_VERSION) {
-          // Apply saved preferences
-          applyConsent(parsed);
-          return;
-        }
-      } catch (e) {
-        // Invalid consent data, show banner
-      }
+  const readSaved = (): ConsentState | null => {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(CONSENT_KEY) || "null");
+      return parsed && parsed.version === CONSENT_VERSION ? parsed : null;
+    } catch {
+      return null;
     }
-    
-    // Show banner after a short delay for better UX
-    const timer = setTimeout(() => setIsVisible(true), 1000);
-    return () => clearTimeout(timer);
+  };
+
+  useEffect(() => {
+    const saved = readSaved();
+    let cancelled = false;
+    if (saved) {
+      applyConsent(saved);
+    } else {
+      // Only visitors in regions that require consent see the notice.
+      isConsentRequiredRegion().then((required) => {
+        if (!cancelled && required && !readSaved()) setIsVisible(true);
+      });
+    }
+    const onOpen = () => {
+      const current = readSaved();
+      if (current) setPreferences({ analytics: current.analytics, marketing: current.marketing });
+      setShowDetails(true);
+      setIsVisible(true);
+    };
+    const onStorage = (e: StorageEvent) => {
+      if (e.key !== CONSENT_KEY) return;
+      const current = readSaved();
+      if (current) applyConsent(current);
+    };
+    window.addEventListener(OPEN_COOKIE_SETTINGS_EVENT, onOpen);
+    window.addEventListener("storage", onStorage);
+    return () => {
+      cancelled = true;
+      window.removeEventListener(OPEN_COOKIE_SETTINGS_EVENT, onOpen);
+      window.removeEventListener("storage", onStorage);
+    };
   }, []);
 
   const applyConsent = (consent: ConsentState) => {
-    // Enable/disable tracking based on consent
-    if (consent.analytics || consent.marketing) {
-      enableTracking();
+    const ads = consent.marketing ? "granted" : "denied";
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("consent", "update", {
+        ad_storage: ads,
+        ad_user_data: ads,
+        ad_personalization: ads,
+        analytics_storage: consent.analytics ? "granted" : "denied",
+      });
     }
-    
-    // Push consent to dataLayer for GTM
     if (typeof window !== "undefined" && window.dataLayer) {
       window.dataLayer.push({
         event: "consent_update",
         analytics_consent: consent.analytics ? "granted" : "denied",
-        marketing_consent: consent.marketing ? "granted" : "denied",
-      });
-    }
-  };
-
-  const enableTracking = () => {
-    // GTM and GA are already loaded, but we can signal consent
-    if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("consent", "update", {
-        analytics_storage: "granted",
-        ad_storage: "granted",
+        marketing_consent: ads,
       });
     }
   };
@@ -109,7 +121,7 @@ const CookieConsent = () => {
               <span className="text-sm font-medium text-foreground">Cookie Notice</span>
             </div>
             <button
-              onClick={handleAcceptAll}
+              onClick={() => setIsVisible(false)}
               className="text-muted-foreground hover:text-foreground transition-colors p-1"
               aria-label="Close"
             >
@@ -174,7 +186,15 @@ const CookieConsent = () => {
               size="sm"
               className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground text-xs h-8"
             >
-              Got it
+              Accept all
+            </Button>
+            <Button
+              onClick={handleRejectNonEssential}
+              size="sm"
+              variant="outline"
+              className="flex-1 border-accent text-accent hover:bg-accent/10 text-xs h-8"
+            >
+              Reject
             </Button>
             {showDetails ? (
               <Button

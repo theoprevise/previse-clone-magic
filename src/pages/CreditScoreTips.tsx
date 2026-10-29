@@ -23,7 +23,7 @@ const creditScoreRanges = [
     range: "760+",
     label: "Excellent",
     color: "from-emerald-500 to-emerald-400",
-    description: "Best rates available. You'll qualify for the lowest interest rates and best loan terms.",
+    description: "Most competitive pricing tier. You'll qualify for the most competitive interest rates and loan terms.",
     approval: "Very High"
   },
   {

@@ -135,7 +135,7 @@ const DSCRLoanGuidePrint = () => {
             <div className="grid grid-cols-2 gap-4 my-6">
               <div className="bg-green-50 p-4 rounded-lg border border-green-200">
                 <p className="font-semibold text-green-800">1.25+ Excellent</p>
-                <p className="text-sm text-green-700">Property generates 25%+ more income than its debt — best rates available</p>
+                <p className="text-sm text-green-700">Property generates 25%+ more income than its debt — most competitive rates available</p>
               </div>
               <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
                 <p className="font-semibold text-blue-800">1.00–1.24 Good</p>
@@ -184,7 +184,7 @@ const DSCRLoanGuidePrint = () => {
             <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Credit Score</h3>
             <ul className="space-y-2 mb-6">
               <li><strong>Minimum:</strong> 620 (some programs accept 660+)</li>
-              <li><strong>Best rates:</strong> 720+ credit score</li>
+              <li><strong>Most competitive rates:</strong> 720+ credit score</li>
               <li>Higher credit scores = lower interest rates and better terms</li>
             </ul>
 
@@ -255,7 +255,7 @@ const DSCRLoanGuidePrint = () => {
             </ul>
 
             <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Step 3: Calculate DSCR</h3>
-            <p className="mb-4">Divide monthly rent by total PITIA. Target a DSCR of 1.25 or higher for the best rates.</p>
+            <p className="mb-4">Divide monthly rent by total PITIA. Target a DSCR of 1.25 or higher for the most competitive rates.</p>
 
             <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Step 4: Evaluate Cash-on-Cash Return</h3>
             <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 my-6">

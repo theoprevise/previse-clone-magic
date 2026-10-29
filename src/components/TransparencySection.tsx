@@ -35,7 +35,7 @@ const TransparencySection = () => {
                   "You're a real estate investor seeking DSCR loans where the property's income qualifies — not yours",
                   "Your financial situation is complex: multiple income sources, recent credit events, or non-traditional documentation",
                   "You're a first-time homebuyer who wants patient guidance, not a rushed transaction",
-                  "You value certainty at closing over the absolute lowest rate — and want a broker who shops dozens of lenders for you",
+                  "You value certainty at closing over a rock-bottom teaser rate — and want a broker who shops dozens of lenders for you",
                   "You've been turned down by a bank or online lender and need creative, compliant solutions"
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">

@@ -67,7 +67,7 @@ const YorkPAMortgage = () => {
               York, Pennsylvania sits at the heart of one of the most affordable and fast-growing housing markets in the Mid-Atlantic region. With a median home price well below the national average and a strong local economy anchored by manufacturing, healthcare, and logistics, York County offers exceptional value for first-time homebuyers, growing families, and real estate investors alike.
             </p>
             <p className="text-foreground/80 leading-relaxed">
-              Previse Mortgage is headquartered in <strong>Spring Grove, PA</strong> — just minutes from downtown York. As your neighbor and local mortgage broker, we bring deep knowledge of York County's real estate market, school districts, and community dynamics to every transaction. We work with dozens of wholesale lenders to find you the best rate and loan structure, whether you are buying in West York, Springettsbury Township, or the rural outskirts of southern York County.
+              Previse Mortgage is headquartered in <strong>Spring Grove, PA</strong> — just minutes from downtown York. As your neighbor and local mortgage broker, we bring deep knowledge of York County's real estate market, school districts, and community dynamics to every transaction. We work with dozens of wholesale lenders to find you a competitive rate and the right loan structure, whether you are buying in West York, Springettsbury Township, or the rural outskirts of southern York County.
             </p>
 
             <h3 className="text-2xl font-bold text-primary mt-10 mb-4">Popular Loan Programs for York County Buyers</h3>

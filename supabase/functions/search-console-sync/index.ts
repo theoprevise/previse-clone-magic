@@ -9,7 +9,7 @@ import { createClient } from 'npm:@supabase/supabase-js@2';
 
 const GATEWAY = 'https://connector-gateway.lovable.dev/google_search_console';
 const TARGET_URL = 'https://previsemortgage.com/';
-const INSPECT_PATHS = ['/', '/dscr-loans', '/investors', '/refinance', '/york-pa-mortgage'];
+const INSPECT_PATHS = ['/', '/dscr-loans', '/investors', '/refinance', '/mortgage-lender-york-pa'];
 const STALE_MS = 20 * 60 * 60 * 1000;
 
 const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!;

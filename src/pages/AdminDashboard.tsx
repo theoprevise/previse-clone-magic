@@ -18,6 +18,8 @@ import { useAuth } from "@/hooks/useAuth";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { useToast } from "@/hooks/use-toast";
 import RichTextEditor from "@/components/RichTextEditor";
+import SearchConsoleDashboard from "@/components/admin/SearchConsoleDashboard";
+import { Search } from "lucide-react";
 
 interface MortgageApplication {
   id: string;
@@ -534,7 +536,15 @@ const AdminDashboard = () => {
               <Video className="h-4 w-4 mr-2" />
               Webinar ({webinarRegistrations.length})
             </TabsTrigger>
+            <TabsTrigger value="search" className="text-black data-[state=active]:bg-white data-[state=active]:text-black">
+              <Search className="h-4 w-4 mr-2" />
+              Google Search
+            </TabsTrigger>
           </TabsList>
+
+          <TabsContent value="search" className="space-y-4">
+            <SearchConsoleDashboard />
+          </TabsContent>
 
           <TabsContent value="applications" className="space-y-4">
             <Card className="bg-white border-gray-300">

@@ -1,0 +1,1 @@
+REVOKE ALL ON public.search_console_state FROM anon;

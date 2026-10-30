@@ -29,3 +29,6 @@ verify_jwt = false
 
 [functions.server-tagging]
 verify_jwt = false
+
+[functions.search-console-sync]
+verify_jwt = false

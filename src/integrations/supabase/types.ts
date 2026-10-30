@@ -377,6 +377,39 @@ export type Database = {
         }
         Relationships: []
       }
+      search_console_state: {
+        Row: {
+          candidates: string[]
+          error: string | null
+          id: number
+          refreshed_at: string | null
+          selected_site_url: string | null
+          snapshot: Json | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          candidates?: string[]
+          error?: string | null
+          id?: number
+          refreshed_at?: string | null
+          selected_site_url?: string | null
+          snapshot?: Json | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          candidates?: string[]
+          error?: string | null
+          id?: number
+          refreshed_at?: string | null
+          selected_site_url?: string | null
+          snapshot?: Json | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           id: string

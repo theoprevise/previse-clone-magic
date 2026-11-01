@@ -1,8 +1,13 @@
 import { Star, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// Real reviews from the Previse Mortgage Google Business Profile (synced Oct 29, 2026).
+// Real reviews from the Previse Mortgage Google Business Profile (synced Nov 1, 2026).
 export const GOOGLE_REVIEWS = [
+  {
+    name: "Mario Joyner",
+    date: "October 2026",
+    text: "I recently completed my first DSCR cash-out refinance with Teddy Carbone, and I couldn't be more pleased with the experience. I was initially a little nervous about going the DSCR route, but Teddy really put me at ease. He knows the product inside and out and was always available to answer my questions. What really impressed me was how quickly he got everything done. We closed in just 24 days! He even helped me find a new homeowners insurance policy and a qualified structural engineer when one was needed for the appraisal. Thanks to Teddy, I've gone from being skeptical about DSCR loans to looking forward to using them to grow my real estate portfolio. I wouldn't hesitate to work with him again. Highly recommended!",
+  },
   {
     name: "Brian Shipton",
     date: "September 2026",
@@ -12,11 +17,6 @@ export const GOOGLE_REVIEWS = [
     name: "Sara Murphy",
     date: "March 2026",
     text: "Previse Mortgage was very helpful and thorough. They advised us of various options so we felt informed and empowered to make the right choices for our family. Highly recommend them for personal, quality service.",
-  },
-  {
-    name: "Neha Sachdeva",
-    date: "January 2026",
-    text: "As someone in the industry, I am very selective about who I refer my associates to. But Teddy at previse mortgage is in a league of its own. What truly stands out is the level of trust he builds from the first conversation. He isn’t just a mortgage specialist, he is a strategist who understands the complexities of the current market. If you’re looking for a transparent, seamless experience with a local expert, who actually picks up the phone, Teddy is your guy.",
   },
 ];
 

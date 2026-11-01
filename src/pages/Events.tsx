@@ -69,7 +69,7 @@ const Events = () => {
     <>
       <SEOHead
         title="Free Homebuyer Events in Pennsylvania | Previse Mortgage"
-        description="Join free Previse Mortgage educational events in York and Harrisburg, PA to learn about home loans, budgeting and the mortgage process."
+        description="Join free Previse Mortgage educational events to learn about home loans, budgeting and the mortgage process."
         canonicalUrl="https://previsemortgage.com/events"
       />
     <LandingPageTemplate

@@ -6,6 +6,10 @@ interface SEOHeadProps {
   keywords?: string;
   canonicalUrl?: string;
   noIndex?: boolean;
+  /** Open Graph type: "website" (default), "article" for blog posts, "product" for loan product pages. */
+  ogType?: "website" | "article" | "product";
+  /** Absolute https URL of the share image for this page. */
+  ogImage?: string | null;
 }
 
 const SEOHead = ({ 
@@ -13,7 +17,9 @@ const SEOHead = ({
   description = "Expert mortgage lending services in Pennsylvania. Specializing in home loans, refinancing, VA loans, FHA loans, and investment property financing with competitive rates and personalized service.",
   keywords = "mortgage lender, home loans, refinancing, VA loans, FHA loans, Pennsylvania mortgage, Spring Grove PA, NMLS licensed, investment property loans, first time homebuyer",
   canonicalUrl = "https://previsemortgage.com",
-  noIndex = false
+  noIndex = false,
+  ogType = "website",
+  ogImage = null
 }: SEOHeadProps) => {
   
   useEffect(() => {

@@ -497,6 +497,12 @@ const AdminDashboard = () => {
 
   return (
     <div className="min-h-screen bg-white text-black p-8">
+      <SEOHead
+        title="Admin Dashboard | Previse Mortgage"
+        description="Previse Mortgage admin dashboard."
+        canonicalUrl="https://previsemortgage.com/admin"
+        noIndex
+      />
       <div className="max-w-7xl mx-auto space-y-8">
         <div className="flex justify-between items-center">
           <div className="space-y-2">

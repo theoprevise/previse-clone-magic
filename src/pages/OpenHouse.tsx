@@ -1,3 +1,4 @@
+import SEOHead from "@/components/SEOHead";
 import React from 'react';
 import LandingPageTemplate from '@/components/LandingPageTemplate';
 import UnifiedLeadForm from '@/components/UnifiedLeadForm';
@@ -65,6 +66,12 @@ const OpenHouse = () => {
   };
 
   return (
+    <>
+      <SEOHead
+        title="Open House Financing Help | Previse Mortgage"
+        description="Visiting an open house? Get pre-qualified with Previse Mortgage and learn your financing options before you make an offer."
+        canonicalUrl="https://previsemortgage.com/open-house"
+      />
     <LandingPageTemplate
       heroTitle="Find Your Dream Home at Our Open House"
       heroSubtitle="Exclusive Event"
@@ -89,6 +96,7 @@ const OpenHouse = () => {
       backLink="/"
       backLinkText="Back to Home"
     />
+    </>
   );
 };
 

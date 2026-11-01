@@ -1,9 +1,15 @@
+import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const TermsOfService = () => {
   return (
     <div className="min-h-screen bg-primary">
+      <SEOHead
+        title="Terms of Service | Previse Mortgage"
+        description="Terms and conditions for using the Previse Mortgage website, including licensing disclosures and limits on rate and closing-timeline information."
+        canonicalUrl="https://previsemortgage.com/terms-of-service"
+      />
       <Header />
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8">

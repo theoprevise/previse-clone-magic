@@ -1,3 +1,4 @@
+import SEOHead from "@/components/SEOHead";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -109,6 +110,12 @@ const AIReadinessAnalysis = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="AI Readiness Analysis | Previse Mortgage"
+        description="Internal AI search readiness review for the Previse Mortgage website."
+        canonicalUrl="https://previsemortgage.com/ai-readiness"
+        noIndex
+      />
       {/* Header */}
       <div className="container mx-auto px-4 pt-8">
         <Button 

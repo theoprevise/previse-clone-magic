@@ -1,3 +1,4 @@
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -118,6 +119,11 @@ const ServicesAndFAQ = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Mortgage Services & FAQ | Previse Mortgage"
+        description="Answers to common questions about Previse Mortgage purchase, refinance and investment loans, timelines, underwriting and what to expect."
+        canonicalUrl="https://previsemortgage.com/services-faq"
+      />
       {/* Header */}
       <div className="container mx-auto px-4 pt-8">
         <Button 

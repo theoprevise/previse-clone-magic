@@ -1,9 +1,15 @@
+import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-primary">
+      <SEOHead
+        title="Privacy Policy | Previse Mortgage"
+        description="How Previse Mortgage collects, uses and protects your personal information, including cookies, tracking and your privacy choices."
+        canonicalUrl="https://previsemortgage.com/privacy-policy"
+      />
       <Header />
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8">

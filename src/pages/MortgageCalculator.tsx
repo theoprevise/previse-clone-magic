@@ -1,3 +1,4 @@
+import SEOHead from "@/components/SEOHead";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Calculator, DollarSign, Home, RefreshCw, ArrowLeft, Building2 } from "lucide-react";
@@ -133,6 +134,11 @@ const MortgageCalculator = () => {
     }).format(value);
   };
   return <div className="min-h-screen bg-gradient-to-b from-primary-dark via-primary to-primary-dark">
+      <SEOHead
+        title="Mortgage Calculator | Estimate Payments | Previse Mortgage"
+        description="Estimate monthly mortgage payments, refinance savings and DSCR ratios for Pennsylvania and Colorado home and investment loans with Previse Mortgage."
+        canonicalUrl="https://previsemortgage.com/mortgage-calculator"
+      />
       <Header />
       
       {/* Back to Home */}

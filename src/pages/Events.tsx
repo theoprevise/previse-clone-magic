@@ -1,3 +1,4 @@
+import SEOHead from "@/components/SEOHead";
 import React from 'react';
 import LandingPageTemplate from '@/components/LandingPageTemplate';
 import UnifiedLeadForm from '@/components/UnifiedLeadForm';
@@ -65,6 +66,12 @@ const Events = () => {
   };
 
   return (
+    <>
+      <SEOHead
+        title="Free Homebuyer Events in Pennsylvania | Previse Mortgage"
+        description="Join free Previse Mortgage educational events in York and Harrisburg, PA to learn about home loans, budgeting and the mortgage process."
+        canonicalUrl="https://previsemortgage.com/events"
+      />
     <LandingPageTemplate
       heroTitle="Free Educational Events for Homebuyers"
       heroSubtitle="Learn & Grow"
@@ -88,6 +95,7 @@ const Events = () => {
       backLink="/"
       backLinkText="Back to Home"
     />
+    </>
   );
 };
 

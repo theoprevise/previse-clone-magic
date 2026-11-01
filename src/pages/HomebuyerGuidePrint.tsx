@@ -1,3 +1,4 @@
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Printer, Download, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -10,6 +11,12 @@ const HomebuyerGuidePrint = () => {
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
+      <SEOHead
+        title="Homebuyer Guide (Printable) | Previse Mortgage"
+        description="Printable version of the Previse Mortgage homebuyer guide."
+        canonicalUrl="https://previsemortgage.com/homebuyer-guide-print"
+        noIndex
+      />
       {/* Print Controls - Hidden when printing */}
       <div className="print:hidden sticky top-0 z-50 bg-primary text-primary-foreground p-4 shadow-lg">
         <div className="container mx-auto flex items-center justify-between">

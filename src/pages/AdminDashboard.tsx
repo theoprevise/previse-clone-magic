@@ -1,3 +1,4 @@
+import SEOHead from "@/components/SEOHead";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
@@ -399,6 +400,12 @@ const AdminDashboard = () => {
   if (authLoading) {
     return (
       <div className="min-h-screen bg-white text-black flex items-center justify-center">
+      <SEOHead
+        title="Admin Dashboard | Previse Mortgage"
+        description="Previse Mortgage admin dashboard."
+        canonicalUrl="https://previsemortgage.com/admin"
+        noIndex
+      />
         <div className="text-center">
           <Shield className="h-8 w-8 animate-spin mx-auto mb-4 text-black" />
           <p className="text-black">Checking authentication...</p>
@@ -490,6 +497,12 @@ const AdminDashboard = () => {
 
   return (
     <div className="min-h-screen bg-white text-black p-8">
+      <SEOHead
+        title="Admin Dashboard | Previse Mortgage"
+        description="Previse Mortgage admin dashboard."
+        canonicalUrl="https://previsemortgage.com/admin"
+        noIndex
+      />
       <div className="max-w-7xl mx-auto space-y-8">
         <div className="flex justify-between items-center">
           <div className="space-y-2">

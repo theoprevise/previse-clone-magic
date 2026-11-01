@@ -1,3 +1,4 @@
+import SEOHead from "@/components/SEOHead";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -123,6 +124,11 @@ const Webinar = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary via-primary-dark to-primary">
+      <SEOHead
+        title="Free Homebuyer Webinar | Previse Mortgage"
+        description="Register for a free Previse Mortgage webinar on buying a home, financing options and preparing for a smooth, predictable closing."
+        canonicalUrl="https://previsemortgage.com/webinar"
+      />
       <Header />
       
       {/* Back Button */}

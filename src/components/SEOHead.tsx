@@ -6,6 +6,10 @@ interface SEOHeadProps {
   keywords?: string;
   canonicalUrl?: string;
   noIndex?: boolean;
+  /** Open Graph type: "website" (default), "article" for blog posts, "product" for loan product pages. */
+  ogType?: "website" | "article" | "product";
+  /** Absolute https URL of the share image for this page. */
+  ogImage?: string | null;
 }
 
 const SEOHead = ({ 
@@ -13,7 +17,9 @@ const SEOHead = ({
   description = "Expert mortgage lending services in Pennsylvania. Specializing in home loans, refinancing, VA loans, FHA loans, and investment property financing with competitive rates and personalized service.",
   keywords = "mortgage lender, home loans, refinancing, VA loans, FHA loans, Pennsylvania mortgage, Spring Grove PA, NMLS licensed, investment property loans, first time homebuyer",
   canonicalUrl = "https://previsemortgage.com",
-  noIndex = false
+  noIndex = false,
+  ogType = "website",
+  ogImage = null
 }: SEOHeadProps) => {
   
   useEffect(() => {
@@ -69,7 +75,32 @@ const SEOHead = ({
     setOGTag('og:title', title);
     setOGTag('og:description', description);
     setOGTag('og:url', canonicalUrl);
-    setOGTag('og:type', 'website');
+    setOGTag('og:type', ogType);
+
+    // Per-page share image: set it when provided, otherwise remove any image a previous page added.
+    const imageUrl = ogImage && /^https:\/\//.test(ogImage) ? ogImage : null;
+    (['og:image', 'twitter:image'] as const).forEach((key) => {
+      const attr = key.startsWith('og:') ? 'property' : 'name';
+      const existing = document.querySelector(`meta[${attr}="${key}"]`) as HTMLMetaElement | null;
+      if (imageUrl) {
+        if (existing) {
+          if (existing.getAttribute('data-seohead') !== 'true' && !existing.hasAttribute('data-default')) {
+            existing.setAttribute('data-default', existing.content);
+          }
+          existing.content = imageUrl;
+        } else {
+          const tag = document.createElement('meta');
+          tag.setAttribute(attr, key);
+          tag.setAttribute('data-seohead', 'true');
+          tag.content = imageUrl;
+          document.head.appendChild(tag);
+        }
+      } else if (existing?.getAttribute('data-seohead') === 'true') {
+        existing.remove();
+      } else if (existing?.hasAttribute('data-default')) {
+        existing.content = existing.getAttribute('data-default') || existing.content;
+      }
+    });
     setOGTag('og:site_name', 'Previse Mortgage');
     
     // Twitter Card tags
@@ -113,7 +144,7 @@ const SEOHead = ({
       document.head.appendChild(viewport);
     }
 
-  }, [title, description, keywords, canonicalUrl, noIndex]);
+  }, [title, description, keywords, canonicalUrl, noIndex, ogType, ogImage]);
 
   return null;
 };

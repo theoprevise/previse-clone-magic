@@ -45,6 +45,7 @@ const VALoans = () => {
         description="VA home loans for veterans, active-duty military, and surviving spouses in Pennsylvania. Zero down payment, no PMI, and competitive rates. Expert VA loan guidance."
         keywords="VA loans, VA home loan, veteran mortgage, military home loan, zero down payment VA, no PMI, Pennsylvania VA loan, VA loan eligibility, VA funding fee, Certificate of Eligibility"
         canonicalUrl="https://previsemortgage.com/va-loans"
+        ogType="product"
       />
       <Header />
       

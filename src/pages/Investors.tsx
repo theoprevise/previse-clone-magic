@@ -98,6 +98,7 @@ const Investors = () => {
         description="Financing solutions for real estate investors. DSCR loans, cash-out refinancing, portfolio loans, and bank statement programs. Qualify on rental income, not personal income."
         keywords="investor loans, DSCR loans, investment property financing, rental property loans, real estate investor mortgage, cash-out refinance, portfolio loans, bank statement loans"
         canonicalUrl="https://previsemortgage.com/investors"
+        ogType="product"
       />
       <Header />
       

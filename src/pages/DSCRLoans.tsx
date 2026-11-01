@@ -51,6 +51,7 @@ const DSCRLoans = () => {
         description="Qualify for a mortgage using rental income. No W-2s, tax returns, or bank statements required. Up to 80% LTV for real estate investors. Apply today!"
         keywords="DSCR loans, investor loans, rental income mortgage, no income verification loan, investment property financing, real estate investor loans"
         canonicalUrl="https://previsemortgage.com/dscr-loans"
+        ogType="product"
       />
       <Header />
       

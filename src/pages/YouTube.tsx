@@ -1,3 +1,4 @@
+import SEOHead from "@/components/SEOHead";
 import React from 'react';
 import LandingPageTemplate from '@/components/LandingPageTemplate';
 import UnifiedLeadForm from '@/components/UnifiedLeadForm';
@@ -87,6 +88,12 @@ const YouTube = () => {
   );
 
   return (
+    <>
+      <SEOHead
+        title="Mortgage Tips on YouTube | Previse Mortgage"
+        description="Watch Previse Mortgage videos with mortgage tips, market insights and investor loan guidance, and get free resources by email."
+        canonicalUrl="https://previsemortgage.com/youtube"
+      />
     <LandingPageTemplate
       heroTitle="Get Expert Mortgage Tips & Market Insights"
       heroSubtitle="YouTube Channel"
@@ -112,6 +119,7 @@ const YouTube = () => {
       backLinkText="Back to Home"
       additionalSections={<FeaturedVideo />}
     />
+    </>
   );
 };
 

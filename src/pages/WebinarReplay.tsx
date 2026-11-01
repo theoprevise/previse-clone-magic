@@ -1,3 +1,4 @@
+import SEOHead from "@/components/SEOHead";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -45,6 +46,11 @@ const WebinarReplay = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary via-primary-dark to-primary">
+      <SEOHead
+        title="Webinar Replay | Homebuying & Mortgage Tips | Previse Mortgage"
+        description="Watch the Previse Mortgage webinar replay covering mortgage programs, pre-approval and how to prepare for a fast, predictable closing."
+        canonicalUrl="https://previsemortgage.com/webinar-replay"
+      />
       <Header />
       
       {/* Back Button */}

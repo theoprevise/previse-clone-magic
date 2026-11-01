@@ -83,7 +83,8 @@ const GoHighLevelChat = () => {
   useEffect(() => {
     if (!isLoaded) return;
     const css = `
-      #lc_text-widget, .lc_text-widget {
+      #lc_text-widget, .lc_text-widget,
+      #lc_text-widget--btn, .lc_text-widget--bubble {
         left: auto !important;
         right: 20px !important;
         align-items: flex-end !important;

@@ -22,7 +22,7 @@ export const GOOGLE_REVIEWS = [
 
 export const GOOGLE_REVIEW_COUNT = 4;
 const REVIEW_LINK = "https://g.page/r/CQVqJbLDScA0EBM/review";
-const MAPS_LINK = "https://maps.google.com/maps?cid=3801119190356945413";
+export const MAPS_LINK = "https://maps.google.com/maps?cid=3801119190356945413";
 
 const Stars = () => (
   <div className="flex gap-0.5" aria-label="5 out of 5 stars">

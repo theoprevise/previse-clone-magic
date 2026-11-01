@@ -84,6 +84,9 @@ const SEOHead = ({
       const existing = document.querySelector(`meta[${attr}="${key}"]`) as HTMLMetaElement | null;
       if (imageUrl) {
         if (existing) {
+          if (existing.getAttribute('data-seohead') !== 'true' && !existing.hasAttribute('data-default')) {
+            existing.setAttribute('data-default', existing.content);
+          }
           existing.content = imageUrl;
         } else {
           const tag = document.createElement('meta');
@@ -94,6 +97,8 @@ const SEOHead = ({
         }
       } else if (existing?.getAttribute('data-seohead') === 'true') {
         existing.remove();
+      } else if (existing?.hasAttribute('data-default')) {
+        existing.content = existing.getAttribute('data-default') || existing.content;
       }
     });
     setOGTag('og:site_name', 'Previse Mortgage');

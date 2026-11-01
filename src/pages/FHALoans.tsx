@@ -47,6 +47,7 @@ const FHALoans = () => {
         description="FHA loans in Pennsylvania with as little as 3.5% down payment. Perfect for first-time homebuyers and those with lower credit scores. Get pre-approved today!"
         keywords="FHA loans, FHA mortgage, first time homebuyer, low down payment, Pennsylvania FHA loans, 3.5% down payment"
         canonicalUrl="https://previsemortgage.com/fha-loans"
+        ogType="product"
       />
       <Header />
       

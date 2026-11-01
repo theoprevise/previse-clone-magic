@@ -75,7 +75,27 @@ const SEOHead = ({
     setOGTag('og:title', title);
     setOGTag('og:description', description);
     setOGTag('og:url', canonicalUrl);
-    setOGTag('og:type', 'website');
+    setOGTag('og:type', ogType);
+
+    // Per-page share image: set it when provided, otherwise remove any image a previous page added.
+    const imageUrl = ogImage && /^https:\/\//.test(ogImage) ? ogImage : null;
+    (['og:image', 'twitter:image'] as const).forEach((key) => {
+      const attr = key.startsWith('og:') ? 'property' : 'name';
+      const existing = document.querySelector(`meta[${attr}="${key}"]`) as HTMLMetaElement | null;
+      if (imageUrl) {
+        if (existing) {
+          existing.content = imageUrl;
+        } else {
+          const tag = document.createElement('meta');
+          tag.setAttribute(attr, key);
+          tag.setAttribute('data-seohead', 'true');
+          tag.content = imageUrl;
+          document.head.appendChild(tag);
+        }
+      } else if (existing?.getAttribute('data-seohead') === 'true') {
+        existing.remove();
+      }
+    });
     setOGTag('og:site_name', 'Previse Mortgage');
     
     // Twitter Card tags
@@ -119,7 +139,7 @@ const SEOHead = ({
       document.head.appendChild(viewport);
     }
 
-  }, [title, description, keywords, canonicalUrl, noIndex]);
+  }, [title, description, keywords, canonicalUrl, noIndex, ogType, ogImage]);
 
   return null;
 };

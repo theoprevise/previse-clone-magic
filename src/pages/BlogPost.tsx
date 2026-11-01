@@ -98,6 +98,8 @@ const BlogPost = () => {
         description={post.excerpt || post.content.substring(0, 160)}
         keywords="mortgage blog, home buying tips, mortgage advice"
         canonicalUrl={`https://previsemortgage.com/blog/${post.slug}`}
+        ogType="article"
+        ogImage={post.featured_image}
       />
       <Header />
       

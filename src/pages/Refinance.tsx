@@ -134,6 +134,7 @@ const Refinance = () => {
         description="Refinance your Pennsylvania mortgage to lower your rate, reduce monthly payments, or access home equity. Cash-out and rate-and-term refinancing with competitive rates."
         keywords="refinance mortgage Pennsylvania, mortgage refinancing PA, cash out refinance, lower mortgage rate, rate and term refinance, home equity, refinance calculator, Pennsylvania refinance rates"
         canonicalUrl="https://previsemortgage.com/refinance"
+        ogType="product"
       />
       <Header />
       

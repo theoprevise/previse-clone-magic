@@ -47,6 +47,7 @@ const ConventionalLoans = () => {
         description="Conventional mortgage loans in Pennsylvania with competitive rates. No PMI with 20% down. Perfect for buyers with good credit. Get your rate quote today!"
         keywords="conventional loans, conventional mortgage, competitive mortgage rates, Pennsylvania mortgage, no PMI, 20% down payment"
         canonicalUrl="https://previsemortgage.com/conventional-loans"
+        ogType="product"
       />
       <Header />
       

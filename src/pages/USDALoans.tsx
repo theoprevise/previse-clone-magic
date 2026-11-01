@@ -47,6 +47,7 @@ const USDALoans = () => {
         description="USDA loans in Pennsylvania with zero down payment for rural and suburban homes. Check your eligibility for 100% financing. No PMI required!"
         keywords="USDA loans, rural development loan, zero down payment, Pennsylvania rural mortgage, 100% financing, no money down"
         canonicalUrl="https://previsemortgage.com/usda-loans"
+        ogType="product"
       />
       <Header />
       

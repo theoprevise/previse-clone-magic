@@ -78,6 +78,35 @@ const GoHighLevelChat = () => {
     };
   }, [isLoaded]);
 
+  // The widget renders bottom-left inside its own shadow DOM; move it bottom-right
+  // so it doesn't cover the floating Google reviews card.
+  useEffect(() => {
+    if (!isLoaded) return;
+    const css = `
+      #lc_text-widget, .lc_text-widget {
+        left: auto !important;
+        right: 20px !important;
+        align-items: flex-end !important;
+      }
+    `;
+    const apply = () => {
+      const host = document.querySelector('chat-widget');
+      const root = host?.shadowRoot;
+      if (!root) return false;
+      if (!root.getElementById('previse-chat-position')) {
+        const style = document.createElement('style');
+        style.id = 'previse-chat-position';
+        style.textContent = css;
+        root.appendChild(style);
+      }
+      return true;
+    };
+    if (apply()) return;
+    const timer = setInterval(() => { if (apply()) clearInterval(timer); }, 500);
+    const stop = setTimeout(() => clearInterval(timer), 20000);
+    return () => { clearInterval(timer); clearTimeout(stop); };
+  }, [isLoaded]);
+
   return null; // This component only loads the script, no visual output
 };
 

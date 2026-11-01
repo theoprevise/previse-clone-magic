@@ -2,7 +2,7 @@ import { Phone } from 'lucide-react';
 
 const FloatingContactWidget = () => {
   return (
-    <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50">
+    <div className="fixed bottom-[92px] right-5 z-50">
       <a 
         href="tel:+17178195196"
         aria-label="Call or text (717) 819-5196"

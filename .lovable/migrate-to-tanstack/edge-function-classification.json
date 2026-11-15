@@ -1,0 +1,13 @@
+{"functions":[
+{"name":"chat-with-ai","classification":"internal-only","signal":"called from 1 src/ file (dormant ChatBot); left unmigrated this turn","outcome":"left"},
+{"name":"create-admin-user","classification":"unknown","signal":"no internal call sites, no signature","outcome":"left"},
+{"name":"email-drip-campaign","classification":"unknown","signal":"no internal call sites; likely scheduled sender","outcome":"left"},
+{"name":"search-console-sync","classification":"cron target","signal":"daily pg_cron job created outside migrations (admin Refresh also calls it)","outcome":"left"},
+{"name":"send-application-notification","classification":"cron target","signal":"called by Postgres trigger in supabase/migrations (net.http_post)","outcome":"left"},
+{"name":"send-guide-confirmation","classification":"unknown","signal":"no internal call sites, no signature","outcome":"left"},
+{"name":"send-to-zapier","classification":"internal-only","signal":"called from 7 src/ files; live lead pipeline to Zapier/GoHighLevel, left unmigrated this turn to avoid lead-delivery risk","outcome":"left"},
+{"name":"send-webinar-confirmation","classification":"internal-only","signal":"called from 1 src/ file; left unmigrated this turn","outcome":"left"},
+{"name":"send-webinar-thankyou","classification":"internal-only","signal":"called from 1 src/ file; left unmigrated this turn","outcome":"left"},
+{"name":"server-tagging","classification":"internal-only","signal":"called from 1 src/ file; GA4/Meta CAPI with Supabase-held secrets, left unmigrated this turn","outcome":"left"},
+{"name":"test-zapier-webhook","classification":"unknown","signal":"no internal call sites, no signature","outcome":"left"}
+]}

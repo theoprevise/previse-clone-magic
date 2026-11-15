@@ -47,8 +47,21 @@ function isH3SwallowedErrorBody(body: string): boolean {
 // Hosting compresses every response at the edge. Never compress a body (gzip, brotli,
 // CompressionStream) or set content-encoding here or in a server route: the body gets encoded
 // twice and renders garbled.
+// The apex domain is the single primary host; www requests get a permanent redirect to it.
+const PRIMARY_HOST = "previsemortgage.com";
+function canonicalHostRedirect(request: Request): Response | undefined {
+  const url = new URL(request.url);
+  if (url.hostname !== `www.${PRIMARY_HOST}`) return undefined;
+  url.hostname = PRIMARY_HOST;
+  url.protocol = "https:";
+  url.port = "";
+  return Response.redirect(url.toString(), 301);
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
+    const canonical = canonicalHostRedirect(request);
+    if (canonical) return canonical;
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);

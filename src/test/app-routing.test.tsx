@@ -15,3 +15,18 @@ describe("App routing", () => {
     expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
   });
 });
+
+describe("Unknown addresses", () => {
+  it("fall through to not found instead of matching a page", () => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+    const matches = router.matchRoutes("/this-page-does-not-exist");
+    expect(matches.at(-1)?.routeId).toBe(rootRouteId);
+  });
+
+  it("match the local SEO pages", () => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+    for (const path of ["/dscr-loans", "/blog", "/mortgage-lender-york-pa", "/mortgage-lender-harrisburg-pa"]) {
+      expect(router.matchRoutes(path).at(-1)?.routeId).not.toBe(rootRouteId);
+    }
+  });
+});

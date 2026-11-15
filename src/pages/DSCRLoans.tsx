@@ -135,7 +135,7 @@ const DSCRLoans = () => {
           <h2 className={h2}><MapPin className="inline h-7 w-7 text-accent mr-2" />DSCR Investment Property Financing — States We Serve</h2>
           <p className={`${p} mb-6`}>We currently broker business-purpose DSCR loans in the following 29 states. Availability depends on lender programs and applicable state requirements.</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-            {STATES.map((s) => (
+            {INVESTMENT_STATES.map((s) => (
               <div key={s} className="px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white/85 text-sm">{s}</div>
             ))}
           </div>

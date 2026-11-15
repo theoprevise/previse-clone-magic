@@ -56,10 +56,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
             "latitude": "39.8784",
             "longitude": "-76.8635"
           },
-          "areaServed": [
-            { "@type": "State", "name": "Pennsylvania" },
-            { "@type": "State", "name": "Colorado" }
-          ],
+          "areaServed": INVESTMENT_AREA_SERVED,
           "hasCredential": [
             {
               "@type": "EducationalOccupationalCredential",
@@ -185,16 +182,13 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
         structuredData = {
           "@context": "https://schema.org",
           "@type": "Service",
-          "serviceType": "Mortgage Lending",
+          "serviceType": "Business-Purpose Investment Property Financing",
           "provider": {
             "@type": "MortgageLender",
             "name": "Previse Mortgage",
             "url": "https://previsemortgage.com"
           },
-          "areaServed": {
-            "@type": "State", 
-            "name": "Pennsylvania"
-          },
+          "areaServed": INVESTMENT_AREA_SERVED,
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Previse Mortgage Services",
@@ -233,7 +227,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "@context": "https://schema.org",
           "@type": "WebPage",
           "name": data?.title || "Previse Mortgage - Professional Mortgage Services",
-          "description": data?.description || "Expert mortgage lending services in Pennsylvania with competitive rates and personalized service",
+          "description": data?.description || "Investment property financing in 29 states, with residential purchase and refinance loans in Pennsylvania and Colorado.",
           "url": data?.url || "https://previsemortgage.com",
           "breadcrumb": {
             "@type": "BreadcrumbList",
@@ -259,7 +253,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "@context": "https://schema.org",
           "@type": "LoanOrCredit",
           "name": "Previse Mortgage Home Loans",
-          "description": "Professional mortgage lending services including conventional, FHA, VA, USDA, and investment property loans in Pennsylvania",
+          "description": "Business-purpose investment property financing in 29 states, plus conventional, FHA, VA and USDA home loans in Pennsylvania and Colorado.",
           "provider": {
             "@type": "MortgageLender",
             "name": "Previse Mortgage",

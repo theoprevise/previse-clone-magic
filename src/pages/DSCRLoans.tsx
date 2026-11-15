@@ -6,372 +6,178 @@ import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import FAQStructuredData from "@/components/FAQStructuredData";
 import UnifiedLeadForm from "@/components/UnifiedLeadForm";
-import { 
-  Building2, 
-  ArrowRight,
-  ArrowLeft,
-  CheckCircle2,
-  Users,
-  DollarSign,
-  Percent,
-  FileCheck,
-  Clock,
-  TrendingUp,
-  Shield
-} from "lucide-react";
+import { Building2, ArrowRight, ArrowLeft, CheckCircle2, DollarSign, Briefcase, RefreshCw, Home, MapPin } from "lucide-react";
 
-const dscrLoanProgram = {
-  id: "dscr",
-  icon: Building2,
-  title: "DSCR Loans",
-  description: "Qualify based on your property's rental income—not your personal income. Perfect for real estate investors.",
-  bestFor: [
-    "Real estate investors",
-    "Self-employed borrowers",
-    "Those with multiple investment properties",
-    "Investors seeking faster closings"
-  ],
-  qualifications: [
-    "Use rental income to qualify",
-    "Borrow up to 80% LTV",
-    "No W-2s or tax returns required",
-    "No bank statements needed",
-    "Credit scores as low as 620"
-  ],
-  highlights: ["Rental Income Qualification", "Up to 80% LTV", "No W-2s Required", "Fast Closings"]
-};
+const STATES = [
+  "Alabama", "Alaska", "Arkansas", "Colorado", "Connecticut", "Delaware", "Georgia", "Indiana", "Iowa",
+  "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Mississippi", "Missouri", "New Hampshire",
+  "New Mexico", "Ohio", "Oklahoma", "Pennsylvania", "Rhode Island", "South Carolina", "Tennessee", "Texas",
+  "Washington", "West Virginia", "Wisconsin", "Wyoming",
+];
+
+const BROKER_STATEMENT =
+  "Previse Mortgage LLC helps real estate investors secure DSCR financing for rental and investment properties held in LLCs or corporations. As a mortgage broker, we work with wholesale lending partners to provide business-purpose investment property financing solutions in states where we are authorized to operate. Loan approval, terms, and program availability are subject to lender guidelines, borrower qualifications, property eligibility, and applicable state requirements.";
+
+const faqs = [
+  { q: "What is a DSCR loan?", a: "A DSCR (Debt Service Coverage Ratio) loan is a business-purpose mortgage for non-owner-occupied investment properties. Lenders generally evaluate the property's rental income against its monthly debt service rather than relying primarily on the borrower's personal employment income." },
+  { q: "Can I get a DSCR loan in an LLC?", a: "Yes. DSCR programs are designed for investors who hold rental properties in an LLC or corporation. Lenders typically review the entity documents and require a personal guarantee. Holding property in an LLC does not guarantee approval." },
+  { q: "What are the minimum requirements?", a: "Through Previse, DSCR loans generally start at a $250,000 loan amount, a 680+ credit score and a 1.25 DSCR. Down payment, reserves and other terms depend on the lender program and the property." },
+  { q: "Is income documentation required?", a: "DSCR programs focus on property cash flow, so personal income is generally not the primary qualifier. Lenders still require documentation such as leases or rent schedules, credit, assets/reserves, entity documents and an appraisal. Exact requirements vary by program." },
+  { q: "Can I do a DSCR cash-out refinance?", a: "Yes. Eligible investors can refinance a rental property to pull out equity for repairs, reserves or additional acquisitions, subject to lender loan-to-value limits and seasoning requirements." },
+  { q: "Which states do you serve for DSCR loans?", a: "We currently broker business-purpose DSCR loans in the 29 states listed on this page. Residential owner-occupied loans are offered in Pennsylvania and Colorado only." },
+];
 
 const DSCRLoans = () => {
   const navigate = useNavigate();
+  const section = "py-14 relative";
+  const h2 = "text-2xl md:text-3xl font-bold text-white mb-4";
+  const p = "text-white/80 leading-relaxed";
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary via-primary-dark to-primary">
-      <SEOHead 
-        title="DSCR Loans | Investor-Friendly Financing | Previse Mortgage"
-        description="Qualify for a mortgage using rental income. No W-2s, tax returns, or bank statements required. Up to 80% LTV for real estate investors. Apply today!"
-        keywords="DSCR loans, investor loans, rental income mortgage, no income verification loan, investment property financing, real estate investor loans"
+      <SEOHead
+        title="DSCR Loans for LLCs | Investment Property Financing — Previse Mortgage LLC"
+        description="DSCR loans for LLCs and real estate investors. Rental property financing, purchases and DSCR cash-out refinance in 29 states through Previse Mortgage LLC, a mortgage broker."
+        keywords="DSCR loans, DSCR loans for LLCs, investment property loans, LLC mortgage loans, rental property financing, real estate investor financing, business-purpose mortgage loans, DSCR cash-out refinance, DSCR loans for rental properties"
         canonicalUrl="https://previsemortgage.com/dscr-loans"
         ogType="product"
       />
+      <FAQStructuredData faqs={faqs} />
       <Header />
-      
-      {/* Back Button */}
+
       <div className="container mx-auto px-4 pt-6">
-        <Button 
-          variant="ghost" 
-          onClick={() => navigate(-1)}
-          className="text-white hover:text-accent"
-        >
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Back
+        <Button variant="ghost" onClick={() => navigate(-1)} className="text-white hover:text-accent">
+          <ArrowLeft className="mr-2 h-4 w-4" /> Back
         </Button>
       </div>
-      
-      {/* Hero Section */}
-      <section className="relative py-12 overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-center lg:text-left">
-              <span className="inline-block px-4 py-2 bg-accent/20 border border-accent/30 rounded-full text-accent text-sm font-medium mb-6 animate-fade-in">
-                Investor-Focused Financing
-              </span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                <span className="text-accent">DSCR Loans</span> for Real Estate Investors
-              </h1>
-              <p className="text-base md:text-lg lg:text-xl text-white/80 leading-relaxed mb-8">
-                Qualify based on your property's rental income—not your personal income. 
-                Perfect for growing your portfolio without traditional income documentation.
-              </p>
-              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                {dscrLoanProgram.highlights.map((highlight, idx) => (
-                  <span 
-                    key={idx}
-                    className="px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-sm font-medium"
-                  >
-                    {highlight}
-                  </span>
-                ))}
-              </div>
-            </div>
 
-            {/* Lead Capture Form */}
-            <Card className="bg-white/10 backdrop-blur-xl border border-white/20 p-6 md:p-8">
-              <h2 className="text-xl font-bold text-white mb-4 text-center">Get Pre-Approved for a DSCR Loan</h2>
-              <UnifiedLeadForm 
-                source="loan_page_dscr_investor"
-                campaignType="dscr_investment_loan"
-                eventName="DSCR Loan Interest - Investment Property"
-                showAddress={false}
-                buttonText="Get My DSCR Quote"
-              />
-            </Card>
+      <section className="py-12 relative">
+        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+          <div className="text-center lg:text-left">
+            <span className="inline-block px-4 py-2 bg-accent/20 border border-accent/30 rounded-full text-accent text-sm font-medium mb-6">
+              Business-Purpose Investment Financing
+            </span>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+              <span className="text-accent">DSCR Loans for LLCs</span> & Rental Property Investors
+            </h1>
+            <p className="text-base md:text-lg text-white/80 leading-relaxed mb-6">{BROKER_STATEMENT}</p>
+            <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+              {["$250K+ loan amounts", "680+ credit", "1.25 DSCR", "Purchase & cash-out refi"].map((t) => (
+                <span key={t} className="px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-sm">{t}</span>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* DSCR Loan Details */}
-      <section className="py-16 relative">
-        <div className="container mx-auto px-4">
-          <Card 
-            className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 hover:bg-white/10 transition-all duration-500 hover:border-accent/30"
-          >
-            <div className="grid lg:grid-cols-12 gap-8">
-              {/* Header */}
-              <div className="lg:col-span-4">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="p-3 bg-accent/20 rounded-xl">
-                    <Building2 className="h-8 w-8 text-accent" />
-                  </div>
-                  <div>
-                    <h2 className="text-2xl font-bold text-white mb-2">{dscrLoanProgram.title}</h2>
-                    <p className="text-white/70">{dscrLoanProgram.description}</p>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Best For */}
-              <div className="lg:col-span-4">
-                <div className="flex items-center gap-2 mb-4">
-                  <Users className="h-5 w-5 text-white" />
-                  <h3 className="text-lg font-semibold text-white">Best For</h3>
-                </div>
-                <ul className="space-y-2">
-                  {dscrLoanProgram.bestFor.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-white/80">
-                      <CheckCircle2 className="h-4 w-4 text-success mt-1 flex-shrink-0" />
-                      <span className="text-sm">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              
-              {/* Qualifications */}
-              <div className="lg:col-span-4">
-                <div className="flex items-center gap-2 mb-4">
-                  <DollarSign className="h-5 w-5 text-white" />
-                  <h3 className="text-lg font-semibold text-white">Quick Qualifications</h3>
-                </div>
-                <ul className="space-y-2 mb-6">
-                  {dscrLoanProgram.qualifications.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-white/80">
-                      <Percent className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
-                      <span className="text-sm">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <a 
-                  href="https://previsemortgage.my1003app.com?time=1766329396091"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full"
-                >
-                  <Button 
-                    variant="outline"
-                    className="w-full border-accent/30 text-accent hover:bg-accent/10"
-                  >
-                    Apply for DSCR Loan
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </a>
-              </div>
-            </div>
+          <Card className="bg-white/10 backdrop-blur-xl border border-white/20 p-6 md:p-8">
+            <h2 className="text-xl font-bold text-white mb-4 text-center">Get a DSCR Investment Property Quote</h2>
+            <UnifiedLeadForm source="loan_page_dscr_investor" campaignType="dscr_investment_loan" eventName="DSCR Loan Interest - Investment Property" showAddress={false} buttonText="Explore DSCR Loan Options" />
           </Card>
         </div>
       </section>
 
-      {/* How DSCR Works */}
-      <section className="py-16 relative">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
-              How <span className="text-accent">DSCR Loans</span> Work
-            </h2>
-            <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
-              Simple math determines your qualification—focus on property cash flow, not personal finances.
-            </p>
-          </div>
-
-          <Card className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-8 items-center text-center">
-              <div>
-                <div className="text-4xl font-bold text-accent mb-2">DSCR</div>
-                <p className="text-white/70">Debt Service Coverage Ratio</p>
-              </div>
-              <div className="text-4xl font-bold text-white/50">=</div>
-              <div>
-                <div className="text-xl md:text-2xl font-semibold text-white mb-2">
-                  Monthly Rent ÷ Monthly Payment
-                </div>
-                <p className="text-white/70">
-                  Ratio of 1.25 or higher typically qualifies
-                </p>
-              </div>
-            </div>
-            <div className="mt-8 p-6 bg-accent/10 border border-accent/20 rounded-xl">
-              <h4 className="font-semibold text-lg text-white mb-2">Example:</h4>
-              <p className="text-white/80">
-                If your property rents for <strong className="text-accent">$2,250/month</strong> and 
-                the mortgage payment is <strong className="text-accent">$1,800/month</strong>, 
-                your DSCR is <strong className="text-success">1.25</strong>—you qualify!
-              </p>
-            </div>
-          </Card>
+      <section className={section}>
+        <div className="container mx-auto px-4 max-w-4xl space-y-4">
+          <h2 className={h2}>What Is a <span className="text-accent">DSCR Loan</span>?</h2>
+          <p className={p}>A DSCR loan is a business-purpose mortgage for non-owner-occupied rental and investment properties. Instead of relying primarily on your W-2 or tax-return income, lenders generally look at whether the property's rent covers its monthly debt service — principal, interest, taxes, insurance and any association dues (PITIA).</p>
+          <h3 className="text-xl font-bold text-white pt-4">How Do DSCR Loans Work?</h3>
+          <p className={p}>The ratio is gross monthly rent divided by the monthly PITIA payment. A DSCR of 1.0 means rent equals the payment; Previse looks for 1.25 or higher, meaning rent exceeds the payment by 25%. Example: $2,500 in rent against a $2,000 payment is a 1.25 DSCR.</p>
+          <h3 className="text-xl font-bold text-white pt-4">How Rental Income Is Used to Qualify</h3>
+          <p className={p}>For leased properties, lenders typically use the current lease. For vacant or newly purchased properties, the appraiser's market rent schedule is commonly used. Some programs consider short-term rental history. The lender's guidelines determine which figure applies.</p>
         </div>
       </section>
 
-      {/* Benefits Grid */}
-      <section className="py-16 relative">
+      <section className={section}>
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
-              Why Choose a <span className="text-accent">DSCR Loan?</span>
-            </h2>
-            <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
-              Designed specifically for real estate investors who want to qualify based on property performance.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <h2 className={`${h2} text-center`}>Benefits of Financing Through an <span className="text-accent">LLC</span></h2>
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mt-8">
             {[
-              { icon: DollarSign, title: "Rental Income Qualification", description: "Qualify based on property rental income, not personal earnings" },
-              { icon: FileCheck, title: "No W-2s or Tax Returns", description: "Skip traditional income documentation requirements" },
-              { icon: Building2, title: "Up to 80% LTV", description: "Finance up to 80% of the property value" },
-              { icon: Clock, title: "Faster Closings", description: "Streamlined documentation means quicker approvals" },
-              { icon: TrendingUp, title: "Portfolio Growth", description: "No limit on the number of financed properties" },
-              { icon: Shield, title: "Flexible Credit", description: "Credit scores as low as 620 accepted" }
-            ].map((benefit, idx) => (
-              <Card 
-                key={idx}
-                className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 text-center hover:bg-white/10 transition-all duration-300"
-              >
-                <benefit.icon className="h-8 w-8 text-accent mx-auto mb-4" />
-                <h3 className="text-lg font-bold text-white mb-2">{benefit.title}</h3>
-                <p className="text-white/70 text-sm">{benefit.description}</p>
+              { icon: Briefcase, t: "Entity ownership", d: "Close in your LLC or corporation, keeping investment holdings organized under your business." },
+              { icon: DollarSign, t: "Cash-flow based review", d: "Qualification centers on the property's rental income and debt service." },
+              { icon: Building2, t: "Portfolio scaling", d: "Each property is evaluated on its own performance, which can help investors grow a portfolio." },
+            ].map((b) => (
+              <Card key={b.t} className="bg-white/5 border border-white/10 p-6 text-center">
+                <b.icon className="h-8 w-8 text-accent mx-auto mb-4" />
+                <h3 className="text-lg font-bold text-white mb-2">{b.t}</h3>
+                <p className="text-white/70 text-sm">{b.d}</p>
               </Card>
             ))}
           </div>
+          <p className="text-white/60 text-sm text-center mt-6 max-w-3xl mx-auto">LLC ownership does not guarantee loan approval and does not create an exemption from state licensing requirements. Consult your tax or legal advisor about entity structure.</p>
         </div>
       </section>
 
-      {/* In-Depth Educational Content */}
-      <section className="py-16 relative">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto prose-invert">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
-              What Is a <span className="text-accent">DSCR Loan</span> and Why Do Investors Use Them?
-            </h2>
-            <div className="space-y-4 text-white/80 leading-relaxed">
-              <p>
-                A DSCR loan (Debt Service Coverage Ratio loan) is a type of investment property mortgage that qualifies borrowers based on the rental income a property generates rather than the borrower's personal income. This makes DSCR loans one of the most powerful financing tools for real estate investors, self-employed borrowers, and anyone who wants to grow a rental property portfolio without traditional income documentation.
-              </p>
-              <p>
-                Unlike conventional mortgages that require W-2s, tax returns, and employment verification, DSCR loans focus on one simple question: does the property's rental income cover the mortgage payment? If the property generates enough rent to cover the principal, interest, taxes, insurance, and any HOA fees, you can qualify—regardless of your personal income or employment situation.
-              </p>
-              <h3 className="text-xl font-bold text-white mt-8 mb-4">How the DSCR Ratio Is Calculated</h3>
-              <p>
-                The DSCR ratio is calculated by dividing the property's gross monthly rental income by its total monthly debt obligation (PITIA—principal, interest, taxes, insurance, and association dues). A DSCR of 1.0 means the property breaks even. Most lenders require a minimum DSCR of 1.25, meaning the rental income is 25% higher than the monthly payment. Higher DSCR ratios unlock better interest rates and loan terms.
-              </p>
-              <p>
-                For example, if a rental property generates $2,500 per month in rent and the total monthly mortgage payment is $2,000, the DSCR is 1.25—qualifying you for financing. Properties with higher ratios demonstrate stronger cash flow and may qualify for lower rates and higher leverage.
-              </p>
-              <h3 className="text-xl font-bold text-white mt-8 mb-4">DSCR Loan Requirements</h3>
-              <p>
-                DSCR loans have different requirements than traditional mortgages. You'll typically need a minimum credit score of 620 (though 680+ gets better rates), a down payment of 20-25%, and a property that meets the minimum DSCR threshold. No W-2s, tax returns, or bank statements are required. The property can be a single-family rental, multi-family (2-4 units), condo, or townhouse.
-              </p>
-              <h3 className="text-xl font-bold text-white mt-8 mb-4">Who Should Consider a DSCR Loan?</h3>
-              <p>
-                DSCR loans are ideal for real estate investors building a rental portfolio, self-employed borrowers whose tax returns don't reflect their true earning power, foreign nationals investing in U.S. real estate, and anyone who wants to qualify based on property performance rather than personal financials. If you're looking to scale your investment portfolio quickly, DSCR loans remove the traditional income documentation bottleneck.
-              </p>
-              <h3 className="text-xl font-bold text-white mt-8 mb-4">DSCR Loans vs. Conventional Investment Property Loans</h3>
-              <p>
-                Conventional investment property loans require full income documentation, limit you to 10 financed properties, and count all existing mortgages against your DTI ratio. DSCR loans have no limit on the number of properties you can finance, don't require personal income verification, and qualify each property independently. This makes DSCR loans far more scalable for serious investors.
-              </p>
-            </div>
+      <section className={section}>
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className={h2}>DSCR Loan Qualification Requirements</h2>
+          <ul className="space-y-2">
+            {["Minimum loan amount of $250,000", "Credit score of 680 or higher", "DSCR of 1.25 or higher", "Non-owner-occupied investment property (single-family, 2–4 unit, condo, townhome; others by program)", "Down payment, reserves and entity documents per lender guidelines", "Appraisal with rent schedule"].map((r) => (
+              <li key={r} className="flex gap-2 text-white/80"><CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0" />{r}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
-            {/* DSCR FAQ Section */}
-            <FAQStructuredData faqs={[
-              { q: "What is the minimum DSCR ratio required?", a: "Most DSCR loan programs require a minimum ratio of 1.0 to 1.25. A DSCR of 1.25 means the property's rental income is 25% higher than the mortgage payment. Some programs accept ratios below 1.0 with larger down payments and higher credit scores." },
-              { q: "Can I use a DSCR loan for a short-term rental or Airbnb?", a: "Yes, many DSCR loan programs accept short-term rental income from platforms like Airbnb and VRBO. Income is typically calculated using a 12-month rental projection or actual booking history. Speak with your loan officer about documentation requirements for short-term rentals." },
-              { q: "How many properties can I finance with DSCR loans?", a: "There is no limit on the number of properties you can finance with DSCR loans. Unlike conventional mortgages which cap at 10 financed properties, DSCR programs allow unlimited properties as long as each one meets the ratio requirements independently." },
-              { q: "Do I need to be a U.S. citizen to get a DSCR loan?", a: "No, DSCR loans are available to foreign nationals and non-permanent residents investing in U.S. real estate. Since qualification is based on property income rather than personal income, these loans are particularly popular with international investors." },
-              { q: "What is the typical interest rate on a DSCR loan?", a: "DSCR loan rates are typically 0.5% to 1.5% higher than conventional mortgage rates, depending on your credit score, DSCR ratio, down payment, and property type. Borrowers with 740+ credit scores, 25%+ down payments, and DSCR ratios above 1.25 get the most competitive rates." },
-            ]} />
-            <h2 className="text-2xl md:text-3xl font-bold text-white mt-16 mb-8">
-              Frequently Asked Questions About <span className="text-accent">DSCR Loans</span>
-            </h2>
-            <div className="space-y-4">
-              {[
-                {
-                  q: "What is the minimum DSCR ratio required?",
-                  a: "Most DSCR loan programs require a minimum ratio of 1.0 to 1.25. A DSCR of 1.25 means the property's rental income is 25% higher than the mortgage payment. Some programs accept ratios below 1.0 with larger down payments and higher credit scores."
-                },
-                {
-                  q: "Can I use a DSCR loan for a short-term rental or Airbnb?",
-                  a: "Yes, many DSCR loan programs accept short-term rental income from platforms like Airbnb and VRBO. Income is typically calculated using a 12-month rental projection or actual booking history. Speak with your loan officer about documentation requirements for short-term rentals."
-                },
-                {
-                  q: "How many properties can I finance with DSCR loans?",
-                  a: "There is no limit on the number of properties you can finance with DSCR loans. Unlike conventional mortgages which cap at 10 financed properties, DSCR programs allow unlimited properties as long as each one meets the ratio requirements independently."
-                },
-                {
-                  q: "Do I need to be a U.S. citizen to get a DSCR loan?",
-                  a: "No, DSCR loans are available to foreign nationals and non-permanent residents investing in U.S. real estate. Since qualification is based on property income rather than personal income, these loans are particularly popular with international investors."
-                },
-                {
-                  q: "What is the typical interest rate on a DSCR loan?",
-                  a: "DSCR loan rates are typically 0.5% to 1.5% higher than conventional mortgage rates, depending on your credit score, DSCR ratio, down payment, and property type. Borrowers with 740+ credit scores, 25%+ down payments, and DSCR ratios above 1.25 get the most competitive rates."
-                }
-              ].map((faq, idx) => (
-                <article key={idx} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden">
-                  <div className="p-5">
-                    <h3 className="text-base font-semibold text-white mb-2">{faq.q}</h3>
-                    <p className="text-white/80 text-sm leading-relaxed">{faq.a}</p>
-                  </div>
-                </article>
+      <section className={section}>
+        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-6 max-w-5xl">
+          <Card className="bg-white/5 border border-white/10 p-6">
+            <Home className="h-7 w-7 text-accent mb-3" />
+            <h2 className="text-xl font-bold text-white mb-2">Purchasing an Investment Property</h2>
+            <p className="text-white/75 text-sm">Finance your next rental using the property's projected market rent. Get pre-qualified before you make offers so you know your target price and payment.</p>
+          </Card>
+          <Card className="bg-white/5 border border-white/10 p-6">
+            <RefreshCw className="h-7 w-7 text-accent mb-3" />
+            <h2 className="text-xl font-bold text-white mb-2">DSCR Cash-Out Refinance</h2>
+            <p className="text-white/75 text-sm">Refinance an existing rental to replace a hard-money or bank loan, or access equity for repairs and new acquisitions, subject to lender LTV and seasoning rules.</p>
+          </Card>
+        </div>
+        <div className="text-center mt-8">
+          <a href="https://previsemortgage.my1003app.com" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">Finance Your Next Rental Property <ArrowRight className="ml-2 h-5 w-5" /></Button>
+          </a>
+        </div>
+      </section>
+
+      <section className={section}>
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h2 className={h2}><MapPin className="inline h-7 w-7 text-accent mr-2" />DSCR Investment Property Financing — States We Serve</h2>
+          <p className={`${p} mb-6`}>We currently broker business-purpose DSCR loans in the following 29 states. Availability depends on lender programs and applicable state requirements.</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+            {STATES.map((s) => (
+              <div key={s} className="px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white/85 text-sm">{s}</div>
+            ))}
+          </div>
+          <p className="text-white/60 text-sm mt-4">Residential owner-occupied mortgages are offered in Pennsylvania and Colorado only.</p>
+        </div>
+      </section>
+
+      <section className={section}>
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className={h2}>Frequently Asked Questions About <span className="text-accent">DSCR Loans</span></h2>
+          <div className="space-y-4">
+            {faqs.map((f) => (
+              <article key={f.q} className="bg-white/5 border border-white/10 rounded-xl p-5">
+                <h3 className="text-base font-semibold text-white mb-2">{f.q}</h3>
+                <p className="text-white/80 text-sm leading-relaxed">{f.a}</p>
+              </article>
+            ))}
+          </div>
+          <div className="mt-10 p-6 bg-white/5 border border-white/10 rounded-xl">
+            <h3 className="text-lg font-bold text-white mb-4">Explore More Investment Financing</h3>
+            <div className="flex flex-wrap gap-3">
+              {[["Investor Hub", "/investors"], ["DSCR Loan Guide", "/dscr-loan-guide"], ["Mortgage Calculator", "/mortgage-calculator"], ["Current Rates", "/current-mortgage-rates"]].map(([l, h]) => (
+                <Button key={h} variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate(h)}>{l}</Button>
               ))}
-            </div>
-
-            {/* Internal Links */}
-            <div className="mt-12 p-6 bg-white/5 border border-white/10 rounded-xl">
-              <h3 className="text-lg font-bold text-white mb-4">Explore More Mortgage Options</h3>
-              <div className="flex flex-wrap gap-3">
-                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/investors')}>Investor Hub</Button>
-                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/conventional-loans')}>Conventional Loans</Button>
-                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/fha-loans')}>FHA Loans</Button>
-                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/mortgage-calculator')}>Mortgage Calculator</Button>
-                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/current-mortgage-rates')}>Current Rates</Button>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 relative">
+      <section className="py-16">
         <div className="container mx-auto px-4">
-          <Card className="bg-gradient-to-r from-accent/20 to-secondary/20 backdrop-blur-xl border border-accent/30 p-12 text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
-              Ready to Grow Your Portfolio?
-            </h2>
-            <p className="text-base md:text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-              Speak with a DSCR loan specialist today. No obligation, just expert guidance for real estate investors.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button 
-                size="lg" 
-                variant="hero"
-                className="group"
-                onClick={() => navigate('/schedule')}
-              >
-                Talk to a DSCR Specialist
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </div>
+          <Card className="bg-gradient-to-r from-accent/20 to-secondary/20 border border-accent/30 p-10 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Explore LLC Investment Property Financing</h2>
+            <p className="text-white/80 mb-8 max-w-2xl mx-auto">Talk with Previse about your property, entity and goals. No obligation.</p>
+            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90" onClick={() => navigate("/schedule")}>Talk to a DSCR Specialist <ArrowRight className="ml-2 h-5 w-5" /></Button>
+            <p className="text-white/50 text-xs mt-8 max-w-3xl mx-auto">{BROKER_STATEMENT}</p>
           </Card>
         </div>
       </section>

@@ -163,7 +163,7 @@ const Footer = () => {
             <p>Previse Mortgage LLC · NMLS# 2730429 · PA Broker License #115658</p>
             <p>MLO Licenses: CO# 100542483 | PA# 115609 | PA# 119453</p>
             <p className="text-white/40 text-xs mt-2">
-              Previse Mortgage LLC is a U.S.-based mortgage brokerage licensed in Pennsylvania and Colorado for residential lending, with investment property financing arranged where permitted by state law.
+              Previse Mortgage LLC is a U.S.-based mortgage brokerage licensed in Pennsylvania and Colorado for residential (primary and second home) lending. Business-purpose investment property financing is arranged in most other states where permitted by state law; it is not currently offered in Arizona, California, Idaho, Minnesota, Nebraska, Nevada, North Dakota, Oregon, South Dakota, Utah and Vermont, which require state licensing.
               Not affiliated with Precise Mortgages (UK), Precision Mortgage, or any other similarly named entity.
             </p>
 

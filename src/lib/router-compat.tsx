@@ -145,7 +145,8 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
 
 export function Navigate({ to, replace, state }: { to: string; replace?: boolean; state?: unknown }) {
   const { pathname, search, hash } = parseTo(to);
-  return <TSNavigate {...({ to: pathname, search, hash, state, replace } as Record<string, unknown> as never)} />;
+  const props = { to: pathname, search, hash, state, replace } as unknown as ComponentProps<typeof TSNavigate>;
+  return <TSNavigate {...props} />;
 }
 
 // ---------- Outlet ----------

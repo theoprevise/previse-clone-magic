@@ -7,10 +7,7 @@ import SEOHead from "@/components/SEOHead";
 import FAQStructuredData from "@/components/FAQStructuredData";
 import UnifiedLeadForm from "@/components/UnifiedLeadForm";
 import { Building2, ArrowRight, ArrowLeft, CheckCircle2, DollarSign, Briefcase, RefreshCw, Home, MapPin } from "lucide-react";
-
-const STATES = [
-  "Alabama", "Arkansas", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Indiana", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Mississippi", "Missouri", "New Hampshire", "New Mexico", "Ohio", "Oklahoma", "Pennsylvania", "Rhode Island", "South Carolina", "Tennessee", "Texas", "Washington", "West Virginia", "Wisconsin", "Wyoming",
-];
+import { INVESTMENT_STATES } from "@/lib/service-areas";
 
 const BROKER_STATEMENT =
   "Previse Mortgage LLC helps real estate investors secure DSCR financing for rental and investment properties held in LLCs or corporations. As a mortgage broker, we work with wholesale lending partners to provide business-purpose investment property financing solutions in states where we are authorized to operate. Loan approval, terms, and program availability are subject to lender guidelines, borrower qualifications, property eligibility, and applicable state requirements.";
@@ -138,7 +135,7 @@ const DSCRLoans = () => {
           <h2 className={h2}><MapPin className="inline h-7 w-7 text-accent mr-2" />DSCR Investment Property Financing — States We Serve</h2>
           <p className={`${p} mb-6`}>We currently broker business-purpose DSCR loans in the following 29 states. Availability depends on lender programs and applicable state requirements.</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-            {STATES.map((s) => (
+            {INVESTMENT_STATES.map((s) => (
               <div key={s} className="px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white/85 text-sm">{s}</div>
             ))}
           </div>

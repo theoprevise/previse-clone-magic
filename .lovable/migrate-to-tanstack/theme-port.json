@@ -1,0 +1,9 @@
+{"customizations":[
+{"token":"color tokens (primary-light/dark, accent-light, success)","source":"src/index.css","reappliedIn":"src/styles.css"},
+{"token":"--gradient-primary/hero/accent/application","source":"src/index.css","reappliedIn":"src/styles.css"},
+{"token":"shadow-soft/medium/strong/accent/glow","source":"src/index.css","reappliedIn":"src/styles.css"},
+{"token":"font-sans Inter / font-serif Playfair Display","source":"tailwind.config.ts","reappliedIn":"src/styles.css"},
+{"token":"keyframes+animations (fade-in, float, gradient-shift, slide-up, bounce-soft, shimmer, pulse-slow)","source":"tailwind.config.ts","reappliedIn":"src/styles.css"},
+{"token":"heading/text/section component utilities","source":"src/index.css","reappliedIn":"src/styles.css"},
+{"token":"container center 2rem / 1400px","source":"tailwind.config.ts","reappliedIn":"src/styles.css"}
+]}

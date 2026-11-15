@@ -288,6 +288,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
         document.head.removeChild(script);
       };
     }
+    return undefined;
   }, [type, data]);
 
   return null;

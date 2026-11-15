@@ -8,7 +8,7 @@ const FAQSection = () => {
   const faqs = [
     {
       question: "Which states do you lend in?",
-      answer: "We arrange business-purpose investment property loans (DSCR, fix-and-flip, multifamily, portfolio) in 29 states: Alabama, Alaska, Arkansas, Colorado, Connecticut, Delaware, Georgia, Indiana, Iowa, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Mississippi, Missouri, New Hampshire, New Mexico, Ohio, Oklahoma, Pennsylvania, Rhode Island, South Carolina, Tennessee, Texas, West Virginia, Washington, Wisconsin and Wyoming, where permitted by state law. Primary-home and second-home purchase and refinance loans are available only in Pennsylvania and Colorado."
+      answer: "We arrange business-purpose investment property loans (DSCR, fix-and-flip, multifamily, portfolio) in 29 states: Alabama, Arkansas, Colorado, Connecticut, Delaware, Florida, Georgia, Hawaii, Indiana, Kansas, Kentucky, Louisiana, Maine, Maryland, Mississippi, Missouri, New Hampshire, New Mexico, Ohio, Oklahoma, Pennsylvania, Rhode Island, South Carolina, Tennessee, Texas, Washington, West Virginia, Wisconsin, and Wyoming, where permitted by state law. Primary-home and second-home purchase and refinance loans are available only in Pennsylvania and Colorado."
     },
     {
       question: "What is a DSCR loan and how do I qualify?",

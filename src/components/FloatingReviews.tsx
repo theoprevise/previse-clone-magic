@@ -33,7 +33,7 @@ const FloatingReviews = () => {
 
   if (hidden || !visible || GOOGLE_REVIEWS.length === 0) return null;
 
-  const review = GOOGLE_REVIEWS[index];
+  const review = GOOGLE_REVIEWS[index] ?? GOOGLE_REVIEWS[0]!;
 
   const dismiss = () => {
     sessionStorage.setItem(DISMISS_KEY, "1");

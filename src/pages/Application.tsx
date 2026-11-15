@@ -233,7 +233,7 @@ const Application = () => {
       
       try {
         const applicationData = {
-          loan_type: loanType,
+          loan_type: loanType ?? "",
           homebuying_journey: formData.homebuyingJourney,
           home_budget: formData.homeBudget,
           first_time_buyer: formData.firstTimeBuyer,

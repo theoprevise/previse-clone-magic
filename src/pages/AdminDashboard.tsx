@@ -315,7 +315,7 @@ const AdminDashboard = () => {
             content: blogForm.content,
             featured_image: blogForm.featured_image || null,
             published: blogForm.published,
-            author_id: user?.id
+            author_id: user?.id ?? null
           });
 
         if (error) throw error;

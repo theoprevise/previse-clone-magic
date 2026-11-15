@@ -79,7 +79,7 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
       });
 
       toast({ title: "You're registered!", description: "Check your email for confirmation and Zoom details." });
-      navigate('/webinar/thank-you');
+      navigate('/webinar-thank-you');
     } catch (error: any) {
       console.error('Registration error:', error);
       toast({ title: "Registration failed", description: error.message || "Please try again.", variant: "destructive" });

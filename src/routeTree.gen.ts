@@ -61,7 +61,6 @@ import { Route as YoutubeRouteImport } from './routes/youtube'
 import { Route as YoutubeThankYouRouteImport } from './routes/youtube-thank-you'
 import { Route as ApplicationLoanTypeRouteImport } from './routes/application/$loanType'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
-import { Route as WebinarThankYouRouteImport } from './routes/webinar/thank-you'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -325,11 +324,6 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => BlogRoute,
 } as any)
-const WebinarThankYouRoute = WebinarThankYouRouteImport.update({
-  id: '/thank-you',
-  path: '/thank-you',
-  getParentRoute: () => WebinarRoute,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -377,14 +371,13 @@ export interface FileRoutesByFullPath {
   '/thank-you': typeof ThankYouRoute
   '/usda-loans': typeof UsdaLoansRoute
   '/va-loans': typeof VaLoansRoute
-  '/webinar': typeof WebinarRouteWithChildren
+  '/webinar': typeof WebinarRoute
   '/webinar-replay': typeof WebinarReplayRoute
   '/webinar-thank-you': typeof WebinarThankYouRoute
   '/youtube': typeof YoutubeRoute
   '/youtube-thank-you': typeof YoutubeThankYouRoute
   '/application/$loanType': typeof ApplicationLoanTypeRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/webinar/thank-you': typeof WebinarThankYouRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -432,14 +425,13 @@ export interface FileRoutesByTo {
   '/thank-you': typeof ThankYouRoute
   '/usda-loans': typeof UsdaLoansRoute
   '/va-loans': typeof VaLoansRoute
-  '/webinar': typeof WebinarRouteWithChildren
+  '/webinar': typeof WebinarRoute
   '/webinar-replay': typeof WebinarReplayRoute
   '/webinar-thank-you': typeof WebinarThankYouRoute
   '/youtube': typeof YoutubeRoute
   '/youtube-thank-you': typeof YoutubeThankYouRoute
   '/application/$loanType': typeof ApplicationLoanTypeRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/webinar/thank-you': typeof WebinarThankYouRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -488,14 +480,13 @@ export interface FileRoutesById {
   '/thank-you': typeof ThankYouRoute
   '/usda-loans': typeof UsdaLoansRoute
   '/va-loans': typeof VaLoansRoute
-  '/webinar': typeof WebinarRouteWithChildren
+  '/webinar': typeof WebinarRoute
   '/webinar-replay': typeof WebinarReplayRoute
   '/webinar-thank-you': typeof WebinarThankYouRoute
   '/youtube': typeof YoutubeRoute
   '/youtube-thank-you': typeof YoutubeThankYouRoute
   '/application/$loanType': typeof ApplicationLoanTypeRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/webinar/thank-you': typeof WebinarThankYouRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -552,7 +543,6 @@ export interface FileRouteTypes {
     | '/youtube-thank-you'
     | '/application/$loanType'
     | '/blog/$slug'
-    | '/webinar/thank-you'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -607,7 +597,6 @@ export interface FileRouteTypes {
     | '/youtube-thank-you'
     | '/application/$loanType'
     | '/blog/$slug'
-    | '/webinar/thank-you'
   id:
     | '__root__'
     | '/'
@@ -662,7 +651,6 @@ export interface FileRouteTypes {
     | '/youtube-thank-you'
     | '/application/$loanType'
     | '/blog/$slug'
-    | '/webinar/thank-you'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -711,7 +699,7 @@ export interface RootRouteChildren {
   ThankYouRoute: typeof ThankYouRoute
   UsdaLoansRoute: typeof UsdaLoansRoute
   VaLoansRoute: typeof VaLoansRoute
-  WebinarRoute: typeof WebinarRouteWithChildren
+  WebinarRoute: typeof WebinarRoute
   WebinarReplayRoute: typeof WebinarReplayRoute
   WebinarThankYouRoute: typeof WebinarThankYouRoute
   YoutubeRoute: typeof YoutubeRoute
@@ -1085,13 +1073,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof BlogRoute
     }
-    '/webinar/thank-you': {
-      id: '/webinar/thank-you'
-      path: '/thank-you'
-      fullPath: '/webinar/thank-you'
-      preLoaderRoute: typeof WebinarThankYouRouteImport
-      parentRoute: typeof WebinarRoute
-    }
   }
 }
 
@@ -1104,17 +1085,6 @@ const BlogRouteChildren: BlogRouteChildren = {
 }
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
-
-interface WebinarRouteChildren {
-  WebinarThankYouRoute: typeof WebinarThankYouRoute
-}
-
-const WebinarRouteChildren: WebinarRouteChildren = {
-  WebinarThankYouRoute: WebinarThankYouRoute,
-}
-
-const WebinarRouteWithChildren =
-  WebinarRoute._addFileChildren(WebinarRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -1162,7 +1132,7 @@ const rootRouteChildren: RootRouteChildren = {
   ThankYouRoute: ThankYouRoute,
   UsdaLoansRoute: UsdaLoansRoute,
   VaLoansRoute: VaLoansRoute,
-  WebinarRoute: WebinarRouteWithChildren,
+  WebinarRoute: WebinarRoute,
   WebinarReplayRoute: WebinarReplayRoute,
   WebinarThankYouRoute: WebinarThankYouRoute,
   YoutubeRoute: YoutubeRoute,

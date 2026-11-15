@@ -10,7 +10,10 @@ const HIDDEN_PATHS = ["/admin", "/application", "/colorado-dscr", "/auth"];
 const FloatingReviews = () => {
   const { pathname } = useLocation();
   const [visible, setVisible] = useState(false);
-  const [dismissed, setDismissed] = useState(() => sessionStorage.getItem(DISMISS_KEY) === "1");
+  const [dismissed, setDismissed] = useState(false);
+  useEffect(() => {
+    if (sessionStorage.getItem(DISMISS_KEY) === "1") setDismissed(true);
+  }, []);
   const [index, setIndex] = useState(0);
 
   const hidden =

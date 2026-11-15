@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { INVESTMENT_AREA_SERVED } from '@/lib/service-areas';
 
 interface StructuredDataProps {
   type: 'organization' | 'faq' | 'service' | 'webpage' | 'loanOrCredit';

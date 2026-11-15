@@ -7,10 +7,7 @@ import SEOHead from "@/components/SEOHead";
 import FAQStructuredData from "@/components/FAQStructuredData";
 import UnifiedLeadForm from "@/components/UnifiedLeadForm";
 import { Building2, ArrowRight, ArrowLeft, CheckCircle2, DollarSign, Briefcase, RefreshCw, Home, MapPin } from "lucide-react";
-
-const STATES = [
-  "Alabama", "Arkansas", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Indiana", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Mississippi", "Missouri", "New Hampshire", "New Mexico", "Ohio", "Oklahoma", "Pennsylvania", "Rhode Island", "South Carolina", "Tennessee", "Texas", "Washington", "West Virginia", "Wisconsin", "Wyoming",
-];
+import { INVESTMENT_STATES } from "@/lib/service-areas";
 
 const BROKER_STATEMENT =
   "Previse Mortgage LLC helps real estate investors secure DSCR financing for rental and investment properties held in LLCs or corporations. As a mortgage broker, we work with wholesale lending partners to provide business-purpose investment property financing solutions in states where we are authorized to operate. Loan approval, terms, and program availability are subject to lender guidelines, borrower qualifications, property eligibility, and applicable state requirements.";

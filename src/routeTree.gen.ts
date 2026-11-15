@@ -42,6 +42,7 @@ import { Route as OpenHouseThankYouRouteImport } from './routes/open-house-thank
 import { Route as PennsylvaniaMortgageRouteImport } from './routes/pennsylvania-mortgage'
 import { Route as PreQualifyRouteImport } from './routes/pre-qualify'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as RealEstateInvestmentLoansRouteImport } from './routes/real-estate-investment-loans'
 import { Route as RealtorPartnershipRouteImport } from './routes/realtor-partnership'
 import { Route as RefinanceRouteImport } from './routes/refinance'
 import { Route as ScheduleRouteImport } from './routes/schedule'
@@ -229,6 +230,12 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RealEstateInvestmentLoansRoute =
+  RealEstateInvestmentLoansRouteImport.update({
+    id: '/real-estate-investment-loans',
+    path: '/real-estate-investment-loans',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const RealtorPartnershipRoute = RealtorPartnershipRouteImport.update({
   id: '/realtor-partnership',
   path: '/realtor-partnership',
@@ -359,6 +366,7 @@ export interface FileRoutesByFullPath {
   '/pennsylvania-mortgage': typeof PennsylvaniaMortgageRoute
   '/pre-qualify': typeof PreQualifyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/real-estate-investment-loans': typeof RealEstateInvestmentLoansRoute
   '/realtor-partnership': typeof RealtorPartnershipRoute
   '/refinance': typeof RefinanceRoute
   '/schedule': typeof ScheduleRoute
@@ -413,6 +421,7 @@ export interface FileRoutesByTo {
   '/pennsylvania-mortgage': typeof PennsylvaniaMortgageRoute
   '/pre-qualify': typeof PreQualifyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/real-estate-investment-loans': typeof RealEstateInvestmentLoansRoute
   '/realtor-partnership': typeof RealtorPartnershipRoute
   '/refinance': typeof RefinanceRoute
   '/schedule': typeof ScheduleRoute
@@ -468,6 +477,7 @@ export interface FileRoutesById {
   '/pennsylvania-mortgage': typeof PennsylvaniaMortgageRoute
   '/pre-qualify': typeof PreQualifyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/real-estate-investment-loans': typeof RealEstateInvestmentLoansRoute
   '/realtor-partnership': typeof RealtorPartnershipRoute
   '/refinance': typeof RefinanceRoute
   '/schedule': typeof ScheduleRoute
@@ -524,6 +534,7 @@ export interface FileRouteTypes {
     | '/pennsylvania-mortgage'
     | '/pre-qualify'
     | '/privacy-policy'
+    | '/real-estate-investment-loans'
     | '/realtor-partnership'
     | '/refinance'
     | '/schedule'
@@ -578,6 +589,7 @@ export interface FileRouteTypes {
     | '/pennsylvania-mortgage'
     | '/pre-qualify'
     | '/privacy-policy'
+    | '/real-estate-investment-loans'
     | '/realtor-partnership'
     | '/refinance'
     | '/schedule'
@@ -632,6 +644,7 @@ export interface FileRouteTypes {
     | '/pennsylvania-mortgage'
     | '/pre-qualify'
     | '/privacy-policy'
+    | '/real-estate-investment-loans'
     | '/realtor-partnership'
     | '/refinance'
     | '/schedule'
@@ -687,6 +700,7 @@ export interface RootRouteChildren {
   PennsylvaniaMortgageRoute: typeof PennsylvaniaMortgageRoute
   PreQualifyRoute: typeof PreQualifyRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  RealEstateInvestmentLoansRoute: typeof RealEstateInvestmentLoansRoute
   RealtorPartnershipRoute: typeof RealtorPartnershipRoute
   RefinanceRoute: typeof RefinanceRoute
   ScheduleRoute: typeof ScheduleRoute
@@ -941,6 +955,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/real-estate-investment-loans': {
+      id: '/real-estate-investment-loans'
+      path: '/real-estate-investment-loans'
+      fullPath: '/real-estate-investment-loans'
+      preLoaderRoute: typeof RealEstateInvestmentLoansRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/realtor-partnership': {
       id: '/realtor-partnership'
       path: '/realtor-partnership'
@@ -1111,6 +1132,7 @@ const rootRouteChildren: RootRouteChildren = {
   PennsylvaniaMortgageRoute: PennsylvaniaMortgageRoute,
   PreQualifyRoute: PreQualifyRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
+  RealEstateInvestmentLoansRoute: RealEstateInvestmentLoansRoute,
   RealtorPartnershipRoute: RealtorPartnershipRoute,
   RefinanceRoute: RefinanceRoute,
   ScheduleRoute: ScheduleRoute,

@@ -67,7 +67,7 @@ const QuickCalculatorWidget = () => {
                   </div>
                   <Slider
                     value={[homePrice]}
-                    onValueChange={(v) => setHomePrice(v[0])}
+                    onValueChange={(v) => v[0] !== undefined && setHomePrice(v[0])}
                     min={100000}
                     max={1500000}
                     step={5000}
@@ -88,7 +88,7 @@ const QuickCalculatorWidget = () => {
                   </div>
                   <Slider
                     value={[downPaymentPct]}
-                    onValueChange={(v) => setDownPaymentPct(v[0])}
+                    onValueChange={(v) => v[0] !== undefined && setDownPaymentPct(v[0])}
                     min={0}
                     max={30}
                     step={1}
@@ -109,7 +109,7 @@ const QuickCalculatorWidget = () => {
                   </div>
                   <Slider
                     value={[interestRate]}
-                    onValueChange={(v) => setInterestRate(v[0])}
+                    onValueChange={(v) => v[0] !== undefined && setInterestRate(v[0])}
                     min={3}
                     max={10}
                     step={0.125}

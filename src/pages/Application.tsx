@@ -179,7 +179,7 @@ const Application = () => {
     }
   ];
 
-  const currentQuestion = questions[currentStep - 1];
+  const currentQuestion = questions[currentStep - 1] ?? questions[0]!;
 
   const handleOptionSelect = (value: string) => {
     if (currentQuestion.type === "multi-choice") {

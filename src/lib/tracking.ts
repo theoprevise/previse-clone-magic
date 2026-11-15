@@ -38,7 +38,7 @@ export type TrackOptions = {
 const readCookie = (name: string): string | undefined => {
   if (typeof document === 'undefined') return undefined;
   const match = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`));
-  return match ? decodeURIComponent(match[1]) : undefined;
+  return match?.[1] !== undefined ? decodeURIComponent(match[1]) : undefined;
 };
 
 /** GA4 client_id lives in the _ga cookie as GA1.1.<client_id> */

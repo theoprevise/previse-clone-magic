@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import Blog from "@/pages/Blog";
 import { supabase } from "@/integrations/supabase/client";
 
-const TITLE = "Mortgage Blog | Tips & Insights | Previse Mortgage";
+const TITLE = "Mortgage Blog | Expert Tips & Insights | Previse Mortgage";
 
 export const Route = createFileRoute("/blog")({
   loader: async () => {
@@ -17,8 +17,8 @@ export const Route = createFileRoute("/blog")({
     meta: [
       { title: TITLE },
       { property: "og:title", content: TITLE },
-      { name: "description", content: "Mortgage tips, DSCR and investment property insights, and home buying guidance from Previse Mortgage LLC." },
-      { property: "og:description", content: "Mortgage tips, DSCR and investment property insights, and home buying guidance from Previse Mortgage LLC." },
+      { name: "description", content: "Stay informed with the latest mortgage tips, home buying advice, and industry insights from Previse Mortgage experts." },
+      { property: "og:description", content: "Stay informed with the latest mortgage tips, home buying advice, and industry insights from Previse Mortgage experts." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://previsemortgage.com/blog" },
     ],

@@ -68,7 +68,6 @@ const HeroSection = () => {
                   <div className="text-left">
                     <p className="text-white font-bold text-base">Teddy Carbone</p>
                     <p className="text-white/80 text-sm">Investment Loans Nationwide* · Home Loans in PA & CO</p>
-                    <p className="text-white/60 text-[11px] leading-snug mt-1 max-w-md">*Investment loans available in Alabama, Arkansas, Colorado, Connecticut, Delaware, Florida, Georgia, Hawaii, Indiana, Kansas, Kentucky, Louisiana, Maine, Maryland, Mississippi, Missouri, New Hampshire, New Mexico, Ohio, Oklahoma, Pennsylvania, Rhode Island, South Carolina, Tennessee, Texas, Washington, West Virginia, Wisconsin and Wyoming.</p>
                   </div>
                 </div>
                 

@@ -49,7 +49,7 @@ function isH3SwallowedErrorBody(body: string): boolean {
 // twice and renders garbled.
 // The apex domain is the single primary host; www requests get a permanent redirect to it.
 const PRIMARY_HOST = "previsemortgage.com";
-function canonicalHostRedirect(request: Request): Response | undefined {
+export function canonicalHostRedirect(request: Request): Response | undefined {
   const url = new URL(request.url);
   if (url.hostname !== `www.${PRIMARY_HOST}`) return undefined;
   url.hostname = PRIMARY_HOST;

@@ -69,7 +69,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Previse Mortgage LLC (NMLS# 2730429) arranges DSCR rental, multifamily, fix-and-flip and portfolio loans, plus purchase and refinance loans in Pennsylvania and Colorado." },
       { name: "author", content: "Previse Mortgage LLC" },
       { name: "application-name", content: "Previse Mortgage LLC" },
-      { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" },
       { name: "geo.region", content: "US-PA" },
       { name: "geo.placename", content: "Spring Grove, Pennsylvania" },
       { name: "geo.position", content: "39.8784;-76.8635" },

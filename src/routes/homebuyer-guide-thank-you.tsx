@@ -34,6 +34,10 @@ export const Route = createFileRoute("/homebuyer-guide-thank-you")({
       {
         "property": "og:url",
         "content": "https://previsemortgage.com/homebuyer-guide-thank-you"
+      },
+      {
+        "name": "robots",
+        "content": "noindex, nofollow"
       }
     ],
     links: [{"rel": "canonical", "href": "https://previsemortgage.com/homebuyer-guide-thank-you"}],

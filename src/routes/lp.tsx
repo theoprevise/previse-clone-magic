@@ -33,10 +33,10 @@ export const Route = createFileRoute("/lp")({
       },
       {
         "property": "og:url",
-        "content": "https://previsemortgage.com/lp"
+        "content": "https://previsemortgage.com/offer"
       }
     ],
-    links: [{"rel": "canonical", "href": "https://previsemortgage.com/lp"}],
+    links: [{"rel": "canonical", "href": "https://previsemortgage.com/offer"}],
   }),
   component: CampaignLanding,
 });

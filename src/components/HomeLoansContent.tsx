@@ -27,7 +27,7 @@ const HomeLoansContent = () => {
                 Financing the <span className="text-accent">Next Door</span> You Buy
               </h3>
               <p>
-                Cash flow, entity structure, exit plan, and how fast you need to close all shape which investor program fits. Previse Mortgage matches investors across most U.S. states with rental, multifamily, and bridge financing from 50+ wholesale lenders — whether it's your first duplex or your twentieth unit.
+                Cash flow, entity structure, exit plan, and how fast you need to close all shape which investor program fits. Previse Mortgage matches investors across 31 states with rental, multifamily, and bridge financing from 50+ wholesale lenders — whether it's your first duplex or your twentieth unit.
               </p>
             </div>
 

@@ -95,7 +95,7 @@ const FAQSection = () => {
                 <article key={index} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden hover:bg-white/10 transition-all duration-300">
                   <button
                     onClick={() => toggleFAQ(index)}
-                    className="w-full p-4 text-left focus:outline-none group"
+                    className="w-full p-4 text-left focus:outline-hidden group"
                   >
                     <div className="flex items-center justify-between">
                       <h3 className="text-base font-semibold text-white group-hover:text-accent transition-colors duration-300 pr-4">

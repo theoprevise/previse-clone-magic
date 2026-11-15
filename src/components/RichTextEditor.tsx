@@ -52,7 +52,7 @@ const RichTextEditor = ({ content, onChange, placeholder }: RichTextEditorProps)
     },
     editorProps: {
       attributes: {
-        class: 'prose prose-sm max-w-none min-h-[300px] p-4 focus:outline-none text-black',
+        class: 'prose prose-sm max-w-none min-h-[300px] p-4 focus:outline-hidden text-black',
       },
     },
   });

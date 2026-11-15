@@ -93,7 +93,7 @@ const ContactSection = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className={`w-full p-4 bg-transparent border-2 rounded-lg text-white placeholder-white/60 focus:border-accent focus:outline-none ${errors.name ? 'border-red-400' : 'border-border'}`}
+                      className={`w-full p-4 bg-transparent border-2 rounded-lg text-white placeholder-white/60 focus:border-accent focus:outline-hidden ${errors.name ? 'border-red-400' : 'border-border'}`}
                     />
                     {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
                   </div>
@@ -105,7 +105,7 @@ const ContactSection = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className={`w-full p-4 bg-transparent border-2 rounded-lg text-white placeholder-white/60 focus:border-accent focus:outline-none ${errors.email ? 'border-red-400' : 'border-border'}`}
+                      className={`w-full p-4 bg-transparent border-2 rounded-lg text-white placeholder-white/60 focus:border-accent focus:outline-hidden ${errors.email ? 'border-red-400' : 'border-border'}`}
                     />
                     {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
                   </div>
@@ -117,7 +117,7 @@ const ContactSection = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className={`w-full p-4 bg-transparent border-2 rounded-lg text-white placeholder-white/60 focus:border-accent focus:outline-none ${errors.phone ? 'border-red-400' : 'border-border'}`}
+                      className={`w-full p-4 bg-transparent border-2 rounded-lg text-white placeholder-white/60 focus:border-accent focus:outline-hidden ${errors.phone ? 'border-red-400' : 'border-border'}`}
                     />
                     {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone}</p>}
                   </div>
@@ -128,7 +128,7 @@ const ContactSection = () => {
                       placeholder="Message"
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full p-4 bg-transparent border-2 border-border rounded-lg text-white placeholder-white/60 focus:border-accent focus:outline-none resize-none"
+                      className="w-full p-4 bg-transparent border-2 border-border rounded-lg text-white placeholder-white/60 focus:border-accent focus:outline-hidden resize-none"
                     />
                   </div>
                   <SmsConsentCheckbox checked={smsConsent} onChange={setSmsConsent} className="[&_label]:text-white/80" />

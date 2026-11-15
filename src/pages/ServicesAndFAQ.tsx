@@ -1,7 +1,7 @@
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/lib/router-compat";
 import { ArrowLeft, Clock, Shield, TrendingUp, Home, RefreshCw, Building, CheckCircle, Phone, Calendar } from "lucide-react";
 
 const ServicesAndFAQ = () => {

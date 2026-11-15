@@ -52,7 +52,7 @@ const RichTextEditor = ({ content, onChange, placeholder }: RichTextEditorProps)
     },
     editorProps: {
       attributes: {
-        class: 'prose prose-sm max-w-none min-h-[300px] p-4 focus:outline-none text-black',
+        class: 'prose prose-sm max-w-none min-h-[300px] p-4 focus:outline-hidden text-black',
       },
     },
   });
@@ -66,7 +66,7 @@ const RichTextEditor = ({ content, onChange, placeholder }: RichTextEditorProps)
   const setLink = useCallback(() => {
     if (!editor) return;
 
-    const previousUrl = editor.getAttributes('link').href;
+    const previousUrl = editor.getAttributes('link')['href'];
     const url = window.prompt('URL', previousUrl);
 
     if (url === null) return;

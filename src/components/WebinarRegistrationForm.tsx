@@ -1,6 +1,6 @@
 import SmsConsentCheckbox, { smsConsentFields } from '@/components/SmsConsentCheckbox';
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link } from "@/lib/router-compat";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -79,7 +79,7 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
       });
 
       toast({ title: "You're registered!", description: "Check your email for confirmation and Zoom details." });
-      navigate('/webinar/thank-you');
+      navigate('/webinar-thank-you');
     } catch (error: any) {
       console.error('Registration error:', error);
       toast({ title: "Registration failed", description: error.message || "Please try again.", variant: "destructive" });
@@ -104,25 +104,25 @@ const WebinarRegistrationForm = ({ webinarDate }: WebinarRegistrationFormProps) 
         <div className="space-y-2">
           <Label htmlFor="firstName" className="text-white">First Name *</Label>
           <Input id="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)} placeholder="John" className="bg-white/10 border-white/20 text-white placeholder:text-white/50" />
-          {errors.firstName && <p className="text-red-400 text-sm">{errors.firstName}</p>}
+          {errors['firstName'] && <p className="text-red-400 text-sm">{errors['firstName']}</p>}
         </div>
         <div className="space-y-2">
           <Label htmlFor="lastName" className="text-white">Last Name *</Label>
           <Input id="lastName" value={lastName} onChange={(e) => setLastName(e.target.value)} placeholder="Doe" className="bg-white/10 border-white/20 text-white placeholder:text-white/50" />
-          {errors.lastName && <p className="text-red-400 text-sm">{errors.lastName}</p>}
+          {errors['lastName'] && <p className="text-red-400 text-sm">{errors['lastName']}</p>}
         </div>
       </div>
 
       <div className="space-y-2">
         <Label htmlFor="email" className="text-white">Email Address *</Label>
         <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="john@example.com" className="bg-white/10 border-white/20 text-white placeholder:text-white/50" />
-        {errors.email && <p className="text-red-400 text-sm">{errors.email}</p>}
+        {errors['email'] && <p className="text-red-400 text-sm">{errors['email']}</p>}
       </div>
 
       <div className="space-y-2">
         <Label htmlFor="phone" className="text-white">Phone Number *</Label>
         <Input id="phone" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="(555) 123-4567" className="bg-white/10 border-white/20 text-white placeholder:text-white/50" />
-        {errors.phone && <p className="text-red-400 text-sm">{errors.phone}</p>}
+        {errors['phone'] && <p className="text-red-400 text-sm">{errors['phone']}</p>}
       </div>
 
       <SmsConsentCheckbox checked={smsConsent} onChange={setSmsConsent} className="[&_label]:text-white/80" />

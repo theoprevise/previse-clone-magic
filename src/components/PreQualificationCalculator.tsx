@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -76,11 +76,11 @@ const PreQualificationCalculator = () => {
 
   const handleContactNext = () => {
     const newErrors: Record<string, string> = {};
-    if (!formData.firstName.trim()) newErrors.firstName = 'Required';
-    if (!formData.lastName.trim()) newErrors.lastName = 'Required';
-    if (!formData.email.trim()) newErrors.email = 'Required';
-    if (!formData.phone.trim() || formData.phone.replace(/\D/g, '').length < 10) newErrors.phone = 'Valid phone required';
-    if (!formData.consent) newErrors.consent = 'Please agree to continue';
+    if (!formData.firstName.trim()) newErrors['firstName'] = 'Required';
+    if (!formData.lastName.trim()) newErrors['lastName'] = 'Required';
+    if (!formData.email.trim()) newErrors['email'] = 'Required';
+    if (!formData.phone.trim() || formData.phone.replace(/\D/g, '').length < 10) newErrors['phone'] = 'Valid phone required';
+    if (!formData.consent) newErrors['consent'] = 'Please agree to continue';
     if (Object.keys(newErrors).length > 0) { setContactErrors(newErrors); return; }
     void handlePhoneVerified();
   };
@@ -193,24 +193,24 @@ const PreQualificationCalculator = () => {
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="firstName">First Name *</Label>
-                <Input id="firstName" name="firstName" placeholder="John" value={formData.firstName} onChange={handleChange} className={contactErrors.firstName ? 'border-destructive' : ''} />
-                {contactErrors.firstName && <p className="text-xs text-destructive mt-1">{contactErrors.firstName}</p>}
+                <Input id="firstName" name="firstName" placeholder="John" value={formData.firstName} onChange={handleChange} className={contactErrors['firstName'] ? 'border-destructive' : ''} />
+                {contactErrors['firstName'] && <p className="text-xs text-destructive mt-1">{contactErrors['firstName']}</p>}
               </div>
               <div>
                 <Label htmlFor="lastName">Last Name *</Label>
-                <Input id="lastName" name="lastName" placeholder="Doe" value={formData.lastName} onChange={handleChange} className={contactErrors.lastName ? 'border-destructive' : ''} />
-                {contactErrors.lastName && <p className="text-xs text-destructive mt-1">{contactErrors.lastName}</p>}
+                <Input id="lastName" name="lastName" placeholder="Doe" value={formData.lastName} onChange={handleChange} className={contactErrors['lastName'] ? 'border-destructive' : ''} />
+                {contactErrors['lastName'] && <p className="text-xs text-destructive mt-1">{contactErrors['lastName']}</p>}
               </div>
             </div>
             <div>
               <Label htmlFor="email">Email *</Label>
-              <Input id="email" name="email" type="email" placeholder="john@example.com" value={formData.email} onChange={handleChange} className={contactErrors.email ? 'border-destructive' : ''} />
-              {contactErrors.email && <p className="text-xs text-destructive mt-1">{contactErrors.email}</p>}
+              <Input id="email" name="email" type="email" placeholder="john@example.com" value={formData.email} onChange={handleChange} className={contactErrors['email'] ? 'border-destructive' : ''} />
+              {contactErrors['email'] && <p className="text-xs text-destructive mt-1">{contactErrors['email']}</p>}
             </div>
             <div>
               <Label htmlFor="phone">Phone Number *</Label>
-              <Input id="phone" name="phone" type="tel" placeholder="(555) 123-4567" value={formData.phone} onChange={handleChange} className={contactErrors.phone ? 'border-destructive' : ''} />
-              {contactErrors.phone && <p className="text-xs text-destructive mt-1">{contactErrors.phone}</p>}
+              <Input id="phone" name="phone" type="tel" placeholder="(555) 123-4567" value={formData.phone} onChange={handleChange} className={contactErrors['phone'] ? 'border-destructive' : ''} />
+              {contactErrors['phone'] && <p className="text-xs text-destructive mt-1">{contactErrors['phone']}</p>}
             </div>
             <div className="flex items-start gap-2 pt-2">
               <Checkbox id="consent" checked={formData.consent} onCheckedChange={(checked) => setFormData(prev => ({ ...prev, consent: checked as boolean }))} className="mt-0.5" />
@@ -218,7 +218,7 @@ const PreQualificationCalculator = () => {
                 I consent to receive calls, emails, and SMS/text messages from Previse Mortgage. Message and data rates may apply. Reply STOP to opt out. View our <Link to="/privacy-policy" className="text-primary underline hover:text-primary/80">Privacy Policy</Link>. *
               </label>
             </div>
-            {contactErrors.consent && <p className="text-xs text-destructive">{contactErrors.consent}</p>}
+            {contactErrors['consent'] && <p className="text-xs text-destructive">{contactErrors['consent']}</p>}
           </div>
         );
       case 5:

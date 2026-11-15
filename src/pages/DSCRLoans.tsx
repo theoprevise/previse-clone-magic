@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/lib/router-compat";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
@@ -161,7 +161,7 @@ const DSCRLoans = () => {
             <h3 className="text-lg font-bold text-white mb-4">Explore More Investment Financing</h3>
             <div className="flex flex-wrap gap-3">
               {[["Investor Hub", "/investors"], ["DSCR Loan Guide", "/dscr-loan-guide"], ["Mortgage Calculator", "/mortgage-calculator"], ["Current Rates", "/current-mortgage-rates"]].map(([l, h]) => (
-                <Button key={h} variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate(h)}>{l}</Button>
+                <Button key={h} variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => h && navigate(h)}>{l}</Button>
               ))}
             </div>
           </div>

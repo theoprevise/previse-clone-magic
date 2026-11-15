@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/lib/router-compat";
 import { Star, X } from "lucide-react";
 import { GOOGLE_REVIEWS, GOOGLE_REVIEW_COUNT, MAPS_LINK } from "@/components/GoogleReviewsSection";
 
@@ -10,7 +10,10 @@ const HIDDEN_PATHS = ["/admin", "/application", "/colorado-dscr", "/auth"];
 const FloatingReviews = () => {
   const { pathname } = useLocation();
   const [visible, setVisible] = useState(false);
-  const [dismissed, setDismissed] = useState(() => sessionStorage.getItem(DISMISS_KEY) === "1");
+  const [dismissed, setDismissed] = useState(false);
+  useEffect(() => {
+    if (sessionStorage.getItem(DISMISS_KEY) === "1") setDismissed(true);
+  }, []);
   const [index, setIndex] = useState(0);
 
   const hidden =
@@ -33,7 +36,7 @@ const FloatingReviews = () => {
 
   if (hidden || !visible || GOOGLE_REVIEWS.length === 0) return null;
 
-  const review = GOOGLE_REVIEWS[index];
+  const review = GOOGLE_REVIEWS[index] ?? GOOGLE_REVIEWS[0]!;
 
   const dismiss = () => {
     sessionStorage.setItem(DISMISS_KEY, "1");

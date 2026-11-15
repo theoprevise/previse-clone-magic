@@ -176,10 +176,10 @@ const LoanFinderQuiz = () => {
             {!showResult ? (
               <div className="bg-card/50 backdrop-blur-xl border border-border rounded-3xl p-8">
                 <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6 text-center">
-                  {steps[currentStep].question}
+                  {steps[currentStep]?.question}
                 </h3>
                 <div className="space-y-3">
-                  {steps[currentStep].options.map((option) => (
+                  {steps[currentStep]?.options.map((option) => (
                     <button
                       key={option.value}
                       onClick={() => handleSelect(option.value)}

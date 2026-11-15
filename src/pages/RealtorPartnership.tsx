@@ -1,6 +1,6 @@
 import { CheckCircle, XCircle, ArrowRight, Users, MessageSquare, Shield, TrendingUp, Handshake, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/lib/router-compat";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams, useNavigate, Link } from 'react-router-dom';
+import { useSearchParams, useNavigate, Link } from '@/lib/router-compat';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -206,9 +206,9 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
             value={formData.first_name}
             onChange={handleChange}
             placeholder="John"
-            className={`bg-background/50 border-border ${errors.first_name ? 'border-destructive' : ''}`}
+            className={`bg-background/50 border-border ${errors['first_name'] ? 'border-destructive' : ''}`}
           />
-          {errors.first_name && <p className="text-sm text-destructive">{errors.first_name}</p>}
+          {errors['first_name'] && <p className="text-sm text-destructive">{errors['first_name']}</p>}
         </div>
         <div className="space-y-2">
           <Label htmlFor="last_name" className="text-foreground">Last Name *</Label>
@@ -219,9 +219,9 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
             value={formData.last_name}
             onChange={handleChange}
             placeholder="Doe"
-            className={`bg-background/50 border-border ${errors.last_name ? 'border-destructive' : ''}`}
+            className={`bg-background/50 border-border ${errors['last_name'] ? 'border-destructive' : ''}`}
           />
-          {errors.last_name && <p className="text-sm text-destructive">{errors.last_name}</p>}
+          {errors['last_name'] && <p className="text-sm text-destructive">{errors['last_name']}</p>}
         </div>
       </div>
 
@@ -234,9 +234,9 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
           value={formData.email}
           onChange={handleChange}
           placeholder="john.doe@example.com"
-          className={`bg-background/50 border-border ${errors.email ? 'border-destructive' : ''}`}
+          className={`bg-background/50 border-border ${errors['email'] ? 'border-destructive' : ''}`}
         />
-        {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
+        {errors['email'] && <p className="text-sm text-destructive">{errors['email']}</p>}
       </div>
 
       <div className="space-y-2">
@@ -249,13 +249,13 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
             value={formData.phone}
             onChange={handleChange}
             placeholder="(555) 123-4567"
-            className={`bg-background/50 border-border ${errors.phone ? 'border-destructive' : ''} ${phoneVerified ? 'border-green-500 pr-8' : ''}`}
+            className={`bg-background/50 border-border ${errors['phone'] ? 'border-destructive' : ''} ${phoneVerified ? 'border-green-500 pr-8' : ''}`}
           />
           {phoneVerified && (
             <CheckCircle2 className="absolute right-2 top-1/2 -translate-y-1/2 h-4 w-4 text-green-500" />
           )}
         </div>
-        {errors.phone && <p className="text-sm text-destructive">{errors.phone}</p>}
+        {errors['phone'] && <p className="text-sm text-destructive">{errors['phone']}</p>}
       </div>
 
       {effectiveShowAddress && (
@@ -268,9 +268,9 @@ export const UnifiedLeadForm: React.FC<UnifiedLeadFormProps> = ({
             value={formData.address}
             onChange={handleChange}
             placeholder="123 Main St, City, State"
-            className={`bg-background/50 border-border ${errors.address ? 'border-destructive' : ''}`}
+            className={`bg-background/50 border-border ${errors['address'] ? 'border-destructive' : ''}`}
           />
-          {errors.address && <p className="text-sm text-destructive">{errors.address}</p>}
+          {errors['address'] && <p className="text-sm text-destructive">{errors['address']}</p>}
         </div>
       )}
 

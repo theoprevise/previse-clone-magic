@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/lib/router-compat";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -22,11 +22,12 @@ interface BlogPost {
   created_at: string;
 }
 
-const Blog = () => {
+const Blog = ({ initialPosts }: { initialPosts?: BlogPost[] } = {}) => {
   const navigate = useNavigate();
 
   const { data: posts, isLoading } = useQuery({
     queryKey: ['blog-posts'],
+    initialData: initialPosts,
     queryFn: async () => {
       const { data, error } = await supabase
         .from('blog_posts')

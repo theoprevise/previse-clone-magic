@@ -1,6 +1,6 @@
 import SmsConsentCheckbox, { smsConsentFields } from '@/components/SmsConsentCheckbox';
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from '@/lib/router-compat';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { trackLead } from '@/lib/tracking';
@@ -33,10 +33,10 @@ const HeroLeadForm = () => {
   const handleFormNext = (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: Record<string, string> = {};
-    if (!formData.firstName.trim()) newErrors.firstName = 'First name is required';
-    if (!formData.email.trim()) newErrors.email = 'Email is required';
+    if (!formData.firstName.trim()) newErrors['firstName'] = 'First name is required';
+    if (!formData.email.trim()) newErrors['email'] = 'Email is required';
     if (!formData.phone.trim() || formData.phone.replace(/\D/g, '').length < 10) {
-      newErrors.phone = 'A valid phone number is required';
+      newErrors['phone'] = 'A valid phone number is required';
     }
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -101,9 +101,9 @@ const HeroLeadForm = () => {
               placeholder="First Name*"
               value={formData.firstName}
               onChange={handleChange}
-              className={`bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-500 ${errors.firstName ? 'border-red-400' : ''}`}
+              className={`bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-500 ${errors['firstName'] ? 'border-red-400' : ''}`}
             />
-            {errors.firstName && <p className="text-xs text-red-500">{errors.firstName}</p>}
+            {errors['firstName'] && <p className="text-xs text-red-500">{errors['firstName']}</p>}
           </div>
           <Input name="lastName" placeholder="Last Name" value={formData.lastName} onChange={handleChange} className="bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-500" />
         </div>
@@ -116,9 +116,9 @@ const HeroLeadForm = () => {
               placeholder="Phone*"
               value={formData.phone}
               onChange={handleChange}
-              className={`bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-500 ${errors.phone ? 'border-red-400' : ''}`}
+              className={`bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-500 ${errors['phone'] ? 'border-red-400' : ''}`}
             />
-            {errors.phone && <p className="text-xs text-red-500">{errors.phone}</p>}
+            {errors['phone'] && <p className="text-xs text-red-500">{errors['phone']}</p>}
           </div>
           <div className="space-y-1">
             <Input
@@ -127,9 +127,9 @@ const HeroLeadForm = () => {
               placeholder="Email*"
               value={formData.email}
               onChange={handleChange}
-              className={`bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-500 ${errors.email ? 'border-red-400' : ''}`}
+              className={`bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-500 ${errors['email'] ? 'border-red-400' : ''}`}
             />
-            {errors.email && <p className="text-xs text-red-500">{errors.email}</p>}
+            {errors['email'] && <p className="text-xs text-red-500">{errors['email']}</p>}
           </div>
         </div>
         

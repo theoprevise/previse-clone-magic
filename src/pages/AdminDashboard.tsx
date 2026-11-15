@@ -1,6 +1,6 @@
 import SEOHead from "@/components/SEOHead";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/lib/router-compat";
 import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -315,7 +315,7 @@ const AdminDashboard = () => {
             content: blogForm.content,
             featured_image: blogForm.featured_image || null,
             published: blogForm.published,
-            author_id: user?.id
+            author_id: user?.id ?? null
           });
 
         if (error) throw error;

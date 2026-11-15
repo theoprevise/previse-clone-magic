@@ -50,21 +50,21 @@ const RentVsBuy = () => {
             <span className="text-white/70 text-sm">Monthly Rent</span>
             <span className="text-accent font-bold">{fmt(monthlyRent)}</span>
           </div>
-          <Slider value={[monthlyRent]} onValueChange={(v) => setMonthlyRent(v[0])} min={800} max={4000} step={50} />
+          <Slider value={[monthlyRent]} onValueChange={(v) => v[0] !== undefined && setMonthlyRent(v[0])} min={800} max={4000} step={50} />
         </div>
         <div>
           <div className="flex justify-between mb-2">
             <span className="text-white/70 text-sm">Home Purchase Price</span>
             <span className="text-accent font-bold">{fmt(homePrice)}</span>
           </div>
-          <Slider value={[homePrice]} onValueChange={(v) => setHomePrice(v[0])} min={150000} max={800000} step={5000} />
+          <Slider value={[homePrice]} onValueChange={(v) => v[0] !== undefined && setHomePrice(v[0])} min={150000} max={800000} step={5000} />
         </div>
         <div>
           <div className="flex justify-between mb-2">
             <span className="text-white/70 text-sm">Time Horizon</span>
             <span className="text-accent font-bold">{years} years</span>
           </div>
-          <Slider value={[years]} onValueChange={(v) => setYears(v[0])} min={1} max={10} step={1} />
+          <Slider value={[years]} onValueChange={(v) => v[0] !== undefined && setYears(v[0])} min={1} max={10} step={1} />
         </div>
       </div>
 
@@ -132,14 +132,14 @@ const PointsComparison = () => {
             <span className="text-white/70 text-sm">Loan Amount</span>
             <span className="text-accent font-bold">{fmt(loanAmount)}</span>
           </div>
-          <Slider value={[loanAmount]} onValueChange={(v) => setLoanAmount(v[0])} min={100000} max={800000} step={5000} />
+          <Slider value={[loanAmount]} onValueChange={(v) => v[0] !== undefined && setLoanAmount(v[0])} min={100000} max={800000} step={5000} />
         </div>
         <div>
           <div className="flex justify-between mb-2">
             <span className="text-white/70 text-sm">Base Rate (No Points)</span>
             <span className="text-accent font-bold">{baseRate.toFixed(2)}%</span>
           </div>
-          <Slider value={[baseRate]} onValueChange={(v) => setBaseRate(v[0])} min={4} max={9} step={0.125} />
+          <Slider value={[baseRate]} onValueChange={(v) => v[0] !== undefined && setBaseRate(v[0])} min={4} max={9} step={0.125} />
         </div>
       </div>
 

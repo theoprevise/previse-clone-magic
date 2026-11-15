@@ -38,7 +38,7 @@ export type TrackOptions = {
 const readCookie = (name: string): string | undefined => {
   if (typeof document === 'undefined') return undefined;
   const match = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`));
-  return match ? decodeURIComponent(match[1]) : undefined;
+  return match?.[1] !== undefined ? decodeURIComponent(match[1]) : undefined;
 };
 
 /** GA4 client_id lives in the _ga cookie as GA1.1.<client_id> */
@@ -93,8 +93,8 @@ export async function trackEvent(
     if (typeof window.fbq === 'function') {
       const fbParams: Record<string, unknown> = { ...params, event_id: eventId };
       if (value != null) {
-        fbParams.value = value;
-        fbParams.currency = currency ?? 'USD';
+        fbParams['value'] = value;
+        fbParams['currency'] = currency ?? 'USD';
       }
       // Map our internal event names to Meta standard events where applicable.
       const standardEvents: Record<string, string> = {

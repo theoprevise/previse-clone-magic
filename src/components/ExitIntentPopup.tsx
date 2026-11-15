@@ -1,6 +1,6 @@
 import SmsConsentCheckbox, { smsConsentFields } from '@/components/SmsConsentCheckbox';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { X, Gift, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -41,10 +41,10 @@ const ExitIntentPopup = () => {
   const handleFormNext = (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: Record<string, string> = {};
-    if (!formData.firstName.trim()) newErrors.firstName = 'Required';
-    if (!formData.lastName.trim()) newErrors.lastName = 'Required';
-    if (!formData.email.trim()) newErrors.email = 'Required';
-    if (!formData.phone.trim() || formData.phone.replace(/\D/g, '').length < 10) newErrors.phone = 'Valid phone required';
+    if (!formData.firstName.trim()) newErrors['firstName'] = 'Required';
+    if (!formData.lastName.trim()) newErrors['lastName'] = 'Required';
+    if (!formData.email.trim()) newErrors['email'] = 'Required';
+    if (!formData.phone.trim() || formData.phone.replace(/\D/g, '').length < 10) newErrors['phone'] = 'Valid phone required';
     if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return; }
     void handlePhoneVerified();
   };
@@ -115,21 +115,21 @@ const ExitIntentPopup = () => {
               <form onSubmit={handleFormNext} className="p-6 space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <Input name="firstName" placeholder="First Name *" value={formData.firstName} onChange={handleChange} className={`border-gray-200 focus:border-accent ${errors.firstName ? 'border-red-400' : ''}`} />
-                    {errors.firstName && <p className="text-xs text-red-500 mt-1">{errors.firstName}</p>}
+                    <Input name="firstName" placeholder="First Name *" value={formData.firstName} onChange={handleChange} className={`border-gray-200 focus:border-accent ${errors['firstName'] ? 'border-red-400' : ''}`} />
+                    {errors['firstName'] && <p className="text-xs text-red-500 mt-1">{errors['firstName']}</p>}
                   </div>
                   <div>
-                    <Input name="lastName" placeholder="Last Name *" value={formData.lastName} onChange={handleChange} className={`border-gray-200 focus:border-accent ${errors.lastName ? 'border-red-400' : ''}`} />
-                    {errors.lastName && <p className="text-xs text-red-500 mt-1">{errors.lastName}</p>}
+                    <Input name="lastName" placeholder="Last Name *" value={formData.lastName} onChange={handleChange} className={`border-gray-200 focus:border-accent ${errors['lastName'] ? 'border-red-400' : ''}`} />
+                    {errors['lastName'] && <p className="text-xs text-red-500 mt-1">{errors['lastName']}</p>}
                   </div>
                 </div>
                 <div>
-                  <Input name="email" type="email" placeholder="Email Address *" value={formData.email} onChange={handleChange} className={`border-gray-200 focus:border-accent ${errors.email ? 'border-red-400' : ''}`} />
-                  {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email}</p>}
+                  <Input name="email" type="email" placeholder="Email Address *" value={formData.email} onChange={handleChange} className={`border-gray-200 focus:border-accent ${errors['email'] ? 'border-red-400' : ''}`} />
+                  {errors['email'] && <p className="text-xs text-red-500 mt-1">{errors['email']}</p>}
                 </div>
                 <div>
-                  <Input name="phone" type="tel" placeholder="Phone Number *" value={formData.phone} onChange={handleChange} className={`border-gray-200 focus:border-accent ${errors.phone ? 'border-red-400' : ''}`} />
-                  {errors.phone && <p className="text-xs text-red-500 mt-1">{errors.phone}</p>}
+                  <Input name="phone" type="tel" placeholder="Phone Number *" value={formData.phone} onChange={handleChange} className={`border-gray-200 focus:border-accent ${errors['phone'] ? 'border-red-400' : ''}`} />
+                  {errors['phone'] && <p className="text-xs text-red-500 mt-1">{errors['phone']}</p>}
                 </div>
                 <SmsConsentCheckbox checked={smsConsent} onChange={setSmsConsent} />
                 <p className="text-xs text-gray-500 leading-relaxed">

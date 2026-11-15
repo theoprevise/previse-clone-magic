@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 
 const TITLE = "Mortgage Blog | Expert Tips & Insights | Previse Mortgage";
 
-export const Route = createFileRoute("/blog")({
+export const Route = createFileRoute("/blog/")({
   loader: async () => {
     const { data } = await supabase
       .from("blog_posts")

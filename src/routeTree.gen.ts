@@ -13,7 +13,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AdminLoginRouteImport } from './routes/admin-login'
 import { Route as AiReadinessRouteImport } from './routes/ai-readiness'
-import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ColoradoDscrLoansRouteImport } from './routes/colorado-dscr-loans'
 import { Route as ConventionalLoansRouteImport } from './routes/conventional-loans'
 import { Route as CreditScoreMortgageTipsRouteImport } from './routes/credit-score-mortgage-tips'
@@ -60,6 +59,7 @@ import { Route as WebinarThankYouRouteImport } from './routes/webinar-thank-you'
 import { Route as YoutubeRouteImport } from './routes/youtube'
 import { Route as YoutubeThankYouRouteImport } from './routes/youtube-thank-you'
 import { Route as ApplicationLoanTypeRouteImport } from './routes/application/$loanType'
+import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 
 const IndexRoute = IndexRouteImport.update({
@@ -80,11 +80,6 @@ const AdminLoginRoute = AdminLoginRouteImport.update({
 const AiReadinessRoute = AiReadinessRouteImport.update({
   id: '/ai-readiness',
   path: '/ai-readiness',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BlogRoute = BlogRouteImport.update({
-  id: '/blog',
-  path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ColoradoDscrLoansRoute = ColoradoDscrLoansRouteImport.update({
@@ -319,10 +314,15 @@ const ApplicationLoanTypeRoute = ApplicationLoanTypeRouteImport.update({
   path: '/application/$loanType',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => BlogRoute,
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -330,7 +330,6 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AdminRoute
   '/admin-login': typeof AdminLoginRoute
   '/ai-readiness': typeof AiReadinessRoute
-  '/blog': typeof BlogRouteWithChildren
   '/colorado-dscr-loans': typeof ColoradoDscrLoansRoute
   '/conventional-loans': typeof ConventionalLoansRoute
   '/credit-score-mortgage-tips': typeof CreditScoreMortgageTipsRoute
@@ -378,13 +377,13 @@ export interface FileRoutesByFullPath {
   '/youtube-thank-you': typeof YoutubeThankYouRoute
   '/application/$loanType': typeof ApplicationLoanTypeRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/admin-login': typeof AdminLoginRoute
   '/ai-readiness': typeof AiReadinessRoute
-  '/blog': typeof BlogRouteWithChildren
   '/colorado-dscr-loans': typeof ColoradoDscrLoansRoute
   '/conventional-loans': typeof ConventionalLoansRoute
   '/credit-score-mortgage-tips': typeof CreditScoreMortgageTipsRoute
@@ -432,6 +431,7 @@ export interface FileRoutesByTo {
   '/youtube-thank-you': typeof YoutubeThankYouRoute
   '/application/$loanType': typeof ApplicationLoanTypeRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -439,7 +439,6 @@ export interface FileRoutesById {
   '/admin': typeof AdminRoute
   '/admin-login': typeof AdminLoginRoute
   '/ai-readiness': typeof AiReadinessRoute
-  '/blog': typeof BlogRouteWithChildren
   '/colorado-dscr-loans': typeof ColoradoDscrLoansRoute
   '/conventional-loans': typeof ConventionalLoansRoute
   '/credit-score-mortgage-tips': typeof CreditScoreMortgageTipsRoute
@@ -487,6 +486,7 @@ export interface FileRoutesById {
   '/youtube-thank-you': typeof YoutubeThankYouRoute
   '/application/$loanType': typeof ApplicationLoanTypeRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -495,7 +495,6 @@ export interface FileRouteTypes {
     | '/admin'
     | '/admin-login'
     | '/ai-readiness'
-    | '/blog'
     | '/colorado-dscr-loans'
     | '/conventional-loans'
     | '/credit-score-mortgage-tips'
@@ -543,13 +542,13 @@ export interface FileRouteTypes {
     | '/youtube-thank-you'
     | '/application/$loanType'
     | '/blog/$slug'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/admin'
     | '/admin-login'
     | '/ai-readiness'
-    | '/blog'
     | '/colorado-dscr-loans'
     | '/conventional-loans'
     | '/credit-score-mortgage-tips'
@@ -597,13 +596,13 @@ export interface FileRouteTypes {
     | '/youtube-thank-you'
     | '/application/$loanType'
     | '/blog/$slug'
+    | '/blog'
   id:
     | '__root__'
     | '/'
     | '/admin'
     | '/admin-login'
     | '/ai-readiness'
-    | '/blog'
     | '/colorado-dscr-loans'
     | '/conventional-loans'
     | '/credit-score-mortgage-tips'
@@ -651,6 +650,7 @@ export interface FileRouteTypes {
     | '/youtube-thank-you'
     | '/application/$loanType'
     | '/blog/$slug'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -658,7 +658,6 @@ export interface RootRouteChildren {
   AdminRoute: typeof AdminRoute
   AdminLoginRoute: typeof AdminLoginRoute
   AiReadinessRoute: typeof AiReadinessRoute
-  BlogRoute: typeof BlogRouteWithChildren
   ColoradoDscrLoansRoute: typeof ColoradoDscrLoansRoute
   ConventionalLoansRoute: typeof ConventionalLoansRoute
   CreditScoreMortgageTipsRoute: typeof CreditScoreMortgageTipsRoute
@@ -705,6 +704,8 @@ export interface RootRouteChildren {
   YoutubeRoute: typeof YoutubeRoute
   YoutubeThankYouRoute: typeof YoutubeThankYouRoute
   ApplicationLoanTypeRoute: typeof ApplicationLoanTypeRoute
+  BlogSlugRoute: typeof BlogSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -735,13 +736,6 @@ declare module '@tanstack/react-router' {
       path: '/ai-readiness'
       fullPath: '/ai-readiness'
       preLoaderRoute: typeof AiReadinessRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blog': {
-      id: '/blog'
-      path: '/blog'
-      fullPath: '/blog'
-      preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/colorado-dscr-loans': {
@@ -1066,32 +1060,28 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApplicationLoanTypeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/$slug': {
       id: '/blog/$slug'
-      path: '/$slug'
+      path: '/blog/$slug'
       fullPath: '/blog/$slug'
       preLoaderRoute: typeof BlogSlugRouteImport
-      parentRoute: typeof BlogRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
-
-interface BlogRouteChildren {
-  BlogSlugRoute: typeof BlogSlugRoute
-}
-
-const BlogRouteChildren: BlogRouteChildren = {
-  BlogSlugRoute: BlogSlugRoute,
-}
-
-const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
   AdminLoginRoute: AdminLoginRoute,
   AiReadinessRoute: AiReadinessRoute,
-  BlogRoute: BlogRouteWithChildren,
   ColoradoDscrLoansRoute: ColoradoDscrLoansRoute,
   ConventionalLoansRoute: ConventionalLoansRoute,
   CreditScoreMortgageTipsRoute: CreditScoreMortgageTipsRoute,
@@ -1138,6 +1128,8 @@ const rootRouteChildren: RootRouteChildren = {
   YoutubeRoute: YoutubeRoute,
   YoutubeThankYouRoute: YoutubeThankYouRoute,
   ApplicationLoanTypeRoute: ApplicationLoanTypeRoute,
+  BlogSlugRoute: BlogSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

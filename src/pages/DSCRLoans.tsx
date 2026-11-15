@@ -9,10 +9,7 @@ import UnifiedLeadForm from "@/components/UnifiedLeadForm";
 import { Building2, ArrowRight, ArrowLeft, CheckCircle2, DollarSign, Briefcase, RefreshCw, Home, MapPin } from "lucide-react";
 
 const STATES = [
-  "Alabama", "Alaska", "Arkansas", "Colorado", "Connecticut", "Delaware", "Georgia", "Indiana", "Iowa",
-  "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Mississippi", "Missouri", "New Hampshire",
-  "New Mexico", "Ohio", "Oklahoma", "Pennsylvania", "Rhode Island", "South Carolina", "Tennessee", "Texas",
-  "Washington", "West Virginia", "Wisconsin", "Wyoming",
+  "Alabama", "Arkansas", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Indiana", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Mississippi", "Missouri", "New Hampshire", "New Mexico", "Ohio", "Oklahoma", "Pennsylvania", "Rhode Island", "South Carolina", "Tennessee", "Texas", "Washington", "West Virginia", "Wisconsin", "Wyoming",
 ];
 
 const BROKER_STATEMENT =

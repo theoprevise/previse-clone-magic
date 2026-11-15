@@ -27,14 +27,14 @@ const Index = () => {
     <div className="min-h-screen bg-primary">
       <SEOHead 
         title="Investment Property Loans | DSCR & Rental Financing"
-        description="DSCR, multifamily, fix-and-flip and portfolio loans for investors in most U.S. states, with LLC closings and no tax returns. Home purchase and refinance in PA and CO."
+        description="DSCR, multifamily, fix-and-flip and portfolio loans for investors in 31 states, with LLC closings and no tax returns. Home purchase and refinance in PA and CO."
         keywords="investment property loans, DSCR lender, DSCR loans, rental property financing, multifamily loans, fix and flip loans, portfolio loans, LLC mortgage, no tax return investor loan, cash-out refinance rental property"
         canonicalUrl="https://previsemortgage.com"
       />
       <StructuredData type="organization" />
       <StructuredData type="webpage" data={{
         title: "Previse Mortgage - Investment Property & DSCR Lender",
-        description: "DSCR, multifamily, fix-and-flip and portfolio loans for real estate investors in most U.S. states, plus purchase and refinance in PA and CO.",
+        description: "DSCR, multifamily, fix-and-flip and portfolio loans for real estate investors in 31 states, plus purchase and refinance in PA and CO.",
         url: "https://previsemortgage.com"
       }} />
       <StructuredData type="loanOrCredit" />

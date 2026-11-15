@@ -24,9 +24,9 @@ const ContactSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: Record<string, string> = {};
-    if (!formData.name.trim()) newErrors.name = 'Name is required';
-    if (!formData.email.trim()) newErrors.email = 'Email is required';
-    if (!formData.phone.trim() || formData.phone.replace(/\D/g, '').length < 10) newErrors.phone = 'Valid phone required';
+    if (!formData.name.trim()) newErrors['name'] = 'Name is required';
+    if (!formData.email.trim()) newErrors['email'] = 'Email is required';
+    if (!formData.phone.trim() || formData.phone.replace(/\D/g, '').length < 10) newErrors['phone'] = 'Valid phone required';
     if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return; }
 
     setIsSubmitting(true);
@@ -93,9 +93,9 @@ const ContactSection = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className={`w-full p-4 bg-transparent border-2 rounded-lg text-white placeholder-white/60 focus:border-accent focus:outline-hidden ${errors.name ? 'border-red-400' : 'border-border'}`}
+                      className={`w-full p-4 bg-transparent border-2 rounded-lg text-white placeholder-white/60 focus:border-accent focus:outline-hidden ${errors['name'] ? 'border-red-400' : 'border-border'}`}
                     />
-                    {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
+                    {errors['name'] && <p className="text-red-400 text-xs mt-1">{errors['name']}</p>}
                   </div>
                   <div>
                     <input
@@ -105,9 +105,9 @@ const ContactSection = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className={`w-full p-4 bg-transparent border-2 rounded-lg text-white placeholder-white/60 focus:border-accent focus:outline-hidden ${errors.email ? 'border-red-400' : 'border-border'}`}
+                      className={`w-full p-4 bg-transparent border-2 rounded-lg text-white placeholder-white/60 focus:border-accent focus:outline-hidden ${errors['email'] ? 'border-red-400' : 'border-border'}`}
                     />
-                    {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
+                    {errors['email'] && <p className="text-red-400 text-xs mt-1">{errors['email']}</p>}
                   </div>
                   <div>
                     <input
@@ -117,9 +117,9 @@ const ContactSection = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className={`w-full p-4 bg-transparent border-2 rounded-lg text-white placeholder-white/60 focus:border-accent focus:outline-hidden ${errors.phone ? 'border-red-400' : 'border-border'}`}
+                      className={`w-full p-4 bg-transparent border-2 rounded-lg text-white placeholder-white/60 focus:border-accent focus:outline-hidden ${errors['phone'] ? 'border-red-400' : 'border-border'}`}
                     />
-                    {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone}</p>}
+                    {errors['phone'] && <p className="text-red-400 text-xs mt-1">{errors['phone']}</p>}
                   </div>
                   <div>
                     <textarea

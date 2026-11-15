@@ -93,8 +93,8 @@ export async function trackEvent(
     if (typeof window.fbq === 'function') {
       const fbParams: Record<string, unknown> = { ...params, event_id: eventId };
       if (value != null) {
-        fbParams.value = value;
-        fbParams.currency = currency ?? 'USD';
+        fbParams['value'] = value;
+        fbParams['currency'] = currency ?? 'USD';
       }
       // Map our internal event names to Meta standard events where applicable.
       const standardEvents: Record<string, string> = {

@@ -1,5 +1,5 @@
 /**
- * Router-compat shim — bridges @/lib/router-compat v6 call sites to
+ * Router-compat shim — bridges react-router v6 call sites to
  * @tanstack/react-router without hand-rewriting every component.
  * This is the same load-bearing pattern used in Klar's dev-copy migration.
  */
@@ -17,9 +17,9 @@ import { useMemo, useCallback, forwardRef, type ComponentProps, type ReactNode }
 
 // ---------- shared URL parsing ----------
 
-function parseTo(to: string): { pathname: string; search?: Record<string, string>; hash?: string } {
+function parseTo(to: string): { pathname: string; search?: Record<string, string> | undefined; hash?: string | undefined } {
   const [beforeHash, hashStr] = (to ?? "").split("#");
-  const [pathname, searchStr] = beforeHash.split("?");
+  const [pathname, searchStr] = (beforeHash ?? "").split("?");
   return {
     // react-router keeps the current path for search-only ("?a=1") and
     // hash-only ("#section") targets; TanStack's "." means current route.
@@ -53,7 +53,7 @@ export function useNavigate(): NavigateFn {
       hash,
       state: options?.state as never,
       replace: options?.replace,
-    });
+    } as never);
   }, [tsNav, router]) as NavigateFn;
 }
 
@@ -80,7 +80,7 @@ export function useParams<T extends Record<string, string | undefined> = Record<
 }
 
 
-// ---------- useSearchParams (@/lib/router-compat compat) ----------
+// ---------- useSearchParams (react-router compat) ----------
 
 export function useSearchParams(): [URLSearchParams, (init: URLSearchParams | Record<string, string> | ((prev: URLSearchParams) => URLSearchParams), opts?: { replace?: boolean }) => void] {
   const loc = tsLocation();
@@ -105,7 +105,7 @@ export function useSearchParams(): [URLSearchParams, (init: URLSearchParams | Re
             : new URLSearchParams(init);
       const searchObj: Record<string, string> = {};
       next.forEach((v, k) => { searchObj[k] = v; });
-      nav({ to: live.pathname, search: searchObj as never, replace: opts?.replace });
+      nav({ to: live.pathname, search: searchObj as never, replace: opts?.replace } as never);
     },
     [nav, router],
   );
@@ -131,8 +131,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
       ref={ref as never}
       to={pathname as never}
       search={search as never}
-      hash={hash}
-      replace={replace}
+      {...({ hash, replace } as object)}
       state={state as never}
       {...((rest ?? {}) as Record<string, unknown>)}
     >
@@ -146,7 +145,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
 
 export function Navigate({ to, replace, state }: { to: string; replace?: boolean; state?: unknown }) {
   const { pathname, search, hash } = parseTo(to);
-  return <TSNavigate to={pathname as never} search={search as never} hash={hash} state={state as never} replace={replace} />;
+  return <TSNavigate {...({ to: pathname, search, hash, state, replace } as never)} />;
 }
 
 // ---------- Outlet ----------

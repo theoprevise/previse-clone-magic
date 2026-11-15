@@ -126,6 +126,7 @@ const PAGES_WITH_FORMS = [
   "/refinance", "/va-loans", "/fha-loans", "/conventional-loans", "/usda-loans", "/dscr-loans",
   "/colorado-dscr-loans", "/dscr-loan-guide", "/investors", "/mortgage-calculator", "/ai-readiness",
   "/pennsylvania-mortgage", "/mortgage-lender-york-pa", "/mortgage-lender-harrisburg-pa",
+  "/real-estate-investment-loans",
 ];
 
 function ConditionalLeadPopup() {

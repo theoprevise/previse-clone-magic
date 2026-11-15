@@ -31,6 +31,7 @@ const footerLinks = {
     { label: "Realtor Partnership", path: "/realtor-partnership" },
   ],
   "Service Areas": [
+    { label: "Investment Loans Nationwide*", path: "/real-estate-investment-loans" },
     { label: "Pennsylvania Mortgage", path: "/pennsylvania-mortgage" },
     { label: "York, PA", path: "/mortgage-lender-york-pa" },
     { label: "Harrisburg, PA", path: "/mortgage-lender-harrisburg-pa" },

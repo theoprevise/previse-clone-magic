@@ -1,6 +1,6 @@
 import SmsConsentCheckbox, { smsConsentFields } from '@/components/SmsConsentCheckbox';
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from '@/lib/router-compat';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { trackLead } from '@/lib/tracking';

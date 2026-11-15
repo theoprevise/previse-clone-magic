@@ -1,6 +1,6 @@
 import SmsConsentCheckbox, { smsConsentFields } from '@/components/SmsConsentCheckbox';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { X, Gift, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';

@@ -1,5 +1,5 @@
 import { openCookieSettings } from "@/lib/adConsent";
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from '@/lib/router-compat';
 import { Youtube, Facebook, Instagram, Linkedin } from 'lucide-react';
 import logoIcon from "@/assets/logo-icon.png";
 

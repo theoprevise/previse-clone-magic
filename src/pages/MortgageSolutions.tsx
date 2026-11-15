@@ -1,6 +1,6 @@
 import { Home, DollarSign, Shield, TrendingUp, Building, ArrowLeft, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link } from "@/lib/router-compat";
 import SEOHead from "@/components/SEOHead";
 
 const MortgageSolutions = () => {

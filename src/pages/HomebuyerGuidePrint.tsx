@@ -1,7 +1,7 @@
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Printer, Download, ArrowLeft } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import logoPrint from "@/assets/previse-logo-print.png";
 
 const HomebuyerGuidePrint = () => {

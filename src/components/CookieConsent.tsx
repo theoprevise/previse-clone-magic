@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { X, Cookie, Shield } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import { isConsentRequiredRegion, OPEN_COOKIE_SETTINGS_EVENT } from "@/lib/adConsent";
 
 const CONSENT_KEY = "cookie_consent";

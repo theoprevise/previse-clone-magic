@@ -1,6 +1,6 @@
 import SmsConsentCheckbox, { smsConsentFields } from '@/components/SmsConsentCheckbox';
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link } from "@/lib/router-compat";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";

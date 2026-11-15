@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/lib/router-compat";
 import { Star, X } from "lucide-react";
 import { GOOGLE_REVIEWS, GOOGLE_REVIEW_COUNT, MAPS_LINK } from "@/components/GoogleReviewsSection";
 

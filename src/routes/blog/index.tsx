@@ -1,26 +1,28 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import Blog from "@/pages/Blog";
-import { supabase } from "@/integrations/supabase/client";
+import BlogLoadError from "@/components/BlogLoadError";
+import NotFound from "@/pages/NotFound";
+import { blogListOptions } from "@/lib/blog-queries";
 
 const TITLE = "Mortgage Blog | Expert Tips & Insights | Previse Mortgage";
+const DESCRIPTION = "Stay informed with the latest mortgage tips, home buying advice, and industry insights from Previse Mortgage experts.";
 
 export const Route = createFileRoute("/blog/")({
-  loader: async () => {
-    const { data } = await supabase
-      .from("blog_posts")
-      .select("*")
-      .eq("published", true)
-      .order("created_at", { ascending: false });
-    return { posts: data ?? [] };
-  },
+  loader: ({ context }) => context.queryClient.ensureQueryData(blogListOptions),
+  errorComponent: BlogLoadError,
+  notFoundComponent: NotFound,
   head: () => ({
     meta: [
       { title: TITLE },
+      { name: "description", content: DESCRIPTION },
       { property: "og:title", content: TITLE },
-      { name: "description", content: "Stay informed with the latest mortgage tips, home buying advice, and industry insights from Previse Mortgage experts." },
-      { property: "og:description", content: "Stay informed with the latest mortgage tips, home buying advice, and industry insights from Previse Mortgage experts." },
+      { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://previsemortgage.com/blog" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
     ],
     links: [{ rel: "canonical", href: "https://previsemortgage.com/blog" }],
   }),
@@ -28,7 +30,6 @@ export const Route = createFileRoute("/blog/")({
 });
 
 function BlogRoute() {
-  const { posts } = Route.useLoaderData();
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return <Blog initialPosts={posts as any} />;
+  const { data: posts } = useSuspenseQuery({ ...blogListOptions, initialData: Route.useLoaderData() });
+  return <Blog posts={posts} />;
 }

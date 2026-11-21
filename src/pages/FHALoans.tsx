@@ -1,4 +1,4 @@
-import { useNavigate } from "@/lib/router-compat";
+import { useNavigate, Link } from "@/lib/router-compat";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
@@ -293,11 +293,11 @@ const FHALoans = () => {
             <div className="mt-12 p-6 bg-white/5 border border-white/10 rounded-xl">
               <h3 className="text-lg font-bold text-white mb-4">Explore More Mortgage Options</h3>
               <div className="flex flex-wrap gap-3">
-                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/conventional-loans')}>Conventional Loans</Button>
-                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/usda-loans')}>USDA Loans</Button>
-                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/dscr-loans')}>DSCR Investor Loans</Button>
-                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/refinance')}>Refinance Options</Button>
-                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/mortgage-calculator')}>Mortgage Calculator</Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" asChild><Link to="/conventional-loans">Conventional Loans</Link></Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" asChild><Link to="/usda-loans">USDA Loans</Link></Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" asChild><Link to="/dscr-loans">DSCR Investor Loans</Link></Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" asChild><Link to="/refinance">Refinance Options</Link></Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" asChild><Link to="/mortgage-calculator">Mortgage Calculator</Link></Button>
               </div>
             </div>
           </div>

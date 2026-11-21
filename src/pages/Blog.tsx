@@ -1,50 +1,21 @@
-import { useNavigate } from "@/lib/router-compat";
+import { Link } from "@/lib/router-compat";
+import type { BlogArticle } from "@/lib/blog-content";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import SEOHead from "@/components/SEOHead";
-import { supabase } from "@/integrations/supabase/client";
-import { useQuery } from "@tanstack/react-query";
 import { 
   Calendar,
   ArrowRight,
   BookOpen
 } from "lucide-react";
 
-interface BlogPost {
-  id: string;
-  title: string;
-  slug: string;
-  excerpt: string | null;
-  content: string;
-  featured_image: string | null;
-  published: boolean;
-  created_at: string;
-}
-
-const Blog = ({ initialPosts }: { initialPosts?: BlogPost[] } = {}) => {
-  const navigate = useNavigate();
-
-  const { data: posts, isLoading } = useQuery({
-    queryKey: ['blog-posts'],
-    initialData: initialPosts,
-    queryFn: async () => {
-      const { data, error } = await supabase
-        .from('blog_posts')
-        .select('*')
-        .eq('published', true)
-        .order('created_at', { ascending: false });
-      
-      if (error) throw error;
-      return data as BlogPost[];
-    }
-  });
-
+const Blog = ({ posts }: { posts: BlogArticle[] }) => {
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
-      day: 'numeric'
+      day: 'numeric', timeZone: 'UTC'
     });
   };
 
@@ -105,24 +76,15 @@ const Blog = ({ initialPosts }: { initialPosts?: BlogPost[] } = {}) => {
           </div>
           
           <div className="container mx-auto px-4 relative z-10">
-            {isLoading ? (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {[1, 2, 3].map((i) => (
-                  <div key={i} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 animate-pulse">
-                    <div className="h-48 bg-white/10 rounded-xl mb-4"></div>
-                    <div className="h-6 bg-white/10 rounded mb-2"></div>
-                    <div className="h-4 bg-white/10 rounded w-3/4"></div>
-                  </div>
-                ))}
-              </div>
-            ) : posts && posts.length > 0 ? (
+            {posts.length > 0 ? (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {posts.map((post) => (
                   <article 
                     key={post.id}
                     className="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/10 cursor-pointer"
-                    onClick={() => navigate(`/blog/${post.slug}`)}
+
                   >
+                    <Link to={`/blog/${post.slug}`} className="block h-full">
                     {post.featured_image && (
                       <div className="h-48 overflow-hidden">
                         <img 
@@ -148,6 +110,7 @@ const Blog = ({ initialPosts }: { initialPosts?: BlogPost[] } = {}) => {
                         <ArrowRight className="w-4 h-4" />
                       </span>
                     </div>
+                    </Link>
                   </article>
                 ))}
               </div>
@@ -161,10 +124,10 @@ const Blog = ({ initialPosts }: { initialPosts?: BlogPost[] } = {}) => {
                   We're working on some great content. Check back soon for mortgage tips and insights!
                 </p>
                 <Button 
-                  onClick={() => navigate('/schedule')}
+                  asChild
                   className="bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-primary border-0 px-8 py-3 rounded-full font-bold"
                 >
-                  Schedule a Consultation
+                  <Link to="/schedule">Schedule a Consultation</Link>
                 </Button>
               </div>
             )}
@@ -189,19 +152,19 @@ const Blog = ({ initialPosts }: { initialPosts?: BlogPost[] } = {}) => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
                   size="lg" 
-                  onClick={() => navigate('/schedule')}
+                  asChild
                   className="group bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-primary border-0 px-10 py-4 rounded-full text-lg font-bold shadow-2xl hover:shadow-accent/25 transition-all duration-300 transform hover:-translate-y-1"
                 >
-                  Schedule Consultation
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={20} />
+                  <Link to="/schedule">Schedule Consultation
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={20} /></Link>
                 </Button>
                 <Button 
                   size="lg" 
                   variant="outline"
-                  onClick={() => navigate('/mortgage-programs')}
+                  asChild
                   className="border-white/30 text-white hover:bg-white/10 px-10 py-4 rounded-full text-lg font-bold transition-all duration-300"
                 >
-                  View Loan Programs
+                  <Link to="/mortgage-programs">View Loan Programs</Link>
                 </Button>
               </div>
             </div>

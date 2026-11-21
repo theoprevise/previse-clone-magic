@@ -1,4 +1,4 @@
-import { useNavigate } from "@/lib/router-compat";
+import { useNavigate, Link } from "@/lib/router-compat";
 import { 
   ArrowLeft, 
   ArrowRight, 
@@ -332,11 +332,11 @@ const CurrentMortgageRates = () => {
             <div className="mt-12 p-6 bg-white/5 border border-white/10 rounded-xl">
               <h3 className="text-lg font-bold text-white mb-4">Explore Your Options</h3>
               <div className="flex flex-wrap gap-3">
-                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/mortgage-calculator')}>Payment Calculator</Button>
-                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/refinance')}>Refinance Options</Button>
-                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/fha-loans')}>FHA Loans</Button>
-                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/conventional-loans')}>Conventional Loans</Button>
-                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => navigate('/first-time-homebuyer')}>First-Time Buyer Guide</Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" asChild><Link to="/mortgage-calculator">Payment Calculator</Link></Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" asChild><Link to="/refinance">Refinance Options</Link></Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" asChild><Link to="/fha-loans">FHA Loans</Link></Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" asChild><Link to="/conventional-loans">Conventional Loans</Link></Button>
+                <Button variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" asChild><Link to="/first-time-homebuyer">First-Time Buyer Guide</Link></Button>
               </div>
             </div>
           </div>

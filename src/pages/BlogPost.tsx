@@ -1,102 +1,24 @@
-import { useNavigate, useParams } from "@/lib/router-compat";
-import DOMPurify from "dompurify";
+import { Link } from "@/lib/router-compat";
+import { sanitizeArticleHtml, articleDescription, type BlogArticle } from "@/lib/blog-content";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import SEOHead from "@/components/SEOHead";
-import { supabase } from "@/integrations/supabase/client";
-import { useQuery } from "@tanstack/react-query";
 import { 
   Calendar,
   ArrowLeft,
   ArrowRight
 } from "lucide-react";
-interface BlogPost {
-  id: string;
-  title: string;
-  slug: string;
-  excerpt: string | null;
-  content: string;
-  featured_image: string | null;
-  published: boolean;
-  created_at: string;
-}
-
-const BlogPost = ({ initialPost }: { initialPost?: BlogPost | null } = {}) => {
-  const navigate = useNavigate();
-  const { slug } = useParams<{ slug: string }>();
-
-  const { data: post, isLoading, error } = useQuery({
-    queryKey: ['blog-post', slug],
-    initialData: initialPost ?? undefined,
-    queryFn: async () => {
-      const { data, error } = await supabase
-        .from('blog_posts')
-        .select('*')
-        .eq('slug', slug)
-        .eq('published', true)
-        .single();
-      
-      if (error) throw error;
-      return data as BlogPost;
-    },
-    enabled: !!slug
+const BlogPost = ({ post }: { post: BlogArticle }) => {
+  const formatDate = (dateString: string) => new Date(dateString).toLocaleDateString('en-US', {
+    year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'
   });
-
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-primary">
-        <Header />
-        <div className="container mx-auto px-4 py-20">
-          <div className="max-w-3xl mx-auto animate-pulse">
-            <div className="h-8 bg-white/10 rounded mb-4 w-3/4"></div>
-            <div className="h-4 bg-white/10 rounded mb-8 w-1/4"></div>
-            <div className="h-64 bg-white/10 rounded mb-8"></div>
-            <div className="space-y-4">
-              <div className="h-4 bg-white/10 rounded"></div>
-              <div className="h-4 bg-white/10 rounded"></div>
-              <div className="h-4 bg-white/10 rounded w-5/6"></div>
-            </div>
-          </div>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
-
-  if (error || !post) {
-    return (
-      <div className="min-h-screen bg-primary">
-        <Header />
-        <div className="container mx-auto px-4 py-20 text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">Post Not Found</h1>
-          <p className="text-white/70 mb-8">The blog post you're looking for doesn't exist or has been removed.</p>
-          <Button 
-            onClick={() => navigate('/blog')}
-            className="bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-primary border-0 px-8 py-3 rounded-full font-bold"
-          >
-            <ArrowLeft className="mr-2 w-4 h-4" />
-            Back to Blog
-          </Button>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-primary">
       <SEOHead 
         title={`${post.title} | Previse Mortgage Blog`}
-        description={post.excerpt || post.content.substring(0, 160)}
+        description={articleDescription(post)}
         keywords="mortgage blog, home buying tips, mortgage advice"
         canonicalUrl={`https://previsemortgage.com/blog/${post.slug}`}
         ogType="article"
@@ -116,13 +38,12 @@ const BlogPost = ({ initialPost }: { initialPost?: BlogPost | null } = {}) => {
           
           <div className="relative z-10 container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
-              <button 
-                onClick={() => navigate('/blog')}
+              <Link to="/blog"
                 className="inline-flex items-center gap-2 text-accent hover:text-accent-light transition-colors mb-8"
               >
                 <ArrowLeft className="w-4 h-4" />
                 Back to Blog
-              </button>
+              </Link>
               
               <div className="flex items-center gap-2 text-accent text-sm mb-4">
                 <Calendar className="w-4 h-4" />
@@ -168,15 +89,7 @@ const BlogPost = ({ initialPost }: { initialPost?: BlogPost | null } = {}) => {
                   prose-ul:text-white/80 prose-ol:text-white/80
                   prose-li:marker:text-accent"
                 dangerouslySetInnerHTML={{ 
-                  __html: DOMPurify.sanitize(post.content, {
-                    ALLOWED_TAGS: [
-                      'p', 'br', 'strong', 'em', 'u', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-                      'ul', 'ol', 'li', 'a', 'blockquote', 'img', 'code', 'pre',
-                      'table', 'thead', 'tbody', 'tr', 'th', 'td', 'div', 'span'
-                    ],
-                    ALLOWED_ATTR: ['href', 'target', 'rel', 'src', 'alt', 'class', 'style'],
-                    ALLOW_DATA_ATTR: false
-                  })
+                  __html: sanitizeArticleHtml(post.content)
                 }}
               />
             </article>
@@ -201,19 +114,19 @@ const BlogPost = ({ initialPost }: { initialPost?: BlogPost | null } = {}) => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
                   size="lg" 
-                  onClick={() => navigate('/schedule')}
+                  asChild
                   className="group bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-primary border-0 px-8 py-4 rounded-full text-lg font-bold shadow-2xl hover:shadow-accent/25 transition-all duration-300 transform hover:-translate-y-1"
                 >
-                  Schedule Consultation
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={20} />
+                  <Link to="/schedule">Schedule Consultation
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={20} /></Link>
                 </Button>
                 <Button 
                   size="lg" 
                   variant="outline"
-                  onClick={() => navigate('/blog')}
+                  asChild
                   className="border-white/30 text-white hover:bg-white/10 px-8 py-4 rounded-full text-lg font-bold transition-all duration-300"
                 >
-                  More Articles
+                  <Link to="/blog">More Articles</Link>
                 </Button>
               </div>
             </div>

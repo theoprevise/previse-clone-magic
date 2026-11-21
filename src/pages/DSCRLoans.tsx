@@ -1,4 +1,4 @@
-import { useNavigate } from "@/lib/router-compat";
+import { useNavigate, Link } from "@/lib/router-compat";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
@@ -157,8 +157,8 @@ const DSCRLoans = () => {
           <div className="mt-10 p-6 bg-white/5 border border-white/10 rounded-xl">
             <h3 className="text-lg font-bold text-white mb-4">Explore More Investment Financing</h3>
             <div className="flex flex-wrap gap-3">
-              {[["Investor Hub", "/investors"], ["DSCR Loan Guide", "/dscr-loan-guide"], ["Mortgage Calculator", "/mortgage-calculator"], ["Current Rates", "/current-mortgage-rates"]].map(([l, h]) => (
-                <Button key={h} variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" onClick={() => h && navigate(h)}>{l}</Button>
+              {([["Investor Hub", "/investors"], ["DSCR Loan Guide", "/dscr-loan-guide"], ["Mortgage Calculator", "/mortgage-calculator"], ["Current Rates", "/current-mortgage-rates"]] as const).map(([l, h]) => (
+                <Button key={h} variant="outline" className="border-accent/30 text-accent hover:bg-accent/10" asChild><Link to={h}>{l}</Link></Button>
               ))}
             </div>
           </div>
@@ -170,7 +170,7 @@ const DSCRLoans = () => {
           <Card className="bg-gradient-to-r from-accent/20 to-secondary/20 border border-accent/30 p-10 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Explore LLC Investment Property Financing</h2>
             <p className="text-white/80 mb-8 max-w-2xl mx-auto">Talk with Previse about your property, entity and goals. No obligation.</p>
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90" onClick={() => navigate("/schedule")}>Talk to a DSCR Specialist <ArrowRight className="ml-2 h-5 w-5" /></Button>
+            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90" asChild><Link to="/schedule">Talk to a DSCR Specialist <ArrowRight className="ml-2 h-5 w-5" /></Link></Button>
             <p className="text-white/50 text-xs mt-8 max-w-3xl mx-auto">{BROKER_STATEMENT}</p>
           </Card>
         </div>

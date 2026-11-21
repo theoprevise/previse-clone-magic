@@ -5,4 +5,4 @@
 - [x] Technical SEO: consolidate server-rendered business identity and correct schema assets/actions
 - [x] Technical SEO: make related-resource navigation crawlable without changing page wording or design
 - [x] Verify technical corrections in tests and preview; do not publish or create articles
-- [ ] Update displayed mortgage rates using a verified source; waiting for lender-quotes versus Freddie Mac source choice, retain publication hold
+- [x] Update displayed mortgage rates using verified Freddie Mac national averages, verify the page, and retain publication hold

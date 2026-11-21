@@ -17,59 +17,7 @@ import FAQStructuredData from "@/components/FAQStructuredData";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
-// RATES - Update these weekly. Last updated date shown to users.
-const LAST_UPDATED = "December 20, 2024";
-
-const currentRates = [
-  {
-    type: "30-Year Fixed",
-    rate: "6.875%",
-    apr: "6.95%",
-    change: -0.125,
-    description: "Most popular choice for homebuyers",
-    bestFor: "Long-term homeowners"
-  },
-  {
-    type: "15-Year Fixed",
-    rate: "6.125%",
-    apr: "6.20%",
-    change: -0.0625,
-    description: "Pay off faster, save on interest",
-    bestFor: "Those who can afford higher payments"
-  },
-  {
-    type: "FHA 30-Year",
-    rate: "6.500%",
-    apr: "7.15%",
-    change: 0,
-    description: "Lower down payment requirements",
-    bestFor: "First-time buyers, lower credit scores"
-  },
-  {
-    type: "VA 30-Year",
-    rate: "6.250%",
-    apr: "6.45%",
-    change: -0.0625,
-    description: "Exclusive rates for veterans",
-    bestFor: "Veterans and active military"
-  },
-  {
-    type: "5/1 ARM",
-    rate: "6.375%",
-    apr: "7.10%",
-    change: 0.125,
-    description: "Fixed for 5 years, then adjusts",
-    bestFor: "Short-term homeowners"
-  },
-  {
-    type: "Jumbo 30-Year",
-    rate: "7.125%",
-    apr: "7.20%",
-    change: -0.0625,
-    description: "For loans above conforming limits",
-    bestFor: "High-value property buyers"
-  }
-];
+import { MORTGAGE_RATE_SOURCE, mortgageRateAverages, weeklyRateChange } from "@/lib/mortgage-rate-averages";
 
 const rateFactors = [
   {
@@ -104,8 +52,8 @@ const CurrentMortgageRates = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary via-primary-dark to-primary">
       <SEOHead 
-        title="Current Mortgage Rates Today | Compare Home Loan Rates | Previse Mortgage"
-        description="Compare today's mortgage rates for 30-year fixed, 15-year fixed, FHA, VA, and jumbo loans. Updated weekly with rate trends and expert analysis. Get a personalized rate quote."
+        title="Freddie Mac Mortgage Rate Averages | Previse Mortgage"
+        description="View Freddie Mac national 30-year and 15-year fixed mortgage averages, dated November 19, 2026. These are market benchmarks, not Previse loan quotes."
         keywords="current mortgage rates, today's mortgage rates, 30 year fixed rate, 15 year mortgage rate, FHA rates, VA loan rates, jumbo mortgage rates, compare mortgage rates, competitive mortgage rates"
         canonicalUrl="https://previsemortgage.com/current-mortgage-rates"
       />
@@ -133,17 +81,17 @@ const CurrentMortgageRates = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <span className="inline-block px-4 py-2 bg-accent/20 border border-accent/30 rounded-full text-accent text-sm font-medium mb-6 animate-fade-in">
-              Updated Weekly • For Illustrative Purposes
+              Freddie Mac • U.S. Weekly Averages
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Current <span className="text-accent">Mortgage Rates</span>
             </h1>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto mb-4">
-              Compare today's competitive mortgage rates. Your actual rate will vary based on your unique financial situation and creditworthiness.*
+              Freddie Mac national averages provide a market benchmark—not a Previse Mortgage rate quote. Your actual rate and APR depend on your loan and financial profile.
             </p>
             <div className="flex items-center justify-center gap-2 text-white/60 text-sm">
               <Calendar className="h-4 w-4" />
-              <span>Last Updated: {LAST_UPDATED}</span>
+              <span>Survey published: {MORTGAGE_RATE_SOURCE.publishedAt}</span>
             </div>
           </div>
         </div>
@@ -154,9 +102,11 @@ const CurrentMortgageRates = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="grid gap-4">
-              {currentRates.map((rate, idx) => (
+              {mortgageRateAverages.map((average) => {
+                const rate = { ...average, change: weeklyRateChange(average.rate, average.previousRate) };
+                return (
                 <Card 
-                  key={idx}
+                  key={rate.type}
                   className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 hover:bg-white/10 transition-all duration-300 hover:border-accent/30"
                 >
                   <div className="grid md:grid-cols-12 gap-4 items-center">
@@ -167,21 +117,15 @@ const CurrentMortgageRates = () => {
                     </div>
                     
                     {/* Rate */}
-                    <div className="md:col-span-2 text-center">
-                      <p className="text-white/60 text-xs uppercase tracking-wider mb-1">Rate</p>
-                      <p className="text-3xl font-bold text-accent">{rate.rate}</p>
-                    </div>
-                    
-                    {/* APR */}
-                    <div className="md:col-span-2 text-center">
-                      <p className="text-white/60 text-xs uppercase tracking-wider mb-1">APR</p>
-                      <p className="text-2xl font-semibold text-white">{rate.apr}</p>
+                    <div className="md:col-span-3 text-center">
+                      <p className="text-white/60 text-xs uppercase tracking-wider mb-1">National Average</p>
+                      <p className="text-3xl font-bold text-accent">{rate.rate.toFixed(2)}%</p>
                     </div>
                     
                     {/* Change */}
-                    <div className="md:col-span-2 text-center">
+                    <div className="md:col-span-3 text-center">
                       <p className="text-white/60 text-xs uppercase tracking-wider mb-1">Weekly Change</p>
-                      <div className={`flex items-center justify-center gap-1 ${rate.change < 0 ? 'text-success' : rate.change > 0 ? 'text-red-400' : 'text-white/60'}`}>
+                      <div className={`flex items-center justify-center gap-1 ${rate.change < 0 ? 'text-success' : rate.change > 0 ? 'text-destructive' : 'text-white/60'}`}>
                         {rate.change < 0 ? (
                           <TrendingDown className="h-4 w-4" />
                         ) : rate.change > 0 ? (
@@ -190,7 +134,7 @@ const CurrentMortgageRates = () => {
                           <span>—</span>
                         )}
                         <span className="font-medium">
-                          {rate.change !== 0 ? `${rate.change > 0 ? '+' : ''}${rate.change}%` : 'No change'}
+                          {rate.change !== 0 ? `${rate.change > 0 ? '+' : ''}${rate.change.toFixed(2)} percentage points` : 'No change'}
                         </span>
                       </div>
                     </div>
@@ -203,7 +147,8 @@ const CurrentMortgageRates = () => {
                     </div>
                   </div>
                 </Card>
-              ))}
+                );
+              })}
             </div>
 
             {/* Disclaimer */}
@@ -211,10 +156,9 @@ const CurrentMortgageRates = () => {
               <div className="flex items-start gap-3">
                 <Info className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                 <p className="text-white/60 text-sm">
-                  <strong className="text-white">Rate Disclaimer:</strong> Rates shown are for informational purposes only, are subject to change without notice, and do not constitute a commitment to lend. 
-                  Rates displayed assume a loan amount of $300,000, 20% down payment, 740+ credit score, and owner-occupied single-family residence. 
-                  Your actual rate, APR, and loan terms will depend on your credit score, down payment, loan amount, property type, and other factors. 
-                  All loans are subject to credit approval. Contact us for a personalized rate quote based on your specific situation.
+                  <strong className="text-white">National averages, not loan offers:</strong> These figures are a dated snapshot of Freddie Mac’s PMMS, not daily rates, APRs, or a commitment to lend. The survey covers conventional conforming single-family purchase mortgages; it does not represent FHA, VA, jumbo, refinance, or DSCR/investment loan pricing. Freddie Mac does not publish APRs or average fees and points for this survey. Your rate, APR, fees, and eligibility require an individual quote and credit approval. Residential lending through Previse Mortgage is limited to Pennsylvania and Colorado.
+                  <br />
+                  Source: <a href={MORTGAGE_RATE_SOURCE.url} target="_blank" rel="noopener noreferrer" className="text-accent underline">{MORTGAGE_RATE_SOURCE.name}</a>. Published {MORTGAGE_RATE_SOURCE.publishedAt}. Freddie Mac publishes new results weekly; this page is a manually updated snapshot.
                 </p>
               </div>
             </div>
@@ -287,7 +231,7 @@ const CurrentMortgageRates = () => {
 
             {/* Rates FAQ */}
             <FAQStructuredData faqs={[
-              { q: "How often do mortgage rates change?", a: "Mortgage rates can change daily, sometimes multiple times per day. Rates are influenced by bond market movements, economic data releases, Federal Reserve decisions, and global events. That's why the rates shown on this page are updated weekly and serve as general guidance—your actual rate will be determined at the time of your application." },
+              { q: "How often do mortgage rates change?", a: "Mortgage rates can change daily, sometimes multiple times per day. Rates are influenced by bond market movements, economic data releases, Federal Reserve decisions, and global events. Freddie Mac publishes weekly national averages; this page shows the dated survey snapshot above, not a daily quote. Your actual rate is established through an individual quote and any applicable rate lock." },
               { q: "What credit score do I need for a competitive mortgage rate?", a: "Borrowers with credit scores of 740 or higher typically qualify for the most competitive available rates. Scores between 700 and 739 get very competitive rates, while scores from 680 to 699 are still strong. Below 680, you may pay slightly higher rates but can still qualify for many loan programs including FHA loans." },
               { q: "Are mortgage rates the same for all loan types?", a: "No, rates vary by loan type. Conventional loans, FHA loans, VA loans, USDA loans, and jumbo loans each have different rate structures. VA loans typically offer some of the most competitive rates because they're backed by the Department of Veterans Affairs. FHA loans have competitive rates but include mortgage insurance that increases the effective cost." },
               { q: "Should I pay points to lower my mortgage rate?", a: "Paying discount points (each point equals 1% of the loan amount) can lower your rate by approximately 0.25%. This makes sense if you plan to keep the loan long enough to recoup the upfront cost—typically 4 to 7 years. If you might sell or refinance sooner, saving on points is usually the better financial decision." },
@@ -300,7 +244,7 @@ const CurrentMortgageRates = () => {
               {[
                 {
                   q: "How often do mortgage rates change?",
-                  a: "Mortgage rates can change daily, sometimes multiple times per day. Rates are influenced by bond market movements, economic data releases, Federal Reserve decisions, and global events. That's why the rates shown on this page are updated weekly and serve as general guidance—your actual rate will be determined at the time of your application."
+                  a: "Mortgage rates can change daily, sometimes multiple times per day. Rates are influenced by bond market movements, economic data releases, Federal Reserve decisions, and global events. Freddie Mac publishes weekly national averages; this page shows the dated survey snapshot above, not a daily quote. Your actual rate is established through an individual quote and any applicable rate lock."
                 },
                 {
                   q: "What credit score do I need for a competitive mortgage rate?",
@@ -357,7 +301,7 @@ const CurrentMortgageRates = () => {
                   Get Your Personalized Rate
                 </h2>
                 <p className="text-white/80 mb-6">
-                  The rates shown are averages. Your actual rate will depend on various factors like: credit score, down payment, loan amount, property type. Contact us for a personalized rate quote based on your specific situation.
+                  The rates shown are Freddie Mac national averages, not Previse quotes. Your actual rate will depend on various factors like: credit score, down payment, loan amount, property type. Contact us for a personalized rate quote based on your specific situation.
                 </p>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-center gap-2 text-white/80">

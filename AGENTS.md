@@ -8,3 +8,4 @@
 - Learning Center articles live as data in `src/lib/learning-center.ts` and render via `/learn` and `/learn/$slug`; new articles must also be added to `public/sitemap.xml` (static) — keeps SEO pages server-rendered from one source.
 - Blog routes share public server-function queries and a DOM-independent HTML sanitizer; never use a browser DOM sanitizer during SSR because published article bodies must render before JavaScript.
 - The root head owns the single FinancialService business identity; page schemas reference its stable ID rather than appending competing business entities after hydration.
+- The rates page uses a dated, source-linked PMMS snapshot module rather than fabricated product quotes/APRs; explicit attribution keeps market averages separate from lender offers.

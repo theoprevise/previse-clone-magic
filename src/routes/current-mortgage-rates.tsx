@@ -4,28 +4,29 @@ import CurrentMortgageRates from "@/pages/CurrentMortgageRates";
 export const Route = createFileRoute("/current-mortgage-rates")({
   head: () => ({
     meta: [
+      { name: "twitter:card", content: "summary_large_image" },
       {
-        "title": "Current Mortgage Rates Today | Compare Home Loan Rates | Previse Mortgage"
+        "title": "Freddie Mac Mortgage Rate Averages | Previse Mortgage"
       },
       {
         "property": "og:title",
-        "content": "Current Mortgage Rates Today | Compare Home Loan Rates | Previse Mortgage"
+        "content": "Freddie Mac Mortgage Rate Averages | Previse Mortgage"
       },
       {
         "name": "twitter:title",
-        "content": "Current Mortgage Rates Today | Compare Home Loan Rates | Previse Mortgage"
+        "content": "Freddie Mac Mortgage Rate Averages | Previse Mortgage"
       },
       {
         "name": "description",
-        "content": "Compare today's mortgage rates for 30-year fixed, 15-year fixed, FHA, VA, and jumbo loans. Updated weekly with rate trends and expert analysis. Get a personalized rate quote."
+        "content": "View Freddie Mac national 30-year and 15-year fixed mortgage averages, dated November 19, 2026. These are market benchmarks, not Previse loan quotes."
       },
       {
         "property": "og:description",
-        "content": "Compare today's mortgage rates for 30-year fixed, 15-year fixed, FHA, VA, and jumbo loans. Updated weekly with rate trends and expert analysis. Get a personalized rate quote."
+        "content": "View Freddie Mac national 30-year and 15-year fixed mortgage averages, dated November 19, 2026. These are market benchmarks, not Previse loan quotes."
       },
       {
         "name": "twitter:description",
-        "content": "Compare today's mortgage rates for 30-year fixed, 15-year fixed, FHA, VA, and jumbo loans. Updated weekly with rate trends and expert analysis. Get a personalized rate quote."
+        "content": "View Freddie Mac national 30-year and 15-year fixed mortgage averages, dated November 19, 2026. These are market benchmarks, not Previse loan quotes."
       },
       {
         "name": "keywords",

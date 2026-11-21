@@ -13,6 +13,10 @@ Allow: /
 User-agent: GPTBot
 Allow: /
 
+# OpenAI crawler for ChatGPT Search (separate from GPTBot).
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: ChatGPT-User
 Allow: /
 

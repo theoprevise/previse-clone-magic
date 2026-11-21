@@ -15,7 +15,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
       case 'organization':
         structuredData = {
           "@context": "https://schema.org",
-          "@type": "MortgageLender",
+          "@type": "FinancialService",
           "name": "Previse Mortgage LLC",
           "alternateName": ["Previse Mortgage", "Previse Mortgage LLC", "Previse Mortgage Company"],
           "legalName": "Previse Mortgage LLC",
@@ -184,7 +184,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "@type": "Service",
           "serviceType": "Business-Purpose Investment Property Financing",
           "provider": {
-            "@type": "MortgageLender",
+            "@type": "FinancialService",
             "name": "Previse Mortgage",
             "url": "https://previsemortgage.com"
           },
@@ -241,7 +241,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
             ]
           },
           "mainEntity": {
-            "@type": "MortgageLender",
+            "@type": "FinancialService",
             "name": "Previse Mortgage",
             "url": "https://previsemortgage.com"
           }
@@ -255,7 +255,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "name": "Previse Mortgage Home Loans",
           "description": "Business-purpose investment property financing in 29 states, plus conventional, FHA, VA and USDA home loans in Pennsylvania and Colorado.",
           "provider": {
-            "@type": "MortgageLender",
+            "@type": "FinancialService",
             "name": "Previse Mortgage",
             "url": "https://previsemortgage.com"
           },

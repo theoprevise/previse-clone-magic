@@ -5,3 +5,4 @@
 - The app runs on TanStack Start with SSR: each public page's title, description, self-referencing canonical, robots and OG tags live in its `src/routes/*.tsx` `head()` (utility/print/admin/thank-you pages set noindex); `SEOHead` renders nothing and is kept only so page markup compiles — client-only head tags are invisible to crawlers.
 - `src/server.ts` permanently redirects `www.` to the apex primary domain before routing — one canonical host for search engines.
 - Page components must not touch window/document/storage during render or in useState initializers; read them in useEffect — pages are rendered on the server first.
+- Learning Center articles live as data in `src/lib/learning-center.ts` and render via `/learn` and `/learn/$slug`; new articles must also be added to `public/sitemap.xml` (static) — keeps SEO pages server-rendered from one source.

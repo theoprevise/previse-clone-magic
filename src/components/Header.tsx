@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "@/lib/router-compat";
+import { useNavigate, Link } from "@/lib/router-compat";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import logoFull from "@/assets/logo-full.png";
@@ -72,6 +72,12 @@ const Header = () => {
             >
               Calculators
             </button>
+            <Link
+              to="/learn"
+              className="text-white/80 hover:text-accent transition-colors font-medium"
+            >
+              Learning Center
+            </Link>
             
             {/* Resources Dropdown */}
             <div className="relative" ref={dropdownRef}>
@@ -150,6 +156,13 @@ const Header = () => {
               >
                 Calculators
               </button>
+              <Link
+                to="/learn"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-white/80 hover:text-accent transition-colors font-medium text-left py-2"
+              >
+                Learning Center
+              </Link>
               
               {/* Mobile Resources Dropdown */}
               <div className="border-t border-accent/20 pt-2 mt-2">

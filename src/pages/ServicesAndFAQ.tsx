@@ -101,7 +101,7 @@ const ServicesAndFAQ = () => {
     },
     {
       question: "What's the difference between pre-qualification and pre-approval?",
-      answer: "Pre-qualification is an estimate based on basic information. Pre-approval involves credit check, income verification, and full underwriting review, providing a committed loan amount from the lender."
+      answer: "Pre-qualification is an estimate based on basic information. Pre-approval involves credit check, income verification, and underwriting review, giving you a conditional loan amount from the lender. Pre-approval is not a guarantee of lending; final approval depends on the property, appraisal, and verification of your information at closing."
     },
     {
       question: "Are there programs for first-time homebuyers?",
